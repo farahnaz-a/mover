@@ -378,7 +378,7 @@
   <!-- JQuery Map Plugin -->
   <script
       type="text/javascript"
-      src="http://maps.google.com/maps/api/js?key=AIzaSyCCYYbVzj3y4aUpnJCDZ756CrHJXVs93U4&sensor=false"
+      src="https://maps.google.com/maps/api/js?key=AIzaSyCCYYbVzj3y4aUpnJCDZ756CrHJXVs93U4&sensor=false"
     ></script>
   
   <script type="text/javascript" src="{{ asset('assets/js/jquery.gmap.min.js') }}"></script>    
