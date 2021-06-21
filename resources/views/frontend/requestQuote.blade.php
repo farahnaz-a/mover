@@ -15,10 +15,6 @@
 @section('css')
 @endsection
 
-@section('name')
-
-@endsection
-
 @section('content')
     <!-- Main Body Content Start -->
     <main id="body-content" style="overflow-y: inherit">

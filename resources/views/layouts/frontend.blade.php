@@ -69,7 +69,9 @@
 
             <span class="mr-3"><i class="icofont-ui-touch-phone"></i> +00 41 895 785 6985</span>
 
-            <span class="mr-3"><i class="icofont-ui-email"></i> Email Us</span>
+            <span class="mr-3"><i class="icofont-ui-user mr-2"></i> 
+             <a href="{{ route('login') }}"> Login</a>/<a href="{{ route('register') }}">Register</a>
+            </span>
             <!-- Topbar Language Dropdown Start -->
             <div class="dropdown d-inline-flex lang-toggle">
               <!-- <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-hover="dropdown" data-animations="slideInUp slideInUp slideInUp slideInUp">
@@ -124,7 +126,6 @@
                   <li class="nav-item">
                     <a class="nav-link" aria-haspopup="true" aria-expanded="false" href="register.html">Inscription déménageur</a>
                   </li>
-        
               <li class="nav-item dropdown">
                 <a class="nav-link" href="{{ route('frontend.contact') }}" >Contact</a>
                
