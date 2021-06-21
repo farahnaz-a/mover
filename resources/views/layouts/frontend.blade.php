@@ -70,7 +70,12 @@
             <span class="mr-3"><i class="icofont-ui-touch-phone"></i> +00 41 895 785 6985</span>
 
             <span class="mr-3"><i class="icofont-ui-user mr-2"></i> 
-             <a href="{{ route('login') }}"> Login</a>/<a href="{{ route('register') }}">Register</a>
+              @auth
+                <a href="{{ route('dashboard') }}">My Account</a>
+              @endauth
+              @guest
+              <a href="{{ route('login') }}"> Login</a>/<a href="{{ route('register') }}">Register</a>
+              @endguest
             </span>
             <!-- Topbar Language Dropdown Start -->
             <div class="dropdown d-inline-flex lang-toggle">
