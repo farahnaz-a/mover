@@ -26,39 +26,30 @@
               <div class="bg-navy-blue text-white p-3">
                 <div class="row">
                   <div class="col-md-4">
-                    <h1 class="text-uppercase text-theme bg-white font-italic">
-                      Deem pour les .....
+                    <h1 class="text-uppercase text-theme font-italic">
+                      DEEM POUR LES DÉMÉNAGEURS
                     </h1>
                     <button
                       class="text-white btn bg-orange btn-lg rounded-0 mt-5"
                     >
-                      Button
+                    INSCRIVEZ-VOUS
                     </button>
                   </div>
                   <div class="col-md-6">
                     <p>
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Perferendis quos ab fuga incidunt obcaecati explicabo
-                      officiis sequi consequuntur vero unde aperiam, suscipit,
-                      sapiente et fugiat deserunt minus voluptatum illo! Ipsam!
-                      officiis sequi consequuntur vero unde aperiam, suscipit,
-                      sapiente et fugiat deserunt minus voluptatum illo! Ipsam!
-                      officiis sequi consequuntur vero unde aperiam, suscipit,
-                      sapiente et fugiat deserunt minus voluptatum illo! Ipsam!
+                      Vous êtes déménageur-transporteur professionnel, DEEM est un espace d’échange qui vous facilite la mise en relation avec une nouvelle clientèlepour augmenter votre chiffre d’affaire  :
                     </p>
                     <p>
-                      officiis sequi consequuntur vero unde aperiam, suscipit,
-                      sapiente et fugiat deserunt minus voluptatum illo! Ipsam!
-                      officiis sequi consequuntur vero unde aperiam, suscipit,
-                      sapiente et fugiat deserunt minus voluptatum illo! Ipsam!
-                    </p>
-                    <p>
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Perferendis quos ab fuga incidunt obcaecati explicabo Lorem
-                      ipsum dolor sit amet consectetur adipisicing elit.
-                      Perferendis quos ab fuga incidunt obcaecati explicabo Lorem
-                      ipsum dolor sit amet consectetur adipisicing elit. officiis
-                      sequi consequuntur vero unde aperiam,
+                      Inscrivez-vous gratuitement et sans engagement
+                      Aucun frais d’abonnement <br>
+                      Accès immédiat et illimité aux offres 24h/24 et 7jours/7 <br>
+                      Accéderà des milliers d’offres et à de nouvelles opportunités <br>
+                      Augmenter votre visibilité, gagnez du temps et trouvez de nouveaux clients <br>
+                      Discuter en direct et en toute transparence avec les clients par système de messagerie <br>
+                      Aucune concurrence déloyale, tous les déménageurs-transporteurs sont agrées <br>
+                      Déposez gratuitement vos devis <br>
+                      Étendez votre notoriété, gérez votre profil, mettez en avant vos anciennes  <br>réalisationset partagez l’expérience de vos clients <br>
+                      Étendez votre zone géographique d’intervention
                     </p>
                   </div>
                 </div>
@@ -67,7 +58,7 @@
                 @csrf
                 <div class="form-group row">
                   <label class="col-sm-2 col-form-label"
-                    >NOM DE <strong>I'enterprise</strong></label
+                    >Nom de I'enterprise</label
                   >
                   <div class="col-sm-10">
                     <div class="input-group">
@@ -93,7 +84,7 @@
                 </div>
                 <div class="form-group row">
                   <label class="col-sm-2 col-form-label"
-                    ><strong>Address de I'enterprise</strong></label
+                    >Adresse de I'enterprise</label
                   >
                   <div class="col-sm-10">
                     <div class="input-group">
@@ -105,7 +96,7 @@
                       <input
                         type="text"
                         class="form-control form-control-lg"
-                        placeholder="Address de I'enterprise"
+                        placeholder="Adresse de I'enterprise"
                         name="address"
                         required 
                       />
@@ -119,7 +110,7 @@
                 </div>
                 <div class="form-group row">
                   <label class="col-sm-2 col-form-label"
-                    >Nomet <strong>PRENOM DU GÉRANT</strong></label
+                    >NOM prenom du gérant</label
                   >
                   <div class="col-sm-10">
                     <div class="input-group">
@@ -131,7 +122,7 @@
                       <input
                         type="text"
                         class="form-control form-control-lg"
-                        placeholder="Name"
+                        placeholder="Nom et prénom"
                         name="name"
                         required
                       />
@@ -169,7 +160,7 @@
                 </div>
                 <div class="form-group row">
                   <label class="col-sm-2 col-form-label"
-                    >NUMÉRO DE TÉLÉPHONE</label
+                    >Numéro de téléphone</label
                   >
                   <div class="col-md-4">
                     <div class="input-group flex-nowrap mb-3 mb-md-0">
@@ -178,8 +169,10 @@
                           ><i class="icofont-world"></i
                         ></span>
                       </div>
-                      <select class="w-100">
-                        <option value="">GB (+44)</option>
+                      <select class="w-100"> 
+                        @foreach ($countries as $country)
+                            <option value="{{ $country->iso }} (+{{ $country->phonecode }})">{{ $country->iso }} (+{{ $country->phonecode }})</option>
+                        @endforeach
                       </select>
                     </div>
                   </div>
@@ -219,7 +212,7 @@
                       <input
                         type="text"
                         class="form-control form-control-lg"
-                        placeholder="username"
+                        placeholder="PSEUDO"
                         name="username"
                         required
                       />
@@ -232,7 +225,7 @@
                   </div>
                 </div>
                 <div class="form-group row">
-                  <label class="col-sm-2 col-form-label">LEE MOT DE PASSE</label>
+                  <label class="col-sm-2 col-form-label">Mot de passe</label>
                   <div class="col-sm-10">
                     <div class="input-group">
                       <div class="input-group-prepend">
@@ -243,7 +236,7 @@
                       <input
                         type="password"
                         class="form-control form-control-lg"
-                        placeholder="Créer un mot de passe"
+                        placeholder="Créer votre mot de passe"
                         name="password"
                         required
                       />
@@ -257,7 +250,7 @@
                 </div>
                 <div class="form-group row">
                   <label class="col-sm-2 col-form-label"
-                    ><strong>CONFIRMER LEE MOT DE PASSE</strong></label
+                    >Confirmer votre mot de passe</label
                   >
                   <div class="col-sm-10">
                     <div class="input-group">
@@ -269,7 +262,7 @@
                       <input
                         type="password"
                         class="form-control form-control-lg"
-                        placeholder="Confirmer créer un mot de passe"
+                        placeholder="Confirmer votre mot de passe"
                         name="password_confirmation"
                         required
                       />
@@ -284,8 +277,7 @@
                 <div class="form-group row">
                   <label class="col-sm-2 col-form-label"></label>
                   <div class="col-sm-10">
-                    <i class="icofont-info-circle"></i> Lorem ipsum dolor sit amet
-                    consectetur adipisicing elit.
+                    <i class="icofont-info-circle"></i> j'accepte les dispositions des conditions générales et de la politique de confidentialité
                   </div>
                 </div>
                 <div class="form-group row">
@@ -299,7 +291,7 @@
                         required
                       />
                       <label class="custom-control-label" for="customCheck1"
-                        >Check this custom checkbox</label
+                        >j'accepte les dispositions des conditions générales et de la politique de confidentialité</label
                       >
                     </div>
                   </div>
@@ -307,7 +299,7 @@
                 <div class="text-center mt-5">
                   <button
                     class="btn btn-lg text-white"
-                    style="background-color: #fd6f01"
+                    style="background-color: #5fc2ba"
                     type="submit"
                   >
                     S'inscrire
