@@ -46,4 +46,13 @@ class FrontendController extends Controller
       return view('frontend.contact');
   }
    
+  /**
+   *  Mover Company Registration
+   */
+  public function moverReg()
+  {
+      return view('frontend.moverReg');
+  }
+
+// END  
 }

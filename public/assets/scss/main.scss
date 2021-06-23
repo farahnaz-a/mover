@@ -1,4 +1,7 @@
-@import './variables', './map', './transport';
+@import './variables', './map', './transport', './subscription';
 .text-navy-blue {
   color: $navyBlue;
+}
+.text-theme {
+  color: $orange;
 }

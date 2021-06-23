@@ -1,0 +1,39 @@
+.subscription {
+  padding: 3rem 0;
+  margin-bottom: 3rem;
+  .subscription-wrapper {
+    [class*='col-'],
+    footer [class*='col-'] {
+      margin-bottom: 0 !important;
+    }
+    form {
+      padding: 2rem 4rem;
+      @media screen and(max-width:575.98px) {
+        padding: 2rem 0;
+      }
+      .input-group-text {
+        background-color: transparent;
+        font-size: 1.25rem;
+      }
+      .form-control,
+      .nice-select {
+        border-left: none !important;
+      }
+      .nice-select {
+        border-color: #ced4da;
+        height: calc(1.5em + 1rem + 2px);
+        padding: 0.5rem 1rem;
+        font-size: 1.25rem;
+        line-height: 1.5;
+        border-radius: 0 0.3rem 0.3rem 0;
+      }
+      label {
+        font-size: 1rem;
+        font-weight: 500;
+        strong {
+          color: $navyBlue;
+        }
+      }
+    }
+  }
+}

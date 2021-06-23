@@ -36,7 +36,7 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/revolution/fonts/font-awesome/css/font-awesome.css') }}">
        <!-- map styles -->
        
-    <link rel="stylesheet" href="{{ asset('assets/dist/main.min.css') }}" />
+    <link rel="stylesheet" href="{{ asset('assets/assets/css/main.min.css') }}" />
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -129,7 +129,7 @@
                     <a class="nav-link" aria-haspopup="true" aria-expanded="false" href="{{ route('frontend.announcements') }}">Demande en cours</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" aria-haspopup="true" aria-expanded="false" href="register.html">Inscription déménageur</a>
+                    <a class="nav-link" aria-haspopup="true" aria-expanded="false" href="{{ route('frontend.moverReg') }}">Inscription déménageur</a>
                   </li>
               <li class="nav-item dropdown">
                 <a class="nav-link" href="{{ route('frontend.contact') }}" >Contact</a>
