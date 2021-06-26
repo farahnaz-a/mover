@@ -23,34 +23,66 @@
         <section class="subscription">
           <div class="container">
             <div class="subscription-wrapper">
-              <div class="bg-navy-blue text-white p-3">
+
+              <div class="bg-road text-white p-3" style="background-image: url('{{ asset('assets/images/road-bg.png') }}');">
                 <div class="row">
-                  <div class="col-md-4">
-                    <h1 class="text-uppercase text-theme font-italic">
+                  <div class="col-md-5 col-lg-4">
+                    <h1 class="text-uppercase text-white font-italic">
                       DEEM POUR LES DÉMÉNAGEURS
                     </h1>
                     <button
                       class="text-white btn bg-orange btn-lg rounded-0 mt-5"
                     >
-                    INSCRIVEZ-VOUS
+                      INSCRIVEZ-VOUS
                     </button>
                   </div>
-                  <div class="col-md-6">
+                  <div class="col-md-7 col-lg-8">
                     <p>
-                      Vous êtes déménageur-transporteur professionnel, DEEM est un espace d’échange qui vous facilite la mise en relation avec une nouvelle clientèlepour augmenter votre chiffre d’affaire  :
+                      Vous êtes déménageur-transporteur professionnel, DEEM est un
+                      espace d’échange qui vous facilite la mise en relation avec
+                      une nouvelle clientèlepour augmenter votre chiffre d’affaire
+                      :
                     </p>
-                    <p>
-                      Inscrivez-vous gratuitement et sans engagement
-                      Aucun frais d’abonnement <br>
-                      Accès immédiat et illimité aux offres 24h/24 et 7jours/7 <br>
-                      Accéderà des milliers d’offres et à de nouvelles opportunités <br>
-                      Augmenter votre visibilité, gagnez du temps et trouvez de nouveaux clients <br>
-                      Discuter en direct et en toute transparence avec les clients par système de messagerie <br>
-                      Aucune concurrence déloyale, tous les déménageurs-transporteurs sont agrées <br>
-                      Déposez gratuitement vos devis <br>
-                      Étendez votre notoriété, gérez votre profil, mettez en avant vos anciennes  <br>réalisationset partagez l’expérience de vos clients <br>
-                      Étendez votre zone géographique d’intervention
-                    </p>
+                    <ul>
+                      <li>
+                        Inscrivez-vous gratuitement et sans engagement
+                      </li>
+                      <li>
+                        Aucun frais d’abonnement
+                      </li>
+                      <li>
+                        Accès immédiat et illimité aux offres 24h/24 et 7jours/7
+                      </li>
+                      <li>
+                        Accéder à des milliers d’offres et à de nouvelles
+                        opportunités
+                      </li>
+                      <li>
+                        Augmenter votre visibilité, gagnez du temps et trouvez de
+                        nouveaux clients
+                      </li>
+                      <li>
+                        Discuter en direct et en toute transparence avec les
+                        clients par système de messagerie
+                      </li>
+                      <li>
+                        Aucune concurrence déloyale, tous les
+                        déménageurs-transporteurs sont agrées
+                      </li>
+                      <li>
+                        Déposez gratuitement vos devis
+                      </li>
+                      <li>
+                        Étendez votre notoriété, gérez votre profil, mettez en
+                        avant vos anciennes
+                      </li>
+                      <li>
+                        réalisationset partagez l’expérience de vos clients
+                      </li>
+                      <li>
+                        Étendez votre zone géographique d’intervention
+                      </li>
+                    </ul>
                   </div>
                 </div>
               </div>

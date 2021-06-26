@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\MoverController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,8 +19,10 @@ use App\Http\Controllers\MoverController;
 
 
 
-// AdminController 
+// Admin Route Group 
 Route::group(['prefix' => 'admin'], function () {
+
+    // AdminController 
     Route::get('dashboard', [AdminController::class, 'index'])->name('dashboard');
 });
 
@@ -31,7 +34,17 @@ Route::get('/transport-details', [FrontendController::class, 'details'])->name('
 Route::get('/contact', [FrontendController::class, 'contact'])->name('frontend.contact');
 Route::get('/inscription/demenageur', [FrontendController::class, 'moverReg'])->name('frontend.moverReg');
 
-// MoverController 
+// Mover Route Groups  
 Route::group(['prefix' => 'mover'], function () {
+
+    // MoverController
     Route::post('/register', [MoverController::class, 'register'])->name('mover.register');
+    Route::get('/dashboard', [MoverController::class, 'index'])->name('mover.dashboard');
+});
+
+// User Route Groups
+Route::group(['prefix' => 'user'], function () {
+
+    // UserController 
+    Route::get('/dashboard', [UserController::class, 'index'])->name('user.dashboard'); 
 });

@@ -1,0 +1,117 @@
+.transport-steps {
+  background: $navyBlue;
+  padding: 1rem 0;
+  @media screen and(max-width: 991px) {
+    display: none;
+  }
+  .transport-steps-wrapper {
+    display: flex;
+    & > div {
+      margin-right: 2rem;
+      display: flex;
+      align-items: center;
+      .number {
+        border: 1px solid $mutedDark;
+        border-radius: 50%;
+        height: 2rem;
+        width: 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.3rem;
+        font-weight: 700;
+        margin-right: 0.5rem;
+      }
+      p {
+        margin-bottom: 0;
+      }
+      &.active {
+        color: $white;
+        .number {
+          border-color: $white;
+        }
+      }
+    }
+  }
+}
+.transport-type {
+  padding: 1rem 0;
+  margin-bottom: 3rem;
+  background: darken($color: $white, $amount: 5);
+  .transport-type-wrapper {
+    [class*='col-'] {
+      margin-bottom: 0 !important;
+    }
+    .form-group,
+    .form-group.input-group {
+      margin-bottom: 1rem !important;
+    }
+    .transport-item {
+      display: flex;
+      text-align: center;
+      flex-direction: column;
+      padding: 1rem;
+      border: 2px solid transparent;
+      height: calc(100% - 2rem);
+      margin: 1rem;
+      border-radius: 0.5rem;
+      transition: 0.2s;
+      cursor: pointer;
+      span {
+        margin-bottom: 0.5rem;
+        &.icon {
+          font-size: 3rem;
+          color: $blueAsh;
+        }
+      }
+      &:hover {
+        border: 2px solid $blueAsh;
+        color: $blueAsh;
+        background: transparentize($color: $blueAsh, $amount: 0.95);
+      }
+    }
+  }
+}
+#vehicle {
+  ul {
+    padding: 0;
+    list-style: none;
+    margin-bottom: 0;
+    margin-top: 1rem;
+    li {
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+      &:nth-child(odd) {
+        background-color: darken($color: $white, $amount: 2);
+      }
+      &:hover {
+        color: $white;
+        background-color: $green;
+      }
+      &.active {
+        background-color: $orange;
+        color: $white;
+      }
+    }
+  }
+}
+.needs-validation {
+  .nice-select {
+    display: block;
+    width: 100%;
+    height: calc(1.5em + 0.75rem + 2px);
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    &.open {
+      border-color: #80bdff;
+    }
+  }
+}
