@@ -229,10 +229,39 @@
                 <li class=" nav-item"><a class="d-flex align-items-center" href="{{ route('dashboard') }}"><i data-feather="home"></i><span class="menu-title text-truncate" data-i18n="Dashboards">Dashboards</span></a>
                 </li>
 
-              <li class=" navigation-header"><span data-i18n="Apps &amp; Pages">Site Settings</span><i data-feather="more-horizontal"></i>
+                <li class=" navigation-header"><span data-i18n="Apps &amp; Pages">Site Settings</span><i data-feather="more-horizontal"></i>
                 </li>
+
                 <li class=" nav-item"><a class="d-flex align-items-center" href="{{ route('banners.index') }}"><i data-feather='settings'></i><span class="menu-title text-truncate" data-i18n="Banner settings">Banner Settings</span></a>
                 </li> 
+
+                <li class=" nav-item"><a class="d-flex align-items-center" href="{{ route('services.index') }}"><i data-feather='settings'></i><span class="menu-title text-truncate" data-i18n="Service settings">Service Settings</span></a>
+                </li> 
+
+                <li class=" nav-item"><a class="d-flex align-items-center" href="{{ route('works.index') }}"><i data-feather='settings'></i><span class="menu-title text-truncate" data-i18n="Work settings">Work Settings</span></a>
+                </li> 
+
+                <li class=" nav-item"><a class="d-flex align-items-center" href="{{ route('teams.index') }}"><i data-feather='settings'></i><span class="menu-title text-truncate" data-i18n="team settings">Team Settings</span></a>
+                </li> 
+
+                <li class=" nav-item"><a class="d-flex align-items-center" href="{{ route('testimonials.index') }}"><i data-feather='settings'></i><span class="menu-title text-truncate" data-i18n="testimonial settings">Testimonial Settings</span></a>
+                </li> 
+
+                <li class=" nav-item"><a class="d-flex align-items-center" href="{{ route('counters.index') }}"><i data-feather='settings'></i><span class="menu-title text-truncate" data-i18n="counter settings">Counter Settings</span></a>
+                </li> 
+
+                <li class=" nav-item"><a class="d-flex align-items-center" href="{{ route('blogs.index') }}"><i data-feather='settings'></i><span class="menu-title text-truncate" data-i18n="Blog settings">Blog Settings</span></a>
+                </li> 
+
+                <li class=" nav-item"><a class="d-flex align-items-center" href="{{ route('clients.index') }}"><i data-feather='settings'></i><span class="menu-title text-truncate" data-i18n="Client settings">Client Settings</span></a>
+                </li> 
+
+                <li class=" nav-item"><a class="d-flex align-items-center" href="{{ route('callouts.index') }}"><i data-feather='settings'></i><span class="menu-title text-truncate" data-i18n="Callout settings">Callout Settings</span></a>
+                </li> 
+
+                <li class=" nav-item"><a class="d-flex align-items-center" href="{{ route('contacts.index') }}"><i data-feather='settings'></i><span class="menu-title text-truncate" data-i18n="Contact settings">Contacts Settings</span></a>
+                </li> 
+
               {{-- <li class=" navigation-header"><span data-i18n="Apps &amp; Pages">Banner &amp; Pages</span><i data-feather="more-horizontal"></i>
                 </li>
                 <li class=" nav-item"><a class="d-flex align-items-center" href="app-email.html"><i data-feather="mail"></i><span class="menu-title text-truncate" data-i18n="Email">Email</span></a>
