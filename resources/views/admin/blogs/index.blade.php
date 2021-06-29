@@ -68,11 +68,11 @@
                                    <img src="{{ asset('uploads/blogs') }}/{{ $blog->image }}" width="200" alt="not-found">
                                 </td>
                                 <td>{{ $blog->description_one }}</td>
-                                <td>Image One</td>
+                                <td><img src="{{ asset('uploads/blogs') }}/{{ $blog->image_one }}" alt=""></td>
                                 <td>{{ $blog->description_two }}</td>
-                                <td>Image Two</td>
+                                <td><img src="{{ asset('uploads/blogs') }}/{{ $blog->image_two }}" alt=""></td>
                                 <td>{{ $blog->description_three }}</td>
-                                <td>Image three</td>
+                                <td><img src="{{ asset('uploads/blogs') }}/{{ $blog->image_three }}" alt=""></td>
                                 <td>{{ $blog->getUser->name }}</td>
                                 <td>
                                     <div class="dropdown">

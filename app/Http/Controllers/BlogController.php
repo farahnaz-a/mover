@@ -63,6 +63,51 @@ class BlogController extends Controller
 
          // Save Image name in the database
          $blogs->image = $filename;
+
+
+        //  =====Image One==== //
+        if ($request->has('image_one')) {
+
+            // Upload Image One
+         $image     = $request->file('image_one');
+         $filename  = $blogs->id. '_one.' .$image->extension();
+         $location  = public_path('uploads/blogs/');
+         $image->move($location , $filename);
+
+         // Save Image name in the database
+         $blogs->image_one = $filename;
+
+        }
+
+        //  =====Image Two==== //
+        if ($request->has('image_two')) {
+
+            // Upload Image One
+         $image     = $request->file('image_two');
+         $filename  = $blogs->id. '_two.' .$image->extension();
+         $location  = public_path('uploads/blogs/');
+         $image->move($location , $filename);
+
+         // Save Image name in the database
+         $blogs->image_two = $filename;
+
+        }
+
+        //  =====Image Three==== //
+        if ($request->has('image_three')) {
+
+            // Upload Image One
+         $image     = $request->file('image_three');
+         $filename  = $blogs->id. '_three.' .$image->extension();
+         $location  = public_path('uploads/blogs/');
+         $image->move($location , $filename);
+
+         // Save Image name in the database
+         $blogs->image_three = $filename;
+
+        }
+
+         // Save Everything in database 
          $blogs->save();
 
          //success message session
@@ -92,7 +137,7 @@ class BlogController extends Controller
         $request -> validate([
             'title'           => 'required',
             'description'     => 'required',
-            'image'           => 'required|image',
+            'image'           => 'image',
             'image_one'       => 'image',
             'image_two'       => 'image',
             'image_three'     => 'image',
@@ -115,6 +160,62 @@ class BlogController extends Controller
             // Save Image name in the database
             $blogs->image = $filename;
         }
+
+
+        //  =====Image One==== //
+        if ($request->has('image_one')) {
+
+            // Delete Existing image
+            $existing = public_path('uploads/blogs/' . $blogs->image_one);
+            unlink($existing);
+
+            // Upload Image One
+         $image     = $request->file('image_one');
+         $filename  = $blogs->id. '_one.' .$image->extension();
+         $location  = public_path('uploads/blogs/');
+         $image->move($location , $filename);
+
+         // Save Image name in the database
+         $blogs->image_one = $filename;
+
+        }
+
+        //  =====Image Two==== //
+        if ($request->has('image_two')) {
+
+            // Delete Existing image
+            $existing = public_path('uploads/blogs/' . $blogs->image_two);
+            unlink($existing);
+
+            // Upload Image One
+         $image     = $request->file('image_two');
+         $filename  = $blogs->id. '_two.' .$image->extension();
+         $location  = public_path('uploads/blogs/');
+         $image->move($location , $filename);
+
+         // Save Image name in the database
+         $blogs->image_two = $filename;
+
+        }
+
+        //  =====Image Three==== //
+        if ($request->has('image_three')) {
+
+            // Delete Existing image
+            $existing = public_path('uploads/blogs/' . $blogs->image_three);
+            unlink($existing);
+
+            // Upload Image One
+         $image     = $request->file('image_three');
+         $filename  = $blogs->id. '_three.' .$image->extension();
+         $location  = public_path('uploads/blogs/');
+         $image->move($location , $filename);
+
+         // Save Image name in the database
+         $blogs->image_three = $filename;
+
+        }
+
 
         // Update Other Fields
         $blogs->title           = $request->title;

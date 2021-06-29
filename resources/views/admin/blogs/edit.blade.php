@@ -42,7 +42,7 @@
                             <div class="col-12">
                                 <div class="form-group">
                                     <label for="first-title-vertical" style="color:#000; font-size:18px;">Title</label>
-                                    <input type="text" id="first-title-vertical" class="form-control" name="title" placeholder="Enter Title">
+                                    <input type="text" id="first-title-vertical" class="form-control" name="title" value="{{ $blog->title }}">
                                     @error('title')
                                         <small class="text-danger">{{ $message }}</small>
                                     @enderror
@@ -51,7 +51,7 @@
                             <div class="col-12">
                                 <div class="form-group">
                                     <label for="description" style="color:#000; font-size:18px;">Description</label>
-                                    <textarea type="text" id="description" class="form-control" name="description" placeholder="Enter Description"></textarea>
+                                    <textarea type="text" id="description" class="form-control" name="description">{{ $blog->description }}</textarea>
                                     @error('description')
                                         <small class="text-danger">{{ $message }}</small>
                                     @enderror
@@ -73,7 +73,7 @@
                             <div class="col-12">
                                 <div class="form-group">
                                     <label for="description_one" style="color:#000; font-size:18px;">Description one</label>
-                                    <textarea type="text" id="description_one" class="form-control" name="description_one" placeholder="Enter Description"></textarea>
+                                    <textarea type="text" id="description_one" class="form-control" name="description_one">{{ $blog->description_one}}</textarea>
                                     @error('description_one')
                                         <small class="text-danger">{{ $message }}</small>
                                     @enderror
@@ -95,7 +95,7 @@
                             <div class="col-12">
                                 <div class="form-group">
                                     <label for="description_two" style="color:#000; font-size:18px;">Description Two</label>
-                                    <textarea type="text" id="description_two" class="form-control" name="description_two" placeholder="Enter Description"></textarea>
+                                    <textarea type="text" id="description_two" class="form-control" name="description_two">{{ $blog->description_two}}</textarea>
                                     @error('description_two')
                                         <small class="text-danger">{{ $message }}</small>
                                     @enderror
@@ -117,7 +117,7 @@
                             <div class="col-12">
                                 <div class="form-group">
                                     <label for="description_three" style="color:#000; font-size:18px;">Description Three</label>
-                                    <textarea type="text" id="description_three" class="form-control" name="description_three" placeholder="Enter Description"></textarea>
+                                    <textarea type="text" id="description_three" class="form-control" name="description_three">{{ $blog->description_three}}</textarea>
                                     @error('description_three')
                                         <small class="text-danger">{{ $message }}</small>
                                     @enderror
