@@ -118,10 +118,17 @@ class CounterController extends Controller
     /**
      * Counter Delete 
      */
-    public function delete($id)
-    {
-       Counter::find($id)->delete();
-       return back()->withSuccess('Deleted Successfully');
+    public function delete($id){
+
+        $counter = Counter::find($id);
+        
+        // Delete from database
+        $existing_image = public_path('uploads/counters/'. $counter->image); 
+        unlink($existing_image); 
+
+        // Delete from database
+        $counter->delete();
+        return back()->withSuccess('Deleted Successfully');
     }
 
 }

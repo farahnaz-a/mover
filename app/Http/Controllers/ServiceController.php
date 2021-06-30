@@ -117,10 +117,18 @@ class ServiceController extends Controller
     /**
      * Service Delete 
      */
-    public function delete($id)
-    {
-       Service::find($id)->delete();
-       return back()->withSuccess('Deleted Successfully');
+    public function delete($id){
+
+        $service = Service::find($id);
+        
+        // Delete from database
+        $existing_image = public_path('uploads/services/'. $service->image); 
+        unlink($existing_image); 
+
+        // Delete from database
+        $service->delete();
+        return back()->withSuccess('Deleted Successfully');
+
     }
 
 }

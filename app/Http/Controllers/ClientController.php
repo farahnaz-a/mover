@@ -108,10 +108,18 @@ class ClientController extends Controller
     /**
      * Client Delete 
      */
-    public function delete($id)
-    {
-        Client::find($id)->delete();
-       return back()->withSuccess('Deleted Successfully');
+    public function delete($id){
+
+        $client = Client::find($id);
+        
+        // Delete from database
+        $existing_image = public_path('uploads/clients/'. $client->image); 
+        unlink($existing_image); 
+
+        // Delete from database
+        $client->delete();
+        return back()->withSuccess('Deleted Successfully');
+
     }
 
 }

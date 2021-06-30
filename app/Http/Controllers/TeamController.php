@@ -117,11 +117,18 @@ class TeamController extends Controller
     /**
      * Team Delete 
      */
-    public function delete($id)
-    {
-       Team::find($id)->delete();
-       return back()->withSuccess('Deleted Successfully');
-    }
+    public function delete($id){
 
+        $team = Team::find($id);
+        
+        // Delete from database
+        $existing_image = public_path('uploads/teams/'. $team->image); 
+        unlink($existing_image); 
+
+        // Delete from database
+        $team->delete();
+        return back()->withSuccess('Deleted Successfully');
+        
+    }
 
 }

@@ -237,9 +237,34 @@ class BlogController extends Controller
      */
     public function delete($id){
 
+        $blog = Blog::find($id);
+        
         // Delete from database
-       Blog::find($id)->delete();
-       return back()->withSuccess('Deleted Successfully');
+        $existing_image = public_path('uploads/blogs/'. $blog->image); 
+        unlink($existing_image); 
+
+        // if ($blog->has('image_one')) {
+            
+        //     $existing_image_one = public_path('uploads/blogs/'. $blog->image_one); 
+        //     unlink($existing_image_one); 
+        // }
+
+        // if ($blog->has('image_two')) {
+
+        //     $existing_image_two = public_path('uploads/blogs/'. $blog->image_two); 
+        //     unlink($existing_image_two); 
+        // }
+
+        // if ($blog->has('image_three')) {
+
+        //     $existing_image_three = public_path('uploads/blogs/'. $blog->image_three); 
+        //     unlink($existing_image_three); 
+        // } 
+
+        // Delete from database
+        $blog->delete();
+        return back()->withSuccess('Deleted Successfully');
+
     }
 
 }

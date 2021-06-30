@@ -115,9 +115,16 @@ class WorkController extends Controller
     /**
      * Work Delete 
      */
-    public function delete($id)
-    {
-        Work::find($id)->delete();
-       return back()->withSuccess('Deleted Successfully');
+    public function delete($id){
+
+        $work = Work::find($id);
+        
+        // Delete from database
+        $existing_image = public_path('uploads/works/'. $work->image); 
+        unlink($existing_image); 
+
+        // Delete from database
+        $work->delete();
+        return back()->withSuccess('Deleted Successfully');
     }
 }

@@ -117,10 +117,18 @@ class CalloutController extends Controller
     /**
      * Callout Delete 
      */
-    public function delete($id)
-    {
-       Callout::find($id)->delete();
-       return back()->withSuccess('Deleted Successfully');
+    public function delete($id){
+
+        $callout = Callout::find($id);
+        
+        // Delete from database
+        $existing_image = public_path('uploads/callouts/'. $callout->image); 
+        unlink($existing_image); 
+
+        // Delete from database
+        $callout->delete();
+        return back()->withSuccess('Deleted Successfully');
+
     }
 
 }

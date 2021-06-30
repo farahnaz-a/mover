@@ -115,10 +115,18 @@ class TestimonialController extends Controller
     /**
      * Testimonial Delete 
      */
-    public function delete($id)
-    {
-       Testimonial::find($id)->delete();
-       return back()->withSuccess('Deleted Successfully');
+    public function delete($id){
+
+        $testimonial = Testimonial::find($id);
+        
+        // Delete from database
+        $existing_image = public_path('uploads/testimonials/'. $testimonial->image); 
+        unlink($existing_image); 
+
+        // Delete from database
+        $testimonial->delete();
+        return back()->withSuccess('Deleted Successfully');
+
     }
 
 }

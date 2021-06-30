@@ -104,10 +104,18 @@ class ContactController extends Controller
     /**
      * Contact Delete 
      */
-    public function delete($id)
-    {
-       Contact::find($id)->delete();
-       return back()->withSuccess('Deleted Successfully');
+    public function delete($id){
+
+        $contact = Contact::find($id);
+        
+        // Delete from database
+        $existing_image = public_path('uploads/contacts/'. $contact->image); 
+        unlink($existing_image); 
+
+        // Delete from database
+        $contact->delete();
+        return back()->withSuccess('Deleted Successfully');
+
     }
 
 }
