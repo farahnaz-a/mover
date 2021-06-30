@@ -16,6 +16,7 @@ class BlogController extends Controller
 
         $this->middleware('auth');
         $this->middleware('verified');
+        $this->middleware('checkAdmin');
 
     }
 
@@ -53,7 +54,7 @@ class BlogController extends Controller
         ]);
 
         // Insert data in database
-        $blogs = Blog::create($request->except('_token') + ['created_at' => Carbon::now()] + ['written_by' => Auth::id()] );
+        $blogs = Blog::create($request->except('_token') + ['created_at' => Carbon::now(), 'written_by' => Auth::id()] );
 
          // Upload Image
          $image     = $request->file('image');
@@ -69,13 +70,13 @@ class BlogController extends Controller
         if ($request->has('image_one')) {
 
             // Upload Image One
-         $image     = $request->file('image_one');
-         $filename  = $blogs->id. '_one.' .$image->extension();
-         $location  = public_path('uploads/blogs/');
-         $image->move($location , $filename);
+         $image_one     = $request->file('image_one');
+         $filename_one  = $blogs->id. '_one.' .$image_one->extension();
+         $location_one  = public_path('uploads/blogs/');
+         $image_one->move($location_one , $filename_one);
 
          // Save Image name in the database
-         $blogs->image_one = $filename;
+         $blogs->image_one = $filename_one;
 
         }
 
@@ -83,13 +84,13 @@ class BlogController extends Controller
         if ($request->has('image_two')) {
 
             // Upload Image One
-         $image     = $request->file('image_two');
-         $filename  = $blogs->id. '_two.' .$image->extension();
-         $location  = public_path('uploads/blogs/');
-         $image->move($location , $filename);
+         $image_two     = $request->file('image_two');
+         $filename_two  = $blogs->id. '_two.' .$image_two->extension();
+         $location_two  = public_path('uploads/blogs/');
+         $image_two->move($location_two , $filename_two);
 
          // Save Image name in the database
-         $blogs->image_two = $filename;
+         $blogs->image_two = $filename_two;
 
         }
 
@@ -97,13 +98,13 @@ class BlogController extends Controller
         if ($request->has('image_three')) {
 
             // Upload Image One
-         $image     = $request->file('image_three');
-         $filename  = $blogs->id. '_three.' .$image->extension();
-         $location  = public_path('uploads/blogs/');
-         $image->move($location , $filename);
+         $image_three     = $request->file('image_three');
+         $filename_three  = $blogs->id. '_three.' .$image_three->extension();
+         $location_three  = public_path('uploads/blogs/');
+         $image_three->move($location_three , $filename_three);
 
          // Save Image name in the database
-         $blogs->image_three = $filename;
+         $blogs->image_three = $filename_three;
 
         }
 
@@ -120,7 +121,7 @@ class BlogController extends Controller
      */
     public function edit($id){
 
-        $blog = Blog::Find($id);
+        $blog = Blog::find($id);
 
         return view('admin.blogs.edit' , compact('blog'));
     }
@@ -170,13 +171,13 @@ class BlogController extends Controller
             unlink($existing);
 
             // Upload Image One
-         $image     = $request->file('image_one');
-         $filename  = $blogs->id. '_one.' .$image->extension();
-         $location  = public_path('uploads/blogs/');
-         $image->move($location , $filename);
+         $image_one     = $request->file('image_one');
+         $filename_one  = $blogs->id. '_one.' .$image_one->extension();
+         $location_one  = public_path('uploads/blogs/');
+         $image_one->move($location_one , $filename_one);
 
          // Save Image name in the database
-         $blogs->image_one = $filename;
+         $blogs->image_one = $filename_one;
 
         }
 
@@ -188,13 +189,13 @@ class BlogController extends Controller
             unlink($existing);
 
             // Upload Image One
-         $image     = $request->file('image_two');
-         $filename  = $blogs->id. '_two.' .$image->extension();
-         $location  = public_path('uploads/blogs/');
-         $image->move($location , $filename);
+         $image_two     = $request->file('image_two');
+         $filename_two  = $blogs->id. '_two.' .$image_two->extension();
+         $location_two  = public_path('uploads/blogs/');
+         $image_two->move($location_two , $filename_two);
 
          // Save Image name in the database
-         $blogs->image_two = $filename;
+         $blogs->image_two = $filename_two;
 
         }
 
@@ -206,22 +207,22 @@ class BlogController extends Controller
             unlink($existing);
 
             // Upload Image One
-         $image     = $request->file('image_three');
-         $filename  = $blogs->id. '_three.' .$image->extension();
-         $location  = public_path('uploads/blogs/');
-         $image->move($location , $filename);
+         $image_three     = $request->file('image_three');
+         $filename_three  = $blogs->id. '_three.' .$image_three->extension();
+         $location_three  = public_path('uploads/blogs/');
+         $image_three->move($location_three , $filename_three);
 
          // Save Image name in the database
-         $blogs->image_three = $filename;
+         $blogs->image_three = $filename_three;
 
         }
 
 
         // Update Other Fields
-        $blogs->title           = $request->title;
-        $blogs->description     = $request->description;
-        $blogs->description_one = $request->description_one;
-        $blogs->description_two = $request->description_two;
+        $blogs->title             = $request->title;
+        $blogs->description       = $request->description;
+        $blogs->description_one   = $request->description_one;
+        $blogs->description_two   = $request->description_two;
         $blogs->description_three = $request->description_three;
 
         // Save Everything In Database
@@ -243,23 +244,23 @@ class BlogController extends Controller
         $existing_image = public_path('uploads/blogs/'. $blog->image); 
         unlink($existing_image); 
 
-        // if ($blog->has('image_one')) {
+        if ($blog->image_one) {
             
-        //     $existing_image_one = public_path('uploads/blogs/'. $blog->image_one); 
-        //     unlink($existing_image_one); 
-        // }
+            $existing_image_one = public_path('uploads/blogs/'. $blog->image_one); 
+            unlink($existing_image_one); 
+        }
 
-        // if ($blog->has('image_two')) {
+        if ($blog->image_two) {
 
-        //     $existing_image_two = public_path('uploads/blogs/'. $blog->image_two); 
-        //     unlink($existing_image_two); 
-        // }
+            $existing_image_two = public_path('uploads/blogs/'. $blog->image_two); 
+            unlink($existing_image_two); 
+        }
 
-        // if ($blog->has('image_three')) {
+        if ($blog->image_three) {
 
-        //     $existing_image_three = public_path('uploads/blogs/'. $blog->image_three); 
-        //     unlink($existing_image_three); 
-        // } 
+            $existing_image_three = public_path('uploads/blogs/'. $blog->image_three); 
+            unlink($existing_image_three); 
+        } 
 
         // Delete from database
         $blog->delete();

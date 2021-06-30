@@ -16,6 +16,8 @@ class ContactController extends Controller
 
         $this->middleware('auth');
         $this->middleware('verified');
+        $this->middleware('checkAdmin');
+
 
     }
 
@@ -108,9 +110,9 @@ class ContactController extends Controller
 
         $contact = Contact::find($id);
         
-        // Delete from database
-        $existing_image = public_path('uploads/contacts/'. $contact->image); 
-        unlink($existing_image); 
+        // // Delete from database
+        // $existing_image = public_path('uploads/contacts/'. $contact->image); 
+        // unlink($existing_image); 
 
         // Delete from database
         $contact->delete();

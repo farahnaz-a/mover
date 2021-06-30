@@ -110,9 +110,6 @@ Route::group(['prefix' => 'admin'], function () {
     Route::post('contacts/update', [ContactController::class, 'update'])->name('contacts.update');
     Route::get('contacts/delete/{id}', [ContactController::class, 'delete'])->name('contacts.delete');
 
-    // Route::get('/services/update', function () {
-    //     return 'Hello';
-    // })->name('services.update');
     
 });
 

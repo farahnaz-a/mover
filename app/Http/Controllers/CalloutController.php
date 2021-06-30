@@ -17,6 +17,7 @@ class CalloutController extends Controller
 
         $this->middleware('auth');
         $this->middleware('verified');
+        $this->middleware('checkAdmin');
 
     }
 
