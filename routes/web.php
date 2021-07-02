@@ -15,6 +15,7 @@ use App\Http\Controllers\BlogController;
 use App\Http\Controllers\ClientController;
 use App\Http\Controllers\CalloutController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\RegistrationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -109,6 +110,9 @@ Route::group(['prefix' => 'admin'], function () {
     Route::get('contacts/{id}/edit', [ContactController::class, 'edit'])->name('contacts.edit');
     Route::post('contacts/update', [ContactController::class, 'update'])->name('contacts.update');
     Route::get('contacts/delete/{id}', [ContactController::class, 'delete'])->name('contacts.delete');
+
+    // RegistationController
+    Route::resource('registrations', RegistrationController::class);
 
     
 });
