@@ -1,3 +1,4 @@
+
 @extends('layouts.frontend')
 
 @section('title')
@@ -269,46 +270,30 @@
           </div>
           <!-- Heading Main -->
 
-          <div class="col-md-4 wow fadeInUp" data-wow-duration="0" data-wow-delay="0.1s">            
+           @foreach ($services as $key => $service)
+           <div class="col-md-4 wow fadeInUp" data-wow-duration="0" data-wow-delay="
+            @if($key == 0)
+            0.1s 
+            @else 
+            0.{{ $key * 2 }}s
+            @endif
+           ">            
             <!-- Icon Box 2 -->
-            <a href="service-details.html">
+            <a href="javascript:void();">
               <div class="icon-box-4 h-100">
-                <i class="icofont-airplane-alt"></i>
-                <h4 class="h4-md mb-3">Packaging and Storage</h4>
-                <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis. Vivamus ac ultrices diam, vitae accumsan tellus.</p>
+                {{-- <i class="icofont-airplane-alt"></i> --}}
+                <img src="{{ asset('uploads/services') }}/{{ $service->image }}" alt="">
+                <h4 class="h4-md mb-3">{{ $service->title }}</h4>
+                <p>{{ $service->description }}</p>
               </div> 
             </a>
             <!-- Icon Box -->
           </div>
+           @endforeach
 
-
-          <div class="col-md-4 wow fadeInUp" data-wow-duration="0" data-wow-delay="0.4s">            
-            <!-- Icon Box 2 -->
-            <a href="service-details.html">
-              <div class="icon-box-4 h-100">
-                <i class="icofont-fire-truck"></i>
-                <h4 class="h4-md mb-3">Truck Freight</h4>
-                <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis. Vivamus ac ultrices diam, vitae accumsan tellus.</p>
-              </div> 
-            </a>
-            <!-- Icon Box -->
-          </div>
-
-
-          <div class="col-md-4 wow fadeInUp" data-wow-duration="0" data-wow-delay="0.6s">            
-            <!-- Icon Box 2 -->
-            <a href="service-details.html">
-              <div class="icon-box-4 h-100">
-                <i class="icofont-ship"></i>
-                <h4 class="h4-md mb-3">Ocean Freight</h4>
-                <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis. Vivamus ac ultrices diam, vitae accumsan tellus.</p>
-              </div> 
-            </a>
-            <!-- Icon Box -->
-          </div>
 
           <div class="text-center btn-center mx-auto">
-            <a href="transport.html" class="btn-theme bg-navy-blue">Demande de devis<i class="icofont-rounded-right"></i></a>
+            <a href="{{ route('frontend.requestQuote') }}" class="btn-theme bg-navy-blue">Demande de devis<i class="icofont-rounded-right"></i></a>
           </div>
 
         </div>
@@ -334,79 +319,38 @@
           <!-- Heading Main -->
           <div class="col-md-8 ml-auto why-choose wow fadeInRight" data-wow-duration="0" data-wow-delay="0.6s">
               <div class="row">
-                <!-- Icon Box 2 -->
+                
+                @foreach ($works as $key => $work)
+                @if($key == 2)
+                    <!-- Spacer For Medium -->
+                    <div class="w-100 spacer-60 d-none d-md-none d-lg-block d-sm-none"></div>
+                    <!-- Spacer For Medium -->
+                @endif
+                     <!-- Icon Box 2 -->
                 <div class="col-12 col-lg-6">              
                   <div class="icon-box-2">
                     <div class="media">
                         <div class="service-icon">
-                            <i class="icofont-id"></i>
+                            {{-- <i class="icofont-id"></i> --}}
+                            <img src="{{ asset('uploads/works') }}/{{ $work->image }}" alt="">
                         </div>
                         <div class="service-inner-content media-body">
-                            <h4 class="h4-md">Trusted Franchise</h4>
-                            <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis. Vivamus ac ultrices diam, vitae accumsan tellus.</p>
+                            <h4 class="h4-md">{{ $work->title }}</h4>
+                            <p>{{ $work->description }}</p>
                         </div>
                     </div>
                   </div>              
                 </div>
                 <!-- Icon Box -->
+                @endforeach
 
-                <!-- Icon Box 2 -->
-                <div class="col-12 col-lg-6">              
-                  <div class="icon-box-2">
-                    <div class="media">
-                        <div class="service-icon">
-                            <i class="icofont-live-support"></i>
-                        </div>
-                        <div class="service-inner-content media-body">
-                            <h4 class="h4-md">Customer Support</h4>
-                            <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis. Vivamus ac ultrices diam, vitae accumsan tellus.</p>
-                        </div>
-                    </div>
-                  </div>              
-                </div>
-                <!-- Icon Box -->
-
-                <!-- Spacer For Medium -->
-                <div class="w-100 spacer-60 d-none d-md-none d-lg-block d-sm-none"></div>
-                <!-- Spacer For Medium -->
-
-                <!-- Icon Box 2 -->
-                <div class="col-12 col-lg-6">              
-                  <div class="icon-box-2">
-                    <div class="media">
-                        <div class="service-icon">
-                            <i class="icofont-history"></i>
-                        </div>
-                        <div class="service-inner-content media-body">
-                            <h4 class="h4-md">Reliability & Punctuality</h4>
-                            <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis. Vivamus ac ultrices diam, vitae accumsan tellus.</p>
-                        </div>
-                    </div>
-                  </div>              
-                </div>
-                <!-- Icon Box -->
-
-                <!-- Icon Box 2 -->
-                <div class="col-12 col-lg-6">              
-                  <div class="icon-box-2">
-                    <div class="media">
-                        <div class="service-icon">
-                            <i class="icofont-briefcase-1"></i>
-                        </div>
-                        <div class="service-inner-content media-body">
-                            <h4 class="h4-md">Consulting Services</h4>
-                            <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis. Vivamus ac ultrices diam, vitae accumsan tellus.</p>
-                        </div>
-                    </div>
-                  </div>              
-                </div>
-                <!-- Icon Box -->
+            
               </div>
 
               <div class="col-sm-12 text-center">
                 <div class="spacer-50">
                 </div>
-                <a href="transport.html" class="btn-theme bg-navy-blue">Demande de devis <i class="icofont-rounded-right"></i></a>
+                <a href="{{ route('frontend.requestQuote') }}" class="btn-theme bg-navy-blue">Demande de devis <i class="icofont-rounded-right"></i></a>
                 <div class="spacer-30">
                 </div>
               </div>
@@ -417,32 +361,6 @@
     </section>
     <!-- What Makes Us Special End -->
 
-    {{-- <!-- Tracking Your Freight Start -->
-    <section class="wide-tb-100 bg-fixed pos-rel tracking parallax">
-      <div class="bg-overlay black opacity-60"></div>
-      <div class="container">
-        <div class="row">              
-            <div class="col-md-6 offset-md-3">
-
-              <!-- Heading Main -->
-              <h1 class="heading-main parallax-head wow fadeInDown" data-wow-duration="0" data-wow-delay="0">
-                <span>get updates</span>
-                Tracking Your Freight
-              </h1>
-              <!-- Heading Main -->
-              
-              <!-- Tracking Form -->
-              <form class="form-inline wow fadeInUp" data-wow-duration="0" data-wow-delay="0.2">
-                <input type="text" class="form-control mb-2 mr-sm-2 col" placeholder="Enter order number">
-                <button type="submit" class="btn btn-theme bg-white mb-2 ml-3 bordered">Check Now <i class="icofont-rounded-right"></i></button>
-              </form>
-              <!-- Tracking Form -->
-
-            </div>              
-        </div>
-      </div>        
-    </section> --}}
-    <!-- Tracking Your Freight End -->
 
     <!-- Our Team Start -->
     <section class="wide-tb-100 pb-100 team-section-bottom pos-rel">
@@ -450,7 +368,7 @@
         <!-- Heading Main -->
         <div class="col-sm-12">
           <h1 class="heading-main">
-            <span>Face Behind Logzee</span>
+            <span>Face Behind Deem</span>
             Our Team
           </h1>
         </div>
@@ -458,34 +376,23 @@
 
         <div class="row pb-4">
           <!-- Team Column One -->
-          <div class="col-sm-12 col-md-4 wow fadeInUp" data-wow-duration="0" data-wow-delay="0s">
+           @foreach ($teams as $key => $team)
+           <div class="col-sm-12 col-md-4 wow fadeInUp" data-wow-duration="0" data-wow-delay="
+            @if($key == 0)
+            0s
+            @else 
+            0.{{ $key * 4 }}s
+            @endif
+           ">
             <div class="team-section-two">
-              <img src="assets/images/team/team-1.jpg" alt="" class="rounded">
-              <h4 class="h4-md txt-orange">John Morise</h4>
-              <h5 class="h5-md txt-ligt-gray">Founder</h5>
+              <img src="{{ asset('uploads/teams') }}/{{ $team->image }}" alt="" class="rounded">
+              <h4 class="h4-md txt-orange">{{ $team->name }}</h4>
+              <h5 class="h5-md txt-ligt-gray">{{ $team->title }}</h5>
             </div>            
           </div>
+           @endforeach
           <!-- Team Column One -->
 
-          <!-- Team Column One -->
-          <div class="col-sm-12 col-md-4 wow fadeInUp" data-wow-duration="0" data-wow-delay="0.1s">
-            <div class="team-section-two">
-              <img src="assets/images/team/team-2.jpg" alt="" class="rounded">
-              <h4 class="h4-md txt-orange">Kevin Mash</h4>
-              <h5 class="h5-md txt-ligt-gray">Head Operational</h5>
-            </div>            
-          </div>
-          <!-- Team Column One -->
-
-          <!-- Team Column One -->
-          <div class="col-sm-12 col-md-4 wow fadeInUp" data-wow-duration="0" data-wow-delay="0.2s">
-            <div class="team-section-two">
-              <img src="assets/images/team/team-3.jpg" alt="" class="rounded">
-              <h4 class="h4-md txt-orange">Mike Douglos</h4>
-              <h5 class="h5-md txt-ligt-gray">Team Lead Support</h5>
-            </div>            
-          </div>
-          <!-- Team Column One -->
         </div>
       </div>
     </section>
@@ -574,46 +481,21 @@
                 <div class="owl-carousel owl-theme" id="client-testimonials-bg">
 
                   <!-- Client Testimonials Slider Item -->
-                  <div class="item">
+                   @foreach ($testimonials as $testimonial)
+                   <div class="item">
                     <div class="client-testimonial">
                       <div class="client-testimonial-icon rounded-circle bg-navy-blue mx-auto mb-4">
-                          <img src="assets/images/team_1.jpg" alt="">
+                          <img src="{{ asset('uploads/testimonials') }}/{{ $testimonial->image }}" alt="">
                       </div>
                       <div class="client-inner-content media-body">
-                          <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Aliquam gravida, urna quis ornare imperdiet, </p>
-                          <footer class="blockquote-footer"><cite title="Source Title">John Gerry  Design Hunt</cite></footer>
+                          <p>{{ $testimonial->description }}</p>
+                          <footer class="blockquote-footer"><cite title="Source Title">{{ $testimonial->name }}</cite></footer>
                       </div>
                     </div>
                   </div>
+                   @endforeach
                   <!-- Client Testimonials Slider Item -->
 
-                  <!-- Client Testimonials Slider Item -->
-                  <div class="item">
-                    <div class="client-testimonial">
-                      <div class="client-testimonial-icon rounded-circle bg-navy-blue mx-auto mb-4">
-                          <img src="assets/images/team_2.jpg" alt="">
-                      </div>
-                      <div class="client-inner-content media-body">
-                          <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Aliquam gravida, urna quis ornare imperdiet, </p>
-                          <footer class="blockquote-footer"><cite title="Source Title">John Gerry  Design Hunt</cite></footer>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- Client Testimonials Slider Item -->
-
-                  <!-- Client Testimonials Slider Item -->
-                  <div class="item">
-                    <div class="client-testimonial">
-                      <div class="client-testimonial-icon rounded-circle bg-navy-blue mx-auto mb-4">
-                          <img src="assets/images/team_3.jpg" alt="">
-                      </div>
-                      <div class="client-inner-content media-body">
-                          <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Aliquam gravida, urna quis ornare imperdiet, </p>
-                          <footer class="blockquote-footer"><cite title="Source Title">John Gerry  Design Hunt</cite></footer>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- Client Testimonials Slider Item -->
 
                 </div>
               </div>
@@ -631,7 +513,7 @@
             <div class="col col-12 col-lg-3 col-sm-6 wow pulse" data-wow-duration="0" data-wow-delay="0s">
               <div class="counter-style-1 light-bg">
                 <p class="mb-1"><i class="icofont-google-map"></i></p>
-                <span class="counter">15</span>
+                <span class="counter">{{ $counter->locations }}</span>
                 <div>
                   Our Locations
                 </div>
@@ -643,7 +525,7 @@
             <div class="col col-12 col-lg-3 col-sm-6 wow pulse" data-wow-duration="0" data-wow-delay="0.3s">
               <div class="counter-style-1 light-bg">
                 <p class="mb-1"><i class="icofont-globe"></i></p>                
-                <span class="counter">110</span>
+                <span class="counter">{{ $counter->clients }}</span>
                   <span>+</span>
                 <div>
                   Clients Worldwide
@@ -660,7 +542,7 @@
             <div class="col col-12 col-lg-3 col-sm-6 wow pulse" data-wow-duration="0" data-wow-delay="0.6s">
               <div class="counter-style-1 light-bg">
                 <p class="mb-1"><i class="icofont-vehicle-delivery-van"></i></p>
-                <span class="counter">240</span>
+                <span class="counter">{{ $counter->vehicles }}</span>
                 <span>+</span>
                 <div>
                   Owned Vehicles
@@ -673,7 +555,7 @@
             <div class="col col-12 col-lg-3 col-sm-6 wow pulse" data-wow-duration="0" data-wow-delay="0.9s">
               <div class="counter-style-1 light-bg">
                 <p class="mb-1"><i class="icofont-umbrella-alt"></i></p>
-                <span class="counter">2340</span>
+                <span class="counter">{{ $counter->tons }}</span>
                 <div>
                   Tonnes Transported
                 </div>
@@ -699,36 +581,22 @@
             <!-- Heading Main -->
 
             <!-- Blog Items -->
-            <div class="col-sm-12 col-md-4 wow fadeInLeft" data-wow-duration="0" data-wow-delay="0.1s">
+              @foreach ($blogs as $key => $blog)
+              <div class="col-sm-12 col-md-4 wow fadeInLeft" data-wow-duration="0" data-wow-delay="
+                @if($key == 0)
+                0.1s
+                @else 
+                0.{{ $key * 2 }}}s
+                @endif
+              ">
                 <div class="blog-warp">
-                  <img src="assets/images/blog_img_1.jpg" alt="" class="rounded">
-                  <div class="meta-box"><a href="#">Business</a> <span>/</span>    September 28, 2018</div>
-                  <h4 class="h4-md mb-3"><a href="#">Freight Payment and Auditing Services</a></h4>
-                  <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantiumg</p>
+                  <img src="{{ asset('uploads/blogs') }}/{{ $blog->image }}" alt="" class="rounded">
+                  <div class="meta-box"><a href="#">{{ $blog->getUser->name }}</a> <span>/</span>   {{ $blog->created_at->format('M d, Y') }}</div>
+                  <h4 class="h4-md mb-3"><a href="#">{{ $blog->title }}</a></h4>
+                  <p>{{ Str::limit($blog->description, 100) }}</p>
                 </div>
             </div>
-            <!-- Blog Items -->
-
-            <!-- Blog Items -->
-            <div class="col-sm-12 col-md-4 wow fadeInUp" data-wow-duration="0" data-wow-delay="0.1s">
-                <div class="blog-warp">
-                  <img src="assets/images/blog_img_2.jpg" alt="" class="rounded">
-                  <div class="meta-box"><a href="#">Business</a> <span>/</span>    September 28, 2018</div>
-                  <h4 class="h4-md mb-3"><a href="#">Freight Payment and Auditing Services</a></h4>
-                  <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantiumg</p>
-                </div>
-            </div>
-            <!-- Blog Items -->
-
-            <!-- Blog Items -->
-            <div class="col-sm-12 col-md-4 wow fadeInRight" data-wow-duration="0" data-wow-delay="0.1s">
-                <div class="blog-warp">
-                  <img src="assets/images/blog_img_3.jpg" alt="" class="rounded">
-                  <div class="meta-box"><a href="#">Business</a> <span>/</span>    September 28, 2018</div>
-                  <h4 class="h4-md mb-3"><a href="#">Freight Payment and Auditing Services</a></h4>
-                  <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantiumg</p>
-                </div>
-            </div>
+              @endforeach
             <!-- Blog Items -->
 
 
@@ -738,20 +606,20 @@
     <!-- Recent Posts End -->
 
     <!-- Callout Start -->
-    <section class="wide-tb-80 bg-scroll bg-img-6 pos-rel callout-style-1">
+    <section class="wide-tb-80 bg-scroll bg-img-6 pos-rel callout-style-1" style="background-image: url({{ asset('uploads/callouts') }}/{{ $callout->image }});">
       <div class="bg-overlay blue opacity-60"></div>
       <div class="container">
         <div class="row align-items-center">
             <div class="col-lg-4 col-md-12 mb-0 wow slideInUp" data-wow-duration="0" data-wow-delay="0.1s">
-              <h4 class="h4-xl">Interested in working with Logzee?</h4>
+              <h4 class="h4-xl">{{ $callout->title }}</h4>
             </div>
             <div class="col wow slideInUp" data-wow-duration="0" data-wow-delay="0.2s">
               <div class="center-text">
-                We don’t just manage suppliers, we micro-manage them. We have a consultative, personalized approach
+                {{ $callout->description }}
               </div>
             </div>
             <div class="col-sm-auto wow slideInUp" data-wow-duration="0" data-wow-delay="0.3s">
-              <a href="#" class="btn btn-theme bg-white bordered">Get In Touch <i class="icofont-rounded-right"></i></a>
+              <a href="{{ route('frontend.contact') }}" class="btn btn-theme bg-white bordered">Get In Touch <i class="icofont-rounded-right"></i></a>
             </div>
         </div>
       </div>
@@ -768,39 +636,11 @@
               <div class="owl-carousel owl-theme" id="home-clients">
 
                 <!-- Client Logo -->
-                <div class="item bg-light-theme">
-                  <img src="assets/images/clients/client1.png" alt="">
+                 @foreach ($clients as $client)
+                 <div class="item bg-light-theme">
+                  <img src="{{ asset('uploads/clients') }}/{{ $client->image }}" alt="">
                 </div>
-                <!-- Client Logo -->
-
-                <!-- Client Logo -->
-                <div class="item bg-light-theme">
-                  <img src="assets/images/clients/client2.png" alt="">
-                </div>
-                <!-- Client Logo -->
-
-                <!-- Client Logo -->
-                <div class="item bg-light-theme">
-                  <img src="assets/images/clients/client3.png" alt="">
-                </div>
-                <!-- Client Logo -->
-
-                <!-- Client Logo -->
-                <div class="item bg-light-theme">
-                  <img src="assets/images/clients/client4.png" alt="">
-                </div>
-                <!-- Client Logo -->
-
-                <!-- Client Logo -->
-                <div class="item bg-light-theme">
-                  <img src="assets/images/clients/client5.png" alt="">
-                </div>
-                <!-- Client Logo -->
-
-                <!-- Client Logo -->
-                <div class="item bg-light-theme">
-                  <img src="assets/images/clients/client6.png" alt="">
-                </div>
+                 @endforeach
                 <!-- Client Logo -->
 
               </div>
@@ -818,14 +658,14 @@
             <h4 class="h4-md mb-4 txt-orange">Find us at the office</h4>
             <div class="contact-details standard row pos-rel d-inline-flex">
               <div class="col">
-                <h4>Germany</h4>
-                <p><i class="icofont-phone"></i> +1 (408) 786 - 5117</p>
-                <div class="text-nowrap"><i class="icofont-email"></i> <a href="#">germany@logzee.com</a></div>
+                <h4>France</h4>
+                <p><i class="icofont-phone"></i> {{ $contact->g_number }}</p>
+                <div class="text-nowrap"><i class="icofont-email"></i> <a href="mailto:{{ $contact->g_mail }}">{{ $contact->g_mail }}</a></div>
               </div>
               <div class="col">
-                <h4>Spain</h4>
-                <p><i class="icofont-phone"></i> +1 (408) 786 - 5117</p>
-                <div class="text-nowrap"><i class="icofont-email"></i> <a href="#">spain@logzee.com</a></div>
+                <h4>Belgium</h4>
+                <p><i class="icofont-phone"></i> {{ $contact->s_number }}</p>
+                <div class="text-nowrap"><i class="icofont-email"></i> <a href="mailto:{{ $contact->s_mail }}">{{ $contact->s_mail }}</a></div>
               </div>
             </div>
           </div>

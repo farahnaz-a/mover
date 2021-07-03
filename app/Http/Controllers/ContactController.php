@@ -27,7 +27,7 @@ class ContactController extends Controller
     public function index(){
 
         return view('admin.contacts.index' , [
-            'contacts' => Contact::latest()->get(),
+            'data' => Contact::first(),
         ]);
     }
  
@@ -50,7 +50,8 @@ class ContactController extends Controller
         ]);
 
         // Insert data in database
-        $contacts = Contact::create($request->except('_token') + ['created_at' => Carbon::now() ]);
+        $contact = Contact::find($request->id);
+        $contact->update($request->except('_token') + ['created_at' => Carbon::now() ]);
 
          //success message session
          return back()->withSuccess('Contact Added');
@@ -63,9 +64,9 @@ class ContactController extends Controller
      */
     public function edit($id){
 
-        $contact = Contact::Find($id);
+        // $contact = Contact::Find($id);
 
-        return view('admin.contacts.edit' , compact('contact'));
+        // return view('admin.contacts.edit' , compact('contact'));
     }
 
 
@@ -75,31 +76,31 @@ class ContactController extends Controller
     public function update(Request $request){
 
         // Update Validation
-        $request -> validate([
-            'g_number'  => 'regex:/^([0-9\s\-\+\(\)]*)$/',
-            'g_mail'    => 'email',
-            's_number'  => 'regex:/^([0-9\s\-\+\(\)]*)$/',
-            's_mail'  => 'email',
-        ],[
-            'g_number.regex' => 'Invalid Number',
-            'g_mail.email'   => 'Invalid Email',
-            's_number.regex' => 'Invalid Number',
-            's_mail.email'   => 'Invalid Email',
-        ]);
+        // $request -> validate([
+        //     'g_number'  => 'regex:/^([0-9\s\-\+\(\)]*)$/',
+        //     'g_mail'    => 'email',
+        //     's_number'  => 'regex:/^([0-9\s\-\+\(\)]*)$/',
+        //     's_mail'  => 'email',
+        // ],[
+        //     'g_number.regex' => 'Invalid Number',
+        //     'g_mail.email'   => 'Invalid Email',
+        //     's_number.regex' => 'Invalid Number',
+        //     's_mail.email'   => 'Invalid Email',
+        // ]);
 
-        $contacts = Contact::findOrFail($request->id);
+        // $contacts = Contact::findOrFail($request->id);
 
-        // Update Fields
-            // germany
-        $contacts->g_mail   = $request->g_mail;
-        $contacts->g_number = $request->g_number;
-            // spain
-        $contacts->s_mail   = $request->s_mail;
-        $contacts->s_number = $request->s_number;
+        // // Update Fields
+        //     // germany
+        // $contacts->g_mail   = $request->g_mail;
+        // $contacts->g_number = $request->g_number;
+        //     // spain
+        // $contacts->s_mail   = $request->s_mail;
+        // $contacts->s_number = $request->s_number;
 
-        // Save Everything In Database
-        $contacts->save();
-        return back()->withSuccess('Updated Succesfully');
+        // // Save Everything In Database
+        // $contacts->save();
+        // return back()->withSuccess('Updated Succesfully');
 
     }
 
@@ -108,15 +109,15 @@ class ContactController extends Controller
      */
     public function delete($id){
 
-        $contact = Contact::find($id);
+        // $contact = Contact::find($id);
         
         // // Delete from database
         // $existing_image = public_path('uploads/contacts/'. $contact->image); 
         // unlink($existing_image); 
 
         // Delete from database
-        $contact->delete();
-        return back()->withSuccess('Deleted Successfully');
+        // $contact->delete();
+        // return back()->withSuccess('Deleted Successfully');
 
     }
 

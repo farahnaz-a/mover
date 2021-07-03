@@ -3,6 +3,10 @@
 @section('title')
     {{ config('app.name') }} - Callouts Settings
 @endsection
+
+@section('callouts')
+    active
+@endsection
            
 @section('breadcrumb')
 <div class="content-header-left col-md-9 col-12 mb-2">
@@ -27,7 +31,7 @@
 @section('content')
 <section id="basic-vertical-layouts">
     <div class="row justify-content-center">
-        <div class="col-lg-6 col-md-11 col-12">
+        <div class="col-lg-8 m-auto col-md-11 col-12">
             <div class="card">
                 <div class="card-header">
                     <h4 class="card-title">Add Callouts</h4>
@@ -39,7 +43,7 @@
                             <div class="col-12">
                                 <div class="form-group">
                                     <label for="first-name-vertical" style="color:#000; font-size:18px;">Title</label>
-                                    <input type="text" id="first-name-vertical" class="form-control" name="title" placeholder="Enter Title">
+                                    <input type="text" id="first-name-vertical" class="form-control" name="title" value="{{ $data->title }}">
                                     @error('title')
                                         <small class="text-danger">{{ $message }}</small>
                                     @enderror
@@ -48,7 +52,7 @@
                             <div class="col-12">
                                 <div class="form-group">
                                     <label for="email-id-vertical" style="color:#000; font-size:18px;">Description</label>
-                                    <textarea type="text" id="email-id-vertical" class="form-control" name="description" placeholder="Enter Description"></textarea>
+                                    <textarea type="text" id="email-id-vertical" class="form-control" name="description" >{{ $data->description }}</textarea>
                                     @error('description')
                                         <small class="text-danger">{{ $message }}</small>
                                     @enderror
@@ -62,17 +66,21 @@
                                         <small class="text-danger">{{ $message }}</small>
                                     @enderror
                                 </div>
+                                <div class="py-3">
+                                    <p>Existing Image : </p>
+                                    <img src="{{ asset('uploads/callouts') }}/{{ $data->image }}" alt="">
+                                </div>
                             </div>
                             <div class="col-12">
+                                <input type="hidden" name="id" id="" value="{{ $data->id }}">
                                 <button type="submit" class="btn btn-primary mr-1 waves-effect waves-float waves-light">Submit</button>
-                                <button type="reset" class="btn btn-outline-secondary waves-effect">Reset</button>
                             </div>
                         </div>
                     </form>
                 </div>
             </div>
         </div>
-        <div class="col-lg-6 col-md-11 col-12">
+        {{-- <div class="col-lg-6 col-md-11 col-12">
             <div class="card">
                 <div class="card-header">
                     <h4 class="card-title">Callouts</h4>
@@ -133,7 +141,7 @@
                     </table>
                 </div>
             </div>
-        </div>
+        </div> --}}
     </div>
 </section>
 @endsection

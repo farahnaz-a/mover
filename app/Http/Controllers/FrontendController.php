@@ -2,7 +2,19 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Blog;
+use App\Models\Team;
+use App\Models\Work;
+use App\Models\Banner;
+use App\Models\Bullet;
+use App\Models\Client;
+use App\Models\Callout;
+use App\Models\Contact;
+use App\Models\Counter;
 use App\Models\Country;
+use App\Models\Service;
+use App\Models\Testimonial;
+use App\Models\Registration;
 use Illuminate\Http\Request;
 
 class FrontendController extends Controller
@@ -12,7 +24,18 @@ class FrontendController extends Controller
     */
    public function index()
    {
-     return view('frontend.index');
+     return view('frontend.index', [
+         'banners'      => Banner::latest()->get(),
+         'services'     => Service::all(),
+         'works'        => Work::all(),
+         'teams'        => Team::all(),
+         'testimonials' => Testimonial::latest()->get(),
+         'counter'      => Counter::first(),
+         'blogs'        => Blog::latest()->get(),
+         'clients'      => Client::latest()->get(),
+         'callout'      => Callout::first(),
+         'contact'      => Contact::first(),
+     ]); 
    }
 
    /**
@@ -54,6 +77,8 @@ class FrontendController extends Controller
   {
       return view('frontend.moverReg', [
           'countries' => Country::orderBy('name', 'asc')->get(),
+          'registration'=> Registration::first(),
+          'bullets'      => Bullet::all(),
       ]);
   }
 

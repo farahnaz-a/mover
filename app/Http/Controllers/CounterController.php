@@ -28,7 +28,7 @@ class CounterController extends Controller
     public function index(){
 
         return view('admin.counters.index' , [
-            'counters' => Counter::latest()->get(),
+            'data' => Counter::first(),
         ]);
     }
  
@@ -39,23 +39,25 @@ class CounterController extends Controller
 
         //form validation
         $request -> validate([
-            'count'   => 'required',
-            'title'   => 'required',
-            'image'   => 'required|image',
+            'locations' => 'required',
+            'vehicles'  => 'required',
+            'clients'   => 'required',
+            'tons'      => 'required',
         ]);
 
         // Insert data in database
-        $counters = Counter::create($request->except('_token') + ['created_at' => Carbon::now() ]);
+        $counter = Counter::find($request->id);
+        $counter->update($request->except('_token') + ['created_at' => Carbon::now() ]);
 
          // Upload Image
-         $image     = $request->file('image');
-         $filename  = $counters->id. '.' .$image->extension();
-         $location  = public_path('uploads/counters/');
-         $image->move($location , $filename);
+        //  $image     = $request->file('image');
+        //  $filename  = $counters->id. '.' .$image->extension();
+        //  $location  = public_path('uploads/counters/');
+        //  $image->move($location , $filename);
 
-         // Save Image name in the database
-         $counters->image = $filename;
-         $counters->save();
+        //  // Save Image name in the database
+        //  $counters->image = $filename;
+        //  $counters->save();
 
          //success message session
          return back()->withSuccess('Counter Added');
@@ -79,40 +81,40 @@ class CounterController extends Controller
      */
     public function update(Request $request){
 
-        $counters = Counter::findOrFail($request->id);
+        // $counters = Counter::findOrFail($request->id);
 
-        // Update Validation
-        $request->validate([
-            'count'   => 'required',
-            'title'   => 'required',
-            'image'   => 'image',
-        ]);
+        // // Update Validation
+        // $request->validate([
+        //     'count'   => 'required',
+        //     'title'   => 'required',
+        //     'image'   => 'image',
+        // ]);
 
-        // check if request has image
-        if($request->has('image')){
+        // // check if request has image
+        // if($request->has('image')){
 
-            // Delete Existing image
-            $existing = public_path('uploads/counters/' . $counters->image);
-            unlink($existing);
+        //     // Delete Existing image
+        //     $existing = public_path('uploads/counters/' . $counters->image);
+        //     unlink($existing);
 
-            //Upload New Image
-            $image      = $request->file('image');
-            $filename   = $counters->id. '.' .$image->extension();
-            $location   = public_path('uploads/counters/');
-            $image->move($location, $filename);
+        //     //Upload New Image
+        //     $image      = $request->file('image');
+        //     $filename   = $counters->id. '.' .$image->extension();
+        //     $location   = public_path('uploads/counters/');
+        //     $image->move($location, $filename);
 
-            // Save Image name in the database
-            $counters->image = $filename;
-        }
+        //     // Save Image name in the database
+        //     $counters->image = $filename;
+        // }
 
-        // Update Other Fields
-        $counters->count = $request->count;
-        $counters->title = $request->title;
+        // // Update Other Fields
+        // $counters->count = $request->count;
+        // $counters->title = $request->title;
 
-        // Save Everything In Database
-        $counters->save();
+        // // Save Everything In Database
+        // $counters->save();
 
-        return back()->withSuccess('Updated Succesfully');
+        // return back()->withSuccess('Updated Succesfully');
 
     }
 
@@ -122,15 +124,15 @@ class CounterController extends Controller
      */
     public function delete($id){
 
-        $counter = Counter::find($id);
+        // $counter = Counter::find($id);
         
-        // Delete from database
-        $existing_image = public_path('uploads/counters/'. $counter->image); 
-        unlink($existing_image); 
+        // // Delete from database
+        // $existing_image = public_path('uploads/counters/'. $counter->image); 
+        // unlink($existing_image); 
 
-        // Delete from database
-        $counter->delete();
-        return back()->withSuccess('Deleted Successfully');
+        // // Delete from database
+        // $counter->delete();
+        // return back()->withSuccess('Deleted Successfully');
     }
 
 }

@@ -112,7 +112,7 @@ class BlogController extends Controller
          $blogs->save();
 
          //success message session
-         return back()->withSuccess('Blog Added');
+         return redirect()->route('blogs.index')->withSuccess('Blog Added');
 
     }
 

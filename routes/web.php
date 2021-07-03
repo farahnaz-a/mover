@@ -1,20 +1,22 @@
 <?php
 
+
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\AdminController;
-use App\Http\Controllers\FrontendController;
-use App\Http\Controllers\MoverController;
-use App\Http\Controllers\UserController;
-use App\Http\Controllers\BannerController;
-use App\Http\Controllers\ServiceController;
-use App\Http\Controllers\TeamController;
-use App\Http\Controllers\WorkController;
-use App\Http\Controllers\TestimonialController;
-use App\Http\Controllers\CounterController;
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\TeamController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\WorkController;
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\MoverController;
+use App\Http\Controllers\BannerController;
 use App\Http\Controllers\ClientController;
 use App\Http\Controllers\CalloutController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\CounterController;
+use App\Http\Controllers\ServiceController;
+use App\Http\Controllers\FrontendController;
+use App\Http\Controllers\GeneralSettingController;
+use App\Http\Controllers\TestimonialController;
 use App\Http\Controllers\RegistrationController;
 
 /*
@@ -113,6 +115,10 @@ Route::group(['prefix' => 'admin'], function () {
 
     // RegistationController
     Route::resource('registrations', RegistrationController::class);
+
+    // GeneralSettingsController 
+    Route::get('/site-settings', [GeneralSettingController::class, 'index'])->name('settings.index');
+    Route::post('/site-settings-store', [GeneralSettingController::class, 'store'])->name('settings.store');
 
     
 });

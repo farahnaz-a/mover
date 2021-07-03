@@ -18,14 +18,14 @@ Tags:   business, cargo, chain supply, company, corporate, expedition, freight, 
 }
 html {
   -webkit-font-smoothing: antialiased;
-  font-size: 17px;
+  font-size: 18px;
 }
 body {
   font-family: 'Cordoba', sans-serif;
   /* font-family: 'Montserrat', sans-serif; */
   font-size: 0.875rem;
   font-weight: 400;
-  color: #999;
+  color: #000;
 }
 img {
   max-width: 100%;
@@ -427,7 +427,7 @@ h2.h2-xl {
 /*    Background Color Start
 /*------------------------------------------*/
 .bg-img-6 {
-  background-image: url(../images/bg_6.jpg);
+  
   background-repeat: no-repeat;
   background-position: center center;
 }
@@ -2790,16 +2790,17 @@ h2.h2-xl {
   transform: translateY(-50%);
 }
 .contact-details h4 {
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 600;
-  color: rgb(6, 22, 58);
+  color: rgb(98, 110, 138);
   line-height: 1.714;
 }
 .contact-details p {
-  color: #9b9b9b;
+  color: #000;
+  font-size: 18px;
 }
 .contact-details a {
-  font-size: 14px;
+  font-size: 18px;
   color: rgb(6, 22, 58);
 }
 .contact-details i {

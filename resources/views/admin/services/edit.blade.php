@@ -3,6 +3,10 @@
 @section('title')
     {{ config('app.name') }} - Service Settings
 @endsection
+
+@section('services')
+    active
+@endsection
            
 @section('breadcrumb')
 <div class="content-header-left col-md-9 col-12 mb-2">

@@ -17,6 +17,7 @@ class CreateRegistrationsTable extends Migration
             $table->id();
             $table->string('title');
             $table->longText('description');
+            $table->string('bg_image');
             $table->timestamps();
         });
     }

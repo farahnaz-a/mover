@@ -27,7 +27,7 @@ class CalloutController extends Controller
     public function index(){
 
         return view('admin.callouts.index' , [
-            'callouts' => Callout::latest()->get(),
+            'data' => Callout::first(),
         ]);
     }
  
@@ -40,20 +40,24 @@ class CalloutController extends Controller
         $request -> validate([
             'title'         => 'required',
             'description'   => 'required',
-            'image'         => 'required|image',
+            'image'         => 'image',
         ]);
 
         // Insert data in database
-        $callouts = Callout::create($request->except('_token') + ['created_at' => Carbon::now() ]);
+        $callouts = Callout::find($request->id);
+        $callouts->update($request->except('_token') + ['created_at' => Carbon::now() ]);
 
          // Upload Image
-         $image     = $request->file('image');
-         $filename  = $callouts->id. '.' .$image->extension();
-         $location  = public_path('uploads/callouts/');
-         $image->move($location , $filename);
-
-         // Save Image name in the database
-         $callouts->image = $filename;
+         if($request->has('image'))
+         {
+            $image     = $request->file('image');
+            $filename  = $callouts->id. '.' .$image->extension();
+            $location  = public_path('uploads/callouts/');
+            $image->move($location , $filename);
+            
+            // Save Image name in the database
+            $callouts->image = $filename;
+         }
          $callouts->save();
 
          //success message session

@@ -5,9 +5,19 @@ namespace App\Http\Controllers;
 use App\Models\Registration;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use App\Models\Bullet;
 
 class RegistrationController extends Controller
 {
+    /**
+     *  Constructor 
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+        $this->middleware('verified');
+        $this->middleware('checkAdmin');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -16,7 +26,8 @@ class RegistrationController extends Controller
     public function index()
     {
         return view('admin.registrations.index',[
-            'registrations' => Registration::latest()->get(),
+            'data'     => Registration::first(),
+            'bullets'  => Bullet::all(),
         ]);
     }
 
@@ -38,14 +49,65 @@ class RegistrationController extends Controller
      */
     public function store(Request $request)
     {
+       
         // Form Validation
         $request -> validate([
             'title'       => 'required',
             'description' => 'required',
+            'bg_image'    => 'image'
         ]);
 
         // Insert data in database
-        Registration::create($request->except('_token') + ['created_at' => Carbon::now()]);
+        $data = Registration::find($request->id);
+         $data->update([
+            'title'         => $request->title, 
+            'description'   => $request->description, 
+         ]);
+
+         if($request->hasFile('bg_image'))
+         {
+            $image    = $request->file('bg_image');
+            $filename = $data->id. '.' .$image->getClientOriginalExtension('bg_image');
+            $location = public_path('uploads/registrations/');
+            $image->move($location, $filename); 
+            $data->bg_image = $filename; 
+         }
+
+         // Update Bullets 
+        
+         if($request->bullet_id)
+         {
+            foreach($request->bullet_id as $key => $id)
+            {
+                 if($request->bullet[$key] == null)
+                 {
+                     Bullet::find($id)->delete();
+                 }
+                
+                 if($request->bullet[$key] != null)
+                 {
+                    Bullet::find($id)->update([
+                        'bullets' => $request->bullet[$key],
+                    ]);
+                 }
+                
+            }
+         }
+ 
+        // Insert new bullets
+
+         if($request->bullets)
+         {
+             foreach($request->bullets as $bull)
+             {
+                 Bullet::create([
+                     'bullets'     => $bull,
+                     'created_at'  => Carbon::now(),
+                 ]);
+             }
+         }
+
+         $data->save();
 
         // Success Message Session
         return back()->withSuccess('Added Successfully');

@@ -16,10 +16,10 @@
     
     <!-- xxx Favicon xxx -->    
     
-    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('assets/images/favicon.ico') }}">
+    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('uploads/settings') }}/{{ settings()->favicon }}">
 
     <!-- xxx Favicon xxx -->    
-    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('assets/images/favicon.ico') }}">
+    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('uploads/settings') }}/{{ settings()->favicon }}">
 
     <!-- Main Style CSSS -->
     <link href="{{ asset('assets/css/theme-plugins.min.css') }}" rel="stylesheet">
@@ -101,7 +101,7 @@
       <div class="container">
         <div class="d-flex align-items-center w-100 col p-0">
           <a class="navbar-brand rounded-bottom light-bg" href="{{ route('frontend.index') }}">
-            <img src="{{ asset('assets/images/logo_footer.svg') }}" alt="">
+            <img src="{{ asset('uploads/settings') }}/{{ settings()->logo }}" alt="">
           </a> 
         </div>
         <!-- Topbar Request Quote Start -->
@@ -177,17 +177,17 @@
         <!-- Column First -->
         <div class="col-lg-4 col-md-6 wow fadeInLeft" data-wow-duration="0" data-wow-delay="0s">
           <div class="logo-footer">
-            <img src="assets/images/logo_footer.svg" alt="">
+            <img src="{{ asset('uploads/settings') }}/{{ settings()->logo }}" alt="">
           </div>
-          <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit.</p>
-          <p>Vivamus ac ultrices diam, vitae accumsan tellus. Integer sollicitudin vulputate lacus, congue .</p>
+          <p>{{ settings()->description }}</p>
+          <p>{{ settings()->description_one }}</p>
 
           <h3 class="footer-heading">We're Social</h3>
           <div class="social-icons">
-              <a href="#"><i class="icofont-facebook"></i></a> 
-              <a href="#"><i class="icofont-twitter"></i></a> 
-              <a href="#"><i class="icofont-whatsapp"></i></a> 
-              <a href="#"><i class="icofont-google-plus"></i></a> 
+              <a href="{{ settings()->facebook }}"><i class="icofont-facebook"></i></a> 
+              <a href="{{ settings()->twitter }}"><i class="icofont-twitter"></i></a> 
+              <a href="{{ settings()->whatsapp }}"><i class="icofont-whatsapp"></i></a> 
+              <a href="{{ settings()->google }}"><i class="icofont-google-plus"></i></a> 
             </div>
         </div>
         <!-- Column First -->
@@ -197,38 +197,24 @@
           <h3 class="footer-heading">Recent Post</h3>
           <div class="blog-list-footer">
             <ul class="list-unstyled">
+              @foreach (blogs() as $blog)
               <li>
                 <div class="media">
                   <div class="post-thumb">
-                     <img src="assets/images/post_thumb_1.jpg" alt="" class="rounded-circle">
+                     <img src="{{ asset('uploads/blogs') }}/{{ $blog->image }}" alt="" class="rounded-circle">
                   </div>
                   <div class="media-body post-text">
-                      <h5 class="mb-3 h5-md"><a href="#">Liberalisation of air cargo</a></h5>
-                      <p>Far far away, behind the word mountains, far from the countries.</p>
+                      <h5 class="mb-3 h5-md"><a href="#">{{ $blog->title }}</a></h5>
+                      <p>{{ Str::limit($blog->description, 50) }}</p>
 
                       <div class="comment-box">
-                        <span><i class="icofont-ui-calendar"></i>  04.10.2013</span>
-                        <span><a href="#"><i class="icofont-speech-comments"></i>  25</a></span>
+                        <span><i class="icofont-ui-calendar"></i>  {{ $blog->created_at->format('d.m.Y') }}</span>
+                        {{-- <span><a href="#"><i class="icofont-speech-comments"></i>  25</a></span> --}}
                       </div>
                   </div>
                 </div>
               </li>
-              <li>
-                <div class="media">
-                  <div class="post-thumb">
-                     <img src="assets/images/post_thumb_2.jpg" alt="" class="rounded-circle">
-                  </div>
-                  <div class="media-body post-text">
-                      <h5 class="mb-3 h5-md"><a href="#">New Ocean Freight Rules</a></h5>
-                      <p>Far far away, behind the word mountains, far from the countries.</p>
-
-                      <div class="comment-box">
-                        <span><i class="icofont-ui-calendar"></i>  04.10.2013</span>
-                        <span><a href="#"><i class="icofont-speech-comments"></i>  25</a></span>
-                      </div>
-                  </div>
-                </div>
-              </li>
+              @endforeach
             </ul>
             
           </div>

@@ -226,43 +226,45 @@
         <div class="shadow-bottom"></div>
         <div class="main-menu-content">
             <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
-                <li class=" nav-item"><a class="d-flex align-items-center" href="{{ route('dashboard') }}"><i data-feather="home"></i><span class="menu-title text-truncate" data-i18n="Dashboards">Dashboards</span></a>
+                <li class=" nav-item @yield('dashboard')"><a class="d-flex align-items-center" href="{{ route('dashboard') }}"><i data-feather="home"></i><span class="menu-title text-truncate" data-i18n="Dashboards">Dashboards</span></a>
                 </li>
 
-                <li class=" navigation-header"><span data-i18n="Apps &amp; Pages">Site Settings</span><i data-feather="more-horizontal"></i>
+                <li class="navigation-header"><span data-i18n="Apps &amp; Pages">Site Settings</span><i data-feather="more-horizontal"></i>
                 </li>
 
-                <li class=" nav-item"><a class="d-flex align-items-center" href="{{ route('banners.index') }}"><i data-feather='shield'></i><span class="menu-title text-truncate" data-i18n="Banner settings">Banner Settings</span></a>
+                <li class="nav-item @yield('banners')"><a class="d-flex align-items-center" href="{{ route('banners.index') }}"><i data-feather='shield'></i><span class="menu-title text-truncate" data-i18n="Banner settings">Banner Settings</span></a>
                 </li> 
 
-                <li class=" nav-item"><a class="d-flex align-items-center" href="{{ route('services.index') }}"><i data-feather='truck'></i><span class="menu-title text-truncate" data-i18n="Service settings">Service Settings</span></a>
+                <li class="nav-item @yield('services')"><a class="d-flex align-items-center" href="{{ route('services.index') }}"><i data-feather='truck'></i><span class="menu-title text-truncate" data-i18n="Service settings">Service Settings</span></a>
                 </li> 
 
-                <li class=" nav-item"><a class="d-flex align-items-center" href="{{ route('works.index') }}"><i data-feather='wind'></i><span class="menu-title text-truncate" data-i18n="Work settings">Work Settings</span></a>
+                <li class="nav-item @yield('works')"><a class="d-flex align-items-center" href="{{ route('works.index') }}"><i data-feather='wind'></i><span class="menu-title text-truncate" data-i18n="Work settings">Work Settings</span></a>
                 </li> 
 
-                <li class=" nav-item"><a class="d-flex align-items-center" href="{{ route('teams.index') }}"><i data-feather='users'></i><span class="menu-title text-truncate" data-i18n="team settings">Team Settings</span></a>
+                <li class="nav-item @yield('teams')"><a class="d-flex align-items-center" href="{{ route('teams.index') }}"><i data-feather='users'></i><span class="menu-title text-truncate" data-i18n="team settings">Team Settings</span></a>
                 </li> 
 
-                <li class=" nav-item"><a class="d-flex align-items-center" href="{{ route('testimonials.index') }}"><i data-feather='command'></i><span class="menu-title text-truncate" data-i18n="testimonial settings">Testimonial Settings</span></a>
+                <li class="nav-item @yield('testimonials')"><a class="d-flex align-items-center" href="{{ route('testimonials.index') }}"><i data-feather='command'></i><span class="menu-title text-truncate" data-i18n="testimonial settings">Testimonial Settings</span></a>
                 </li> 
 
-                <li class=" nav-item"><a class="d-flex align-items-center" href="{{ route('counters.index') }}"><i data-feather='clock'></i><span class="menu-title text-truncate" data-i18n="counter settings">Counter Settings</span></a>
+                <li class="nav-item @yield('counters')"><a class="d-flex align-items-center" href="{{ route('counters.index') }}"><i data-feather='clock'></i><span class="menu-title text-truncate" data-i18n="counter settings">Counter Settings</span></a>
                 </li> 
 
-                <li class=" nav-item"><a class="d-flex align-items-center" href="{{ route('blogs.index') }}"><i data-feather='clipboard'></i><span class="menu-title text-truncate" data-i18n="Blog settings">Blog Settings</span></a>
+                <li class="nav-item @yield('blogs')"><a class="d-flex align-items-center" href="{{ route('blogs.index') }}"><i data-feather='clipboard'></i><span class="menu-title text-truncate" data-i18n="Blog settings">Blog Settings</span></a>
                 </li> 
 
-                <li class=" nav-item"><a class="d-flex align-items-center" href="{{ route('clients.index') }}"><i data-feather='aperture'></i><span class="menu-title text-truncate" data-i18n="Client settings">Client Settings</span></a>
+                <li class="nav-item @yield('clients')"><a class="d-flex align-items-center" href="{{ route('clients.index') }}"><i data-feather='aperture'></i><span class="menu-title text-truncate" data-i18n="Client settings">Client Settings</span></a>
                 </li> 
 
-                <li class=" nav-item"><a class="d-flex align-items-center" href="{{ route('callouts.index') }}"><i data-feather='globe'></i><span class="menu-title text-truncate" data-i18n="Callout settings">Callout Settings</span></a>
+                <li class="nav-item @yield('callouts')"><a class="d-flex align-items-center" href="{{ route('callouts.index') }}"><i data-feather='globe'></i><span class="menu-title text-truncate" data-i18n="Callout settings">Callout Settings</span></a>
                 </li> 
 
-                <li class=" nav-item"><a class="d-flex align-items-center" href="{{ route('contacts.index') }}"><i data-feather='phone'></i><span class="menu-title text-truncate" data-i18n="Contact settings">Contacts Settings</span></a>
+                <li class="nav-item @yield('contacts')"><a class="d-flex align-items-center" href="{{ route('contacts.index') }}"><i data-feather='phone'></i><span class="menu-title text-truncate" data-i18n="Contact settings">Contacts Settings</span></a>
                 </li> 
 
-                <li class=" nav-item"><a class="d-flex align-items-center" href="{{ route('registrations.index') }}"><i data-feather='plus-square'></i><span class="menu-title text-truncate" data-i18n="Contact settings">Registration Settings</span></a>
+                <li class="nav-item @yield('registrations')"><a class="d-flex align-items-center" href="{{ route('registrations.index') }}"><i data-feather='plus-square'></i><span class="menu-title text-truncate" data-i18n="Contact settings">Registration Settings</span></a>
+                </li> 
+                <li class="nav-item @yield('settings')"><a class="d-flex align-items-center" href="{{ route('settings.index') }}"><i data-feather='settings'></i><span class="menu-title text-truncate" data-i18n="Contact settings">General Settings</span></a>
                 </li> 
 
               {{-- <li class=" navigation-header"><span data-i18n="Apps &amp; Pages">Banner &amp; Pages</span><i data-feather="more-horizontal"></i>
@@ -324,6 +326,7 @@
 
     <!-- BEGIN: Theme JS-->
     <script src=" {{ asset('dashboard_assets/app-assets/js/core/app-menu.js') }}"></script>
+    @yield('js')
     <script src=" {{ asset('dashboard_assets/app-assets/js/core/app.js') }}"></script>
     <!-- END: Theme JS-->
 

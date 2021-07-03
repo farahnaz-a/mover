@@ -3,6 +3,10 @@
 @section('title')
     {{ config('app.name') }} - Counters Settings
 @endsection
+
+@section('counters')
+    active
+@endsection
            
 @section('breadcrumb')
 <div class="content-header-left col-md-9 col-12 mb-2">
@@ -27,7 +31,7 @@
 @section('content')
 <section id="basic-vertical-layouts">
     <div class="row justify-content-center">
-        <div class="col-lg-6 col-md-11 col-12">
+        <div class="col-lg-10 m-auto col-md-11 col-12">
             <div class="card">
                 <div class="card-header">
                     <h4 class="card-title">Add Counters</h4>
@@ -38,41 +42,51 @@
                         <div class="row">
                             <div class="col-12">
                                 <div class="form-group">
-                                    <label for="first-name-vertical" style="color:#000; font-size:18px;">Count</label>
-                                    <input type="text" id="first-name-vertical" class="form-control" name="count" placeholder="Enter Count">
-                                    @error('count')
+                                    <label for="first-name-vertical" style="color:#000; font-size:18px;">Location count</label>
+                                    <input type="text" id="first-name-vertical" class="form-control" name="locations" value="{{ $data->locations }}">
+                                    @error('locations')
                                         <small class="text-danger">{{ $message }}</small>
                                     @enderror
                                 </div>
                             </div>
                             <div class="col-12">
                                 <div class="form-group">
-                                    <label for="email-id-vertical" style="color:#000; font-size:18px;">Title</label>
-                                    <textarea type="text" id="email-id-vertical" class="form-control" name="title" placeholder="Enter Title"></textarea>
-                                    @error('title')
+                                    <label for="first-name-vertical" style="color:#000; font-size:18px;">Vehicles count</label>
+                                    <input type="text" id="first-name-vertical" class="form-control" name="vehicles" value="{{ $data->vehicles }}">
+                                    @error('vehicles')
                                         <small class="text-danger">{{ $message }}</small>
                                     @enderror
                                 </div>
                             </div>
                             <div class="col-12">
                                 <div class="form-group">
-                                    <label for="contact-info-vertical" style="color:#000; font-size:18px;">Image</label>
-                                    <input type="file" id="contact-info-vertical" class="form-control" name="image" >
-                                    @error('image')
+                                    <label for="first-name-vertical" style="color:#000; font-size:18px;">Clients count</label>
+                                    <input type="text" id="first-name-vertical" class="form-control" name="clients" value="{{ $data->clients }}">
+                                    @error('clients')
                                         <small class="text-danger">{{ $message }}</small>
                                     @enderror
                                 </div>
                             </div>
                             <div class="col-12">
-                                <button type="submit" class="btn btn-primary mr-1 waves-effect waves-float waves-light">Submit</button>
-                                <button type="reset" class="btn btn-outline-secondary waves-effect">Reset</button>
+                                <div class="form-group">
+                                    <label for="first-name-vertical" style="color:#000; font-size:18px;">Tons count</label>
+                                    <input type="text" id="first-name-vertical" class="form-control" name="tons" value="{{ $data->tons }}">
+                                    @error('tons')
+                                        <small class="text-danger">{{ $message }}</small>
+                                    @enderror
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <input type="hidden" name="id" value="{{ $data->id }}">
+                                <button type="submit" class="btn btn-primary mr-1 waves-effect waves-float waves-light">Update</button>
+                                {{-- <button type="reset" class="btn btn-outline-secondary waves-effect">Reset</button> --}}
                             </div>
                         </div>
                     </form>
                 </div>
             </div>
         </div>
-        <div class="col-lg-6 col-md-11 col-12">
+        {{-- <div class="col-lg-6 col-md-11 col-12">
             <div class="card">
                 <div class="card-header">
                     <h4 class="card-title">Counters</h4>
@@ -134,7 +148,7 @@
                     </table>
                 </div>
             </div>
-        </div>
+        </div> --}}
     </div>
 </section>
 @endsection

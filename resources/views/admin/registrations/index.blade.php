@@ -3,6 +3,10 @@
 @section('title')
     {{ config('app.name') }} - Registration Settings
 @endsection
+
+@section('registrations')
+    active
+@endsection
            
 @section('breadcrumb')
 <div class="content-header-left col-md-9 col-12 mb-2">
@@ -27,7 +31,7 @@
 @section('content')
 <section id="basic-vertical-layouts">
     <div class="row justify-content-center">
-        <div class="col-lg-6 col-md-11 col-12">
+        <div class="col-lg-8 m-auto col-md-11 col-12">
             <div class="card">
                 <div class="card-header">
                     <h4 class="card-title">Add Registration</h4>
@@ -39,7 +43,7 @@
                             <div class="col-12">
                                 <div class="form-group">
                                     <label for="first-name-vertical" style="color:#000; font-size:18px;">Title</label>
-                                    <input type="text" id="first-name-vertical" class="form-control" name="title" placeholder="Enter Title">
+                                    <input type="text" id="first-name-vertical" class="form-control" name="title" value="{{ $data->title }}">
                                     @error('title')
                                         <small class="text-danger">{{ $message }}</small>
                                     @enderror
@@ -48,22 +52,50 @@
                             <div class="col-12">
                                 <div class="form-group">
                                     <label for="email-id-vertical" style="color:#000; font-size:18px;">Description</label>
-                                    <textarea type="text" id="email-id-vertical" class="form-control" name="description" placeholder="Enter Description"></textarea>
+                                    <textarea type="text" id="email-id-vertical" class="form-control" name="description">{{ $data->description }}</textarea>
                                     @error('description')
                                         <small class="text-danger">{{ $message }}</small>
                                     @enderror
                                 </div>
                             </div>
                             <div class="col-12">
+                                <div class="form-group">
+                                    <label for="email-id-vertical" style="color:#000; font-size:18px;">Description</label>
+                                    <input type="file" name="bg_image" class="form-control">
+                                    @error('description')
+                                        <small class="text-danger">{{ $message }}</small>
+                                    @enderror
+                                </div>
+                                <div class="py-3">
+                                    <p>Existing Image : </p>
+                                    <img src="{{ asset('uploads/registrations') }}/{{ $data->bg_image }}" alt="">
+                                </div>
+                            </div>
+                            <div class="col-9">
+                                <div class="form-group" id="newItem">
+                                    <label for="first-name-vertical" style="color:#000; font-size:18px;">Bullet points</label>
+                                    @foreach ($bullets as $bullet)
+                                    <input type="hidden" name="bullet_id[]" value="{{ $bullet->id }}}">
+                                    <input type="text" id="first-name-vertical" class="form-control my-3" name="bullet[]" value="{{ $bullet->bullets }}">
+                                    @endforeach
+                                    @error('title')
+                                        <small class="text-danger">{{ $message }}</small>
+                                    @enderror
+                                </div>
+                            </div>
+                            <div class="col-3 " style="margin-top: 40px;">
+                                <a id="addMore" class="btn btn-success btn-sm">+Add more</a>
+                            </div>
+                            <div class="col-12">
+                                <input type="hidden" name="id" value="{{ $data->id }}">
                                 <button type="submit" class="btn btn-primary mr-1 waves-effect waves-float waves-light">Submit</button>
-                                <button type="reset" class="btn btn-outline-secondary waves-effect">Reset</button>
                             </div>
                         </div>
                     </form>
                 </div>
             </div>
         </div>
-        <div class="col-lg-6 col-md-11 col-12">
+        {{-- <div class="col-lg-6 col-md-11 col-12">
             <div class="card">
                 <div class="card-header">
                     <h4 class="card-title">Registrations</h4>
@@ -104,7 +136,7 @@
                                                 <span>Edit</span>
                                             </a>
                                             <form action="{{ route('registrations.destroy', $registration->id) }}" method="POST">
-                                                {{-- Initiate Delete method --}}
+                                               
                                                 {{ method_field('DELETE') }}
                                                 @csrf 
                                                 <a class="dropdown-item" href="{{ route('registrations.destroy', $registration->id) }}" onclick="event.preventDefault(); this.closest('form').submit();">
@@ -121,7 +153,24 @@
                     </table>
                 </div>
             </div>
-        </div>
+        </div> --}}
     </div>
 </section>
+@endsection
+
+@section('js')
+  <script>
+      let addMore = document.getElementById('addMore'); 
+// let newItem   = "<input type='text' name='bullets[]' class='form-control' id='validationTooltip03' required>";
+
+            addMore.addEventListener('click', function(event){
+            let itemParent = document.getElementById('newItem');
+            let newItem = document.createElement('input'); 
+            newItem.setAttribute('name', 'bullets[]');
+            newItem.setAttribute('class', 'form-control mt-3');
+            newItem.setAttribute('placeholder', 'List your bullet points here');
+            itemParent.appendChild(newItem);
+            
+            });
+  </script>
 @endsection

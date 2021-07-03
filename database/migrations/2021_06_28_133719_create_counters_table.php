@@ -15,9 +15,10 @@ class CreateCountersTable extends Migration
     {
         Schema::create('counters', function (Blueprint $table) {
             $table->id();
-            $table->string('count');
-            $table->string('title');
-            $table->string('image');
+            $table->string('locations');
+            $table->string('clients');
+            $table->string('vehicles');
+            $table->string('tons');
             $table->timestamps();
         });
     }
