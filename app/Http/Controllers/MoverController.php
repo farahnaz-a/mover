@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Hash; 
+use Auth;
 
 class MoverController extends Controller
 {
@@ -14,7 +15,7 @@ class MoverController extends Controller
     public function __construct()
     {
         $this->middleware('auth')->except('register');
-        $this->middleware('checkMover');
+        $this->middleware('checkMover')->except('register');
     }
 
     /**
@@ -52,6 +53,7 @@ class MoverController extends Controller
             'role'      => 'mover',
         ]);
 
+        Auth::login($user);
         return redirect()->route('mover.dashboard');
 
         

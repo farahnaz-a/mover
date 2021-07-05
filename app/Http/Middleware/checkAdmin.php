@@ -19,7 +19,7 @@ class checkAdmin
     {
         if(Auth::user()->role == 'mover')
         {
-            return redirect()->route('mover.dashboard');
+          return redirect()->route('mover.dashboard');
         }
         if(Auth::user()->role == 'user')
         {

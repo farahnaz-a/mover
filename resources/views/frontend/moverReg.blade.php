@@ -202,7 +202,7 @@
                     <div class="input-group">
                       <div class="input-group-prepend">
                         <span class="input-group-text"
-                          ><i class="icofont-ui-message"></i
+                          ><i class="icofont-ui-user"></i
                         ></span>
                       </div>
                       <input

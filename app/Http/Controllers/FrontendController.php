@@ -19,6 +19,14 @@ use Illuminate\Http\Request;
 
 class FrontendController extends Controller
 {
+    /**
+     * Constructor 
+     */
+    public function __construct()
+    {
+        $this->middleware('auth')->only('form', 'formThree');
+        $this->middleware('verified')->only('form', 'formThree');
+    }
    /**
     *  Home Page (Frontend)
     */
@@ -60,6 +68,34 @@ class FrontendController extends Controller
   public function requestQuote()
   {
       return view('frontend.requestQuote');
+  }
+  /**
+   *  Request A Quote (Form)
+   */
+  public function form($category)
+  {
+      return view('frontend.quoteForm', compact('category'));
+  }
+  
+  /**
+   *  Request A Quote (Step Three From Household)
+   */
+  public function householdThree(Request $request)
+  {
+      
+
+      return view('frontend.householdThree', [
+
+      'category'     => $request->category, 
+      'equipment'    => $request->equipment, 
+      'articleName'  => $request->articleName,
+      'length'       => $request->length,
+      'width'        => $request->width, 
+      'height'       => $request->height, 
+      'weight'       => $request->weight, 
+      'quantity'     => $request->quantity,
+
+      ]);
   }
 
   /**

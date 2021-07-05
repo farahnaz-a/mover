@@ -19,6 +19,7 @@ class checkMover
     {
         if(Auth::user()->role == 'admin')
         {
+            
             return redirect()->route('dashboard');
         }
         if(Auth::user()->role == 'user')

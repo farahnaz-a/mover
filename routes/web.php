@@ -141,6 +141,8 @@ Route::group(['prefix' => 'user'], function () {
 // FrontendController 
 Route::get('/', [FrontendController::class, 'index'])->name('frontend.index');
 Route::get('/demande/de/devis', [FrontendController::class, 'requestQuote'])->name('frontend.requestQuote');
+Route::get('/form/{category}/quote', [FrontendController::class, 'form'])->name('frontend.requestQuoteForm');
+Route::post('/household/step-three', [FrontendController::class, 'householdThree'])->name('step3.household');
 Route::get('/demande/en/cours', [FrontendController::class, 'announcements'])->name('frontend.announcements');
 Route::get('/transport-details', [FrontendController::class, 'details'])->name('frontend.details');
 Route::get('/contact', [FrontendController::class, 'contact'])->name('frontend.contact');
