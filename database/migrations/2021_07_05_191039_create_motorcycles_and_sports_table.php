@@ -23,6 +23,7 @@ class CreateMotorcyclesAndSportsTable extends Migration
             $table->string('movingVehicle')->nullable();
             $table->string('conveyors')->nullable();
             //Common Fields
+            $table->integer('user_id');
             $table->string('loading_address')->nullable();
             $table->string('loading_start')->nullable();
             $table->string('loading_end')->nullable();

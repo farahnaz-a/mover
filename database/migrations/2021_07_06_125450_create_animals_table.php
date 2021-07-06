@@ -25,6 +25,7 @@ class CreateAnimalsTable extends Migration
             $table->string('weight')->nullable();
             $table->string('length')->nullable();
             //Common Flieds
+            $table->integer('user_id');
             $table->string('loading_address')->nullable();
             $table->string('loading_start')->nullable();
             $table->string('loading_end')->nullable();

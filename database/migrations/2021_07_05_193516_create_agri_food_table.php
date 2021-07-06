@@ -20,6 +20,7 @@ class CreateAgriFoodTable extends Migration
             $table->string('quantity')->nullable();
             $table->string('weight')->nullable();
             //Common Flieds
+            $table->integer('user_id');
             $table->string('loading_address')->nullable();
             $table->string('loading_start')->nullable();
             $table->string('loading_end')->nullable();
