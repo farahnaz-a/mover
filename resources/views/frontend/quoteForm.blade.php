@@ -244,7 +244,7 @@
                             value="vehicle"
                             />
                             <div class="form-group">
-                            <input
+                            <input name="model_name"
                                 type="text"
                                 placeholder="Ford Fiesta, Peugeot 405, Golf IV..."
                                 class="form-control"
@@ -389,7 +389,7 @@
                                 value="motorcycleSport"
                                 />
                                 <div class="form-group">
-                                <input
+                                <input name="model_name"
                                     type="text"
                                     placeholder="750 GSXR, 1000 Hayabusa..."
                                     class="form-control"
@@ -426,7 +426,7 @@
                                 </div>
                                 <div class="form-group input-group col-12">
                                     <input
-                                    name="height"
+                                    name="estimationValue"
                                     type="number"
                                     placeholder="Estimation value"
                                     class="form-control"
@@ -535,7 +535,7 @@
                                         value="boat-voluminous"
                                     />
                                     <div class="form-group">
-                                        <input
+                                        <input name="model_name"
                                         type="text"
                                         placeholder="3-seater Sofa, chairs, desks..."
                                         class="form-control"
@@ -624,9 +624,7 @@
                                         </div>
                                         <div class="form-group input-group col-12">
                                         <input
-                                            type="number"
-                                            placeholder="Estimation value"
-                                            class="form-control"
+                                        name="estimationValue"  type="number"   placeholder="Estimation value"  class="form-control"
                                         />
                                         </div>
                                     </div>
@@ -709,7 +707,7 @@
                             />
                             <div class="form-group">
                                 <input
-                                name="articleName"
+                                name="model_name"
                                 type="text"
                                 placeholder="Grand piano, Antique paintings..."
                                 class="form-control"
@@ -721,6 +719,7 @@
                             </p>
                             <div class="form-group">
                                 <input
+                                name="articleName"
                                 type="text"
                                 placeholder="Article name"
                                 class="form-control"
@@ -768,6 +767,7 @@
                                 </div>
                                 <div class="form-group input-group col-md-6">
                                 <input
+                                    name="weight"
                                     type="number"
                                     placeholder="Weight"
                                     class="form-control"
@@ -850,7 +850,7 @@
                                         value="package"
                                       />
                                       <div class="form-group">
-                                        <input
+                                        <input name="model_name"
                                           type="text"
                                           placeholder="Grand piano, Antique paintings..."
                                           class="form-control"
@@ -988,7 +988,7 @@
                                       value="pallet"
                                     />
                                     <div class="form-group">
-                                      <input
+                                      <input name="model_name"
                                         type="text"
                                         placeholder="Grand piano, Antique paintings..."
                                         class="form-control"
@@ -1127,6 +1127,7 @@
                         />
                         <div class="form-group">
                             <input
+                            name="model_name"
                             type="text"
                             placeholder="2 cats, 1 dogs, 40 chickens..."
                             class="form-control"
@@ -1392,7 +1393,8 @@
                             value="commercial-good"
                         />
                         <div class="form-group">
-                            <input
+                            <input 
+                            name="model_name"
                             type="text"
                             placeholder="Marble, Petrol, Acid..."
                             class="form-control"
@@ -1534,6 +1536,7 @@
                             />
                             <div class="form-group">
                               <input
+                              name="others"
                                 type="text"
                                 placeholder="Others..."
                                 class="form-control"

@@ -72,32 +72,22 @@
                             <input type="hidden" name="quantity" value="quantity" id=""> --}}
                           <div class="form-group">
                             <input
-                              class="form-control"
-                              type="text"
-                              placeholder="Address"
-                            />
+                              class="form-control" name="loading_address" type="text" placeholder="Address"/>
                           </div>
                           <div class="form-row">
                             <div class="form-group col-md-6">
                               <label for="">Start</label>
-                              <input
-                                class="form-control"
-                                type="date"
-                                placeholder="Start"
-                              />
+                              <input class="form-control" name="loading_start" type="date" placeholder="Start"/>
                             </div>
                             <div class="form-group col-md-6">
                               <label for="">End</label>
                               <input
-                                class="form-control"
-                                type="date"
-                                placeholder="End"
-                              />
+                                class="form-control" name="loading_end" type="date" placeholder="End"/>
                             </div>
                           </div>
                           <div class="form-group">
                             <label>Time slot loading</label>
-                            <select class="rounded">
+                            <select name="loading_time_slot" class="rounded">
                               <option value="anytime">anytime</option>
                               <option value="morning">morning</option>
                               <option value="afternoon">afternoon</option>
@@ -105,7 +95,7 @@
                             </select>
                           </div>
                           <div class="form-group">
-                            <select class="rounded">
+                            <select name="loading_house" class="rounded">
                               <option value="House">House</option>
                               <option value="Building">Building</option>
                               <option value="Storage facility">
@@ -118,7 +108,7 @@
                           <div class="form-row">
                             <div class="form-group col-md-6">
                               <label for="">Select the floor</label>
-                              <select class="rounded">
+                              <select name="loading_floor" class="rounded">
                                 <option value="RDC">RDC</option>
                                 <option value="1">1</option>
                                 <option value="2">2</option>
@@ -137,14 +127,14 @@
                             </div>
                             <div class="form-group col-md-6">
                               <label for="">Is there is an elevator?</label>
-                              <select class="rounded">
+                              <select name="loading_elevator" class="rounded">
                                 <option value="Yes">Yes</option>
                                 <option value="No">No</option>
                               </select>
                             </div>
                             <div class="form-group col-md-12">
                               <label for="">Furniture lift required?</label>
-                              <select class="rounded">
+                              <select class="loading_lift" class="rounded">
                                 <option value="Yes">Yes</option>
                                 <option value="No">No</option>
                               </select>
@@ -160,24 +150,17 @@
                       </h5>
                       <div class="bg-light-gray my-3 p-3 rounded">
                           <div class="form-group">
-                            <input
-                              class="form-control"
-                              type="text"
-                              placeholder="Address"
+                            <input class="form-control" name="delivery_address" type="text"  placeholder="Address"
                             />
                           </div>
                           <div class="form-row">
                             <div class="form-group col-md-6">
                               <label for="">Start</label>
-                              <input
-                                class="form-control"
-                                type="date"
-                                placeholder="Start"
-                              />
+                              <input class="form-control" name="delivery_start" type="date" placeholder="Start"/>
                             </div>
                             <div class="form-group col-md-6">
                               <label for="">End</label>
-                              <input
+                              <input name="delivery_end"
                                 class="form-control"
                                 type="date"
                                 placeholder="End"
@@ -186,7 +169,7 @@
                           </div>
                           <div class="form-group">
                             <label>Time slot loading</label>
-                            <select class="rounded">
+                            <select name="delivery_time_slot" class="rounded">
                               <option value="anytime">anytime</option>
                               <option value="morning">morning</option>
                               <option value="afternoon">afternoon</option>
@@ -194,7 +177,7 @@
                             </select>
                           </div>
                           <div class="form-group">
-                            <select class="rounded">
+                            <select name="delivery_house" class="rounded">
                               <option value="House">House</option>
                               <option value="Building">Building</option>
                               <option value="Storage facility">
@@ -207,7 +190,7 @@
                           <div class="form-row">
                             <div class="form-group col-md-6">
                               <label for="">Select the floor</label>
-                              <select class="rounded">
+                              <select name="delivery_floor" class="rounded">
                                 <option value="RDC">RDC</option>
                                 <option value="1">1</option>
                                 <option value="2">2</option>
@@ -226,14 +209,14 @@
                             </div>
                             <div class="form-group col-md-6">
                               <label for="">Is there is an elevator?</label>
-                              <select class="rounded">
+                              <select name="delivery_elevator" class="rounded">
                                 <option value="Yes">Yes</option>
                                 <option value="No">No</option>
                               </select>
                             </div>
                             <div class="form-group col-md-12">
                               <label for="">Furniture lift required?</label>
-                              <select class="rounded">
+                              <select name="delivery_lift" class="rounded">
                                 <option value="Yes">Yes</option>
                                 <option value="No">No</option>
                               </select>
@@ -251,7 +234,7 @@
                   <div class="p-3 rounded bg-light-gray">
                     <div class="row">
                       <div class="col-md-6">
-                        <textarea class="form-control" rows="8"></textarea>
+                        <textarea name="information" class="form-control" rows="8"></textarea>
                       </div>
                       <div class="col-md-6">
                         <p class="alert alert-danger">
@@ -288,7 +271,7 @@
                       you a suitable offer.
                     </p>
                     <div class="custom-file">
-                      <input
+                      <input name="image"
                         type="file"
                         class="custom-file-input"
                         id="customFile"
@@ -300,21 +283,14 @@
                   </div>
                   <div class="mt-4">
                     <div class="custom-control custom-checkbox">
-                      <input
-                        type="checkbox"
-                        class="custom-control-input"
-                        id="commercial-offer"
-                      />
+                      <input name="offers" type="checkbox" class="custom-control-input" id="commercial-offer"/>
                       <label class="custom-control-label" for="commercial-offer"
                         >I agree to receive commercial offers from FretBay and
                         its partners</label
                       >
                     </div>
                     <div class="custom-control custom-checkbox">
-                      <input
-                        type="checkbox"
-                        class="custom-control-input"
-                        id="terms"
+                      <input name="terms" type="checkbox" class="custom-control-input" id="terms"
                       />
                       <label class="custom-control-label" for="terms"
                         >I accept FretBay's Terms of Use

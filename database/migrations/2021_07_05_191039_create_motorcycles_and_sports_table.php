@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateHouseHoldsTable extends Migration
+class CreateMotorcyclesAndSportsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,17 +13,16 @@ class CreateHouseHoldsTable extends Migration
      */
     public function up()
     {
-        Schema::create('house_holds', function (Blueprint $table) {
+        Schema::create('motorcycles_and_sports', function (Blueprint $table) {
             $table->id();
-            $table->string('category')->nullable();
-            $table->string('equipment')->nullable();
-            $table->string('articleName')->nullable();
-            $table->string('length')->nullable();
-            $table->string('width')->nullable();
-            $table->string('height')->nullable();
-            $table->string('weight')->nullable();
-            $table->string('quantity')->nullable();
-            //Common Flieds
+            $table->string('model_name')->nullable();
+            $table->string('vehicleName')->nullable();
+            $table->string('make')->nullable();
+            $table->string('model')->nullable();
+            $table->string('estimationValue')->nullable();
+            $table->string('movingVehicle')->nullable();
+            $table->string('conveyors')->nullable();
+            //Common Fields
             $table->string('loading_address')->nullable();
             $table->string('loading_start')->nullable();
             $table->string('loading_end')->nullable();
@@ -56,6 +55,6 @@ class CreateHouseHoldsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('house_holds');
+        Schema::dropIfExists('motorcycles_and_sports');
     }
 }

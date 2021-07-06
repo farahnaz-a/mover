@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateHouseHoldsTable extends Migration
+class CreateAgriFoodTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,16 +13,12 @@ class CreateHouseHoldsTable extends Migration
      */
     public function up()
     {
-        Schema::create('house_holds', function (Blueprint $table) {
+        Schema::create('agri_food', function (Blueprint $table) {
             $table->id();
-            $table->string('category')->nullable();
-            $table->string('equipment')->nullable();
+            $table->string('food_name')->nullable();
             $table->string('articleName')->nullable();
-            $table->string('length')->nullable();
-            $table->string('width')->nullable();
-            $table->string('height')->nullable();
-            $table->string('weight')->nullable();
             $table->string('quantity')->nullable();
+            $table->string('weight')->nullable();
             //Common Flieds
             $table->string('loading_address')->nullable();
             $table->string('loading_start')->nullable();
@@ -56,6 +52,6 @@ class CreateHouseHoldsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('house_holds');
+        Schema::dropIfExists('agri_food');
     }
 }
