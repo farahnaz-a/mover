@@ -97,6 +97,15 @@ class FrontendController extends Controller
 
       ]);
   }
+  /**
+   *  Request A Quote (Step Three From Vehicle)
+   */
+  public function vehicleThree(Request $request)
+  {
+      
+
+      return view('frontend.vehicleThree');
+  }
 
   /**
    *  Contact Page (Frontend)

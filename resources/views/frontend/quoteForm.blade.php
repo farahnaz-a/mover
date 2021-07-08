@@ -232,10 +232,10 @@
                     <div class="col-md-6">
                         <div class="bg-light-gray p-3 rounded mt-3">
                         <form
-                            action="#"
-                            onsubmit="return false"
+                            action="{{ route('step3.vehicle') }}"
                             class="needs-validation"
                             id="vehicle-form"
+                            method="POST"
                         >
                             <input type="hidden" id="vehicle-type" />
                             <input
@@ -382,7 +382,7 @@
                         <div class="row">
                         <div class="col-md-6">
                             <div class="bg-light-gray p-3 rounded mt-3">
-                            <form action="#" onsubmit="return false" class="needs-validation article-form" id="motorcycleSport-form">
+                            <form action="#" class="needs-validation article-form" id="motorcycleSport-form">
                                 <input
                                 type="hidden"
                                 name="transportType"
