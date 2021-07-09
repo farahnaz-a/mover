@@ -45,6 +45,7 @@ class CreateMiscellaneousesTable extends Migration
             $table->string('image')->nullable();
             $table->string('offers')->nullable();
             $table->string('terms')->nullable();
+            $table->enum('hired', ['yes', 'no'])->default('no');
             $table->timestamps();
         });
     }

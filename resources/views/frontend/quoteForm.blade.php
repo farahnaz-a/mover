@@ -525,10 +525,11 @@
                                 <div class="bg-light-gray p-3 rounded mt-3">
                                     <form
                                     action="{{ route('step3.boatvolimunoussport') }}"
-                                    onsubmit="return false"
+                                    method="POST"
                                     class="needs-validation article-form"
                                     id="boat-voluminous-form"
                                     >
+                                    @csrf
                                     <input
                                         type="hidden"
                                         name="transportType"
@@ -663,7 +664,7 @@
                                         Add an article
                                         </button>
                                     </div>
-                                    </form>
+                                  
                                 </div>
                                 </div>
                                 <div class="col-md-6 d-block"
@@ -675,11 +676,14 @@
                                 <i class="icofont-simple-left mr-2"></i>Back
                                 </a>
                                 <button
+                                type="submit"
                                 data-section="1"
                                 class="continue btn text-white bg-navy-blue ml-3"
                                 >
+
                                 Continue
                                 </button>
+                              </form>
                             </div>
                 </div>
                 <!-- boats and voluminous sport form end -->
@@ -696,7 +700,7 @@
                         <div class="bg-light-gray p-3 rounded mt-3">
                             <form
                             action="{{ route('step3.fragilegoods') }}"
-                            onsubmit="return false"
+                            
                             class="needs-validation article-form"
                             id="fragileGoods-form"
                             >
