@@ -151,6 +151,8 @@ Route::post('/package/step-three', [FrontendController::class, 'packageThree'])-
 Route::post('/pallet/step-three', [FrontendController::class, 'palletThree'])->name('step3.pallet');
 Route::post('/animal/step-three', [FrontendController::class, 'animalThree'])->name('step3.animal');
 Route::post('/agrifood/step-three', [FrontendController::class, 'agrifoodThree'])->name('step3.agrifood');
+Route::post('/commercialgoods/step-three', [FrontendController::class, 'commercialgoodsThree'])->name('step3.commercialgoods');
+Route::post('/miscellaneous/step-three', [FrontendController::class, 'miscellaneousThree'])->name('step3.miscellaneous');
 Route::get('/demande/en/cours', [FrontendController::class, 'announcements'])->name('frontend.announcements');
 Route::get('/transport-details', [FrontendController::class, 'details'])->name('frontend.details');
 Route::get('/contact', [FrontendController::class, 'contact'])->name('frontend.contact');

@@ -230,6 +230,40 @@ class FrontendController extends Controller
 
       ]);
   }
+  /**
+   *  Request A Quote (Step Three From Commercial goods)
+   */
+  public function commercialgoodsThree(Request $request)
+  {
+      return view('frontend.commercialgoodsThree',[
+
+        'model_name'   => $request->model_name, 
+        'articleName'  => $request->articleName, 
+        'length'       => $request->length, 
+        'width'        => $request->width, 
+        'height'       => $request->height, 
+        'weight'       => $request->weight, 
+        'quantity'     => $request->quantity, 
+
+      ]);
+  }
+  /**
+   *  Request A Quote (Step Three From Miscellaneous)
+   */
+  public function miscellaneousThree(Request $request)
+  {
+      return view('frontend.miscellaneousThree',[
+
+        'others'       => $request->others, 
+        'articleName'  => $request->articleName, 
+        'length'       => $request->length, 
+        'width'        => $request->width, 
+        'height'       => $request->height, 
+        'weight'       => $request->weight, 
+        'quantity'     => $request->quantity, 
+
+      ]);
+  }
 
   /**
    *  Contact Page (Frontend)

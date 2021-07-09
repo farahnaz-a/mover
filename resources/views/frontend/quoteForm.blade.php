@@ -1379,8 +1379,7 @@
                     <div class="col-md-6">
                     <div class="bg-light-gray p-3 rounded mt-3">
                         <form
-                        action="#"
-                        onsubmit="return false"
+                        action="{{ route('step3.commercialgoods') }}"
                         class="needs-validation article-form"
                         id="commercial-good-form"
                         >
@@ -1521,8 +1520,7 @@
                       <div class="col-md-6">
                         <div class="bg-light-gray p-3 rounded mt-3">
                           <form
-                            action="#"
-                            onsubmit="return false"
+                            action="{{ route('step3.miscellaneous') }}"
                             class="needs-validation article-form"
                             id="miscellaneous-form"
                           >
