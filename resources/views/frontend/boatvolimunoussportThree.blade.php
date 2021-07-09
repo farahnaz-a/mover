@@ -63,10 +63,15 @@
                         <form action="" method="POST">
                             @csrf
                             <input type="hidden" name="model_name" value="model_name" id="">
-                            <input type="hidden" name="vehicleName" value="vehicleName" id="">
-                            <input type="hidden" name="make" value="articleName" id="">
+                            <input type="hidden" name="boatName" value="boatName" id="">
+                            <input type="hidden" name="length" value="length" id="">
+                            <input type="hidden" name="width" value="width" id="">
+                            <input type="hidden" name="height" value="height" id="">
+                            <input type="hidden" name="quantity" value="quantity" id="">
+                            <input type="hidden" name="make" value="make" id="">
                             <input type="hidden" name="model" value="model" id="">
                             <input type="hidden" name="estimationValue" value="estimationValue" id="">
+                            <input type="hidden" name="conveyors" value="conveyors" id="">
                           <div class="form-group">
                             <input
                               class="form-control" name="loading_address" type="text" placeholder="Address"/>

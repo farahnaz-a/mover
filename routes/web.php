@@ -144,6 +144,13 @@ Route::get('/demande/de/devis', [FrontendController::class, 'requestQuote'])->na
 Route::get('/form/{category}/quote', [FrontendController::class, 'form'])->name('frontend.requestQuoteForm');
 Route::post('/household/step-three', [FrontendController::class, 'householdThree'])->name('step3.household');
 Route::post('/vehicle/step-three', [FrontendController::class, 'vehicleThree'])->name('step3.vehicle');
+Route::post('/motorcyclesport/step-three', [FrontendController::class, 'motorcyclesportThree'])->name('step3.motorcyclesport');
+Route::post('/boatvolimunoussport/step-three', [FrontendController::class, 'boatvolimunoussportThree'])->name('step3.boatvolimunoussport');
+Route::post('/fragilegoods/step-three', [FrontendController::class, 'fragilegoodsThree'])->name('step3.fragilegoods');
+Route::post('/package/step-three', [FrontendController::class, 'packageThree'])->name('step3.package');
+Route::post('/pallet/step-three', [FrontendController::class, 'palletThree'])->name('step3.pallet');
+Route::post('/animal/step-three', [FrontendController::class, 'animalThree'])->name('step3.animal');
+Route::post('/agrifood/step-three', [FrontendController::class, 'agrifoodThree'])->name('step3.agrifood');
 Route::get('/demande/en/cours', [FrontendController::class, 'announcements'])->name('frontend.announcements');
 Route::get('/transport-details', [FrontendController::class, 'details'])->name('frontend.details');
 Route::get('/contact', [FrontendController::class, 'contact'])->name('frontend.contact');

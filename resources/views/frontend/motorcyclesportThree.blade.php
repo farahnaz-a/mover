@@ -66,7 +66,9 @@
                             <input type="hidden" name="vehicleName" value="vehicleName" id="">
                             <input type="hidden" name="make" value="articleName" id="">
                             <input type="hidden" name="model" value="model" id="">
+                            <input type="hidden" name="movingVehicle" value="movingVehicle" id="">
                             <input type="hidden" name="estimationValue" value="estimationValue" id="">
+                            <input type="hidden" name="conveyors" value="conveyors" id="">
                           <div class="form-group">
                             <input
                               class="form-control" name="loading_address" type="text" placeholder="Address"/>

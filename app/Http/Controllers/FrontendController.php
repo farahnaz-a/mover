@@ -81,9 +81,7 @@ class FrontendController extends Controller
    *  Request A Quote (Step Three From Household)
    */
   public function householdThree(Request $request)
-  {
-      
-
+  {     
       return view('frontend.householdThree', [
 
       'category'     => $request->category, 
@@ -102,9 +100,135 @@ class FrontendController extends Controller
    */
   public function vehicleThree(Request $request)
   {
-      
+      return view('frontend.vehicleThree',[
 
-      return view('frontend.vehicleThree');
+        'model_name'      => $request->model_name, 
+        'vehicleName'     => $request->vehicleName, 
+        'make'            => $request->make,
+        'model'           => $request->model,
+        'estimationValue' => $request->estimationValue, 
+        
+      ]);
+  }
+  /**
+   *  Request A Quote (Step Three From Motorcycle Sport)
+   */
+  public function motorcyclesportThree(Request $request)
+  {
+      return view('frontend.motorcyclesportThree',[
+
+        'model_name'      => $request->model_name, 
+        'vehicleName'     => $request->vehicleName, 
+        'make'            => $request->make,
+        'model'           => $request->model,
+        'estimationValue' => $request->estimationValue, 
+        'movingVehicle'   => $request->movingVehicle, 
+        'conveyors'       => $request->conveyors, 
+
+      ]);
+  }
+  /**
+   *  Request A Quote (Step Three From Boat And Volimunous)
+   */
+  public function boatvolimunoussportThree(Request $request)
+  {
+      return view('frontend.boatvolimunoussportThree',[
+
+        'model_name'       => $request->model_name, 
+        'boatName'         => $request->boatName, 
+        'length'           => $request->length,
+        'width'            => $request->width,
+        'height'           => $request->height, 
+        'quantity'         => $request->quantity, 
+        'make'             => $request->make, 
+        'model'            => $request->model, 
+        'estimationValue'  => $request->estimationValue, 
+        'conveyors'        => $request->conveyors, 
+
+      ]);
+  }
+  /**
+   *  Request A Quote (Step Three From Fragilegoods)
+   */
+  public function fragilegoodsThree(Request $request)
+  {
+      return view('frontend.fragilegoodsThree',[
+
+        'model_name'       => $request->model_name, 
+        'articleName'      => $request->articleName, 
+        'length'           => $request->length,
+        'width'            => $request->width,
+        'height'           => $request->height, 
+        'weight'           => $request->weight, 
+        'quantity'         => $request->quantity, 
+
+      ]);
+  }
+  /**
+   *  Request A Quote (Step Three From Package/Fold)
+   */
+  public function packageThree(Request $request)
+  {
+      return view('frontend.packageThree',[
+
+        'model_name'       => $request->model_name, 
+        'articleName'      => $request->articleName, 
+        'length'           => $request->length,
+        'width'            => $request->width,
+        'height'           => $request->height, 
+        'weight'           => $request->weight, 
+        'quantity'         => $request->quantity, 
+
+      ]);
+  }
+  /**
+   *  Request A Quote (Step Three From Pallet)
+   */
+  public function palletThree(Request $request)
+  {
+      return view('frontend.palletThree',[
+
+        'model_name'    => $request->model_name, 
+        'articleName'   => $request->articleName, 
+        'dim'           => $request->dim,
+        'height'        => $request->height, 
+        'weight'        => $request->weight, 
+        'quantity'      => $request->quantity, 
+
+      ]);
+  }
+  /**
+   *  Request A Quote (Step Three From Animal)
+   */
+  public function animalThree(Request $request)
+  {
+      return view('frontend.animalThree',[
+
+        'model_name'    => $request->model_name, 
+        'animalName'    => $request->animalName, 
+        'animalBreed'   => $request->animalBreed, 
+        'weight'        => $request->weight, 
+        'specialNeeds'  => $request->specialNeeds,
+        'vaccinations'  => $request->vaccinations,
+        'length'        => $request->length, 
+        'width'         => $request->width, 
+        'height'        => $request->height, 
+
+      ]);
+  }
+  /**
+   *  Request A Quote (Step Three From Agrifood)
+   */
+  public function agrifoodThree(Request $request)
+  {
+      return view('frontend.agrifoodThree',[
+
+        'food_name'    => $request->food_name, 
+        'articleName'  => $request->articleName, 
+        'quantity'     => $request->quantity, 
+        'weight'       => $request->weight, 
+
+      ]);
   }
 
   /**

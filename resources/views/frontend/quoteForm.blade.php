@@ -382,7 +382,7 @@
                         <div class="row">
                         <div class="col-md-6">
                             <div class="bg-light-gray p-3 rounded mt-3">
-                            <form action="#" class="needs-validation article-form" id="motorcycleSport-form">
+                            <form action="{{ route('step3.motorcyclesport') }}" class="needs-validation article-form" id="motorcycleSport-form">
                                 <input
                                 type="hidden"
                                 name="transportType"
@@ -524,7 +524,7 @@
                                 <div class="col-md-6">
                                 <div class="bg-light-gray p-3 rounded mt-3">
                                     <form
-                                    action="#"
+                                    action="{{ route('step3.boatvolimunoussport') }}"
                                     onsubmit="return false"
                                     class="needs-validation article-form"
                                     id="boat-voluminous-form"
@@ -695,7 +695,7 @@
                         <div class="col-md-6">
                         <div class="bg-light-gray p-3 rounded mt-3">
                             <form
-                            action="#"
+                            action="{{ route('step3.fragilegoods') }}"
                             onsubmit="return false"
                             class="needs-validation article-form"
                             id="fragileGoods-form"
@@ -843,7 +843,7 @@
                               <div class="row">
                                 <div class="col-md-6">
                                   <div class="bg-light-gray p-3 rounded mt-3">
-                                    <form action="#" onsubmit="return false" class="needs-validation article-form" id="package-form" >
+                                    <form action="{{ route('step3.package') }}" class="needs-validation article-form" id="package-form" >
                                       <input
                                         type="hidden"
                                         name="transportType"
@@ -977,8 +977,7 @@
                               <div class="col-md-6">
                                 <div class="bg-light-gray p-3 rounded mt-3">
                                   <form
-                                    action="#"
-                                    onsubmit="return false"
+                                    action="{{ route('step3.pallet') }}"
                                     class="needs-validation article-form"
                                     id="pallet-form"
                                   >
@@ -1115,8 +1114,7 @@
                     <div class="col-md-6">
                     <div class="bg-light-gray p-3 rounded mt-3">
                         <form
-                        action="#"
-                        onsubmit="return false"
+                        action="{{ route('step3.animal') }}"
                         class="needs-validation article-form"
                         id="animal-form"
                         >
@@ -1276,8 +1274,7 @@
                       <div class="col-md-6">
                         <div class="bg-light-gray p-3 rounded mt-3">
                           <form
-                            action="#"
-                            onsubmit="return false"
+                            action="{{ route('step3.agrifood') }}"
                             class="needs-validation article-form"
                             id="agri-food-form"
                           >
@@ -1287,7 +1284,7 @@
                               value="agri-food"
                             />
                             <div class="form-group">
-                              <input
+                              <input name="food_name"
                                 type="text"
                                 placeholder="Roquefort, dried fruit, spices..."
                                 class="form-control"

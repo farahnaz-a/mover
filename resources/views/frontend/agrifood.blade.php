@@ -62,11 +62,10 @@
                       <div class="bg-light-gray my-3 p-3 rounded">
                         <form action="" method="POST">
                             @csrf
-                            <input type="hidden" name="model_name" value="model_name" id="">
-                            <input type="hidden" name="vehicleName" value="vehicleName" id="">
-                            <input type="hidden" name="make" value="articleName" id="">
-                            <input type="hidden" name="model" value="model" id="">
-                            <input type="hidden" name="estimationValue" value="estimationValue" id="">
+                            <input type="hidden" name="food_name" value="model_name" id="">
+                            <input type="hidden" name="articleName" value="articleName" id="">
+                            <input type="hidden" name="quantity" value="quantity" id="">
+                            <input type="hidden" name="weight" value="weight" id="">
                           <div class="form-group">
                             <input
                               class="form-control" name="loading_address" type="text" placeholder="Address"/>
