@@ -21,6 +21,7 @@ class AgriFoodController extends Controller
      */
     public function store(Request $request)
     {
+        dd($request->all());
         $request -> validate([
             'food_name'          => 'required',
             'articleName'        => 'required',

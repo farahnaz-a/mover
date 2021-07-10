@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\AgriFood;
 use App\Models\Blog;
 use App\Models\Team;
 use App\Models\Work;
@@ -16,6 +17,8 @@ use App\Models\Service;
 use App\Models\Testimonial;
 use App\Models\Registration;
 use Illuminate\Http\Request;
+use Carbon\Carbon;
+use Auth;
 
 class FrontendController extends Controller
 {
@@ -229,6 +232,7 @@ class FrontendController extends Controller
         'weight'       => $request->weight, 
 
       ]);
+
   }
   /**
    *  Request A Quote (Step Three From Commercial goods)
