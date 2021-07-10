@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\BoatsAndVoluminous;
+use Carbon\Carbon;
 
 class BoatsAndVoluminousController extends Controller
 {
@@ -19,6 +21,19 @@ class BoatsAndVoluminousController extends Controller
      */
     public function store(Request $request)
     {
-        dd($request->all);
+        $request->validate([
+            'model_name'      => 'required',
+            'boatName'        => 'required',
+            'lenght'          => 'required|numeric',
+            'width'           => 'required|numeric',
+            'height'          => 'required|numeric',
+            'quantity'        => 'required|numeric',
+            'make'            => 'required',
+            'model'           => 'required',
+            'estimationValue' => 'required',
+            'conveyors'       => 'required',
+        ]);
+
+        BoatsAndVoluminous::create($request->except('_token') + ['user_id'=>Carbon::now()] );
     }
 }

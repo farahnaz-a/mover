@@ -60,7 +60,7 @@
                         of loading:
                       </h5>
                       <div class="bg-light-gray my-3 p-3 rounded">
-                        <form action="" method="POST">
+                        <form action="{{ route('agrifood.store') }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             <input type="hidden" name="food_name" value="model_name" id="">
                             <input type="hidden" name="articleName" value="articleName" id="">
@@ -136,7 +136,6 @@
                               </select>
                             </div>
                           </div>
-                        
                       </div>
                     </div>
                     <div class="col-md-6">

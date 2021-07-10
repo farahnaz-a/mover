@@ -7,6 +7,7 @@ use App\Http\Controllers\TeamController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\WorkController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\AgriFoodController;
 use App\Http\Controllers\MoverController;
 use App\Http\Controllers\BannerController;
 use App\Http\Controllers\ClientController;
@@ -157,3 +158,6 @@ Route::get('/demande/en/cours', [FrontendController::class, 'announcements'])->n
 Route::get('/transport-details', [FrontendController::class, 'details'])->name('frontend.details');
 Route::get('/contact', [FrontendController::class, 'contact'])->name('frontend.contact');
 Route::get('/inscription/demenageur', [FrontendController::class, 'moverReg'])->name('frontend.moverReg');
+
+//Agrifood controller
+Route::post('/agrifood/store', [AgriFoodController::class, 'store'])->name('agrifood.store');

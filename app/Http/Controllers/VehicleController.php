@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Vehicle;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class VehicleController extends Controller
 {
@@ -20,6 +23,16 @@ class VehicleController extends Controller
      */
     public function store(Request $request)
     {
-        dd($request->all);
+        $request->validate([
+            'model_name'      => 'required', 
+            'vehicleName'     => 'required', 
+            'make'            => 'required',
+            'model'           => 'required',
+            'estimationValue' => 'required', 
+        
+        ]);
+
+        Vehicle::create($request->except('_token') + ['user_id'=>Auth::id(), 'created_at'=>Carbon::now()]);
+    
     }
 }

@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Pallet;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class PalletController extends Controller
 {
@@ -19,6 +22,16 @@ class PalletController extends Controller
      */
     public function store(Request $request)
     {
-        dd($request->all);
+        $request->validate([
+            'model_name'    => 'required', 
+            'articleName'   => 'required', 
+            'dim'           => 'required',
+            'height'        => 'required|numeric', 
+            'weight'        => 'required|numeric', 
+            'quantity'      => 'required|numeric',
+
+        ]);
+
+        Pallet::create($request->except('_token') + ['user_id'=>Auth::id(), 'created_at'=>Carbon::now()]);
     }
 }
