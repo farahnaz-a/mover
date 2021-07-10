@@ -338,22 +338,12 @@
                                         Please fill every field carefully
                                     </div>
                                     </div>
-                                    <div class="form-group">
-                                    <button
-                                        class="article-btn btn text-white bg-navy-blue"
-                                        data-target="#vehicle-form"
-                                        data-article="#vehicle-articles"
-                                        data-alert="#vehicle-empty-alert"
-                                    >
-                                        Add an article
-                                    </button>
-                                    </div>
-                                </form>
+                               
                                 </div>
                             </div>
                             <div class="col-md-6 d-block" id="vehicle-articles"></div>
                             </div>
-                            <div class="text-right">
+                            <form class="text-right">
                             <button
                                 data-section="0"
                                 class="back btn btn-outline-danger"
@@ -363,9 +353,11 @@
                             <button
                                 data-section="1"
                                 class="continue btn text-white bg-navy-blue ml-3"
+                                type="submit"
                             >
                                 Continue
                             </button>
+                          </form>
                             </div>
                         </div>
                         </div>
@@ -483,17 +475,7 @@
                                             Please fill every field carefully
                                         </div>
                                         </div>
-                                        <div class="form-group">
-                                        <button
-                                            class="article-btn btn text-white bg-navy-blue"
-                                            data-target="#motorcycleSport-form"
-                                            data-article="#motorcycleSport-articles"
-                                            data-alert="#motorcycleSport-empty-alert"
-                                        >
-                                            Add an article
-                                        </button>
-                                        </div>
-                                    </form>
+                                 
                                     </div>
                                 </div>
                                 <div class="col-md-6 d-block" id="motorcycleSport-articles"></div>
@@ -506,9 +488,11 @@
                                 <button
                                     data-section="1"
                                     class="continue btn text-white bg-navy-blue ml-3"
+                                    type="submit"
                                 >
                                     Continue
                                 </button>
+                              </form>
                                 </div>
                             </div>
                         <!-- motorcycle and sport form end -->
@@ -652,16 +636,7 @@
                                                 Please fill every field carefully
                                                 </div>
                                             </div>
-                                            <div class="form-group">
-                                                <button
-                                                class="article-btn btn text-white bg-navy-blue"
-                                                data-target="#boat-voluminous-form"
-                                                data-article="#boat-voluminous-articles"
-                                                data-alert="#boat-voluminous-empty-alert"
-                                                >
-                                                Add an article
-                                                </button>
-                                            </div>
+                                           
                                           
                                         </div>
                                         </div>
@@ -802,17 +777,7 @@
                                         Please fill every field carefully
                                         </div>
                                     </div>
-                                    <div class="form-group">
-                                        <button
-                                        class="article-btn btn text-white bg-navy-blue"
-                                        data-target="#fragileGoods-form"
-                                        data-article="#fragileGoods-articles"
-                                        data-alert="#fragileGoods-empty-alert"
-                                        >
-                                        Add an article
-                                        </button>
-                                    </div>
-                                    </form>
+                                  
                                 </div>
                                 </div>
                                 <div
@@ -828,9 +793,12 @@
                                 <button
                                 data-section="1"
                                 class="continue btn text-white bg-navy-blue ml-3"
+                                type="submit"
                                 >
                                 Continue
                                 </button>
+                                
+                              </form>
                             </div>
                             </div>
                             <!-- Fragile goods form end -->
@@ -942,17 +910,8 @@
                                                   Please fill every field carefully
                                                 </div>
                                               </div>
-                                              <div class="form-group">
-                                                <button
-                                                  class="article-btn btn text-white bg-navy-blue"
-                                                  data-target="#package-form"
-                                                  data-article="#package-articles"
-                                                  data-alert="#package-empty-alert"
-                                                >
-                                                  Add an article
-                                                </button>
-                                              </div>
-                                            </form>
+                                        
+                                            
                                           </div>
                                         </div>
                                         <div class="col-md-6 d-block" id="package-articles"></div>
@@ -961,9 +920,10 @@
                                         <button data-section="0" class="back btn btn-outline-danger" >
                                           <i class="icofont-simple-left mr-2"></i>Back
                                         </button>
-                                        <button data-section="1" class="continue btn text-white bg-navy-blue ml-3" >
+                                        <button type="submit" data-section="1" class="continue btn text-white bg-navy-blue ml-3" >
                                           Continue
                                         </button>
+                                      </form>
                                       </div>
                                     </div>
                                     <!-- Package/Flod form end -->
@@ -1076,17 +1036,8 @@
                                                 Please fill every field carefully
                                               </div>
                                             </div>
-                                            <div class="form-group">
-                                              <button
-                                                class="article-btn btn text-white bg-navy-blue"
-                                                data-target="#pallet-form"
-                                                data-article="#pallet-articles"
-                                                data-alert="#pallet-empty-alert"
-                                              >
-                                                Add an article
-                                              </button>
-                                            </div>
-                                          </form>
+                                       
+                                          
                                         </div>
                                       </div>
                                       <div class="col-md-6 d-block" id="pallet-articles"></div>
@@ -1099,9 +1050,11 @@
                                       <button
                                         data-section="1"
                                         class="continue btn text-white bg-navy-blue ml-3"
+                                        type="submit"
                                       >
                                         Continue
                                       </button>
+                                    </form>
                                     </div>
                                   </div>
                                   <!-- Pallet form end -->
@@ -1234,17 +1187,8 @@
                                     Please fill every field carefully
                                     </div>
                                 </div>
-                                <div class="form-group">
-                                    <button
-                                    class="article-btn btn text-white bg-navy-blue"
-                                    data-target="#animal-form"
-                                    data-article="#animal-articles"
-                                    data-alert="#animal-empty-alert"
-                                    >
-                                    Add an article
-                                    </button>
-                                </div>
-                                </form>
+                           
+                                
                             </div>
                             </div>
                             <div class="col-md-6 d-block" id="animal-articles"></div>
@@ -1259,9 +1203,11 @@
                             <button
                             data-section="1"
                             class="continue btn text-white bg-navy-blue ml-3"
+                            type="submit"
                             >
                             Continue
                             </button>
+                          </form>
                         </div>
                         </div>
                         <!-- Animal form end -->
@@ -1340,17 +1286,8 @@
                                         Please fill every field carefully
                                       </div>
                                     </div>
-                                    <div class="form-group">
-                                      <button
-                                        class="article-btn btn text-white bg-navy-blue"
-                                        data-target="#agri-food-form"
-                                        data-article="#agri-food-articles"
-                                        data-alert="#agri-food-empty-alert"
-                                      >
-                                        Add an article
-                                      </button>
-                                    </div>
-                                  </form>
+                                
+                                
                                 </div>
                               </div>
                               <div class="col-md-6 d-block" id="agri-food-articles"></div>
@@ -1363,9 +1300,11 @@
                               <button
                                 data-section="1"
                                 class="continue btn text-white bg-navy-blue ml-3"
+                                type="submit"
                               >
                                 Continue
                               </button>
+                            </form>
                             </div>
                           </div>
                           <!-- Agri-food form end -->
@@ -1482,17 +1421,7 @@
                                     Please fill every field carefully
                                     </div>
                                 </div>
-                                <div class="form-group">
-                                    <button
-                                    class="article-btn btn text-white bg-navy-blue"
-                                    data-target="#commercial-good-form"
-                                    data-article="#commercial-good-articles"
-                                    data-alert="#commercial-good-empty-alert"
-                                    >
-                                    Add an article
-                                    </button>
-                                </div>
-                                </form>
+                                
                             </div>
                             </div>
                             <div class="col-md-6 d-block" id="commercial-good-articles"></div>
@@ -1505,9 +1434,11 @@
                             <button
                             data-section="1"
                             class="continue btn text-white bg-navy-blue ml-3"
+                            type="submit"
                             >
                             Continue
                             </button>
+                          </form>
                         </div>
                         </div>
                         <!-- Commercial Goods form end -->
@@ -1623,17 +1554,8 @@
                                         Please fill every field carefully
                                       </div>
                                     </div>
-                                    <div class="form-group">
-                                      <button
-                                        class="article-btn btn text-white bg-navy-blue"
-                                        data-target="#miscellaneous-form"
-                                        data-article="#miscellaneous-articles"
-                                        data-alert="#miscellaneous-empty-alert"
-                                      >
-                                        Add an article
-                                      </button>
-                                    </div>
-                                  </form>
+                                  
+                                 
                                 </div>
                               </div>
                               <div class="col-md-6 d-block" id="miscellaneous-articles"></div>
@@ -1646,9 +1568,11 @@
                               <button
                                 data-section="1"
                                 class="continue btn text-white bg-navy-blue ml-3"
+                                type="submit"
                               >
                                 Continue
                               </button>
+                            </form>
                             </div>
                           </div>
                           <!-- Miscellaneous form end -->

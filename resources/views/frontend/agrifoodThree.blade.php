@@ -217,7 +217,7 @@
                               </select>
                             </div>
                           </div>
-                        </form>
+                           {{-- Ekhane form shesh korsilo sayem --}}
                       </div>
                     </div>
                   </div>
@@ -308,9 +308,11 @@
                       <button
                         data-section="2"
                         class="continue btn text-white bg-navy-blue ml-3"
+                        type="submit" {{-- type submit boshbe --}}
                       >
                         Continue
                       </button>
+                    </form>  {{-- Ekhane shesh hobe --}}
                     </div>
                   </div>
                 </div>
