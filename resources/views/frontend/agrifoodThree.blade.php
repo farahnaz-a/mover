@@ -67,8 +67,7 @@
                             <input type="hidden" name="quantity" value="{{ $quantity }}" id="">
                             <input type="hidden" name="weight" value="{{ $weight }}" id="">
                           <div class="form-group">
-                            <input
-                              class="form-control" name="loading_address" type="text" placeholder="Address"/>
+                            <input class="form-control" name="loading_address" type="text" placeholder="Address"/>
                           </div>
                           <div class="form-row">
                             <div class="form-group col-md-6">
@@ -360,5 +359,5 @@
 
 @section('js')
          <!-- transport scripts -->
-         {{-- <script src="{{ asset('assets/js/transport.js') }}"></script> --}}
+         <script src="{{ asset('assets/js/transport.js') }}"></script>
 @endsection 

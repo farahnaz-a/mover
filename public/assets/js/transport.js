@@ -1,14 +1,14 @@
 //selectors
-const steps = document.querySelectorAll('.transport-steps-wrapper > div')
+// const steps = document.querySelectorAll('.transport-steps-wrapper > div')
 const transportElement = document.querySelector('#transport')
 const transportItems = document.querySelectorAll('.transport-item')
-const backBtns = document.querySelectorAll('.back')
-const continueBtns = document.querySelectorAll('.continue')
+// const backBtns = document.querySelectorAll('.back')
+// const continueBtns = document.querySelectorAll('.continue')
 const showAllBtn = document.querySelector('#all-item')
 const hiddenTransportItems = document.querySelectorAll('.hidden-transport-item')
 const addressSection = document.querySelector('#address')
-const login = document.querySelector('#login')
-const toLogin = document.querySelector('#to-login')
+// const login = document.querySelector('#login')
+// const toLogin = document.querySelector('#to-login')
 const registration = document.querySelector('#registration')
 const toRegistration = document.querySelector('#to-registration')
 const userForm = document.querySelector('#user-form')
@@ -16,58 +16,57 @@ const userForm = document.querySelector('#user-form')
 let formSectionId
 
 //Event listener
-showAllBtn.addEventListener('click', function () {
-  hiddenTransportItems.forEach((item) => item.classList.remove('d-none'))
+showAllBtn?.addEventListener('click', function () {
+  hiddenTransportItems?.forEach((item) => item.classList.remove('d-none'))
   this.parentElement.classList.add('d-none')
 })
-transportItems.forEach((transportItem) => {
-  transportItem.addEventListener('click', () => {
-    const formId = (formSectionId = transportItem.getAttribute('data-target'))
-    console.log(formSectionId)
-    document.querySelector(formId).classList.remove('d-none')
-    transportElement.classList.add('d-none')
-    steps[0].classList.remove('active')
-    steps[1].classList.add('active')
-  })
-})
-backBtns.forEach((backBtn) => {
-  backBtn.addEventListener('click', () => {
-    const section = parseInt(backBtn.getAttribute('data-section'))
-    vehicle1.classList.remove('d-none')
-    vehicle2.classList.add('d-none')
-    if (section === 0) {
-      transportElement.classList.remove('d-none')
-      document.querySelector(formSectionId).classList.add('d-none')
-      steps[0].classList.add('active')
-      steps[1].classList.remove('active')
-    } else if (section === 1) {
-      document.querySelector(formSectionId).classList.remove('d-none')
-      addressSection.classList.add('d-none')
-      steps[1].classList.add('active')
-      steps[2].classList.remove('active')
-    } else {
-      addressSection.classList.remove('d-none')
-      userForm.classList.add('d-none')
-      steps[2].classList.add('active')
-    }
-  })
-})
-continueBtns.forEach((continueBtn) => {
-  continueBtn.addEventListener('click', () => {
-    const section = parseInt(continueBtn.getAttribute('data-section'))
-    console.log(section)
-    if (section === 1) {
-      document.querySelector(formSectionId).classList.add('d-none')
-      addressSection.classList.remove('d-none')
-      steps[1].classList.remove('active')
-      steps[2].classList.add('active')
-    } else if (section === 2) {
-      addressSection.classList.add('d-none')
-      userForm.classList.remove('d-none')
-      steps[2].classList.remove('active')
-    }
-  })
-})
+// transportItems?.forEach((transportItem) => {
+//   transportItem?.addEventListener('click', () => {
+//     const formId = (formSectionId = transportItem.getAttribute('data-target'))
+//     document.querySelector(formId).classList.remove('d-none')
+//     transportElement.classList.add('d-none')
+//     steps[0].classList.remove('active')
+//     steps[1].classList.add('active')
+//   })
+// })
+// backBtns.forEach((backBtn) => {
+//   backBtn.addEventListener('click', () => {
+//     const section = parseInt(backBtn.getAttribute('data-section'))
+//     vehicle1.classList.remove('d-none')
+//     vehicle2.classList.add('d-none')
+//     if (section === 0) {
+//       transportElement.classList.remove('d-none')
+//       document.querySelector(formSectionId).classList.add('d-none')
+//       steps[0].classList.add('active')
+//       steps[1].classList.remove('active')
+//     } else if (section === 1) {
+//       document.querySelector(formSectionId).classList.remove('d-none')
+//       addressSection.classList.add('d-none')
+//       steps[1].classList.add('active')
+//       steps[2].classList.remove('active')
+//     } else {
+//       addressSection.classList.remove('d-none')
+//       userForm.classList.add('d-none')
+//       steps[2].classList.add('active')
+//     }
+//   })
+// })
+// continueBtns.forEach((continueBtn) => {
+//   continueBtn.addEventListener('click', () => {
+//     const section = parseInt(continueBtn.getAttribute('data-section'))
+//     console.log(section)
+//     if (section === 1) {
+//       document.querySelector(formSectionId).classList.add('d-none')
+//       addressSection.classList.remove('d-none')
+//       steps[1].classList.remove('active')
+//       steps[2].classList.add('active')
+//     } else if (section === 2) {
+//       addressSection.classList.add('d-none')
+//       userForm.classList.remove('d-none')
+//       steps[2].classList.remove('active')
+//     }
+//   })
+// })
 
 //if form is vehicle
 const vehicle1 = document.querySelector('#vehicle1')
@@ -75,7 +74,7 @@ const vehicle2 = document.querySelector('#vehicle2')
 const vehicleTypes = document.querySelectorAll('.vehicleType')
 const vehicleTypeInput = document.querySelector('#vehicle-type')
 
-vehicleTypes.forEach((vehicleType) => {
+vehicleTypes?.forEach((vehicleType) => {
   vehicleType.classList.remove('active')
   vehicleType.addEventListener('click', () => {
     vehicle1.classList.add('d-none')
@@ -90,14 +89,14 @@ vehicleTypes.forEach((vehicleType) => {
 })
 
 //user form handle
-toLogin.addEventListener('click', () => {
-  registration.classList.add('d-none')
-  login.classList.remove('d-none')
-})
-toRegistration.addEventListener('click', () => {
-  registration.classList.remove('d-none')
-  login.classList.add('d-none')
-})
+// toLogin.addEventListener('click', () => {
+//   registration.classList.add('d-none')
+//   login.classList.remove('d-none')
+// })
+// toRegistration.addEventListener('click', () => {
+//   registration.classList.remove('d-none')
+//   login.classList.add('d-none')
+// })
 
 // add articles functions
 //selectors
@@ -343,7 +342,7 @@ const articleHtml = (
                     }
                   </div>
                 </div>`
-articleBtns.forEach((articleBtn) =>
+articleBtns?.forEach((articleBtn) =>
   articleBtn.addEventListener('click', () => {
     const formElement = articleBtn.getAttribute('data-target')
     const articleForm = document.querySelector(formElement)
