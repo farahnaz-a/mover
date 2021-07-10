@@ -23,32 +23,29 @@ class AgriFoodController extends Controller
     public function store(Request $request)
     {
        
-        // $request -> validate([
-        //     'food_name'          => 'required',
-        //     'articleName'        => 'required',
-        //     'quantity'           => 'required|numeric',
-        //     'weight'             => 'required|numeric',
-        //     //common form
-        //     'loading_address'    => 'required',
-        //     'loading_start'      => 'required', 
-        //     'loading_end'        => 'required', 
-        //     'loading_time_slot'  => 'required',
-        //     'loading_house'      => 'required', 
-        //     'loading_floor'      => 'required',
-        //     'loading_elevator'   => 'required',
-        //     'loading_lift'       => 'required',
-        //     'information'        => 'required',
-        //     'delivery_address'   => 'required',
-        //     'delivery_start'     => 'required',
-        //     'delivery_end'       => 'required',
-        //     'delivery_time_slot' => 'required',
-        //     'delivery_house'     => 'required',
-        //     'delivery_floor'     => 'required',
-        //     'delivery_elevator'  => 'required',
-        //     'delivery_lift'      => 'required', 
-        //     'offers'             => 'required',
-        // ]);
+        $request -> validate([
 
+            //common form
+            'loading_address'    => 'required',
+            'loading_start'      => 'required', 
+            'loading_end'        => 'required', 
+            'loading_time_slot'  => 'required',
+            'loading_house'      => 'required', 
+            'loading_floor'      => 'required',
+            'loading_elevator'   => 'required',
+            'loading_lift'       => 'required',
+            'information'        => 'required',
+            'delivery_address'   => 'required',
+            'delivery_start'     => 'required',
+            'delivery_end'       => 'required',
+            'delivery_time_slot' => 'required',
+            'delivery_house'     => 'required',
+            'delivery_floor'     => 'required',
+            'delivery_elevator'  => 'required',
+            'delivery_lift'      => 'required', 
+        ]);
+
+        dd($request->all());
 
         
         $agrifoods = AgriFood::create([
