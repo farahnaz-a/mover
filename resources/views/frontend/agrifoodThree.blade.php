@@ -1,4 +1,4 @@
-{{-- {{-- @extends('layouts.frontend')
+ @extends('layouts.frontend')
 
 @section('title')
     {{ config('app.name') }} - Demande de devis
@@ -17,7 +17,7 @@
 
 @section('content')
        <!-- Main Body Content Start -->
-       <main id="body-content" style="overflow-y: inherit">
+      <main id="body-content" style="overflow-y: inherit">
           <!-- steps start -->
       <section class="transport-steps">
         <div class="container">
@@ -62,10 +62,10 @@
                       <div class="bg-light-gray my-3 p-3 rounded">
                         <form action="{{ route('agrifood.store') }}" method="POST" enctype="multipart/form-data">
                             @csrf
-                            <input type="hidden" name="food_name" value="model_name" id="">
-                            <input type="hidden" name="articleName" value="articleName" id="">
-                            <input type="hidden" name="quantity" value="quantity" id="">
-                            <input type="hidden" name="weight" value="weight" id="">
+                            <input type="hidden" name="food_name" value="{{ $food_name }}" id="">
+                            <input type="hidden" name="articleName" value="{{ $articleName }}" id="">
+                            <input type="hidden" name="quantity" value="{{ $quantity }}" id="">
+                            <input type="hidden" name="weight" value="{{ $weight }}" id="">
                           <div class="form-group">
                             <input
                               class="form-control" name="loading_address" type="text" placeholder="Address"/>
@@ -360,14 +360,5 @@
 
 @section('js')
          <!-- transport scripts -->
-         <script src="{{ asset('assets/js/transport.js') }}"></script>
-@endsection  --}}
-
-<form action="{{ route('agrifood.store') }}" method="POST" enctype="multipart/form-data">
-  @csrf
-  <input type="hidden" name="food_name" value="model_name" id="">
-  <input type="hidden" name="articleName" value="articleName" id="">
-  <input type="hidden" name="quantity" value="quantity" id="">
-  <input type="hidden" name="weight" value="weight" id="">
-  <button type="submit">submit</button>
-</form>
+         {{-- <script src="{{ asset('assets/js/transport.js') }}"></script> --}}
+@endsection 
