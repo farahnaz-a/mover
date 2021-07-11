@@ -35,7 +35,6 @@ class VehicleController extends Controller
             'loading_floor'      => 'required',
             'loading_elevator'   => 'required',
             'loading_lift'       => 'required',
-            'information'        => 'required',
             'delivery_address'   => 'required',
             'delivery_start'     => 'required',
             'delivery_end'       => 'required',

@@ -68,7 +68,7 @@
                             <input type="hidden" name="model" value="{{ $model }}" id="">
                             <input type="hidden" name="estimationValue" value="{{ $estimationValue }}" id="">
                             <div class="form-group">
-                              <input class="form-control" name="loading_address" type="text" placeholder="Address"/>
+                              <input class="form-control" name="loading_address" required type="text" placeholder="Address"/>
                               @error('loading_address')
                                   <div class="text-danger">
                                      {{ $message }}
@@ -78,7 +78,7 @@
                             <div class="form-row">
                               <div class="form-group col-md-6">
                                 <label for="">Start</label>
-                                <input class="form-control" name="loading_start" type="date" placeholder="Start"/>
+                                <input class="form-control" required name="loading_start" type="date" placeholder="Start"/>
                                  @error('loading_start')
                                     <div class="text-danger">
                                       {{ $message }}
@@ -87,7 +87,7 @@
                               </div>
                               <div class="form-group col-md-6">
                                 <label for="">End</label>
-                                <input class="form-control" name="loading_end" type="date" placeholder="End"/>
+                                <input class="form-control" required name="loading_end" type="date" placeholder="End"/>
                                   @error('loading_end')
                                     <div class="text-danger">
                                       {{ $message }}
@@ -97,7 +97,7 @@
                             </div>
                             <div class="form-group">
                               <label>Time slot loading</label>
-                              <select name="loading_time_slot" class="rounded">
+                              <select name="loading_time_slot" required class="rounded">
                                 <option value="anytime">anytime</option>
                                 <option value="morning">morning</option>
                                 <option value="afternoon">afternoon</option>
@@ -110,7 +110,7 @@
                               @enderror
                             </div>
                             <div class="form-group">
-                              <select name="loading_house" class="rounded">
+                              <select name="loading_house" required class="rounded">
                                 <option value="House">House</option>
                                 <option value="Building">Building</option>
                                 <option value="Storage facility">
@@ -128,7 +128,7 @@
                             <div class="form-row">
                               <div class="form-group col-md-6">
                                 <label for="">Select the floor</label>
-                                <select name="loading_floor" class="rounded">
+                                <select required name="loading_floor" class="rounded">
                                   <option value="RDC">RDC</option>
                                   <option value="1">1</option>
                                   <option value="2">2</option>
@@ -152,7 +152,7 @@
                               </div>
                               <div class="form-group col-md-6">
                                 <label for="">Is there is an elevator?</label>
-                                <select name="loading_elevator" class="rounded">
+                                <select required name="loading_elevator" class="rounded">
                                   <option value="Yes">Yes</option>
                                   <option value="No">No</option>
                                 </select>
@@ -164,7 +164,7 @@
                               </div>
                               <div class="form-group col-md-12">
                                 <label for="">Furniture lift required?</label>
-                                <select name="loading_lift" class="loading_lift" class="rounded">
+                                <select required name="loading_lift" class="loading_lift" class="rounded">
                                   <option value="Yes">Yes</option>
                                   <option value="No">No</option>
                                 </select>
@@ -184,7 +184,7 @@
                         </h5>
                         <div class="bg-light-gray my-3 p-3 rounded">
                             <div class="form-group">
-                              <input class="form-control" name="delivery_address" type="text"  placeholder="Address"/>
+                              <input class="form-control" name="delivery_address" type="text" required  placeholder="Address"/>
                               @error('delivery_address')
                                   <div class="text-danger">
                                     {{ $message }}
@@ -194,7 +194,7 @@
                             <div class="form-row">
                               <div class="form-group col-md-6">
                                 <label for="">Start</label>
-                                <input class="form-control" name="delivery_start" type="date" placeholder="Start"/>
+                                <input required class="form-control" name="delivery_start" type="date" placeholder="Start"/>
                                 @error('delivery_start')
                                   <div class="text-danger">
                                     {{ $message }}
@@ -203,7 +203,7 @@
                               </div>
                               <div class="form-group col-md-6">
                                 <label for="">End</label>
-                                <input name="delivery_end" class="form-control" type="date" placeholder="End"/>
+                                <input required name="delivery_end" class="form-control" type="date" placeholder="End"/>
                                 @error('delivery_end')
                                   <div class="text-danger">
                                     {{ $message }}
@@ -213,7 +213,7 @@
                             </div>
                             <div class="form-group">
                               <label>Time slot loading</label>
-                              <select name="delivery_time_slot" class="rounded">
+                              <select required name="delivery_time_slot" class="rounded">
                                 <option value="anytime">anytime</option>
                                 <option value="morning">morning</option>
                                 <option value="afternoon">afternoon</option>
@@ -226,7 +226,7 @@
                                 @enderror
                             </div>
                             <div class="form-group">
-                              <select name="delivery_house" class="rounded">
+                              <select required name="delivery_house" class="rounded">
                                 <option value="House">House</option>
                                 <option value="Building">Building</option>
                                 <option value="Storage facility">
@@ -244,7 +244,7 @@
                             <div class="form-row">
                               <div class="form-group col-md-6">
                                 <label for="">Select the floor</label>
-                                <select name="delivery_floor" class="rounded">
+                                <select required name="delivery_floor" class="rounded">
                                   <option value="RDC">RDC</option>
                                   <option value="1">1</option>
                                   <option value="2">2</option>
@@ -268,14 +268,14 @@
                               </div>
                               <div class="form-group col-md-6">
                                 <label for="">Is there is an elevator?</label>
-                                <select name="delivery_elevator" class="rounded">
+                                <select required name="delivery_elevator" class="rounded">
                                   <option value="Yes">Yes</option>
                                   <option value="No">No</option>
                                 </select>
                               </div>
                               <div class="form-group col-md-12">
                                 <label for="">Furniture lift required?</label>
-                                <select name="delivery_lift" class="rounded">
+                                <select required name="delivery_lift" class="rounded">
                                   <option value="Yes">Yes</option>
                                   <option value="No">No</option>
                                 </select>
@@ -350,7 +350,7 @@
                     </div>
                     <div class="mt-4">
                       <div class="custom-control custom-checkbox">
-                        <input name="offers" type="checkbox" class="custom-control-input" id="commercial-offer"/>
+                        <input  name="offers" type="checkbox" class="custom-control-input" id="commercial-offer"/>
                         <label class="custom-control-label" for="commercial-offer">I agree to receive commercial offers from FretBay and its partners</label>
                         @error('offers')
                           <div class="text-danger">
@@ -359,7 +359,7 @@
                         @enderror
                       </div>
                       <div class="custom-control custom-checkbox">
-                        <input name="terms" type="checkbox" class="custom-control-input" id="terms"
+                        <input required name="terms" type="checkbox" class="custom-control-input" id="terms"
                         />
                         <label class="custom-control-label" for="terms"
                           >I accept FretBay's Terms of Use
@@ -378,12 +378,12 @@
                         You can also consult the Privacy Policy
                       </small>
                       <div class="text-right">
-                        <button
-                          data-section="1"
+                        <a
+                          href="{{ URL::previous() }}"
                           class="back btn btn-outline-danger"
                         >
                           <i class="icofont-simple-left mr-2"></i>Back
-                        </button>
+                      </a>
                         <button
                           data-section="2"
                           class="continue btn text-white bg-navy-blue ml-3"

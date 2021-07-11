@@ -2,23 +2,33 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\AgriFood;
+use Auth;
+use Carbon\Carbon;
 use App\Models\Blog;
 use App\Models\Team;
 use App\Models\Work;
+use App\Models\Animal;
 use App\Models\Banner;
 use App\Models\Bullet;
 use App\Models\Client;
+use App\Models\Pallet;
 use App\Models\Callout;
 use App\Models\Contact;
 use App\Models\Counter;
 use App\Models\Country;
+use App\Models\Package;
 use App\Models\Service;
+use App\Models\AgriFood;
+use App\Models\HouseHold;
 use App\Models\Testimonial;
+use App\Models\FragileGoods;
 use App\Models\Registration;
 use Illuminate\Http\Request;
-use Carbon\Carbon;
-use Auth;
+use App\Models\Miscellaneous;
+use App\Models\CommercialGoods;
+use App\Models\BoatsAndVoluminous;
+use App\Models\MotorcyclesAndSports;
+use App\Models\Vehicle;
 
 class FrontendController extends Controller
 {
@@ -54,7 +64,19 @@ class FrontendController extends Controller
     */
    public function announcements()
    {
-       return view('frontend.announcements');
+       return view('frontend.announcements', [
+          'agrifoods' => AgriFood::where('hired', 'no')->orderBy('id', 'asc')->get(),
+          'animals'   => Animal::where('hired', 'no')->orderBy('id', 'asc')->get(),
+          'boats'     => BoatsAndVoluminous::where('hired', 'no')->orderBy('id', 'asc')->get(),
+          'commercials'=> CommercialGoods::where('hired', 'no')->orderBy('id', 'asc')->get(),
+          'fragiles'   => FragileGoods::where('hired', 'no')->orderBy('id', 'asc')->get(),
+          'households' => HouseHold::where('hired', 'no')->orderBy('id', 'asc')->get(),
+          'miscs' => Miscellaneous::where('hired', 'no')->orderBy('id', 'asc')->get(),
+          'motorsports' => MotorcyclesAndSports::where('hired', 'no')->orderBy('id', 'asc')->get(),
+          'packages'    => Package::where('hired', 'no')->orderBy('id', 'asc')->get(),
+          'pallets'    => Pallet::where('hired', 'no')->orderBy('id', 'asc')->get(),
+          'vehicles'    => Vehicle::where('hired', 'no')->orderBy('id', 'asc')->get(),
+       ]);
    }
 
    /**

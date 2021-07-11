@@ -287,6 +287,7 @@
                   </ul>
                 </nav>
                 <ul>
+                  @foreach ($households as $item)
                   <li class="shadow-sm">
                     <div class="row">
                       <div class="col-lg-6">
@@ -297,22 +298,21 @@
                               <span><i class="icofont-ui-message"></i> 0</span>
                             </div>
                             <span class="d-block">Depuis</span>
-                            <span class="d-block text-nowrap">27 jours</span>
+                            <span class="d-block text-nowrap">{{ $item->created_at->diffForHumans() }}</span>
                           </div>
                           <div class="nom">
                             <h5>
                               <a href="#"
-                                ><i class="icofont-home"></i>Déménagement 1m<sup
-                                  >3</sup
-                                ></a
+                                ><i class="icofont-home"></i>{{ $item->equipment }} 
+                                {{-- <sup>3</sup> --}}
+                                </a
                               >
                             </h5>
-                            <p><i class="icofont-star"></i>Annonce prioritaire</p>
+                            <p><i class="icofont-star"></i>prioritaire</p>
                             <span class="bg-light d-inline-block"
-                              >Camion avec chauffeur</span
+                              >{{ $item->articleName }}</span
                             >
-                            <span class="bg-light d-inline-block"
-                              >1 m<sup>3</sup></span
+                            <span class="bg-light d-inline-block"> l: {{ $item->length }}  w: {{ $item->width }}  h: {{ $item->height }}  wt: {{ $item->weight }} </span
                             >
                           </div>
                           <div class="activity text-nowrap">
@@ -324,244 +324,25 @@
                       <div class="col-lg-6">
                         <div class="map-item-right">
                           <div class="chargement">
-                            <p><span>a</span>Provincia de Sevilla (41013)</p>
-                            <small>entre le 31/05 et le 02/06</small>
+                            <p><span>a</span>{{ $item->loading_address }}</p>
+                            <small>entre le {{ $item->loading_start }} et le {{ $item->loading_end }}</small>
                           </div>
                           <div class="livraison">
-                            <p><span>b</span>Cataluña (08328)</p>
-                            <small> entre le 01/06 et le 06/06</small>
+                            <p><span>b</span>{{ $item->delivery_address }}</p>
+                            <small> entre le {{ $item->delivery_start }} et le {{ $item->delivery_end }}</small>
                           </div>
-                          <div class="distance text-nowrap">
+                          {{-- <div class="distance text-nowrap">
                             1 013,09 km<br />9h29
-                          </div>
+                          </div> --}}
                           <div class="expiration text-nowrap text-center">
                             Dans<br />
-                            1 mois
+                            {{ \Carbon\Carbon::parse($item->loading_start)->diffInDays(\Carbon\Carbon::parse($item->delivery_start)) }} days
                           </div>
                         </div>
                       </div>
                     </div>
                   </li>
-                  <li class="shadow-sm">
-                    <div class="row">
-                      <div class="col-lg-6">
-                        <div class="map-item-left">
-                          <div class="publication">
-                            <div class="float-right icon">
-                              <span><i class="icofont-court-hammer"></i> 1</span>
-                              <span><i class="icofont-ui-message"></i> 0</span>
-                            </div>
-                            <span class="d-block">Depuis</span>
-                            <span class="d-block text-nowrap">27 jours</span>
-                          </div>
-                          <div class="nom">
-                            <h5>
-                              <a href="#"
-                                ><i class="icofont-home"></i>Déménagement 1m<sup
-                                  >3</sup
-                                ></a
-                              >
-                            </h5>
-                            <p><i class="icofont-star"></i>Annonce prioritaire</p>
-                            <span class="bg-light d-inline-block"
-                              >Camion avec chauffeur</span
-                            >
-                            <span class="bg-light d-inline-block"
-                              >1 m<sup>3</sup></span
-                            >
-                          </div>
-                          <div class="activity text-nowrap">
-                            <p>0 (0 en cours)</p>
-                            <p>0 message</p>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-lg-6">
-                        <div class="map-item-right">
-                          <div class="chargement">
-                            <p><span>a</span>Provincia de Sevilla (41013)</p>
-                            <small>entre le 31/05 et le 02/06</small>
-                          </div>
-                          <div class="livraison">
-                            <p><span>b</span>Cataluña (08328)</p>
-                            <small> entre le 01/06 et le 06/06</small>
-                          </div>
-                          <div class="distance text-nowrap">
-                            1 013,09 km<br />9h29
-                          </div>
-                          <div class="expiration text-nowrap text-center">
-                            Dans<br />
-                            1 mois
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </li>
-                  <li class="shadow-sm">
-                    <div class="row">
-                      <div class="col-lg-6">
-                        <div class="map-item-left">
-                          <div class="publication">
-                            <div class="float-right icon">
-                              <span><i class="icofont-court-hammer"></i> 1</span>
-                              <span><i class="icofont-ui-message"></i> 0</span>
-                            </div>
-                            <span class="d-block">Depuis</span>
-                            <span class="d-block text-nowrap">27 jours</span>
-                          </div>
-                          <div class="nom">
-                            <h5>
-                              <a href="#"
-                                ><i class="icofont-home"></i>Déménagement 1m<sup
-                                  >3</sup
-                                ></a
-                              >
-                            </h5>
-                            <p><i class="icofont-star"></i>Annonce prioritaire</p>
-                            <span class="bg-light d-inline-block"
-                              >Camion avec chauffeur</span
-                            >
-                            <span class="bg-light d-inline-block"
-                              >1 m<sup>3</sup></span
-                            >
-                          </div>
-                          <div class="activity text-nowrap">
-                            <p>0 (0 en cours)</p>
-                            <p>0 message</p>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-lg-6">
-                        <div class="map-item-right">
-                          <div class="chargement">
-                            <p><span>a</span>Provincia de Sevilla (41013)</p>
-                            <small>entre le 31/05 et le 02/06</small>
-                          </div>
-                          <div class="livraison">
-                            <p><span>b</span>Cataluña (08328)</p>
-                            <small> entre le 01/06 et le 06/06</small>
-                          </div>
-                          <div class="distance text-nowrap">
-                            1 013,09 km<br />9h29
-                          </div>
-                          <div class="expiration text-nowrap text-center">
-                            Dans<br />
-                            1 mois
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </li>
-                  <li class="shadow-sm">
-                    <div class="row">
-                      <div class="col-lg-6">
-                        <div class="map-item-left">
-                          <div class="publication">
-                            <div class="float-right icon">
-                              <span><i class="icofont-court-hammer"></i> 1</span>
-                              <span><i class="icofont-ui-message"></i> 0</span>
-                            </div>
-                            <span class="d-block">Depuis</span>
-                            <span class="d-block text-nowrap">27 jours</span>
-                          </div>
-                          <div class="nom">
-                            <h5>
-                              <a href="#"
-                                ><i class="icofont-home"></i>Déménagement 1m<sup
-                                  >3</sup
-                                ></a
-                              >
-                            </h5>
-                            <p><i class="icofont-star"></i>Annonce prioritaire</p>
-                            <span class="bg-light d-inline-block"
-                              >Camion avec chauffeur</span
-                            >
-                            <span class="bg-light d-inline-block"
-                              >1 m<sup>3</sup></span
-                            >
-                          </div>
-                          <div class="activity text-nowrap">
-                            <p>0 (0 en cours)</p>
-                            <p>0 message</p>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-lg-6">
-                        <div class="map-item-right">
-                          <div class="chargement">
-                            <p><span>a</span>Provincia de Sevilla (41013)</p>
-                            <small>entre le 31/05 et le 02/06</small>
-                          </div>
-                          <div class="livraison">
-                            <p><span>b</span>Cataluña (08328)</p>
-                            <small> entre le 01/06 et le 06/06</small>
-                          </div>
-                          <div class="distance text-nowrap">
-                            1 013,09 km<br />9h29
-                          </div>
-                          <div class="expiration text-nowrap text-center">
-                            Dans<br />
-                            1 mois
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </li>
-                  <li class="shadow-sm">
-                    <div class="row">
-                      <div class="col-lg-6">
-                        <div class="map-item-left">
-                          <div class="publication">
-                            <div class="float-right icon">
-                              <span><i class="icofont-court-hammer"></i> 1</span>
-                              <span><i class="icofont-ui-message"></i> 0</span>
-                            </div>
-                            <span class="d-block">Depuis</span>
-                            <span class="d-block text-nowrap">27 jours</span>
-                          </div>
-                          <div class="nom">
-                            <h5>
-                              <a href="#"
-                                ><i class="icofont-home"></i>Déménagement 1m<sup
-                                  >3</sup
-                                ></a
-                              >
-                            </h5>
-                            <p><i class="icofont-star"></i>Annonce prioritaire</p>
-                            <span class="bg-light d-inline-block"
-                              >Camion avec chauffeur</span
-                            >
-                            <span class="bg-light d-inline-block"
-                              >1 m<sup>3</sup></span
-                            >
-                          </div>
-                          <div class="activity text-nowrap">
-                            <p>0 (0 en cours)</p>
-                            <p>0 message</p>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-lg-6">
-                        <div class="map-item-right">
-                          <div class="chargement">
-                            <p><span>a</span>Provincia de Sevilla (41013)</p>
-                            <small>entre le 31/05 et le 02/06</small>
-                          </div>
-                          <div class="livraison">
-                            <p><span>b</span>Cataluña (08328)</p>
-                            <small> entre le 01/06 et le 06/06</small>
-                          </div>
-                          <div class="distance text-nowrap">
-                            1 013,09 km<br />9h29
-                          </div>
-                          <div class="expiration text-nowrap text-center">
-                            Dans<br />
-                            1 mois
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </li>
+                  @endforeach
                 </ul>
                 <nav>
                   <ul class="pagination pagination-sm justify-content-end">
