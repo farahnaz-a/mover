@@ -20,7 +20,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        return  "Welcome to user dashboard";
+        return view('customer.index');
     }
 
 // END    

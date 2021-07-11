@@ -23,7 +23,7 @@ class MoverController extends Controller
      */
     public function index()
     {
-        return "Welcome to mover dashboard. ";
+        return view('mover.index');
     }
 
     /** 
