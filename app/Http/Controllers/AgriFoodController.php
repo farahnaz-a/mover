@@ -44,15 +44,13 @@ class AgriFoodController extends Controller
             'delivery_elevator'  => 'required',
             'delivery_lift'      => 'required', 
         ]);
-
-        dd($request->all());
-
         
         $agrifoods = AgriFood::create([
             'food_name'               => $request->food_name,
             'articleName'             => $request->articleName,
             'quantity'                => $request->quantity,
             'weight'                  => $request->weight,
+            //common
             'loading_address'         => $request->loading_address,
             'loading_start'           => $request->loading_start,
             'loading_end'             => $request->loading_end,
@@ -75,7 +73,6 @@ class AgriFoodController extends Controller
             'created_at'              => Carbon::now(), 
             'offers'                  => 'yes', 
         ]); 
-
 
 
        if ($request->has('image')) {

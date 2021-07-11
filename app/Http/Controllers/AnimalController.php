@@ -23,15 +23,7 @@ class AnimalController extends Controller
     public function store(Request $request)
     {
         $request -> validate([
-            'model_name'         => 'required',
-            'animalName'         => 'required',
-            'animalBreed'        => 'required',
-            'weight'             => 'required|numeric',
-            'specialNeeds'       => 'required',
-            'vaccinations'       => 'required',
-            'length'             => 'required|numeric',
-            'width'              => 'required|numeric',
-            'height'             => 'required|numeric',
+
             //common form
             'loading_address'    => 'required',
             'loading_start'      => 'required', 
@@ -50,20 +42,19 @@ class AnimalController extends Controller
             'delivery_floor'     => 'required',
             'delivery_elevator'  => 'required',
             'delivery_lift'      => 'required', 
-            'offers'             => 'required',
         ]);
 
         $animals = Animal::create([
-            'model_name'             => $request->model_name,
-            'animalName'             => $request->animalName,
-            'animalBreed'            => $request->animalBreed,
-            'weight'                 => $request->weight,
-            'specialNeeds'           => $request->specialNeeds,
-            'vaccinations'           => $request->vaccinations,
-            'length'                 => $request->length,
-            'width'                  => $request->width,
-            'height'                 => $request->height,
-            //common field
+            'model_name'              => $request->model_name,
+            'animalName'              => $request->animalName,
+            'animalBreed'             => $request->animalBreed,
+            'specialNeeds'            => $request->specialNeeds,
+            'vaccinations'            => $request->vaccinations,
+            'weight'                  => $request->weight,
+            'length'                  => $request->length,
+            'width'                   => $request->width,
+            'height'                  => $request->height,
+            //common
             'loading_address'         => $request->loading_address,
             'loading_start'           => $request->loading_start,
             'loading_end'             => $request->loading_end,
@@ -86,7 +77,6 @@ class AnimalController extends Controller
             'created_at'              => Carbon::now(), 
             'offers'                  => 'yes', 
         ]); 
-
 
 
        if ($request->has('image')) {

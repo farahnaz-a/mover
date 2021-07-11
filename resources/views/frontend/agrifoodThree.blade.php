@@ -47,9 +47,7 @@
               <div class="col-lg-9">
                 <!-- address form start -->
                 <div
-                  class="bg-white shadow-sm my-3 p-3 rounded"
-                  id="address"
-                >
+                  class="bg-white shadow-sm my-3 p-3 rounded" id="address">
                   <h4 class="font-weight-bold text-navy-blue">
                     INFORMATION ON LOADING AND DELIVERY ADDRESSES TRANSPORT
                   </h4>
@@ -68,16 +66,30 @@
                             <input type="hidden" name="weight" value="{{ $weight }}" id="">
                           <div class="form-group">
                             <input class="form-control" name="loading_address" type="text" placeholder="Address"/>
+                            @error('loading_address')
+                                <div class="text-danger">
+                                   {{ $message }}
+                                </div>
+                            @enderror
                           </div>
                           <div class="form-row">
                             <div class="form-group col-md-6">
                               <label for="">Start</label>
                               <input class="form-control" name="loading_start" type="date" placeholder="Start"/>
+                               @error('loading_start')
+                                  <div class="text-danger">
+                                    {{ $message }}
+                                  </div>
+                                @enderror
                             </div>
                             <div class="form-group col-md-6">
                               <label for="">End</label>
-                              <input
-                                class="form-control" name="loading_end" type="date" placeholder="End"/>
+                              <input class="form-control" name="loading_end" type="date" placeholder="End"/>
+                                @error('loading_end')
+                                  <div class="text-danger">
+                                    {{ $message }}
+                                  </div>
+                                @enderror
                             </div>
                           </div>
                           <div class="form-group">
@@ -88,6 +100,11 @@
                               <option value="afternoon">afternoon</option>
                               <option value="evening">evening</option>
                             </select>
+                            @error('loading_time_slot')
+                              <div class="text-danger">
+                                {{ $message }}
+                              </div>
+                            @enderror
                           </div>
                           <div class="form-group">
                             <select name="loading_house" class="rounded">
@@ -99,6 +116,11 @@
                               <option value="Warehouse">Warehouse</option>
                               <option value="Store">Store</option>
                             </select>
+                            @error('loading_house')
+                              <div class="text-danger">
+                                {{ $message }}
+                              </div>
+                            @enderror
                           </div>
                           <div class="form-row">
                             <div class="form-group col-md-6">
@@ -119,6 +141,11 @@
                                 <option value="12">12</option>
                                 <option value="13">13</option>
                               </select>
+                              @error('loading_floor')
+                                <div class="text-danger">
+                                  {{ $message }}
+                                </div>
+                              @enderror
                             </div>
                             <div class="form-group col-md-6">
                               <label for="">Is there is an elevator?</label>
@@ -126,13 +153,23 @@
                                 <option value="Yes">Yes</option>
                                 <option value="No">No</option>
                               </select>
+                              @error('loading_elevator')
+                                <div class="text-danger">
+                                  {{ $message }}
+                                </div>
+                              @enderror
                             </div>
                             <div class="form-group col-md-12">
                               <label for="">Furniture lift required?</label>
-                              <select class="loading_lift" class="rounded">
+                              <select name="loading_lift" class="loading_lift" class="rounded">
                                 <option value="Yes">Yes</option>
                                 <option value="No">No</option>
                               </select>
+                              @error('loading_lift')
+                                <div class="text-danger">
+                                  {{ $message }}
+                                </div>
+                              @enderror
                             </div>
                           </div>
                       </div>
@@ -144,21 +181,31 @@
                       </h5>
                       <div class="bg-light-gray my-3 p-3 rounded">
                           <div class="form-group">
-                            <input class="form-control" name="delivery_address" type="text"  placeholder="Address"
-                            />
+                            <input class="form-control" name="delivery_address" type="text"  placeholder="Address"/>
+                            @error('delivery_address')
+                                <div class="text-danger">
+                                  {{ $message }}
+                                </div>
+                            @enderror
                           </div>
                           <div class="form-row">
                             <div class="form-group col-md-6">
                               <label for="">Start</label>
                               <input class="form-control" name="delivery_start" type="date" placeholder="Start"/>
+                              @error('delivery_start')
+                                <div class="text-danger">
+                                  {{ $message }}
+                                </div>
+                              @enderror
                             </div>
                             <div class="form-group col-md-6">
                               <label for="">End</label>
-                              <input name="delivery_end"
-                                class="form-control"
-                                type="date"
-                                placeholder="End"
-                              />
+                              <input name="delivery_end" class="form-control" type="date" placeholder="End"/>
+                              @error('delivery_end')
+                                <div class="text-danger">
+                                  {{ $message }}
+                                </div>
+                              @enderror
                             </div>
                           </div>
                           <div class="form-group">
@@ -169,6 +216,11 @@
                               <option value="afternoon">afternoon</option>
                               <option value="evening">evening</option>
                             </select>
+                             @error('delivery_time_slot')
+                                <div class="text-danger">
+                                  {{ $message }}
+                                </div>
+                              @enderror
                           </div>
                           <div class="form-group">
                             <select name="delivery_house" class="rounded">
@@ -180,6 +232,11 @@
                               <option value="Warehouse">Warehouse</option>
                               <option value="Store">Store</option>
                             </select>
+                            @error('delivery_house')
+                                <div class="text-danger">
+                                  {{ $message }}
+                                </div>
+                            @enderror
                           </div>
                           <div class="form-row">
                             <div class="form-group col-md-6">
@@ -200,6 +257,11 @@
                                 <option value="12">12</option>
                                 <option value="13">13</option>
                               </select>
+                              @error('delivery_floor')
+                                <div class="text-danger">
+                                  {{ $message }}
+                                </div>
+                              @enderror
                             </div>
                             <div class="form-group col-md-6">
                               <label for="">Is there is an elevator?</label>
@@ -214,6 +276,11 @@
                                 <option value="Yes">Yes</option>
                                 <option value="No">No</option>
                               </select>
+                              @error('delivery_lift')
+                                <div class="text-danger">
+                                  {{ $message }}
+                                </div>
+                              @enderror
                             </div>
                           </div>
                       </div>
@@ -228,6 +295,11 @@
                     <div class="row">
                       <div class="col-md-6">
                         <textarea name="information" class="form-control" rows="8"></textarea>
+                        @error('information')
+                            <div class="text-danger">
+                              {{ $message }}
+                            </div>
+                        @enderror
                       </div>
                       <div class="col-md-6">
                         <p class="alert alert-danger">
@@ -264,23 +336,24 @@
                       you a suitable offer.
                     </p>
                     <div class="custom-file">
-                      <input name="image"
-                        type="file"
-                        class="custom-file-input"
-                        id="customFile"
-                      />
-                      <label class="custom-file-label" for="customFile"
-                        >Choose file</label
-                      >
+                      <input name="image" type="file" class="custom-file-input"  id="customFile"/>
+                      <label class="custom-file-label" for="customFile">Choose file</label>
+                      @error('image')
+                          <div class="text-danger">
+                            {{ $message }}
+                          </div>
+                      @enderror
                     </div>
                   </div>
                   <div class="mt-4">
                     <div class="custom-control custom-checkbox">
                       <input name="offers" type="checkbox" class="custom-control-input" id="commercial-offer"/>
-                      <label class="custom-control-label" for="commercial-offer"
-                        >I agree to receive commercial offers from FretBay and
-                        its partners</label
-                      >
+                      <label class="custom-control-label" for="commercial-offer">I agree to receive commercial offers from FretBay and its partners</label>
+                      @error('offers')
+                        <div class="text-danger">
+                          {{ $message }}
+                        </div>
+                      @enderror
                     </div>
                     <div class="custom-control custom-checkbox">
                       <input name="terms" type="checkbox" class="custom-control-input" id="terms"
@@ -288,6 +361,11 @@
                       <label class="custom-control-label" for="terms"
                         >I accept FretBay's Terms of Use
                       </label>
+                      @error('terms')
+                        <div class="text-danger">
+                          {{ $message }}
+                        </div>
+                      @enderror
                     </div>
                     <small class="text-navy-blue mb-2 mt-3 d-block">
                       You have the right to access, modify, rectify, and delete

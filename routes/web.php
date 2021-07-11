@@ -8,17 +8,27 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\WorkController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AgriFoodController;
+use App\Http\Controllers\AnimalController;
 use App\Http\Controllers\MoverController;
 use App\Http\Controllers\BannerController;
+use App\Http\Controllers\BoatsAndVoluminousController;
 use App\Http\Controllers\ClientController;
 use App\Http\Controllers\CalloutController;
+use App\Http\Controllers\CommercialGoodsController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\CounterController;
+use App\Http\Controllers\FragileGoodsController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\GeneralSettingController;
+use App\Http\Controllers\HouseHoldController;
+use App\Http\Controllers\MiscellaneousController;
+use App\Http\Controllers\MotorcyclesAndSportsController;
+use App\Http\Controllers\PackageController;
+use App\Http\Controllers\PalletController;
 use App\Http\Controllers\TestimonialController;
 use App\Http\Controllers\RegistrationController;
+use App\Http\Controllers\VehicleController;
 
 /*
 |--------------------------------------------------------------------------
@@ -161,3 +171,33 @@ Route::get('/inscription/demenageur', [FrontendController::class, 'moverReg'])->
 
 //Agrifood controller
 Route::post('/agrifood/store', [AgriFoodController::class, 'store'])->name('agrifood.store');
+
+//Animal controller
+Route::post('/animal/store', [AnimalController::class, 'store'])->name('animal.store');
+
+//BoatsAndVoluminous controller
+Route::post('/boatsvoluminous/store', [BoatsAndVoluminousController::class, 'store'])->name('boatsvoluminous.store');
+
+//CommercialGoods controller
+Route::post('/commercialgoods/store', [CommercialGoodsController::class, 'store'])->name('commercialgoods.store');
+
+//FragileGoods controller
+Route::post('/fragilegoods/store', [FragileGoodsController::class, 'store'])->name('fragilegoods.store');
+
+//Household controller
+Route::post('/household/store', [HouseHoldController::class, 'store'])->name('household.store');
+
+//Miscellaneous controller
+Route::post('/miscellaneous/store', [MiscellaneousController::class, 'store'])->name('miscellaneous.store');
+
+//Motorcycle And Sport controller
+Route::post('/motorcyclesport/store', [MotorcyclesAndSportsController::class, 'store'])->name('motorcyclesport.store');
+
+//Package controller
+Route::post('/package/store', [PackageController::class, 'store'])->name('package.store');
+
+//Pallet controller
+Route::post('/pallet/store', [PalletController::class, 'store'])->name('pallet.store');
+
+//Vehicle controller
+Route::post('/vehicle/store', [VehicleController::class, 'store'])->name('vehicle.store');
