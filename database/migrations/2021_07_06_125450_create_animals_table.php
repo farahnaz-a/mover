@@ -18,9 +18,9 @@ class CreateAnimalsTable extends Migration
             $table->string('model_name')->nullable();
             $table->string('animalName')->nullable();
             $table->string('animalBreed')->nullable();
-            $table->string('width')->nullable();
             $table->string('specialNeeds')->nullable();
             $table->string('vaccinations')->nullable();
+            $table->string('width')->nullable(); 
             $table->string('height')->nullable();
             $table->string('weight')->nullable();
             $table->string('length')->nullable();

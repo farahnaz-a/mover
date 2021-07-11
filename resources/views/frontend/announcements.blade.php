@@ -343,6 +343,118 @@
                     </div>
                   </li>
                   @endforeach
+                  @foreach ($agrifoods as $item)
+                  <li class="shadow-sm">
+                    <div class="row">
+                      <div class="col-lg-6">
+                        <div class="map-item-left">
+                          <div class="publication">
+                            <div class="float-right icon">
+                              <span><i class="icofont-court-hammer"></i> 1</span>
+                              <span><i class="icofont-ui-message"></i> 0</span>
+                            </div>
+                            <span class="d-block">Depuis</span>
+                            <span class="d-block text-nowrap">{{ $item->created_at->diffForHumans() }}</span>
+                          </div>
+                          <div class="nom">
+                            <h5>
+                              <a href="#"
+                                ><i class="icofont-home"></i>{{ $item->food_name }} 
+                                {{-- <sup>3</sup> --}}
+                                </a
+                              >
+                            </h5>
+                            <p><i class="icofont-star"></i>prioritaire</p>
+                            <span class="bg-light d-inline-block"
+                              >{{ $item->articleName }}</span
+                            >
+                            <span class="bg-light d-inline-block">   wt: {{ $item->weight }} qt: {{ $item->quantity }} </span
+                            >
+                          </div>
+                          <div class="activity text-nowrap">
+                            <p>0 (0 en cours)</p>
+                            <p>0 message</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-lg-6">
+                        <div class="map-item-right">
+                          <div class="chargement">
+                            <p><span>a</span>{{ $item->loading_address }}</p>
+                            <small>entre le {{ $item->loading_start }} et le {{ $item->loading_end }}</small>
+                          </div>
+                          <div class="livraison">
+                            <p><span>b</span>{{ $item->delivery_address }}</p>
+                            <small> entre le {{ $item->delivery_start }} et le {{ $item->delivery_end }}</small>
+                          </div>
+                          {{-- <div class="distance text-nowrap">
+                            1 013,09 km<br />9h29
+                          </div> --}}
+                          <div class="expiration text-nowrap text-center">
+                            Dans<br />
+                            {{ \Carbon\Carbon::parse($item->loading_start)->diffInDays(\Carbon\Carbon::parse($item->delivery_start)) }} days
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  @endforeach
+                  @foreach ($animals as $item)
+                  <li class="shadow-sm">
+                    <div class="row">
+                      <div class="col-lg-6">
+                        <div class="map-item-left">
+                          <div class="publication">
+                            <div class="float-right icon">
+                              <span><i class="icofont-court-hammer"></i> 1</span>
+                              <span><i class="icofont-ui-message"></i> 0</span>
+                            </div>
+                            <span class="d-block">Depuis</span>
+                            <span class="d-block text-nowrap">{{ $item->created_at->diffForHumans() }}</span>
+                          </div>
+                          <div class="nom">
+                            <h5>
+                              <a href="#"
+                                ><i class="icofont-home"></i>{{ $item->food_name }} 
+                                {{-- <sup>3</sup> --}}
+                                </a
+                              >
+                            </h5>
+                            <p><i class="icofont-star"></i>prioritaire</p>
+                            <span class="bg-light d-inline-block"
+                              >{{ $item->articleName }}</span
+                            >
+                            <span class="bg-light d-inline-block">   wt: {{ $item->weight }} qt: {{ $item->quantity }} </span
+                            >
+                          </div>
+                          <div class="activity text-nowrap">
+                            <p>0 (0 en cours)</p>
+                            <p>0 message</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-lg-6">
+                        <div class="map-item-right">
+                          <div class="chargement">
+                            <p><span>a</span>{{ $item->loading_address }}</p>
+                            <small>entre le {{ $item->loading_start }} et le {{ $item->loading_end }}</small>
+                          </div>
+                          <div class="livraison">
+                            <p><span>b</span>{{ $item->delivery_address }}</p>
+                            <small> entre le {{ $item->delivery_start }} et le {{ $item->delivery_end }}</small>
+                          </div>
+                          {{-- <div class="distance text-nowrap">
+                            1 013,09 km<br />9h29
+                          </div> --}}
+                          <div class="expiration text-nowrap text-center">
+                            Dans<br />
+                            {{ \Carbon\Carbon::parse($item->loading_start)->diffInDays(\Carbon\Carbon::parse($item->delivery_start)) }} days
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  @endforeach
                 </ul>
                 <nav>
                   <ul class="pagination pagination-sm justify-content-end">
