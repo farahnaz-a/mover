@@ -56,7 +56,7 @@
                             <div class="col-md-6">
                             <div class="bg-light-gray p-3 rounded mt-3">
                                 <form
-                                action="{{ route('step3.household') }}"
+                                action="{{ route('announcement.three') }}"
                                 class="needs-validation"
                                 id="household-form"
                                 method="POST">
@@ -231,7 +231,7 @@
                             <div class="col-md-6">
                                 <div class="bg-light-gray p-3 rounded mt-3">
                                 <form
-                                    action="{{ route('step3.vehicle') }}"
+                                    action="{{ route('announcement.three') }}"
                                     class="needs-validation"
                                     id="vehicle-form"
                                     method="POST">
@@ -239,9 +239,9 @@
                                     <input type="hidden" id="vehicle-type" />
                                     <input
                                     type="hidden"
-                                    name="transportType"
-                                    value="vehicle"
-                                    />
+                                    name="category"
+                                    value="{{ $category }}"
+                                />
                                     <div class="form-group">
                                     <input name="model_name"
                                         type="text"
@@ -373,12 +373,13 @@
                                 <div class="row">
                                 <div class="col-md-6">
                                     <div class="bg-light-gray p-3 rounded mt-3">
-                                    <form method="POST" action="{{ route('step3.motorcyclesport') }}" class="needs-validation article-form" id="motorcycleSport-form">
+                                    <form method="POST" action="{{ route('announcement.three') }}" class="needs-validation article-form" id="motorcycleSport-form">
                                       @csrf  
                                       <input
-                                        type="hidden"
-                                        name="transportType"
-                                        value="motorcycleSport"/>
+                                      type="hidden"
+                                      name="category"
+                                      value="{{ $category }}"
+                                  />
                                         <div class="form-group">
                                         <input name="model_name"
                                             type="text"
@@ -507,16 +508,16 @@
                                         <div class="col-md-6">
                                         <div class="bg-light-gray p-3 rounded mt-3">
                                             <form
-                                            action="{{ route('step3.boatvolimunoussport') }}"
+                                            action="{{ route('announcement.threet') }}"
                                             method="POST"
                                             class="needs-validation article-form"
                                             id="boat-voluminous-form">
                                             @csrf
                                             <input
-                                                type="hidden"
-                                                name="transportType"
-                                                value="boat-voluminous"
-                                            />
+                                            type="hidden"
+                                            name="category"
+                                            value="{{ $category }}"
+                                        />
                                             <div class="form-group">
                                                 <input name="model_name"
                                                 type="text"
@@ -672,16 +673,16 @@
                                 <div class="col-md-6">
                                 <div class="bg-light-gray p-3 rounded mt-3">
                                     <form
-                                    action="{{ route('step3.fragilegoods') }}"
+                                    action="{{ route('announcement.three') }}"
                                     method="POST"
                                     class="needs-validation article-form"
                                     id="fragileGoods-form">
                                     @csrf
                                     <input
-                                        type="hidden"
-                                        name="transportType"
-                                        value="fragileGoods"
-                                    />
+                                    type="hidden"
+                                    name="category"
+                                    value="{{ $category }}"
+                                />
                                     <div class="form-group">
                                         <input
                                         name="model_name"
@@ -813,12 +814,13 @@
                                       <div class="row">
                                         <div class="col-md-6">
                                           <div class="bg-light-gray p-3 rounded mt-3">
-                                            <form method="POST" action="{{ route('step3.package') }}" class="needs-validation article-form" id="package-form" >
+                                            <form method="POST" action="{{ route('announcement.three') }}" class="needs-validation article-form" id="package-form" >
                                               @csrf
                                               <input
-                                                type="hidden"
-                                                name="transportType"
-                                                value="package"/>
+                                              type="hidden"
+                                              name="category"
+                                              value="{{ $category }}"
+                                          />
                                               <div class="form-group">
                                                 <input name="model_name"
                                                   type="text"
@@ -939,15 +941,15 @@
                                       <div class="col-md-6">
                                         <div class="bg-light-gray p-3 rounded mt-3">
                                           <form method="POST"
-                                            action="{{ route('step3.pallet') }}"
+                                            action="{{ route('announcement.three') }}"
                                             class="needs-validation article-form"
                                             id="pallet-form">
                                             @csrf
                                             <input
-                                              type="hidden"
-                                              name="transportType"
-                                              value="pallet"
-                                            />
+                                    type="hidden"
+                                    name="category"
+                                    value="{{ $category }}"
+                                />
                                             <div class="form-group">
                                               <input name="model_name"
                                                 type="text"
@@ -1069,15 +1071,15 @@
                             <div class="col-md-6">
                             <div class="bg-light-gray p-3 rounded mt-3">
                                 <form method="POST"
-                                action="{{ route('step3.animal') }}"
+                                action="{{ route('announcement.three') }}"
                                 class="needs-validation article-form"
                                 id="animal-form">
                                 @csrf
                                 <input
-                                    type="hidden"
-                                    name="transportType"
-                                    value="animal"
-                                />
+                                type="hidden"
+                                name="category"
+                                value="{{ $category }}"
+                            />
                                 <div class="form-group">
                                     <input
                                     name="model_name"
@@ -1222,15 +1224,15 @@
                               <div class="col-md-6">
                                 <div class="bg-light-gray p-3 rounded mt-3">
                                   <form method="POST"
-                                    action="{{ route('step3.agrifood') }}"
+                                    action="{{ route('announcement.three') }}"
                                     class="needs-validation article-form"
                                     id="agri-food-form">
                                     @csrf
                                     <input
-                                      type="hidden"
-                                      name="transportType"
-                                      value="agri-food"
-                                    />
+                                    type="hidden"
+                                    name="category"
+                                    value="{{ $category }}"
+                                />
                                     <div class="form-group">
                                       <input name="food_name"
                                         type="text"
@@ -1320,14 +1322,14 @@
                             <div class="col-md-6">
                             <div class="bg-light-gray p-3 rounded mt-3">
                                 <form method="POST"
-                                action="{{ route('step3.commercialgoods') }}"
+                                action="{{ route('announcement.three') }}"
                                 class="needs-validation article-form"
                                 id="commercial-good-form">
                                 @csrf
                                 <input
                                     type="hidden"
-                                    name="transportType"
-                                    value="commercial-good"
+                                    name="category"
+                                    value="{{ $category }}"
                                 />
                                 <div class="form-group">
                                     <input 
@@ -1453,15 +1455,15 @@
                               <div class="col-md-6">
                                 <div class="bg-light-gray p-3 rounded mt-3">
                                   <form method="POST"
-                                    action="{{ route('step3.miscellaneous') }}"
+                                    action="{{ route('announcement.three') }}"
                                     class="needs-validation article-form"
                                     id="miscellaneous-form">
                                     @csrf
                                     <input
-                                      type="hidden"
-                                      name="transportType"
-                                      value="miscellaneous"
-                                    />
+                                    type="hidden"
+                                    name="category"
+                                    value="{{ $category }}"
+                                />
                                     <div class="form-group">
                                       <input
                                       name="others"

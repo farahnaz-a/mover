@@ -9,6 +9,7 @@ use App\Http\Controllers\WorkController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AgriFoodController;
 use App\Http\Controllers\AnimalController;
+use App\Http\Controllers\AnnouncementController;
 use App\Http\Controllers\MoverController;
 use App\Http\Controllers\BannerController;
 use App\Http\Controllers\BoatsAndVoluminousController;
@@ -201,3 +202,7 @@ Route::post('/pallet/store', [PalletController::class, 'store'])->name('pallet.s
 
 //Vehicle controller
 Route::post('/vehicle/store', [VehicleController::class, 'store'])->name('vehicle.store');
+
+// AnnouncementController 
+Route::post('/announcement/three', [AnnouncementController::class, 'announceThree'])->name('announcement.three');
+Route::post('/announcement/store', [AnnouncementController::class, 'store'])->name('announcement.store');

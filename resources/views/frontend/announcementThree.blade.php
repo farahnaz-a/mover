@@ -60,15 +60,30 @@
                         of loading:
                       </h5>
                       <div class="bg-light-gray my-3 p-3 rounded">
-                        <form action="{{ route('package.store') }}" enctype="multipart/form-data" method="POST">
+                        <form action="{{ route('announcement.store') }}" method="POST" enctype="multipart/form-data">
                             @csrf
-                            <input type="hidden" name="model_name" value="{{ $model_name }}" id="">
+                            <input type="hidden" name="category" value="{{ $category }}" id="">
+                            <input type="hidden" name="equipment" value="{{ $equipment }}" id="">
                             <input type="hidden" name="articleName" value="{{ $articleName }}" id="">
                             <input type="hidden" name="length" value="{{ $length }}" id="">
                             <input type="hidden" name="width" value="{{ $width }}" id="">
                             <input type="hidden" name="height" value="{{ $height }}" id="">
                             <input type="hidden" name="weight" value="{{ $weight }}" id="">
-                            <input type="hidden" name="quantity" value="{{ $quantity }}" id="">
+                            <input type="hidden" name="quantity" value="{{ $quantity }}" id=""> 
+                            <input type="hidden" name="make" value="{{ $make }}" id=""> 
+                            <input type="hidden" name="model" value="{{ $model }}" id=""> 
+                            <input type="hidden" name="estimationValue" value="{{ $estimationValue }}" id=""> 
+                            <input type="hidden" name="movingVehicle" value="{{ $movingVehicle }}" id=""> 
+                            <input type="hidden" name="conveyors" value="{{ $conveyors }}" id=""> 
+                            <input type="hidden" name="boatName" value="{{ $boatName }}" id=""> 
+                            <input type="hidden" name="food_name" value="{{ $food_name }}" id=""> 
+                            <input type="hidden" name="dim" value="{{ $dim }}" id=""> 
+                            <input type="hidden" name="animalName" value="{{ $animalName }}" id=""> 
+                            <input type="hidden" name="animalBreed" value="{{ $animalBreed }}" id=""> 
+                            <input type="hidden" name="specialNeeds" value="{{ $specialNeeds }}" id=""> 
+                            <input type="hidden" name="vaccinations" value="{{ $vaccinations }}" id=""> 
+                            <input type="hidden" name="others" value="{{ $others }}" id=""> 
+                            <input type="hidden" name="vehicleName" value="{{ $vehicleName }}" id=""> 
                             <div class="form-group">
                               <input class="form-control" name="loading_address" required type="text" placeholder="Address"/>
                               @error('loading_address')
