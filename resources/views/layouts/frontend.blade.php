@@ -142,7 +142,6 @@
     </nav>
     <!-- Main Navigation End -->
   </header>
-  
  
    @if(session('success'))
    <div class="alert alert-success">

@@ -89,7 +89,7 @@
                     </div>
                 </li>
                
-                <li class="nav-item dropdown dropdown-notification mr-25"><a class="nav-link" href="javascript:void(0);" data-toggle="dropdown"><i class="ficon" data-feather="bell"></i><span class="badge badge-pill badge-danger badge-up">5</span></a>
+                {{-- <li class="nav-item dropdown dropdown-notification mr-25"><a class="nav-link" href="javascript:void(0);" data-toggle="dropdown"><i class="ficon" data-feather="bell"></i><span class="badge badge-pill badge-danger badge-up">5</span></a>
                     <ul class="dropdown-menu dropdown-menu-media dropdown-menu-right">
                         <li class="dropdown-menu-header">
                             <div class="dropdown-header d-flex">
@@ -170,9 +170,9 @@
                         </li>
                         <li class="dropdown-menu-footer"><a class="btn btn-primary btn-block" href="javascript:void(0)">Read all notifications</a></li>
                     </ul>
-                </li>
+                </li> --}}
                 <li class="nav-item dropdown dropdown-user"><a class="nav-link dropdown-toggle dropdown-user-link" id="dropdown-user" href="javascript:void(0);" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <div class="user-nav d-sm-flex d-none"><span class="user-name font-weight-bolder">{{ Auth::user()->name }}</span><span class="user-status">Admin</span></div><span class="avatar"><img class="round" src="{{ asset('dashboard_assets/app-assets/images/portrait/small/avatar-s-11.jpg') }}" alt="avatar" height="40" width="40"><span class="avatar-status-online"></span></span>
+                        <div class="user-nav d-sm-flex d-none"><span class="user-name font-weight-bolder">{{ Auth::user()->name }}</span><span class="user-status">Customer</span></div><span class="avatar"><img class="round" src="{{ asset('dashboard_assets/app-assets/images/portrait/small/avatar-s-11.jpg') }}" alt="avatar" height="40" width="40"><span class="avatar-status-online"></span></span>
                     </a>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdown-user"><a class="dropdown-item" href="{{ url('/user/profile') }}"><i class="mr-50" data-feather="user"></i> Profile</a>
                         <form method="POST" action="{{ route('logout') }}">
@@ -229,10 +229,10 @@
                 <li class=" nav-item @yield('dashboard')"><a class="d-flex align-items-center" href="{{ route('dashboard') }}"><i data-feather="home"></i><span class="menu-title text-truncate" data-i18n="Dashboards">Dashboards</span></a>
                 </li>
 
-                <li class="navigation-header"><span data-i18n="Apps &amp; Pages">Site Settings</span><i data-feather="more-horizontal"></i>
+                <li class="navigation-header"><span data-i18n="Apps &amp; Pages">My Statistics</span><i data-feather="more-horizontal"></i>
                 </li>
 
-                <li class="nav-item @yield('banners')"><a class="d-flex align-items-center" href=""><i data-feather='shield'></i><span class="menu-title text-truncate" data-i18n="Banner settings">Banner Settings</span></a>
+                <li class="nav-item @yield('banners')"><a class="d-flex align-items-center" href=""><i data-feather='shield'></i><span class="menu-title text-truncate" data-i18n="Banner settings">Announcements</span></a>
                 </li> 
 
 

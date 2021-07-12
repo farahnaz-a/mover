@@ -72,6 +72,7 @@
                             <input type="hidden" name="quantity" value="{{ $quantity }}" id=""> 
                             <input type="hidden" name="make" value="{{ $make }}" id=""> 
                             <input type="hidden" name="model" value="{{ $model }}" id=""> 
+                            <input type="hidden" name="model" value="{{ $model_name }}" id=""> 
                             <input type="hidden" name="estimationValue" value="{{ $estimationValue }}" id=""> 
                             <input type="hidden" name="movingVehicle" value="{{ $movingVehicle }}" id=""> 
                             <input type="hidden" name="conveyors" value="{{ $conveyors }}" id=""> 

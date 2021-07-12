@@ -125,5 +125,12 @@ class AnnouncementController extends Controller
         return redirect('/')->withSuccess('Announcement posted');
     }
 
+    public function details($id)
+    {
+        $data = Announcement::find($id); 
+
+        return view('frontend.details', compact('data')); 
+    }
+
 // end    
 }

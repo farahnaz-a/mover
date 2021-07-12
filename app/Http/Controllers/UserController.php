@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use Auth;
+use App\Models\Announcement;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
@@ -20,7 +22,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        return view('customer.index');
+        return view('customer.index', ['announcements' => Announcement::where('user_id', Auth::id())->get()]);
     }
 
 // END    
