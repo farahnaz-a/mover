@@ -61,7 +61,7 @@ class FrontendController extends Controller
 
    /**
     * Announcements Page (Frontend)
-    */
+    */ 
    public function announcements()
    {
        return view('frontend.announcements', [

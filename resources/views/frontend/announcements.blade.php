@@ -302,18 +302,13 @@
                           </div>
                           <div class="nom">
                             <h5>
-                              <a href="#"
-                                ><i class="icofont-home"></i>{{ $item->equipment }} 
+                              <a href="#"><i class="icofont-home"></i>{{ ucfirst($item->equipment) }} 
                                 {{-- <sup>3</sup> --}}
-                                </a
-                              >
+                              </a>
                             </h5>
-                            <p><i class="icofont-star"></i>prioritaire</p>
-                            <span class="bg-light d-inline-block"
-                              >{{ $item->articleName }}</span
-                            >
-                            <span class="bg-light d-inline-block"> l: {{ $item->length }}  w: {{ $item->width }}  h: {{ $item->height }}  wt: {{ $item->weight }} </span
-                            >
+                            <p><i class="icofont-star"></i>Prioritaire</p>
+                            <span class="bg-light d-inline-block">AN: {{ ucfirst($item->articleName) }}</span>
+                            <span class="bg-light d-inline-block"> L: {{ $item->length }}, W: {{ $item->width }}, H: {{ $item->height }}, Wt: {{ $item->weight }} </span>
                           </div>
                           <div class="activity text-nowrap">
                             <p>0 (0 en cours)</p>
@@ -324,11 +319,11 @@
                       <div class="col-lg-6">
                         <div class="map-item-right">
                           <div class="chargement">
-                            <p><span>a</span>{{ $item->loading_address }}</p>
+                            <p><span>a</span>{{ ucfirst($item->loading_address) }}</p>
                             <small>entre le {{ $item->loading_start }} et le {{ $item->loading_end }}</small>
                           </div>
                           <div class="livraison">
-                            <p><span>b</span>{{ $item->delivery_address }}</p>
+                            <p><span>b</span>{{ ucfirst($item->delivery_address) }}</p>
                             <small> entre le {{ $item->delivery_start }} et le {{ $item->delivery_end }}</small>
                           </div>
                           {{-- <div class="distance text-nowrap">
@@ -358,18 +353,14 @@
                           </div>
                           <div class="nom">
                             <h5>
-                              <a href="#"
-                                ><i class="icofont-home"></i>{{ $item->food_name }} 
+                              <a href="#"><i class="icofont-home"></i>{{ ucfirst($item->food_name) }} 
                                 {{-- <sup>3</sup> --}}
-                                </a
-                              >
+                                </a>
                             </h5>
-                            <p><i class="icofont-star"></i>prioritaire</p>
-                            <span class="bg-light d-inline-block"
-                              >{{ $item->articleName }}</span
-                            >
-                            <span class="bg-light d-inline-block">   wt: {{ $item->weight }} qt: {{ $item->quantity }} </span
-                            >
+                            <p><i class="icofont-star"></i>Prioritaire</p>
+                            <span class="bg-light d-inline-block">
+                             AN: {{ ucfirst($item->articleName) }}</span>
+                            <span class="bg-light d-inline-block">Wt: {{ $item->weight }}, Qt: {{ $item->quantity }} </span>
                           </div>
                           <div class="activity text-nowrap">
                             <p>0 (0 en cours)</p>
@@ -380,11 +371,11 @@
                       <div class="col-lg-6">
                         <div class="map-item-right">
                           <div class="chargement">
-                            <p><span>a</span>{{ $item->loading_address }}</p>
+                            <p><span>a</span>{{ ucfirst($item->loading_address) }}</p>
                             <small>entre le {{ $item->loading_start }} et le {{ $item->loading_end }}</small>
                           </div>
                           <div class="livraison">
-                            <p><span>b</span>{{ $item->delivery_address }}</p>
+                            <p><span>b</span>{{ ucfirst($item->delivery_address) }}</p>
                             <small> entre le {{ $item->delivery_start }} et le {{ $item->delivery_end }}</small>
                           </div>
                           {{-- <div class="distance text-nowrap">
@@ -414,18 +405,16 @@
                           </div>
                           <div class="nom">
                             <h5>
-                              <a href="#"
-                                ><i class="icofont-home"></i>{{ $item->food_name }} 
+                              <a href="#"><i class="icofont-home"></i>{{ ucfirst($item->model_name) }} 
                                 {{-- <sup>3</sup> --}}
-                                </a
-                              >
+                              </a>
                             </h5>
-                            <p><i class="icofont-star"></i>prioritaire</p>
-                            <span class="bg-light d-inline-block"
-                              >{{ $item->articleName }}</span
-                            >
-                            <span class="bg-light d-inline-block">   wt: {{ $item->weight }} qt: {{ $item->quantity }} </span
-                            >
+                            <p><i class="icofont-star"></i>Prioritaire</p>
+                            <span class="bg-light d-inline-block">AN: {{ ucfirst($item->animalName) }}</span>
+                            <span class="bg-light d-inline-block">AB: {{ ucfirst($item->animalBreed) }}</span>
+                            <span class="bg-light d-inline-block">SN: {{ ucfirst($item->specialNeeds) }}</span>
+                            <span class="bg-light d-inline-block">V: {{ ucfirst($item->vaccinations) }}</span>
+                            <span class="bg-light d-inline-block">Wt: {{ $item->weight }}, Wd: {{ $item->width }}, H: {{ $item->height }}, L: {{ $item->length }} </span>
                           </div>
                           <div class="activity text-nowrap">
                             <p>0 (0 en cours)</p>
@@ -436,11 +425,429 @@
                       <div class="col-lg-6">
                         <div class="map-item-right">
                           <div class="chargement">
-                            <p><span>a</span>{{ $item->loading_address }}</p>
+                            <p><span>a</span>{{ ucfirst($item->loading_address) }}</p>
                             <small>entre le {{ $item->loading_start }} et le {{ $item->loading_end }}</small>
                           </div>
                           <div class="livraison">
-                            <p><span>b</span>{{ $item->delivery_address }}</p>
+                            <p><span>b</span>{{ ucfirst($item->delivery_address )}}</p>
+                            <small> entre le {{ $item->delivery_start }} et le {{ $item->delivery_end }}</small>
+                          </div>
+                          {{-- <div class="distance text-nowrap">
+                            1 013,09 km<br />9h29
+                          </div> --}}
+                          <div class="expiration text-nowrap text-center">
+                            Dans<br />
+                            {{ \Carbon\Carbon::parse($item->loading_start)->diffInDays(\Carbon\Carbon::parse($item->delivery_start)) }} days
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  @endforeach
+                  @foreach ($vehicles as $item)
+                  <li class="shadow-sm">
+                    <div class="row">
+                      <div class="col-lg-6">
+                        <div class="map-item-left">
+                          <div class="publication">
+                            <div class="float-right icon">
+                              <span><i class="icofont-court-hammer"></i> 1</span>
+                              <span><i class="icofont-ui-message"></i> 0</span>
+                            </div>
+                            <span class="d-block">Depuis</span>
+                            <span class="d-block text-nowrap">{{ $item->created_at->diffForHumans() }}</span>
+                          </div>
+                          <div class="nom">
+                            <h5>
+                              <a href="#"><i class="icofont-home"></i>{{ ucfirst($item->model_name) }} 
+                                {{-- <sup>3</sup> --}}
+                              </a>
+                            </h5>
+                            <p><i class="icofont-star"></i>Prioritaire</p>
+                            <span class="bg-light d-inline-block">VN: {{ ucfirst($item->vehicleName) }}</span>
+                            <span class="bg-light d-inline-block">Mk: {{ ucfirst($item->make) }}</span>
+                            <span class="bg-light d-inline-block">Md: {{ ucfirst($item->model) }}</span>
+                            <span class="bg-light d-inline-block">EV: {{ ucfirst($item->estimationValue) }}</span>
+                            <span class="bg-light d-inline-block">MV: {{ ucfirst($item->movingVehicle) }}</span>
+                            <span class="bg-light d-inline-block">C: {{ ucfirst($item->conveyors) }}</span>
+                          </div>
+                          <div class="activity text-nowrap">
+                            <p>0 (0 en cours)</p>
+                            <p>0 message</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-lg-6">
+                        <div class="map-item-right">
+                          <div class="chargement">
+                            <p><span>a</span>{{ ucfirst($item->loading_address) }}</p>
+                            <small>entre le {{ $item->loading_start }} et le {{ $item->loading_end }}</small>
+                          </div>
+                          <div class="livraison">
+                            <p><span>b</span>{{ ucfirst($item->delivery_address) }}</p>
+                            <small> entre le {{ $item->delivery_start }} et le {{ $item->delivery_end }}</small>
+                          </div>
+                          {{-- <div class="distance text-nowrap">
+                            1 013,09 km<br />9h29
+                          </div> --}}
+                          <div class="expiration text-nowrap text-center">
+                            Dans<br />
+                            {{ \Carbon\Carbon::parse($item->loading_start)->diffInDays(\Carbon\Carbon::parse($item->delivery_start)) }} days
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  @endforeach
+                  @foreach ($motorsports as $item)
+                  <li class="shadow-sm">
+                    <div class="row">
+                      <div class="col-lg-6">
+                        <div class="map-item-left">
+                          <div class="publication">
+                            <div class="float-right icon">
+                              <span><i class="icofont-court-hammer"></i> 1</span>
+                              <span><i class="icofont-ui-message"></i> 0</span>
+                            </div>
+                            <span class="d-block">Depuis</span>
+                            <span class="d-block text-nowrap">{{ $item->created_at->diffForHumans() }}</span>
+                          </div>
+                          <div class="nom">
+                            <h5>
+                              <a href="#"><i class="icofont-home"></i>{{ ucfirst($item->model_name) }} 
+                                {{-- <sup>3</sup> --}}
+                              </a>
+                            </h5>
+                            <p><i class="icofont-star"></i>Prioritaire</p>
+                            <span class="bg-light d-inline-block">VN: {{ ucfirst($item->vehicleName) }}</span>
+                            <span class="bg-light d-inline-block">Mk: {{ ucfirst($item->make) }}</span>
+                            <span class="bg-light d-inline-block">Md: {{ ucfirst($item->model) }}</span>
+                            <span class="bg-light d-inline-block">EV: {{ ucfirst($item->estimationValue) }}</span>
+                            <span class="bg-light d-inline-block">MV: {{ ucfirst($item->movingVehicle) }}</span>
+                            <span class="bg-light d-inline-block">C: {{ ucfirst($item->conveyors) }}</span>
+                          </div>
+                          <div class="activity text-nowrap">
+                            <p>0 (0 en cours)</p>
+                            <p>0 message</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-lg-6">
+                        <div class="map-item-right">
+                          <div class="chargement">
+                            <p><span>a</span>{{ ucfirst($item->loading_address) }}</p>
+                            <small>entre le {{ $item->loading_start }} et le {{ $item->loading_end }}</small>
+                          </div>
+                          <div class="livraison">
+                            <p><span>b</span>{{ ucfirst($item->delivery_address) }}</p>
+                            <small> entre le {{ $item->delivery_start }} et le {{ $item->delivery_end }}</small>
+                          </div>
+                          {{-- <div class="distance text-nowrap">
+                            1 013,09 km<br />9h29
+                          </div> --}}
+                          <div class="expiration text-nowrap text-center">
+                            Dans<br />
+                            {{ \Carbon\Carbon::parse($item->loading_start)->diffInDays(\Carbon\Carbon::parse($item->delivery_start)) }} days
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  @endforeach
+                  @foreach ($boats as $item)
+                  <li class="shadow-sm">
+                    <div class="row">
+                      <div class="col-lg-6">
+                        <div class="map-item-left">
+                          <div class="publication">
+                            <div class="float-right icon">
+                              <span><i class="icofont-court-hammer"></i> 1</span>
+                              <span><i class="icofont-ui-message"></i> 0</span>
+                            </div>
+                            <span class="d-block">Depuis</span>
+                            <span class="d-block text-nowrap">{{ $item->created_at->diffForHumans() }}</span>
+                          </div>
+                          <div class="nom">
+                            <h5>
+                              <a href="#"><i class="icofont-home"></i>{{ ucfirst($item->model_name) }} 
+                                {{-- <sup>3</sup> --}}
+                              </a>
+                            </h5>
+                            <p><i class="icofont-star"></i>Prioritaire</p>
+                            <span class="bg-light d-inline-block">BN: {{ ucfirst($item->boatName) }}</span>
+                            <span class="bg-light d-inline-block">Mk: {{ ucfirst($item->make) }}</span>
+                            <span class="bg-light d-inline-block">Md: {{ ucfirst($item->model) }}</span>
+                            <span class="bg-light d-inline-block">L: {{ $item->length }},  W: {{ $item->width }},  H: {{ $item->height }}, Qt: {{ $item->quantity }} </span>
+                          </div>
+                          <div class="activity text-nowrap">
+                            <p>0 (0 en cours)</p>
+                            <p>0 message</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-lg-6">
+                        <div class="map-item-right">
+                          <div class="chargement">
+                            <p><span>a</span>{{ ucfirst($item->loading_address) }}</p>
+                            <small>entre le {{ $item->loading_start }} et le {{ $item->loading_end }}</small>
+                          </div>
+                          <div class="livraison">
+                            <p><span>b</span>{{ ucfirst($item->delivery_address) }}</p>
+                            <small> entre le {{ $item->delivery_start }} et le {{ $item->delivery_end }}</small>
+                          </div>
+                          {{-- <div class="distance text-nowrap">
+                            1 013,09 km<br />9h29
+                          </div> --}}
+                          <div class="expiration text-nowrap text-center">
+                            Dans<br />
+                            {{ \Carbon\Carbon::parse($item->loading_start)->diffInDays(\Carbon\Carbon::parse($item->delivery_start)) }} days
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  @endforeach
+                  @foreach ($fragiles as $item)
+                  <li class="shadow-sm">
+                    <div class="row">
+                      <div class="col-lg-6">
+                        <div class="map-item-left">
+                          <div class="publication">
+                            <div class="float-right icon">
+                              <span><i class="icofont-court-hammer"></i> 1</span>
+                              <span><i class="icofont-ui-message"></i> 0</span>
+                            </div>
+                            <span class="d-block">Depuis</span>
+                            <span class="d-block text-nowrap">{{ $item->created_at->diffForHumans() }}</span>
+                          </div>
+                          <div class="nom">
+                            <h5>
+                              <a href="#"><i class="icofont-home"></i>{{ ucfirst($item->model_name) }} 
+                                {{-- <sup>3</sup> --}}
+                              </a>
+                            </h5>
+                            <p><i class="icofont-star"></i>Prioritaire</p>
+                            <span class="bg-light d-inline-block">AN: {{ ucfirst($item->articleName) }}</span>
+                            <span class="bg-light d-inline-block">L: {{ $item->length }},  W: {{ $item->width }},  H: {{ $item->height }}, Wt: {{ $item->weight }}, Qt: {{ $item->quantity }} </span>
+                          </div>
+                          <div class="activity text-nowrap">
+                            <p>0 (0 en cours)</p>
+                            <p>0 message</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-lg-6">
+                        <div class="map-item-right">
+                          <div class="chargement">
+                            <p><span>a</span>{{ ucfirst($item->loading_address) }}</p>
+                            <small>entre le {{ $item->loading_start }} et le {{ $item->loading_end }}</small>
+                          </div>
+                          <div class="livraison">
+                            <p><span>b</span>{{ ucfirst($item->delivery_address) }}</p>
+                            <small> entre le {{ $item->delivery_start }} et le {{ $item->delivery_end }}</small>
+                          </div>
+                          {{-- <div class="distance text-nowrap">
+                            1 013,09 km<br />9h29
+                          </div> --}}
+                          <div class="expiration text-nowrap text-center">
+                            Dans<br />
+                            {{ \Carbon\Carbon::parse($item->loading_start)->diffInDays(\Carbon\Carbon::parse($item->delivery_start)) }} days
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  @endforeach
+                  @foreach ($packages as $item)
+                  <li class="shadow-sm">
+                    <div class="row">
+                      <div class="col-lg-6">
+                        <div class="map-item-left">
+                          <div class="publication">
+                            <div class="float-right icon">
+                              <span><i class="icofont-court-hammer"></i> 1</span>
+                              <span><i class="icofont-ui-message"></i> 0</span>
+                            </div>
+                            <span class="d-block">Depuis</span>
+                            <span class="d-block text-nowrap">{{ $item->created_at->diffForHumans() }}</span>
+                          </div>
+                          <div class="nom">
+                            <h5>
+                              <a href="#"><i class="icofont-home"></i>{{ ucfirst($item->model_name) }} 
+                                {{-- <sup>3</sup> --}}
+                              </a>
+                            </h5>
+                            <p><i class="icofont-star"></i>Prioritaire</p>
+                            <span class="bg-light d-inline-block">AN: {{ ucfirst($item->articleName) }}</span>
+                            <span class="bg-light d-inline-block">L: {{ $item->length }},  W: {{ $item->width }},  H: {{ $item->height }}, Wt: {{ $item->weight }}, Qt: {{ $item->quantity }} </span>
+                          </div>
+                          <div class="activity text-nowrap">
+                            <p>0 (0 en cours)</p>
+                            <p>0 message</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-lg-6">
+                        <div class="map-item-right">
+                          <div class="chargement">
+                            <p><span>a</span>{{ ucfirst($item->loading_address) }}</p>
+                            <small>entre le {{ $item->loading_start }} et le {{ $item->loading_end }}</small>
+                          </div>
+                          <div class="livraison">
+                            <p><span>b</span>{{ ucfirst($item->delivery_address) }}</p>
+                            <small> entre le {{ $item->delivery_start }} et le {{ $item->delivery_end }}</small>
+                          </div>
+                          {{-- <div class="distance text-nowrap">
+                            1 013,09 km<br />9h29
+                          </div> --}}
+                          <div class="expiration text-nowrap text-center">
+                            Dans<br />
+                            {{ \Carbon\Carbon::parse($item->loading_start)->diffInDays(\Carbon\Carbon::parse($item->delivery_start)) }} days
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  @endforeach
+                  @foreach ($pallets as $item)
+                  <li class="shadow-sm">
+                    <div class="row">
+                      <div class="col-lg-6">
+                        <div class="map-item-left">
+                          <div class="publication">
+                            <div class="float-right icon">
+                              <span><i class="icofont-court-hammer"></i> 1</span>
+                              <span><i class="icofont-ui-message"></i> 0</span>
+                            </div>
+                            <span class="d-block">Depuis</span>
+                            <span class="d-block text-nowrap">{{ $item->created_at->diffForHumans() }}</span>
+                          </div>
+                          <div class="nom">
+                            <h5>
+                              <a href="#"><i class="icofont-home"></i>{{ ucfirst($item->model_name) }} 
+                                {{-- <sup>3</sup> --}}
+                              </a>
+                            </h5>
+                            <p><i class="icofont-star"></i>Prioritaire</p>
+                            <span class="bg-light d-inline-block">AN: {{ ucfirst($item->articleName) }}</span>
+                            <span class="bg-light d-inline-block">D: {{ $item->dim }}, H: {{ $item->height }}, Wt: {{ $item->weight }}, Qt: {{ $item->quantity }} </span>
+                          </div>
+                          <div class="activity text-nowrap">
+                            <p>0 (0 en cours)</p>
+                            <p>0 message</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-lg-6">
+                        <div class="map-item-right">
+                          <div class="chargement">
+                            <p><span>a</span>{{ ucfirst($item->loading_address) }}</p>
+                            <small>entre le {{ $item->loading_start }} et le {{ $item->loading_end }}</small>
+                          </div>
+                          <div class="livraison">
+                            <p><span>b</span>{{ ucfirst($item->delivery_address) }}</p>
+                            <small> entre le {{ $item->delivery_start }} et le {{ $item->delivery_end }}</small>
+                          </div>
+                          {{-- <div class="distance text-nowrap">
+                            1 013,09 km<br />9h29
+                          </div> --}}
+                          <div class="expiration text-nowrap text-center">
+                            Dans<br />
+                            {{ \Carbon\Carbon::parse($item->loading_start)->diffInDays(\Carbon\Carbon::parse($item->delivery_start)) }} days
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  @endforeach
+                  @foreach ($commercials as $item)
+                  <li class="shadow-sm">
+                    <div class="row">
+                      <div class="col-lg-6">
+                        <div class="map-item-left">
+                          <div class="publication">
+                            <div class="float-right icon">
+                              <span><i class="icofont-court-hammer"></i> 1</span>
+                              <span><i class="icofont-ui-message"></i> 0</span>
+                            </div>
+                            <span class="d-block">Depuis</span>
+                            <span class="d-block text-nowrap">{{ $item->created_at->diffForHumans() }}</span>
+                          </div>
+                          <div class="nom">
+                            <h5>
+                              <a href="#"><i class="icofont-home"></i>{{ ucfirst($item->model_name) }} 
+                                {{-- <sup>3</sup> --}}
+                              </a>
+                            </h5>
+                            <p><i class="icofont-star"></i>Prioritaire</p>
+                            <span class="bg-light d-inline-block">AN: {{ ucfirst($item->articleName) }}</span>
+                            <span class="bg-light d-inline-block">L: {{ $item->length }},  W: {{ $item->width }},  H: {{ $item->height }}, Wt: {{ $item->weight }}, Qt: {{ $item->quantity }} </span>
+                          </div>
+                          <div class="activity text-nowrap">
+                            <p>0 (0 en cours)</p>
+                            <p>0 message</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-lg-6">
+                        <div class="map-item-right">
+                          <div class="chargement">
+                            <p><span>a</span>{{ ucfirst($item->loading_address) }}</p>
+                            <small>entre le {{ $item->loading_start }} et le {{ $item->loading_end }}</small>
+                          </div>
+                          <div class="livraison">
+                            <p><span>b</span>{{ ucfirst($item->delivery_address) }}</p>
+                            <small> entre le {{ $item->delivery_start }} et le {{ $item->delivery_end }}</small>
+                          </div>
+                          {{-- <div class="distance text-nowrap">
+                            1 013,09 km<br />9h29
+                          </div> --}}
+                          <div class="expiration text-nowrap text-center">
+                            Dans<br />
+                            {{ \Carbon\Carbon::parse($item->loading_start)->diffInDays(\Carbon\Carbon::parse($item->delivery_start)) }} days
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  @endforeach
+                  @foreach ($miscs as $item)
+                  <li class="shadow-sm">
+                    <div class="row">
+                      <div class="col-lg-6">
+                        <div class="map-item-left">
+                          <div class="publication">
+                            <div class="float-right icon">
+                              <span><i class="icofont-court-hammer"></i> 1</span>
+                              <span><i class="icofont-ui-message"></i> 0</span>
+                            </div>
+                            <span class="d-block">Depuis</span>
+                            <span class="d-block text-nowrap">{{ $item->created_at->diffForHumans() }}</span>
+                          </div>
+                          <div class="nom">
+                            <h5>
+                              <a href="#"><i class="icofont-home"></i>{{ ucfirst($item->others) }} 
+                                {{-- <sup>3</sup> --}}
+                              </a>
+                            </h5>
+                            <p><i class="icofont-star"></i>Prioritaire</p>
+                            <span class="bg-light d-inline-block">AN: {{ ucfirst($item->articleName) }}</span>
+                            <span class="bg-light d-inline-block">L: {{ $item->length }},  W: {{ $item->width }},  H: {{ $item->height }}, Wt: {{ $item->weight }}, Qt: {{ $item->quantity }} </span>
+                          </div>
+                          <div class="activity text-nowrap">
+                            <p>0 (0 en cours)</p>
+                            <p>0 message</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-lg-6">
+                        <div class="map-item-right">
+                          <div class="chargement">
+                            <p><span>a</span>{{ ucfirst($item->loading_address) }}</p>
+                            <small>entre le {{ $item->loading_start }} et le {{ $item->loading_end }}</small>
+                          </div>
+                          <div class="livraison">
+                            <p><span>b</span>{{ ucfirst($item->delivery_address) }}</p>
                             <small> entre le {{ $item->delivery_start }} et le {{ $item->delivery_end }}</small>
                           </div>
                           {{-- <div class="distance text-nowrap">
