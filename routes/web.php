@@ -206,4 +206,5 @@ Route::post('/vehicle/store', [VehicleController::class, 'store'])->name('vehicl
 // AnnouncementController 
 Route::post('/announcement/three', [AnnouncementController::class, 'announceThree'])->name('announcement.three');
 Route::post('/announcement/store', [AnnouncementController::class, 'store'])->name('announcement.store');
+Route::match(['post', 'get'], 'post/store', [AnnouncementController::class, 'save'] )->middleware('auth')->name('post-store');
 Route::get('/announcements/{id}/details', [AnnouncementController::class, 'details'])->name('announcement.details');

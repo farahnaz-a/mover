@@ -346,7 +346,7 @@
                         </div>
                       </div>
                     </div>
-                    <h5 class="mt-4 font-weight-bold text-navy-blue">
+                    {{-- <h5 class="mt-4 font-weight-bold text-navy-blue">
                       <i class="icofont-image mr-2"></i>Increase your chances of
                       being solicited, insert a photo!
                     </h5>
@@ -364,7 +364,7 @@
                               {{ $message }}
                             </div>
                         @enderror
-                      </div>
+                      </div> --}}
                     </div>
                     <div class="mt-4">
                       <div class="custom-control custom-checkbox">

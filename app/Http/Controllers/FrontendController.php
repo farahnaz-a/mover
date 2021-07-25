@@ -38,8 +38,8 @@ class FrontendController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth')->only('form', 'formThree');
-        $this->middleware('verified')->only('form', 'formThree');
+        // $this->middleware('auth')->only('form', 'formThree');
+        // $this->middleware('verified')->only('form', 'formThree');
     }
    /**
     *  Home Page (Frontend)
