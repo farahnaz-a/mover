@@ -12,6 +12,7 @@ use App\Http\Controllers\AnimalController;
 use App\Http\Controllers\AnnouncementController;
 use App\Http\Controllers\MoverController;
 use App\Http\Controllers\BannerController;
+use App\Http\Controllers\BiddingController;
 use App\Http\Controllers\BoatsAndVoluminousController;
 use App\Http\Controllers\ClientController;
 use App\Http\Controllers\CalloutController;
@@ -208,3 +209,7 @@ Route::post('/announcement/three', [AnnouncementController::class, 'announceThre
 Route::post('/announcement/store', [AnnouncementController::class, 'store'])->name('announcement.store');
 Route::match(['post', 'get'], 'post/store', [AnnouncementController::class, 'save'] )->middleware('auth')->name('post-store');
 Route::get('/announcements/{id}/details', [AnnouncementController::class, 'details'])->name('announcement.details');
+
+
+// BiddingController 
+Route::post('/bidding/store', [BiddingController::class, 'store'])->name('bidding.store');

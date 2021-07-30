@@ -306,11 +306,15 @@ class FrontendController extends Controller
    */
   public function moverReg()
   {
-      return view('frontend.moverReg', [
-          'countries' => Country::orderBy('name', 'asc')->get(),
-          'registration'=> Registration::first(),
-          'bullets'      => Bullet::all(),
-      ]);
+     if(Auth::check())
+     {
+       return back();
+     }
+     return view('frontend.moverReg', [
+      'countries' => Country::orderBy('name', 'asc')->get(),
+      'registration'=> Registration::first(),
+      'bullets'      => Bullet::all(),
+    ]);
   }
 
 // END  

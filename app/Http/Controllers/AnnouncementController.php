@@ -206,6 +206,8 @@ class AnnouncementController extends Controller
     public function details($id)
     {
         $data = Announcement::find($id); 
+        $data->increment('views'); 
+        $data->save();
 
         return view('frontend.details', compact('data')); 
     }

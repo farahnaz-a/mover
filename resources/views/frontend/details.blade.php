@@ -14,6 +14,7 @@
 
 @section('css')
    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+ 
 @endsection
 
 @section('content')
@@ -42,7 +43,7 @@
                       </a>
                       <div class="mb-3">
                         <span class="ml-3"
-                          ><i class="icofont-eye-alt mr-2"></i> Vues: 25</span
+                          ><i class="icofont-eye-alt mr-2"></i> Vues: {{ $data->views }}</span
                         >
                         <span class="ml-3">Postée le : {{ $data->created_at->format('d/M/Y') }}</span>
                         <span class="text-danger ml-3">Expire date : {{ $data->loading_start }}</span>
@@ -51,11 +52,77 @@
                     <div class="map-content shadow-sm">
                       <div class="map-header">
                         <div class="icon"><i class="icofont-car-alt-3"></i></div>
-                        <h3>
+                        <h3 class="d-inline">
                           {{ strtoupper($data->category) }} {{ $data->equipment ?? $data->model_name ?? $data->food_name ?? $data->animalName ?? $data->boatName }} <br /><small
                             >Référence : {{ $data->id }}</small
                           >
                         </h3>
+                        @auth 
+                        @if(Auth::user()->role == 'mover')
+                        @if(bidding(Auth::id(), $data->id))
+                        <a style="margin-left: 10px;"
+                        
+                          class="btn text-white bg-navy-blue mb-3"
+                        >
+                        <i class="icofont-arrow-right mr-2"></i>Your bid = €{{ bidding(Auth::id(), $data->id)->price }}
+                      </a>
+                        @else 
+                        <a style="margin-left: 10px;"
+                        data-toggle="modal" data-target="#ModalExample"
+                          class="btn text-white bg-navy-blue mb-3"
+                        >
+                        <i class="icofont-arrow-right mr-2"></i>Bid now
+                      </a>
+                        @endif
+                      
+
+                      <!-- Modal HTML Markup -->
+                <div id="ModalExample" class="modal fade">
+                  <div class="modal-dialog">
+                      <div class="modal-content">
+                          <div class="modal-header">
+                              <h4 class="modal-title text-xs-center">Bid Now</h4>
+                          </div>
+                          <div class="modal-body">
+                              <form role="form" method="POST" action="{{ route('bidding.store') }}">
+                                @csrf
+                                <input type="hidden" name="announcement_id" value="{{ $data->id }}">
+                                <input type="hidden" name="mover_id" value="{{ Auth::id() }}">
+                                <input type="hidden" name="customer_id" value="{{ $data->user_id }}">
+                                  <div class="form-group">
+                                      <label class="control-label">Bidding price</label>
+                                      <div>
+                                          <input type="text" placeholder="Enter bidding price" class="form-control input-lg" name="price" value="">
+                                      </div>
+                                      @error('price')
+                                        <small class="text-danger">{{ $message }}</small>
+                                      @enderror
+                                  </div>
+                                  <div class="form-group">
+                                      <label class="control-label">Your Notes to the customer</label>
+                                      <div>
+                                          <textarea name="notes" class="form-control input-lg" placeholder="Enter notes"></textarea>
+                                          @error('notes')
+                                          <small class="text-danger">{{ $message }}</small>
+                                        @enderror
+                                      </div>
+                                  </div>
+                                 
+                                  <div class="form-group">
+                                      <div>
+                                          <button type="submit" class="btn btn-info btn-block">Submit your bid</button>
+                                      </div>
+                                  </div>
+                              </form>
+                          </div>
+                          <div class="modal-footer text-xs-center">
+                              Don't have an account? <a href="{{ route('register') }}">Sign up »</a>
+                          </div>
+                      </div><!-- /.modal-content -->
+                  </div><!-- /.modal-dialog -->
+                </div><!-- /.modal -->
+                        @endif
+                        @endauth
                       </div>
                       <div id="map-canvas"></div>
                       <div class="row mt-4">
@@ -295,7 +362,7 @@
                 <div class="col-lg-5 col-xl-4">
                   <div class="right shadow-sm">
                     <div class="right-tab">
-                      <span class="active" data-target="devis">Devis (1)</span>
+                      <span class="active" data-target="devis">Devis ({{ totalbid($data->id)->count() }})</span>
                       <span data-target="message">Message (1)</span>
                     </div>
                     <div class="right-tab-body active" id="devis">
@@ -329,10 +396,11 @@
                       </div>
                       @endguest
                       <div class="bid-response">
+                        @foreach(totalbid($data->id) as $key => $bid)
                         <div class="rating">
                           <i class="icofont-car-alt-3"></i>
                           <div>
-                            <span>SER75</span>
+                            <span>{{ $bid->getmover->username }}</span>
                             <div class="star">
                               <i class="icofont-star"></i>
                               <i class="icofont-star"></i>
@@ -344,14 +412,33 @@
                         </div>
                         <div>
                           <h5>
-                            <strong>350 $</strong> <br /><small
-                              ><a href="#">Voir détails</a></small
+                            <strong>{{ $bid->price }} €</strong> <br /><small
+                              ><a style="cursor: pointer" data-toggle="modal" data-target="#DetailModal{{ $bid->id }}">Voir détails</a></small
                             >
                           </h5>
                         </div>
                         <div>
-                          <span class="text-danger">expire</span>
+                          {{-- <span class="text-danger">expire</span> --}}
                         </div>
+                                <!-- Modal HTML Markup -->
+                <div id="DetailModal{{ $bid->id }}" class="modal fade">
+                  <div class="modal-dialog">
+                      <div class="modal-content">
+                          <div class="modal-header">
+                              <h4 class="modal-title text-xs-center">Bid Now</h4>
+                          </div>
+                          <div class="modal-body">
+                              <p>
+                                Price : € {{ $bid->price }}
+                              </p>
+                              <p>
+                                 Notes from mover : {{ $bid->notes }}
+                              </p>
+                          </div>
+                      </div><!-- /.modal-content -->
+                  </div><!-- /.modal-dialog -->
+                </div><!-- /.modal -->
+                        @endforeach
                       </div>
                     </div>
                     <div class="right-tab-body" id="message">
@@ -394,6 +481,13 @@
 @endsection
 
 @section('js')
+<script>
+  @if(count($errors) > 0 )
+   $(document).ready(function(){
+     $("#ModalExample").modal('show');
+   });
+  @endif
+</script>
     <!-- google map -->
     <script>
         function initMap() {

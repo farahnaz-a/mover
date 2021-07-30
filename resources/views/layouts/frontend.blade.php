@@ -128,9 +128,11 @@
                   <li class="nav-item">
                     <a class="nav-link" aria-haspopup="true" aria-expanded="false" href="{{ route('frontend.announcements') }}">Demande en cours</a>
                   </li>
-                  <li class="nav-item">
-                    <a class="nav-link" aria-haspopup="true" aria-expanded="false" href="{{ route('frontend.moverReg') }}">Inscription déménageur</a>
-                  </li>
+                @guest
+                <li class="nav-item">
+                  <a class="nav-link" aria-haspopup="true" aria-expanded="false" href="{{ route('frontend.moverReg') }}">Inscription déménageur</a>
+                </li>
+                @endguest
               <li class="nav-item dropdown">
                 <a class="nav-link" href="{{ route('frontend.contact') }}" >Contact</a>
                
