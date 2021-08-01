@@ -82,20 +82,22 @@
                           "
                         >
                           <h4 class="font-weight-bold text-navy-blue mr-3">
-                            FretBay Login
+                            Deem Login
                           </h4>
-                          <span
+                          <a href="{{ route('register') }}">
+                            <span
                             id="to-registration"
                             class="mb-2"
                             style="cursor: pointer"
                             ><i class="icofont-user-alt-7 mr-2"></i>I create an
                             account</span
                           >
+                          </a>
                         </div>
                         <div class="bg-light-gray p-3 rounded mt-3">
                           <p class="text-center">
                             Enter your email address or username and password to
-                            access all FretBay services.
+                            access all Deem services.
                           </p>
                           <form method="POST" action="{{ route('login') }}">
                             @csrf

@@ -167,9 +167,11 @@ Route::any('/agrifood/step-three', [FrontendController::class, 'agrifoodThree'])
 Route::any('/commercialgoods/step-three', [FrontendController::class, 'commercialgoodsThree'])->name('step3.commercialgoods');
 Route::any('/miscellaneous/step-three', [FrontendController::class, 'miscellaneousThree'])->name('step3.miscellaneous');
 Route::get('/demande/en/cours', [FrontendController::class, 'announcements'])->name('frontend.announcements');
+Route::get('/my/announcements', [FrontendController::class, 'myAnnouncements'])->name('my.announcements');
 // Route::get('/transport-details', [FrontendController::class, 'details'])->name('frontend.details');
 Route::get('/contact', [FrontendController::class, 'contact'])->name('frontend.contact');
 Route::get('/inscription/demenageur', [FrontendController::class, 'moverReg'])->name('frontend.moverReg');
+Route::get('/accept/{id}', [FrontendController::class, 'accept'])->name('bid.accept');
 
 //Agrifood controller
 Route::post('/agrifood/store', [AgriFoodController::class, 'store'])->name('agrifood.store');

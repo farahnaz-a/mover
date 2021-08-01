@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\User;
-use Illuminate\Http\Request;
-use Hash; 
 use Auth;
+use Hash; 
+use App\Models\User;
+use App\Models\Bidding;
+use Illuminate\Http\Request;
 
 class MoverController extends Controller
 {
@@ -23,7 +24,7 @@ class MoverController extends Controller
      */
     public function index()
     {
-        return view('mover.index');
+        return view('mover.index', ['bids' => Bidding::where('mover_id', Auth::id())->orderBy('id', 'desc')->get(),]);
     }
 
     /** 

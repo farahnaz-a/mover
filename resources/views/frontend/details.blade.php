@@ -377,75 +377,76 @@
                       <p>L'inscription est rapide et gratuite</p>
                     </div>
                     <div>
-                      <button class="btn bg-navy-blue text-white">
+                      <a href="{{ route('frontend.moverReg') }}" class="btn bg-navy-blue text-white">
                         S'inscrire
-                      </button>
+                      </a>
                     </div>
                   </div>
                    
-                      <div class="right-card">
-                        <div>
-                          <h5>Pas encore inscrit ?</h5>
-                          <p>L'inscription est rapide et gratuite</p>
-                        </div>
-                        <div>
-                          <button class="btn bg-navy-blue text-white">
-                            S'inscrire
-                          </button>
-                        </div>
-                      </div>
                       @endguest
-                      <div class="bid-response">
-                        @foreach(totalbid($data->id) as $key => $bid)
-                        <div class="rating">
-                          <i class="icofont-car-alt-3"></i>
-                          <div>
-                            <span>{{ $bid->getmover->username }}</span>
-                            <div class="star">
-                              <i class="icofont-star"></i>
-                              <i class="icofont-star"></i>
-                              <i class="icofont-star"></i>
-                              <i class="icofont-star"></i>
-                              <i class="icofont-star"></i>
-                            </div>
-                          </div>
+                  @auth
+                  @foreach(totalbid($data->id) as $key => $bid)
+                  <div class="bid-response">
+                    <div class="rating">
+                      <i class="icofont-car-alt-3"></i>
+                      <div>
+                        <span>{{ $bid->getmover->username }}</span>
+                        <div class="star">
+                          <i class="icofont-star"></i>
+                          <i class="icofont-star"></i>
+                          <i class="icofont-star"></i>
+                          <i class="icofont-star"></i>
+                          <i class="icofont-star"></i>
                         </div>
-                        <div>
-                          <h5>
-                            <strong>{{ $bid->price }} €</strong> <br /><small
-                              ><a style="cursor: pointer" data-toggle="modal" data-target="#DetailModal{{ $bid->id }}">Voir détails</a></small
-                            >
-                          </h5>
-                        </div>
-                        <div>
-                          {{-- <span class="text-danger">expire</span> --}}
-                        </div>
-                                <!-- Modal HTML Markup -->
-                <div id="DetailModal{{ $bid->id }}" class="modal fade">
-                  <div class="modal-dialog">
-                      <div class="modal-content">
-                          <div class="modal-header">
-                              <h4 class="modal-title text-xs-center">Bid Now</h4>
-                          </div>
-                          <div class="modal-body">
-                              <p>
-                                Price : € {{ $bid->price }}
-                              </p>
-                              <p>
-                                 Notes from mover : {{ $bid->notes }}
-                              </p>
-                          </div>
-                      </div><!-- /.modal-content -->
-                  </div><!-- /.modal-dialog -->
-                </div><!-- /.modal -->
-                        @endforeach
                       </div>
                     </div>
+                    <div>
+                      <h5>
+                        <strong>{{ $bid->price }} €</strong> <br /><small
+                          ><a style="cursor: pointer" data-toggle="modal" data-target="#DetailModal{{ $bid->id }}">Voir détails</a></small
+                        >
+                      </h5>
+                    </div>
+                    <div>
+                      @auth
+                      @if($data->user_id == Auth::id())
+                      @if($bid->status == 'pending')
+                      <a href="{{ route('bid.accept', $bid->id) }}"><span class="text-success">Accept</span></a>
+                      @elseif($bid->status == 'rejected')
+                      <a href="javascript:void(0);"><span class="text-danger">Rejected</span></a>
+                      @else 
+                      <a href="javascript:void(0);"><span class="text-success">Accepted</span></a>
+                      @endif
+                      @endif
+                      @endauth
+                    </div>
+                            <!-- Modal HTML Markup -->
+            <div id="DetailModal{{ $bid->id }}" class="modal fade">
+              <div class="modal-dialog">
+                  <div class="modal-content">
+                      <div class="modal-header">
+                          <h4 class="modal-title text-xs-center">Bid Now</h4>
+                      </div>
+                      <div class="modal-body">
+                          <p>
+                            Price : € {{ $bid->price }}
+                          </p>
+                          <p>
+                             Notes from mover : {{ $bid->notes }}
+                          </p>
+                      </div>
+                  </div><!-- /.modal-content -->
+              </div><!-- /.modal-dialog -->
+            </div><!-- /.modal -->
+          </div>
+          @endforeach
+                  @endauth
+                    </div>
                     <div class="right-tab-body" id="message">
+                      @guest
                       <p class="text-center">
                         Se connecter pour voir les messages.
                       </p>
-                      @guest
                       <div class="right-card">
                         <div>
                           <h5>Pas encore inscrit ?</h5>
@@ -469,6 +470,12 @@
                         </div>
                       </div>
                       @endguest
+                      @auth 
+                      @if(\App\Models\Bidding::where('mover_id', Auth::id())->where('id', $data->id))
+                       <p>Send message will be here.</p>
+                      @endif
+                      
+                      @endauth
                     </div>
                   </div>
                 </div>

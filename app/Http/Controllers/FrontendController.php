@@ -12,6 +12,7 @@ use App\Models\Banner;
 use App\Models\Bullet;
 use App\Models\Client;
 use App\Models\Pallet;
+use App\Models\Bidding;
 use App\Models\Callout;
 use App\Models\Contact;
 use App\Models\Counter;
@@ -79,6 +80,52 @@ class FrontendController extends Controller
           // 'vehicles'    => Vehicle::where('hired', 'no')->orderBy('id', 'asc')->get(),
           'announcements'    => Announcement::where('hired', 'no')->orderBy('id', 'asc')->get(),
        ]);
+   }
+   /**
+    * Announcements Page (Frontend)
+    */ 
+   public function myAnnouncements()
+   {
+       return view('frontend.announcements', [
+          // 'agrifoods' => AgriFood::where('hired', 'no')->orderBy('id', 'asc')->get(),
+          // 'animals'   => Animal::where('hired', 'no')->orderBy('id', 'asc')->get(),
+          // 'boats'     => BoatsAndVoluminous::where('hired', 'no')->orderBy('id', 'asc')->get(),
+          // 'commercials'=> CommercialGoods::where('hired', 'no')->orderBy('id', 'asc')->get(),
+          // 'fragiles'   => FragileGoods::where('hired', 'no')->orderBy('id', 'asc')->get(),
+          // 'households' => HouseHold::where('hired', 'no')->orderBy('id', 'asc')->get(),
+          // 'miscs' => Miscellaneous::where('hired', 'no')->orderBy('id', 'asc')->get(),
+          // 'motorsports' => MotorcyclesAndSports::where('hired', 'no')->orderBy('id', 'asc')->get(),
+          // 'packages'    => Package::where('hired', 'no')->orderBy('id', 'asc')->get(),
+          // 'pallets'    => Pallet::where('hired', 'no')->orderBy('id', 'asc')->get(),
+          // 'vehicles'    => Vehicle::where('hired', 'no')->orderBy('id', 'asc')->get(),
+          'announcements'    => Announcement::where('hired', 'no')->where('user_id', Auth::id())->orderBy('id', 'asc')->get(),
+       ]);
+   }
+
+   /**
+    *  Accept Bid 
+    */
+   public function accept($id)
+   {
+     $bid = Bidding::find($id);
+     $bid->status = 'accepted'; 
+     $bid->save(); 
+
+     $others = Bidding::where('announcement_id', $bid->announcement_id)->get();
+
+     foreach($others as $other)
+     {
+       $other->status = 'rejected'; 
+     }
+
+     $other->save(); 
+
+     $announcement = Announcement::find($bid->announcement_id);
+     $announcement->hired = 'yes'; 
+     $announcement->save(); 
+
+     echo "all done";
+
    }
 
    /**

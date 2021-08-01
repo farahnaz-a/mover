@@ -229,10 +229,12 @@
                 <li class=" nav-item @yield('dashboard')"><a class="d-flex align-items-center" href="{{ route('dashboard') }}"><i data-feather="home"></i><span class="menu-title text-truncate" data-i18n="Dashboards">Dashboards</span></a>
                 </li>
 
-                <li class="navigation-header"><span data-i18n="Apps &amp; Pages">Site Settings</span><i data-feather="more-horizontal"></i>
+                <li class="navigation-header"><span data-i18n="Apps &amp; Pages">Mover Dashboard</span><i data-feather="more-horizontal"></i>
                 </li>
 
-                <li class="nav-item @yield('banners')"><a class="d-flex align-items-center" href=""><i data-feather='shield'></i><span class="menu-title text-truncate" data-i18n="Banner settings">Banner Settings</span></a>
+                <li class="nav-item @yield('bids')"><a class="d-flex align-items-center" href="{{ url('/mover/dashboard') }}"><i data-feather='shield'></i><span class="menu-title text-truncate" data-i18n="Banner settings">My Bids</span></a>
+                </li> 
+                <li class="nav-item"><a class="d-flex align-items-center" href="{{ url('/user/profile') }}"><i data-feather='shield'></i><span class="menu-title text-truncate" data-i18n="Banner settings">My Profile</span></a>
                 </li> 
 
 

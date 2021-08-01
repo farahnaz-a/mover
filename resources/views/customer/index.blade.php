@@ -67,7 +67,7 @@
                                 <td>{{ $item->loading_start }}</td>
                                 <td>{{ $item->delivery_end }}</td>
                                 <td>{{ $item->hired }}</td>
-                                <td>20 bids</td>
+                                <td>{{ \App\Models\Bidding::where('announcement_id', $item->id)->get()->count() }}</td>
                                 <td>
                                     <div class="dropdown">
                                         <button type="button" class="btn btn-sm dropdown-toggle hide-arrow waves-effect waves-float waves-light" data-toggle="dropdown">
