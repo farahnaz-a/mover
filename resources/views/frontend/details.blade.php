@@ -1,5 +1,8 @@
 @extends('layouts.frontend')
-
+@php
+    $comments = \App\Models\Comment::where('announcement_id', $data->id)->get();
+    $count = $comments->count();
+@endphp
 @section('title')
     {{ config('app.name') }} - Details
 @endsection
@@ -363,7 +366,7 @@
                   <div class="right shadow-sm">
                     <div class="right-tab">
                       <span class="active" data-target="devis">Devis ({{ totalbid($data->id)->count() }})</span>
-                      <span data-target="message">Message (1)</span>
+                      <span id="count" data-target="message">Message ({{ $count }})</span>
                     </div>
                     <div class="right-tab-body active" id="devis">
                       <p class="text-center">
@@ -471,10 +474,31 @@
                       </div>
                       @endguest
                       @auth 
-                      @if(\App\Models\Bidding::where('mover_id', Auth::id())->where('id', $data->id))
-                       <p>Send message will be here.</p>
-                      @endif
+                      <div id="msg" class="message-wrapper">
+                       @include('comments')
+                      </div>
                       
+                        <div class="input-group">
+                          <input
+                            id="enter"
+                            type="text"
+                            class="form-control"
+                            placeholder="message"
+                            name="comment"
+                            required
+                          />
+                 
+                          <div class="input-group-append">
+                            <input type="hidden" name="user_id" value="{{ Auth::id() }}">
+                            <input type="hidden" name="announcement_id" value="{{ $data->id }}">
+                            <button type="button" id="commentSubmit" class="input-group-text">
+                              <i class="icofont-paper-plane"></i>
+                            </button>
+                          </div>
+                        </div>
+                        <div class="p-3">
+                          <small class="text-danger" id="error"></small>
+                        </div>
                       @endauth
                     </div>
                   </div>
@@ -488,6 +512,61 @@
 @endsection
 
 @section('js')
+<script>
+  $(document).ready(function() {
+
+
+
+    $("#enter").keydown(function(event){ 
+    var keyCode = (event.keyCode ? event.keyCode : event.which);   
+    if (keyCode == 13) {
+        $('#commentSubmit').trigger('click');
+    }
+    });
+    $("#commentSubmit").on("click", function() {
+      
+
+      let comment = $("input[name=comment]").val();
+      let user_id = $("input[name=user_id]").val();
+      let announcement_id = $("input[name=announcement_id]").val();
+
+      if(comment == '')
+      {
+        $("#error").html('Please write a message to send');
+        return false;
+      }
+
+      $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+
+        $.ajax({
+
+          url: "{{ route('comment.post') }}",
+          type: "POST", 
+          data:{
+              comment : comment, 
+              user_id : user_id,
+              announcement_id : announcement_id,
+          },
+          success: function(data)
+          {
+            $("#msg").html(data.response);
+            let push = "Message (" + data.count + ")";
+            $("#count").html(push);
+            $("input[name=comment]").val('');
+          }
+
+        })
+
+    });
+  });
+</script>
+
+
+
 <script>
   @if(count($errors) > 0 )
    $(document).ready(function(){

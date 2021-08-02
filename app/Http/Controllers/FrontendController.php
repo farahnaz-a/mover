@@ -2,10 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\MoverInformation;
+use App\Mail\NotifyMover;
 use Auth;
 use Carbon\Carbon;
 use App\Models\Blog;
 use App\Models\Team;
+use App\Models\User;
 use App\Models\Work;
 use App\Models\Animal;
 use App\Models\Banner;
@@ -31,6 +34,7 @@ use App\Models\Miscellaneous;
 use App\Models\CommercialGoods;
 use App\Models\BoatsAndVoluminous;
 use App\Models\MotorcyclesAndSports;
+use Mail;
 
 class FrontendController extends Controller
 {
@@ -82,6 +86,39 @@ class FrontendController extends Controller
        ]);
    }
    /**
+    * Announcements Page (Category)
+    */ 
+   public function announceCategory($category)
+   {
+       return view('frontend.announcements', [
+          // 'agrifoods' => AgriFood::where('hired', 'no')->orderBy('id', 'asc')->get(),
+          // 'animals'   => Animal::where('hired', 'no')->orderBy('id', 'asc')->get(),
+          // 'boats'     => BoatsAndVoluminous::where('hired', 'no')->orderBy('id', 'asc')->get(),
+          // 'commercials'=> CommercialGoods::where('hired', 'no')->orderBy('id', 'asc')->get(),
+          // 'fragiles'   => FragileGoods::where('hired', 'no')->orderBy('id', 'asc')->get(),
+          // 'households' => HouseHold::where('hired', 'no')->orderBy('id', 'asc')->get(),
+          // 'miscs' => Miscellaneous::where('hired', 'no')->orderBy('id', 'asc')->get(),
+          // 'motorsports' => MotorcyclesAndSports::where('hired', 'no')->orderBy('id', 'asc')->get(),
+          // 'packages'    => Package::where('hired', 'no')->orderBy('id', 'asc')->get(),
+          // 'pallets'    => Pallet::where('hired', 'no')->orderBy('id', 'asc')->get(),
+          // 'vehicles'    => Vehicle::where('hired', 'no')->orderBy('id', 'asc')->get(),
+          'announcements'    => Announcement::where('hired', 'no')->where('category', $category)->orderBy('id', 'asc')->get(),
+       ]);
+   }
+
+   public function searchann()
+   {
+     $from =  request()->from;
+     $to =  request()->to;
+
+     $announcements = Announcement::where('loading_address', 'LIKE', '%'. $from .'%')
+                                  ->where('delivery_address', 'LIKE', '%' . $to . '%')
+                                  ->get();
+
+    return view('frontend.announcements', compact('announcements'));
+
+   }
+   /**
     * Announcements Page (Frontend)
     */ 
    public function myAnnouncements()
@@ -111,20 +148,36 @@ class FrontendController extends Controller
      $bid->status = 'accepted'; 
      $bid->save(); 
 
-     $others = Bidding::where('announcement_id', $bid->announcement_id)->get();
+     $others = Bidding::where('announcement_id',  $bid->announcement_id)->where('id', '!=', $bid->id)->get();
 
      foreach($others as $other)
      {
        $other->status = 'rejected'; 
+       $other->save(); 
      }
 
-     $other->save(); 
 
      $announcement = Announcement::find($bid->announcement_id);
      $announcement->hired = 'yes'; 
      $announcement->save(); 
 
-     echo "all done";
+     $mover = User::find($bid->mover_id); 
+     $name     = $mover->name;
+     $email    = $mover->email; 
+     $company  = $mover->company; 
+     $phone    = $mover->phone; 
+     $address  = $mover->address; 
+
+     $user = User::find($announcement->user_id); 
+     $name  = $user->name;
+     $email = $user->email; 
+     $phone = $user->phone;  
+     
+     
+     Mail::to(Auth::user()->email)->send(new MoverInformation($name, $email, $company, $phone, $address));
+     Mail::to($email)->send(new NotifyMover($name, $email, $phone));
+
+     return back()->withSuccess('Mover has been notified and we have sent mover information to your email address.');
 
    }
 

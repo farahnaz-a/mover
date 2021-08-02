@@ -101,6 +101,9 @@
                   <div class="close-filter">
                     Affiner la recherche <i class="icofont-close"></i>
                   </div>
+                  <form action="{{ route('search.ann') }}" method="GET">
+                    
+                  
                   <div class="filter-inputs">
                     <div class="filter-input">
                       <div class="filter-point">
@@ -109,6 +112,7 @@
                           placeholder="Ville, Code postal, Région, Pays"
                           type="text"
                           class="form-control"
+                          name="from"
                         />
                       </div>
                     </div>
@@ -119,146 +123,19 @@
                           placeholder="Ville, Code postal, Région, Pays"
                           type="text"
                           class="form-control"
+                          name="to"
                         />
                       </div>
                     </div>
                   </div>
-                  <div class="p-3">
-                    <input type="date" class="form-control" />
-                  </div>
-                  <div class="filter-checks">
-                    <div class="form-check">
-                      <input
-                        class="form-check-input"
-                        type="checkbox"
-                        id="maison"
-                      />
-                      <label class="form-check-label" for="maison">
-                        <i class="icofont-vehicle-delivery-van"></i>Équipement de
-                        la maison
-                      </label>
-                    </div>
-                    <div class="form-check">
-                      <input
-                        class="form-check-input"
-                        type="checkbox"
-                        id="Déménagements"
-                      />
-                      <label class="form-check-label" for="Déménagements">
-                        <i class="icofont-vehicle-delivery-van"></i>Déménagements
-                      </label>
-                    </div>
-                    <div class="form-check">
-                      <input
-                        class="form-check-input"
-                        type="checkbox"
-                        id="Véhicule"
-                      />
-                      <label class="form-check-label" for="Véhicule">
-                        <i class="icofont-vehicle-delivery-van"></i>Véhicule
-                      </label>
-                    </div>
-                    <div class="form-check">
-                      <input
-                        class="form-check-input"
-                        type="checkbox"
-                        id="Bateaux"
-                      />
-                      <label class="form-check-label" for="Bateaux">
-                        <i class="icofont-vehicle-delivery-van"></i>Bateaux &
-                        volumineux
-                      </label>
-                    </div>
-                    <div class="form-check">
-                      <input
-                        class="form-check-input"
-                        type="checkbox"
-                        id="Divers"
-                      />
-                      <label class="form-check-label" for="Divers">
-                        <i class="icofont-vehicle-delivery-van"></i>Divers
-                      </label>
-                    </div>
-                    <div class="form-check">
-                      <input class="form-check-input" type="checkbox" id="Bien" />
-                      <label class="form-check-label" for="Bien">
-                        <i class="icofont-vehicle-delivery-van"></i>Bien
-                        commerciaux
-                      </label>
-                    </div>
-                    <div class="form-check">
-                      <input
-                        class="form-check-input"
-                        type="checkbox"
-                        id="Animaux"
-                      />
-                      <label class="form-check-label" for="Animaux">
-                        <i class="icofont-vehicle-delivery-van"></i>Animaux
-                      </label>
-                    </div>
-                    <div class="form-check">
-                      <input
-                        class="form-check-input"
-                        type="checkbox"
-                        id="Biens"
-                      />
-                      <label class="form-check-label" for="Biens">
-                        <i class="icofont-vehicle-delivery-van"></i>Biens fragiles
-                      </label>
-                    </div>
-                    <div class="form-check">
-                      <input
-                        class="form-check-input"
-                        type="checkbox"
-                        id="Agroalimentaire"
-                      />
-                      <label class="form-check-label" for="Agroalimentaire">
-                        <i class="icofont-vehicle-delivery-van"></i
-                        >Agroalimentaire
-                      </label>
-                    </div>
-                    <div class="form-check">
-                      <input
-                        class="form-check-input"
-                        type="checkbox"
-                        id="Motos"
-                      />
-                      <label
-                        class="form-check-label"
-                        for="Motos et véhicules de sport"
-                      >
-                        <i class="icofont-vehicle-delivery-van"></i>Motos et
-                        véhicules de sport
-                      </label>
-                    </div>
-                    <div class="form-check">
-                      <input
-                        class="form-check-input"
-                        type="checkbox"
-                        id="Colis"
-                      />
-                      <label class="form-check-label" for="Colis">
-                        <i class="icofont-vehicle-delivery-van"></i>Colis/Pli
-                      </label>
-                    </div>
-                    <div class="form-check">
-                      <input
-                        class="form-check-input"
-                        type="checkbox"
-                        id="Palette"
-                      />
-                      <label class="form-check-label" for="Palette">
-                        <i class="icofont-vehicle-delivery-van"></i>Palette
-                      </label>
-                    </div>
-                  </div>
+                  {{-- <div class="p-3">
+                     <input type="date" class="form-control" name="delivery_date"/>
+                  </div> --}}
                   <div class="text-center py-3 border-top">
-                    <button class="btn text-white bg-navy-blue">Filter</button>
+                    <button type="submit" class="btn text-white bg-navy-blue">Filter</button>
+                  </form>
                   </div>
-                </div>
-              </div>
-              <div class="map-listing">
-                <div
+                  <div
                   class="
                     filter-icon
                     float-left
@@ -270,6 +147,131 @@
                 >
                   <i class="icofont-settings mr-2"></i> Filter
                 </div>
+                  <div class="filter-checks">
+                    <div class="form-check">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        id="maison"
+                        onclick='window.location.assign("/announce/agrifood")'
+                      />
+                      <label class="form-check-label" for="maison">
+                        <i class="icofont-vehicle-delivery-van"></i>Agri Food
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        id="Déménagements"
+                      />
+                      <label class="form-check-label" for="Déménagements">
+                        <i class="icofont-vehicle-delivery-van"></i>Animals
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        id="Véhicule"
+                        onclick='window.location.assign("/announce/animals")'
+                      />
+                      <label class="form-check-label" for="Véhicule">
+                        <i class="icofont-vehicle-delivery-van"></i>Commercial Goods
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        id="Bateaux"
+                        onclick='window.location.assign("/announce/boatvolimunoussport")'
+                      />
+                      <label class="form-check-label" for="Bateaux">
+                        <i class="icofont-vehicle-delivery-van"></i>Bateaux &
+                        volumineux
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        id="Divers"
+                        onclick='window.location.assign("/announce/fragilegoods")'
+                      />
+                      <label class="form-check-label" for="Divers">
+                        <i class="icofont-vehicle-delivery-van"></i>Fragile Goods
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" id="Bien" onclick='window.location.assign("/announce/household")'/>
+                      <label class="form-check-label" for="Bien">
+                        <i class="icofont-vehicle-delivery-van"></i>House Hold
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        id="Animaux"
+                        onclick='window.location.assign("/announce/miscellaneous")'
+                      />
+                      <label class="form-check-label" for="Animaux">
+                        <i class="icofont-vehicle-delivery-van"></i>Miscellaneous
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        id="Biens"
+                        onclick='window.location.assign("/announce/motorcyclesport")'
+                      />
+                      <label class="form-check-label" for="Biens">
+                        <i class="icofont-vehicle-delivery-van"></i>Motorcycle and Sports
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        id="Package"
+                        onclick='window.location.assign("/announce/package")'
+                      />
+                      <label class="form-check-label" for="Package">
+                        <i class="icofont-vehicle-delivery-van"></i>Package
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        id="Pallet"
+                        onclick='window.location.assign("/announce/pallet")'
+                      />
+                      <label class="form-check-label" for="Pallet">
+                        <i class="icofont-vehicle-delivery-van"></i>Pallet
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        id="Agroalimentaire"
+                        onclick='window.location.assign("/announce/vehicle")'
+                      />
+                      <label class="form-check-label" for="Agroalimentaire">
+                        <i class="icofont-vehicle-delivery-van"></i
+                        >Vehicles
+                      </label>
+                    </div>
+                   
+                  </div>
+                 
+                </div>
+              </div>
+              <div class="map-listing">
+
                 {{-- <nav>
                   <ul class="pagination pagination-sm justify-content-end">
                     <li class="page-item active">
@@ -437,7 +439,7 @@
                           </div>
                           @endif
                           <div class="activity text-nowrap">
-                            <p>0 (0 en cours)</p>
+                            <p>{{ totalbid($item->id)->count() }} ({{ totalbid($item->id)->count() }} en cours)</p>
                             <p>0 message</p>
                           </div>
                         </div>

@@ -13,6 +13,8 @@
     <meta name="author" content="Digital Tech">     
     <meta name="description" content="@yield('meta-description')">
     <meta name="keywords" content="@yield('meta-keywords')">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
     
     <!-- xxx Favicon xxx -->    
     

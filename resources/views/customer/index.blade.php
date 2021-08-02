@@ -66,7 +66,7 @@
                                 <td>{{ $item->delivery_address }}</td>
                                 <td>{{ $item->loading_start }}</td>
                                 <td>{{ $item->delivery_end }}</td>
-                                <td>{{ $item->hired }}</td>
+                                <td>{{ $item->hired }} </td>
                                 <td>{{ \App\Models\Bidding::where('announcement_id', $item->id)->get()->count() }}</td>
                                 <td>
                                     <div class="dropdown">
@@ -89,6 +89,7 @@
                                     </div>
                                 </td>
                             </tr>
+
                             @endforeach
                         </tbody>
                        

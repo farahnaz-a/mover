@@ -16,6 +16,7 @@ use App\Http\Controllers\BiddingController;
 use App\Http\Controllers\BoatsAndVoluminousController;
 use App\Http\Controllers\ClientController;
 use App\Http\Controllers\CalloutController;
+use App\Http\Controllers\CommentController;
 use App\Http\Controllers\CommercialGoodsController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\CounterController;
@@ -172,6 +173,11 @@ Route::get('/my/announcements', [FrontendController::class, 'myAnnouncements'])-
 Route::get('/contact', [FrontendController::class, 'contact'])->name('frontend.contact');
 Route::get('/inscription/demenageur', [FrontendController::class, 'moverReg'])->name('frontend.moverReg');
 Route::get('/accept/{id}', [FrontendController::class, 'accept'])->name('bid.accept');
+Route::get('/announce/{category}', [FrontendController::class, 'announceCategory']);
+Route::get('/searchann', [FrontendController::class, 'searchann'])->name('search.ann');
+
+// CommentControlle 
+Route::post('/comment-store', [CommentController::class, 'store'])->name('comment.post');
 
 //Agrifood controller
 Route::post('/agrifood/store', [AgriFoodController::class, 'store'])->name('agrifood.store');

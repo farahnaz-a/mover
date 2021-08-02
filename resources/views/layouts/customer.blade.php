@@ -235,6 +235,9 @@
                 <li class="nav-item @yield('banners')"><a class="d-flex align-items-center" href=""><i data-feather='shield'></i><span class="menu-title text-truncate" data-i18n="Banner settings">Announcements</span></a>
                 </li> 
 
+                <li class="nav-item"><a class="d-flex align-items-center" href="{{ url('/user/profile') }}"><i data-feather='shield'></i><span class="menu-title text-truncate" data-i18n="Banner settings">Profile Settings</span></a>
+                </li> 
+
 
               {{-- <li class=" navigation-header"><span data-i18n="Apps &amp; Pages">Banner &amp; Pages</span><i data-feather="more-horizontal"></i>
                 </li>
