@@ -36,15 +36,14 @@
 </div>
 
 <div class="row py-5">
-    <div class="col-6">
+    <div class="col-md-5">
         <div class="card">
             <div class="card-header">
                 <h5 class="text-center">Create Admin</h5>
             </div>
             <div class="card-body">
                 <form method="POST" action="">
-                    @csrf
-                    
+                    @csrf  
                     <div class="form-group icon-input mb-3">
                         <i class="font-sm ti-user text-grey-500 pr-0"></i>
                         <input type="text" class="style2-input pl-5 form-control text-grey-900 font-xsss fw-600" name="name" :value="old('name')" required autofocus autocomplete="name" placeholder="Your Name">                        
@@ -73,15 +72,14 @@
                             <small class="text-danger">{{ $message }}</small>
                         @enderror
                     </div>
-                 
-                <div class="col-sm-12 p-0 text-left">
+                    <div class="col-sm-12 p-0 text-left">
                     <div class="form-group mb-1"><button type="submit" class="form-control text-center style2-input text-white fw-600 bg-dark border-0 p-0 ">Register</button></div>
                 </form>
             </div>
         </div>
     </div>
-</div>
-    <div class="col-6">
+    </div>
+    <div class="col-md-7">
         <div class="card">
             <div class="card-header">
                 <h4 class="card-title">Users</h4>
@@ -89,7 +87,6 @@
             <div class="card-body">
                 <p class="card-text" style="font-size: 20px; color:#000;" >
                     List of all the users
-                    
                 </p>
             </div>
             <div class="table-responsive">
