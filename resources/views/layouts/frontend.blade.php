@@ -70,7 +70,7 @@
       <div class="container">
         <div class="row align-items-center">
           <div class="col" style="color: #06163a; font-weight:bold">
-            <i class="icofont-google-map"></i>  254 Street Avenue, Los Angeles, LA 2415 US
+            {{-- <i class="icofont-google-map"></i>  254 Street Avenue, Los Angeles, LA 2415 US --}}
           </div>
           <div class="col-md-auto" style="padding-right: 7px !important">
 
@@ -84,7 +84,8 @@
                 @endif
                 @endauth
                 @guest
-              <a style="color: #06163a; font-weight:bold;" href="{{ route('login') }}">Se connector</a>/<a style="color: #06163a; font-weight: bold;" href="{{ route('register') }}">S'inscrire</a>
+              <a style="color: #06163a; font-weight:bold;" href="{{ route('login') }}">Se connector</a> 
+              <a style="color: #06163a; font-weight: bold;" href="{{ route('register') }}">S'inscrire</a>
               @endguest
             </span>
             <!-- Topbar Language Dropdown Start -->
