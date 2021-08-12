@@ -84,8 +84,8 @@
                 @endif
                 @endauth
                 @guest
+                <a style="color: #06163a; font-weight: bold;" href="{{ route('register') }}">S'inscrire</a>
               <a style="color: #06163a; font-weight:bold;" href="{{ route('login') }}">Se connector</a> 
-              <a style="color: #06163a; font-weight: bold;" href="{{ route('register') }}">S'inscrire</a>
               @endguest
             </span>
             <!-- Topbar Language Dropdown Start -->
