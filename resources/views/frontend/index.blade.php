@@ -27,7 +27,7 @@
               <div class="col-12">
                 <div class="banner_content">
                   <div class="text-center">
-                    <h1 data-aos-delay="1000" data-aos="fade-right" data-aos-easing="linear" data-aos-duration="700">We Are LogZee</h1>
+                    <h1 data-aos-delay="1000" data-aos="fade-right" data-aos-easing="linear" data-aos-duration="700">We Are Deem</h1>
                     <h4 data-aos-delay="1300" data-aos="fade-right" data-aos-easing="linear" data-aos-duration="700">From Pickup to Destination</h4>
                     <p data-aos-delay="1600" data-aos="fade-right" data-aos-easing="linear" data-aos-duration="700">
                       We deliver your products on time with pure safety. Sed ut perspiciatis unde<br>

@@ -15,7 +15,12 @@
     <meta name="keywords" content="@yield('meta-keywords')">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    
+    <style>
+      .nav-link {
+        color: #06163a !important; 
+        font-weight:bold !important;
+      }
+    </style>
     <!-- xxx Favicon xxx -->    
     
     <link rel="shortcut icon" type="image/x-icon" href="{{ asset('uploads/settings') }}/{{ settings()->favicon }}">
@@ -64,22 +69,22 @@
     <div class="top-bar d-flex align-items-center text-md-left">
       <div class="container">
         <div class="row align-items-center">
-          <div class="col">
+          <div class="col" style="color: #06163a; font-weight:bold">
             <i class="icofont-google-map"></i>  254 Street Avenue, Los Angeles, LA 2415 US
           </div>
-          <div class="col-md-auto">
+          <div class="col-md-auto" style="padding-right: 7px !important">
 
-            <span class="mr-3"><i class="icofont-ui-touch-phone"></i> +00 41 895 785 6985</span>
+            <span style="color: #06163a; font-weight:bold" class="mr-3"><i class="icofont-ui-touch-phone"></i> +00 41 895 785 6985</span>
 
             @auth
             <span class="mr-3"><i class="icofont-ui-user mr-2"></i> 
-                <a href="{{ route('dashboard') }}">My Account</a>
+                <a style="color: #06163a; font-weight:bold;" href="{{ route('dashboard') }}">My Account</a>
                 @if(Auth::user()->role == 'user')
-                <a href="{{ route('my.announcements') }}">My Announcements</a>
+                <a style="color: #06163a; font-weight:bold;" href="{{ route('my.announcements') }}">My Announcements</a>
                 @endif
                 @endauth
                 @guest
-              <a href="{{ route('login') }}"> Login</a>/<a href="{{ route('register') }}">Register</a>
+              <a style="color: #06163a; font-weight:bold;" href="{{ route('login') }}">Se connector</a>/<a style="color: #06163a; font-weight: bold;" href="{{ route('register') }}">S'inscrire</a>
               @endguest
             </span>
             <!-- Topbar Language Dropdown Start -->
@@ -111,7 +116,6 @@
         </div>
         <!-- Topbar Request Quote Start -->
         <div class="d-inline-flex request-btn order-lg-last col p-0"> 
-          <a class="nav-link" href="#" id="search_home"><i class="icofont-search"></i></a>
           <a class="btn-theme icon-left bg-navy-blue no-shadow align-self-center" href="{{ route('frontend.requestQuote') }}"><i class="icofont-list"></i><span class="d-none d-sm-inline-block"> Demande de devis</span></a>
           <!-- Toggle Button Start -->
           <button class="navbar-toggler x collapsed" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
