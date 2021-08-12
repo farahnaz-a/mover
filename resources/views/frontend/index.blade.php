@@ -21,15 +21,16 @@
 @section('content')
     <!-- Fullscreen Slider Start -->
     <div id="banner_slider">
-      <div class="banner_section" style="background-image: url('{{ asset('uploads/banners/banner_slider_1.jpg') }}')">
+      @foreach ($banners as $banner)
+      <div class="banner_section" style="background-image: url('{{ asset('uploads/banners/') }}/{{ $banner->image }}')">
         <div class="container">
             <div class="row">
               <div class="col-12">
                 <div class="banner_content">
                   <div class="text-center">
-                    <h1 data-aos-delay="1000" data-aos="fade-right" data-aos-easing="linear" data-aos-duration="700">We Are Deem</h1>
-                    <h4 data-aos-delay="1300" data-aos="fade-right" data-aos-easing="linear" data-aos-duration="700">From Pickup to Destination</h4>
-                    <p data-aos-delay="1600" data-aos="fade-right" data-aos-easing="linear" data-aos-duration="700">
+                    <h1 data-aos-delay="1000" data-aos="fade-right" data-aos-easing="linear" data-aos-duration="700" style="color: #06163a;">We Are Deem</h1>
+                    <h4 data-aos-delay="1300" data-aos="fade-right" data-aos-easing="linear" data-aos-duration="700" style="color: #06163a;">From Pickup to Destination</h4>
+                    <p data-aos-delay="1600" data-aos="fade-right" data-aos-easing="linear" data-aos-duration="700" style="color: #06163a;">
                       We deliver your products on time with pure safety. Sed ut perspiciatis unde<br>
                       omnis iste natus error sit voluptatem accusantium doloremque laudantium,
                     </p>
@@ -42,27 +43,7 @@
             </div>
         </div>  
       </div>
-      <div class="banner_section" style="background-image: url('{{ asset('uploads/banners/banner_slider_1.jpg') }}')">
-        <div class="container">
-            <div class="row">
-              <div class="col-12">
-                <div class="banner_content">
-                  <div class="text-left">
-                    <h1 data-aos-delay="1000" data-aos="fade-right" data-aos-easing="linear" data-aos-duration="700">We Are LogZee</h1>
-                    <h4 data-aos-delay="1300" data-aos="fade-right" data-aos-easing="linear" data-aos-duration="700">From Pickup to Destination</h4>
-                    <p data-aos-delay="1600" data-aos="fade-right" data-aos-easing="linear" data-aos-duration="700">
-                      We deliver your products on time with pure safety. Sed ut perspiciatis unde<br>
-                      omnis iste natus error sit voluptatem accusantium doloremque laudantium,
-                    </p>
-                    <div data-aos-delay="1900" data-aos="flip-left" data-aos-easing="linear" data-aos-duration="700"  class="tp-caption tp-resizeme btn-theme bg-navy-blue">
-                      Learn More<i class="icofont-rounded-right" style="transition: none 0s ease 0s; text-align: inherit; line-height: 44px; border-width: 0px; margin: 0px; padding: 0px 0px 0px 5px; letter-spacing: 0px; font-weight: 400; font-size: 17px;"></i>
-                    </div>
-                  </div>
-               </div>
-              </div>
-            </div>
-        </div>  
-      </div>
+      @endforeach
     </div>
   <!-- Fullscreen Slider End -->
 
