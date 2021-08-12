@@ -20,6 +20,9 @@
         color: #06163a !important; 
         font-weight:bold !important;
       }
+      html {
+        scroll-behavior: smooth;
+      }
     </style>
     <!-- xxx Favicon xxx -->    
     
@@ -85,7 +88,7 @@
                 @endauth
                 @guest
                 <a style="color: #06163a; font-weight: bold;" href="{{ route('register') }}">S'inscrire</a>
-              <a style="color: #06163a; font-weight:bold;margin-left:14px !important" href="{{ route('login') }}">Se connecter</a> 
+              <a style="color: #06163a; font-weight:bold;margin-left:46px !important" href="{{ route('login') }}">Se connecter</a> 
               @endguest
             </span>
             <!-- Topbar Language Dropdown Start -->
