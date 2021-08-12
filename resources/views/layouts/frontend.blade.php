@@ -74,7 +74,7 @@
           </div>
           <div class="col-md-auto" style="padding-right: 7px !important">
 
-            <span style="color: #06163a; font-weight:bold" class="mr-3"><i class="icofont-ui-touch-phone"></i> +00 41 895 785 6985</span>
+            {{-- <span style="color: #06163a; font-weight:bold" class="mr-3"><i class="icofont-ui-touch-phone"></i> +00 41 895 785 6985</span> --}}
 
             @auth
             <span class="mr-3"><i class="icofont-ui-user mr-2"></i> 
