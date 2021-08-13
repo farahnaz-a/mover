@@ -39,7 +39,8 @@ img {
     --primary-color: #5fc2ba;
     --secondary-color: #232135;
     --main-dark-color: #666;
-    --bg-light-theme: #fef9f5;
+    /* --bg-light-theme: #fef9f5; */
+    --bg-light-theme: rgba(80, 180, 172, 0.1);
     --bg-white: #fff;
     --bg-light-gray: #fafafa;
     --shadow-primary: 0px 6px 10px 0px rgba(95, 194, 186, 0.2);
