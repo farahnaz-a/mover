@@ -29,7 +29,7 @@
                 <div class="banner_content">
                   <div class="text-left">
                     <h1 data-aos-delay="1000" data-aos="fade-right" data-aos-easing="linear" data-aos-duration="700" style="color: #06163a;">{{ $banner->title }}</h1>
-                    <h4 data-aos-delay="1300" data-aos="fade-right" data-aos-easing="linear" data-aos-duration="700" style="color: #06163a;">{{ $banner->description }}</h4>
+                    <h1 data-aos-delay="1300" data-aos="fade-right" data-aos-easing="linear" data-aos-duration="700" style="color: #06163a;">{{ $banner->description }}</h4>
                     {{-- <p data-aos-delay="1600" data-aos="fade-right" data-aos-easing="linear" data-aos-duration="700" style="color: #06163a;">
                       We deliver your products on time with pure safety. Sed ut perspiciatis unde<br>
                       omnis iste natus error sit voluptatem accusantium doloremque laudantium,
