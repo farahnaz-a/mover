@@ -59,8 +59,8 @@
           <!-- Heading Main -->
           <div class="col-sm-12 wow fadeInDown" data-wow-duration="0" data-wow-delay="0s">
             <h1 class="heading-main">
-              <span>What We Offer</span>
-              Our Core Services
+              {{-- <span>What We Offer</span> --}}
+              Comment ça marche
             </h1>
           </div>
           <!-- Heading Main -->
