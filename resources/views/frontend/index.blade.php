@@ -60,7 +60,7 @@
           <div class="col-sm-12 wow fadeInDown" data-wow-duration="0" data-wow-delay="0s">
             <h1 class="heading-main">
               {{-- <span>What We Offer</span> --}}
-              Comment ça marche
+              COMMENT ÇA MARCHE
             </h1>
           </div>
           <!-- Heading Main -->
