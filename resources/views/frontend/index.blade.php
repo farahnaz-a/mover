@@ -78,8 +78,8 @@
               <div class="icon-box-4 h-100">
                 {{-- <i class="icofont-airplane-alt"></i> --}}
                 <img src="{{ asset('uploads/services') }}/{{ $service->image }}" alt="">
-                <h4 class="h4-md mb-3">{{ $service->title }}</h4>
-                <p>{{ $service->description }}</p>
+                {{-- <h4 class="h4-md mb-3"></h4> --}}
+                <p> <span style="color:#5fc2ba; font-weight:bold;">{{ $service->title }}</span> {{ $service->description }}</p>
               </div> 
             </a>
             <!-- Icon Box -->
