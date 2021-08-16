@@ -28,8 +28,8 @@
               <div class="col-12">
                 <div class="banner_content">
                   <div class="text-left">
-                    <h1 data-aos-delay="1000" data-aos="fade-right" data-aos-easing="linear" data-aos-duration="700" style="color: #06163a; font-family : Cordoba; font-size: 34px; padding-bottom: 50px;">{{ $banner->title }}</h1>
-                    <h1 data-aos-delay="1300" data-aos="fade-right" data-aos-easing="linear" data-aos-duration="700" style="color: #06163a; font-family : Cordoba; font-size: 34px">{{ $banner->description }}</h4>
+                    <h1 data-aos-delay="1000" data-aos="fade-right" data-aos-easing="linear" data-aos-duration="700" style="color: #06163a; font-family : Cordoba; font-size: 34px; padding-bottom: 50px; text-transform: uppercase;">{{ $banner->title }}</h1>
+                    <h1 data-aos-delay="1300" data-aos="fade-right" data-aos-easing="linear" data-aos-duration="700" style="color: #06163a; text-transform:uppercase; font-family : Cordoba; font-size: 34px">{{ $banner->description }}</h4>
                     {{-- <p data-aos-delay="1600" data-aos="fade-right" data-aos-easing="linear" data-aos-duration="700" style="color: #06163a;">
                       We deliver your products on time with pure safety. Sed ut perspiciatis unde<br>
                       omnis iste natus error sit voluptatem accusantium doloremque laudantium,
@@ -85,7 +85,7 @@
                 @endif
                 {{-- <img src="{{ asset('uploads/services') }}/{{ $service->image }}" alt=""> --}}
                 {{-- <h4 class="h4-md mb-3"></h4> --}}
-                <p> <span style="color:#5fc2ba; font-weight:bold;">{{ $service->title }}</span> {{ $service->description }}</p>
+                <p style="color: #06163a; text-transform:uppercase"> <span style="color:#5fc2ba; font-weight:bold;">{{ $service->title }}</span> {{ $service->description }}</p>
               </div> 
             </a>
             <!-- Icon Box -->
