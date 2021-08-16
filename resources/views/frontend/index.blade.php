@@ -76,8 +76,14 @@
             <!-- Icon Box 2 -->
             <a href="javascript:void();">
               <div class="icon-box-4 h-100">
-                {{-- <i class="icofont-airplane-alt"></i> --}}
-                <img src="{{ asset('uploads/services') }}/{{ $service->image }}" alt="">
+                @if($key == 0)
+                <i style="color: #5fc2ba;" class="icofont-responsive"></i>
+                @elseif($key == 1)
+                <i style="color: #5fc2ba;" class="icofont-tick-boxed"></i>
+                @elseif($key == 2)
+                <i style="color: #5fc2ba;" class="icofont-license"></i>
+                @endif
+                {{-- <img src="{{ asset('uploads/services') }}/{{ $service->image }}" alt=""> --}}
                 {{-- <h4 class="h4-md mb-3"></h4> --}}
                 <p> <span style="color:#5fc2ba; font-weight:bold;">{{ $service->title }}</span> {{ $service->description }}</p>
               </div> 
