@@ -30,15 +30,17 @@
                   <div class="text-left" style="margin-bottom: 200px;">
                     <h1 data-aos-delay="1000" data-aos="fade-right" data-aos-easing="linear" data-aos-duration="700" style="color: #06163a; font-family : Cordoba; font-size: 34px; padding-bottom: 50px; text-transform: uppercase;">{{ $banner->title }}</h1>
                     <h1 data-aos-delay="1300" data-aos="fade-right" data-aos-easing="linear" data-aos-duration="700" style="color: #06163a; text-transform:uppercase; font-family : Cordoba; font-size: 34px">{{ $banner->description }}</h4>
-                    {{-- <p data-aos-delay="1600" data-aos="fade-right" data-aos-easing="linear" data-aos-duration="700" style="color: #06163a;">
-                      We deliver your products on time with pure safety. Sed ut perspiciatis unde<br>
-                      omnis iste natus error sit voluptatem accusantium doloremque laudantium,
-                    </p> --}}
-                 {{-- <a href="#body-content">
-                  <div data-aos-delay="1900" data-aos="flip-left" data-aos-easing="linear" data-aos-duration="700"  class="tp-caption tp-resizeme btn-theme bg-navy-blue">
-                    Learn More<i class="icofont-rounded-right" style="transition: none 0s ease 0s; text-align: inherit; line-height: 44px; border-width: 0px; margin: 0px; padding: 0px 0px 0px 5px; letter-spacing: 0px; font-weight: 400; font-size: 17px;"></i>
+                     <h1 data-aos-delay="1600" data-aos="fade-right" data-aos-easing="linear" data-aos-duration="700" style="color: #06163a;text-transform:uppercase; font-family : Cordoba; font-size: 32px; padding-top:50px;">
+                      DEMANDEZ VOTRE DEVIS, SIMPLE, RAPIDE, GRATUIT ET SANS ENGAGEMENT
+                    </h1> 
+               
                   </div>
-                 </a> --}}
+                  <div class="text-right">
+                    <a href="{{ route('frontend.requestQuote') }}">
+                      <div    class="tp-caption tp-resizeme btn-theme bg-navy-blue">
+                        Demande de devis<i class="icofont-rounded-right" style="transition: none 0s ease 0s; text-align: inherit; line-height: 44px; border-width: 0px; margin: 0px; padding: 0px 0px 0px 5px; letter-spacing: 0px; font-weight: 400; font-size: 17px;"></i>
+                      </div>
+                     </a> 
                   </div>
                </div>
               </div>
@@ -77,11 +79,11 @@
             <a href="javascript:void();">
               <div class="icon-box-4 h-100">
                 @if($key == 0)
-                <i style="color: #5fc2ba;" class="icofont-responsive"></i>
+                <i style="color: #5fc2ba;fonrt-size:55px !important" class="icofont-responsive"></i>
                 @elseif($key == 1)
-                <i style="color: #5fc2ba;" class="icofont-tick-boxed"></i>
+                <i style="color: #5fc2ba;fonrt-size:55px !important" class="icofont-tick-boxed"></i>
                 @elseif($key == 2)
-                <i style="color: #5fc2ba;" class="icofont-license"></i>
+                <i style="color: #5fc2ba;fonrt-size:55px !important" class="icofont-license"></i>
                 @endif
                 {{-- <img src="{{ asset('uploads/services') }}/{{ $service->image }}" alt=""> --}}
                 {{-- <h4 class="h4-md mb-3"></h4> --}}
@@ -113,8 +115,8 @@
           <!-- Heading Main -->
           <div class="col-sm-12">
             <h1 class="heading-main wow fadeInDown" data-wow-duration="0" data-wow-delay="0s">
-              <span>Our Goodness</span>
-              Comment ça marche                 
+             
+              POURQUOI CLICMOVE                
             </h1>
           </div>
           <!-- Heading Main -->
