@@ -114,7 +114,7 @@
     <nav class="header-fullpage navbar navbar-expand-lg">
       <div class="container">
         <div class="d-flex align-items-center w-100 col p-0">
-          <a class="navbar-brand rounded-bottom light-bg" href="{{ route('frontend.index') }}">
+          <a class="navbar-brand rounded-bottom light-bg" href="{{ route('frontend.index') }}" style="width:200px !important;">
             <img src="{{ asset('uploads/settings') }}/{{ settings()->logo }}" alt="">
           </a> 
         </div>
