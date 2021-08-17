@@ -16,6 +16,39 @@
 @section('css')
   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css"/>
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css"/>
+  <style>
+    .overlaay{
+      position: absolute;
+    top: 0;
+    left: 14px;
+    width: 91%;
+    height: 87%;
+    background: rgba(6, 22, 58, 0.9);
+    opacity: 0;
+    }
+
+    .butt{
+      position: absolute;
+      top:40%;
+      left: 25%;
+      background: #5fc2ba;
+      padding: 20px;
+      color: #06163a;
+      font-weight: bold;
+      opacity: 0;
+
+    }
+
+    .team-section-two:hover .overlaay{
+        opacity: 1;
+
+    }
+
+    .team-section-two:hover .butt{
+      opacity: 1;
+      z-index: 99999;
+    }
+  </style>
 @endsection
 
 @section('content')
@@ -186,8 +219,10 @@
             0.{{ $key * 4 }}s
             @endif
            ">
-            <div class="team-section-two">
+            <div class="team-section-two" style="position: relative">
               <img src="{{ asset('uploads/teams') }}/{{ $team->image }}" alt="" class="rounded">
+              <div class="butt">Obtenir mon devis</div>
+              <div class="overlaay"></div>
               <h4 class="h4-md txt-orange">{{ $team->name }}</h4>
               {{-- <h5 class="h5-md txt-ligt-gray">{{ $team->title }}</h5> --}}
             </div>            
