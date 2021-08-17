@@ -171,8 +171,7 @@
         <!-- Heading Main -->
         <div class="col-sm-12">
           <h1 class="heading-main">
-            <span>Face Behind Deem</span>
-            Our Team
+            CLICMOVE SERVICES
           </h1>
         </div>
         <!-- Heading Main -->
@@ -190,7 +189,7 @@
             <div class="team-section-two">
               <img src="{{ asset('uploads/teams') }}/{{ $team->image }}" alt="" class="rounded">
               <h4 class="h4-md txt-orange">{{ $team->name }}</h4>
-              <h5 class="h5-md txt-ligt-gray">{{ $team->title }}</h5>
+              {{-- <h5 class="h5-md txt-ligt-gray">{{ $team->title }}</h5> --}}
             </div>            
           </div>
            @endforeach
