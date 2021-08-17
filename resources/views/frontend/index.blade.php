@@ -223,7 +223,7 @@
               <img src="{{ asset('uploads/teams') }}/{{ $team->image }}" alt="" class="rounded">
               <div class="butt">Obtenir mon devis</div>
               <div class="overlaay"></div>
-              <h4 class="h4-md txt-orange">{{ $team->name }}</h4>
+              <h4 class="h4-md txt-orange" style="color: #06163a">{{ $team->name }}</h4>
               {{-- <h5 class="h5-md txt-ligt-gray">{{ $team->title }}</h5> --}}
             </div>            
           </div>
