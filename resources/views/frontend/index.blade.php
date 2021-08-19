@@ -31,9 +31,9 @@
       position: absolute;
       top:40%;
       left: 25%;
-      background: #5fc2ba;
+      /* background: #5fc2ba;
       padding: 20px;
-      color: #06163a;
+      color: #06163a; */
       font-weight: bold;
       opacity: 0;
 
@@ -88,7 +88,7 @@
   <main id="body-content" style="overflow-y: inherit;">
 
     <!-- What Makes Us Special Start -->
-    <section class="bg-light-theme wide-tb-100 pb-0">
+    <section class="bg-light-theme wide-tb-100 pb-0" id="comment">
       <div class="container pos-rel">
         <div class="row">
           <!-- Heading Main -->
@@ -167,12 +167,20 @@
                   <div class="icon-box-2">
                     <div class="media">
                         <div class="service-icon">
-                            {{-- <i class="icofont-id"></i> --}}
-                            <img src="{{ asset('uploads/works') }}/{{ $work->image }}" alt="">
+                            @if($key == 0)
+                            <i class="icofont-safety"></i>
+                            @elseif($key == 1)
+                            <i class="icofont-wallet"></i>
+                            @elseif($key == 2)
+                            <i class="icofont-search-document"></i>
+                            @elseif($key == 3)
+                            <i class="icofont-headphone-alt-2"></i>
+                            @endif
+                            {{-- <img src="{{ asset('uploads/works') }}/{{ $work->image }}" alt=""> --}}
                         </div>
                         <div class="service-inner-content media-body">
                             <h4 class="h4-md">{{ $work->title }}</h4>
-                            <p>{{ $work->description }}</p>
+                            <p style="color : #06163a">{{ $work->description }}</p>
                         </div>
                     </div>
                   </div>              
@@ -183,13 +191,13 @@
             
               </div>
 
-              <div class="col-sm-12 text-center">
+              {{-- <div class="col-sm-12 text-center">
                 <div class="spacer-50">
                 </div>
                 <a href="{{ route('frontend.requestQuote') }}" class="btn-theme bg-navy-blue">Demande de devis <i class="icofont-rounded-right"></i></a>
                 <div class="spacer-30">
                 </div>
-              </div>
+              </div> --}}
           </div>
         </div>
         
@@ -219,9 +227,9 @@
             0.{{ $key * 4 }}s
             @endif
            ">
-            <div class="team-section-two" style="position: relative">
+            <div class="team-section-two" style="position: relative; margin-bottom:40px;">
               <img src="{{ asset('uploads/teams') }}/{{ $team->image }}" alt="" class="rounded">
-              <div class="butt">Obtenir mon devis</div>
+               <div class="butt btn-theme bg-navy-blue">Obtenir mon devis</div> 
               <div class="overlaay"></div>
               <h4 class="h4-md txt-orange" style="color: #06163a">{{ $team->name }}</h4>
               {{-- <h5 class="h5-md txt-ligt-gray">{{ $team->title }}</h5> --}}
@@ -350,9 +358,9 @@
             <div class="col col-12 col-lg-3 col-sm-6 wow pulse" data-wow-duration="0" data-wow-delay="0s">
               <div class="counter-style-1 light-bg">
                 <p class="mb-1"><i class="icofont-google-map"></i></p>
-                <span class="counter">{{ $counter->locations }}</span>
+                {{-- <span class="counter">{{ $counter->locations }}</span> --}}
                 <div>
-                  Our Locations
+                  Profitez des lignes régulières et des retours à vide des déménageurs
                 </div>
               </div>
             </div>
@@ -362,10 +370,10 @@
             <div class="col col-12 col-lg-3 col-sm-6 wow pulse" data-wow-duration="0" data-wow-delay="0.3s">
               <div class="counter-style-1 light-bg">
                 <p class="mb-1"><i class="icofont-globe"></i></p>                
-                <span class="counter">{{ $counter->clients }}</span>
-                  <span>+</span>
+                {{-- <span class="counter">{{ $counter->clients }}</span>
+                  <span>+</span> --}}
                 <div>
-                  Clients Worldwide
+                  Pour un déménagement local, national ou international
                 </div>
               </div>
             </div>
@@ -379,10 +387,10 @@
             <div class="col col-12 col-lg-3 col-sm-6 wow pulse" data-wow-duration="0" data-wow-delay="0.6s">
               <div class="counter-style-1 light-bg">
                 <p class="mb-1"><i class="icofont-vehicle-delivery-van"></i></p>
-                <span class="counter">{{ $counter->vehicles }}</span>
-                <span>+</span>
+                {{-- <span class="counter">{{ $counter->vehicles }}</span>
+                <span>+</span> --}}
                 <div>
-                  Owned Vehicles
+                  Des milliers de déménageurs <br> disponibles
                 </div>
               </div>
             </div>
@@ -392,9 +400,9 @@
             <div class="col col-12 col-lg-3 col-sm-6 wow pulse" data-wow-duration="0" data-wow-delay="0.9s">
               <div class="counter-style-1 light-bg">
                 <p class="mb-1"><i class="icofont-umbrella-alt"></i></p>
-                <span class="counter">{{ $counter->tons }}</span>
+                {{-- <span class="counter">{{ $counter->tons }}</span> --}}
                 <div>
-                  Tonnes Transported
+                  Des déménageurs vérifiés et <br> agrées
                 </div>
               </div>
             </div>
@@ -411,8 +419,8 @@
             <!-- Heading Main -->
             <div class="col-sm-12">
               <h1 class="heading-main">
-                <span>COMPANY'S NEWS</span>
-                Recent Posts
+                {{-- <span>COMPANY'S NEWS</span> --}}
+                CLICMOVE NEWS
               </h1>
             </div>
             <!-- Heading Main -->
@@ -448,15 +456,27 @@
       <div class="container">
         <div class="row align-items-center">
             <div class="col-lg-4 col-md-12 mb-0 wow slideInUp" data-wow-duration="0" data-wow-delay="0.1s">
-              <h4 class="h4-xl">{{ $callout->title }}</h4>
+              {{-- <h4 class="h4-xl">{{ $callout->title }}</h4>  --}}
+              <img src="{{ asset('uploads/settings') }}/{{ settings()->logo }}" alt="">
             </div>
             <div class="col wow slideInUp" data-wow-duration="0" data-wow-delay="0.2s">
               <div class="center-text">
-                {{ $callout->description }}
+                {{-- {{ $callout->description }} --}}
+               <p> Vous êtes déménageur-transporteur professionnel, CLICMOVE est un espace d’échange qui vous facilite la mise en relation avec une nouvelle clientèle pour augmenter votre chiffre d’affaire  :</p>
+                •	Inscrivez-vous gratuitement et sans engagement <br>
+                •	Aucun frais d’abonnement <br>
+                •	Accès immédiat et illimité aux offres 24h/24 et 7jours/7 <br>
+                •	Accéder à des milliers d’offres et à de nouvelles opportunités <br>
+                •	Augmenter votre visibilité, gagnez du temps et trouvez de nouveaux clients <br>
+                •	Discuter en direct et en toute transparence avec les clients par système de messagerie <br>
+                •	Aucune concurrence déloyale, tous les déménageurs-transporteurs sont agrées <br>
+                •	Déposez gratuitement vos devis <br>
+                •	Étendez votre notoriété, gérez votre profil, mettez en avant vos anciennes réalisations et partagez l’expérience de vos clients <br>
+                •	Étendez votre zone géographique d’intervention <br>
               </div>
             </div>
             <div class="col-sm-auto wow slideInUp" data-wow-duration="0" data-wow-delay="0.3s">
-              <a href="{{ route('frontend.contact') }}" class="btn btn-theme bg-white bordered">Get In Touch <i class="icofont-rounded-right"></i></a>
+              <a href="{{ url('/inscription/demenageur') }}" class="btn btn-theme bg-white bordered">Inscription déménageur <i class="icofont-rounded-right"></i></a>
             </div>
         </div>
       </div>
@@ -465,7 +485,7 @@
 
 
     <!-- Clients Start -->
-    <section class="wide-tb-100">
+    {{-- <section class="wide-tb-100">
       <div class="container">
         <div class="row">
 
@@ -484,11 +504,11 @@
             </div>
         </div>
       </div>        
-    </section>
+    </section> --}}
     <!-- Clients End -->
 
     <!-- Contact Footer Start -->
-    <section>
+    {{-- <section>
       <div class="container">
         <div class="row d-flex">
           <div class="col-lg-6 col-sm-12 wow fadeInLeft" data-wow-duration="0" data-wow-delay="0.1s">
@@ -522,7 +542,7 @@
           </div>
         </div>
       </div>
-    </section>
+    </section> --}}
     <!-- Contact Footer End -->
 
     </main>

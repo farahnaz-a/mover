@@ -167,7 +167,7 @@
   @yield('content')
 
       <!-- Emaild Subscribe Start -->
-      <section class="wide-tb-70 bg-light-gray pb-5 footer-subscribe">
+      {{-- <section class="wide-tb-70 bg-light-gray pb-5 footer-subscribe">
         <div class="container">
           <div class="row">
             <div class="col-sm-12 d-flex col-md-12 col-lg-6">
@@ -184,7 +184,7 @@
             
           </div>
         </div>
-      </section>
+      </section> --}}
       <!-- Emaild Subscribe End -->
   
       
@@ -197,25 +197,26 @@
 
         <!-- Column First -->
         <div class="col-lg-4 col-md-6 wow fadeInLeft" data-wow-duration="0" data-wow-delay="0s">
-          <div class="logo-footer">
+        
+           <p style="opacity : 0;">{{ settings()->description }}</p>
+           <div class="logo-footer text-center m-auto">
             <img src="{{ asset('uploads/settings') }}/{{ settings()->logo }}" alt="">
           </div>
-          <p>{{ settings()->description }}</p>
-          <p>{{ settings()->description_one }}</p>
-
-          <h3 class="footer-heading">We're Social</h3>
-          <div class="social-icons">
+          <p style="opacity: 0">{{ settings()->description_one }}</p>
+         
+          <h3 class="footer-heading" style="opacity: 0">We're Social</h3>
+          <div class="social-icons" style="opacity: 0">
               <a href="{{ settings()->facebook }}"><i class="icofont-facebook"></i></a> 
               <a href="{{ settings()->twitter }}"><i class="icofont-twitter"></i></a> 
               <a href="{{ settings()->whatsapp }}"><i class="icofont-whatsapp"></i></a> 
               <a href="{{ settings()->google }}"><i class="icofont-google-plus"></i></a> 
-            </div>
+            </div> 
         </div>
         <!-- Column First -->
 
         <!-- Column Second -->
         <div class="col-lg-4 col-md-6 wow fadeInLeft" data-wow-duration="0" data-wow-delay="0.2s">
-          <h3 class="footer-heading">Recent Post</h3>
+          <h3 class="footer-heading">CLICMOVE NEWS</h3>
           <div class="blog-list-footer">
             <ul class="list-unstyled">
               @foreach (blogs() as $blog)
@@ -229,7 +230,7 @@
                       <p>{{ Str::limit($blog->description, 50) }}</p>
 
                       <div class="comment-box">
-                        <span><i class="icofont-ui-calendar"></i>  {{ $blog->created_at->format('d.m.Y') }}</span>
+                        {{-- <span><i class="icofont-ui-calendar"></i>  {{ $blog->created_at->format('d.m.Y') }}</span> --}}
                         {{-- <span><a href="#"><i class="icofont-speech-comments"></i>  25</a></span> --}}
                       </div>
                   </div>
@@ -244,8 +245,33 @@
 
         <!-- Column Third -->
         <div class="col-lg-4 col-md-12 wow fadeInLeft" data-wow-duration="0" data-wow-delay="0.4s">
-          <h3 class="footer-heading">Our Photostream</h3>
-          <ul id="basicuse" class="photo-thumbs"></ul>
+          <h3 class="footer-heading">MENU</h3>
+          <ul style="padding:0 0 30px 0 !important;color: #06163a; text-transform:uppercase; list-style-type:none; font-weight: bold;" >
+            <li style="padding-bottom: 20px">
+              <a href="#comment">COMMENT ÇA MARCHE</a>
+            </li>
+            <li style="padding-bottom: 20px">
+              <a href="{{ url('demande/en/cours') }}">DEMANDE EN COURS</a>
+            </li>
+            <li style="padding-bottom: 20px">
+              <a href="{{ url('inscription/demenageur') }}">Inscription déménageur</a>
+            </li>
+            <li style="padding-bottom: 20px">
+              <a href="{{ url('/contact') }}">contact</a>
+            </li>
+            <div class="row">
+              <div class="col-lg-6 col-md-6 col-sm-12">
+                <li style="text-transform: capitalize">
+                  <a href="{{ route('register') }}">S'inscrire</a>
+                </li>
+              </div>
+              <div class="col-lg-6 col-md-6 col-sm-12">
+                <li style="text-transform: capitalize">
+                  <a href="{{ route('login') }}">Se connecter</a>
+                </li>
+              </div>
+            </div>
+          </ul>
         </div>
         <!-- Column Third -->
         
