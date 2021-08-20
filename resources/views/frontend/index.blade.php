@@ -23,7 +23,7 @@
     left: 14px;
     width: 91%;
     height: 87%;
-    background: rgba(6, 22, 58, 0.9);
+    background: rgba(255,255,255, 0.6);
     opacity: 0;
     }
 
@@ -321,7 +321,7 @@
       <div class="container wow fadeInUp" data-wow-duration="0" data-wow-delay="0.2s">
         <div class="row">
             <div class="col-lg-10 offset-lg-1">
-              <div class="bg-scroll client-testimonials-bg pos-rel rounded">
+              <div class="bg-scroll client-testimonials-bg pos-rel rounded" style="background-image: url({{ asset('assets/images/bg_2.jpg') }}) !important;">
                 <div class="bg-overlay blue opacity-80"></div>
                 <div class="owl-carousel owl-theme" id="client-testimonials-bg">
 
@@ -330,7 +330,7 @@
                    <div class="item">
                     <div class="client-testimonial">
                       <div class="client-testimonial-icon rounded-circle bg-navy-blue mx-auto mb-4">
-                          <img src="{{ asset('uploads/testimonials') }}/{{ $testimonial->image }}" alt="">
+                          <img src="{{ asset('uploads/avatar.jpg') }}" alt="">
                       </div>
                       <div class="client-inner-content media-body">
                           <p>{{ $testimonial->description }}</p>
@@ -357,9 +357,9 @@
             <!-- Counter Col Start -->
             <div class="col col-12 col-lg-3 col-sm-6 wow pulse" data-wow-duration="0" data-wow-delay="0s">
               <div class="counter-style-1 light-bg">
-                <p class="mb-1"><i class="icofont-google-map"></i></p>
+                <p class="mb-1"><i style="color: #5fc2ba" class="icofont-google-map"></i></p>
                 {{-- <span class="counter">{{ $counter->locations }}</span> --}}
-                <div>
+                <div style="text-align: left">
                   Profitez des lignes régulières et des retours à vide des déménageurs
                 </div>
               </div>
@@ -369,10 +369,10 @@
             <!-- Counter Col Start -->
             <div class="col col-12 col-lg-3 col-sm-6 wow pulse" data-wow-duration="0" data-wow-delay="0.3s">
               <div class="counter-style-1 light-bg">
-                <p class="mb-1"><i class="icofont-globe"></i></p>                
+                <p class="mb-1"><i style="color: #5fc2ba" class="icofont-globe"></i></p>                
                 {{-- <span class="counter">{{ $counter->clients }}</span>
                   <span>+</span> --}}
-                <div>
+                <div style="text-align: left">
                   Pour un déménagement local, national ou international
                 </div>
               </div>
@@ -386,10 +386,10 @@
             <!-- Counter Col Start -->
             <div class="col col-12 col-lg-3 col-sm-6 wow pulse" data-wow-duration="0" data-wow-delay="0.6s">
               <div class="counter-style-1 light-bg">
-                <p class="mb-1"><i class="icofont-vehicle-delivery-van"></i></p>
+                <p class="mb-1"><i class="icofont-vehicle-delivery-van" style="color: #5fc2ba"></i></p>
                 {{-- <span class="counter">{{ $counter->vehicles }}</span>
                 <span>+</span> --}}
-                <div>
+                <div style="text-align: left">
                   Des milliers de déménageurs <br> disponibles
                 </div>
               </div>
@@ -399,9 +399,9 @@
             <!-- Counter Col Start -->
             <div class="col col-12 col-lg-3 col-sm-6 wow pulse" data-wow-duration="0" data-wow-delay="0.9s">
               <div class="counter-style-1 light-bg">
-                <p class="mb-1"><i class="icofont-umbrella-alt"></i></p>
+                <p class="mb-1"><i style="color: #5fc2ba" class="icofont-umbrella-alt"></i></p>
                 {{-- <span class="counter">{{ $counter->tons }}</span> --}}
-                <div>
+                <div style="text-align: left">
                   Des déménageurs vérifiés et <br> agrées
                 </div>
               </div>
