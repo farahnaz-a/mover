@@ -129,7 +129,7 @@
 
 
           <div class="text-center btn-center mx-auto">
-            <a href="{{ route('frontend.requestQuote') }}" class="btn-theme bg-navy-blue">Demande de devis<i class="icofont-rounded-right"></i></a>
+            <a href="{{ route('frontend.requestQuote') }}" class="btn-theme bg-navy-blue">DEMANDEZ VOTRE DEVIS<i class="icofont-rounded-right"></i></a>
           </div>
 
         </div>
@@ -356,10 +356,10 @@
         <div class="row d-flex align-items-center">
             <!-- Counter Col Start -->
             <div class="col col-12 col-lg-3 col-sm-6 wow pulse" data-wow-duration="0" data-wow-delay="0s">
-              <div class="counter-style-1 light-bg">
+              <div class="counter-style-1 light-bg" style="border-bottom : 4px solid #5fc2ba !important">
                 <p class="mb-1"><i style="color: #5fc2ba" class="icofont-google-map"></i></p>
                 {{-- <span class="counter">{{ $counter->locations }}</span> --}}
-                <div style="text-align: left">
+                <div style="text-align: left; margin-left : 20px;">
                   Profitez des lignes régulières et des retours à vide des déménageurs
                 </div>
               </div>
@@ -368,11 +368,11 @@
 
             <!-- Counter Col Start -->
             <div class="col col-12 col-lg-3 col-sm-6 wow pulse" data-wow-duration="0" data-wow-delay="0.3s">
-              <div class="counter-style-1 light-bg">
+              <div class="counter-style-1 light-bg" style="border-bottom : 4px solid #5fc2ba !important">
                 <p class="mb-1"><i style="color: #5fc2ba" class="icofont-globe"></i></p>                
                 {{-- <span class="counter">{{ $counter->clients }}</span>
                   <span>+</span> --}}
-                <div style="text-align: left">
+                <div style="text-align: left; margin-left : 20px;">
                   Pour un déménagement local, national ou international
                 </div>
               </div>
@@ -385,11 +385,11 @@
 
             <!-- Counter Col Start -->
             <div class="col col-12 col-lg-3 col-sm-6 wow pulse" data-wow-duration="0" data-wow-delay="0.6s">
-              <div class="counter-style-1 light-bg">
+              <div class="counter-style-1 light-bg" style="border-bottom : 4px solid #5fc2ba !important">
                 <p class="mb-1"><i class="icofont-vehicle-delivery-van" style="color: #5fc2ba"></i></p>
                 {{-- <span class="counter">{{ $counter->vehicles }}</span>
                 <span>+</span> --}}
-                <div style="text-align: left">
+                <div style="text-align: left; margin-left : 20px;">
                   Des milliers de déménageurs <br> disponibles
                 </div>
               </div>
@@ -398,10 +398,10 @@
 
             <!-- Counter Col Start -->
             <div class="col col-12 col-lg-3 col-sm-6 wow pulse" data-wow-duration="0" data-wow-delay="0.9s">
-              <div class="counter-style-1 light-bg">
+              <div class="counter-style-1 light-bg" style="border-bottom : 4px solid #5fc2ba !important">
                 <p class="mb-1"><i style="color: #5fc2ba" class="icofont-umbrella-alt"></i></p>
                 {{-- <span class="counter">{{ $counter->tons }}</span> --}}
-                <div style="text-align: left">
+                <div style="text-align: left; margin-left : 20px;">
                   Des déménageurs vérifiés et <br> agrées
                 </div>
               </div>
@@ -436,7 +436,7 @@
               ">
                 <div class="blog-warp">
                   <img src="{{ asset('uploads/blogs') }}/{{ $blog->image }}" alt="" class="rounded">
-                  <div class="meta-box"><a href="#">{{ $blog->getUser->name }}</a> <span>/</span>   {{ $blog->created_at->format('M d, Y') }}</div>
+                  {{--  <div class="meta-box"><a href="#">{{ $blog->getUser->name }}</a> <span>/</span>   {{ $blog->created_at->format('M d, Y') }}</div>  --}}
                   <h4 class="h4-md mb-3"><a href="#">{{ $blog->title }}</a></h4>
                   <p>{{ Str::limit($blog->description, 100) }}</p>
                 </div>
@@ -460,9 +460,11 @@
               <img src="{{ asset('uploads/settings') }}/{{ settings()->logo }}" alt="">
             </div>
             <div class="col wow slideInUp" data-wow-duration="0" data-wow-delay="0.2s">
+              <h1 class="heading-main">CLICMOVE POUR LES DÉMÉNAGEURS</h1>
               <div class="center-text">
                 {{-- {{ $callout->description }} --}}
-               <p> Vous êtes déménageur-transporteur professionnel, CLICMOVE est un espace d’échange qui vous facilite la mise en relation avec une nouvelle clientèle pour augmenter votre chiffre d’affaire  :</p>
+                
+               <p style="font-size: 24px; font-weight: bold;"> Vous êtes déménageur-transporteur professionnel, CLICMOVE est un espace d’échange qui vous facilite la mise en relation avec une nouvelle clientèle pour augmenter votre chiffre d’affaire  :</p>
                 •	Inscrivez-vous gratuitement et sans engagement <br>
                 •	Aucun frais d’abonnement <br>
                 •	Accès immédiat et illimité aux offres 24h/24 et 7jours/7 <br>

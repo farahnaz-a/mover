@@ -199,8 +199,8 @@
         <div class="col-lg-4 col-md-6 wow fadeInLeft" data-wow-duration="0" data-wow-delay="0s">
         
            <p style="opacity : 0;">{{ settings()->description }}</p>
-           <div class="logo-footer text-center m-auto">
-            <img src="{{ asset('uploads/settings') }}/{{ settings()->logo }}" alt="">
+           <div class="logo-footer text-center m-auto" style="width: 200px !important;">
+            <img  src="{{ asset('uploads/settings') }}/{{ settings()->logo }}" alt="">
           </div>
           <p style="opacity: 0">{{ settings()->description_one }}</p>
          
@@ -216,7 +216,7 @@
 
         <!-- Column Second -->
         <div class="col-lg-4 col-md-6 wow fadeInLeft" data-wow-duration="0" data-wow-delay="0.2s">
-          <h3 class="footer-heading">CLICMOVE NEWS</h3>
+          <h3 style="border-bottom:4px solid #5fc2ba; width:41%;" class="footer-heading">CLICMOVE NEWS</h3>
           <div class="blog-list-footer">
             <ul class="list-unstyled">
               @foreach (blogs() as $blog)
@@ -245,7 +245,7 @@
 
         <!-- Column Third -->
         <div class="col-lg-4 col-md-12 wow fadeInLeft" data-wow-duration="0" data-wow-delay="0.4s">
-          <h3 class="footer-heading">MENU</h3>
+          <h3 style="border-bottom: 4px solid #5fc2ba;width:15%;" class="footer-heading">MENU</h3>
           <ul style="padding:0 0 30px 0 !important;color: #06163a; text-transform:uppercase; list-style-type:none; font-weight: bold;" >
             <li style="padding-bottom: 20px">
               <a href="#comment">COMMENT ÇA MARCHE</a>
@@ -260,14 +260,14 @@
               <a href="{{ url('/contact') }}">contact</a>
             </li>
             <div class="row">
-              <div class="col-lg-6 col-md-6 col-sm-12">
+              <div class="col-lg-4 col-md-6 col-sm-12">
                 <li style="text-transform: capitalize">
-                  <a href="{{ route('register') }}">S'inscrire</a>
+                  <a style="color: #5fc2ba !important" class="btn-theme bg-navy-blue" href="{{ route('register') }}">S'inscrire</a>
                 </li>
               </div>
-              <div class="col-lg-6 col-md-6 col-sm-12">
-                <li style="text-transform: capitalize">
-                  <a href="{{ route('login') }}">Se connecter</a>
+              <div class="col-lg-8 col-md-6 col-sm-12">
+                <li style="text-transform: capitalize; margin-left: 40px;">
+                  <a style="color: #5fc2ba !important;" class="btn-theme bg-navy-blue" href="{{ route('login') }}">Se connecter</a>
                 </li>
               </div>
             </div>
