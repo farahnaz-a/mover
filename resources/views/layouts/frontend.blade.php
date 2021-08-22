@@ -199,7 +199,7 @@
         <div class="col-lg-4 col-md-6 wow fadeInLeft" data-wow-duration="0" data-wow-delay="0s">
         
            <p style="opacity : 0;">{{ settings()->description }}</p>
-           <div class="logo-footer text-center m-auto" style="width: 200px !important;">
+           <div class="logo-footer text-center m-auto" style="width: 300px !important;">
             <img  src="{{ asset('uploads/settings') }}/{{ settings()->logo }}" alt="">
           </div>
           <p style="opacity: 0">{{ settings()->description_one }}</p>
@@ -262,12 +262,12 @@
             <div class="row">
               <div class="col-lg-4 col-md-6 col-sm-12">
                 <li style="text-transform: capitalize">
-                  <a style="color: #5fc2ba !important" class="btn-theme bg-navy-blue" href="{{ route('register') }}">S'inscrire</a>
+                  <a style="background: #5fc2ba !important" class="btn-theme bg-navy-blue" href="{{ route('register') }}">S'inscrire</a>
                 </li>
               </div>
               <div class="col-lg-8 col-md-6 col-sm-12">
                 <li style="text-transform: capitalize; margin-left: 40px;">
-                  <a style="color: #5fc2ba !important;" class="btn-theme bg-navy-blue" href="{{ route('login') }}">Se connecter</a>
+                  <a style="background: #5fc2ba !important;" class="btn-theme bg-navy-blue" href="{{ route('login') }}">Se connecter</a>
                 </li>
               </div>
             </div>

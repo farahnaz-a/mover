@@ -460,11 +460,11 @@
               <img src="{{ asset('uploads/settings') }}/{{ settings()->logo }}" alt="">
             </div>
             <div class="col wow slideInUp" data-wow-duration="0" data-wow-delay="0.2s">
-              <h1 class="heading-main">CLICMOVE POUR LES DÉMÉNAGEURS</h1>
-              <div class="center-text">
+              <h4 style="color:white;font-size : 25px;">CLICMOVE POUR LES DÉMÉNAGEURS</h4>
+              <div class="left-text">
                 {{-- {{ $callout->description }} --}}
                 
-               <p style="font-size: 24px; font-weight: bold;"> Vous êtes déménageur-transporteur professionnel, CLICMOVE est un espace d’échange qui vous facilite la mise en relation avec une nouvelle clientèle pour augmenter votre chiffre d’affaire  :</p>
+                Vous êtes déménageur-transporteur professionnel, CLICMOVE est un espace d’échange qui vous facilite la mise en relation avec une nouvelle clientèle pour augmenter votre chiffre d’affaire  : <br>
                 •	Inscrivez-vous gratuitement et sans engagement <br>
                 •	Aucun frais d’abonnement <br>
                 •	Accès immédiat et illimité aux offres 24h/24 et 7jours/7 <br>
