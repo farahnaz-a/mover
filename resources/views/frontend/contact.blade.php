@@ -26,18 +26,18 @@
         <div class="contact-map-bg">
           <img src="assets/images/map-bg.png" alt="">
         </div>
-        <div class="row justify-content-between">
+        {{-- <div class="row justify-content-between">
           <div class="col-md-6 col-sm-12 col-lg-4 wow fadeInRight" data-wow-duration="0" data-wow-delay="0s">
             <div class="contact-detail-shadow">
               <h4>Germany</h4>
               <div class="d-flex align-items-start items">
                 <i class="icofont-google-map"></i> <span>Envato Pty Ltd, 13/2 Elizabeth
 St Melbourne VIC 3000, Australia</span>
-              </div>
-              <div class="d-flex align-items-start items">
+              </div> --}}
+              {{-- <div class="d-flex align-items-start items">
                 <i class="icofont-phone"></i> <span>+1 (408) 786 - 5117</span>
-              </div>
-              <div class="text-nowrap d-flex align-items-start items">
+              </div> --}}
+              {{-- <div class="text-nowrap d-flex align-items-start items">
                 <i class="icofont-email"></i> <a href="#">germany@logzee.com</a>
               </div>
             </div>
@@ -55,15 +55,15 @@ St Melbourne VIC 3000, Australia</span>
               <div class="text-nowrap d-flex align-items-start items">
                 <i class="icofont-email"></i> <a href="#">spain@logzee.com</a>
               </div>
-            </div>
-          </div>
+            </div> --}}
+          </div> 
         </div>
       </div>        
     </section>
     <!-- Contact Details End -->
 
     <!-- Contact Us From -->
-    <section class="wide-tb-100 bg-light-gray pt-0">
+    <section class="wide-tb-100 bg-light-gray pt-100" style="padding-top:210px !important">
       <div class="container">
         <div class="row">
           <div class="col-md-12 col-sm-12 col-lg-8 offset-lg-2 wow fadeInUp" data-wow-duration="0" data-wow-delay="0s">

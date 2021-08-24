@@ -44,7 +44,7 @@
 
     }
 
-    .team-section-two:hover .butt{
+    .blog-warp:hover .butt{
       opacity: 1;
       z-index: 99999;
     }
@@ -112,11 +112,11 @@
             <a href="javascript:void();">
               <div class="icon-box-4 h-100">
                 @if($key == 0)
-                <i style="color: #5fc2ba;fonrt-size:55px !important" class="icofont-responsive"></i>
+                <i style="color: #5fc2ba;font-size:3rem !important" class="icofont-responsive"></i>
                 @elseif($key == 1)
-                <i style="color: #5fc2ba;fonrt-size:55px !important" class="icofont-tick-boxed"></i>
+                <i style="color: #5fc2ba;font-size:3rem !important" class="icofont-tick-boxed"></i>
                 @elseif($key == 2)
-                <i style="color: #5fc2ba;fonrt-size:55px !important" class="icofont-license"></i>
+                <i style="color: #5fc2ba;font-size:3rem !important" class="icofont-license"></i>
                 @endif
                 {{-- <img src="{{ asset('uploads/services') }}/{{ $service->image }}" alt=""> --}}
                 {{-- <h4 class="h4-md mb-3"></h4> --}}
@@ -168,13 +168,13 @@
                     <div class="media">
                         <div class="service-icon">
                             @if($key == 0)
-                            <i class="icofont-safety"></i>
+                            <i style="font-size: 3rem !important;" class="icofont-safety"></i>
                             @elseif($key == 1)
-                            <i class="icofont-wallet"></i>
+                            <i style="font-size: 3rem !important;" class="icofont-wallet"></i>
                             @elseif($key == 2)
-                            <i class="icofont-search-document"></i>
+                            <i style="font-size: 3rem !important;" class="icofont-search-document"></i>
                             @elseif($key == 3)
-                            <i class="icofont-headphone-alt-2"></i>
+                            <i style="font-size: 3rem !important;" class="icofont-headphone-alt-2"></i>
                             @endif
                             {{-- <img src="{{ asset('uploads/works') }}/{{ $work->image }}" alt=""> --}}
                         </div>
@@ -227,13 +227,20 @@
             0.{{ $key * 4 }}s
             @endif
            ">
-            <div class="team-section-two" style="position: relative; margin-bottom:40px;">
+            {{-- <div class="team-section-two" style="position: relative; margin-bottom:40px;">
               <img src="{{ asset('uploads/teams') }}/{{ $team->image }}" alt="" class="rounded">
                <div class="butt btn-theme bg-navy-blue">Obtenir mon devis</div> 
               <div class="overlaay"></div>
               <h4 class="h4-md txt-orange" style="color: #06163a">{{ $team->name }}</h4>
-              {{-- <h5 class="h5-md txt-ligt-gray">{{ $team->title }}</h5> --}}
-            </div>            
+            </div>             --}}
+            <div class="blog-warp" style="margin-bottom:40px;">
+              <img src="{{ asset('uploads/teams') }}/{{ $team->image }}" alt="" class="rounded">
+              {{--  <div class="meta-box"><a href="#">{{ $blog->getUser->name }}</a> <span>/</span>   {{ $blog->created_at->format('M d, Y') }}</div>  --}}
+              {{-- <h4 class="h4-md mb-3"><a href="#">{{ $blog->title }}</a></h4> --}}
+              <div class="butt btn-theme bg-navy-blue">Obtenir mon devis</div>
+              <h4 class="h4-md txt-orange" style="color: #06163a">{{ $team->name }}</h4>
+              {{-- <p>{{ Str::limit($blog->description, 100) }}</p> --}}
+            </div>
           </div>
            @endforeach
           <!-- Team Column One -->
@@ -329,9 +336,11 @@
                    @foreach ($testimonials as $testimonial)
                    <div class="item">
                     <div class="client-testimonial">
-                      <div class="client-testimonial-icon rounded-circle bg-navy-blue mx-auto mb-4">
-                          <img src="{{ asset('uploads/avatar.jpg') }}" alt="">
-                      </div>
+                      {{-- <div class="client-testimonial-icon rounded-circle bg-navy-blue mx-auto mb-4">
+                          {{-- <img src="{{ asset('uploads/avatar.jpg') }}" alt=""> --}}
+                         
+                      {{-- </div>  --}}
+                      <i style="font-size: 3rem !important;" class="icofont-quote-left"></i>
                       <div class="client-inner-content media-body">
                           <p>{{ $testimonial->description }}</p>
                           <footer class="blockquote-footer"><cite title="Source Title">{{ $testimonial->name }}</cite></footer>
@@ -359,7 +368,7 @@
               <div class="counter-style-1 light-bg" style="border-bottom : 4px solid #5fc2ba !important">
                 <p class="mb-1"><i style="color: #5fc2ba" class="icofont-google-map"></i></p>
                 {{-- <span class="counter">{{ $counter->locations }}</span> --}}
-                <div style="text-align: left; margin-left : 20px;">
+                <div style="text-align: center; margin-left : 20px;text-transform : uppercase; font-size: 16px;" >
                   Profitez des lignes régulières et des retours à vide des déménageurs
                 </div>
               </div>
@@ -372,7 +381,7 @@
                 <p class="mb-1"><i style="color: #5fc2ba" class="icofont-globe"></i></p>                
                 {{-- <span class="counter">{{ $counter->clients }}</span>
                   <span>+</span> --}}
-                <div style="text-align: left; margin-left : 20px;">
+                <div style="text-align: center; margin-left : 20px;text-transform : uppercase; font-size: 16px;">
                   Pour un déménagement local, national ou international
                 </div>
               </div>
@@ -389,7 +398,7 @@
                 <p class="mb-1"><i class="icofont-vehicle-delivery-van" style="color: #5fc2ba"></i></p>
                 {{-- <span class="counter">{{ $counter->vehicles }}</span>
                 <span>+</span> --}}
-                <div style="text-align: left; margin-left : 20px;">
+                <div style="text-align: center; margin-left : 20px;text-transform : uppercase; font-size: 16px;">
                   Des milliers de déménageurs <br> disponibles
                 </div>
               </div>
@@ -401,7 +410,7 @@
               <div class="counter-style-1 light-bg" style="border-bottom : 4px solid #5fc2ba !important">
                 <p class="mb-1"><i style="color: #5fc2ba" class="icofont-umbrella-alt"></i></p>
                 {{-- <span class="counter">{{ $counter->tons }}</span> --}}
-                <div style="text-align: left; margin-left : 20px;">
+                <div style="text-align: center; margin-left : 20px;text-transform : uppercase; font-size: 16px;">
                   Des déménageurs vérifiés et <br> agrées
                 </div>
               </div>

@@ -23,6 +23,36 @@
       html {
         scroll-behavior: smooth;
       }
+      .newsfooter{
+        position : relative;
+      }
+      .newsfooter::after{
+        content: "";
+        background-color: #5fc2ba;
+        width: 6%;
+        height: 4px;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+      }
+      .mefooter{
+        position : relative;
+      }
+      .mefooter::after{
+        content: "";
+        background-color: #5fc2ba;
+        width: 6%;
+        height: 4px;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+      }
+      .ins:hover{
+        color: #5fc2ba !important;
+      }
+      .log:hover{
+        color : #5fc2ba !important;
+      }
     </style>
     <!-- xxx Favicon xxx -->    
     
@@ -79,16 +109,16 @@
 
             {{-- <span style="color: #06163a; font-weight:bold" class="mr-3"><i class="icofont-ui-touch-phone"></i> +00 41 895 785 6985</span> --}}
 
-            @auth
-            <span class="mr-3"><i class="icofont-ui-user mr-2"></i> 
+             @auth
+                <span class="mr-3"><i class="icofont-ui-user mr-2"></i> 
                 <a style="color: #06163a; font-weight:bold;" href="{{ route('dashboard') }}">My Account</a>
                 @if(Auth::user()->role == 'user')
                 <a style="color: #06163a; font-weight:bold;" href="{{ route('my.announcements') }}">My Announcements</a>
                 @endif
                 @endauth
                 @guest
-                <a style="color: #06163a; font-weight: bold;" href="{{ route('register') }}">S'inscrire</a>
-              <a style="color: #06163a; font-weight:bold;margin-left:46px !important" href="{{ route('login') }}">Se connecter</a> 
+                <a class="ins" style="color: #06163a; font-weight: bold;" href="{{ route('register') }}">S'inscrire</a>
+                <a class="log" style="color: #06163a; font-weight:bold;margin-left:46px !important" href="{{ route('login') }}">Se connecter</a> 
               @endguest
             </span>
             <!-- Topbar Language Dropdown Start -->
@@ -111,10 +141,10 @@
     </div>
     
     <!-- Main Navigation Start -->
-    <nav class="header-fullpage navbar navbar-expand-lg">
+    <nav class="header-fullpage navbar navbar-expand-lg" style="height: 80px !important;">
       <div class="container">
         <div class="d-flex align-items-center w-100 col p-0">
-          <a class="navbar-brand rounded-bottom light-bg" href="{{ route('frontend.index') }}" style="width:200px !important;">
+          <a class="navbar-brand rounded-bottom light-bg" href="{{ route('frontend.index') }}" style="width:200px !important; margin-top:-14px;">
             <img src="{{ asset('uploads/settings') }}/{{ settings()->logo }}" alt="">
           </a> 
         </div>
@@ -132,7 +162,7 @@
         <!-- Topbar Request Quote End -->
 
         <div class="collapse navbar-collapse" id="navbarCollapse" data-hover="dropdown" data-animations="slideInUp slideInUp slideInUp slideInUp">
-          <ul class="navbar-nav ml-auto">
+          <ul class="navbar-nav ml-auto" style="padding-top: 31px !important">
              
                   <li class="nav-item">
                     <a class="nav-link" aria-haspopup="true" aria-expanded="false" href="#howitworks">Comment ça marche</a>
@@ -216,7 +246,8 @@
 
         <!-- Column Second -->
         <div class="col-lg-4 col-md-6 wow fadeInLeft" data-wow-duration="0" data-wow-delay="0.2s">
-          <h3 style="border-bottom:4px solid #5fc2ba; width:41%;" class="footer-heading">CLICMOVE NEWS</h3>
+          <h3  class="footer-heading newsfooter">CLICMOVE NEWS</h3>
+          
           <div class="blog-list-footer">
             <ul class="list-unstyled">
               @foreach (blogs() as $blog)
@@ -245,7 +276,7 @@
 
         <!-- Column Third -->
         <div class="col-lg-4 col-md-12 wow fadeInLeft" data-wow-duration="0" data-wow-delay="0.4s">
-          <h3 style="border-bottom: 4px solid #5fc2ba;width:15%;" class="footer-heading">MENU</h3>
+          <h3 class="footer-heading mefooter">MENU</h3>
           <ul style="padding:0 0 30px 0 !important;color: #06163a; text-transform:uppercase; list-style-type:none; font-weight: bold;" >
             <li style="padding-bottom: 20px">
               <a href="#comment">COMMENT ÇA MARCHE</a>
