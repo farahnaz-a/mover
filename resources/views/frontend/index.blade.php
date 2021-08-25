@@ -168,13 +168,13 @@
                     <div class="media">
                         <div class="service-icon">
                             @if($key == 0)
-                            <i style="font-size: 3rem !important;" class="icofont-safety"></i>
+                            <i style="" class="icofont-safety"></i>
                             @elseif($key == 1)
-                            <i style="font-size: 3rem !important;" class="icofont-wallet"></i>
+                            <i style="" class="icofont-wallet"></i>
                             @elseif($key == 2)
-                            <i style="font-size: 3rem !important;" class="icofont-search-document"></i>
+                            <i style="" class="icofont-search-document"></i>
                             @elseif($key == 3)
-                            <i style="font-size: 3rem !important;" class="icofont-headphone-alt-2"></i>
+                            <i style="" class="icofont-headphone-alt-2"></i>
                             @endif
                             {{-- <img src="{{ asset('uploads/works') }}/{{ $work->image }}" alt=""> --}}
                         </div>
@@ -233,7 +233,7 @@
               <div class="overlaay"></div>
               <h4 class="h4-md txt-orange" style="color: #06163a">{{ $team->name }}</h4>
             </div>             --}}
-            <div class="blog-warp" style="margin-bottom:40px;">
+            <div class="blog-warp" style="margin-bottom:100px;">
               <img src="{{ asset('uploads/teams') }}/{{ $team->image }}" alt="" class="rounded">
               {{--  <div class="meta-box"><a href="#">{{ $blog->getUser->name }}</a> <span>/</span>   {{ $blog->created_at->format('M d, Y') }}</div>  --}}
               {{-- <h4 class="h4-md mb-3"><a href="#">{{ $blog->title }}</a></h4> --}}
@@ -326,6 +326,14 @@
     <!-- Client Testimonials Start -->
     <section class="wide-tb-60 p-0">
       <div class="container wow fadeInUp" data-wow-duration="0" data-wow-delay="0.2s">
+                <!-- Heading Main -->
+                <div class="col-sm-12">
+                  <h1 class="heading-main">
+                    EXPÉRIENCES RÉCENTES
+                  </h1>
+                </div>
+                <!-- Heading Main -->
+        
         <div class="row">
             <div class="col-lg-10 offset-lg-1">
               <div class="bg-scroll client-testimonials-bg pos-rel rounded" style="background-image: url({{ asset('assets/images/bg_2.jpg') }}) !important;">
@@ -369,7 +377,7 @@
                 <p class="mb-1"><i style="color: #5fc2ba" class="icofont-google-map"></i></p>
                 {{-- <span class="counter">{{ $counter->locations }}</span> --}}
                 <div style="text-align: center; margin-left : 20px;text-transform : uppercase; font-size: 16px;" >
-                  Profitez des lignes régulières et des retours à vide des déménageurs
+                  PROFITEZ DES LIGNES RÉGULIÈRES-RETOURS À VIDE DES DÉMÉNAGEURS
                 </div>
               </div>
             </div>
@@ -469,21 +477,22 @@
               <img src="{{ asset('uploads/settings') }}/{{ settings()->logo }}" alt="">
             </div>
             <div class="col wow slideInUp" data-wow-duration="0" data-wow-delay="0.2s">
-              <h4 style="color:white;font-size : 25px;">CLICMOVE POUR LES DÉMÉNAGEURS</h4>
+              <h4 style="color:white;font-size : 25px; margin-bottom:20px;">CLICMOVE POUR LES DÉMÉNAGEURS</h4>
               <div class="left-text">
                 {{-- {{ $callout->description }} --}}
                 
-                Vous êtes déménageur-transporteur professionnel, CLICMOVE est un espace d’échange qui vous facilite la mise en relation avec une nouvelle clientèle pour augmenter votre chiffre d’affaire  : <br>
-                •	Inscrivez-vous gratuitement et sans engagement <br>
-                •	Aucun frais d’abonnement <br>
-                •	Accès immédiat et illimité aux offres 24h/24 et 7jours/7 <br>
-                •	Accéder à des milliers d’offres et à de nouvelles opportunités <br>
-                •	Augmenter votre visibilité, gagnez du temps et trouvez de nouveaux clients <br>
-                •	Discuter en direct et en toute transparence avec les clients par système de messagerie <br>
-                •	Aucune concurrence déloyale, tous les déménageurs-transporteurs sont agrées <br>
-                •	Déposez gratuitement vos devis <br>
-                •	Étendez votre notoriété, gérez votre profil, mettez en avant vos anciennes réalisations et partagez l’expérience de vos clients <br>
-                •	Étendez votre zone géographique d’intervention <br>
+                <p>
+                  Vous êtes déménageur-transporteur professionnel, CLICMOVE est un espace d’échange qui vous facilite la mise en relation avec une nouvelle clientèle pour augmenter votre chiffre d’affaire  : <br>
+                </p>
+                <i class="icofont-tick-mark"></i>	Inscrivez-vous gratuitement et sans engagement <br>
+                <i class="icofont-tick-mark"></i>	Aucun frais d’abonnement <br>
+                <i class="icofont-tick-mark"></i>	Accès immédiat et illimité aux offres 24h/24 et 7jours/7 <br>
+                <i class="icofont-tick-mark"></i>	Augmenter votre visibilité, gagnez du temps et trouvez de nouveaux clients <br>
+                <i class="icofont-tick-mark"></i>	Discuter en direct et en toute transparence avec les clients par système de messagerie <br>
+                <i class="icofont-tick-mark"></i>	Aucune concurrence déloyale, tous les déménageurs-transporteurs sont agrées <br>
+                <i class="icofont-tick-mark"></i>	Déposez gratuitement vos devis <br>
+                <i class="icofont-tick-mark"></i>	Étendez votre notoriété, gérez votre profil, mettez en avant vos anciennes réalisations et partagez l’expérience de vos clients <br>
+                <i class="icofont-tick-mark"></i>	Étendez votre zone géographique d’intervention <br>
               </div>
             </div>
             <div class="col-sm-auto wow slideInUp" data-wow-duration="0" data-wow-delay="0.3s">

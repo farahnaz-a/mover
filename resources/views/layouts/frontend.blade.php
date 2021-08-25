@@ -47,6 +47,22 @@
         bottom: 0;
         left: 0;
       }
+      .ins {
+        transition: 0ms;
+        display: inline-block;     
+        position: relative;    
+        z-index: 1;    
+        height: 30px;
+      }
+      .log {
+        transition: 0ms;
+
+        transition: 0ms;
+        display: inline-block;     
+        position: relative;    
+        z-index: 1;    
+        height: 30px;
+      }
       .ins:hover{
         color: #5fc2ba !important;
       }
