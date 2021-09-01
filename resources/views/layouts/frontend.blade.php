@@ -245,7 +245,7 @@
         <div class="col-lg-4 col-md-6 wow fadeInLeft" data-wow-duration="0" data-wow-delay="0s">
         
            <p style="opacity : 0;">{{ settings()->description }}</p>
-           <div class="logo-footer text-center m-auto" style="width: 300px !important;">
+           <div class="logo-footer text-center m-auto" style="width: 350px !important;">
             <img  src="{{ asset('uploads/settings') }}/{{ settings()->logo }}" alt="">
           </div>
           <p style="opacity: 0">{{ settings()->description_one }}</p>

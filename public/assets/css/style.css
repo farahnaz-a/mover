@@ -1682,16 +1682,16 @@ h2.h2-xl {
     margin-bottom: 25px;
 }
 
-.team-section-bottom:after {
-    position: absolute;
-    width: 100%;
-    content: '';
-    height: 175px;
-    left: 0;
-    bottom: 0;
-    background: var(--bg-light-theme);
-    z-index: -1;
-}
+/*.team-section-bottom:after {*/
+/*    position: absolute;*/
+/*    width: 100%;*/
+/*    content: '';*/
+/*    height: 175px;*/
+/*    left: 0;*/
+/*    bottom: 0;*/
+/*    background: var(--bg-light-theme);*/
+/*    z-index: -1;*/
+/*}*/
 
 /*------------------------------------------*/
 /*    Spacer For Gap
@@ -2841,7 +2841,7 @@ h2.h2-xl {
 }
 
 .client-testimonials-bg {
-
+    background-image: url(../images/bg_2.jpg);
     background-repeat: no-repeat;
     padding: 3rem;
     text-align: center;

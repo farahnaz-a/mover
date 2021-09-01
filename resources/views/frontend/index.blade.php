@@ -53,7 +53,7 @@
 
 @section('content')
     <!-- Fullscreen Slider Start -->
-    <div id="banner_slider">
+    {{-- <div id="banner_slider">
       @foreach ($banners as $banner)
       <div class="banner_section" style="background-image: url('{{ asset('uploads/banners/') }}/{{ $banner->image }}')">
         <div class="container">
@@ -81,7 +81,117 @@
         </div>  
       </div>
       @endforeach
+    </div> --}}
+  <!-- Fullscreen Slider End -->
+  <div class="slider bg-navy-blue">
+    <div id="rev_slider_1078_1_wrapper" class="rev_slider_wrapper fullwidthbanner-container" data-alias="classic4export" data-source="gallery" style="margin:0px auto;background-color:transparent;padding:0px;margin-top:0px;margin-bottom:0px;"> 
+      <!-- START REVOLUTION SLIDER 5.4.1 fullwidth mode -->
+      <div id="rev_slider_1078_1" class="rev_slider fullscreenbanner" style="display:none;" data-version="5.4.1">
+        <ul>
+
+          <!-- SLIDE  -->
+          @foreach ($banners as $banner)
+          <li data-index="rs-3045" data-transition="zoomout" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off"  data-easein="Power4.easeInOut" data-easeout="Power4.easeInOut" data-masterspeed="2000"  data-thumb="{{ asset('uploads/banners/') }}/{{ $banner->image }}"  data-rotate="0"  data-fstransition="fade" data-fsmasterspeed="1500" data-fsslotamount="7" data-saveperformance="off"  data-title="Intro" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description=""> 
+            <!-- MAIN IMAGE --> 
+            <img src="{{ asset('uploads/banners/') }}/{{ $banner->image }}"  alt=""  data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10" class="rev-slidebg" data-no-retina> 
+            <!-- LAYERS --> 
+            
+            <!-- LAYER NR. 1 -->
+            <div class="tp-caption NotGeneric-Title tp-resizeme" 
+                id="slide-3-layer-1" 
+                data-x="left" data-hoffset="60" 
+                data-y="center" data-voffset="-120" 
+                data-width="['auto','auto','auto','auto']"
+                data-height="['auto','auto','auto','auto']"
+                data-transform_idle="o:1;"
+                
+                data-fontsize="['70','70','70','45']"
+                
+                data-transform_in="y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;s:1500;e:Power3.easeInOut;" 
+                data-transform_out="s:1000;e:Power3.easeInOut;s:1000;e:Power3.easeInOut;" 
+                data-mask_in="x:0px;y:0px;s:inherit;e:inherit;" 
+                data-start="700" 
+                data-splitin="none" 
+                data-splitout="none" 
+                data-responsive_offset="on" 
+
+                
+                style="z-index: 1; white-space: nowrap; color: #06163a; font-family : Cordoba;"><span class="slider-small">{{ $banner->title }}</span> <br>
+            </div>
+            
+            <!-- LAYER NR. 2 -->
+            <div class="tp-caption NotGeneric-Title tp-resizeme" 
+               id="slide-3-layer-2" 
+                data-x="left" data-hoffset="60" 
+                data-y="center" data-voffset="10" 
+                data-width="['auto','auto','auto','auto']"
+                data-height="['auto','auto','auto','auto']"
+                data-transform_idle="o:1;"
+                
+                data-transform_in="x:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;s:1500;e:Power3.easeInOut;" 
+                data-transform_out="s:1000;e:Power3.easeInOut;s:1000;e:Power3.easeInOut;" 
+                data-mask_in="x:0px;y:0px;s:inherit;e:inherit;" 
+                data-start="1400" 
+                data-splitin="none" 
+                data-splitout="none" 
+                data-responsive_offset="on" 
+
+                
+                style="z-index: 2; white-space: nowrap; font-size: 18px; line-height: 30px; color: #06163a; font-family : Cordoba; font-size: 32px; text-transform:uppercase">{{ $banner->description }} 
+            </div>
+            <!-- LAYER NR. 2 -->
+            <div class="tp-caption NotGeneric-Title tp-resizeme" 
+               id="slide-3-layer-2" 
+                data-x="left" data-hoffset="60" 
+                data-y="center" data-voffset="10" 
+                data-width="['auto','auto','auto','auto']"
+                data-height="['auto','auto','auto','auto']"
+                data-transform_idle="o:1;"
+                
+                data-transform_in="x:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;s:1500;e:Power3.easeInOut;" 
+                data-transform_out="s:1000;e:Power3.easeInOut;s:1000;e:Power3.easeInOut;" 
+                data-mask_in="x:0px;y:0px;s:inherit;e:inherit;" 
+                data-start="1400" 
+                data-splitin="none" 
+                data-splitout="none" 
+                data-responsive_offset="on" 
+
+                
+                style="z-index: 2; white-space: nowrap; font-size: 18px; line-height: 30px; color: #06163a; font-family : Cordoba; padding:300px 0 200px 0; font-size: 32px;"> DEMANDEZ VOTRE DEVIS, SIMPLE, RAPIDE, GRATUIT ET SANS ENGAGEMENT
+            </div>
+            
+            <!-- LAYER NR. 3 -->
+            <a href="{{ route('frontend.requestQuote') }}">
+            <div class="tp-caption tp-resizeme btn-theme bg-navy-blue" 
+                id="slide-3-layer-3" 
+                data-x="left" data-hoffset="60" 
+                data-y="center" data-voffset="100" 
+                data-width="['auto']"
+                data-height="['auto']"
+                data-transform_idle="o:1;"
+                data-transform_hover="o:1;rX:0;rY:0;rZ:0;z:0;s:300;e:Power1.easeInOut;"
+                data-style_hover="c:rgba(255, 255, 255, 1.00);bg:rgba(41, 46, 49, 0);bc:rgba(255, 255, 255, 1.00);cursor:pointer;"
+                
+                data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2000;e:Power3.easeInOut;" 
+                data-transform_out="s:1000;e:Power3.easeInOut;s:1000;e:Power3.easeInOut;" 
+                data-mask_in="x:0px;y:[100%];s:inherit;e:inherit;" 
+                data-start="2100" 
+                data-splitin="none" 
+                data-splitout="none" 
+                data-actions='[{"event":"click","action":"jumptoslide","slide":"next","delay":""}]'
+                data-responsive_offset="on" 
+                data-responsive="off"
+                
+                style="z-index: 3; white-space: nowrap; font-weight: 800;background-color:rgba(41, 46, 49, 1.00);border-color:rgba(255, 255, 255, 0);outline:none;box-shadow:none;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box; margin-top:100px;">READ MORE
+            </div>
+            </a>
+          </li>
+          @endforeach
+        </ul>
+        <div class="tp-bannertimer tp-bottom" style="height: 7px; background-color: rgba(255, 255, 255, 0.25);"></div>
+      </div>
     </div>
+  </div>
   <!-- Fullscreen Slider End -->
 
   <!-- Main Body Content Start -->
@@ -217,7 +327,7 @@
         </div>
         <!-- Heading Main -->
 
-        <div class="row pb-4">
+        <div class="row pb-2">
           <!-- Team Column One -->
            @foreach ($teams as $key => $team)
            <div class="col-sm-12 col-md-4 wow fadeInUp" data-wow-duration="0" data-wow-delay="
@@ -227,16 +337,16 @@
             0.{{ $key * 4 }}s
             @endif
            ">
-            {{-- <div class="team-section-two" style="position: relative; margin-bottom:40px;">
+            {{-- <div class="team-section-two" style="position: relative; margin-bottom:30px;">
               <img src="{{ asset('uploads/teams') }}/{{ $team->image }}" alt="" class="rounded">
                <div class="butt btn-theme bg-navy-blue">Obtenir mon devis</div> 
               <div class="overlaay"></div>
               <h4 class="h4-md txt-orange" style="color: #06163a">{{ $team->name }}</h4>
             </div>             --}}
-            <div class="blog-warp" style="margin-bottom:100px;">
+            <div class="blog-warp" style="margin-bottom:50px;">
               <img src="{{ asset('uploads/teams') }}/{{ $team->image }}" alt="" class="rounded">
               {{--  <div class="meta-box"><a href="#">{{ $blog->getUser->name }}</a> <span>/</span>   {{ $blog->created_at->format('M d, Y') }}</div>  --}}
-              {{-- <h4 class="h4-md mb-3"><a href="#">{{ $blog->title }}</a></h4> --}}
+              {{-- <h4 class="h4-md mb-3"><a href="#">{{ strtoupper($blog->title) }}</a></h4> --}}
               <div class="butt btn-theme bg-navy-blue">Obtenir mon devis</div>
               <h4 class="h4-md txt-orange" style="color: #06163a">{{ $team->name }}</h4>
               {{-- <p>{{ Str::limit($blog->description, 100) }}</p> --}}
@@ -377,7 +487,8 @@
                 <p class="mb-1"><i style="color: #5fc2ba" class="icofont-google-map"></i></p>
                 {{-- <span class="counter">{{ $counter->locations }}</span> --}}
                 <div style="text-align: center; margin-left : 20px;text-transform : uppercase; font-size: 16px;" >
-                  PROFITEZ DES LIGNES RÉGULIÈRES-RETOURS À VIDE DES DÉMÉNAGEURS
+                  PROFITEZ DES LIGNES RÉGULIÈRES ET RETOURS À VIDE
+
                 </div>
               </div>
             </div>
@@ -474,11 +585,11 @@
         <div class="row align-items-center">
             <div class="col-lg-4 col-md-12 mb-0 wow slideInUp" data-wow-duration="0" data-wow-delay="0.1s">
               {{-- <h4 class="h4-xl">{{ $callout->title }}</h4>  --}}
-              <img src="{{ asset('uploads/settings') }}/{{ settings()->logo }}" alt="">
+              <img src="https://i.postimg.cc/v8KHm8DB/1-Transparent-Logo-WHITE.png" alt="">
             </div>
             <div class="col wow slideInUp" data-wow-duration="0" data-wow-delay="0.2s">
               <h4 style="color:white;font-size : 25px; margin-bottom:20px;">CLICMOVE POUR LES DÉMÉNAGEURS</h4>
-              <div class="left-text">
+              <div class="left-text" style="font-size : 20px;">
                 {{-- {{ $callout->description }} --}}
                 
                 <p>
