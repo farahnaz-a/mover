@@ -579,9 +579,9 @@
     <!-- Recent Posts End -->
 
     <!-- Callout Start -->
-    <section class="wide-tb-80 bg-scroll bg-img-6 pos-rel callout-style-1" style="background-image: url({{ asset('uploads/callouts') }}/{{ $callout->image }});">
+    <div class="container" >
+    <section class="wide-tb-80 bg-scroll bg-img-6 pos-rel callout-style-1" style="padding: 20px 50px !important; background-image: url({{ asset('uploads/callouts') }}/{{ $callout->image }});">
       <div class="bg-overlay blue opacity-60"></div>
-      <div class="container">
         <div class="row align-items-center">
             <div class="col-lg-4 col-md-12 mb-0 wow slideInUp" data-wow-duration="0" data-wow-delay="0.1s">
               {{-- <h4 class="h4-xl">{{ $callout->title }}</h4>  --}}
@@ -609,9 +609,9 @@
             <div class="col-sm-auto wow slideInUp" data-wow-duration="0" data-wow-delay="0.3s">
               <a href="{{ url('/inscription/demenageur') }}" class="btn btn-theme bg-white bordered">Inscription déménageur <i class="icofont-rounded-right"></i></a>
             </div>
-        </div>
+          </div>
+        </section>
       </div>
-    </section>
     <!-- Callout End -->
 
 

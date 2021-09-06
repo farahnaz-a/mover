@@ -54,14 +54,13 @@
                 @csrf
                 <div class="form-group row">
                   <label class="col-sm-2 col-form-label"
-                    >Nom de I'enterprise</label
+                    >Nom de l'entreprise</label
                   >
                   <div class="col-sm-10">
                     <div class="input-group">
                       <div class="input-group-prepend">
                         <span class="input-group-text"
-                          ><i class="icofont-building-alt"></i
-                        ></span>
+                          ><i class="icofont-id"></i></span>
                       </div>
                       <input
                         type="text"
@@ -80,14 +79,13 @@
                 </div>
                 <div class="form-group row">
                   <label class="col-sm-2 col-form-label"
-                    >Adresse de I'enterprise</label
+                    >Adresse de l'entreprise</label
                   >
                   <div class="col-sm-10">
                     <div class="input-group">
                       <div class="input-group-prepend">
                         <span class="input-group-text"
-                          ><i class="icofont-building-alt"></i
-                        ></span>
+                          ><i class="icofont-location-pin"></i></span>
                       </div>
                       <input
                         type="text"
@@ -106,7 +104,7 @@
                 </div>
                 <div class="form-group row">
                   <label class="col-sm-2 col-form-label"
-                    >NOM prenom du gérant</label
+                    >Nom prenom du gérant</label
                   >
                   <div class="col-sm-10">
                     <div class="input-group">
@@ -272,9 +270,9 @@
                 </div>
                 <div class="form-group row">
                   <label class="col-sm-2 col-form-label"></label>
-                  <div class="col-sm-10">
+                  {{--  <div class="col-sm-10">
                     <i class="icofont-info-circle"></i> j'accepte les dispositions des conditions générales et de la politique de confidentialité
-                  </div>
+                  </div>  --}}
                 </div>
                 <div class="form-group row">
                   <label class="col-sm-2 col-form-label"></label>
