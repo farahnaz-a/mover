@@ -83,6 +83,7 @@ class FrontendController extends Controller
           // 'pallets'    => Pallet::where('hired', 'no')->orderBy('id', 'asc')->get(),
           // 'vehicles'    => Vehicle::where('hired', 'no')->orderBy('id', 'asc')->get(),
           'announcements'    => Announcement::where('hired', 'no')->orderBy('id', 'asc')->get(),
+          'services'     => Service::all(),
        ]);
    }
    /**
@@ -103,6 +104,7 @@ class FrontendController extends Controller
           // 'pallets'    => Pallet::where('hired', 'no')->orderBy('id', 'asc')->get(),
           // 'vehicles'    => Vehicle::where('hired', 'no')->orderBy('id', 'asc')->get(),
           'announcements'    => Announcement::where('hired', 'no')->where('category', $category)->orderBy('id', 'asc')->get(),
+          'services'     => Service::all(),
        ]);
    }
 
@@ -114,8 +116,9 @@ class FrontendController extends Controller
      $announcements = Announcement::where('loading_address', 'LIKE', '%'. $from .'%')
                                   ->where('delivery_address', 'LIKE', '%' . $to . '%')
                                   ->get();
+                                  $services     = Service::all();
 
-    return view('frontend.announcements', compact('announcements'));
+    return view('frontend.announcements', compact('announcements', 'services'));
 
    }
    /**

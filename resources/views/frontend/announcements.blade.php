@@ -24,27 +24,27 @@
           <div class="container">
             <div class="map-wrapper">
               <div class="row">
-                <div class="col-md-6">
+                {{--  <div class="col-md-6">
                   <div class="left">
                     <h1>TROUVEZ DES CHARGEMENTS AUGMENTEZ VOS REVENUS</h1>
                     <h4>BOURSE DE FRET GRATUITE</h4>
                     <button class="btn btn-lg btn-dark">je m'inscris</button>
                   </div>
-                </div>
-                <div class="col-md-6">
+                </div>  --}}
+                <div class="col-md-12">
                   <div class="right">
-                    <ul>
-                      <li><i class="icofont-check"></i>GRATUIT</li>
-                      <li><i class="icofont-check"></i>VISIBILITÉ IMMÉDIATE</li>
-                      <li><i class="icofont-check"></i>PAS D’ABONNEMENT</li>
+                    <ul style="background: none !important">
+                      <li><i class="icofont-check"></i>Déposez gratuitement votre demande et sans engagement</li>
+                      <li><i class="icofont-check"></i>Recevez et comparez les offres en toute transparence</li>
+                      <li><i class="icofont-check"></i>Validez votre devis et économisez de l’argent</li>
                       <li>
-                        <i class="icofont-check"></i>AUGMENTEZ VOTRE CHIFFRE
-                        D’AFFAIRE
+                        <i class="icofont-check"></i>Déménagez en toute sérénité avec des déménageurs agrées
                       </li>
                       <li>
-                        <i class="icofont-check"></i>ASSISTANCE TÉLÉPHONIQUE
+                        <i class="icofont-check"></i>Profitez d’un large réseau de déménageur européen
                       </li>
                     </ul>
+                    <button class="btn btn-theme bg-white bordered" style="margin-left: 20px;">DEMANDEZ VOTRE DEVIS</button>
                   </div>
                 </div>
               </div>
@@ -54,7 +54,7 @@
         <!-- map banner end -->
   
         <!-- steps start -->
-        <div class="steps">
+        {{--  <div class="steps">
           <div class="container">
             <div class="steps-wrapper">
               <div class="row">
@@ -89,57 +89,55 @@
               </div>
             </div>
           </div>
-        </div>
+        </div>  --}}
         <!-- steps end -->
-  
+        <section class="bg-light-theme wide-tb-100 pb-0" id="comment">
+          <div class="container pos-rel">
+            <div class="row">
+              <!-- Heading Main -->
+              <!-- Heading Main -->
+    
+               @foreach ($services as $key => $service)
+               <div class="col-md-4 wow fadeInUp" data-wow-duration="0" data-wow-delay="
+                @if($key == 0)
+                0.1s 
+                @else 
+                0.{{ $key * 2 }}s
+                @endif
+               ">            
+                <!-- Icon Box 2 -->
+                <a href="javascript:void();">
+                  <div class="icon-box-4 h-100">
+                    @if($key == 0)
+                    <i style="color: #5fc2ba;font-size:3rem !important" class="icofont-responsive"></i>
+                    @elseif($key == 1)
+                    <i style="color: #5fc2ba;font-size:3rem !important" class="icofont-tick-boxed"></i>
+                    @elseif($key == 2)
+                    <i style="color: #5fc2ba;font-size:3rem !important" class="icofont-license"></i>
+                    @endif
+                    {{-- <img src="{{ asset('uploads/services') }}/{{ $service->image }}" alt=""> --}}
+                    {{-- <h4 class="h4-md mb-3"></h4> --}}
+                    <p style="color: #06163a; text-transform:uppercase"> <span style="color:#5fc2ba; font-weight:bold;">{{ $service->title }}</span> {{ $service->description }}</p>
+                  </div> 
+                </a>
+                <!-- Icon Box -->
+              </div>
+               @endforeach
+    
+    
+            </div>
+            
+          </div>
+        </section>
         <!-- map lists start -->
         <section class="map-body border-top bg-light-gray">
           <div class="container">
             <div class="map-body-wrapper">
               <div class="filter">
-                <div class="shadow-sm bg-white">
-                  <div class="close-filter">
-                    Affiner la recherche <i class="icofont-close"></i>
-                  </div>
-                  <form action="{{ route('search.ann') }}" method="GET">
-                    
-                  
-                  <div class="filter-inputs">
-                    <div class="filter-input">
-                      <div class="filter-point">
-                        <span>a</span>
-                        <input
-                          placeholder="Ville, Code postal, Région, Pays"
-                          type="text"
-                          class="form-control"
-                          name="from"
-                        />
-                      </div>
-                    </div>
-                    <div class="filter-input">
-                      <div class="filter-point">
-                        <span>b</span>
-                        <input
-                          placeholder="Ville, Code postal, Région, Pays"
-                          type="text"
-                          class="form-control"
-                          name="to"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                  {{-- <div class="p-3">
-                     <input type="date" class="form-control" name="delivery_date"/>
-                  </div> --}}
-                  <div class="text-center py-3 border-top">
-                    <button type="submit" class="btn text-white bg-navy-blue">Filter</button>
-                  </form>
-                  </div>
                   <div
                   class="
                     filter-icon
                     float-left
-                    text-white
                     btn
                     bg-navy-blue
                     d-block d-xl-none
@@ -147,6 +145,7 @@
                 >
                   <i class="icofont-settings mr-2"></i> Filter
                 </div>
+                <h5 style="margin-left: 20px;">Filtres</h5>
                   <div class="filter-checks">
                     <div class="form-check">
                       <input
@@ -267,7 +266,44 @@
                     </div>
                    
                   </div>
-                 
+                  <div class="shadow-sm bg-white">
+                    <div class="close-filter">
+                      Affiner la recherche <i class="icofont-close"></i>
+                    </div>
+                    <form action="{{ route('search.ann') }}" method="GET">
+                      
+                    
+                    <div class="filter-inputs">
+                      <div class="filter-input">
+                        <div class="filter-point">
+                          <span style="background: #5fc2ba !important;">d</span>
+                          <input
+                            placeholder="Ville, Code postal, Région, Pays"
+                            type="text"
+                            class="form-control"
+                            name="from"
+                          />
+                        </div>
+                      </div>
+                      <div class="filter-input">
+                        <div class="filter-point">
+                          <span>a</span>
+                          <input
+                            placeholder="Ville, Code postal, Région, Pays"
+                            type="text"
+                            class="form-control"
+                            name="to"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                    {{-- <div class="p-3">
+                       <input type="date" class="form-control" name="delivery_date"/>
+                    </div> --}}
+                    <div class="text-center py-3 border-top">
+                      <button type="submit" class="btn text-white bg-navy-blue">Filter</button>
+                    </form>
+                    </div>
                 </div>
               </div>
               <div class="map-listing">
