@@ -28,7 +28,7 @@
           <div class="container">
             <div class="map-view-wrapper">
               <div class="row">
-                <div class="col-lg-7 col-xl-8">
+                <div class="col-lg-12 col-xl-12">
                   <div class="left">
                     <div
                       class="
@@ -362,7 +362,7 @@
                     @endif
                   </div>
                 </div>
-                <div class="col-lg-5 col-xl-4">
+                 <div class="col-lg-12 col-xl-12">
                   <div class="right shadow-sm">
                     <div class="right-tab">
                       <span class="active" data-target="devis">Devis ({{ totalbid($data->id)->count() }})</span>
@@ -376,14 +376,68 @@
                    @guest
                    <div class="right-card">
                     <div>
-                      <h5>Pas encore inscrit ?</h5>
-                      <p>L'inscription est rapide et gratuite</p>
+                      <p>Vous êtes une société de déménagement-transport, inscrivez-vous pour déposer des devis. C'est simple rapide et gratuit.</p>
                     </div>
-                    <div>
+                    {{-- <div>
                       <a href="{{ route('frontend.moverReg') }}" class="btn bg-navy-blue text-white">
                         S'inscrire
                       </a>
-                    </div>
+                    </div> --}}
+                    @foreach(totalbid($data->id) as $key => $bid)
+                    <div class="bid-response">
+                      <div class="rating">
+                        <i class="icofont-car-alt-3"></i>
+                        <div>
+                          <span>{{ $bid->getmover->username }}</span>
+                          <div class="star">
+                            <i class="icofont-star"></i>
+                            <i class="icofont-star"></i>
+                            <i class="icofont-star"></i>
+                            <i class="icofont-star"></i>
+                            <i class="icofont-star"></i>
+                          </div>
+                        </div>
+                      </div>
+                      <div>
+                        <h5>
+                          <strong>{{ $bid->price }} €</strong> <br /><small
+                            ><a style="cursor: pointer" data-toggle="modal" data-target="#DetailModal{{ $bid->id }}">Voir détails</a></small
+                          >
+                        </h5>
+                      </div>
+                      <div>
+                        @auth
+                        @if($data->user_id == Auth::id())
+                        @if($bid->status == 'pending')
+                        <a href="{{ route('bid.accept', $bid->id) }}"><span class="text-success">Accept</span></a>
+                        @elseif($bid->status == 'rejected')
+                        <a href="javascript:void(0);"><span class="text-danger">Rejected</span></a>
+                        @else 
+                        <a href="javascript:void(0);"><span class="text-success">Accepted</span></a>
+                        @endif
+                        @endif
+                        @endauth
+                      </div>
+                              <!-- Modal HTML Markup -->
+              <div id="DetailModal{{ $bid->id }}" class="modal fade">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title text-xs-center">Bid Now</h4>
+                        </div>
+                        <div class="modal-body">
+                            <p>
+                              Price : € {{ $bid->price }}
+                            </p>
+                            <p>
+                               Notes from mover : {{ $bid->notes }}
+                            </p>
+                        </div>
+                    </div><!-- /.modal-content -->
+                </div><!-- /.modal-dialog -->
+              </div><!-- /.modal -->
+            </div>
+            @endforeach
                   </div>
                    
                       @endguest
@@ -448,9 +502,9 @@
                     <div class="right-tab-body" id="message">
                       @guest
                       <p class="text-center">
-                        Se connecter pour voir les messages.
+                        Vous êtes une société de déménagement-transport, inscrivez-vous pour déposer des devis. C'est simple rapide et gratuit.
                       </p>
-                      <div class="right-card">
+                      {{-- <div class="right-card">
                         <div>
                           <h5>Pas encore inscrit ?</h5>
                           <p>L'inscription est rapide et gratuite</p>
@@ -460,8 +514,11 @@
                             S'inscrire
                           </button>
                         </div>
-                      </div>
-                      <div class="right-card">
+                      </div> --}}
+                      <div id="msg" class="message-wrapper">
+                        @include('comments')
+                       </div>
+                      {{-- <div class="right-card">
                         <div>
                           <h5>Pas encore inscrit ?</h5>
                           <p>L'inscription est rapide et gratuite</p>
@@ -471,7 +528,7 @@
                             S'inscrire
                           </button>
                         </div>
-                      </div>
+                      </div> --}}
                       @endguest
                       @auth 
                       <div id="msg" class="message-wrapper">
@@ -502,7 +559,7 @@
                       @endauth
                     </div>
                   </div>
-                </div>
+                </div> 
               </div>
             </div>
           </div>
