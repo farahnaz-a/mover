@@ -30,18 +30,18 @@
                     <h4>BOURSE DE FRET GRATUITE</h4>
                     <button class="btn btn-lg btn-dark">je m'inscris</button>
                   </div>
-                </div>  --}}
+                </div>  --}} 
                 <div class="col-md-12">
                   <div class="right">
                     <ul style="background: none !important">
-                      <li><i class="icofont-check"></i>Déposez gratuitement votre demande et sans engagement</li>
-                      <li><i class="icofont-check"></i>Recevez et comparez les offres en toute transparence</li>
-                      <li><i class="icofont-check"></i>Validez votre devis et économisez de l’argent</li>
+                      <li><i class="icofont-tick-mark"></i>Déposez gratuitement votre demande et sans engagement</li>
+                      <li><i class="icofont-tick-mark"></i>Recevez et comparez les offres en toute transparence</li>
+                      <li><i class="icofont-tick-mark"></i>Validez votre devis et économisez de l’argent</li>
                       <li>
-                        <i class="icofont-check"></i>Déménagez en toute sérénité avec des déménageurs agrées
+                        <i class="icofont-tick-mark"></i>Déménagez en toute sérénité avec des déménageurs agrées
                       </li>
                       <li>
-                        <i class="icofont-check"></i>Profitez d’un large réseau de déménageur européen
+                        <i class="icofont-tick-mark"></i>Profitez d’un large réseau de déménageur européen
                       </li>
                     </ul>
                     <button class="btn btn-theme bg-white bordered" style="margin-left: 20px;">DEMANDEZ VOTRE DEVIS</button>
@@ -145,7 +145,7 @@
                 >
                   <i class="icofont-settings mr-2"></i> Filter
                 </div>
-                <h5 style="margin-left: 20px;">Filtres</h5>
+                <h5 style="margin-left: 20px;">CATÉGORIE</h5>
                   <div class="filter-checks">
                     <div class="form-check">
                       <input
@@ -205,7 +205,7 @@
                     <div class="form-check">
                       <input class="form-check-input" type="checkbox" id="Bien" onclick='window.location.assign("/announce/household")'/>
                       <label class="form-check-label" for="Bien">
-                        <i class="icofont-vehicle-delivery-van"></i>House Hold
+                        <i class="icofont-vehicle-delivery-van"></i>DÉMÉNAGEMENT
                       </label>
                     </div>
                     <div class="form-check">
@@ -227,7 +227,7 @@
                         onclick='window.location.assign("/announce/motorcyclesport")'
                       />
                       <label class="form-check-label" for="Biens">
-                        <i class="icofont-vehicle-delivery-van"></i>Motorcycle and Sports
+                        <i class="icofont-vehicle-delivery-van"></i>MOTOS
                       </label>
                     </div>
                     <div class="form-check">
@@ -238,7 +238,7 @@
                         onclick='window.location.assign("/announce/package")'
                       />
                       <label class="form-check-label" for="Package">
-                        <i class="icofont-vehicle-delivery-van"></i>Package
+                        <i class="icofont-vehicle-delivery-van"></i>COLIS
                       </label>
                     </div>
                     <div class="form-check">
@@ -249,7 +249,7 @@
                         onclick='window.location.assign("/announce/pallet")'
                       />
                       <label class="form-check-label" for="Pallet">
-                        <i class="icofont-vehicle-delivery-van"></i>Pallet
+                        <i class="icofont-vehicle-delivery-van"></i>PALETTE
                       </label>
                     </div>
                     <div class="form-check">
@@ -261,7 +261,7 @@
                       />
                       <label class="form-check-label" for="Agroalimentaire">
                         <i class="icofont-vehicle-delivery-van"></i
-                        >Vehicles
+                        >VOITURES
                       </label>
                     </div>
                    
@@ -301,7 +301,7 @@
                        <input type="date" class="form-control" name="delivery_date"/>
                     </div> --}}
                     <div class="text-center py-3 border-top">
-                      <button type="submit" class="btn text-white bg-navy-blue">Filter</button>
+                      <button type="submit" class="btn text-white bg-navy-blue">VALIDER</button>
                     </form>
                     </div>
                 </div>

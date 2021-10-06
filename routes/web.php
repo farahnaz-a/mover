@@ -151,7 +151,7 @@ Route::group(['prefix' => 'user'], function () {
     // UserController 
     Route::get('/dashboard', [UserController::class, 'index'])->name('user.dashboard'); 
 });
-
+ 
 // FrontendController 
 Route::get('/', [FrontendController::class, 'index'])->name('frontend.index');
 Route::get('/demande/de/devis', [FrontendController::class, 'requestQuote'])->name('frontend.requestQuote');

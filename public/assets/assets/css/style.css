@@ -1243,6 +1243,8 @@ h2.h2-xl {
   padding: 2rem 1.25rem;
   position: relative;
   cursor: pointer;
+  display: flex !important;
+  align-items: center !important;
 
   -webkit-transition: all 0.15s linear;
   -moz-transition: all 0.15s linear;
