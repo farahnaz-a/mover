@@ -152,8 +152,7 @@
                         class="form-check-input"
                         type="checkbox"
                         id="maison"
-                        onclick='window.location.assign("/announce/agrifood")'
-                      />
+                        onclick='window.location.assign("/announce/agrifood")'/>
                       <label class="form-check-label" for="maison">
                         <i class="icofont-vehicle-delivery-van"></i>Agri Food
                       </label>
@@ -205,7 +204,7 @@
                     <div class="form-check">
                       <input class="form-check-input" type="checkbox" id="Bien" onclick='window.location.assign("/announce/household")'/>
                       <label class="form-check-label" for="Bien">
-                        <i class="icofont-vehicle-delivery-van"></i>DÉMÉNAGEMENT
+                        <i class="icofont-building-alt"></i>DÉMÉNAGEMENT
                       </label>
                     </div>
                     <div class="form-check">
@@ -227,7 +226,7 @@
                         onclick='window.location.assign("/announce/motorcyclesport")'
                       />
                       <label class="form-check-label" for="Biens">
-                        <i class="icofont-vehicle-delivery-van"></i>MOTOS
+                        <i class="icofont-motor-biker"></i>MOTOS
                       </label>
                     </div>
                     <div class="form-check">
@@ -238,7 +237,7 @@
                         onclick='window.location.assign("/announce/package")'
                       />
                       <label class="form-check-label" for="Package">
-                        <i class="icofont-vehicle-delivery-van"></i>COLIS
+                        <i class="icofont-box"></i>COLIS
                       </label>
                     </div>
                     <div class="form-check">
@@ -249,7 +248,7 @@
                         onclick='window.location.assign("/announce/pallet")'
                       />
                       <label class="form-check-label" for="Pallet">
-                        <i class="icofont-vehicle-delivery-van"></i>PALETTE
+                        <i class="icofont-truck-alt"></i>PALETTE
                       </label>
                     </div>
                     <div class="form-check">
@@ -260,8 +259,7 @@
                         onclick='window.location.assign("/announce/vehicle")'
                       />
                       <label class="form-check-label" for="Agroalimentaire">
-                        <i class="icofont-vehicle-delivery-van"></i
-                        >VOITURES
+                        <i class="icofont-car-alt-3"></i>VOITURES
                       </label>
                     </div>
                    
