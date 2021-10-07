@@ -20,7 +20,7 @@
     <!-- Main Body Content Start -->
     <main id="body-content" style="overflow-y: inherit">
         <!-- map banner start -->
-        <section class="map">
+        <section class="map" style="background-image: url({{ asset('ban.png') }})">
           <div class="container">
             <div class="map-wrapper">
               <div class="row">
