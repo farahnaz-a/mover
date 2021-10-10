@@ -305,14 +305,14 @@
                                 {{-- <sup>3</sup> --}}
                               </a>
                             </h5>
-                            <p><i style="color: #5fc2ba !important;" class="icofont-star"></i>Prioritaire</p>
-                            <span class="bg-light d-inline-block">AN: {{ ucfirst($item->articleName) }}</span>
+                            {{-- <p><i style="color: #5fc2ba !important;" class="icofont-star"></i>Prioritaire</p> --}}
+                            <span class="bg-light d-inline-block">{{ ucfirst($item->articleName) }}</span>
                             {{-- <span class="bg-light d-inline-block"> L: {{ $item->length }}, W: {{ $item->width }}, H: {{ $item->height }}, Wt: {{ $item->weight }} </span> --}}
                           </div>
                           @elseif($item->category == 'vehicle')
                           <div class="nom">
                             <h5>
-                              <a href="{{ route('announcement.details', $item->id) }}"><i class="icofont-home"></i>{{ ucfirst($item->model_name) }} 
+                              <a href="{{ route('announcement.details', $item->id) }}"><i style="color: #5fc2ba !important" class="icofont-home"></i>{{ ucfirst($item->model_name) }} 
                                 {{-- <sup>3</sup> --}}
                               </a>
                             </h5>
@@ -327,7 +327,7 @@
                           @elseif($item->category == 'motorcyclesport')
                           <div class="nom">
                             <h5>
-                              <a href="{{ route('announcement.details', $item->id) }}"><i class="icofont-home"></i>{{ ucfirst($item->model_name) }} 
+                              <a href="{{ route('announcement.details', $item->id) }}"><i style="color: #5fc2ba !important" class="icofont-home"></i>{{ ucfirst($item->model_name) }} 
                                 {{-- <sup>3</sup> --}}
                               </a>
                             </h5>
@@ -342,7 +342,7 @@
                           @elseif($item->category == 'boatvolimunoussport')
                           <div class="nom">
                             <h5>
-                              <a href="{{ route('announcement.details', $item->id) }}"><i class="icofont-home"></i>{{ ucfirst($item->model_name) }} 
+                              <a href="{{ route('announcement.details', $item->id) }}"><i  style="color: #5fc2ba !important"class="icofont-home"></i>{{ ucfirst($item->model_name) }} 
                                 {{-- <sup>3</sup> --}}
                               </a>
                             </h5>
@@ -355,7 +355,7 @@
                           @elseif($item->category == 'fragilegoods')
                           <div class="nom">
                             <h5>
-                              <a href="{{ route('announcement.details', $item->id) }}"><i class="icofont-home"></i>{{ ucfirst($item->model_name) }} 
+                              <a href="{{ route('announcement.details', $item->id) }}"><i style="color: #5fc2ba !important" class="icofont-home"></i>{{ ucfirst($item->model_name) }} 
                                 {{-- <sup>3</sup> --}}
                               </a>
                             </h5>
@@ -366,7 +366,7 @@
                           @elseif($item->category == 'package')
                           <div class="nom">
                             <h5>
-                              <a href="{{ route('announcement.details', $item->id) }}"><i class="icofont-home"></i>{{ ucfirst($item->model_name) }} 
+                              <a href="{{ route('announcement.details', $item->id) }}"><i style="color: #5fc2ba !important" class="icofont-home"></i>{{ ucfirst($item->model_name) }} 
                                 {{-- <sup>3</sup> --}}
                               </a>
                             </h5>
@@ -377,7 +377,7 @@
                           @elseif($item->category == 'pallet')
                           <div class="nom">
                             <h5>
-                              <a href="{{ route('announcement.details', $item->id) }}"><i class="icofont-home"></i>{{ ucfirst($item->model_name) }} 
+                              <a href="{{ route('announcement.details', $item->id) }}"><i style="color: #5fc2ba !important" class="icofont-home"></i>{{ ucfirst($item->model_name) }} 
                                 {{-- <sup>3</sup> --}}
                               </a>
                             </h5>
@@ -388,7 +388,7 @@
                           @elseif($item->category == 'animal')
                           <div class="nom">
                             <h5>
-                              <a href="{{ route('announcement.details', $item->id) }}"><i class="icofont-home"></i>{{ ucfirst($item->model_name) }} 
+                              <a href="{{ route('announcement.details', $item->id) }}"><i style="color: #5fc2ba !important" class="icofont-home"></i>{{ ucfirst($item->model_name) }} 
                                 {{-- <sup>3</sup> --}}
                               </a>
                             </h5>
@@ -402,7 +402,7 @@
                           @elseif($item->category == 'agrifood')
                           <div class="nom">
                             <h5>
-                              <a href="{{ route('announcement.details', $item->id) }}"><i class="icofont-home"></i>{{ ucfirst($item->food_name) }} 
+                              <a href="{{ route('announcement.details', $item->id) }}"><i style="color: #5fc2ba !important" class="icofont-home"></i>{{ ucfirst($item->food_name) }} 
                                 {{-- <sup>3</sup> --}}
                                 </a>
                             </h5>
@@ -414,7 +414,7 @@
                           @elseif($item->category == 'commercialgoods')
                           <div class="nom">
                             <h5>
-                              <a href{{ route('announcement.details', $item->id) }}"><i class="icofont-home"></i>{{ ucfirst($item->model_name) }} 
+                              <a href{{ route('announcement.details', $item->id) }}"><i style="color: #5fc2ba !important" class="icofont-home"></i>{{ ucfirst($item->model_name) }} 
                                 {{-- <sup>3</sup> --}}
                               </a>
                             </h5>
@@ -425,7 +425,7 @@
                           @elseif($item->category == 'miscellaneous')
                           <div class="nom">
                             <h5>
-                              <a href{{ route('announcement.details', $item->id) }}"><i class="icofont-home"></i>{{ ucfirst($item->others) }} 
+                              <a href{{ route('announcement.details', $item->id) }}"><i style="color: #5fc2ba !important" class="icofont-home"></i>{{ ucfirst($item->others) }} 
                                 {{-- <sup>3</sup> --}}
                               </a>
                             </h5>
