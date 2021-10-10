@@ -44,7 +44,7 @@
                         <i class="icofont-tick-mark"></i>Profitez d’un large réseau de déménageur européen
                       </li>
                     </ul>
-                    <button class="btn btn-theme bg-white bordered" style="margin-left: 20px;">DEMANDEZ VOTRE DEVIS</button>
+                    <button class="btn-theme bg-navy-blue" style="margin-left: 20px; background: #5fc2ba ">DEMANDEZ VOTRE DEVIS</button>
                   </div>
                 </div>
               </div>
@@ -103,8 +103,7 @@
                 0.1s 
                 @else 
                 0.{{ $key * 2 }}s
-                @endif
-               ">            
+                @endif">            
                 <!-- Icon Box 2 -->
                 <a href="javascript:void();">
                   <div class="icon-box-4 h-100">
@@ -135,133 +134,93 @@
             <div class="map-body-wrapper">
               <div class="filter">
                   <div
-                  class="
-                    filter-icon
-                    float-left
-                    btn
-                    bg-navy-blue
-                    d-block d-xl-none
-                  "
-                >
+                  class="filter-icon float-left btn bg-navy-blue d-block d-xl-none">
                   <i class="icofont-settings mr-2"></i> Filter
                 </div>
                 <h5 style="margin-left: 20px;">CATÉGORIE</h5>
                   <div class="filter-checks">
-                    <div class="form-check">
-                      <input
-                        class="form-check-input"
-                        type="checkbox"
-                        id="maison"
-                        onclick='window.location.assign("/announce/agrifood")'/>
-                      <label class="form-check-label" for="maison">
-                        <i class="icofont-vehicle-delivery-van"></i>Agri Food
-                      </label>
-                    </div>
-                    <div class="form-check">
-                      <input
-                        class="form-check-input"
-                        type="checkbox"
-                        id="Déménagements"
-                      />
-                      <label class="form-check-label" for="Déménagements">
-                        <i class="icofont-vehicle-delivery-van"></i>Animals
-                      </label>
-                    </div>
-                    <div class="form-check">
-                      <input
-                        class="form-check-input"
-                        type="checkbox"
-                        id="Véhicule"
-                        onclick='window.location.assign("/announce/animals")'
-                      />
-                      <label class="form-check-label" for="Véhicule">
-                        <i class="icofont-vehicle-delivery-van"></i>Commercial Goods
-                      </label>
-                    </div>
-                    <div class="form-check">
-                      <input
-                        class="form-check-input"
-                        type="checkbox"
-                        id="Bateaux"
-                        onclick='window.location.assign("/announce/boatvolimunoussport")'
-                      />
-                      <label class="form-check-label" for="Bateaux">
-                        <i class="icofont-vehicle-delivery-van"></i>Bateaux &
-                        volumineux
-                      </label>
-                    </div>
-                    <div class="form-check">
-                      <input
-                        class="form-check-input"
-                        type="checkbox"
-                        id="Divers"
-                        onclick='window.location.assign("/announce/fragilegoods")'
-                      />
-                      <label class="form-check-label" for="Divers">
-                        <i class="icofont-vehicle-delivery-van"></i>Fragile Goods
-                      </label>
-                    </div>
+
                     <div class="form-check">
                       <input class="form-check-input" type="checkbox" id="Bien" onclick='window.location.assign("/announce/household")'/>
                       <label class="form-check-label" for="Bien">
                         <i class="icofont-building-alt"></i>DÉMÉNAGEMENT
                       </label>
                     </div>
+
                     <div class="form-check">
-                      <input
-                        class="form-check-input"
-                        type="checkbox"
-                        id="Animaux"
-                        onclick='window.location.assign("/announce/miscellaneous")'
-                      />
-                      <label class="form-check-label" for="Animaux">
-                        <i class="icofont-vehicle-delivery-van"></i>Miscellaneous
+                      <input class="form-check-input" type="checkbox" id="Bien" onclick='window.location.assign("/announce/household")'/>
+                      <label class="form-check-label" for="Bien">
+                        <i class="icofont-truck-loaded"></i>LOCATION CAMION AVEC CHAUFFEUR
                       </label>
                     </div>
+
                     <div class="form-check">
-                      <input
-                        class="form-check-input"
-                        type="checkbox"
-                        id="Biens"
-                        onclick='window.location.assign("/announce/motorcyclesport")'
-                      />
-                      <label class="form-check-label" for="Biens">
-                        <i class="icofont-motor-biker"></i>MOTOS
+                      <input class="form-check-input" type="checkbox" id="Bien" onclick='window.location.assign("/announce/household")'/>
+                      <label class="form-check-label" for="Bien">
+                        <i class="icofont-bed"></i>MEUBLES
                       </label>
                     </div>
+
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" id="Bien" onclick='window.location.assign("/announce/household")'/>
+                      <label class="form-check-label" for="Bien">
+                        <i class="icofont-refrigerator"></i>ÉLECTROMÉNAGER
+                      </label>
+                    </div>
+                   
                     <div class="form-check">
                       <input
                         class="form-check-input"
                         type="checkbox"
                         id="Package"
-                        onclick='window.location.assign("/announce/package")'
-                      />
+                        onclick='window.location.assign("/announce/package")'/>
                       <label class="form-check-label" for="Package">
                         <i class="icofont-box"></i>COLIS
                       </label>
                     </div>
+
                     <div class="form-check">
                       <input
                         class="form-check-input"
                         type="checkbox"
                         id="Pallet"
-                        onclick='window.location.assign("/announce/pallet")'
-                      />
+                        onclick='window.location.assign("/announce/pallet")'/>
                       <label class="form-check-label" for="Pallet">
                         <i class="icofont-truck-alt"></i>PALETTE
                       </label>
                     </div>
+
+                    <div class="form-check">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        id="Biens"
+                        onclick='window.location.assign("/announce/motorcyclesport")'/>
+                      <label class="form-check-label" for="Biens">
+                        <i class="icofont-motor-biker"></i>MOTOS
+                      </label>
+                    </div>
+
                     <div class="form-check">
                       <input
                         class="form-check-input"
                         type="checkbox"
                         id="Agroalimentaire"
-                        onclick='window.location.assign("/announce/vehicle")'
-                      />
+                        onclick='window.location.assign("/announce/vehicle")'/>
                       <label class="form-check-label" for="Agroalimentaire">
                         <i class="icofont-car-alt-3"></i>VOITURES
                       </label>
                     </div>
+
+
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" id="Bien" onclick='window.location.assign("/announce/household")'/>
+                      <label class="form-check-label" for="Bien">
+                        <i class="icofont-search-2"></i>DIVERS
+                      </label>
+                    </div>
+
+                    
                    
                   </div>
                   <div class="shadow-sm bg-white">
