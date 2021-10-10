@@ -34,14 +34,17 @@
                 <div class="col-md-12">
                   <div class="right">
                     <ul style="background: none !important">
-                      <li><i class="icofont-tick-mark"></i>Déposez gratuitement votre demande et sans engagement</li>
-                      <li><i class="icofont-tick-mark"></i>Recevez et comparez les offres en toute transparence</li>
-                      <li><i class="icofont-tick-mark"></i>Validez votre devis et économisez de l’argent</li>
-                      <li>
-                        <i class="icofont-tick-mark"></i>Déménagez en toute sérénité avec des déménageurs agrées
+                      <li style="color: #06163a !important;">
+                      <i style="color: #5fc2ba !important;" class="icofont-tick-mark"></i>
+                      Déposez gratuitement votre demande et sans engagement
+                     </li>
+                      <li style="color: #06163a !important;"><i style="color: #5fc2ba !important;"class="icofont-tick-mark"></i>Recevez et comparez les offres en toute transparence</li>
+                      <li style="color: #06163a !important;"><i class="icofont-tick-mark"></i>Validez votre devis et économisez de l’argent</li>
+                      <li style="color: #06163a !important;">
+                        <i style="color: #5fc2ba !important;" class="icofont-tick-mark"></i>Déménagez en toute sérénité avec des déménageurs agrées
                       </li>
-                      <li>
-                        <i class="icofont-tick-mark"></i>Profitez d’un large réseau de déménageur européen
+                      <li style="color: #06163a !important;">
+                        <i style="color: #5fc2ba !important;"class="icofont-tick-mark"></i>Profitez d’un large réseau de déménageur européen
                       </li>
                     </ul>
                     <button class="btn-theme bg-navy-blue" style="margin-left: 20px; background: #5fc2ba ">DEMANDEZ VOTRE DEVIS</button>
@@ -298,13 +301,13 @@
                           @if($item->category == 'household')
                           <div class="nom">
                             <h5>
-                              <a href="{{ route('announcement.details', $item->id) }}"><i class="icofont-home"></i>{{ ucfirst($item->equipment) }} 
+                              <a href="{{ route('announcement.details', $item->id) }}"><i style="color: #5fc2ba !important" class="icofont-home"></i>{{ ucfirst($item->equipment) }} 
                                 {{-- <sup>3</sup> --}}
                               </a>
                             </h5>
-                            <p><i class="icofont-star"></i>Prioritaire</p>
+                            <p><i style="color: #5fc2ba !important;" class="icofont-star"></i>Prioritaire</p>
                             <span class="bg-light d-inline-block">AN: {{ ucfirst($item->articleName) }}</span>
-                            <span class="bg-light d-inline-block"> L: {{ $item->length }}, W: {{ $item->width }}, H: {{ $item->height }}, Wt: {{ $item->weight }} </span>
+                            {{-- <span class="bg-light d-inline-block"> L: {{ $item->length }}, W: {{ $item->width }}, H: {{ $item->height }}, Wt: {{ $item->weight }} </span> --}}
                           </div>
                           @elseif($item->category == 'vehicle')
                           <div class="nom">
@@ -313,13 +316,13 @@
                                 {{-- <sup>3</sup> --}}
                               </a>
                             </h5>
-                            <p><i class="icofont-star"></i>Prioritaire</p>
+                            {{-- <p><i class="icofont-star"></i>Prioritaire</p>
                             <span class="bg-light d-inline-block">VN: {{ ucfirst($item->vehicleName) }}</span>
                             <span class="bg-light d-inline-block">Mk: {{ ucfirst($item->make) }}</span>
                             <span class="bg-light d-inline-block">Md: {{ ucfirst($item->model) }}</span>
                             <span class="bg-light d-inline-block">EV: {{ ucfirst($item->estimationValue) }}</span>
                             <span class="bg-light d-inline-block">MV: {{ ucfirst($item->movingVehicle) }}</span>
-                            <span class="bg-light d-inline-block">C: {{ ucfirst($item->conveyors) }}</span>
+                            <span class="bg-light d-inline-block">C: {{ ucfirst($item->conveyors) }}</span> --}}
                           </div>
                           @elseif($item->category == 'motorcyclesport')
                           <div class="nom">
@@ -328,13 +331,13 @@
                                 {{-- <sup>3</sup> --}}
                               </a>
                             </h5>
-                            <p><i class="icofont-star"></i>Prioritaire</p>
+                            {{-- <p><i class="icofont-star"></i>Prioritaire</p>
                             <span class="bg-light d-inline-block">VN: {{ ucfirst($item->vehicleName) }}</span>
                             <span class="bg-light d-inline-block">Mk: {{ ucfirst($item->make) }}</span>
                             <span class="bg-light d-inline-block">Md: {{ ucfirst($item->model) }}</span>
                             <span class="bg-light d-inline-block">EV: {{ ucfirst($item->estimationValue) }}</span>
                             <span class="bg-light d-inline-block">MV: {{ ucfirst($item->movingVehicle) }}</span>
-                            <span class="bg-light d-inline-block">C: {{ ucfirst($item->conveyors) }}</span>
+                            <span class="bg-light d-inline-block">C: {{ ucfirst($item->conveyors) }}</span> --}}
                           </div>
                           @elseif($item->category == 'boatvolimunoussport')
                           <div class="nom">
@@ -343,11 +346,11 @@
                                 {{-- <sup>3</sup> --}}
                               </a>
                             </h5>
-                            <p><i class="icofont-star"></i>Prioritaire</p>
+                            {{-- <p><i class="icofont-star"></i>Prioritaire</p>
                             <span class="bg-light d-inline-block">BN: {{ ucfirst($item->boatName) }}</span>
                             <span class="bg-light d-inline-block">Mk: {{ ucfirst($item->make) }}</span>
                             <span class="bg-light d-inline-block">Md: {{ ucfirst($item->model) }}</span>
-                            <span class="bg-light d-inline-block">L: {{ $item->length }},  W: {{ $item->width }},  H: {{ $item->height }}, Qt: {{ $item->quantity }} </span>
+                            <span class="bg-light d-inline-block">L: {{ $item->length }},  W: {{ $item->width }},  H: {{ $item->height }}, Qt: {{ $item->quantity }} </span> --}}
                           </div>
                           @elseif($item->category == 'fragilegoods')
                           <div class="nom">
@@ -356,9 +359,9 @@
                                 {{-- <sup>3</sup> --}}
                               </a>
                             </h5>
-                            <p><i class="icofont-star"></i>Prioritaire</p>
+                            {{-- <p><i class="icofont-star"></i>Prioritaire</p>
                             <span class="bg-light d-inline-block">AN: {{ ucfirst($item->articleName) }}</span>
-                            <span class="bg-light d-inline-block">L: {{ $item->length }},  W: {{ $item->width }},  H: {{ $item->height }}, Wt: {{ $item->weight }}, Qt: {{ $item->quantity }} </span>
+                            <span class="bg-light d-inline-block">L: {{ $item->length }},  W: {{ $item->width }},  H: {{ $item->height }}, Wt: {{ $item->weight }}, Qt: {{ $item->quantity }} </span> --}}
                           </div>
                           @elseif($item->category == 'package')
                           <div class="nom">
@@ -367,9 +370,9 @@
                                 {{-- <sup>3</sup> --}}
                               </a>
                             </h5>
-                            <p><i class="icofont-star"></i>Prioritaire</p>
+                            {{-- <p><i class="icofont-star"></i>Prioritaire</p>
                             <span class="bg-light d-inline-block">AN: {{ ucfirst($item->articleName) }}</span>
-                            <span class="bg-light d-inline-block">L: {{ $item->length }},  W: {{ $item->width }},  H: {{ $item->height }}, Wt: {{ $item->weight }}, Qt: {{ $item->quantity }} </span>
+                            <span class="bg-light d-inline-block">L: {{ $item->length }},  W: {{ $item->width }},  H: {{ $item->height }}, Wt: {{ $item->weight }}, Qt: {{ $item->quantity }} </span> --}}
                           </div>
                           @elseif($item->category == 'pallet')
                           <div class="nom">
@@ -378,9 +381,9 @@
                                 {{-- <sup>3</sup> --}}
                               </a>
                             </h5>
-                            <p><i class="icofont-star"></i>Prioritaire</p>
+                            {{-- <p><i class="icofont-star"></i>Prioritaire</p>
                             <span class="bg-light d-inline-block">AN: {{ ucfirst($item->articleName) }}</span>
-                            <span class="bg-light d-inline-block">D: {{ $item->dim }}, H: {{ $item->height }}, Wt: {{ $item->weight }}, Qt: {{ $item->quantity }} </span>
+                            <span class="bg-light d-inline-block">D: {{ $item->dim }}, H: {{ $item->height }}, Wt: {{ $item->weight }}, Qt: {{ $item->quantity }} </span> --}}
                           </div>
                           @elseif($item->category == 'animal')
                           <div class="nom">
@@ -389,12 +392,12 @@
                                 {{-- <sup>3</sup> --}}
                               </a>
                             </h5>
-                            <p><i class="icofont-star"></i>Prioritaire</p>
+                            {{-- <p><i class="icofont-star"></i>Prioritaire</p>
                             <span class="bg-light d-inline-block">AN: {{ ucfirst($item->animalName) }}</span>
                             <span class="bg-light d-inline-block">AB: {{ ucfirst($item->animalBreed) }}</span>
                             <span class="bg-light d-inline-block">SN: {{ ucfirst($item->specialNeeds) }}</span>
                             <span class="bg-light d-inline-block">V: {{ ucfirst($item->vaccinations) }}</span>
-                            <span class="bg-light d-inline-block">Wt: {{ $item->weight }}, Wd: {{ $item->width }}, H: {{ $item->height }}, L: {{ $item->length }} </span>
+                            <span class="bg-light d-inline-block">Wt: {{ $item->weight }}, Wd: {{ $item->width }}, H: {{ $item->height }}, L: {{ $item->length }} </span> --}}
                           </div>
                           @elseif($item->category == 'agrifood')
                           <div class="nom">
@@ -415,9 +418,9 @@
                                 {{-- <sup>3</sup> --}}
                               </a>
                             </h5>
-                            <p><i class="icofont-star"></i>Prioritaire</p>
+                            {{-- <p><i class="icofont-star"></i>Prioritaire</p>
                             <span class="bg-light d-inline-block">AN: {{ ucfirst($item->articleName) }}</span>
-                            <span class="bg-light d-inline-block">L: {{ $item->length }},  W: {{ $item->width }},  H: {{ $item->height }}, Wt: {{ $item->weight }}, Qt: {{ $item->quantity }} </span>
+                            <span class="bg-light d-inline-block">L: {{ $item->length }},  W: {{ $item->width }},  H: {{ $item->height }}, Wt: {{ $item->weight }}, Qt: {{ $item->quantity }} </span> --}}
                           </div>
                           @elseif($item->category == 'miscellaneous')
                           <div class="nom">
@@ -426,9 +429,9 @@
                                 {{-- <sup>3</sup> --}}
                               </a>
                             </h5>
-                            <p><i class="icofont-star"></i>Prioritaire</p>
+                            {{-- <p><i class="icofont-star"></i>Prioritaire</p>
                             <span class="bg-light d-inline-block">AN: {{ ucfirst($item->articleName) }}</span>
-                            <span class="bg-light d-inline-block">L: {{ $item->length }},  W: {{ $item->width }},  H: {{ $item->height }}, Wt: {{ $item->weight }}, Qt: {{ $item->quantity }} </span>
+                            <span class="bg-light d-inline-block">L: {{ $item->length }},  W: {{ $item->width }},  H: {{ $item->height }}, Wt: {{ $item->weight }}, Qt: {{ $item->quantity }} </span> --}}
                           </div>
                           @endif
                           <div class="activity text-nowrap">
