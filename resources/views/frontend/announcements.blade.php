@@ -288,7 +288,7 @@
                   @foreach ($announcements as $item)
                   <li class="shadow-sm">
                     <div class="row">
-                      <div class="col-lg-6">
+                      <div class="col-lg-5">
                         <div class="map-item-left">
                           <div class="publication">
                             <div class="float-right icon">
@@ -434,13 +434,9 @@
                             <span class="bg-light d-inline-block">L: {{ $item->length }},  W: {{ $item->width }},  H: {{ $item->height }}, Wt: {{ $item->weight }}, Qt: {{ $item->quantity }} </span> --}}
                           </div>
                           @endif
-                          <div class="activity text-nowrap">
-                            <p>{{ totalbid($item->id)->count() }} ({{ totalbid($item->id)->count() }} en cours)</p>
-                            <p>0 message</p>
-                          </div>
                         </div>
                       </div>
-                      <div class="col-lg-6">
+                      <div class="col-lg-7">
                         <div class="map-item-right">
                           <div class="chargement">
                             <p><span>a</span>{{ ucfirst($item->loading_address) }}</p>
@@ -450,11 +446,17 @@
                             <p><span>b</span>{{ ucfirst($item->delivery_address) }}</p>
                             <small> entre le {{ $item->delivery_start }} et le {{ $item->delivery_end }}</small>
                           </div>
+                          <div class="km">
+                            <p><b>350km</b></p>
+                          </div>
+                          <div class="activity text-nowrap">
+                            <p>{{ totalbid($item->id)->count() }} ({{ totalbid($item->id)->count() }} en cours)</p>
+                          </div>
                           {{-- <div class="distance text-nowrap">
                             1 013,09 km<br />9h29
                           </div> --}}
                           <div class="expiration text-nowrap text-center">
-                            Dans<br />
+                            Dans<br/>
                             {{ \Carbon\Carbon::parse($item->loading_start)->diffInDays(\Carbon\Carbon::parse($item->delivery_start)) }} days
                           </div>
                         </div>
