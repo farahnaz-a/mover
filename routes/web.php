@@ -16,6 +16,7 @@ use App\Http\Controllers\BiddingController;
 use App\Http\Controllers\BoatsAndVoluminousController;
 use App\Http\Controllers\ClientController;
 use App\Http\Controllers\CalloutController;
+use App\Http\Controllers\CategoryFormController;
 use App\Http\Controllers\CommentController;
 use App\Http\Controllers\CommercialGoodsController;
 use App\Http\Controllers\ContactController;
@@ -31,6 +32,7 @@ use App\Http\Controllers\PackageController;
 use App\Http\Controllers\PalletController;
 use App\Http\Controllers\TestimonialController;
 use App\Http\Controllers\RegistrationController;
+use App\Http\Controllers\ThemeSettingController;
 use App\Http\Controllers\VehicleController;
 
 /*
@@ -133,6 +135,9 @@ Route::group(['prefix' => 'admin'], function () {
     // GeneralSettingsController 
     Route::get('/site-settings', [GeneralSettingController::class, 'index'])->name('settings.index');
     Route::post('/site-settings-store', [GeneralSettingController::class, 'store'])->name('settings.store');
+
+    Route::get('/theme-color', [ThemeSettingController::class, 'color'])->name('themeSetting.color');
+    Route::get('/theme-menu', [ThemeSettingController::class, 'themeToggle'])->name('themeSetting.toggle');
 
     
 });

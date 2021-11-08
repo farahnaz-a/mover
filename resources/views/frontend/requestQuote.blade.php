@@ -23,7 +23,7 @@
         <div class="container">
           <div class="transport-type-wrapper">
             <div class="row">
-              <div class="col-lg-9">
+              <div class="col">
                 <div
                   class="bg-white shadow-sm my-3 rounded transports"
                   id="transport"
@@ -33,17 +33,17 @@
                   </h4>
                   <!-- transport category start -->
                   <div class="row">
-                    <div class="col-lg-3 col-md-4 col-sm-6">
-                      <a href="{{ route('frontend.requestQuoteForm', 'household') }}">
+                    <div class="col-md-4 col-sm-6">
+                      <a href="{{ route('frontend.requestQuoteForm', 'déménagement') }}">
                         <div class="transport-item" data-target="#household">
                           <span class="icon"
-                            ><i class="icofont-building-alt"></i
-                          ></span>
-                          <span>Household equipment</span>
+                            >  <i class="icofont-building-alt"></i
+                              > </span>
+                          <span>Déménagement</span>
                         </div>
                       </a>
                     </div>
-                    {{-- <div class="col-lg-3 col-md-4 col-sm-6">
+                    {{-- <div class="col-md-4 col-sm-6">
                       <div class="transport-item" data-target="#moving">
                         <span class="icon"
                           ><i class="icofont-truck-loaded"></i
@@ -51,93 +51,86 @@
                         <span>Moving</span>
                       </div>
                     </div> --}}
-                    <div class="col-lg-3 col-md-4 col-sm-6">
-                      <a href="{{ route('frontend.requestQuoteForm', 'vehicle') }}">
+                    <div class="col-md-4 col-sm-6">
+                      {{-- <a href="{{ route('frontend.requestQuoteForm', 'vehicle') }}"> --}}
+                      <a href="#">
                         <div class="transport-item" data-target="#vehicle">
                           <span class="icon"
-                            ><i class="icofont-car-alt-3"></i
-                          ></span>
-                          <span>Vehicle</span>
+                            > <i class="icofont-fast-delivery"></i></span>
+                          <span>LOCATION CAMION AVEC CHAUFFEUR</span>
                         </div>
                       </a>
                     </div>
-                    <div class="col-lg-3 col-md-4 col-sm-6">
-                      <a href="{{ route('frontend.requestQuoteForm', 'motorcyclesport') }}">
+                    <div class="col-md-4 col-sm-6">
+                      {{-- <a href="{{ route('frontend.requestQuoteForm', 'motorcyclesport') }}"> --}}
+                      <a href="#">
                       <div class="transport-item" data-target="#motorcycleSport">
-                          <span class="icon" ><i class="icofont-motor-biker"></i ></span>
-                          <span>Motorcycles and sports vehicles</span>
+                          <span class="icon" > <i class="icofont-bed"></i></span>
+                          <span>MEUBLES</span>
                       </div>
                     </a>
                     </div>
-                    <div  class="col-lg-3 col-md-4 col-sm-6 d-none hidden-transport-item" >
-                      <a href="{{ route('frontend.requestQuoteForm', 'boatvolimunoussport') }}">
+                    <div  class="col-md-4 col-sm-6 d-none hidden-transport-item" >
+                      {{-- <a href="{{ route('frontend.requestQuoteForm', 'boatvolimunoussport') }}"> --}}
+                      <a href="#">
                         <div class="transport-item" data-target="#boat-voluminous" >
-                          <span class="icon" ><i class="icofont-speed-boat"></i></span>
-                          <span>Boats & voluminous</span>
+                          <span class="icon" ><i class="icofont-refrigerator"></i></span>
+                          <span>ELECTROMENAGER</span>
                         </div>
                       </a>
                     </div>
-                    <div class=" col-lg-3 col-md-4 col-sm-6  d-none  hidden-transport-item  " >
-                       <a href="{{ route('frontend.requestQuoteForm', 'fragilegoods') }}">
+                    <div class=" col-md-4 col-sm-6  d-none  hidden-transport-item  " >
+                       {{-- <a href="{{ route('frontend.requestQuoteForm', 'fragilegoods') }}"> --}}
+                       <a href="#">
                         <div class="transport-item" data-target="#fragileGoods">
                           <span class="icon"
-                            ><i class="icofont-speed-boat"></i
-                          ></span>
-                          <span>Fragile goods</span>
+                            ><i class="icofont-box"></i></span>
+                          <span>COLIS</span>
                         </div>
                       </a>
                     </div>
-                    <div class="col-lg-3 col-md-4 col-sm-6 d-none hidden-transport-item">
-                       <a href="{{ route('frontend.requestQuoteForm', 'package') }}">
+                    <div class="col-md-4 col-sm-6 d-none hidden-transport-item">
+                       {{-- <a href="{{ route('frontend.requestQuoteForm', 'package') }}"> --}}
+                       <a href="#">
                         <div class="transport-item" data-target="#package">
                           <span class="icon"
-                            ><i class="icofont-package"></i
-                          ></span>
-                          <span>Package/Fold</span>
+                            ><i class="icofont-truck-alt"></i></span>
+                          <span>PALETTE</span>
                         </div>
                       </a>
                     </div>
-                    <div class=" col-lg-3 col-md-4 col-sm-6 d-none hidden-transport-item" >
-                      <a href="{{ route('frontend.requestQuoteForm', 'pallet') }}">
+                    <div class=" col-md-4 col-sm-6 d-none hidden-transport-item" >
+                      {{-- <a href="{{ route('frontend.requestQuoteForm', 'pallet') }}"> --}}
+                      <a href="#">
                         <div class="transport-item" data-target="#pallet">
                           <span class="icon"
-                            ><i class="icofont-gift-box"></i
-                          ></span>
-                          <span>Pallet</span>
+                            > <i class="icofont-motor-biker"></i></span>
+                          <span>MOTOS</span>
                         </div>
                       </a>
                     </div>
-                    <div class="col-lg-3 col-md-4 col-sm-6 d-none hidden-transport-item">
-                      <a href="{{ route('frontend.requestQuoteForm', 'animal') }}">
-                        <div class="transport-item" data-target="#animal">
-                          <span class="icon"
-                            ><i class="icofont-cat-dog"></i
-                          ></span>
-                          <span>Animals</span>
-                        </div>
-                      </a>
-                    </div>
-                    <div class="col-lg-3 col-md-4 col-sm-6 d-none hidden-transport-item">
-                      <a href="{{ route('frontend.requestQuoteForm', 'agrifood') }}">
+                     
+                    <div class="col-md-4 col-sm-6 d-none hidden-transport-item">
+                      {{-- <a href="{{ route('frontend.requestQuoteForm', 'agrifood') }}"> --}}
+                      <a href="#">
                         <div class="transport-item" data-target="#agri-food">
                           <span class="icon"
-                            ><i class="icofont-food-basket"></i
-                          ></span>
-                          <span>Agri-food</span>
+                            > <i class="icofont-car-alt-3"></i></span>
+                          <span>VOITURES</span>
                         </div>
                       </a>
                     </div>
-                    <div class="col-lg-3 col-md-4 col-sm-6 d-none hidden-transport-item">
-                      <a href="{{ route('frontend.requestQuoteForm', 'commercialgoods') }}">
+                    <div class="col-md-4 col-sm-6 d-none hidden-transport-item">
+                      {{-- <a href="{{ route('frontend.requestQuoteForm', 'commercialgoods') }}"> --}}
+                      <a href="#">
                         <div class="transport-item" data-target="#commercial-good" >
                           <span class="icon"
-                            ><i class="icofont-food-basket"></i
-                          ></span>
-                          <span>Commercial goods</span>
+                            > <i class="icofont-search-2"></i></span>
+                          <span>DIVERS</span>
                         </div>
                       </a>
                     </div>
-                    <div class="col-lg-3 col-md-4 col-sm-6 d-none hidden-transport-item " >
+                    {{-- <div class="col-md-4 col-sm-6 d-none hidden-transport-item " >
                       <a href="{{ route('frontend.requestQuoteForm', 'miscellaneous') }}">
                       <div class="transport-item" data-target="#miscellaneous">
                         <span class="icon"
@@ -146,7 +139,7 @@
                         <span>Miscellaneous</span>
                       </div>
                       </a>
-                    </div>
+                    </div> --}}
                   </div>
 
                   <div class="text-center pb-3">
@@ -161,7 +154,7 @@
                 </div>
               </div>
 
-              <div class="col-lg-3 d-none d-lg-block">
+              {{-- <div class="col-lg-3 d-none d-lg-block">
                 <div class="shadow-sm my-3 p-3 bg-white rounded">
                   <h5 class="text-navy-blue font-weight-bold">
                     Publish your listing
@@ -192,7 +185,7 @@
                     and the quality of the grouped transport of your goods.
                   </p>
                 </div>
-              </div>
+              </div> --}}
             </div>
           </div>
         </div>

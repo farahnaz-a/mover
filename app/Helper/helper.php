@@ -19,3 +19,6 @@ function totalbid($announcement_id)
 {
     return \App\Models\Bidding::where('announcement_id', $announcement_id)->get();
 }
+function themesettings($id){
+    return \App\Models\ThemeSetting::where('user_id', $id)->first();
+}

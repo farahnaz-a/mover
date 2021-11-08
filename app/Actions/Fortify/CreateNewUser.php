@@ -2,7 +2,9 @@
 
 namespace App\Actions\Fortify;
 
+use App\Models\ThemeSetting;
 use App\Models\User;
+use Carbon\Carbon;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Laravel\Fortify\Contracts\CreatesNewUsers;
@@ -27,10 +29,16 @@ class CreateNewUser implements CreatesNewUsers
             'terms' => Jetstream::hasTermsAndPrivacyPolicyFeature() ? ['required', 'accepted'] : '',
         ])->validate();
 
-        return User::create([
+        $user = User::create([
             'name' => $input['name'],
             'email' => $input['email'],
             'password' => Hash::make($input['password']),
         ]);
+
+        ThemeSetting::create([ 
+            'user_id' => $user->id,
+            'created_at' => Carbon::now(),
+        ]);
+        return $user;
     }
 }
