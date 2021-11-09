@@ -9,6 +9,10 @@ function blogs()
 {
     return \App\Models\Blog::latest()->take(2)->get();
 }
+function countryCode()
+{
+    return \App\Models\CountryCode::all();
+}
 
 function bidding($id, $announcement_id)
 {

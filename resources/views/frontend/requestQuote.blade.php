@@ -52,9 +52,8 @@
                       </div>
                     </div> --}}
                     <div class="col-md-4 col-sm-6">
-                      {{-- <a href="{{ route('frontend.requestQuoteForm', 'vehicle') }}"> --}}
-                      <a href="#">
-                        <div class="transport-item" data-target="#vehicle">
+                      <a href="{{ route('frontend.requestQuoteForm', 'chauffeur') }}"> 
+                        <div class="transport-item" data-target="#chauffeur">
                           <span class="icon"
                             > <i class="icofont-fast-delivery"></i></span>
                           <span>LOCATION CAMION AVEC CHAUFFEUR</span>
@@ -62,27 +61,27 @@
                       </a>
                     </div>
                     <div class="col-md-4 col-sm-6">
-                      {{-- <a href="{{ route('frontend.requestQuoteForm', 'motorcyclesport') }}"> --}}
-                      <a href="#">
-                      <div class="transport-item" data-target="#motorcycleSport">
+                      <a href="{{ route('frontend.requestQuoteForm', 'meubles') }}">
+                      {{-- <a href="#"> --}}
+                      <div class="transport-item" data-target="#meubles">
                           <span class="icon" > <i class="icofont-bed"></i></span>
                           <span>MEUBLES</span>
                       </div>
                     </a>
                     </div>
                     <div  class="col-md-4 col-sm-6 d-none hidden-transport-item" >
-                      {{-- <a href="{{ route('frontend.requestQuoteForm', 'boatvolimunoussport') }}"> --}}
-                      <a href="#">
-                        <div class="transport-item" data-target="#boat-voluminous" >
+                      <a href="{{ route('frontend.requestQuoteForm', 'électroménager') }}">
+                      {{-- <a href="#"> --}}
+                        <div class="transport-item" data-target="#électroménager" >
                           <span class="icon" ><i class="icofont-refrigerator"></i></span>
                           <span>ELECTROMENAGER</span>
                         </div>
                       </a>
                     </div>
                     <div class=" col-md-4 col-sm-6  d-none  hidden-transport-item  " >
-                       {{-- <a href="{{ route('frontend.requestQuoteForm', 'fragilegoods') }}"> --}}
-                       <a href="#">
-                        <div class="transport-item" data-target="#fragileGoods">
+                       <a href="{{ route('frontend.requestQuoteForm', 'colis') }}">
+                       {{-- <a href="#"> --}}
+                        <div class="transport-item" data-target="#colis">
                           <span class="icon"
                             ><i class="icofont-box"></i></span>
                           <span>COLIS</span>
@@ -90,9 +89,9 @@
                       </a>
                     </div>
                     <div class="col-md-4 col-sm-6 d-none hidden-transport-item">
-                       {{-- <a href="{{ route('frontend.requestQuoteForm', 'package') }}"> --}}
-                       <a href="#">
-                        <div class="transport-item" data-target="#package">
+                       <a href="{{ route('frontend.requestQuoteForm', 'palette') }}">
+                       {{-- <a href="#"> --}}
+                        <div class="transport-item" data-target="#palette">
                           <span class="icon"
                             ><i class="icofont-truck-alt"></i></span>
                           <span>PALETTE</span>
@@ -100,9 +99,9 @@
                       </a>
                     </div>
                     <div class=" col-md-4 col-sm-6 d-none hidden-transport-item" >
-                      {{-- <a href="{{ route('frontend.requestQuoteForm', 'pallet') }}"> --}}
-                      <a href="#">
-                        <div class="transport-item" data-target="#pallet">
+                      <a href="{{ route('frontend.requestQuoteForm', 'motos') }}">
+                      {{-- <a href="#"> --}}
+                        <div class="transport-item" data-target="#motos">
                           <span class="icon"
                             > <i class="icofont-motor-biker"></i></span>
                           <span>MOTOS</span>
@@ -111,9 +110,9 @@
                     </div>
                      
                     <div class="col-md-4 col-sm-6 d-none hidden-transport-item">
-                      {{-- <a href="{{ route('frontend.requestQuoteForm', 'agrifood') }}"> --}}
-                      <a href="#">
-                        <div class="transport-item" data-target="#agri-food">
+                      <a href="{{ route('frontend.requestQuoteForm', 'voitures') }}">
+                      {{-- <a href="#"> --}}
+                        <div class="transport-item" data-target="#voitures">
                           <span class="icon"
                             > <i class="icofont-car-alt-3"></i></span>
                           <span>VOITURES</span>
@@ -121,9 +120,9 @@
                       </a>
                     </div>
                     <div class="col-md-4 col-sm-6 d-none hidden-transport-item">
-                      {{-- <a href="{{ route('frontend.requestQuoteForm', 'commercialgoods') }}"> --}}
-                      <a href="#">
-                        <div class="transport-item" data-target="#commercial-good" >
+                      <a href="{{ route('frontend.requestQuoteForm', 'divers') }}">
+                      {{-- <a href="#"> --}}
+                        <div class="transport-item" data-target="#divers" >
                           <span class="icon"
                             > <i class="icofont-search-2"></i></span>
                           <span>DIVERS</span>

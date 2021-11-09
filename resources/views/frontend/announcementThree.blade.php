@@ -63,6 +63,28 @@
                         <form action="{{ route('announcement.store') }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             <input type="hidden" name="category" value="{{ $category }}" id="">
+                            <input type="hidden" name="volume" value="{{ $volume }}" id="">
+                            <input type="hidden" name="list" value="{{ $list }}" id="">
+                            <input type="hidden" name="individual_goods" value="{{ $individual_goods }}" id="">
+                            <input type="hidden" name="place_type" value="{{ $place_type }}" id="">
+                            <input type="hidden" name="floor" value="{{ $floor }}" id="">
+                            <input type="hidden" name="ascenseur" value="{{ $ascenseur }}" id="">
+                            <input type="hidden" name="access" value="{{ $access }}" id="">
+                            <input type="hidden" name="services" value="{{ $services }}" id="">
+                            <input type="hidden" name="help" value="{{ $help }}" id="">
+                            <input type="hidden" name="article_name" value="{{ $article_name }}" id="">
+                            <input type="hidden" name="height" value="{{ $height }}" id="">
+                            <input type="hidden" name="width" value="{{ $width }}" id="">
+                            <input type="hidden" name="length" value="{{ $length }}" id="">
+                            <input type="hidden" name="weight" value="{{ $weight }}" id="">
+                            <input type="hidden" name="quantity" value="{{ $quantity }}" id="">
+                            <input type="hidden" name="size" value="{{ $size }}" id="">
+                            <input type="hidden" name="load_unload" value="{{ $load_unload }}" id="">
+                            <input type="hidden" name="need_tailgate" value="{{ $need_tailgate }}" id="">
+                            <input type="hidden" name="need_truck" value="{{ $need_truck }}" id="">
+                            <input type="hidden" name="brand_model" value="{{ $brand_model }}" id="">
+                            <input type="hidden" name="rolling" value="{{ $rolling }}" id="">
+                            {{-- <input type="hidden" name="category" value="{{ $category }}" id="">
                             <input type="hidden" name="equipment" value="{{ $equipment }}" id="">
                             <input type="hidden" name="articleName" value="{{ $articleName }}" id="">
                             <input type="hidden" name="length" value="{{ $length }}" id="">
@@ -84,16 +106,21 @@
                             <input type="hidden" name="specialNeeds" value="{{ $specialNeeds }}" id=""> 
                             <input type="hidden" name="vaccinations" value="{{ $vaccinations }}" id=""> 
                             <input type="hidden" name="others" value="{{ $others }}" id=""> 
-                            <input type="hidden" name="vehicleName" value="{{ $vehicleName }}" id=""> 
+                            <input type="hidden" name="vehicleName" value="{{ $vehicleName }}" id="">  --}}
                             <div class="form-group">
-                              <input class="form-control" name="loading_address" required type="text" placeholder="Address"/>
+                              <input type="text" placeholder="Départ" class="form-control" name="depart" required/>
                               @error('loading_address')
                                   <div class="text-danger">
                                      {{ $message }}
                                   </div>
                               @enderror
                             </div>
-                            <div class="form-row">
+                            <div class="form-group">
+                              <label for=""> Date de chargement </label>
+                              <input type="date" placeholder="Date de chargement "
+                                  class="form-control" name="loading_date" required/>
+                            </div>
+                            {{-- <div class="form-row">
                               <div class="form-group col-md-6">
                                 <label for="">Start</label>
                                 <input class="form-control" required name="loading_start" type="date" placeholder="Start"/>
@@ -112,8 +139,8 @@
                                     </div>
                                   @enderror
                               </div>
-                            </div>
-                            <div class="form-group">
+                            </div> --}}
+                            {{-- <div class="form-group">
                               <label>Time slot loading</label>
                               <select name="loading_time_slot" required class="rounded">
                                 <option value="anytime">anytime</option>
@@ -126,8 +153,8 @@
                                   {{ $message }}
                                 </div>
                               @enderror
-                            </div>
-                            <div class="form-group">
+                            </div> --}}
+                            {{-- <div class="form-group">
                               <select name="loading_house" required class="rounded">
                                 <option value="House">House</option>
                                 <option value="Building">Building</option>
@@ -142,8 +169,8 @@
                                   {{ $message }}
                                 </div>
                               @enderror
-                            </div>
-                            <div class="form-row">
+                            </div> --}}
+                            {{-- <div class="form-row">
                               <div class="form-group col-md-6">
                                 <label for="">Select the floor</label>
                                 <select required name="loading_floor" class="rounded">
@@ -192,7 +219,7 @@
                                   </div>
                                 @enderror
                               </div>
-                            </div>
+                            </div> --}}
                         </div>
                       </div>
                       <div class="col-md-6">
@@ -202,14 +229,19 @@
                         </h5>
                         <div class="bg-light-gray my-3 p-3 rounded">
                             <div class="form-group">
-                              <input class="form-control" name="delivery_address" type="text" required  placeholder="Address"/>
+                              <input type="text" placeholder="Arrivée" class="form-control" name="arrivee" required/>
                               @error('delivery_address')
                                   <div class="text-danger">
                                     {{ $message }}
                                   </div>
                               @enderror
                             </div>
-                            <div class="form-row">
+                            <div class="form-group"> 
+                                <label for=""> Date de livraison </label>
+                                <input type="date" placeholder="Date de livraison "
+                                    class="form-control" name="delevary_date" required/> 
+                            </div>
+                            {{-- <div class="form-row">
                               <div class="form-group col-md-6">
                                 <label for="">Start</label>
                                 <input required class="form-control" name="delivery_start" type="date" placeholder="Start"/>
@@ -228,8 +260,8 @@
                                   </div>
                                 @enderror
                               </div>
-                            </div>
-                            <div class="form-group">
+                            </div> --}}
+                            {{-- <div class="form-group">
                               <label>Time slot loading</label>
                               <select required name="delivery_time_slot" class="rounded">
                                 <option value="anytime">anytime</option>
@@ -303,7 +335,7 @@
                                   </div>
                                 @enderror
                               </div>
-                            </div>
+                            </div> --}}
                         </div>
                       </div>
                     </div>
@@ -313,6 +345,103 @@
                       <em class="font-weight-normal">(recommended)</em>
                     </h5>
                     <div class="p-3 rounded bg-light-gray">
+                        <div class="row">
+                            <div class="col-12">
+                                <textarea name="informations"   class="form-control"
+                                    rows="7" placeholder="informations complémentaires required"></textarea>
+                            </div>
+                        </div>
+                        <div class="row mt-4">
+                            <div class="col-4 mb-3">
+                                <h5>photo</h5> 
+                                <img src="{{ asset('uploads/callouts/1.jpg') }}" alt="">
+                                <a class="d-inline-block my-3" target="_blank" href="{{ asset('uploads/callouts/1.jpg') }}">Télécharger</a>
+                            </div>
+                        </div>
+                        <h3 class="mt-4">données </h3>
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="form-group input-group">
+                                    <div class="input-group-append">
+                                        <span class="input-group-text" id="name"><i
+                                                class="icofont-user-alt-3"></i></span>
+                                    </div>
+                                    <input name="name" type="text" placeholder="Nom et premon"
+                                        class="form-control" required/>
+                                </div>
+                                <div class="form-group input-group">
+                                    <div class="input-group-append">
+                                        <span class="input-group-text" id="email"><i
+                                                class="icofont-email" ></i></span>
+                                    </div>
+                                    <input name="email" type="email" placeholder="Email"
+                                        class="form-control" required/>
+                                </div>
+                                <div class="row">
+                                    <div class="col-5">
+                                        <div class="form-group ">
+                                            <div class="input-group" id="country_code_wrapper">
+                                                <div class="input-group-prepend">
+                                                    <label class="input-group-text"
+                                                        for="country_code">
+                                                        <i class="icofont-world"></i></label>
+                                                </div> 
+                                                <select class="flex-grow-1 w-auto"
+                                                    name="country_code" id="country_code" >
+                                                    @foreach ( countryCode() as $item)
+                                                    <option value="{{ $item->phonecode }}"> {{ $item->iso }} ({{ $item->phonecode }})</option> 
+                                                    @endforeach 
+                                                </select>
+                                            </div> 
+                                        </div>
+                                    </div>
+                                    <div class="col-7">
+                                        <div class="form-group input-group">
+                                            <div class="input-group-append">
+                                                <span class="input-group-text" id="phone"><i
+                                                        class="icofont-ui-call"></i></span>
+                                            </div>
+                                            <input name="phone" type="text" placeholder="Phone"
+                                                class="form-control" required/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group input-group">
+                                    <div class="input-group-append">
+                                        <span class="input-group-text" id="pseudo"><i
+                                                class="icofont-ui-user"></i></span>
+                                    </div>
+                                    <input name="pseudo" type="text" placeholder="pseudo"
+                                        class="form-control" required/>
+                                </div>
+                                <div class="form-group input-group">
+                                    <div class="input-group-append">
+                                        <span class="input-group-text" id="password"><i
+                                                class="icofont-lock"></i></span>
+                                    </div>
+                                    <input name="password" type="password"
+                                        placeholder="Mot de passe" class="form-control" required/>
+                                </div>
+                                <div class="form-group input-group">
+                                    <div class="input-group-append">
+                                        <span class="input-group-text" id="confirm_password"><i
+                                                class="icofont-lock"></i></span>
+                                    </div>
+                                    <input name="confirm_password" type="password"
+                                        placeholder="Confirmer votre mot de passe"
+                                        class="form-control" required/>
+                                </div>
+                             
+                                  <input type="checkbox" id="condition" name="terms"
+                                  value="yes" required>
+                                  <label for="condition"> j'accepte les dispositions des
+                                      conditions
+                                      générales et de la politique de confidentialité
+                                  </label>  
+                            </div>
+                    </div>
+                    </div>
+                    {{-- <div class="p-3 rounded bg-light-gray">
                       <div class="row">
                         <div class="col-md-6">
                           <textarea name="information" class="form-control" rows="8"></textarea>
@@ -345,29 +474,11 @@
                           <p class="mb-2">Ex: 1 large table of 3mx2m, ...</p>
                         </div>
                       </div>
-                    </div>
-                    {{-- <h5 class="mt-4 font-weight-bold text-navy-blue">
-                      <i class="icofont-image mr-2"></i>Increase your chances of
-                      being solicited, insert a photo!
-                    </h5>
-                    <div class="bg-light-gray p-3 rounded">
-                      <p>
-                        This information can often be found on the Internet.
-                        Approximate measures will already allow carriers to offer
-                        you a suitable offer.
-                      </p>
-                      <div class="custom-file">
-                        <input name="image" type="file" class="custom-file-input"  id="customFile"/>
-                        <label class="custom-file-label" for="customFile">Choose file</label>
-                        @error('image')
-                            <div class="text-danger">
-                              {{ $message }}
-                            </div>
-                        @enderror
-                      </div> --}}
+                    </div> --}}
+                     
                     </div>
                     <div class="mt-4">
-                      <div class="custom-control custom-checkbox">
+                      {{-- <div class="custom-control custom-checkbox">
                         <input  name="offers" type="checkbox" class="custom-control-input" id="commercial-offer"/>
                         <label class="custom-control-label" for="commercial-offer">I agree to receive commercial offers from FretBay and its partners</label>
                         @error('offers')
@@ -375,8 +486,8 @@
                             {{ $message }}
                           </div>
                         @enderror
-                      </div>
-                      <div class="custom-control custom-checkbox">
+                      </div> --}}
+                      {{-- <div class="custom-control custom-checkbox">
                         <input required name="terms" type="checkbox" class="custom-control-input" id="terms"
                         />
                         <label class="custom-control-label" for="terms"
@@ -387,7 +498,7 @@
                             {{ $message }}
                           </div>
                         @enderror
-                      </div>
+                      </div> --}}
                       <small class="text-navy-blue mb-2 mt-3 d-block">
                         You have the right to access, modify, rectify, and delete
                         data concerning you from your FretBay account.
@@ -407,7 +518,7 @@
                           class="continue btn text-white bg-navy-blue ml-3"
                           type="submit" 
                         >
-                          Continue
+                        Publiez mon annonce
                         </button>
                       </form>  
                       </div>
@@ -416,7 +527,7 @@
                 <!-- address form end -->
               </div>
 
-              <div class="col-lg-3 d-none d-lg-block">
+              {{-- <div class="col-lg-3 d-none d-lg-block">
                 <div class="shadow-sm my-3 p-3 bg-white rounded">
                   <h5 class="text-navy-blue font-weight-bold">
                     Publish your listing
@@ -447,7 +558,7 @@
                     and the quality of the grouped transport of your goods.
                   </p>
                 </div>
-              </div>
+              </div> --}}
             </div>
           </div>
         </div>

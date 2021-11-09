@@ -104,6 +104,14 @@
         -webkit-text-fill-color: unset;
         transition: background-color 5000s;
       }
+      #country_code_wrapper .list{
+        overflow-y: auto;
+        max-height: 300px;
+        scrollbar-width: none;
+      }
+      #country_code_wrapper .list::-webkit-scrollbar{
+        width: 0;
+      }
     </style>
     @yield('css')
 	</head>
