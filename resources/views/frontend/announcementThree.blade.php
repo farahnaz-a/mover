@@ -109,7 +109,7 @@
                             <input type="hidden" name="vehicleName" value="{{ $vehicleName }}" id="">  --}}
                             <div class="form-group">
                               <input type="text" placeholder="Départ" class="form-control" name="depart" required/>
-                              @error('loading_address')
+                              @error('depart')
                                   <div class="text-danger">
                                      {{ $message }}
                                   </div>
@@ -230,7 +230,7 @@
                         <div class="bg-light-gray my-3 p-3 rounded">
                             <div class="form-group">
                               <input type="text" placeholder="Arrivée" class="form-control" name="arrivee" required/>
-                              @error('delivery_address')
+                              @error('arrivee')
                                   <div class="text-danger">
                                     {{ $message }}
                                   </div>

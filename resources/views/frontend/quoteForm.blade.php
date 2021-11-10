@@ -1278,6 +1278,31 @@
                                             </div>
                                             <div class="row my-3">
                                                 <div class="col-4">
+                                                    <h5>accès</h5>
+                                                    {{-- <label for=""> accès</label> <br> --}}
+                                                    <table>
+                                                        <tr>
+                                                            <td> <label for="no">on peut se garer devant </label>
+                                                            </td>
+                                                            <td> <input class="ml-2"
+                                                                    style="margin-top: -4px" type="radio" id="no"
+                                                                    name="access" value="no" required></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td><label for="yes">on doit se garer plus loin </label>
+                                                            </td>
+                                                            <td> <input class="ml-2"
+                                                                    style="margin-top: -4px" type="radio" id="yes"
+                                                                    name="access" value="yes" required></td>
+                                                        </tr>
+
+                                                    </table>
+
+                                                </div>
+
+                                            </div>
+                                            <div class="row my-3">
+                                                <div class="col-4">
                                                     <div class="form-group">
                                                         <h5>chargement et déchargement par vos soins </h5>
                                                     </div>

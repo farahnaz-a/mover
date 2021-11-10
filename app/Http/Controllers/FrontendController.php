@@ -34,6 +34,7 @@ use App\Models\Miscellaneous;
 use App\Models\CommercialGoods;
 use App\Models\BoatsAndVoluminous;
 use App\Models\MotorcyclesAndSports;
+use App\Models\SecondAnnouncement;
 use Mail;
 
 class FrontendController extends Controller
@@ -82,7 +83,8 @@ class FrontendController extends Controller
           // 'packages'    => Package::where('hired', 'no')->orderBy('id', 'asc')->get(),
           // 'pallets'    => Pallet::where('hired', 'no')->orderBy('id', 'asc')->get(),
           // 'vehicles'    => Vehicle::where('hired', 'no')->orderBy('id', 'asc')->get(),
-          'announcements'    => Announcement::where('hired', 'no')->orderBy('id', 'asc')->get(),
+          // 'announcements'    => Announcement::where('hired', 'no')->orderBy('id', 'asc')->get(),
+          'announcements'    => SecondAnnouncement::where('hired', 'no')->orderBy('id', 'asc')->get(),
           'services'     => Service::all(),
        ]);
    }
@@ -103,7 +105,8 @@ class FrontendController extends Controller
           // 'packages'    => Package::where('hired', 'no')->orderBy('id', 'asc')->get(),
           // 'pallets'    => Pallet::where('hired', 'no')->orderBy('id', 'asc')->get(),
           // 'vehicles'    => Vehicle::where('hired', 'no')->orderBy('id', 'asc')->get(),
-          'announcements'    => Announcement::where('hired', 'no')->where('category', $category)->orderBy('id', 'asc')->get(),
+          // 'announcements'    => Announcement::where('hired', 'no')->where('category', $category)->orderBy('id', 'asc')->get(),
+          'announcements'    => SecondAnnouncement::where('hired', 'no')->where('category', $category)->orderBy('id', 'asc')->get(),
           'services'     => Service::all(),
        ]);
    }
@@ -113,8 +116,8 @@ class FrontendController extends Controller
      $from =  request()->from;
      $to =  request()->to;
 
-     $announcements = Announcement::where('loading_address', 'LIKE', '%'. $from .'%')
-                                  ->where('delivery_address', 'LIKE', '%' . $to . '%')
+     $announcements = SecondAnnouncement::where('depart', 'LIKE', '%'. $from .'%')
+                                  ->where('arrivee', 'LIKE', '%' . $to . '%')
                                   ->get();
                                   $services     = Service::all();
 
@@ -157,9 +160,8 @@ class FrontendController extends Controller
      {
        $other->status = 'rejected'; 
        $other->save(); 
-     }
-
-
+     } 
+     
      $announcement = Announcement::find($bid->announcement_id);
      $announcement->hired = 'yes'; 
      $announcement->save(); 

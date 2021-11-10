@@ -198,6 +198,7 @@ class AnnouncementController extends Controller
             'pseudo'                    => session('post')['pseudo'] ?? '',
             'password'                  => session('post')['password'] ?? '',
             'terms'                     => session('post')['terms'] ?? '',
+            'offers'                    => 'yes',
             'user_id'                   => Auth::id(),
             'created_at'                => Carbon::now(),
             
@@ -270,7 +271,7 @@ class AnnouncementController extends Controller
 
     public function details($id)
     {
-        $data = Announcement::find($id); 
+        $data = SecondAnnouncement::find($id); 
         $data->increment('views'); 
         $data->save();
 

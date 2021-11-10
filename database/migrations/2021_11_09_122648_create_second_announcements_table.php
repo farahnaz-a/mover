@@ -53,8 +53,10 @@ class CreateSecondAnnouncementsTable extends Migration
             $table->string('image')->nullable();
             $table->string('password')->nullable();
             $table->string('terms')->nullable();
+            $table->string('offers')->nullable();
+            $table->integer('views')->default(0);
             $table->enum('hired', ['yes', 'no'])->default('no');
-            $table->timestamps();
+            $table->timestamps(); 
         });
     }
 

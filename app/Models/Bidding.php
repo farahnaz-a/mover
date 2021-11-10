@@ -19,4 +19,8 @@ class Bidding extends Model
     {
         return $this->belongsTo('App\Models\User', 'customer_id', 'id');
     }
+    public function getAnnouncement()
+    {
+        return $this->belongsTo('App\Models\SecondAnnouncement', 'announcement_id', 'id');
+    }
 }
