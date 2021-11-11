@@ -148,6 +148,7 @@ $count = $comments->count();
                                             <div class="livraison">
                                                 
                                                 <h5 id="distance"><span><i class="icofont-map-pins" style="color:#5fc2ba;"></i></span> 
+                                                    {{ $data->distance }}
                                                 </h5> 
                                             </div>
                                         </div> 
@@ -368,7 +369,27 @@ $count = $comments->count();
                         if (status === 'OK') {
                             directionsRenderer.setDirections(response)
                             let distance = response.routes[0].legs[0].distance.text
-                             $('#distance').append(distance); 
+
+
+                             $.ajaxSetup({
+                                headers: {
+                                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                                }
+});
+
+                             $.ajax({
+                                type : 'POST',
+                                url : "{{ route('distance.post') }}",
+                                data : {
+                                    distance : distance,
+                                    id : '{{ $data->id }}',
+                                },
+                                success : function(data){
+                                    console.log(data);
+                                }
+                             });
+
+
                         } else {
                             $('#distance').append('Map Not Found');
                             console.log(status)
@@ -398,3 +419,5 @@ $count = $comments->count();
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCCYYbVzj3y4aUpnJCDZ756CrHJXVs93U4&callback=initMap&libraries=&v=weekly"
                 async></script>
     @endsection
+
+    

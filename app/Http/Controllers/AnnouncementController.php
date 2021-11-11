@@ -266,7 +266,7 @@ class AnnouncementController extends Controller
         // Save Everything in database 
         // $announcement->save();
 
-        return redirect('/')->withSuccess('Announcement posted');
+        return redirect()->route('announcement.details', $announcement->id);
     }
 
     public function details($id)
@@ -276,6 +276,23 @@ class AnnouncementController extends Controller
         $data->save();
 
         return view('frontend.details', compact('data')); 
+    }
+
+    public function distancePost(Request $request)
+    {
+
+
+        $data = SecondAnnouncement::findOrFail($request->id);
+
+
+        if($data->distance == 'Location not found')
+        {
+            
+                    $data->distance = $request->distance; 
+                    $data->save(); 
+
+        }
+
     }
 
 // end    

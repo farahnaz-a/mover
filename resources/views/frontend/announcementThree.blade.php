@@ -563,6 +563,7 @@
           </div>
         </div>
       </section>
+      <div style="display: none" id="map-canvas"></div>
       <!-- transport end -->
 @endsection
 
@@ -571,3 +572,64 @@
          <!-- transport scripts -->
          <script src="{{ asset('assets/js/transport.js') }}"></script>
 @endsection
+
+@push('js')
+       
+<script>
+function initMap() {
+  const directionsService = new google.maps.DirectionsService()
+  const directionsRenderer = new google.maps.DirectionsRenderer()
+  const map = new google.maps.Map(document.getElementById('map-canvas'), {
+      zoom: 7,
+      center: {
+          lat: 41.85,
+          lng: -87.65
+      },
+  })
+  directionsRenderer.setMap(map)
+  
+  calculateAndDisplayRoute(directionsService, directionsRenderer)
+}
+
+function calculateAndDisplayRoute(directionsService, directionsRenderer) {
+  directionsService.route({
+          origin: {
+              query: 'Adabar',
+              
+          },
+          destination: {
+              query: 'Dhanmondi',
+          },
+          travelMode: google.maps.TravelMode.DRIVING,
+      },
+      (response, status) => {
+           
+
+          
+          if (status === 'OK') {
+              directionsRenderer.setDirections(response)
+              let distance = response.routes[0].legs[0].distance.text
+              //  $('#distance').append(distance); 
+              // Get all ID from the foreach
+
+              console.log(distance)
+      
+              // $('.getDataID'+{{ $item->id }}).text(distance); 
+              // console.log(distance) 
+          } else {
+              // $('#distance').append('Map Not Found');
+              // $('#distance'+{{ $item->id }}).text('not found'); 
+              // console.log(status)
+              // console.log(myId)
+              console.log(distance)
+          }
+      }
+  )
+}
+
+
+</script>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCCYYbVzj3y4aUpnJCDZ756CrHJXVs93U4&callback=initMap&libraries=&v=weekly"
+async></script>
+@endpush

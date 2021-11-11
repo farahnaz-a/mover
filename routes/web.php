@@ -223,6 +223,8 @@ Route::post('/announcement/store', [AnnouncementController::class, 'store'])->na
 Route::match(['post', 'get'], 'post/store', [AnnouncementController::class, 'save'] )->middleware('auth')->name('post-store');
 Route::get('/announcements/{id}/details', [AnnouncementController::class, 'details'])->name('announcement.details');
 
+Route::post('distance-update', [AnnouncementController::class, 'distancePost'])->name('distance.post');
+
 
 // BiddingController 
 Route::post('/bidding/store', [BiddingController::class, 'store'])->name('bidding.store');
