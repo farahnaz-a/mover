@@ -351,13 +351,13 @@
                                     rows="7" placeholder="informations complémentaires required"></textarea>
                             </div>
                         </div>
-                        <div class="row mt-4">
+                        {{-- <div class="row mt-4">
                             <div class="col-4 mb-3">
                                 <h5>photo</h5> 
                                 <img src="{{ asset('uploads/callouts/1.jpg') }}" alt="">
                                 <a class="d-inline-block my-3" target="_blank" href="{{ asset('uploads/callouts/1.jpg') }}">Télécharger</a>
                             </div>
-                        </div>
+                        </div> --}}
                         <h3 class="mt-4">données </h3>
                         <div class="row">
                             <div class="col-12">
@@ -414,7 +414,7 @@
                                     <input name="pseudo" type="text" placeholder="pseudo"
                                         class="form-control" required/>
                                 </div>
-                                <div class="form-group input-group">
+                                {{-- <div class="form-group input-group">
                                     <div class="input-group-append">
                                         <span class="input-group-text" id="password"><i
                                                 class="icofont-lock"></i></span>
@@ -430,7 +430,7 @@
                                     <input name="confirm_password" type="password"
                                         placeholder="Confirmer votre mot de passe"
                                         class="form-control" required/>
-                                </div>
+                                </div> --}}
                              
                                   <input type="checkbox" id="condition" name="terms"
                                   value="yes" required>

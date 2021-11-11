@@ -156,13 +156,15 @@ $count = $comments->count();
                                 </div> 
                             </div>
                         </div>
+                       @guest
                         <div class="col-12">
                             <p class="text-center my-5">
                                 Vous êtes une société de déménagement-transport, inscrivez-vous pour déposer des
                                 devis. C'est simple rapide et gratuit. <a class="btn" style="background: #5fc2ba; color:white;" href="{{ route('register') }}">INSCRIVEZ-VOUS</a>
                             </p>
                         </div>
-                        <div class="col-lg-12 col-xl-12">
+                       @endguest
+                        <div class="col-lg-12 col-xl-12 mt-5">
                             <div class="left">
                                 <div class="row">
                                     <div class="col-md-6">
@@ -237,12 +239,12 @@ $count = $comments->count();
                                     <div class="col-md-6">
                                         <h5 id="count" data-target="message">Message ({{ $count }})</h5>
                                         @guest
-                                            <div id="msg" class="message-wrapper" style="background: #d7f4e2; padding:10px;">
+                                            <div id="msg" class="message-wrapper" style="background: #{{ ($count != 0)?'d7f4e2':'' }}; padding:10px;">
                                                 @include('comments')
                                             </div> 
                                         @endguest
                                     @auth
-                                        <div id="msg" class="message-wrapper" style="background: #d7f4e2; padding:10px;">
+                                        <div id="msg" class="message-wrapper" style="background: #{{ ($count != 0)?'d7f4e2':'' }}; padding:10px;">
                                             @include('comments')
                                         </div>
 
@@ -385,13 +387,14 @@ $count = $comments->count();
                                     id : '{{ $data->id }}',
                                 },
                                 success : function(data){
-                                    console.log(data);
+                                    
+                                    $("#distance").html(data);
                                 }
                              });
 
 
                         } else {
-                            $('#distance').append('Map Not Found');
+                            // $('#distance').append('Map Not Found');
                             console.log(status)
                         }
                     }

@@ -290,8 +290,13 @@ class AnnouncementController extends Controller
             
                     $data->distance = $request->distance; 
                     $data->save(); 
+                   
+
+                   
 
         }
+
+        echo $data->distance;
 
     }
 
