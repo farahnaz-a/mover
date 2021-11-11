@@ -137,17 +137,17 @@ $count = $comments->count();
                                                 {{-- <small>entre le {{ $data->loading_start }} et le {{ $data->loading_end }}</small> --}}
                                             </div>
                                         </div>
-                                        <div class="col-md-5">
+                                        <div class="col-md-4">
                                             <div class="livraison">
                                                 <h5><span><i class="icofont-location-pin" style="color:#5fc2ba;"></i></span>{{ $data->arrivee }}
                                                 </h5>
                                                 {{-- <small> entre le {{ $data->delivery_start }} et le {{ $data->delivery_end }}</small> --}}
                                             </div>
                                         </div>
-                                        <div class="col-md-2">
+                                        <div class="col-md-3">
                                             <div class="livraison">
                                                 
-                                                <h5><span><i class="icofont-map-pins" style="color:#5fc2ba;"></i></span> 300KM
+                                                <h5 id="distance"><span><i class="icofont-map-pins" style="color:#5fc2ba;"></i></span> 
                                                 </h5> 
                                             </div>
                                         </div> 
@@ -356,17 +356,21 @@ $count = $comments->count();
             function calculateAndDisplayRoute(directionsService, directionsRenderer) {
                 directionsService.route({
                         origin: {
-                            query: '{{ $data->loading_address }}',
+                            query: '{{ $data->depart }}',
+                            
                         },
                         destination: {
-                            query: '{{ $data->delivery_address }}',
+                            query: '{{ $data->arrivee }}',
                         },
                         travelMode: google.maps.TravelMode.DRIVING,
                     },
                     (response, status) => {
                         if (status === 'OK') {
                             directionsRenderer.setDirections(response)
+                            let distance = response.routes[0].legs[0].distance.text
+                             $('#distance').append(distance); 
                         } else {
+                            $('#distance').append('Map Not Found');
                             console.log(status)
                         }
                     }

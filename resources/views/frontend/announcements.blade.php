@@ -271,6 +271,7 @@
                     </li>
                   </ul>
                 </nav> --}}
+                <div style="display: none" id="map-canvas"></div>
                     <div class="row">
                         <div class="col-md-3">
                             <h5> Catégorie </h5>
@@ -295,6 +296,7 @@
                             </div>
                         </div>
                     </div>
+                    
                     <ul>
                         @foreach ($announcements as $item)
                             <li class="shadow-sm">
@@ -305,7 +307,7 @@
                                             <h5>
                                                 <a href="{{ route('announcement.details', $item->id) }}">
                                                     <i style="color: #5fc2ba !important"
-                                                        class="icofont-building-alt"></i>{{ ucfirst($item->category) }}
+                                                        class="icofont-building-alt cat_icon"></i>{{ ucfirst($item->category) }}
                                                     {{-- <sup>3</sup> --}}
                                                 </a>
                                             </h5>
@@ -314,7 +316,7 @@
                                                 <h5>
                                                     <a href="{{ route('announcement.details', $item->id) }}"><i
                                                             style="color: #5fc2ba !important"
-                                                            class="icofont-fast-delivery"></i>{{ ucfirst($item->category) }}
+                                                            class="icofont-fast-delivery cat_icon"></i>{{ ucfirst($item->category) }}
                                                         {{-- <sup>3</sup> --}}
                                                     </a>
                                                 </h5>
@@ -324,7 +326,7 @@
                                                 <h5>
                                                     <a href="{{ route('announcement.details', $item->id) }}"><i
                                                             style="color: #5fc2ba !important"
-                                                            class="icofont-bed"></i>{{ ucfirst($item->category) }}
+                                                            class="icofont-bed cat_icon"></i>{{ ucfirst($item->category) }}
                                                         {{-- <sup>3</sup> --}}
                                                     </a>
                                                 </h5>
@@ -335,7 +337,7 @@
                                                 <h5>
                                                     <a href="{{ route('announcement.details', $item->id) }}">
                                                         <i style="color: #5fc2ba !important"
-                                                            class="icofont-refrigerator"></i>{{ ucfirst($item->category) }}
+                                                            class="icofont-refrigerator cat_icon"></i>{{ ucfirst($item->category) }}
                                                         {{-- <sup>3</sup> --}}
                                                     </a>
                                                 </h5>
@@ -346,7 +348,7 @@
                                                 <h5>
                                                     <a href="{{ route('announcement.details', $item->id) }}"><i
                                                             style="color: #5fc2ba !important"
-                                                            class="icofont-box"></i>{{ ucfirst($item->category) }}
+                                                            class="icofont-box cat_icon"></i>{{ ucfirst($item->category) }}
                                                         {{-- <sup>3</sup> --}}
                                                     </a>
                                                 </h5>
@@ -357,7 +359,7 @@
                                                 <h5>
                                                     <a href="{{ route('announcement.details', $item->id) }}"><i
                                                             style="color: #5fc2ba !important"
-                                                            class="icofont-truck-alt"></i>{{ ucfirst($item->category) }}
+                                                            class="icofont-truck-alt cat_icon"></i>{{ ucfirst($item->category) }}
                                                         {{-- <sup>3</sup> --}}
                                                     </a>
                                                 </h5>
@@ -367,7 +369,7 @@
                                                 <h5>
                                                     <a href="{{ route('announcement.details', $item->id) }}"><i
                                                             style="color: #5fc2ba !important"
-                                                            class="icofont-motor-biker"></i>{{ ucfirst($item->category) }}
+                                                            class="icofont-motor-biker cat_icon"></i>{{ ucfirst($item->category) }}
                                                         {{-- <sup>3</sup> --}}
                                                     </a>
                                                 </h5>
@@ -377,7 +379,7 @@
                                                 <h5>
                                                     <a href="{{ route('announcement.details', $item->id) }}"><i
                                                             style="color: #5fc2ba !important"
-                                                            class="icofont-car-alt-3"></i>{{ ucfirst($item->category) }}
+                                                            class="icofont-car-alt-3 cat_icon"></i>{{ ucfirst($item->category) }}
                                                         {{-- <sup>3</sup> --}}
                                                     </a>
                                                 </h5>
@@ -387,7 +389,7 @@
                                                 <h5>
                                                     <a href="{{ route('announcement.details', $item->id) }}"><i
                                                             style="color: #5fc2ba !important"
-                                                            class="icofont-search-2"></i>{{ ucfirst($item->category) }}
+                                                            class="icofont-search-2 cat_icon"></i>{{ ucfirst($item->category) }}
                                                         {{-- <sup>3</sup> --}}
                                                     </a>
                                                 </h5>
@@ -403,7 +405,7 @@
                                                 <p> {{ ucfirst($item->arrivee) }}</p>
                                             </div>
                                             <div class="col-2">
-                                                <p><b>350km</b></p>
+                                                 <p data-id-{{ $item->id }} class="getDataID" id="distance{{ $item->id }}"> </p>
                                             </div>
                                             <div class="col-1">
                                                 <p>{{ totalbid($item->id)->count() }}</p>
@@ -417,6 +419,57 @@
                                     </div>
                                 </div>
                             </li>
+                            <script>
+    
+                                function initMap() {
+                                    const directionsService = new google.maps.DirectionsService()
+                                    const directionsRenderer = new google.maps.DirectionsRenderer()
+                                    const map = new google.maps.Map(document.getElementById('map-canvas'), {
+                                        zoom: 7,
+                                        center: {
+                                            lat: 41.85,
+                                            lng: -87.65
+                                        },
+                                    })
+                                    directionsRenderer.setMap(map)
+                                    
+                                    calculateAndDisplayRoute(directionsService, directionsRenderer)
+                                }
+                                
+                                function calculateAndDisplayRoute(directionsService, directionsRenderer) {
+                                    directionsService.route({
+                                            origin: {
+                                                query: '{{ $item->depart }}',
+                                                
+                                            },
+                                            destination: {
+                                                query: '{{ $item->arrivee }}',
+                                            },
+                                            travelMode: google.maps.TravelMode.DRIVING,
+                                        },
+                                        (response, status) => {
+                                            let myId = {{ $item->id }}; 
+                                            if (status === 'OK') {
+                                                directionsRenderer.setDirections(response)
+                                                let distance = response.routes[0].legs[0].distance.text
+                                                //  $('#distance').append(distance); 
+                                                
+                                                console.log(myId)
+                            
+                                                $('.getDataID'+{{ $item->id }}).text(distance); 
+                                                console.log(distance) 
+                                            } else {
+                                                // $('#distance').append('Map Not Found');
+                                                // $('#distance'+{{ $item->id }}).text('not found'); 
+                                                // console.log(status)
+                                                console.log(myId)
+                                            }
+                                        }
+                                    )
+                                }
+                                
+                               
+                            </script>
                         @endforeach
                     </ul>
                     {{-- <nav>
@@ -442,5 +495,53 @@
         <!-- map lists end -->
     @endsection
 
-    @section('js')
+    @section('js') 
+    {{-- <script> 
+        function calculateAndDisplayRoute(directionsService, directionsRenderer) {
+        directionsService.route(
+          {
+            origin: {
+              query: 'Chattogram',
+            },
+            destination: {
+              query: 'Narshindi',
+            },
+            travelMode: google.maps.TravelMode.DRIVING,
+          },
+          (response, status) => {
+            if (status === 'OK') {
+              directionsRenderer.setDirections(response)
+              const directionsData = response.routes[0].legs[0] // Get data about the mapped route
+              if (!directionsData) {
+                window.alert('Directions request failed')
+                return
+              } else {
+                console.log(
+                  Driving distance is ${directionsData.distance.text} ${directionsData.duration.text}
+                )
+              }
+            } else {
+              console.log(status)
+            }
+          }
+        )
+      }
+
+     
+      const directionsData = response.routes[0].legs[0] // Get data about the mapped route
+            if (!directionsData) {
+            window.alert('Directions request failed')
+            return
+            } else {
+            console.log(
+                Driving distance is ${directionsData.distance.text} ${directionsData.duration.text}
+            )
+    //         }
+
+    </script> --}}
     @endsection
+@push('js')
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCCYYbVzj3y4aUpnJCDZ756CrHJXVs93U4&callback=initMap&libraries=&v=weekly"
+async></script>
+@endpush

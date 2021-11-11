@@ -16,6 +16,9 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <style>
+      .cat_icon{
+        margin-right: 5px;
+      }
       .nav-link {
         color: #06163a !important; 
         font-weight:bold !important;
@@ -476,10 +479,7 @@
   <script src="{{ asset('assets/twitter/jquery.tweet.js') }}"></script>
 
   <!-- JQuery Map Plugin -->
-  <script
-      type="text/javascript"
-      src="https://maps.google.com/maps/api/js?key=AIzaSyCCYYbVzj3y4aUpnJCDZ756CrHJXVs93U4&sensor=false"
-    ></script>
+  <script src="https://maps.google.com/maps/api/js?key=AIzaSyCCYYbVzj3y4aUpnJCDZ756CrHJXVs93U4&sensor=false"></script>
   
   <script type="text/javascript" src="{{ asset('assets/js/jquery.gmap.min.js') }}"></script>    
   
@@ -613,5 +613,6 @@ jsFileLocation:"revolution/js/",
   <script>
     document.getElementById("year").innerHTML = new Date().getFullYear();
 </script>
+@stack('js')
   </body>
 </html>
