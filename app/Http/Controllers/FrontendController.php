@@ -129,6 +129,7 @@ class FrontendController extends Controller
     */ 
    public function myAnnouncements()
    {
+     $services     = Service::all();
        return view('frontend.announcements', [
           // 'agrifoods' => AgriFood::where('hired', 'no')->orderBy('id', 'asc')->get(),
           // 'animals'   => Animal::where('hired', 'no')->orderBy('id', 'asc')->get(),
@@ -142,6 +143,7 @@ class FrontendController extends Controller
           // 'pallets'    => Pallet::where('hired', 'no')->orderBy('id', 'asc')->get(),
           // 'vehicles'    => Vehicle::where('hired', 'no')->orderBy('id', 'asc')->get(),
           'announcements'    => Announcement::where('hired', 'no')->where('user_id', Auth::id())->orderBy('id', 'asc')->get(),
+          'services'         =>$services,
        ]);
    }
 
@@ -422,5 +424,17 @@ class FrontendController extends Controller
     ]);
   }
 
+
+      // check email for Announcement 
+      public function emailCheck(Request $request){
+        $email =  User::where('email', $request->email)->first();
+        if($email) {
+          $status = 'true';
+        }
+        else{
+          $status = 'false';
+        }
+        return response($status);
+   }
 // END  
 }

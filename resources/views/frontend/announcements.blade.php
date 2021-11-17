@@ -514,11 +514,11 @@ function initMap() {
 function calculateAndDisplayRoute(directionsService, directionsRenderer) {
     directionsService.route({
             origin: {
-                query: '{{ $item->depart }}',
+                query: '',
                 
             },
             destination: {
-                query: '{{ $item->arrivee }}',
+                query: ' ',
             },
             travelMode: google.maps.TravelMode.DRIVING,
         },
@@ -534,11 +534,11 @@ function calculateAndDisplayRoute(directionsService, directionsRenderer) {
 
                 console.log(distance)
         
-                // $('.getDataID'+{{ $item->id }}).text(distance); 
+                // $('.getDataID'+ ).text(distance); 
                 // console.log(distance) 
             } else {
                 // $('#distance').append('Map Not Found');
-                // $('#distance'+{{ $item->id }}).text('not found'); 
+                // $('#distance'+ ).text('not found'); 
                 // console.log(status)
                 // console.log(myId)
                 console.log(distance)

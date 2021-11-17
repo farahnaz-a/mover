@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Announcement;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -24,4 +25,6 @@ class AdminController extends Controller
     {
         return view('admin.index', ['users' => User::latest()->get()]);
     }
+
+
 }

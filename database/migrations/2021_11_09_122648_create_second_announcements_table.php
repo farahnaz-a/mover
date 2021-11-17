@@ -19,10 +19,14 @@ class CreateSecondAnnouncementsTable extends Migration
             $table->string('volume')->nullable();
             $table->longText('list')->nullable();
             $table->string('individual_goods')->nullable();
-            $table->string('place_type')->nullable();
-            $table->string('floor')->nullable();
-            $table->string('ascenseur')->nullable();
-            $table->string('access')->nullable();
+            $table->string('place_type_depart')->nullable();
+            $table->string('floor_depart')->nullable();
+            $table->string('ascenseur_depart')->nullable();
+            $table->string('access_depart')->nullable();
+            $table->string('place_type_arrivee')->nullable();
+            $table->string('floor_arrivee')->nullable();
+            $table->string('ascenseur_arrivee')->nullable();
+            $table->string('access_arrivee')->nullable();
             $table->string('services')->nullable();
             $table->string('help')->nullable();
             $table->string('article_name')->nullable();

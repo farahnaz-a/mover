@@ -44,7 +44,7 @@
             <div class="container">
                 <div class="transport-type-wrapper">
                     <div class="row">
-                        <div class="col">
+                        <div class="col"> 
                             @if ($category == 'déménagement')
                                 <!-- household equipment form start -->
                                 <div class="bg-white shadow-sm my-3 p-3 rounded" id="household">
@@ -53,40 +53,38 @@
                                     <div class="row">
                                         <div class="col-12">
                                             <div class="bg-light-gray p-3 rounded mt-3">
-                                                <form action="{{ route('announcement.three') }}" class="needs-validation"
+                                                <form action="{{ route('announcement.store') }}" class="needs-validation"
                                                     id="household-form" method="POST">
                                                     @csrf
-                                                    <input type="hidden" name="category" value="{{ $category }}" />
-                                                    {{-- <div class="row">
+                                                    <input type="hidden" name="category" value="{{ $category }}" /> 
+
+                                                    <div class="row">
                                                         <div class="col-4">
                                                             <div class="form-group">
-                                                                <input type="text" placeholder="Départ"
-                                                                    class="form-control" name="depart" required/>
-                                                            </div>
+                                                                <input type="text" placeholder="Départ" class="form-control" name="depart" required/> 
+                                                              </div>
                                                         </div>
                                                         <div class="col-4">
                                                             <div class="form-group">
-                                                                <input type="text" placeholder="Arrivée"
-                                                                    class="form-control" name="arrivee" required/>
+                                                                <input type="text" placeholder="Arrivée" class="form-control" name="arrivee" required/>
                                                             </div>
                                                         </div>
-                                                    </div>
+                                                    </div> 
                                                     <div class="row">
                                                         <div class="col-4">
                                                             <div class="form-group">
                                                                 <label for=""> Date de chargement </label>
-                                                                <input type="date" placeholder="Date de chargement "
-                                                                    class="form-control" name="loading_date" required/>
+                                                                <input type="date" placeholder="Date de chargement " class="form-control" name="loading_date" required/>
                                                             </div>
                                                         </div>
                                                         <div class="col-4">
                                                             <div class="form-group">
                                                                 <label for=""> Date de livraison </label>
-                                                                <input type="date" placeholder="Date de livraison "
-                                                                    class="form-control" name="delevary_date" required/>
+                                                                <input type="date" placeholder="Date de livraison " class="form-control" name="delevary_date" required/>
                                                             </div>
                                                         </div>
-                                                    </div> --}}
+                                                    </div>  
+                                                    <br>
                                                     <div class="row">
                                                         <div class="col-4">
                                                             <div class="form-group">
@@ -138,8 +136,8 @@
                                                             <div class="form-group">
                                                                 {{-- <input type="text" placeholder="type de lieu"
                                                                     class="form-control" name="place_type" /> --}}
-                                                                <select name="place_type"   required>
-                                                                    <option value="">type de lieu </option>
+                                                                <select name="place_type_depart"   required>
+                                                                    <option value="">type de lieu depart</option>
                                                                     <option value="maison">maison</option>
                                                                     <option value="appartement">appartement</option>
                                                                     <option value="garde-meuble">garde meuble</option>
@@ -150,8 +148,45 @@
                                                             </div>
 
                                                             <div class="form-group">
-                                                                <select name="floor"   required>
-                                                                    <option value="">étages</option>
+                                                                <select name="floor_depart"   required>
+                                                                    <option value="">étages depart</option>
+                                                                    <option value="1">1</option>
+                                                                    <option value="2">2</option>
+                                                                    <option value="3">3</option>
+                                                                    <option value="4">4</option>
+                                                                    <option value="5">5</option>
+                                                                    <option value="6">6</option>
+                                                                    <option value="7">7</option>
+                                                                    <option value="8">8</option>
+                                                                    <option value="9 et plus">9 et plus</option>
+
+
+                                                                </select>
+                                                                {{-- <input type="text" placeholder="étages"
+                                                                    class="form-control" name="floor" /> --}}
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-4">
+                                                            <div class="form-group">
+                                                                {{-- <input type="text" placeholder="type de lieu"
+                                                                    class="form-control" name="place_type" /> --}}
+                                                                <select name="place_type_arrivee"   required>
+                                                                    <option value="">type de lieu arrivee</option>
+                                                                    <option value="maison">maison</option>
+                                                                    <option value="appartement">appartement</option>
+                                                                    <option value="garde-meuble">garde meuble</option>
+                                                                    <option value="commercial">local commercial </option>
+                                                                    <option value="bureau">bureau </option>
+
+                                                                </select>
+                                                            </div>
+
+                                                            <div class="form-group">
+                                                                <select name="floor_arrivee"   required>
+                                                                    <option value="">étages arrivee</option>
                                                                     <option value="1">1</option>
                                                                     <option value="2">2</option>
                                                                     <option value="3">3</option>
@@ -172,7 +207,7 @@
                                                     </div>
                                                     <div class="row my-3">
                                                         <div class="col-4">
-                                                            <h5>ascenseur</h5>
+                                                            <h5>ascenseur depart</h5>
                                                             {{-- <label for="no">non</label>
                                                              <input type="radio" id="no" name="ascenseur" value="no">
                                                                <label for="yes">oui</label>
@@ -183,12 +218,12 @@
                                                         <div class="col-4">
                                                             <div class="d-flex">
                                                                 <label for="no2" class="d-flex align-items-center mr-3">
-                                                                    non <input type="radio" id="no2" name="ascenseur"
+                                                                    non <input type="radio" id="no2" name="ascenseur_depart"
                                                                         style="margin-left: 5px" value="no" required>
                                                                 </label>
 
                                                                 <label for="yes2" class="d-flex align-items-center">
-                                                                    oui <input type="radio" id="yes2" name="ascenseur"
+                                                                    oui <input type="radio" id="yes2" name="ascenseur_depart"
                                                                         value="yes" style="margin-left: 5px" required>
                                                                 </label>
                                                             </div>
@@ -197,7 +232,32 @@
                                                     </div>
                                                     <div class="row my-3">
                                                         <div class="col-4">
-                                                            <h5>accès</h5>
+                                                            <h5>ascenseur arrivee</h5>
+                                                            {{-- <label for="no">non</label>
+                                                             <input type="radio" id="no" name="ascenseur" value="no">
+                                                               <label for="yes">oui</label>
+                                                               <input type="radio" id="yes" name="ascenseur" value="yes">
+                                                             <br> --}}
+                                                        </div>
+
+                                                        <div class="col-4">
+                                                            <div class="d-flex">
+                                                                <label for="no3" class="d-flex align-items-center mr-3">
+                                                                    non <input type="radio" id="no3" name="ascenseur_arrivee"
+                                                                        style="margin-left: 5px" value="no" required>
+                                                                </label>
+
+                                                                <label for="yes3" class="d-flex align-items-center">
+                                                                    oui <input type="radio" id="yes3" name="ascenseur_arrivee"
+                                                                        value="yes" style="margin-left: 5px" required>
+                                                                </label>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                    <div class="row my-3">
+                                                        <div class="col-4">
+                                                            <h5>accès depart</h5>
                                                             {{-- <label for=""> accès</label> <br> --}}
                                                             <table>
                                                                 <tr>
@@ -205,14 +265,39 @@
                                                                     </td>
                                                                     <td> <input class="ml-2"
                                                                             style="margin-top: -4px" type="radio" id="no"
-                                                                            name="access" value="no" required></td>
+                                                                            name="access_depart" value="no" required></td>
                                                                 </tr>
                                                                 <tr>
                                                                     <td><label for="yes">on doit se garer plus loin </label>
                                                                     </td>
                                                                     <td> <input class="ml-2"
                                                                             style="margin-top: -4px" type="radio" id="yes"
-                                                                            name="access" value="yes" required></td>
+                                                                            name="access_depart" value="yes" required></td>
+                                                                </tr>
+
+                                                            </table>
+
+                                                        </div>
+
+                                                    </div>
+                                                    <div class="row my-3">
+                                                        <div class="col-4">
+                                                            <h5>accès arrivee</h5>
+                                                            {{-- <label for=""> accès</label> <br> --}}
+                                                            <table>
+                                                                <tr>
+                                                                    <td> <label for="no4">on peut se garer devant </label>
+                                                                    </td>
+                                                                    <td> <input class="ml-2"
+                                                                            style="margin-top: -4px" type="radio" id="no4"
+                                                                            name="access_arrivee" value="no" required></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td><label for="yes4">on doit se garer plus loin </label>
+                                                                    </td>
+                                                                    <td> <input class="ml-2"
+                                                                            style="margin-top: -4px" type="radio" id="yes4"
+                                                                            name="access_arrivee" value="yes" required></td>
                                                                 </tr>
 
                                                             </table>
@@ -228,22 +313,34 @@
                                                             </div>
                                                         </div>
                                                     </div> --}}
-                                                    
-                                                    {{-- <div class="row">
+                                                    <h5 class="mt-4 font-weight-bold text-navy-blue">
+                                                        <i class="icofont-warning-alt mr-2"></i>Additional
+                                                        information
+                                                        <em class="font-weight-normal">(recommended)</em>
+                                                      </h5>
+                                                    <div class="row">
                                                         <div class="col-8">
                                                             <textarea name="informations"   class="form-control"
                                                                 rows="7" placeholder="informations complémentaires "></textarea>
                                                         </div>
                                                     </div>
-                                                    <div class="row mt-4">
+                                                    {{-- <div class="row mt-4">
                                                         <div class="col-4 mb-3">
                                                             <h5>photo</h5> 
                                                             <img src="{{ asset('uploads/callouts/1.jpg') }}" alt="">
                                                             <a class="d-inline-block my-3" target="_blank"
                                                                 href="{{ asset('uploads/callouts/1.jpg') }}">Télécharger</a>
                                                         </div>
-                                                    </div>
+                                                    </div> --}}
+                                                    
+
+                                                    {{-- IF User Is not Login Then Show This  --}}
+                                                   @guest 
                                                     <h3 class="mt-4">données </h3>
+                                                    @if (session('errors'))
+                                                    <script>alert("{{ session('errors') }}")</script>
+                                                    {{-- <div class="alert alert-danger">{{ session('errors') }}</div> --}}
+                                                    @endif
                                                     <div class="row">
                                                         <div class="col-8">
                                                             <div class="form-group input-group">
@@ -254,49 +351,13 @@
                                                                 <input name="name" type="text" placeholder="Nom et premon"
                                                                     class="form-control" />
                                                             </div>
+                                                            <span class="text-success d-none" id="existing">You have Already An Account Please Login</span>
                                                             <div class="form-group input-group">
                                                                 <div class="input-group-append">
                                                                     <span class="input-group-text" id="email"><i
                                                                             class="icofont-email"></i></span>
                                                                 </div>
-                                                                <input name="email" type="text" placeholder="Email"
-                                                                    class="form-control" />
-                                                            </div>
-                                                            <div class="row">
-                                                                <div class="col-5">
-                                                                    <div class="form-group ">
-                                                                        <div class="input-group" id="country_code_wrapper">
-                                                                            <div class="input-group-prepend">
-                                                                                <label class="input-group-text"
-                                                                                    for="contry_code">
-                                                                                     <i class="icofont-world"></i></label>
-                                                                            </div> 
-                                                                            <select class="flex-grow-1 w-auto"
-                                                                                name="country_code" id="contry_code">
-                                                                                @foreach ( countryCode() as $item)
-                                                                                <option value="{{ $item->phonecode }}"> {{ $item->iso }} ({{ $item->phonecode }})</option> 
-                                                                                @endforeach 
-                                                                            </select>
-                                                                        </div> 
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-7">
-                                                                    <div class="form-group input-group">
-                                                                        <div class="input-group-append">
-                                                                            <span class="input-group-text" id="phone"><i
-                                                                                    class="icofont-ui-call"></i></span>
-                                                                        </div>
-                                                                        <input name="phone" type="text" placeholder="Phone"
-                                                                            class="form-control" />
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="form-group input-group">
-                                                                <div class="input-group-append">
-                                                                    <span class="input-group-text" id="pseudo"><i
-                                                                            class="icofont-ui-user"></i></span>
-                                                                </div>
-                                                                <input name="pseudo" type="text" placeholder="pseudo"
+                                                                <input name="email" type="text" id="user_email" placeholder="Email"
                                                                     class="form-control" />
                                                             </div>
                                                             <div class="form-group input-group">
@@ -305,26 +366,73 @@
                                                                             class="icofont-lock"></i></span>
                                                                 </div>
                                                                 <input name="password" type="password"
-                                                                    placeholder="Mot de passe" class="form-control" />
+                                                                    placeholder="Mot de passe" class="form-control"  id="pwd"/>
                                                             </div>
-                                                            <div class="form-group input-group">
-                                                                <div class="input-group-append">
-                                                                    <span class="input-group-text" id="confirm_password"><i
-                                                                            class="icofont-lock"></i></span>
+                                                            <div id="optional" class="">
+                                                                <span class="text-danger" id="password_error"> </span>
+                                                                <div class="form-group input-group">
+                                                                    <div class="input-group-append">
+                                                                        <span class="input-group-text" id="confirm_password"><i
+                                                                                class="icofont-lock"></i></span>
+                                                                    </div>
+                                                                    <input name="confirm_password" type="password"
+                                                                        placeholder="Confirmer votre mot de passe"
+                                                                        class="form-control" id="c_pwd"/>
+                                                                </div> 
+
+                                                                <div class="row">
+                                                                    <div class="col-5">
+                                                                        <div class="form-group ">
+                                                                            <div class="input-group" id="country_code_wrapper">
+                                                                                <div class="input-group-prepend">
+                                                                                    <label class="input-group-text"
+                                                                                        for="contry_code">
+                                                                                         <i class="icofont-world"></i></label>
+                                                                                </div> 
+                                                                                <select class="flex-grow-1 w-auto"
+                                                                                    name="country_code" id="contry_code">
+                                                                                    @foreach ( countryCode() as $item)
+                                                                                    <option value="{{ $item->phonecode }}"> {{ $item->iso }} ({{ $item->phonecode }})</option> 
+                                                                                    @endforeach 
+                                                                                </select>
+                                                                            </div> 
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-7">
+                                                                        <div class="form-group input-group">
+                                                                            <div class="input-group-append">
+                                                                                <span class="input-group-text" id="phone"><i
+                                                                                        class="icofont-ui-call"></i></span>
+                                                                            </div>
+                                                                            <input name="phone" type="text" placeholder="Phone"
+                                                                                class="form-control" />
+                                                                        </div>
+                                                                    </div>
                                                                 </div>
-                                                                <input name="confirm_password" type="password"
-                                                                    placeholder="Confirmer votre mot de passe"
-                                                                    class="form-control" />
+                                                                <div class="form-group input-group">
+                                                                    <div class="input-group-append">
+                                                                        <span class="input-group-text" id="pseudo"><i
+                                                                                class="icofont-ui-user"></i></span>
+                                                                    </div>
+                                                                    <input name="pseudo" type="text" placeholder="pseudo"
+                                                                        class="form-control" />
+                                                                </div>
                                                             </div>
-                                                            <input type="checkbox" id="condition" name="condition"
-                                                                value="yes" required>
-                                                            <label for="condition"> j'accepte les dispositions des
-                                                                conditions
-                                                                générales et de la politique de confidentialité
-                                                            </label><br>
+                                                       
+                                                        </div>
+                                                    </div>  
+                                                    @endguest
+                                                    <div class="row">
+                                                        <div class="col">
+                                                            <input type="checkbox" id="condition" name="terms"
+                                                            value="yes" required>
+                                                        <label for="condition"> j'accepte les dispositions des
+                                                            conditions
+                                                            générales et de la politique de confidentialité
+                                                        </label><br>
 
                                                         </div>
-                                                    </div> --}}
+                                                    </div>
                                             </div> 
                                         </div>
                                     </div>
@@ -336,7 +444,7 @@
                                     </a> --}}
                                     <button type="submit" data-section="1"
                                         class="continue btn text-white bg-navy-blue ml-3">
-                                        Continue 
+                                        Publiez mon annonce
                                     </button>
                                     </form>
                                 </div>
@@ -377,12 +485,39 @@
                                     <div class="row">
                                         <div class="col-12">
                                             <div class="bg-light-gray p-3 rounded mt-3">
-                                                <form action="{{ route('announcement.three') }}" class="needs-validation"
+                                                <form action="{{ route('announcement.store') }}" class="needs-validation"
                                                     id="vehicle-form" method="POST">
                                                     @csrf
                                                     <input type="hidden" id="vehicle-type" />
                                                     <input type="hidden" name="category" value="{{ $category }}" />
                                                      
+                                                    <div class="row">
+                                                        <div class="col-4">
+                                                            <div class="form-group">
+                                                                <input type="text" placeholder="Départ" class="form-control" name="depart" required/> 
+                                                              </div>
+                                                        </div>
+                                                        <div class="col-4">
+                                                            <div class="form-group">
+                                                                <input type="text" placeholder="Arrivée" class="form-control" name="arrivee" required/>
+                                                            </div>
+                                                        </div>
+                                                    </div> 
+                                                    <div class="row">
+                                                        <div class="col-4">
+                                                            <div class="form-group">
+                                                                <label for=""> Date de chargement </label>
+                                                                <input type="date" placeholder="Date de chargement " class="form-control" name="loading_date" required/>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-4">
+                                                            <div class="form-group">
+                                                                <label for=""> Date de livraison </label>
+                                                                <input type="date" placeholder="Date de livraison " class="form-control" name="delevary_date" required/>
+                                                            </div>
+                                                        </div>
+                                                    </div>  
+                                                    <br>
                                                     <div class="row">
                                                         <div class="col-4">
                                                             <div class="form-group">
@@ -426,8 +561,25 @@
                                                             <div class="form-group">
                                                                 {{-- <input type="text" placeholder="type de lieu"
                                                                     class="form-control" name="place_type" /> --}}
-                                                                <select name="place_type"   required>
-                                                                    <option value="">type de lieu </option>
+                                                                <select name="place_type_depart"   required>
+                                                                    <option value="">type de lieu depart</option>
+                                                                    <option value="maison">maison</option>
+                                                                    <option value="appartement">appartement</option>
+                                                                    <option value="garde-meuble">garde meuble</option>
+                                                                    <option value="commercial">local commercial </option>
+                                                                    <option value="bureau">bureau </option>
+
+                                                                </select>
+                                                            </div>
+                                                        </div> 
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-4">
+                                                            <div class="form-group">
+                                                                {{-- <input type="text" placeholder="type de lieu"
+                                                                    class="form-control" name="place_type" /> --}}
+                                                                <select name="place_type_arrivee"   required>
+                                                                    <option value="">type de lieu arrivee</option>
                                                                     <option value="maison">maison</option>
                                                                     <option value="appartement">appartement</option>
                                                                     <option value="garde-meuble">garde meuble</option>
@@ -465,8 +617,30 @@
                                                     <div class="row">
                                                         <div class="col-4">
                                                             <div class="form-group">
-                                                                <select name="floor"   required>
-                                                                    <option value="">étages</option>
+                                                                <select name="floor_depart"   required>
+                                                                    <option value="">étages depart</option>
+                                                                    <option value="1">1</option>
+                                                                    <option value="2">2</option>
+                                                                    <option value="3">3</option>
+                                                                    <option value="4">4</option>
+                                                                    <option value="5">5</option>
+                                                                    <option value="6">6</option>
+                                                                    <option value="7">7</option>
+                                                                    <option value="8">8</option>
+                                                                    <option value="9 et plus">9 et plus</option>
+
+
+                                                                </select>
+                                                                {{-- <input type="text" placeholder="étages"
+                                                                    class="form-control" name="floor" /> --}}
+                                                            </div>
+                                                        </div> 
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-4">
+                                                            <div class="form-group">
+                                                                <select name="floor_arrivee"   required>
+                                                                    <option value="">étages arrivee</option>
                                                                     <option value="1">1</option>
                                                                     <option value="2">2</option>
                                                                     <option value="3">3</option>
@@ -486,7 +660,7 @@
                                                     </div>
                                                     <div class="row my-3">
                                                         <div class="col-4">
-                                                            <h5>ascenseur </h5>
+                                                            <h5>ascenseur depart</h5>
                                                             {{-- <label for="no">non</label>
                                                              <input type="radio" id="no" name="ascenseur" value="no">
                                                                <label for="yes">oui</label>
@@ -497,12 +671,12 @@
                                                         <div class="col-4">
                                                             <div class="d-flex">
                                                                 <label for="no2" class="d-flex align-items-center mr-3">
-                                                                    non <input type="radio" id="no2" name="ascenseur"
+                                                                    non <input type="radio" id="no2" name="ascenseur_depart"
                                                                         style="margin-left: 5px" value="no" required>
                                                                 </label>
 
                                                                 <label for="yes2" class="d-flex align-items-center">
-                                                                    oui <input type="radio" id="yes2" name="ascenseur"
+                                                                    oui <input type="radio" id="yes2" name="ascenseur_depart"
                                                                         value="yes" style="margin-left: 5px" required>
                                                                 </label>
                                                             </div>
@@ -511,7 +685,32 @@
                                                     </div>
                                                     <div class="row my-3">
                                                         <div class="col-4">
-                                                            <h5>accès</h5>
+                                                            <h5>ascenseur arrivee</h5>
+                                                            {{-- <label for="no">non</label>
+                                                             <input type="radio" id="no" name="ascenseur" value="no">
+                                                               <label for="yes">oui</label>
+                                                               <input type="radio" id="yes" name="ascenseur" value="yes">
+                                                             <br> --}}
+                                                        </div>
+
+                                                        <div class="col-4">
+                                                            <div class="d-flex">
+                                                                <label for="no3" class="d-flex align-items-center mr-3">
+                                                                    non <input type="radio" id="no3" name="ascenseur_arrivee"
+                                                                        style="margin-left: 5px" value="no" required>
+                                                                </label>
+
+                                                                <label for="yes3" class="d-flex align-items-center">
+                                                                    oui <input type="radio" id="yes3" name="ascenseur_arrivee"
+                                                                        value="yes" style="margin-left: 5px" required>
+                                                                </label>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                    <div class="row my-3">
+                                                        <div class="col-4">
+                                                            <h5>accès depart</h5>
                                                             {{-- <label for=""> accès</label> <br> --}}
                                                             <table>
                                                                 <tr>
@@ -519,20 +718,155 @@
                                                                     </td>
                                                                     <td> <input class="ml-2"
                                                                             style="margin-top: -4px" type="radio" id="no"
-                                                                            name="access" value="no" required></td>
+                                                                            name="access_depart" value="no" required></td>
                                                                 </tr>
                                                                 <tr>
                                                                     <td><label for="yes">on doit se garer plus loin </label>
                                                                     </td>
                                                                     <td> <input class="ml-2"
                                                                             style="margin-top: -4px" type="radio" id="yes"
-                                                                            name="access" value="yes" required></td>
+                                                                            name="access_depart" value="yes" required></td>
                                                                 </tr>
 
                                                             </table>
 
                                                         </div>
 
+                                                    </div>
+                                                    <div class="row my-3">
+                                                        <div class="col-4">
+                                                            <h5>accès arrivee</h5>
+                                                            {{-- <label for=""> accès</label> <br> --}}
+                                                            <table>
+                                                                <tr>
+                                                                    <td> <label for="no4">on peut se garer devant </label>
+                                                                    </td>
+                                                                    <td> <input class="ml-2"
+                                                                            style="margin-top: -4px" type="radio" id="no4"
+                                                                            name="access_arrivee" value="no" required></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td><label for="yes4">on doit se garer plus loin </label>
+                                                                    </td>
+                                                                    <td> <input class="ml-2"
+                                                                            style="margin-top: -4px" type="radio" id="yes4"
+                                                                            name="access_arrivee" value="yes" required></td>
+                                                                </tr>
+
+                                                            </table>
+
+                                                        </div>
+
+                                                    </div>
+                                                    <h5 class="mt-4 font-weight-bold text-navy-blue">
+                                                        <i class="icofont-warning-alt mr-2"></i>Additional
+                                                        information
+                                                        <em class="font-weight-normal">(recommended)</em>
+                                                      </h5>
+                                                    <div class="row">
+                                                        <div class="col-8">
+                                                            <textarea name="informations"   class="form-control"
+                                                                rows="7" placeholder="informations complémentaires "></textarea>
+                                                        </div>
+                                                    </div>
+                                                    
+                                                    
+
+                                                    {{-- IF User Is not Login Then Show This  --}}
+                                                    @guest
+                                                    <h3 class="mt-4">données </h3>
+                                                    @if (session('errors'))
+                                                    <script>alert("{{ session('errors') }}")</script> 
+                                                    @endif
+                                                    <div class="row">
+                                                        <div class="col-8">
+                                                            <div class="form-group input-group">
+                                                                <div class="input-group-append">
+                                                                    <span class="input-group-text" id="name"><i
+                                                                            class="icofont-user-alt-3"></i></span>
+                                                                </div>
+                                                                <input name="name" type="text" placeholder="Nom et premon"
+                                                                    class="form-control" />
+                                                            </div>
+                                                            <span class="text-success d-none" id="existing">You have Already An Account Please Login</span>
+                                                            <div class="form-group input-group">
+                                                                <div class="input-group-append">
+                                                                    <span class="input-group-text" id="email"><i
+                                                                            class="icofont-email"></i></span>
+                                                                </div>
+                                                                <input name="email" type="text" id="user_email" placeholder="Email"
+                                                                    class="form-control" />
+                                                                </div>
+                                                            <div class="form-group input-group">
+                                                                <div class="input-group-append">
+                                                                    <span class="input-group-text" id="password"><i
+                                                                            class="icofont-lock"></i></span>
+                                                                </div>
+                                                                <input name="password" type="password"
+                                                                    placeholder="Mot de passe" class="form-control"  id="pwd"/>
+                                                            </div>
+                                                            <div id="optional" class="">
+                                                                <div class="form-group input-group">
+                                                                    <div class="input-group-append">
+                                                                        <span class="input-group-text" id="confirm_password"><i
+                                                                                class="icofont-lock"></i></span>
+                                                                    </div>
+                                                                    <input name="confirm_password" type="password"
+                                                                        placeholder="Confirmer votre mot de passe"
+                                                                        class="form-control" id="c_pwd"/>
+                                                                </div> 
+                                                                <div class="row">
+                                                                    <div class="col-5">
+                                                                        <div class="form-group ">
+                                                                            <div class="input-group" id="country_code_wrapper">
+                                                                                <div class="input-group-prepend">
+                                                                                    <label class="input-group-text"
+                                                                                        for="contry_code">
+                                                                                         <i class="icofont-world"></i></label>
+                                                                                </div> 
+                                                                                <select class="flex-grow-1 w-auto"
+                                                                                    name="country_code" id="contry_code">
+                                                                                    @foreach ( countryCode() as $item)
+                                                                                    <option value="{{ $item->phonecode }}"> {{ $item->iso }} ({{ $item->phonecode }})</option> 
+                                                                                    @endforeach 
+                                                                                </select>
+                                                                            </div> 
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-7">
+                                                                        <div class="form-group input-group">
+                                                                            <div class="input-group-append">
+                                                                                <span class="input-group-text" id="phone"><i
+                                                                                        class="icofont-ui-call"></i></span>
+                                                                            </div>
+                                                                            <input name="phone" type="text" placeholder="Phone"
+                                                                                class="form-control" />
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-group input-group">
+                                                                    <div class="input-group-append">
+                                                                        <span class="input-group-text" id="pseudo"><i
+                                                                                class="icofont-ui-user"></i></span>
+                                                                    </div>
+                                                                    <input name="pseudo" type="text" placeholder="pseudo"
+                                                                        class="form-control" />
+                                                                </div>
+                                                            </div>
+                                                       
+                                                        </div>
+                                                    </div>  
+                                                    @endguest
+                                                    <div class="row">
+                                                        <div class="col">
+                                                            <input type="checkbox" id="condition" name="terms"
+                                                            value="yes" required>
+                                                        <label for="condition"> j'accepte les dispositions des
+                                                            conditions
+                                                            générales et de la politique de confidentialité
+                                                        </label><br>
+
+                                                        </div>
                                                     </div>
                                                     
                                                     {{-- <button data-section="0" class="back btn btn-outline-danger">
@@ -557,7 +891,7 @@
                                 </a> --}}
                                 <button type="submit" data-section="1"
                                     class="continue btn text-white bg-navy-blue ml-3">
-                                    Continue
+                                    Publiez mon annonce
 
                                 </button>
                                 </form>
@@ -574,7 +908,7 @@
                             <div class="row">
                                 <div class="col-12">
                                     <div class="bg-light-gray p-3 rounded mt-3">
-                                        <form method="POST" action="{{ route('announcement.three') }}"
+                                        <form method="POST" action="{{ route('announcement.store') }}"
                                             class="needs-validation article-form" id="motorcycleSport-form">
                                             @csrf
                                             <input type="hidden" name="category" value="{{ $category }}" />
@@ -588,6 +922,34 @@
                                                 </div>
                                                 
                                             </div>
+                                            
+                                            <div class="row">
+                                                <div class="col-4">
+                                                    <div class="form-group">
+                                                        <input type="text" placeholder="Départ" class="form-control" name="depart" required/> 
+                                                      </div>
+                                                </div>
+                                                <div class="col-4">
+                                                    <div class="form-group">
+                                                        <input type="text" placeholder="Arrivée" class="form-control" name="arrivee" required/>
+                                                    </div>
+                                                </div>
+                                            </div> 
+                                            <div class="row">
+                                                <div class="col-4">
+                                                    <div class="form-group">
+                                                        <label for=""> Date de chargement </label>
+                                                        <input type="date" placeholder="Date de chargement " class="form-control" name="loading_date" required/>
+                                                    </div>
+                                                </div>
+                                                <div class="col-4">
+                                                    <div class="form-group">
+                                                        <label for=""> Date de livraison </label>
+                                                        <input type="date" placeholder="Date de livraison " class="form-control" name="delevary_date" required/>
+                                                    </div>
+                                                </div>
+                                            </div>  
+                                            <br>
                                            
                                            
                                             <div class="row">
@@ -674,8 +1036,8 @@
                                                     <div class="form-group">
                                                         {{-- <input type="text" placeholder="type de lieu"
                                                             class="form-control" name="place_type" /> --}}
-                                                        <select name="place_type"   required>
-                                                            <option value="">type de lieu </option>
+                                                        <select name="place_type_depart"   required>
+                                                            <option value="">type de lieu depart</option>
                                                             <option value="maison">maison</option>
                                                             <option value="appartement">appartement</option>
                                                             <option value="garde-meuble">garde meuble</option>
@@ -686,8 +1048,8 @@
                                                     </div>
 
                                                     <div class="form-group">
-                                                        <select name="floor"   required>
-                                                            <option value="">étages</option>
+                                                        <select name="floor_depart"   required>
+                                                            <option value="">étages depart</option>
                                                             <option value="1">1</option>
                                                             <option value="2">2</option>
                                                             <option value="3">3</option>
@@ -708,18 +1070,60 @@
                                             </div>
                                             <div class="row">
                                                 <div class="col-4">
-                                                    <h5>ascenseur</h5>
+                                                    <div class="form-group">
+                                                        {{-- <input type="text" placeholder="type de lieu"
+                                                            class="form-control" name="place_type" /> --}}
+                                                        <select name="place_type_arrivee"   required>
+                                                            <option value="">type de lieu arrivee</option>
+                                                            <option value="maison">maison</option>
+                                                            <option value="appartement">appartement</option>
+                                                            <option value="garde-meuble">garde meuble</option>
+                                                            <option value="commercial">local commercial </option>
+                                                            <option value="bureau">bureau </option>
+
+                                                        </select>
+                                                    </div>
+
+                                                    <div class="form-group">
+                                                        <select name="floor_arrivee"   required>
+                                                            <option value="">étages arrivee</option>
+                                                            <option value="1">1</option>
+                                                            <option value="2">2</option>
+                                                            <option value="3">3</option>
+                                                            <option value="4">4</option>
+                                                            <option value="5">5</option>
+                                                            <option value="6">6</option>
+                                                            <option value="7">7</option>
+                                                            <option value="8">8</option>
+                                                            <option value="9 et plus">9 et plus</option>
+
+
+                                                        </select>
+                                                        {{-- <input type="text" placeholder="étages"
+                                                            class="form-control" name="floor" /> --}}
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                            <div class="row my-3">
+                                                <div class="col-4">
+                                                    <h5>ascenseur depart</h5>
+                                                    {{-- <label for="no">non</label>
+                                                     <input type="radio" id="no" name="ascenseur" value="no">
+                                                       <label for="yes">oui</label>
+                                                       <input type="radio" id="yes" name="ascenseur" value="yes">
+                                                     <br> --}}
                                                 </div>
 
                                                 <div class="col-4">
                                                     <div class="d-flex">
                                                         <label for="no2" class="d-flex align-items-center mr-3">
-                                                            non <input type="radio" id="no2" name="ascenseur"
+                                                            non <input type="radio" id="no2" name="ascenseur_depart"
                                                                 style="margin-left: 5px" value="no" required>
                                                         </label>
 
                                                         <label for="yes2" class="d-flex align-items-center">
-                                                            oui <input type="radio" id="yes2" name="ascenseur"
+                                                            oui <input type="radio" id="yes2" name="ascenseur_depart"
                                                                 value="yes" style="margin-left: 5px" required>
                                                         </label>
                                                     </div>
@@ -728,7 +1132,32 @@
                                             </div>
                                             <div class="row my-3">
                                                 <div class="col-4">
-                                                    <h5>accès</h5>
+                                                    <h5>ascenseur arrivee</h5>
+                                                    {{-- <label for="no">non</label>
+                                                     <input type="radio" id="no" name="ascenseur" value="no">
+                                                       <label for="yes">oui</label>
+                                                       <input type="radio" id="yes" name="ascenseur" value="yes">
+                                                     <br> --}}
+                                                </div>
+
+                                                <div class="col-4">
+                                                    <div class="d-flex">
+                                                        <label for="no3" class="d-flex align-items-center mr-3">
+                                                            non <input type="radio" id="no3" name="ascenseur_arrivee"
+                                                                style="margin-left: 5px" value="no" required>
+                                                        </label>
+
+                                                        <label for="yes3" class="d-flex align-items-center">
+                                                            oui <input type="radio" id="yes3" name="ascenseur_arrivee"
+                                                                value="yes" style="margin-left: 5px" required>
+                                                        </label>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                            <div class="row my-3">
+                                                <div class="col-4">
+                                                    <h5>accès depart</h5>
                                                     {{-- <label for=""> accès</label> <br> --}}
                                                     <table>
                                                         <tr>
@@ -736,14 +1165,39 @@
                                                             </td>
                                                             <td> <input class="ml-2"
                                                                     style="margin-top: -4px" type="radio" id="no"
-                                                                    name="access" value="no" required></td>
+                                                                    name="access_depart" value="no" required></td>
                                                         </tr>
                                                         <tr>
                                                             <td><label for="yes">on doit se garer plus loin </label>
                                                             </td>
                                                             <td> <input class="ml-2"
                                                                     style="margin-top: -4px" type="radio" id="yes"
-                                                                    name="access" value="yes" required></td>
+                                                                    name="access_depart" value="yes" required></td>
+                                                        </tr>
+
+                                                    </table>
+
+                                                </div>
+
+                                            </div>
+                                            <div class="row my-3">
+                                                <div class="col-4">
+                                                    <h5>accès arrivee</h5>
+                                                    {{-- <label for=""> accès</label> <br> --}}
+                                                    <table>
+                                                        <tr>
+                                                            <td> <label for="no4">on peut se garer devant </label>
+                                                            </td>
+                                                            <td> <input class="ml-2"
+                                                                    style="margin-top: -4px" type="radio" id="no4"
+                                                                    name="access_arrivee" value="no" required></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td><label for="yes4">on doit se garer plus loin </label>
+                                                            </td>
+                                                            <td> <input class="ml-2"
+                                                                    style="margin-top: -4px" type="radio" id="yes4"
+                                                                    name="access_arrivee" value="yes" required></td>
                                                         </tr>
 
                                                     </table>
@@ -759,6 +1213,116 @@
                                                     </div>
                                                 </div>
                                             </div> --}}
+                                            <h5 class="mt-4 font-weight-bold text-navy-blue">
+                                                <i class="icofont-warning-alt mr-2"></i>Additional
+                                                information
+                                                <em class="font-weight-normal">(recommended)</em>
+                                              </h5>
+                                            <div class="row">
+                                                <div class="col-8">
+                                                    <textarea name="informations"   class="form-control"
+                                                        rows="7" placeholder="informations complémentaires "></textarea>
+                                                </div>
+                                            </div>
+                                            
+                                            
+
+                                            {{-- IF User Is not Login Then Show This  --}}
+                                            @guest
+                                            <h3 class="mt-4">données </h3>
+                                            @if (session('errors'))
+                                            <script>alert("{{ session('errors') }}")</script> 
+                                            @endif
+                                            <div class="row">
+                                                <div class="col-8">
+                                                    <div class="form-group input-group">
+                                                        <div class="input-group-append">
+                                                            <span class="input-group-text" id="name"><i
+                                                                    class="icofont-user-alt-3"></i></span>
+                                                        </div>
+                                                        <input name="name" type="text" placeholder="Nom et premon"
+                                                            class="form-control" />
+                                                    </div>
+                                                    <span class="text-success d-none" id="existing">You have Already An Account Please Login</span>
+                                                    <div class="form-group input-group">
+                                                        <div class="input-group-append">
+                                                            <span class="input-group-text" id="email"><i
+                                                                    class="icofont-email"></i></span>
+                                                        </div>
+                                                        <input name="email" type="text" id="user_email" placeholder="Email"
+                                                            class="form-control" />
+                                                        </div>
+                                                    <div class="form-group input-group">
+                                                        <div class="input-group-append">
+                                                            <span class="input-group-text" id="password"><i
+                                                                    class="icofont-lock"></i></span>
+                                                        </div>
+                                                        <input name="password" type="password"
+                                                            placeholder="Mot de passe" class="form-control"  id="pwd"/>
+                                                    </div>
+                                                    <div id="optional" class="">
+                                                        <div class="form-group input-group">
+                                                            <div class="input-group-append">
+                                                                <span class="input-group-text" id="confirm_password"><i
+                                                                        class="icofont-lock"></i></span>
+                                                            </div>
+                                                            <input name="confirm_password" type="password"
+                                                                placeholder="Confirmer votre mot de passe"
+                                                                class="form-control" id="c_pwd"/>
+                                                        </div> 
+                                                        <div class="row">
+                                                            <div class="col-5">
+                                                                <div class="form-group ">
+                                                                    <div class="input-group" id="country_code_wrapper">
+                                                                        <div class="input-group-prepend">
+                                                                            <label class="input-group-text"
+                                                                                for="contry_code">
+                                                                                 <i class="icofont-world"></i></label>
+                                                                        </div> 
+                                                                        <select class="flex-grow-1 w-auto"
+                                                                            name="country_code" id="contry_code">
+                                                                            @foreach ( countryCode() as $item)
+                                                                            <option value="{{ $item->phonecode }}"> {{ $item->iso }} ({{ $item->phonecode }})</option> 
+                                                                            @endforeach 
+                                                                        </select>
+                                                                    </div> 
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-7">
+                                                                <div class="form-group input-group">
+                                                                    <div class="input-group-append">
+                                                                        <span class="input-group-text" id="phone"><i
+                                                                                class="icofont-ui-call"></i></span>
+                                                                    </div>
+                                                                    <input name="phone" type="text" placeholder="Phone"
+                                                                        class="form-control" />
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group input-group">
+                                                            <div class="input-group-append">
+                                                                <span class="input-group-text" id="pseudo"><i
+                                                                        class="icofont-ui-user"></i></span>
+                                                            </div>
+                                                            <input name="pseudo" type="text" placeholder="pseudo"
+                                                                class="form-control" />
+                                                        </div>
+                                                    </div>
+                                               
+                                                </div>
+                                            </div>   
+                                            @endguest
+                                            <div class="row">
+                                                <div class="col">
+                                                    <input type="checkbox" id="condition" name="terms"
+                                                    value="yes" required>
+                                                <label for="condition"> j'accepte les dispositions des
+                                                    conditions
+                                                    générales et de la politique de confidentialité
+                                                </label><br>
+
+                                                </div>
+                                            </div>
                                              
 
                                     </div>
@@ -770,7 +1334,7 @@
                                     <i class="icofont-simple-left mr-2"></i>Back
                                 </a> --}}
                                 <button data-section="1" class="continue btn text-white bg-navy-blue ml-3" type="submit">
-                                    Continue 
+                                    Publiez mon annonce
                                 </button>
                                 </form>
                             </div>
@@ -786,7 +1350,7 @@
                             <div class="row">
                                 <div class="col-12">
                                     <div class="bg-light-gray p-3 rounded mt-3">
-                                        <form action="{{ route('announcement.three') }}" method="POST"
+                                        <form action="{{ route('announcement.store') }}" method="POST"
                                             class="needs-validation article-form" id="boat-voluminous-form">
                                             @csrf
                                             <input type="hidden" name="category" value="{{ $category }}" />
@@ -798,7 +1362,35 @@
                                                             class="form-control" name="article_name" required/>
                                                     </div>
                                                 </div> 
+                                            </div> 
+                                            
+                                            <div class="row">
+                                                <div class="col-4">
+                                                    <div class="form-group">
+                                                        <input type="text" placeholder="Départ" class="form-control" name="depart" required/> 
+                                                      </div>
+                                                </div>
+                                                <div class="col-4">
+                                                    <div class="form-group">
+                                                        <input type="text" placeholder="Arrivée" class="form-control" name="arrivee" required/>
+                                                    </div>
+                                                </div>
+                                            </div> 
+                                            <div class="row">
+                                                <div class="col-4">
+                                                    <div class="form-group">
+                                                        <label for=""> Date de chargement </label>
+                                                        <input type="date" placeholder="Date de chargement " class="form-control" name="loading_date" required/>
+                                                    </div>
+                                                </div>
+                                                <div class="col-4">
+                                                    <div class="form-group">
+                                                        <label for=""> Date de livraison </label>
+                                                        <input type="date" placeholder="Date de livraison " class="form-control" name="delevary_date" required/>
+                                                    </div>
+                                                </div>
                                             </div>  
+                                            <br> 
                                             <div class="row">
                                                 <div class="col-4">
                                                     <div class="form-group input-group">
@@ -883,8 +1475,8 @@
                                                     <div class="form-group">
                                                         {{-- <input type="text" placeholder="type de lieu"
                                                             class="form-control" name="place_type" /> --}}
-                                                        <select name="place_type"   required>
-                                                            <option value="">type de lieu </option>
+                                                        <select name="place_type_depart"   required>
+                                                            <option value="">type de lieu depart</option>
                                                             <option value="maison">maison</option>
                                                             <option value="appartement">appartement</option>
                                                             <option value="garde-meuble">garde meuble</option>
@@ -895,8 +1487,45 @@
                                                     </div>
 
                                                     <div class="form-group">
-                                                        <select name="floor"   required>
-                                                            <option value="">étages</option>
+                                                        <select name="floor_depart"   required>
+                                                            <option value="">étages depart</option>
+                                                            <option value="1">1</option>
+                                                            <option value="2">2</option>
+                                                            <option value="3">3</option>
+                                                            <option value="4">4</option>
+                                                            <option value="5">5</option>
+                                                            <option value="6">6</option>
+                                                            <option value="7">7</option>
+                                                            <option value="8">8</option>
+                                                            <option value="9 et plus">9 et plus</option>
+
+
+                                                        </select>
+                                                        {{-- <input type="text" placeholder="étages"
+                                                            class="form-control" name="floor" /> --}}
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-4">
+                                                    <div class="form-group">
+                                                        {{-- <input type="text" placeholder="type de lieu"
+                                                            class="form-control" name="place_type" /> --}}
+                                                        <select name="place_type_arrivee"   required>
+                                                            <option value="">type de lieu arrivee</option>
+                                                            <option value="maison">maison</option>
+                                                            <option value="appartement">appartement</option>
+                                                            <option value="garde-meuble">garde meuble</option>
+                                                            <option value="commercial">local commercial </option>
+                                                            <option value="bureau">bureau </option>
+
+                                                        </select>
+                                                    </div>
+
+                                                    <div class="form-group">
+                                                        <select name="floor_arrivee"   required>
+                                                            <option value="">étages arrivee</option>
                                                             <option value="1">1</option>
                                                             <option value="2">2</option>
                                                             <option value="3">3</option>
@@ -917,18 +1546,23 @@
                                             </div>
                                             <div class="row my-3">
                                                 <div class="col-4">
-                                                    <h5>ascenseur </h5>
+                                                    <h5>ascenseur depart</h5>
+                                                    {{-- <label for="no">non</label>
+                                                     <input type="radio" id="no" name="ascenseur" value="no">
+                                                       <label for="yes">oui</label>
+                                                       <input type="radio" id="yes" name="ascenseur" value="yes">
+                                                     <br> --}}
                                                 </div>
 
                                                 <div class="col-4">
                                                     <div class="d-flex">
                                                         <label for="no2" class="d-flex align-items-center mr-3">
-                                                            non <input type="radio" id="no2" name="ascenseur"
+                                                            non <input type="radio" id="no2" name="ascenseur_depart"
                                                                 style="margin-left: 5px" value="no" required>
                                                         </label>
 
                                                         <label for="yes2" class="d-flex align-items-center">
-                                                            oui <input type="radio" id="yes2" name="ascenseur"
+                                                            oui <input type="radio" id="yes2" name="ascenseur_depart"
                                                                 value="yes" style="margin-left: 5px" required>
                                                         </label>
                                                     </div>
@@ -937,7 +1571,32 @@
                                             </div>
                                             <div class="row my-3">
                                                 <div class="col-4">
-                                                    <h5>accès</h5>
+                                                    <h5>ascenseur arrivee</h5>
+                                                    {{-- <label for="no">non</label>
+                                                     <input type="radio" id="no" name="ascenseur" value="no">
+                                                       <label for="yes">oui</label>
+                                                       <input type="radio" id="yes" name="ascenseur" value="yes">
+                                                     <br> --}}
+                                                </div>
+
+                                                <div class="col-4">
+                                                    <div class="d-flex">
+                                                        <label for="no3" class="d-flex align-items-center mr-3">
+                                                            non <input type="radio" id="no3" name="ascenseur_arrivee"
+                                                                style="margin-left: 5px" value="no" required>
+                                                        </label>
+
+                                                        <label for="yes3" class="d-flex align-items-center">
+                                                            oui <input type="radio" id="yes3" name="ascenseur_arrivee"
+                                                                value="yes" style="margin-left: 5px" required>
+                                                        </label>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                            <div class="row my-3">
+                                                <div class="col-4">
+                                                    <h5>accès depart</h5>
                                                     {{-- <label for=""> accès</label> <br> --}}
                                                     <table>
                                                         <tr>
@@ -945,14 +1604,39 @@
                                                             </td>
                                                             <td> <input class="ml-2"
                                                                     style="margin-top: -4px" type="radio" id="no"
-                                                                    name="access" value="no" required></td>
+                                                                    name="access_depart" value="no" required></td>
                                                         </tr>
                                                         <tr>
                                                             <td><label for="yes">on doit se garer plus loin </label>
                                                             </td>
                                                             <td> <input class="ml-2"
                                                                     style="margin-top: -4px" type="radio" id="yes"
-                                                                    name="access" value="yes" required></td>
+                                                                    name="access_depart" value="yes" required></td>
+                                                        </tr>
+
+                                                    </table>
+
+                                                </div>
+
+                                            </div>
+                                            <div class="row my-3">
+                                                <div class="col-4">
+                                                    <h5>accès arrivee</h5>
+                                                    {{-- <label for=""> accès</label> <br> --}}
+                                                    <table>
+                                                        <tr>
+                                                            <td> <label for="no4">on peut se garer devant </label>
+                                                            </td>
+                                                            <td> <input class="ml-2"
+                                                                    style="margin-top: -4px" type="radio" id="no4"
+                                                                    name="access_arrivee" value="no" required></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td><label for="yes4">on doit se garer plus loin </label>
+                                                            </td>
+                                                            <td> <input class="ml-2"
+                                                                    style="margin-top: -4px" type="radio" id="yes4"
+                                                                    name="access_arrivee" value="yes" required></td>
                                                         </tr>
 
                                                     </table>
@@ -968,6 +1652,116 @@
                                                     </div>
                                                 </div>
                                             </div>  --}}
+                                            <h5 class="mt-4 font-weight-bold text-navy-blue">
+                                                <i class="icofont-warning-alt mr-2"></i>Additional
+                                                information
+                                                <em class="font-weight-normal">(recommended)</em>
+                                              </h5>
+                                            <div class="row">
+                                                <div class="col-8">
+                                                    <textarea name="informations"   class="form-control"
+                                                        rows="7" placeholder="informations complémentaires "></textarea>
+                                                </div>
+                                            </div>
+                                            
+                                            
+
+                                            {{-- IF User Is not Login Then Show This  --}}
+                                            @guest
+                                            <h3 class="mt-4">données </h3>
+                                            @if (session('errors'))
+                                            <script>alert("{{ session('errors') }}")</script> 
+                                            @endif
+                                            <div class="row">
+                                                <div class="col-8">
+                                                    <div class="form-group input-group">
+                                                        <div class="input-group-append">
+                                                            <span class="input-group-text" id="name"><i
+                                                                    class="icofont-user-alt-3"></i></span>
+                                                        </div>
+                                                        <input name="name" type="text" placeholder="Nom et premon"
+                                                            class="form-control" />
+                                                    </div>
+                                                    <span class="text-success d-none" id="existing">You have Already An Account Please Login</span>
+                                                    <div class="form-group input-group">
+                                                        <div class="input-group-append">
+                                                            <span class="input-group-text" id="email"><i
+                                                                    class="icofont-email"></i></span>
+                                                        </div>
+                                                        <input name="email" type="text" id="user_email" placeholder="Email"
+                                                            class="form-control" />
+                                                        </div>
+                                                    <div class="form-group input-group">
+                                                        <div class="input-group-append">
+                                                            <span class="input-group-text" id="password"><i
+                                                                    class="icofont-lock"></i></span>
+                                                        </div>
+                                                        <input name="password" type="password"
+                                                            placeholder="Mot de passe" class="form-control"  id="pwd"/>
+                                                    </div>
+                                                    <div id="optional" class="">
+                                                        <div class="form-group input-group">
+                                                            <div class="input-group-append">
+                                                                <span class="input-group-text" id="confirm_password"><i
+                                                                        class="icofont-lock"></i></span>
+                                                            </div>
+                                                            <input name="confirm_password" type="password"
+                                                                placeholder="Confirmer votre mot de passe"
+                                                                class="form-control" id="c_pwd"/>
+                                                        </div> 
+                                                        <div class="row">
+                                                            <div class="col-5">
+                                                                <div class="form-group ">
+                                                                    <div class="input-group" id="country_code_wrapper">
+                                                                        <div class="input-group-prepend">
+                                                                            <label class="input-group-text"
+                                                                                for="contry_code">
+                                                                                    <i class="icofont-world"></i></label>
+                                                                        </div> 
+                                                                        <select class="flex-grow-1 w-auto"
+                                                                            name="country_code" id="contry_code">
+                                                                            @foreach ( countryCode() as $item)
+                                                                            <option value="{{ $item->phonecode }}"> {{ $item->iso }} ({{ $item->phonecode }})</option> 
+                                                                            @endforeach 
+                                                                        </select>
+                                                                    </div> 
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-7">
+                                                                <div class="form-group input-group">
+                                                                    <div class="input-group-append">
+                                                                        <span class="input-group-text" id="phone"><i
+                                                                                class="icofont-ui-call"></i></span>
+                                                                    </div>
+                                                                    <input name="phone" type="text" placeholder="Phone"
+                                                                        class="form-control" />
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group input-group">
+                                                            <div class="input-group-append">
+                                                                <span class="input-group-text" id="pseudo"><i
+                                                                        class="icofont-ui-user"></i></span>
+                                                            </div>
+                                                            <input name="pseudo" type="text" placeholder="pseudo"
+                                                                class="form-control" />
+                                                        </div>
+                                                    </div>
+                                                
+                                                </div>
+                                            </div>  
+                                            @endguest
+                                            <div class="row">
+                                                <div class="col">
+                                                    <input type="checkbox" id="condition" name="terms"
+                                                    value="yes" required>
+                                                <label for="condition"> j'accepte les dispositions des
+                                                    conditions
+                                                    générales et de la politique de confidentialité
+                                                </label><br>
+
+                                                </div>
+                                            </div>
                                     </div>
                                 </div>
                                 <div class="col-md-6 d-block" id="boat-voluminous-articles"></div>
@@ -977,7 +1771,7 @@
                                     <i class="icofont-simple-left mr-2"></i>Back
                                 </a> --}}
                                 <button type="submit" data-section="1" class="continue btn text-white bg-navy-blue ml-3">
-                                    Continue 
+                                    Publiez mon annonce 
                                 </button>
                                 </form>
                             </div>
@@ -993,7 +1787,7 @@
                             <div class="row">
                                 <div class="col-12">
                                     <div class="bg-light-gray p-3 rounded mt-3">
-                                        <form action="{{ route('announcement.three') }}" method="POST"
+                                        <form action="{{ route('announcement.store') }}" method="POST"
                                             class="needs-validation article-form" id="fragileGoods-form">
                                             @csrf
                                             <input type="hidden" name="category" value="{{ $category }}" />
@@ -1007,6 +1801,34 @@
                                                 </div>
                                                 
                                             </div>
+                                            
+                                            <div class="row">
+                                                <div class="col-4">
+                                                    <div class="form-group">
+                                                        <input type="text" placeholder="Départ" class="form-control" name="depart" required/> 
+                                                      </div>
+                                                </div>
+                                                <div class="col-4">
+                                                    <div class="form-group">
+                                                        <input type="text" placeholder="Arrivée" class="form-control" name="arrivee" required/>
+                                                    </div>
+                                                </div>
+                                            </div> 
+                                            <div class="row">
+                                                <div class="col-4">
+                                                    <div class="form-group">
+                                                        <label for=""> Date de chargement </label>
+                                                        <input type="date" placeholder="Date de chargement " class="form-control" name="loading_date" required/>
+                                                    </div>
+                                                </div>
+                                                <div class="col-4">
+                                                    <div class="form-group">
+                                                        <label for=""> Date de livraison </label>
+                                                        <input type="date" placeholder="Date de livraison " class="form-control" name="delevary_date" required/>
+                                                    </div>
+                                                </div>
+                                            </div>  
+                                            <br>
                                              
                                            
                                             <div class="row">
@@ -1093,8 +1915,8 @@
                                                     <div class="form-group">
                                                         {{-- <input type="text" placeholder="type de lieu"
                                                             class="form-control" name="place_type" /> --}}
-                                                        <select name="place_type"   required>
-                                                            <option value="">type de lieu </option>
+                                                        <select name="place_type_depart"   required>
+                                                            <option value="">type de lieu depart</option>
                                                             <option value="maison">maison</option>
                                                             <option value="appartement">appartement</option>
                                                             <option value="garde-meuble">garde meuble</option>
@@ -1105,8 +1927,45 @@
                                                     </div>
 
                                                     <div class="form-group">
-                                                        <select name="floor"   required>
-                                                            <option value="">étages</option>
+                                                        <select name="floor_depart"   required>
+                                                            <option value="">étages depart</option>
+                                                            <option value="1">1</option>
+                                                            <option value="2">2</option>
+                                                            <option value="3">3</option>
+                                                            <option value="4">4</option>
+                                                            <option value="5">5</option>
+                                                            <option value="6">6</option>
+                                                            <option value="7">7</option>
+                                                            <option value="8">8</option>
+                                                            <option value="9 et plus">9 et plus</option>
+
+
+                                                        </select>
+                                                        {{-- <input type="text" placeholder="étages"
+                                                            class="form-control" name="floor" /> --}}
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-4">
+                                                    <div class="form-group">
+                                                        {{-- <input type="text" placeholder="type de lieu"
+                                                            class="form-control" name="place_type" /> --}}
+                                                        <select name="place_type_arrivee"   required>
+                                                            <option value="">type de lieu arrivee</option>
+                                                            <option value="maison">maison</option>
+                                                            <option value="appartement">appartement</option>
+                                                            <option value="garde-meuble">garde meuble</option>
+                                                            <option value="commercial">local commercial </option>
+                                                            <option value="bureau">bureau </option>
+
+                                                        </select>
+                                                    </div>
+
+                                                    <div class="form-group">
+                                                        <select name="floor_arrivee"   required>
+                                                            <option value="">étages arrivee</option>
                                                             <option value="1">1</option>
                                                             <option value="2">2</option>
                                                             <option value="3">3</option>
@@ -1127,18 +1986,23 @@
                                             </div>
                                             <div class="row my-3">
                                                 <div class="col-4">
-                                                    <h5>ascenseur </h5>
+                                                    <h5>ascenseur depart</h5>
+                                                    {{-- <label for="no">non</label>
+                                                     <input type="radio" id="no" name="ascenseur" value="no">
+                                                       <label for="yes">oui</label>
+                                                       <input type="radio" id="yes" name="ascenseur" value="yes">
+                                                     <br> --}}
                                                 </div>
 
                                                 <div class="col-4">
                                                     <div class="d-flex">
                                                         <label for="no2" class="d-flex align-items-center mr-3">
-                                                            non <input type="radio" id="no2" name="ascenseur"
+                                                            non <input type="radio" id="no2" name="ascenseur_depart"
                                                                 style="margin-left: 5px" value="no" required>
                                                         </label>
 
                                                         <label for="yes2" class="d-flex align-items-center">
-                                                            oui <input type="radio" id="yes2" name="ascenseur"
+                                                            oui <input type="radio" id="yes2" name="ascenseur_depart"
                                                                 value="yes" style="margin-left: 5px" required>
                                                         </label>
                                                     </div>
@@ -1147,7 +2011,32 @@
                                             </div>
                                             <div class="row my-3">
                                                 <div class="col-4">
-                                                    <h5>accès</h5>
+                                                    <h5>ascenseur arrivee</h5>
+                                                    {{-- <label for="no">non</label>
+                                                     <input type="radio" id="no" name="ascenseur" value="no">
+                                                       <label for="yes">oui</label>
+                                                       <input type="radio" id="yes" name="ascenseur" value="yes">
+                                                     <br> --}}
+                                                </div>
+
+                                                <div class="col-4">
+                                                    <div class="d-flex">
+                                                        <label for="no3" class="d-flex align-items-center mr-3">
+                                                            non <input type="radio" id="no3" name="ascenseur_arrivee"
+                                                                style="margin-left: 5px" value="no" required>
+                                                        </label>
+
+                                                        <label for="yes3" class="d-flex align-items-center">
+                                                            oui <input type="radio" id="yes3" name="ascenseur_arrivee"
+                                                                value="yes" style="margin-left: 5px" required>
+                                                        </label>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                            <div class="row my-3">
+                                                <div class="col-4">
+                                                    <h5>accès depart</h5>
                                                     {{-- <label for=""> accès</label> <br> --}}
                                                     <table>
                                                         <tr>
@@ -1155,21 +2044,156 @@
                                                             </td>
                                                             <td> <input class="ml-2"
                                                                     style="margin-top: -4px" type="radio" id="no"
-                                                                    name="access" value="no" required></td>
+                                                                    name="access_depart" value="no" required></td>
                                                         </tr>
                                                         <tr>
                                                             <td><label for="yes">on doit se garer plus loin </label>
                                                             </td>
                                                             <td> <input class="ml-2"
                                                                     style="margin-top: -4px" type="radio" id="yes"
-                                                                    name="access" value="yes" required></td>
+                                                                    name="access_depart" value="yes" required></td>
                                                         </tr>
 
                                                     </table>
 
                                                 </div>
 
-                                            </div> 
+                                            </div>
+                                            <div class="row my-3">
+                                                <div class="col-4">
+                                                    <h5>accès arrivee</h5>
+                                                    {{-- <label for=""> accès</label> <br> --}}
+                                                    <table>
+                                                        <tr>
+                                                            <td> <label for="no4">on peut se garer devant </label>
+                                                            </td>
+                                                            <td> <input class="ml-2"
+                                                                    style="margin-top: -4px" type="radio" id="no4"
+                                                                    name="access_arrivee" value="no" required></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td><label for="yes4">on doit se garer plus loin </label>
+                                                            </td>
+                                                            <td> <input class="ml-2"
+                                                                    style="margin-top: -4px" type="radio" id="yes4"
+                                                                    name="access_arrivee" value="yes" required></td>
+                                                        </tr>
+
+                                                    </table>
+
+                                                </div>
+
+                                            </div>
+                                            <h5 class="mt-4 font-weight-bold text-navy-blue">
+                                                <i class="icofont-warning-alt mr-2"></i>Additional
+                                                information
+                                                <em class="font-weight-normal">(recommended)</em>
+                                              </h5>
+                                            <div class="row">
+                                                <div class="col-8">
+                                                    <textarea name="informations"   class="form-control"
+                                                        rows="7" placeholder="informations complémentaires "></textarea>
+                                                </div>
+                                            </div>
+                                            
+                                            
+
+                                            {{-- IF User Is not Login Then Show This  --}}
+                                            @guest
+                                            <h3 class="mt-4">données </h3>
+                                            @if (session('errors'))
+                                            <script>alert("{{ session('errors') }}")</script> 
+                                            @endif
+                                            <div class="row">
+                                                <div class="col-8">
+                                                    <div class="form-group input-group">
+                                                        <div class="input-group-append">
+                                                            <span class="input-group-text" id="name"><i
+                                                                    class="icofont-user-alt-3"></i></span>
+                                                        </div>
+                                                        <input name="name" type="text" placeholder="Nom et premon"
+                                                            class="form-control" />
+                                                    </div>
+                                                    <span class="text-success d-none" id="existing">You have Already An Account Please Login</span>
+                                                    <div class="form-group input-group">
+                                                        <div class="input-group-append">
+                                                            <span class="input-group-text" id="email"><i
+                                                                    class="icofont-email"></i></span>
+                                                        </div>
+                                                        <input name="email" type="text" id="user_email" placeholder="Email"
+                                                            class="form-control" />
+                                                        </div>
+                                                    <div class="form-group input-group">
+                                                        <div class="input-group-append">
+                                                            <span class="input-group-text" id="password"><i
+                                                                    class="icofont-lock"></i></span>
+                                                        </div>
+                                                        <input name="password" type="password"
+                                                            placeholder="Mot de passe" class="form-control"  id="pwd"/>
+                                                    </div>
+                                                    <div id="optional" class="">
+                                                        <div class="form-group input-group">
+                                                            <div class="input-group-append">
+                                                                <span class="input-group-text" id="confirm_password"><i
+                                                                        class="icofont-lock"></i></span>
+                                                            </div>
+                                                            <input name="confirm_password" type="password"
+                                                                placeholder="Confirmer votre mot de passe"
+                                                                class="form-control" id="c_pwd"/>
+                                                        </div> 
+                                                        <div class="row">
+                                                            <div class="col-5">
+                                                                <div class="form-group ">
+                                                                    <div class="input-group" id="country_code_wrapper">
+                                                                        <div class="input-group-prepend">
+                                                                            <label class="input-group-text"
+                                                                                for="contry_code">
+                                                                                 <i class="icofont-world"></i></label>
+                                                                        </div> 
+                                                                        <select class="flex-grow-1 w-auto"
+                                                                            name="country_code" id="contry_code">
+                                                                            @foreach ( countryCode() as $item)
+                                                                            <option value="{{ $item->phonecode }}"> {{ $item->iso }} ({{ $item->phonecode }})</option> 
+                                                                            @endforeach 
+                                                                        </select>
+                                                                    </div> 
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-7">
+                                                                <div class="form-group input-group">
+                                                                    <div class="input-group-append">
+                                                                        <span class="input-group-text" id="phone"><i
+                                                                                class="icofont-ui-call"></i></span>
+                                                                    </div>
+                                                                    <input name="phone" type="text" placeholder="Phone"
+                                                                        class="form-control" />
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group input-group">
+                                                            <div class="input-group-append">
+                                                                <span class="input-group-text" id="pseudo"><i
+                                                                        class="icofont-ui-user"></i></span>
+                                                            </div>
+                                                            <input name="pseudo" type="text" placeholder="pseudo"
+                                                                class="form-control" />
+                                                        </div>
+                                                    </div>
+                                               
+                                                </div>
+                                            </div>   
+                                            @endguest
+                                            <div class="row">
+                                                <div class="col">
+                                                    <input type="checkbox" id="condition" name="terms"
+                                                    value="yes" required>
+                                                <label for="condition"> j'accepte les dispositions des
+                                                    conditions
+                                                    générales et de la politique de confidentialité
+                                                </label><br>
+
+                                                </div>
+                                            </div>
                                     </div>
                                 </div>
                                 <div class="col-md-6 d-block" id="fragileGoods-articles"></div>
@@ -1179,7 +2203,7 @@
                                     <i class="icofont-simple-left mr-2"></i>Back
                                 </a> --}}
                                 <button data-section="1" class="continue btn text-white bg-navy-blue ml-3" type="submit">
-                                    Continue 
+                                    Publiez mon annonce 
                                 </button>
 
                                 </form>
@@ -1196,11 +2220,38 @@
                             <div class="row">
                                 <div class="col-12">
                                     <div class="bg-light-gray p-3 rounded mt-3">
-                                        <form method="POST" action="{{ route('announcement.three') }}"
+                                        <form method="POST" action="{{ route('announcement.store') }}"
                                             class="needs-validation article-form" id="package-form">
                                             @csrf
                                             <input type="hidden" name="category" value="{{ $category }}" />
                                            
+                                            <div class="row">
+                                                <div class="col-4">
+                                                    <div class="form-group">
+                                                        <input type="text" placeholder="Départ" class="form-control" name="depart" required/> 
+                                                      </div>
+                                                </div>
+                                                <div class="col-4">
+                                                    <div class="form-group">
+                                                        <input type="text" placeholder="Arrivée" class="form-control" name="arrivee" required/>
+                                                    </div>
+                                                </div>
+                                            </div> 
+                                            <div class="row">
+                                                <div class="col-4">
+                                                    <div class="form-group">
+                                                        <label for=""> Date de chargement </label>
+                                                        <input type="date" placeholder="Date de chargement " class="form-control" name="loading_date" required/>
+                                                    </div>
+                                                </div>
+                                                <div class="col-4">
+                                                    <div class="form-group">
+                                                        <label for=""> Date de livraison </label>
+                                                        <input type="date" placeholder="Date de livraison " class="form-control" name="delevary_date" required/>
+                                                    </div>
+                                                </div>
+                                            </div>  
+                                            <br>
                                              
                                             <div class="row">
                                                 <div class="col-4">
@@ -1278,7 +2329,7 @@
                                             </div>
                                             <div class="row my-3">
                                                 <div class="col-4">
-                                                    <h5>accès</h5>
+                                                    <h5>accès depart</h5>
                                                     {{-- <label for=""> accès</label> <br> --}}
                                                     <table>
                                                         <tr>
@@ -1286,14 +2337,39 @@
                                                             </td>
                                                             <td> <input class="ml-2"
                                                                     style="margin-top: -4px" type="radio" id="no"
-                                                                    name="access" value="no" required></td>
+                                                                    name="access_depart" value="no" required></td>
                                                         </tr>
                                                         <tr>
                                                             <td><label for="yes">on doit se garer plus loin </label>
                                                             </td>
                                                             <td> <input class="ml-2"
                                                                     style="margin-top: -4px" type="radio" id="yes"
-                                                                    name="access" value="yes" required></td>
+                                                                    name="access_depart" value="yes" required></td>
+                                                        </tr>
+
+                                                    </table>
+
+                                                </div>
+
+                                            </div>
+                                            <div class="row my-3">
+                                                <div class="col-4">
+                                                    <h5>accès arrivee</h5>
+                                                    {{-- <label for=""> accès</label> <br> --}}
+                                                    <table>
+                                                        <tr>
+                                                            <td> <label for="no4">on peut se garer devant </label>
+                                                            </td>
+                                                            <td> <input class="ml-2"
+                                                                    style="margin-top: -4px" type="radio" id="no4"
+                                                                    name="access_arrivee" value="no" required></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td><label for="yes4">on doit se garer plus loin </label>
+                                                            </td>
+                                                            <td> <input class="ml-2"
+                                                                    style="margin-top: -4px" type="radio" id="yes4"
+                                                                    name="access_arrivee" value="yes" required></td>
                                                         </tr>
 
                                                     </table>
@@ -1361,6 +2437,116 @@
                                                     </div> 
                                                 </div>
                                             </div> 
+                                            <h5 class="mt-4 font-weight-bold text-navy-blue">
+                                                <i class="icofont-warning-alt mr-2"></i>Additional
+                                                information
+                                                <em class="font-weight-normal">(recommended)</em>
+                                              </h5>
+                                            <div class="row">
+                                                <div class="col-8">
+                                                    <textarea name="informations"   class="form-control"
+                                                        rows="7" placeholder="informations complémentaires "></textarea>
+                                                </div>
+                                            </div>
+                                            
+                                            
+
+                                            {{-- IF User Is not Login Then Show This  --}}
+                                            @guest
+                                            <h3 class="mt-4">données </h3>
+                                            @if (session('errors'))
+                                            <script>alert("{{ session('errors') }}")</script> 
+                                            @endif
+                                            <div class="row">
+                                                <div class="col-8">
+                                                    <div class="form-group input-group">
+                                                        <div class="input-group-append">
+                                                            <span class="input-group-text" id="name"><i
+                                                                    class="icofont-user-alt-3"></i></span>
+                                                        </div>
+                                                        <input name="name" type="text" placeholder="Nom et premon"
+                                                            class="form-control" />
+                                                    </div>
+                                                    <span class="text-success d-none" id="existing">You have Already An Account Please Login</span>
+                                                    <div class="form-group input-group">
+                                                        <div class="input-group-append">
+                                                            <span class="input-group-text" id="email"><i
+                                                                    class="icofont-email"></i></span>
+                                                        </div>
+                                                        <input name="email" type="text" id="user_email" placeholder="Email"
+                                                            class="form-control" />
+                                                        </div>
+                                                    <div class="form-group input-group">
+                                                        <div class="input-group-append">
+                                                            <span class="input-group-text" id="password"><i
+                                                                    class="icofont-lock"></i></span>
+                                                        </div>
+                                                        <input name="password" type="password"
+                                                            placeholder="Mot de passe" class="form-control"  id="pwd"/>
+                                                    </div>
+                                                    <div id="optional" class="">
+                                                        <div class="form-group input-group">
+                                                            <div class="input-group-append">
+                                                                <span class="input-group-text" id="confirm_password"><i
+                                                                        class="icofont-lock"></i></span>
+                                                            </div>
+                                                            <input name="confirm_password" type="password"
+                                                                placeholder="Confirmer votre mot de passe"
+                                                                class="form-control" id="c_pwd"/>
+                                                        </div> 
+                                                        <div class="row">
+                                                            <div class="col-5">
+                                                                <div class="form-group ">
+                                                                    <div class="input-group" id="country_code_wrapper">
+                                                                        <div class="input-group-prepend">
+                                                                            <label class="input-group-text"
+                                                                                for="contry_code">
+                                                                                 <i class="icofont-world"></i></label>
+                                                                        </div> 
+                                                                        <select class="flex-grow-1 w-auto"
+                                                                            name="country_code" id="contry_code">
+                                                                            @foreach ( countryCode() as $item)
+                                                                            <option value="{{ $item->phonecode }}"> {{ $item->iso }} ({{ $item->phonecode }})</option> 
+                                                                            @endforeach 
+                                                                        </select>
+                                                                    </div> 
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-7">
+                                                                <div class="form-group input-group">
+                                                                    <div class="input-group-append">
+                                                                        <span class="input-group-text" id="phone"><i
+                                                                                class="icofont-ui-call"></i></span>
+                                                                    </div>
+                                                                    <input name="phone" type="text" placeholder="Phone"
+                                                                        class="form-control" />
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group input-group">
+                                                            <div class="input-group-append">
+                                                                <span class="input-group-text" id="pseudo"><i
+                                                                        class="icofont-ui-user"></i></span>
+                                                            </div>
+                                                            <input name="pseudo" type="text" placeholder="pseudo"
+                                                                class="form-control" />
+                                                        </div>
+                                                    </div>
+                                               
+                                                </div>
+                                            </div>   
+                                            @endguest
+                                            <div class="row">
+                                                <div class="col">
+                                                    <input type="checkbox" id="condition" name="terms"
+                                                    value="yes" required>
+                                                <label for="condition"> j'accepte les dispositions des
+                                                    conditions
+                                                    générales et de la politique de confidentialité
+                                                </label><br>
+
+                                                </div>
+                                            </div>
                                     </div>
                                 </div>
                                 <div class="col-md-6 d-block" id="package-articles"></div>
@@ -1370,7 +2556,7 @@
                                     <i class="icofont-simple-left mr-2"></i>Back
                                 </button> --}}
                                 <button type="submit" data-section="1" class="continue btn text-white bg-navy-blue ml-3">
-                                    Continue 
+                                    Publiez mon annonce 
                                 </button>
                                 </form>
                             </div>
@@ -1387,7 +2573,7 @@
                             <div class="row">
                                 <div class="col-12">
                                     <div class="bg-light-gray p-3 rounded mt-3">
-                                        <form method="POST" action="{{ route('announcement.three') }}"
+                                        <form method="POST" action="{{ route('announcement.store') }}"
                                             class="needs-validation article-form" id="pallet-form">
                                             @csrf
                                             <input type="hidden" name="category" value="{{ $category }}"/>
@@ -1396,9 +2582,36 @@
                                                     <div class="form-group"> 
                                                         <input type="text" id="article" placeholder="Marque et modèle " class="form-control" name="brand_model" required/>
                                                     </div>
-                                                </div>
-                                                
+                                                </div>  
                                             </div> 
+                                            
+                                            <div class="row">
+                                                <div class="col-4">
+                                                    <div class="form-group">
+                                                        <input type="text" placeholder="Départ" class="form-control" name="depart" required/> 
+                                                      </div>
+                                                </div>
+                                                <div class="col-4">
+                                                    <div class="form-group">
+                                                        <input type="text" placeholder="Arrivée" class="form-control" name="arrivee" required/>
+                                                    </div>
+                                                </div>
+                                            </div> 
+                                            <div class="row">
+                                                <div class="col-4">
+                                                    <div class="form-group">
+                                                        <label for=""> Date de chargement </label>
+                                                        <input type="date" placeholder="Date de chargement " class="form-control" name="loading_date" required/>
+                                                    </div>
+                                                </div>
+                                                <div class="col-4">
+                                                    <div class="form-group">
+                                                        <label for=""> Date de livraison </label>
+                                                        <input type="date" placeholder="Date de livraison " class="form-control" name="delevary_date" required/>
+                                                    </div>
+                                                </div>
+                                            </div>  
+                                            <br>
                                             <div class="row">
                                                 <div class="col-4">
                                                     <div class="d-flex justify-content-between">
@@ -1464,6 +2677,116 @@
 
                                                     </div> 
                                                 </div>
+                                            </div>
+                                            <h5 class="mt-4 font-weight-bold text-navy-blue">
+                                                <i class="icofont-warning-alt mr-2"></i>Additional
+                                                information
+                                                <em class="font-weight-normal">(recommended)</em>
+                                              </h5>
+                                            <div class="row">
+                                                <div class="col-8">
+                                                    <textarea name="informations"   class="form-control"
+                                                        rows="7" placeholder="informations complémentaires "></textarea>
+                                                </div>
+                                            </div>
+                                            
+                                            
+
+                                            {{-- IF User Is not Login Then Show This  --}}
+                                            @guest
+                                            <h3 class="mt-4">données </h3>
+                                            @if (session('errors'))
+                                            <script>alert("{{ session('errors') }}")</script> 
+                                            @endif
+                                            <div class="row">
+                                                <div class="col-8">
+                                                    <div class="form-group input-group">
+                                                        <div class="input-group-append">
+                                                            <span class="input-group-text" id="name"><i
+                                                                    class="icofont-user-alt-3"></i></span>
+                                                        </div>
+                                                        <input name="name" type="text" placeholder="Nom et premon"
+                                                            class="form-control" />
+                                                    </div>
+                                                    <span class="text-success d-none" id="existing">You have Already An Account Please Login</span>
+                                                    <div class="form-group input-group">
+                                                        <div class="input-group-append">
+                                                            <span class="input-group-text" id="email"><i
+                                                                    class="icofont-email"></i></span>
+                                                        </div>
+                                                        <input name="email" type="text" id="user_email" placeholder="Email"
+                                                            class="form-control" />
+                                                        </div>
+                                                    <div class="form-group input-group">
+                                                        <div class="input-group-append">
+                                                            <span class="input-group-text" id="password"><i
+                                                                    class="icofont-lock"></i></span>
+                                                        </div>
+                                                        <input name="password" type="password"
+                                                            placeholder="Mot de passe" class="form-control"  id="pwd"/>
+                                                    </div>
+                                                    <div id="optional" class="">
+                                                        <div class="form-group input-group">
+                                                            <div class="input-group-append">
+                                                                <span class="input-group-text" id="confirm_password"><i
+                                                                        class="icofont-lock"></i></span>
+                                                            </div>
+                                                            <input name="confirm_password" type="password"
+                                                                placeholder="Confirmer votre mot de passe"
+                                                                class="form-control" id="c_pwd"/>
+                                                        </div> 
+                                                        <div class="row">
+                                                            <div class="col-5">
+                                                                <div class="form-group ">
+                                                                    <div class="input-group" id="country_code_wrapper">
+                                                                        <div class="input-group-prepend">
+                                                                            <label class="input-group-text"
+                                                                                for="contry_code">
+                                                                                    <i class="icofont-world"></i></label>
+                                                                        </div> 
+                                                                        <select class="flex-grow-1 w-auto"
+                                                                            name="country_code" id="contry_code">
+                                                                            @foreach ( countryCode() as $item)
+                                                                            <option value="{{ $item->phonecode }}"> {{ $item->iso }} ({{ $item->phonecode }})</option> 
+                                                                            @endforeach 
+                                                                        </select>
+                                                                    </div> 
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-7">
+                                                                <div class="form-group input-group">
+                                                                    <div class="input-group-append">
+                                                                        <span class="input-group-text" id="phone"><i
+                                                                                class="icofont-ui-call"></i></span>
+                                                                    </div>
+                                                                    <input name="phone" type="text" placeholder="Phone"
+                                                                        class="form-control" />
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group input-group">
+                                                            <div class="input-group-append">
+                                                                <span class="input-group-text" id="pseudo"><i
+                                                                        class="icofont-ui-user"></i></span>
+                                                            </div>
+                                                            <input name="pseudo" type="text" placeholder="pseudo"
+                                                                class="form-control" />
+                                                        </div>
+                                                    </div>
+                                                
+                                                </div>
+                                            </div>  
+                                            @endguest
+                                            <div class="row">
+                                                <div class="col">
+                                                    <input type="checkbox" id="condition" name="terms"
+                                                    value="yes" required>
+                                                <label for="condition"> j'accepte les dispositions des
+                                                    conditions
+                                                    générales et de la politique de confidentialité
+                                                </label><br>
+
+                                                </div>
                                             </div>  
                                     </div>
                                 </div>
@@ -1474,7 +2797,7 @@
                                     <i class="icofont-simple-left mr-2"></i>Back
                                 </a> --}}
                                 <button data-section="1" class="continue btn text-white bg-navy-blue ml-3" type="submit">
-                                    Continue 
+                                    Publiez mon annonce 
                                 </button>
                                 </form>
                             </div>
@@ -1490,7 +2813,7 @@
                             <div class="row">
                                 <div class="col-12">
                                     <div class="bg-light-gray p-3 rounded mt-3">
-                                        <form method="POST" action="{{ route('announcement.three') }}"
+                                        <form method="POST" action="{{ route('announcement.store') }}"
                                             class="needs-validation article-form" id="animal-form">
                                             @csrf
                                             <input type="hidden" name="category" value="{{ $category }}" />
@@ -1499,9 +2822,36 @@
                                                     <div class="form-group"> 
                                                         <input type="text" id="article" placeholder="Marque et modèle " class="form-control" name="brand_model" required/>
                                                     </div>
-                                                </div>
-                                                
+                                                </div> 
                                             </div>
+                                            
+                                            <div class="row">
+                                                <div class="col-4">
+                                                    <div class="form-group">
+                                                        <input type="text" placeholder="Départ" class="form-control" name="depart" required/> 
+                                                      </div>
+                                                </div>
+                                                <div class="col-4">
+                                                    <div class="form-group">
+                                                        <input type="text" placeholder="Arrivée" class="form-control" name="arrivee" required/>
+                                                    </div>
+                                                </div>
+                                            </div> 
+                                            <div class="row">
+                                                <div class="col-4">
+                                                    <div class="form-group">
+                                                        <label for=""> Date de chargement </label>
+                                                        <input type="date" placeholder="Date de chargement " class="form-control" name="loading_date" required/>
+                                                    </div>
+                                                </div>
+                                                <div class="col-4">
+                                                    <div class="form-group">
+                                                        <label for=""> Date de livraison </label>
+                                                        <input type="date" placeholder="Date de livraison " class="form-control" name="delevary_date" required/>
+                                                    </div>
+                                                </div>
+                                            </div>  
+                                            <br>
                                              
                                             <div class="row my-3">
                                                 <div class="col-4">
@@ -1525,6 +2875,116 @@
                                                 </div>
                                                 
                                             </div> 
+                                            <h5 class="mt-4 font-weight-bold text-navy-blue">
+                                                <i class="icofont-warning-alt mr-2"></i>Additional
+                                                information
+                                                <em class="font-weight-normal">(recommended)</em>
+                                              </h5>
+                                            <div class="row">
+                                                <div class="col-8">
+                                                    <textarea name="informations"   class="form-control"
+                                                        rows="7" placeholder="informations complémentaires "></textarea>
+                                                </div>
+                                            </div>
+                                            
+                                            
+
+                                            {{-- IF User Is not Login Then Show This  --}}
+                                            @guest
+                                            <h3 class="mt-4">données </h3>
+                                            @if (session('errors'))
+                                            <script>alert("{{ session('errors') }}")</script> 
+                                            @endif
+                                            <div class="row">
+                                                <div class="col-8">
+                                                    <div class="form-group input-group">
+                                                        <div class="input-group-append">
+                                                            <span class="input-group-text" id="name"><i
+                                                                    class="icofont-user-alt-3"></i></span>
+                                                        </div>
+                                                        <input name="name" type="text" placeholder="Nom et premon"
+                                                            class="form-control" />
+                                                    </div>
+                                                    <span class="text-success d-none" id="existing">You have Already An Account Please Login</span>
+                                                    <div class="form-group input-group">
+                                                        <div class="input-group-append">
+                                                            <span class="input-group-text" id="email"><i
+                                                                    class="icofont-email"></i></span>
+                                                        </div>
+                                                        <input name="email" type="text" id="user_email" placeholder="Email"
+                                                            class="form-control" />
+                                                        </div>
+                                                    <div class="form-group input-group">
+                                                        <div class="input-group-append">
+                                                            <span class="input-group-text" id="password"><i
+                                                                    class="icofont-lock"></i></span>
+                                                        </div>
+                                                        <input name="password" type="password"
+                                                            placeholder="Mot de passe" class="form-control"  id="pwd"/>
+                                                    </div>
+                                                    <div id="optional" class="">
+                                                        <div class="form-group input-group">
+                                                            <div class="input-group-append">
+                                                                <span class="input-group-text" id="confirm_password"><i
+                                                                        class="icofont-lock"></i></span>
+                                                            </div>
+                                                            <input name="confirm_password" type="password"
+                                                                placeholder="Confirmer votre mot de passe"
+                                                                class="form-control" id="c_pwd"/>
+                                                        </div> 
+                                                        <div class="row">
+                                                            <div class="col-5">
+                                                                <div class="form-group ">
+                                                                    <div class="input-group" id="country_code_wrapper">
+                                                                        <div class="input-group-prepend">
+                                                                            <label class="input-group-text"
+                                                                                for="contry_code">
+                                                                                 <i class="icofont-world"></i></label>
+                                                                        </div> 
+                                                                        <select class="flex-grow-1 w-auto"
+                                                                            name="country_code" id="contry_code">
+                                                                            @foreach ( countryCode() as $item)
+                                                                            <option value="{{ $item->phonecode }}"> {{ $item->iso }} ({{ $item->phonecode }})</option> 
+                                                                            @endforeach 
+                                                                        </select>
+                                                                    </div> 
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-7">
+                                                                <div class="form-group input-group">
+                                                                    <div class="input-group-append">
+                                                                        <span class="input-group-text" id="phone"><i
+                                                                                class="icofont-ui-call"></i></span>
+                                                                    </div>
+                                                                    <input name="phone" type="text" placeholder="Phone"
+                                                                        class="form-control" />
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group input-group">
+                                                            <div class="input-group-append">
+                                                                <span class="input-group-text" id="pseudo"><i
+                                                                        class="icofont-ui-user"></i></span>
+                                                            </div>
+                                                            <input name="pseudo" type="text" placeholder="pseudo"
+                                                                class="form-control" />
+                                                        </div>
+                                                    </div>
+                                               
+                                                </div>
+                                            </div>   
+                                            @endguest
+                                            <div class="row">
+                                                <div class="col">
+                                                    <input type="checkbox" id="condition" name="terms"
+                                                    value="yes" required>
+                                                <label for="condition"> j'accepte les dispositions des
+                                                    conditions
+                                                    générales et de la politique de confidentialité
+                                                </label><br>
+
+                                                </div>
+                                            </div>
                                     </div>
                                 </div>
                                 <div class="col-md-6 d-block" id="animal-articles"></div>
@@ -1534,7 +2994,7 @@
                                     <i class="icofont-simple-left mr-2"></i>Back
                                 </button> --}}
                                 <button data-section="1" class="continue btn text-white bg-navy-blue ml-3" type="submit">
-                                    Continue 
+                                    Publiez mon annonce 
                                 </button>
                                 </form>
                             </div>
@@ -1550,7 +3010,7 @@
                             <div class="row">
                                 <div class="col-12">
                                     <div class="bg-light-gray p-3 rounded mt-3">
-                                        <form method="POST" action="{{ route('announcement.three') }}"
+                                        <form method="POST" action="{{ route('announcement.store') }}"
                                             class="needs-validation article-form" id="agri-food-form">
                                             @csrf
                                             <input type="hidden" name="category" value="{{ $category }}" />
@@ -1561,9 +3021,36 @@
                                                         <input type="text" id="article" placeholder="Nom de l'article"
                                                             class="form-control" name="article_name" required/>
                                                     </div>
-                                                </div>
-                                                
+                                                </div> 
                                             </div>
+                                            
+                                            <div class="row">
+                                                <div class="col-4">
+                                                    <div class="form-group">
+                                                        <input type="text" placeholder="Départ" class="form-control" name="depart" required/> 
+                                                      </div>
+                                                </div>
+                                                <div class="col-4">
+                                                    <div class="form-group">
+                                                        <input type="text" placeholder="Arrivée" class="form-control" name="arrivee" required/>
+                                                    </div>
+                                                </div>
+                                            </div> 
+                                            <div class="row">
+                                                <div class="col-4">
+                                                    <div class="form-group">
+                                                        <label for=""> Date de chargement </label>
+                                                        <input type="date" placeholder="Date de chargement " class="form-control" name="loading_date" required/>
+                                                    </div>
+                                                </div>
+                                                <div class="col-4">
+                                                    <div class="form-group">
+                                                        <label for=""> Date de livraison </label>
+                                                        <input type="date" placeholder="Date de livraison " class="form-control" name="delevary_date" required/>
+                                                    </div>
+                                                </div>
+                                            </div>  
+                                            <br>
                                              
                                             <div class="row">
                                                 <div class="col-4">
@@ -1621,6 +3108,116 @@
                                                     </div>
                                                 </div> 
                                             </div>  
+                                            <h5 class="mt-4 font-weight-bold text-navy-blue">
+                                                <i class="icofont-warning-alt mr-2"></i>Additional
+                                                information
+                                                <em class="font-weight-normal">(recommended)</em>
+                                              </h5>
+                                            <div class="row">
+                                                <div class="col-8">
+                                                    <textarea name="informations"   class="form-control"
+                                                        rows="7" placeholder="informations complémentaires "></textarea>
+                                                </div>
+                                            </div>
+                                            
+                                            
+
+                                            {{-- IF User Is not Login Then Show This  --}}
+                                            @guest
+                                            <h3 class="mt-4">données </h3>
+                                            @if (session('errors'))
+                                            <script>alert("{{ session('errors') }}")</script> 
+                                            @endif
+                                            <div class="row">
+                                                <div class="col-8">
+                                                    <div class="form-group input-group">
+                                                        <div class="input-group-append">
+                                                            <span class="input-group-text" id="name"><i
+                                                                    class="icofont-user-alt-3"></i></span>
+                                                        </div>
+                                                        <input name="name" type="text" placeholder="Nom et premon"
+                                                            class="form-control" />
+                                                    </div>
+                                                    <span class="text-success d-none" id="existing">You have Already An Account Please Login</span>
+                                                    <div class="form-group input-group">
+                                                        <div class="input-group-append">
+                                                            <span class="input-group-text" id="email"><i
+                                                                    class="icofont-email"></i></span>
+                                                        </div>
+                                                        <input name="email" type="text" id="user_email" placeholder="Email"
+                                                            class="form-control" />
+                                                        </div>
+                                                    <div class="form-group input-group">
+                                                        <div class="input-group-append">
+                                                            <span class="input-group-text" id="password"><i
+                                                                    class="icofont-lock"></i></span>
+                                                        </div>
+                                                        <input name="password" type="password"
+                                                            placeholder="Mot de passe" class="form-control"  id="pwd"/>
+                                                    </div>
+                                                    <div id="optional" class="">
+                                                        <div class="form-group input-group">
+                                                            <div class="input-group-append">
+                                                                <span class="input-group-text" id="confirm_password"><i
+                                                                        class="icofont-lock"></i></span>
+                                                            </div>
+                                                            <input name="confirm_password" type="password"
+                                                                placeholder="Confirmer votre mot de passe"
+                                                                class="form-control" id="c_pwd"/>
+                                                        </div> 
+                                                        <div class="row">
+                                                            <div class="col-5">
+                                                                <div class="form-group ">
+                                                                    <div class="input-group" id="country_code_wrapper">
+                                                                        <div class="input-group-prepend">
+                                                                            <label class="input-group-text"
+                                                                                for="contry_code">
+                                                                                 <i class="icofont-world"></i></label>
+                                                                        </div> 
+                                                                        <select class="flex-grow-1 w-auto"
+                                                                            name="country_code" id="contry_code">
+                                                                            @foreach ( countryCode() as $item)
+                                                                            <option value="{{ $item->phonecode }}"> {{ $item->iso }} ({{ $item->phonecode }})</option> 
+                                                                            @endforeach 
+                                                                        </select>
+                                                                    </div> 
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-7">
+                                                                <div class="form-group input-group">
+                                                                    <div class="input-group-append">
+                                                                        <span class="input-group-text" id="phone"><i
+                                                                                class="icofont-ui-call"></i></span>
+                                                                    </div>
+                                                                    <input name="phone" type="text" placeholder="Phone"
+                                                                        class="form-control" />
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group input-group">
+                                                            <div class="input-group-append">
+                                                                <span class="input-group-text" id="pseudo"><i
+                                                                        class="icofont-ui-user"></i></span>
+                                                            </div>
+                                                            <input name="pseudo" type="text" placeholder="pseudo"
+                                                                class="form-control" />
+                                                        </div>
+                                                    </div>
+                                               
+                                                </div>
+                                            </div>    
+                                            @endguest
+                                            <div class="row">
+                                                <div class="col">
+                                                    <input type="checkbox" id="condition" name="terms"
+                                                    value="yes" required>
+                                                <label for="condition"> j'accepte les dispositions des
+                                                    conditions
+                                                    générales et de la politique de confidentialité
+                                                </label><br>
+
+                                                </div>
+                                            </div>
                                     </div>
                                 </div>
                                 <div class="col-md-6 d-block" id="agri-food-articles"></div>
@@ -1630,7 +3227,7 @@
                                     <i class="icofont-simple-left mr-2"></i>Back
                                 </a> --}}
                                 <button data-section="1" class="continue btn text-white bg-navy-blue ml-3" type="submit">
-                                    Continue 
+                                    Publiez mon annonce 
                                 </button>
                                 </form>
                             </div>
@@ -1683,6 +3280,64 @@
 
 
     @section('js')
+
+    <script>
+        $(document).ready(function(){
+            $('#user_email').blur(function(){
+                var email = $(this).val(); 
+                $.ajaxSetup({
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    }
+                });
+                
+                $.ajax({
+                    type: 'POST', 
+                    url: "{{ route('email.check') }}",
+                    data: {
+                        email:email,
+                    },
+                    success: function(data){
+                        if(data == 'true'){
+                            $('#existing').addClass('d-block');
+                            $('#optional').addClass('d-none');
+
+                        }
+                        else{
+                            $('#existing').removeClass('d-block');
+                            $('#optional').removeClass('d-none'); 
+                        }
+                    }
+                });
+            }); 
+
+
+            $('#c_pwd').blur(function(){
+                var pwd = $('#pwd').val();
+                var c_pwd = $(this).val();
+                if(c_pwd != pwd){
+                    $('#password_error').text('Password Does not Match');  
+                    $('#pwd').focus();
+                }
+                else{
+                    $('#password_error').addClass('d-none');
+                }
+              
+            })
+         
+        });
+    </script>
+
+
+
+
+
+
+
+
+
+
+
         <!-- transport scripts -->
         <script src="{{ asset('assets/js/transport.js') }}"></script>
     @endsection

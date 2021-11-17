@@ -2,52 +2,55 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Announcement;
-use App\Models\SecondAnnouncement;
-use Illuminate\Http\Request;
-use Auth; 
+use Auth;
 use Carbon\Carbon;
+use App\Models\User;
+use App\Models\Announcement;
+use Illuminate\Http\Request;
+use App\Models\SecondAnnouncement;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth as FacadesAuth;
 
 class AnnouncementController extends Controller
 {
-//    /**
-//     *  Constructor 
-//     */
-//     public function __construct()
-//     {
-//         $this->middleware('auth')->only('store');
-//     }
+    //    /**
+    //     *  Constructor 
+    //     */
+    //     public function __construct()
+    //     {
+    //         $this->middleware('auth')->only('store');
+    //     }
 
     /**
      *  Go To Step Three 
      */
     public function announceThree(Request $request)
     {
+
         return view('frontend.announcementThree', [
 
-            'category'              => $request->category, 
-            'volume'                => $request->volume, 
-            'list'                  => $request->list, 
-            'individual_goods'      => $request->individual_goods, 
-            'place_type'            => $request->place_type, 
-            'floor'                 => $request->floor, 
-            'ascenseur'             => $request->ascenseur, 
-            'access'                => $request->access, 
-            'services'              => $request->services, 
-            'help'                  => $request->help, 
-            'article_name'          => $request->article_name, 
-            'height'                => $request->height, 
-            'width'                 => $request->width, 
-            'length'                => $request->length, 
-            'weight'                => $request->weight, 
-            'quantity'              => $request->quantity, 
-            'size'                  => $request->size, 
-            'load_unload'           => $request->load_unload, 
-            'need_tailgate'         => $request->need_tailgate, 
-            'need_truck'            => $request->need_truck, 
-            'brand_model'           => $request->brand_model, 
-            'rolling'               => $request->rolling, 
+            'category'              => $request->category,
+            'volume'                => $request->volume,
+            'list'                  => $request->list,
+            'individual_goods'      => $request->individual_goods,
+            'place_type'            => $request->place_type,
+            'floor'                 => $request->floor,
+            'ascenseur'             => $request->ascenseur,
+            'access'                => $request->access,
+            'services'              => $request->services,
+            'help'                  => $request->help,
+            'article_name'          => $request->article_name,
+            'height'                => $request->height,
+            'width'                 => $request->width,
+            'length'                => $request->length,
+            'weight'                => $request->weight,
+            'quantity'              => $request->quantity,
+            'size'                  => $request->size,
+            'load_unload'           => $request->load_unload,
+            'need_tailgate'         => $request->need_tailgate,
+            'need_truck'            => $request->need_truck,
+            'brand_model'           => $request->brand_model,
+            'rolling'               => $request->rolling,
             // 'category'             => $request->category, 
             // 'equipment'            => $request->equipment, 
             // 'articleName'          => $request->articleName,
@@ -71,7 +74,7 @@ class AnnouncementController extends Controller
             // 'specialNeeds'         => $request->specialNeeds,
             // 'vaccinations'         => $request->vaccinations,
             // 'others'               => $request->others,
-      
+
         ]);
     }
     /** 
@@ -79,88 +82,180 @@ class AnnouncementController extends Controller
      */
     public function store(Request $request)
     {
+        if (Auth::id()) {
+ 
+            session()->put('post', $request->all());
+            $announcement = SecondAnnouncement::create([
+                // $announcement = Announcement::create([
 
+                'category'                  => session('post')['category'] ?? 'Not Available',
+                'volume'                    => session('post')['volume'] ?? 'Not Available',
+                'list'                      => session('post')['list'] ?? 'Not Available',
+                'individual_goods'          => session('post')['individual_goods'] ?? 'Not Available',
+                'place_type_depart'         => session('post')['place_type_depart'] ?? 'Not Available',
+                'place_type_arrivee'        => session('post')['place_type_arrivee'] ?? 'Not Available',
+                'floor_depart'              => session('post')['floor_depart'] ?? 'Not Available',
+                'floor_arrivee'             => session('post')['floor_arrivee'] ?? 'Not Available',
+                'ascenseur_depart'          => session('post')['ascenseur_depart'] ?? 'Not Available',
+                'ascenseur_arrivee'         => session('post')['ascenseur_arrivee'] ?? 'Not Available',
+                'access_depart'             => session('post')['access_depart'] ?? 'Not Available',
+                'access_arrivee'            => session('post')['access_arrivee'] ?? 'Not Available',
+                'services'                  => session('post')['services'] ?? 'Not Available',
+                'help'                      => session('post')['help'] ?? 'Not Available',
+                'article_name'              => session('post')['article_name'] ?? 'Not Available',
+                'height'                    => session('post')['height'] ?? 'Not Available',
+                'width'                     => session('post')['width'] ?? 'Not Available',
+                'length'                    => session('post')['length'] ?? 'Not Available',
+                'weight'                    => session('post')['weight'] ?? 'Not Available',
+                'quantity'                  => session('post')['quantity'] ?? 'Not Available',
+                'size'                      => session('post')['size'] ?? 'Not Available',
+                'load_unload'               => session('post')['load_unload'] ?? 'Not Available',
+                'need_tailgate'             => session('post')['need_tailgate'] ?? 'Not Available',
+                'need_truck'                => session('post')['need_truck'] ?? 'Not Available',
+                'brand_model'               => session('post')['brand_model'] ?? 'Not Available',
+                'rolling'                   => session('post')['rolling'] ?? 'Not Available',
 
-        // $announcement = Announcement::create([
+                // common
+                'depart'                    => session('post')['depart'] ?? 'Not Available',
+                'arrivee'                   => session('post')['arrivee'] ?? 'Not Available',
+                'loading_date'              => session('post')['loading_date'] ?? 'Not Available',
+                'delevary_date'             => session('post')['delevary_date'] ?? 'Not Available',
+                'informations'              => session('post')['informations'] ?? 'Not Available',
+                'pseudo'                    => Auth::user()->username,
+                'terms'                     => session('post')['terms'] ?? 'Not Available',
+                'offers'                    => 'yes',
+                'user_id'                   => Auth::id(),
+                'created_at'                => Carbon::now(),
 
-        //     'category'             => $request->category,
-        //     'equipment'            => $request->equipment,
-        //     'articleName'          => $request->articleName,
-        //     'length'               => $request->length,
-        //     'width'                => $request->width,
-        //     'height'               => $request->height,
-        //     'weight'               => $request->weight,
-        //     'quantity'             => $request->quantity,
-        //     'model_name'           => $request->model_name,
-        //     'vehicleName'          => $request->vehicleName,
-        //     'make'                 => $request->make,
-        //     'model'                => $request->model,
-        //     'estimationValue'      => $request->estimationValue,
-        //     'movingVehicle'        => $request->movingVehicle,
-        //     'conveyors'            => $request->conveyors,
-        //     'boatName'             => $request->boatName,
-        //     'food_name'            => $request->food_name,
-        //     'dim'                  => $request->dim,
-        //     'animalName'           => $request->animalName,
-        //     'animalBreed'          => $request->animalBreed,
-        //     'specialNeeds'         => $request->specialNeeds,
-        //     'vaccinations'         => $request->vaccinations,
-        //     'others'               => $request->others,
-        //     //common
-        //     'loading_address'         => $request->loading_address,
-        //     'loading_start'           => $request->loading_start,
-        //     'loading_end'             => $request->loading_end,
-        //     'loading_time_slot'       => $request->loading_time_slot,
-        //     'loading_house'           => $request->loading_house,
-        //     'loading_floor'           => $request->loading_floor,
-        //     'loading_elevator'        => $request->loading_elevator,
-        //     'loading_lift'            => $request->loading_lift,
-        //     'information'             => $request->information,
-        //     'delivery_address'        => $request->delivery_address,
-        //     'delivery_start'          => $request->delivery_start,
-        //     'delivery_end'            => $request->delivery_end,
-        //     'delivery_time_slot'      => $request->delivery_time_slot,
-        //     'delivery_house'          => $request->delivery_house,
-        //     'delivery_floor'          => $request->delivery_floor,
-        //     'delivery_elevator'       => $request->delivery_elevator,
-        //     'delivery_lift'           => $request->delivery_lift,
-        //     'image'                   => 'foo.jpg', 
-        //     'user_id'                 => Auth::id(), 
-        //     'created_at'              => Carbon::now(), 
-        //     'offers'                  => 'yes', 
-            
-        // ]); 
+            ]);
+            return redirect()->route('announcement.details', $announcement->id);
+        } else {
 
-        // if ($request->has('image')) {
+            $user = User::where('email', $request->email)->first();
 
-        //     // Upload Image
-        //     $image     = $request->file('image');
-        //     $filename  = $announcement->id. '.' .$image->extension();
-        //     $location  = public_path('uploads/households/');
-        //     $image->move($location , $filename);
+            if (!$user) {
+                $phone = $request->country_code . $request->phone;
+                $newuser = User::create([ 
+                    'name'      => $request->name,
+                    'email'     => $request->email,
+                    'password'  => Hash::make($request->password),
+                    'phone'     => $phone, 
+                    'username'  => $request->pseudo,
+                ]);
 
-        //     // Save Image name in the database
-        //     $announcement->image = $filename;
-        // }
+                Auth::login($newuser);
+                session()->put('post', $request->all());
+                $announcement = SecondAnnouncement::create([
+                    // $announcement = Announcement::create([
 
-        // // Save Everything in database 
-        // $announcement->save();
+                    'category'                  => session('post')['category'] ?? 'Not Available',
+                    'volume'                    => session('post')['volume'] ?? 'Not Available',
+                    'list'                      => session('post')['list'] ?? 'Not Available',
+                    'individual_goods'          => session('post')['individual_goods'] ?? 'Not Available',
+                    
+                    'place_type_depart'         => session('post')['place_type_depart'] ?? 'Not Available',
+                    'place_type_arrivee'        => session('post')['place_type_arrivee'] ?? 'Not Available',
+                    'floor_depart'              => session('post')['floor_depart'] ?? 'Not Available',
+                    'floor_arrivee'             => session('post')['floor_arrivee'] ?? 'Not Available',
+                    'ascenseur_depart'          => session('post')['ascenseur_depart'] ?? 'Not Available',
+                    'ascenseur_arrivee'         => session('post')['ascenseur_arrivee'] ?? 'Not Available',
+                    'access_depart'             => session('post')['access_depart'] ?? 'Not Available',
+                    'access_arrivee'            => session('post')['access_arrivee'] ?? 'Not Available',
+    
+                    'services'                  => session('post')['services'] ?? 'Not Available',
+                    'help'                      => session('post')['help'] ?? 'Not Available',
+                    'article_name'              => session('post')['article_name'] ?? 'Not Available',
+                    'height'                    => session('post')['height'] ?? 'Not Available',
+                    'width'                     => session('post')['width'] ?? 'Not Available',
+                    'length'                    => session('post')['length'] ?? 'Not Available',
+                    'weight'                    => session('post')['weight'] ?? 'Not Available',
+                    'quantity'                  => session('post')['quantity'] ?? 'Not Available',
+                    'size'                      => session('post')['size'] ?? 'Not Available',
+                    'load_unload'               => session('post')['load_unload'] ?? 'Not Available',
+                    'need_tailgate'             => session('post')['need_tailgate'] ?? 'Not Available',
+                    'need_truck'                => session('post')['need_truck'] ?? 'Not Available',
+                    'brand_model'               => session('post')['brand_model'] ?? 'Not Available',
+                    'rolling'                   => session('post')['rolling'] ?? 'Not Available',
 
-        // return redirect('/')->withSuccess('Announcement posted');
+                    // common
+                    'depart'                    => session('post')['depart'] ?? 'Not Available',
+                    'arrivee'                   => session('post')['arrivee'] ?? 'Not Available',
+                    'loading_date'              => session('post')['loading_date'] ?? 'Not Available',
+                    'delevary_date'             => session('post')['delevary_date'] ?? 'Not Available',
+                    'informations'              => session('post')['informations'] ?? 'Not Available',
+                    'pseudo'                    => Auth::user()->username,
+                    'terms'                     => session('post')['terms'] ?? 'Not Available',
+                    'offers'                    => 'yes',
+                    'user_id'                   => Auth::id(),
+                    'created_at'                => Carbon::now(),
 
-        session()->put('post', $request->all() );
+                ]);
+                return redirect()->route('announcement.details', $announcement->id);
+            } else {
+                if (Hash::check($request->password, $user->password)) {
+                    Auth::login($user);
+                    session()->put('post', $request->all());
+                    // dd(session('post')); 
+                    $announcement = SecondAnnouncement::create([
+                        // $announcement = Announcement::create([
+
+                        'category'                  => session('post')['category'] ?? 'Not Available',
+                        'volume'                    => session('post')['volume'] ?? 'Not Available',
+                        'list'                      => session('post')['list'] ?? 'Not Available',
+                        'individual_goods'          => session('post')['individual_goods'] ?? 'Not Available',
+                        'place_type_depart'         => session('post')['place_type_depart'] ?? 'Not Available',
+                        'place_type_arrivee'        => session('post')['place_type_arrivee'] ?? 'Not Available',
+                        'floor_depart'              => session('post')['floor_depart'] ?? 'Not Available',
+                        'floor_arrivee'             => session('post')['floor_arrivee'] ?? 'Not Available',
+                        'ascenseur_depart'          => session('post')['ascenseur_depart'] ?? 'Not Available',
+                        'ascenseur_arrivee'         => session('post')['ascenseur_arrivee'] ?? 'Not Available',
+                        'access_depart'             => session('post')['access_depart'] ?? 'Not Available',
+                        'access_arrivee'            => session('post')['access_arrivee'] ?? 'Not Available',
+
+                        'services'                  => session('post')['services'] ?? 'Not Available',
+                        'help'                      => session('post')['help'] ?? 'Not Available',
+                        'article_name'              => session('post')['article_name'] ?? 'Not Available',
+                        'height'                    => session('post')['height'] ?? 'Not Available',
+                        'width'                     => session('post')['width'] ?? 'Not Available',
+                        'length'                    => session('post')['length'] ?? 'Not Available',
+                        'weight'                    => session('post')['weight'] ?? 'Not Available',
+                        'quantity'                  => session('post')['quantity'] ?? 'Not Available',
+                        'size'                      => session('post')['size'] ?? 'Not Available',
+                        'load_unload'               => session('post')['load_unload'] ?? 'Not Available',
+                        'need_tailgate'             => session('post')['need_tailgate'] ?? 'Not Available',
+                        'need_truck'                => session('post')['need_truck'] ?? 'Not Available',
+                        'brand_model'               => session('post')['brand_model'] ?? 'Not Available',
+                        'rolling'                   => session('post')['rolling'] ?? 'Not Available',
+
+                        // common
+                        'depart'                    => session('post')['depart'] ?? 'Not Available',
+                        'arrivee'                   => session('post')['arrivee'] ?? 'Not Available',
+                        'loading_date'              => session('post')['loading_date'] ?? 'Not Available',
+                        'delevary_date'             => session('post')['delevary_date'] ?? 'Not Available',
+                        'informations'              => session('post')['informations'] ?? 'Not Available',
+                        'pseudo'                    => Auth::user()->username,
+                        'terms'                     => session('post')['terms'] ?? 'Not Available',
+                        'offers'                    => 'yes',
+                        'user_id'                   => Auth::id(),
+                        'created_at'                => Carbon::now(),
+
+                    ]);
+                    return redirect()->route('announcement.details', $announcement->id);
+                } else {
+                    return back()->with('errors', 'Wrong Password');
+                }
+            }
+        }
 
         // redirect to auth
-            return redirect()->route( 'post-store' );
+        // return redirect()->route( 'post-store' );
     }
 
     public function save()
     {
-        // dd(session('post'));
-
-        echo session('post')['category'];
-                $announcement = SecondAnnouncement::create([
-                // $announcement = Announcement::create([
+        // dd(session('post')); 
+        $announcement = SecondAnnouncement::create([
+            // $announcement = Announcement::create([
 
             'category'                  => session('post')['category'] ?? '',
             'volume'                    => session('post')['volume'] ?? '',
@@ -168,7 +263,7 @@ class AnnouncementController extends Controller
             'individual_goods'          => session('post')['individual_goods'] ?? '',
             'place_type'                => session('post')['place_type'] ?? '',
             'floor'                     => session('post')['floor'] ?? '',
-        'ascenseur'                     => session('post')['ascenseur'] ?? '',
+            'ascenseur'                     => session('post')['ascenseur'] ?? '',
             'access'                    => session('post')['access'] ?? '',
             'services'                  => session('post')['services'] ?? '',
             'help'                      => session('post')['help'] ?? '',
@@ -179,7 +274,7 @@ class AnnouncementController extends Controller
             'weight'                    => session('post')['weight'] ?? '',
             'quantity'                  => session('post')['quantity'] ?? '',
             'size'                      => session('post')['size'] ?? '',
-        'load_unload'                   => session('post')['load_unload'] ?? '',
+            'load_unload'                   => session('post')['load_unload'] ?? '',
             'need_tailgate'             => session('post')['need_tailgate'] ?? '',
             'need_truck'                => session('post')['need_truck'] ?? '',
             'brand_model'               => session('post')['brand_model'] ?? '',
@@ -201,7 +296,7 @@ class AnnouncementController extends Controller
             'offers'                    => 'yes',
             'user_id'                   => Auth::id(),
             'created_at'                => Carbon::now(),
-            
+
 
             // 'category'             => session('post')['category'] ?? '',
             // 'equipment'            => session('post')['equipment'] ?? '',
@@ -248,8 +343,8 @@ class AnnouncementController extends Controller
             // 'user_id'                 => Auth::id(), 
             // 'created_at'              => Carbon::now(), 
             // 'offers'                  => 'yes', 
-            
-        ]); 
+
+        ]);
 
         // if (session('post')['image']->exists()) {
 
@@ -271,11 +366,11 @@ class AnnouncementController extends Controller
 
     public function details($id)
     {
-        $data = SecondAnnouncement::find($id); 
-        $data->increment('views'); 
+        $data = SecondAnnouncement::find($id);
+        $data->increment('views');
         $data->save();
 
-        return view('frontend.details', compact('data')); 
+        return view('frontend.details', compact('data'));
     }
 
     public function distancePost(Request $request)
@@ -285,20 +380,14 @@ class AnnouncementController extends Controller
         $data = SecondAnnouncement::findOrFail($request->id);
 
 
-        if($data->distance == 'Location not found')
-        {
-            
-                    $data->distance = $request->distance; 
-                    $data->save(); 
-                   
+        if ($data->distance == 'Location not found') {
 
-                   
-
+            $data->distance = $request->distance;
+            $data->save();
         }
 
         echo $data->distance;
-
     }
 
-// end    
+    // end    
 }

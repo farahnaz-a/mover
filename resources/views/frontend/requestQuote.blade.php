@@ -1,4 +1,4 @@
-@extends('layouts.frontend')
+@extends('layouts.frontend') 
 
 @section('title')
     {{ config('app.name') }} - Demande de devis
