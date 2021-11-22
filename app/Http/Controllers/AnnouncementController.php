@@ -102,6 +102,11 @@ class AnnouncementController extends Controller
                 'access_depart'             => session('post')['access_depart'] ?? 'Not Available',
                 'access_arrivee'            => session('post')['access_arrivee'] ?? 'Not Available',
                 'services'                  => session('post')['services'] ?? 'Not Available',
+                'économique'                => session('post')['économique'] ?? 'Not Available',
+                'standard'                  => session('post')['standard'] ?? 'Not Available',
+                'compléte'                  => session('post')['compléte'] ?? 'Not Available',
+                'clicmove'                  => session('post')['clicmove'] ?? 'Not Available',
+
                 'help'                      => session('post')['help'] ?? 'Not Available',
                 'article_name'              => session('post')['article_name'] ?? 'Not Available',
                 'height'                    => session('post')['height'] ?? 'Not Available',
@@ -165,6 +170,10 @@ class AnnouncementController extends Controller
                     'access_arrivee'            => session('post')['access_arrivee'] ?? 'Not Available',
     
                     'services'                  => session('post')['services'] ?? 'Not Available',
+                    'économique'                => session('post')['économique'] ?? 'Not Available',
+                    'standard'                  => session('post')['standard'] ?? 'Not Available',
+                    'compléte'                  => session('post')['compléte'] ?? 'Not Available',
+                    'clicmove'                  => session('post')['clicmove'] ?? 'Not Available',
                     'help'                      => session('post')['help'] ?? 'Not Available',
                     'article_name'              => session('post')['article_name'] ?? 'Not Available',
                     'height'                    => session('post')['height'] ?? 'Not Available',
@@ -216,6 +225,10 @@ class AnnouncementController extends Controller
                         'access_arrivee'            => session('post')['access_arrivee'] ?? 'Not Available',
 
                         'services'                  => session('post')['services'] ?? 'Not Available',
+                        'économique'                => session('post')['économique'] ?? 'Not Available',
+                        'standard'                  => session('post')['standard'] ?? 'Not Available',
+                        'compléte'                  => session('post')['compléte'] ?? 'Not Available',
+                        'clicmove'                  => session('post')['clicmove'] ?? 'Not Available',
                         'help'                      => session('post')['help'] ?? 'Not Available',
                         'article_name'              => session('post')['article_name'] ?? 'Not Available',
                         'height'                    => session('post')['height'] ?? 'Not Available',

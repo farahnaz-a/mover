@@ -13,6 +13,13 @@
 @endsection
 
 @section('css')
+<style>
+    .customSelectFix .nice-select{
+        white-space: initial;
+        height: auto;
+        padding-right: 30px;
+    }
+</style>
 @endsection
 
 @section('content')
@@ -240,7 +247,7 @@
                                                             </select> 
                                                         </div>
                                                         <div class="col-4"> 
-                                                            <select name="access_depart" required> 
+                                                            <select name="access_arrivee" required> 
                                                                 <option value="">accès arrivee</option>
                                                                 <option value="on peut se garer devant">on peut se garer devant</option>
                                                                 <option value="on doit se garer plus loin">on doit se garer plus loin</option>
@@ -257,9 +264,16 @@
                                                                 <span style="font-size: 20px">Économique</span> <input style="position: absolute; top: 10px; right: 0" type="radio">
                                                             </div>
                                                         </div>
-                                                        <div class="col-6">
-                                                            <select name="services[]" >
-                                                                <option value=""><i class="icofont-tick-mark"></i> Nombre de déménageur nécessaire (au minimum 2) </option>
+                                                        <div class="col-6 customSelectFix">
+                                                            <select name="économique" required >
+                                                                <option value="">Nombre de déménageur nécessaire (au minimum 2) </option>
+                                                                <option value="protection du mobilier"> protection du mobilier</option>
+                                                                <option value="manutention au chargement"> manutention au chargement </option>
+                                                                <option value="transport"> transport</option>
+                                                                <option value="manutention au déchargement "> manutention au déchargement </option>
+                                                                <option value="Assurance"> Assurance</option>
+                                                                <option value="frais de route (péage, carburant, ferry,…)">frais de route (péage, carburant, ferry,…)</option>
+                                                                
                                                             </select> 
                                                         </div>
                                                     </div>
@@ -269,9 +283,18 @@
                                                                 <span style="font-size: 20px">Standard</span> <input style="position: absolute; top: 10px; right: 0" type="radio">
                                                             </div>
                                                         </div>
-                                                        <div class="col-6">
-                                                            <select name="services[]">
-                                                                <option value=""> Nombre de déménageur nécessaire  </option>
+                                                        <div class="col-6 customSelectFix">
+                                                            <select name="standard" required>
+                                                                <option value="">Nombre de déménageur nécessaire (au minimum 2)</option>
+                                                                <option value="démontage du mobilier">démontage du mobilier </option>
+                                                                <option value="Emballage du fragile"> Emballage du fragile </option>
+                                                                <option value="protection du mobilier">protection du mobilier</option>
+                                                                <option value="manutention au chargement"> manutention au chargement</option>
+                                                                <option value="transport">transport</option>
+                                                                <option value="manutention au déchargement">manutention au déchargement</option>
+                                                                <option value="remontage du mobilier">remontage du mobilier</option>
+                                                                <option value="Assurance">Assurance</option>
+                                                                <option value="frais de route (péage, carburant, ferry,…)"> frais de route (péage, carburant, ferry,…)</option> 
                                                             </select>
                                                         </div>
                                                     </div>
@@ -281,9 +304,19 @@
                                                                 <span style="font-size: 20px">Compléte</span> <input style="position: absolute; top: 10px; right: 0" type="radio">
                                                             </div>
                                                         </div>
-                                                        <div class="col-6">
-                                                            <select name="services[]">
+                                                        <div class="col-6 customSelectFix">
+                                                            <select name="compléte" required>
                                                                 <option value=""> Nombre de déménageur nécessaire  </option>
+                                                                <option value="mise en carton complète (fournitures de matériels et main d’œuvre)">(Vêtement et linge de lit Livres et documents Vaisselles et fragile Divers)</option>
+                                                                <option value="démontage du mobilier ">démontage du mobilier </option>
+                                                                <option value="protection du mobilier">protection du mobilier</option>
+                                                                <option value="manutention au chargement">manutention au chargement</option>
+                                                                <option value="transport">transport</option>
+                                                                <option value="manutention au déchargement ">manutention au déchargement </option>
+                                                                <option value="Déballage et mise en place des cartons">Déballage et mise en place des cartons</option>
+                                                                <option value="remontage du mobilier ">remontage du mobilier </option>
+                                                                <option value="Assurance ">Assurance </option>
+                                                                <option value="frais de route (péage, carburant, ferry,…)">frais de route (péage, carburant, ferry,…)</option>
                                                             </select>
                                                         </div>
                                                     </div>
@@ -293,9 +326,12 @@
                                                                 <span style="font-size: 20px">Ma formule Clicmove</span> <input style="position: absolute; top: 10px; right: 0" type="radio">
                                                             </div>
                                                         </div>
-                                                        <div class="col-6">
-                                                            <select name="services[]">
-                                                                <option value=""> Cette formule permet de composer mon déménagement </option>
+                                                        <div class="col-6 customSelectFix">
+                                                            <select name="clicmove" required>
+                                                                <option value=""> Cette formule permet de composer mon déménagement à la carte en adaptant les formules existantes en fonction de mon besoin réel. </option>
+                                                                <option value="vous pouvez décrire vos besoins dans les informations complémentaires">vous pouvez décrire vos besoins dans les informations complémentaires</option>
+                                                                <option value="exemple 1 : je choisis la formule économique, et demande la livraison de 2 cartons penderie et le démontage de mon lit">exemple 1 : je choisis la formule économique, et demande la livraison de 2 cartons penderie et le démontage de mon lit</option>
+                                                                <option value="exemple 2 : j’ai besoin d’une formule standard avec 1 mois de stockage">exemple 2 : j’ai besoin d’une formule standard avec 1 mois de stockage</option>
                                                             </select>
                                                         </div>
                                                     </div>
@@ -653,7 +689,7 @@
                                                             </select> 
                                                         </div>
                                                         <div class="col-4"> 
-                                                            <select name="access_depart" required> 
+                                                            <select name="access_arrivee" required> 
                                                                 <option value="">accès arrivee</option>
                                                                 <option value="on peut se garer devant">on peut se garer devant</option>
                                                                 <option value="on doit se garer plus loin">on doit se garer plus loin</option>
@@ -1039,7 +1075,7 @@
                                                     </select> 
                                                 </div>
                                                 <div class="col-4"> 
-                                                    <select name="access_depart" required> 
+                                                    <select name="access_arrivee" required> 
                                                         <option value="">accès arrivee</option>
                                                         <option value="on peut se garer devant">on peut se garer devant</option>
                                                         <option value="on doit se garer plus loin">on doit se garer plus loin</option>
@@ -1409,7 +1445,7 @@
                                                     </select> 
                                                 </div>
                                                 <div class="col-4"> 
-                                                    <select name="access_depart" required> 
+                                                    <select name="access_arrivee" required> 
                                                         <option value="">accès arrivee</option>
                                                         <option value="on peut se garer devant">on peut se garer devant</option>
                                                         <option value="on doit se garer plus loin">on doit se garer plus loin</option>
@@ -1780,7 +1816,7 @@
                                                     </select> 
                                                 </div>
                                                 <div class="col-4"> 
-                                                    <select name="access_depart" required> 
+                                                    <select name="access_arrivee" required> 
                                                         <option value="">accès arrivee</option>
                                                         <option value="on peut se garer devant">on peut se garer devant</option>
                                                         <option value="on doit se garer plus loin">on doit se garer plus loin</option>
@@ -2061,7 +2097,7 @@
                                                     </select> 
                                                 </div>
                                                 <div class="col-4"> 
-                                                    <select name="access_depart" required> 
+                                                    <select name="access_arrivee" required> 
                                                         <option value="">accès arrivee</option>
                                                         <option value="on peut se garer devant">on peut se garer devant</option>
                                                         <option value="on doit se garer plus loin">on doit se garer plus loin</option>
