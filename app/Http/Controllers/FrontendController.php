@@ -142,7 +142,7 @@ class FrontendController extends Controller
           // 'packages'    => Package::where('hired', 'no')->orderBy('id', 'asc')->get(),
           // 'pallets'    => Pallet::where('hired', 'no')->orderBy('id', 'asc')->get(),
           // 'vehicles'    => Vehicle::where('hired', 'no')->orderBy('id', 'asc')->get(),
-          'announcements'    => Announcement::where('hired', 'no')->where('user_id', Auth::id())->orderBy('id', 'asc')->get(),
+          'announcements'    => SecondAnnouncement::where('hired', 'no')->where('user_id', Auth::id())->orderBy('id', 'asc')->get(),
           'services'         =>$services,
        ]);
    }

@@ -18,6 +18,13 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <style>
+      .website-color{
+        color: #5fc2ba;
+      }
+      .website-bg-color{
+        background-color: #5fc2ba !important;
+        color: #fff !important;
+      }
       .cat_icon{
         margin-right: 5px;
       }
@@ -98,6 +105,9 @@
        <!-- map styles -->
        
     <link rel="stylesheet" href="{{ asset('assets/assets/css/main.min.css') }}" />
+    
+
+     
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -503,6 +513,7 @@
 
   <!-- Theme Custom FIle -->
   <script src="{{ asset('assets/js/site-custom.js') }}"></script> 
+  {{-- <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&libraries=places"></script> --}}
   @yield('js')
   <script type="text/javascript">
     var tpj=jQuery;

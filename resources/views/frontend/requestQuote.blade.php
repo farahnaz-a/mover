@@ -29,7 +29,7 @@
                   id="transport"
                 >
                   <h4 class="font-weight-bold text-navy-blue p-3 mb-0">
-                    TYPE OF TRANSPORT
+                    Sélectionner une catégorie
                   </h4>
                   <!-- transport category start -->
                   <div class="row">
@@ -146,7 +146,7 @@
                       id="all-item"
                       class="btn-theme bg-navy-blue text-white"
                     >
-                      Show All
+                    Voir plus
                     </button>
                     <!-- transport category end -->
                   </div>

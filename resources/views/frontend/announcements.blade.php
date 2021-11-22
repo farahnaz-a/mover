@@ -421,6 +421,7 @@
                             </li>
                            
                         @endforeach
+                        {{-- {{ $announcements->links() }} --}}
                     </ul>
                     {{-- <nav>
                   <ul class="pagination pagination-sm justify-content-end">
