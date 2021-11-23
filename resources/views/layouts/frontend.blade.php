@@ -19,7 +19,7 @@
 
     <style>
       .website-color{
-        color: #5fc2ba;
+        color: #5fc2ba !important;
       }
       .website-bg-color{
         background-color: #5fc2ba !important;
@@ -491,8 +491,8 @@
   <script src="{{ asset('assets/twitter/jquery.tweet.js') }}"></script>
 
   <!-- JQuery Map Plugin -->
-  <script src="https://maps.google.com/maps/api/js?key=AIzaSyCCYYbVzj3y4aUpnJCDZ756CrHJXVs93U4&sensor=false"></script>
-  
+  <script src="https://maps.google.com/maps/api/js?libraries=places&key=AIzaSyCCYYbVzj3y4aUpnJCDZ756CrHJXVs93U4&sensor=false"></script>
+
   <script type="text/javascript" src="{{ asset('assets/js/jquery.gmap.min.js') }}"></script>    
   
 

@@ -27,7 +27,7 @@
     <!-- Main Body Content Start -->
     <main id="body-content" style="overflow-y: inherit">
         <!-- steps start -->
-        <section class="transport-steps">
+        {{-- <section class="transport-steps">
             <div class="container">
                 <div class="transport-steps-wrapper">
                     <div>
@@ -44,7 +44,7 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section> --}}
         <!-- steps end -->
 
         <!-- transport start -->
@@ -124,13 +124,11 @@
                                                                 <div class="col-3">
                                                                     <div class="d-flex">
                                                                         <label for="no" class="d-flex align-items-center mr-3">
-                                                                            non <input type="radio" id="no" name="individual_goods_status"
-                                                                                style="margin-left: 5px" value="no" required>
+                                                                            non <input type="radio" id="no" name="individual_goods_status" style="margin-left: 5px" value="no" required>
                                                                         </label>
         
                                                                         <label for="yes" class="d-flex align-items-center">
-                                                                            oui <input type="radio" id="yes" name="individual_goods_status"
-                                                                                value="yes" style="margin-left: 5px" required>
+                                                                            oui <input type="radio" id="yes" name="individual_goods_status" value="yes" style="margin-left: 5px" required>
                                                                         </label> 
                                                                     </div> 
                                                                 </div>
@@ -927,7 +925,7 @@
                                                             class="form-control" required/>
                                                         <div class="input-group-append">
                                                             <span class="input-group-text" id="height"><i
-                                                                    class="icofont-box"></i></span>
+                                                                    class="icofont-box website-color"></i></span>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -937,7 +935,7 @@
                                                             class="form-control" required/>
                                                         <div class="input-group-append">
                                                             <span class="input-group-text" id="width"><i
-                                                                    class="icofont-box"></i></span>
+                                                                    class="icofont-box website-color"></i></span>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -950,7 +948,7 @@
                                                             class="form-control" required/>
                                                         <div class="input-group-append">
                                                             <span class="input-group-text" id="length"><i
-                                                                    class="icofont-box"></i></span>
+                                                                    class="icofont-box website-color"></i></span>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -959,7 +957,7 @@
                                                         <input name="weight" type="text" placeholder="poids"
                                                             class="form-control" required/>
                                                         <div class="input-group-append">
-                                                            <span class="input-group-text" id="weight"> KG</span>
+                                                            <span class="input-group-text website-color font-weight-bold" id="weight"> KG</span>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -971,7 +969,7 @@
                                                             class="form-control" required/>
                                                         <div class="input-group-append">
                                                             <span class="input-group-text" id="quantity"><i
-                                                                    class="icofont-numbered"></i></span>
+                                                                    class="icofont-numbered website-color"></i></span>
                                                         </div>
                                                     </div>
                                                 </div> 
@@ -1298,7 +1296,7 @@
                                                             class="form-control" required/>
                                                         <div class="input-group-append">
                                                             <span class="input-group-text" id="height"><i
-                                                                    class="icofont-box"></i></span>
+                                                                    class="icofont-box website-color"></i></span>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -1308,7 +1306,7 @@
                                                             class="form-control" required/>
                                                         <div class="input-group-append">
                                                             <span class="input-group-text" id="width"><i
-                                                                    class="icofont-box"></i></span>
+                                                                    class="icofont-box website-color"></i></span>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -1321,7 +1319,7 @@
                                                             class="form-control" required/>
                                                         <div class="input-group-append">
                                                             <span class="input-group-text" id="length"><i
-                                                                    class="icofont-box"></i></span>
+                                                                    class="icofont-box website-color"></i></span>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -1330,7 +1328,7 @@
                                                         <input name="weight" type="text" placeholder="poids"
                                                             class="form-control" required/>
                                                         <div class="input-group-append">
-                                                            <span class="input-group-text" id="weight"> KG</span>
+                                                            <span class="input-group-text website-color font-weight-bold" id="weight"> KG</span>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -1342,7 +1340,7 @@
                                                             class="form-control" required/>
                                                         <div class="input-group-append">
                                                             <span class="input-group-text" id="quantity"><i
-                                                                    class="icofont-numbered"></i></span>
+                                                                    class="icofont-numbered website-color"></i></span>
                                                         </div>
                                                     </div>
                                                 </div> 
@@ -1669,7 +1667,7 @@
                                                             class="form-control" required/>
                                                         <div class="input-group-append">
                                                             <span class="input-group-text" id="height"><i
-                                                                    class="icofont-box"></i></span>
+                                                                    class="icofont-box website-color"></i></span>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -1679,7 +1677,7 @@
                                                             class="form-control" required/>
                                                         <div class="input-group-append">
                                                             <span class="input-group-text" id="width"><i
-                                                                    class="icofont-box"></i></span>
+                                                                    class="icofont-box website-color"></i></span>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -1692,7 +1690,7 @@
                                                             class="form-control" required/>
                                                         <div class="input-group-append">
                                                             <span class="input-group-text" id="length"><i
-                                                                    class="icofont-box"></i></span>
+                                                                    class="icofont-box website-color"></i></span>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -1701,7 +1699,7 @@
                                                         <input name="weight" type="text" placeholder="poids"
                                                             class="form-control" required/>
                                                         <div class="input-group-append">
-                                                            <span class="input-group-text" id="weight"> KG</span>
+                                                            <span class="input-group-text website-color font-weight-bold" id="weight"> KG</span>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -1713,7 +1711,7 @@
                                                             class="form-control" required/>
                                                         <div class="input-group-append">
                                                             <span class="input-group-text" id="quantity"><i
-                                                                    class="icofont-numbered"></i></span>
+                                                                    class="icofont-numbered website-color"></i></span>
                                                         </div>
                                                     </div>
                                                 </div> 
@@ -2039,7 +2037,7 @@
                                                             class="form-control" required/>
                                                         <div class="input-group-append">
                                                             <span class="input-group-text" id="height"><i
-                                                                    class="icofont-box"></i></span>
+                                                                    class="icofont-box website-color"></i></span>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -2049,7 +2047,7 @@
                                                             class="form-control" required/>
                                                         <div class="input-group-append">
                                                             <span class="input-group-text" id="width"><i
-                                                                    class="icofont-box"></i></span>
+                                                                    class="icofont-box website-color"></i></span>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -2062,7 +2060,7 @@
                                                             class="form-control" required/>
                                                         <div class="input-group-append">
                                                             <span class="input-group-text" id="length"><i
-                                                                    class="icofont-box"></i></span>
+                                                                    class="icofont-box website-color"></i></span>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -2071,7 +2069,7 @@
                                                         <input name="weight" type="text" placeholder="poids"
                                                             class="form-control" required/>
                                                         <div class="input-group-append">
-                                                            <span class="input-group-text" id="weight"> KG</span>
+                                                            <span class="input-group-text website-color font-weight-bold" id="weight"> KG</span>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -2083,7 +2081,7 @@
                                                             class="form-control" required/>
                                                         <div class="input-group-append">
                                                             <span class="input-group-text" id="quantity"><i
-                                                                    class="icofont-numbered"></i></span>
+                                                                    class="icofont-numbered website-color"></i></span>
                                                         </div>
                                                     </div>
                                                 </div> 
@@ -2766,7 +2764,7 @@
                                                             class="form-control" required/>
                                                         <div class="input-group-append">
                                                             <span class="input-group-text" id="height"><i
-                                                                    class="icofont-box"></i></span>
+                                                                    class="icofont-box website-color"></i></span>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -2776,7 +2774,7 @@
                                                             class="form-control" required/>
                                                         <div class="input-group-append">
                                                             <span class="input-group-text" id="width"><i
-                                                                    class="icofont-box"></i></span>
+                                                                    class="icofont-box website-color"></i></span>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -2789,7 +2787,7 @@
                                                             class="form-control" required/>
                                                         <div class="input-group-append">
                                                             <span class="input-group-text" id="length"><i
-                                                                    class="icofont-box"></i></span>
+                                                                    class="icofont-box website-color"></i></span>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -2798,7 +2796,7 @@
                                                         <input name="weight" type="text" placeholder="poids"
                                                             class="form-control" required/>
                                                         <div class="input-group-append">
-                                                            <span class="input-group-text" id="weight"> KG</span>
+                                                            <span class="input-group-text website-color font-weight-bold" id="weight"> KG</span>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -2810,7 +2808,7 @@
                                                             class="form-control" required/>
                                                         <div class="input-group-append">
                                                             <span class="input-group-text" id="quantity"><i
-                                                                    class="icofont-numbered"></i></span>
+                                                                    class="icofont-numbered website-color"></i></span>
                                                         </div>
                                                     </div>
                                                 </div> 
@@ -3039,13 +3037,22 @@
               
             }); 
 
-
-            function initialize() {
-                var input = document.getElementById('depart');
-                new google.maps.places.Autocomplete(input);
-                }
-
-                google.maps.event.addDomListener(window, 'load', initialize);
+            var autocomplete;
+            var depart = 'depart';
+            var arrivee = 'arrivee';
+            
+            autocomplete = new google.maps.places.Autocomplete((document.getElementById(depart)),
+            {
+                types:['geocode'],
+            });
+            autocomplete = new google.maps.places.Autocomplete((document.getElementById(arrivee)),
+            {
+                types:['geocode'],
+            });
+            google.maps.event.addListener(autocomplete, 'place_changed', function(){
+                var near_place = autocomplete.getPlace();
+            });
+            
                 
         });
     </script>

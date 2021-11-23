@@ -232,6 +232,46 @@ $count = $comments->count();
                                     <p></p>
                                 </div>
                             </div>
+
+                            @if ($data->category == 'déménagement')
+
+                            <div class="row mt-4"> 
+                                <div class="col">
+                                    <h5>Services:</h5>  
+                                    <table class="table">
+                                        @if ($data->économique)
+                                            <tr>
+                                                <th>Économique</th>
+                                                <th> {{ $data->économique }}</th>
+                                            </tr>
+                                        @endif
+                                        @if ($data->standard)
+                                            <tr>
+                                                <th>Standard</th>
+                                                <th> {{ $data->standard }}</th>
+                                            </tr>
+                                        @endif
+                                        @if ($data->compléte)
+                                            <tr>
+                                                <th>Compléte</th>
+                                                <th> {{ $data->compléte }}</th>
+                                            </tr>
+                                        @endif
+                                        @if ($data->clicmove)
+                                            <tr>
+                                                <th>Ma formule Clicmove</th>
+                                                <th> {{ $data->clicmove }}</th>
+                                            </tr>
+                                        @endif
+                                       
+                                        
+                                        
+                                    </table>
+                                     
+                                </div>
+                            </div>
+                                
+                            @endif
                         </div>
                        @guest
                         <div class="col-12">
