@@ -106,7 +106,7 @@ class FrontendController extends Controller
           // 'pallets'    => Pallet::where('hired', 'no')->orderBy('id', 'asc')->get(),
           // 'vehicles'    => Vehicle::where('hired', 'no')->orderBy('id', 'asc')->get(),
           // 'announcements'    => Announcement::where('hired', 'no')->where('category', $category)->orderBy('id', 'asc')->get(),
-          'announcements'    => SecondAnnouncement::where('hired', 'no')->where('category', $category)->orderBy('id', 'asc')->get(),
+          'announcements'    => SecondAnnouncement::where('hired', 'no')->where('category', $category)->latest()->orderBy('id', 'asc')->paginate(30),
           'services'     => Service::all(),
        ]);
    }
@@ -118,7 +118,7 @@ class FrontendController extends Controller
 
      $announcements = SecondAnnouncement::where('depart', 'LIKE', '%'. $from .'%')
                                   ->where('arrivee', 'LIKE', '%' . $to . '%')
-                                  ->get();
+                                  ->paginate(30);
                                   $services     = Service::all();
 
     return view('frontend.announcements', compact('announcements', 'services'));
@@ -142,7 +142,7 @@ class FrontendController extends Controller
           // 'packages'    => Package::where('hired', 'no')->orderBy('id', 'asc')->get(),
           // 'pallets'    => Pallet::where('hired', 'no')->orderBy('id', 'asc')->get(),
           // 'vehicles'    => Vehicle::where('hired', 'no')->orderBy('id', 'asc')->get(),
-          'announcements'    => SecondAnnouncement::where('hired', 'no')->where('user_id', Auth::id())->orderBy('id', 'asc')->get(),
+          'announcements'    => SecondAnnouncement::where('hired', 'no')->where('user_id', Auth::id())->latest()->orderBy('id', 'asc')->paginate(30),
           'services'         =>$services,
        ]);
    }
@@ -164,7 +164,7 @@ class FrontendController extends Controller
        $other->save(); 
      } 
      
-     $announcement = Announcement::find($bid->announcement_id);
+     $announcement = SecondAnnouncement::find($bid->announcement_id);
      $announcement->hired = 'yes'; 
      $announcement->save(); 
 
