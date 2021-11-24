@@ -410,7 +410,7 @@
                                             <div class="col-1">
                                                 <p>{{ totalbid($item->id)->count() }}</p>
                                             </div>
-                                            <div class="col-3">
+                                            <div class="col-3" style="padding-left: 0">
 
                                                 <span class="d-block text-nowrap"> Depuis
                                                     {{ $item->created_at->diffForHumans() }}</span>
@@ -421,8 +421,9 @@
                             </li>
                            
                         @endforeach
-                        {{-- {{ $announcements->links() }} --}}
                     </ul>
+                    {{ $announcements->links() }} 
+
                     {{-- <nav>
                   <ul class="pagination pagination-sm justify-content-end">
                     <li class="page-item active">
@@ -494,6 +495,9 @@
 @push('js')
 
 <script>
+    $(document).ready(function(){
+        $('.pagination').addClass('justify-content-end');
+    });
 
    
 

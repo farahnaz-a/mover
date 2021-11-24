@@ -18,6 +18,7 @@ class CreateSecondAnnouncementsTable extends Migration
             $table->string('category')->nullable();
             $table->string('volume')->nullable();
             $table->longText('list')->nullable();
+            $table->string('individual_goods_status')->nullable();
             $table->string('individual_goods')->nullable();
             $table->string('place_type_depart')->nullable();
             $table->string('floor_depart')->nullable();
@@ -28,6 +29,10 @@ class CreateSecondAnnouncementsTable extends Migration
             $table->string('ascenseur_arrivee')->nullable();
             $table->string('access_arrivee')->nullable();
             $table->string('services')->nullable();
+            $table->string('économique')->nullable();
+            $table->string('standard')->nullable();
+            $table->string('compléte')->nullable();
+            $table->string('clicmove')->nullable();
             $table->string('help')->nullable();
             $table->string('article_name')->nullable();
             $table->string('height')->nullable();

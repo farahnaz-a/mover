@@ -51,9 +51,8 @@
         <section class="transport-type">
             <div class="container">
                 <div class="transport-type-wrapper">
-                    <div class="row">
-                        <div class="col"> 
-                            @if ($category == 'déménagement')
+                   
+                    @if ($category == 'déménagement')
                                 <!-- household equipment form start -->
                                 <div class="bg-white shadow-sm my-3 p-3 rounded" id="household">
                                     <h4 class="font-weight-bold text-navy-blue">Décrivez votre demande</h4>
@@ -461,17 +460,16 @@
                                     {{-- <a href="{{ URL::previous() }}" class="back btn btn-outline-danger">
                                         <i class="icofont-simple-left mr-2"></i>Back
                                     </a> --}}
-                                    <button type="submit" data-section="1"
-                                        class="continue btn text-white bg-navy-blue ml-3">
+                                    <button type="submit" class="continue btn text-white bg-navy-blue ml-3">
                                         Publiez mon annonce
                                     </button>
                                     </form>
                                 </div>
-                        </div>
+                         
                         <!-- household equipment form end -->
-                        @endif
+                    @endif
 
-                        @if ($category == 'chauffeur')
+                    @if ($category == 'chauffeur')
                             <!-- vehicle form start -->
                             <div class="bg-white shadow-sm my-3 p-3 rounded d-block" id="vehicle">
                                 {{-- <div id="vehicle1">
@@ -727,14 +725,6 @@
                                                         </div>
                                                     </div>
 
-                                                    <div class="row mt-4">
-                                                        <div class="col-8 mb-3">
-                                                            <h5>voes pouvez compléter votre demande avac des photos</h5> 
-                                                            {{-- <img src="{{ asset('uploads/callouts/1.jpg') }}" alt=""> --}}
-                                                            <a class="d-inline-block my-3 btn website-bg-color" target="_blank"
-                                                                href="{{ asset('uploads/callouts/1.jpg') }}"><i class="icofont-arrow-up bg-light website-color rounded-circle"></i> Télécharger</a>
-                                                        </div>
-                                                    </div>
                                                     {{-- IF User Is not Login Then Show This  --}}
                                                     @guest
                                                     <h3 class="mt-4">données </h3>
@@ -852,14 +842,13 @@
                                 {{-- <a href="{{ URL::previous() }}" class="back btn btn-outline-danger">
                                     <i class="icofont-simple-left mr-2"></i>Back
                                 </a> --}}
-                                <button type="submit" data-section="1"
-                                    class="continue btn text-white bg-navy-blue ml-3">
+                                <button type="submit" class="continue btn text-white bg-navy-blue ml-3">
                                     Publiez mon annonce
 
                                 </button>
                                 </form>
                             </div>
-                    </div>
+                  
                     <!-- vehicle form end -->
                     @endif
 
@@ -1229,7 +1218,7 @@
                                 {{-- <a href="{{ URL::previous() }}" class="back btn btn-outline-danger">
                                     <i class="icofont-simple-left mr-2"></i>Back
                                 </a> --}}
-                                <button data-section="1" class="continue btn text-white bg-navy-blue ml-3" type="submit">
+                                <button class="continue btn text-white bg-navy-blue ml-3" type="submit">
                                     Publiez mon annonce
                                 </button>
                                 </form>
@@ -1596,7 +1585,7 @@
                                 {{-- <a href="{{ URL::previous() }}" class="back btn btn-outline-danger">
                                     <i class="icofont-simple-left mr-2"></i>Back
                                 </a> --}}
-                                <button type="submit" data-section="1" class="continue btn text-white bg-navy-blue ml-3">
+                                <button type="submit" class="continue btn text-white bg-navy-blue ml-3">
                                     Publiez mon annonce 
                                 </button>
                                 </form>
@@ -1959,7 +1948,7 @@
                                 {{-- <a href="{{ URL::previous() }}" class="back btn btn-outline-danger">
                                     <i class="icofont-simple-left mr-2"></i>Back
                                 </a> --}}
-                                <button data-section="1" class="continue btn text-white bg-navy-blue ml-3" type="submit">
+                                <button class="continue btn text-white bg-navy-blue ml-3" type="submit">
                                     Publiez mon annonce 
                                 </button>
 
@@ -2260,7 +2249,7 @@
                                 {{-- <button data-section="0" class="back btn btn-outline-danger">
                                     <i class="icofont-simple-left mr-2"></i>Back
                                 </button> --}}
-                                <button type="submit" data-section="1" class="continue btn text-white bg-navy-blue ml-3">
+                                <button type="submit" class="continue btn text-white bg-navy-blue ml-3">
                                     Publiez mon annonce 
                                 </button>
                                 </form>
@@ -2489,7 +2478,7 @@
                                 {{-- <a href="{{ URL::previous() }}" class="back btn btn-outline-danger">
                                     <i class="icofont-simple-left mr-2"></i>Back
                                 </a> --}}
-                                <button data-section="1" class="continue btn text-white bg-navy-blue ml-3" type="submit">
+                                <button class="continue btn text-white bg-navy-blue ml-3" type="submit">
                                     Publiez mon annonce 
                                 </button>
                                 </form>
@@ -2696,7 +2685,7 @@
                                 {{-- <button data-section="0" class="back btn btn-outline-danger">
                                     <i class="icofont-simple-left mr-2"></i>Back
                                 </button> --}}
-                                <button data-section="1" class="continue btn text-white bg-navy-blue ml-3" type="submit">
+                                <button class="continue btn text-white bg-navy-blue ml-3" type="submit">
                                     Publiez mon annonce 
                                 </button>
                                 </form>
@@ -2938,7 +2927,7 @@
                                 {{-- <a href="{{ URL::previous() }}" class="back btn btn-outline-danger">
                                     <i class="icofont-simple-left mr-2"></i>Back
                                 </a> --}}
-                                <button data-section="1" class="continue btn text-white bg-navy-blue ml-3" type="submit">
+                                <button class="continue btn text-white bg-navy-blue ml-3" type="submit">
                                     Publiez mon annonce 
                                 </button>
                                 </form>

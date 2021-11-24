@@ -84,7 +84,7 @@ class FrontendController extends Controller
           // 'pallets'    => Pallet::where('hired', 'no')->orderBy('id', 'asc')->get(),
           // 'vehicles'    => Vehicle::where('hired', 'no')->orderBy('id', 'asc')->get(),
           // 'announcements'    => Announcement::where('hired', 'no')->orderBy('id', 'asc')->get(),
-          'announcements'    => SecondAnnouncement::where('hired', 'no')->orderBy('id', 'asc')->get(),
+          'announcements'    => SecondAnnouncement::where('hired', 'no')->latest()->orderBy('id', 'asc')->paginate(30),
           'services'     => Service::all(),
        ]);
    }
