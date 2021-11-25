@@ -154,7 +154,7 @@
                                 <input class="form-check-input" type="checkbox" id="demenagement"
                                     onclick='window.location.assign("/announce/déménagement")' />
                                 <label class="form-check-label" for="demenagement">
-                                    <i class="icofont-building-alt"></i>DÉMÉNAGEMENT
+                                    <i class="icofont-building-alt website-color"></i>DÉMÉNAGEMENT
                                 </label>
                             </div>
 
@@ -162,7 +162,7 @@
                                 <input class="form-check-input" type="checkbox" id="truckrental"
                                     onclick='window.location.assign("/announce/chauffeur")' />
                                 <label class="form-check-label" for="truckrental">
-                                    <i class="icofont-fast-delivery"></i>LOCATION CAMION AVEC CHAUFFEUR
+                                    <i class="icofont-fast-delivery website-color" ></i>LOCATION CAMION AVEC CHAUFFEUR
                                 </label>
                             </div>
 
@@ -170,7 +170,7 @@
                                 <input class="form-check-input" type="checkbox" id="meubles"
                                     onclick='window.location.assign("/announce/meubles")' />
                                 <label class="form-check-label" for="meubles">
-                                    <i class="icofont-bed"></i>MEUBLES
+                                    <i class="icofont-bed website-color"></i>MEUBLES
                                 </label>
                             </div>
 
@@ -178,7 +178,7 @@
                                 <input class="form-check-input" type="checkbox" id="electromenager"
                                     onclick='window.location.assign("/announce/électroménager")' />
                                 <label class="form-check-label" for="electromenager">
-                                    <i class="icofont-refrigerator"></i>ÉLECTROMÉNAGER
+                                    <i class="icofont-refrigerator website-color"></i>ÉLECTROMÉNAGER
                                 </label>
                             </div>
 
@@ -186,7 +186,7 @@
                                 <input class="form-check-input" type="checkbox" id="colis"
                                     onclick='window.location.assign("/announce/colis")' />
                                 <label class="form-check-label" for="colis">
-                                    <i class="icofont-box"></i>COLIS
+                                    <i class="icofont-box website-color"></i>COLIS
                                 </label>
                             </div>
 
@@ -194,7 +194,7 @@
                                 <input class="form-check-input" type="checkbox" id="Pallet"
                                     onclick='window.location.assign("/announce/palette")' />
                                 <label class="form-check-label" for="Pallet">
-                                    <i class="icofont-truck-alt"></i>PALETTE
+                                    <i class="icofont-truck-alt website-color"></i>PALETTE
                                 </label>
                             </div>
 
@@ -202,7 +202,7 @@
                                 <input class="form-check-input" type="checkbox" id="motos"
                                     onclick='window.location.assign("/announce/motos")' />
                                 <label class="form-check-label" for="motos">
-                                    <i class="icofont-motor-biker"></i>MOTOS
+                                    <i class="icofont-motor-biker website-color"></i>MOTOS
                                 </label>
                             </div>
 
@@ -210,7 +210,7 @@
                                 <input class="form-check-input" type="checkbox" id="voitures"
                                     onclick='window.location.assign("/announce/voitures")' />
                                 <label class="form-check-label" for="voitures">
-                                    <i class="icofont-car-alt-3"></i>VOITURES
+                                    <i class="icofont-car-alt-3 website-color"></i>VOITURES
                                 </label>
                             </div>
 
@@ -218,7 +218,7 @@
                                 <input class="form-check-input" type="checkbox" id="divers"
                                     onclick='window.location.assign("/announce/divers")' />
                                 <label class="form-check-label" for="divers">
-                                    <i class="icofont-search-2"></i>DIVERS
+                                    <i class="icofont-search-2 website-color"></i>DIVERS
                                 </label>
                             </div>
 

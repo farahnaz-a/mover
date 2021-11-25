@@ -425,16 +425,24 @@ class FrontendController extends Controller
   }
 
 
-      // check email for Announcement 
-      public function emailCheck(Request $request){
-        $email =  User::where('email', $request->email)->first();
-        if($email) {
-          $status = 'true';
-        }
-        else{
-          $status = 'false';
-        }
-        return response($status);
+    // check email for Announcement 
+    public function emailCheck(Request $request){
+
+      $email =  User::where('email', $request->email)->first();
+
+      if($email) {
+        $status = 'true';
+      }
+      else{
+        $status = 'false';
+      }
+      
+      return response($status);
+
    }
+
+
+
+
 // END  
 }

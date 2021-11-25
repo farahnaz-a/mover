@@ -238,46 +238,72 @@ $count = $comments->count();
                             <div class="row mt-4"> 
                                 <div class="col">
                                     <h5>Services:</h5>  
-                                    <table class="table">
-                                        @if ($data->économique)
-                                            <tr>
-                                                <th>Économique</th>
-                                                <th> {{ $data->économique }}</th>
-                                            </tr>
-                                        @endif
-                                        @if ($data->standard)
-                                            <tr>
-                                                <th>Standard</th>
-                                                <th> {{ $data->standard }}</th>
-                                            </tr>
-                                        @endif
-                                        @if ($data->compléte)
-                                            <tr>
-                                                <th>Compléte</th>
-                                                <th> {{ $data->compléte }}</th>
-                                            </tr>
-                                        @endif
-                                        @if ($data->clicmove)
-                                            <tr>
-                                                <th>Ma formule Clicmove</th>
-                                                <th> {{ $data->clicmove }}</th>
-                                            </tr>
-                                        @endif
-                                       
+                                    @if ($data->économique == 'économique')
+                                        <h6>
+                                            Économique
+                                        </h6>
+                                        <ul class="custom-list">
+                                            <li >protection du mobilier </li>
+                                            <li>manutention au chargement</li>
+                                            <li>transport</li>
+                                            <li>manutention au déchargement</li>
+                                            <li>Assurance</li>
+                                            <li>frais de route (péage, carburant, ferry,…)</li>
+                                        </ul>
+                                    @endif
+                                    @if ($data->standard == 'standard')
                                         
+                                            <h6>Standard</h6>
+                                            <ul class="custom-list">
+                                                <li>démontage du mobilier</li>
+                                                <li>Emballage du fragile </li>
+                                                <li>protection du mobilier </li>
+                                                <li>manutention au chargement</li>
+                                                <li>transport</li>
+                                                <li>manutention au déchargement</li>
+                                                <li>remontage du mobilier </li>
+                                                <li>Assurance</li>
+                                                <li>frais de route (péage, carburant, ferry,…)</li>  
+                                            </ul>
+                                            
+                                    @endif
+                                    @if ($data->compléte == 'compléte')
                                         
-                                    </table>
-                                     
+                                            <h6>Compléte</h6>
+                                            <ul class="custom-list">
+                                                <li>démontage du mobilier </li>
+                                                <li>(Vêtement et linge de lit Livres et documents Vaisselles et fragile Divers)</li>
+                                                <li>protection du mobilier </li>
+                                                <li>manutention au chargement</li>
+                                                <li>transport</li>
+                                                <li>manutention au déchargement</li>
+                                                <li>Déballage et mise en place des cartons</li>
+                                                <li>remontage du mobilier </li>
+                                                <li>Assurance</li>
+                                                <li>frais de route (péage, carburant, ferry,…)</li>  
+                                            </ul> 
+                                    @endif
+                                    @if ($data->clicmove == 'clicmove')
+                                        <tr>
+                                            <h6>Ma formule Clicmove</h6>
+                                            <ul class="custom-list">
+                                                <li>Cette formule permet de composer mon déménagement à la carte en adaptant les formules existantes en fonction de mon besoin réel.</li>
+                                                <li>vous pouvez décrire vos besoins dans les informations complémentaires</li>
+                                                <li>exemple 1 : je choisis la formule économique, et demande la livraison de 2 cartons penderie et le démontage de mon lit</li>
+                                                <li>exemple 2 : j’ai besoin d’une formule standard avec 1 mois de stockage</li>
+                                            </ul> 
+                                                
+                                        </tr>
+                                    @endif 
                                 </div>
-                            </div>
+                            </div>  
+                            @endif
                             <div class="row mt-3">
                                 <div class="col-4">
                                     <h5>Photo:</h5>  
                                     <img src="{{ asset('uploads/callouts/1.jpg') }}" alt="">
                                 </div>
                             </div>
-                                
-                            @endif
                         </div>
                        @guest
                         <div class="col-12">
@@ -545,5 +571,14 @@ $count = $comments->count();
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCCYYbVzj3y4aUpnJCDZ756CrHJXVs93U4&callback=initMap&libraries=&v=weekly"
                 async></script>
     @endsection
+
+    @push('css')
+    <style>
+        .custom-list{
+            list-style-image: url({{ asset('uploads/check.png') }});
+        }
+    </style>
+        
+    @endpush
 
     

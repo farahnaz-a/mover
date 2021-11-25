@@ -81,7 +81,19 @@ class AnnouncementController extends Controller
      *  Store Announcement 
      */
     public function store(Request $request)
+
     {
+
+        if($request->category == 'déménagement'){
+            $request->validate([ 
+               'économique'    => 'required_without_all:standard,compléte',
+               'standard'      => 'required_without_all:compléte,clicmove',
+               'compléte'      =>  'required_without_all:économique,clicmove',
+               'clicmove'      =>  'required_without_all:économique,standard' 
+            ]);
+
+        }
+
         if (Auth::id()) {
  
             session()->put('post', $request->all());

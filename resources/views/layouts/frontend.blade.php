@@ -513,6 +513,7 @@
 
   <!-- Theme Custom FIle -->
   <script src="{{ asset('assets/js/site-custom.js') }}"></script> 
+  @stack('css')
   {{-- <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&libraries=places"></script> --}}
   @yield('js')
   <script type="text/javascript">

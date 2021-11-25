@@ -37,7 +37,7 @@
                       <a href="{{ route('frontend.requestQuoteForm', 'déménagement') }}">
                         <div class="transport-item" data-target="#household">
                           <span class="icon"
-                            >  <i class="icofont-building-alt"></i
+                            >  <i class="icofont-building-alt website-color"></i
                               > </span>
                           <span>Déménagement</span>
                         </div>
@@ -55,7 +55,7 @@
                       <a href="{{ route('frontend.requestQuoteForm', 'chauffeur') }}"> 
                         <div class="transport-item" data-target="#chauffeur">
                           <span class="icon"
-                            > <i class="icofont-fast-delivery"></i></span>
+                            > <i class="icofont-fast-delivery website-color"></i></span>
                           <span>LOCATION CAMION AVEC CHAUFFEUR</span>
                         </div>
                       </a>
@@ -64,7 +64,7 @@
                       <a href="{{ route('frontend.requestQuoteForm', 'meubles') }}">
                       {{-- <a href="#"> --}}
                       <div class="transport-item" data-target="#meubles">
-                          <span class="icon" > <i class="icofont-bed"></i></span>
+                          <span class="icon" > <i class="icofont-bed website-color"></i></span>
                           <span>MEUBLES</span>
                       </div>
                     </a>
@@ -73,7 +73,7 @@
                       <a href="{{ route('frontend.requestQuoteForm', 'électroménager') }}">
                       {{-- <a href="#"> --}}
                         <div class="transport-item" data-target="#électroménager" >
-                          <span class="icon" ><i class="icofont-refrigerator"></i></span>
+                          <span class="icon" ><i class="icofont-refrigerator website-color"></i></span>
                           <span>ELECTROMENAGER</span>
                         </div>
                       </a>
@@ -83,7 +83,7 @@
                        {{-- <a href="#"> --}}
                         <div class="transport-item" data-target="#colis">
                           <span class="icon"
-                            ><i class="icofont-box"></i></span>
+                            ><i class="icofont-box website-color"></i></span>
                           <span>COLIS</span>
                         </div>
                       </a>
@@ -93,7 +93,7 @@
                        {{-- <a href="#"> --}}
                         <div class="transport-item" data-target="#palette">
                           <span class="icon"
-                            ><i class="icofont-truck-alt"></i></span>
+                            ><i class="icofont-truck-alt website-color"></i></span>
                           <span>PALETTE</span>
                         </div>
                       </a>
@@ -103,7 +103,7 @@
                       {{-- <a href="#"> --}}
                         <div class="transport-item" data-target="#motos">
                           <span class="icon"
-                            > <i class="icofont-motor-biker"></i></span>
+                            > <i class="icofont-motor-biker website-color"></i></span>
                           <span>MOTOS</span>
                         </div>
                       </a>
@@ -114,7 +114,7 @@
                       {{-- <a href="#"> --}}
                         <div class="transport-item" data-target="#voitures">
                           <span class="icon"
-                            > <i class="icofont-car-alt-3"></i></span>
+                            > <i class="icofont-car-alt-3 website-color"></i></span>
                           <span>VOITURES</span>
                         </div>
                       </a>
@@ -124,7 +124,7 @@
                       {{-- <a href="#"> --}}
                         <div class="transport-item" data-target="#divers" >
                           <span class="icon"
-                            > <i class="icofont-search-2"></i></span>
+                            > <i class="icofont-search-2 website-color"></i></span>
                           <span>DIVERS</span>
                         </div>
                       </a>

@@ -69,13 +69,13 @@
                                                         <div class="col-4">
                                                             <div class="form-group">
                                                                 <input id="depart" style="position: relative" type="text" placeholder="Adresse de départ" class="form-control" name="depart" required/> 
-                                                                <label for="depart"><i class="icofont-google-map website-color" style="position: absolute; top: 12px; right: 25px;"></i></label>
+                                                                <label for="depart"><i class="icofont-google-map" style="position: absolute; top: 12px; right: 25px;"></i></label>
                                                            </div>
                                                         </div>
                                                         <div class="col-4">
                                                             <div class="form-group">
                                                                 <input id="arrivee" style="position: relative" type="text" placeholder="Adresse d'arrivée" class="form-control" name="arrivee" required/>
-                                                                <label for="arrivee"><i class="icofont-google-map website-color" style="position: absolute; top: 12px; right: 25px;"></i></label>
+                                                                <label for="arrivee"><i class="icofont-google-map" style="position: absolute; top: 12px; right: 25px;"></i></label>
                                                             </div>
                                                         </div>
                                                     </div> 
@@ -106,7 +106,7 @@
                                                         <div class="col-8">
                                                             <div class="form-group">
                                                                 <textarea name="list"   class="form-control" rows="7"
-                                                                    placeholder=" j'ai une liste (*pensez à faire un iventaire pièce par pièce )" required></textarea>
+                                                                    placeholder="je ne connais pas mon volume mais j'ai une liste" required></textarea>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -147,6 +147,7 @@
                                                     <div class="row my-3">
                                                         <div class="col-4">
                                                             <div class="form-group">
+                                                                <h5>départ</h5>
                                                                 {{-- <input type="text" placeholder="type de lieu"
                                                                     class="form-control" name="place_type" /> --}}
                                                                 <select name="place_type_depart"   required>
@@ -162,6 +163,7 @@
                                                         </div> 
                                                         <div class="col-4">
                                                             <div class="form-group">
+                                                                <h5>arrivée</h5>
                                                                 {{-- <input type="text" placeholder="type de lieu"
                                                                     class="form-control" name="place_type" /> --}}
                                                                 <select name="place_type_arrivee"   required>
@@ -181,6 +183,7 @@
                                                     <div class="row my-3">
                                                         <div class="col-4">
                                                             <div class="form-group">
+                                                                <h5>départ</h5>
                                                                 <select name="floor_depart"   required>
                                                                     <option value="">étages depart</option>
                                                                     <option value="RDC">RDC</option>
@@ -198,6 +201,7 @@
                                                         </div>
                                                         <div class="col-4"> 
                                                              <div class="form-group">
+                                                                <h5>arrivée</h5>
                                                                 <select name="floor_arrivee"   required>
                                                                     <option value="">étages arrivee</option>
                                                                     <option value="RDC">RDC</option>
@@ -221,6 +225,7 @@
                                                     </div>
                                                     <div class="row my-3">
                                                         <div class="col-4">
+                                                            <h5>départ</h5>
                                                              <select name="ascenseur_depart" required> 
                                                                 <option value="">ascenseur depart</option>
                                                                 <option value="non">non</option>
@@ -228,6 +233,7 @@
                                                             </select>
                                                         </div>  
                                                         <div class="col-4">
+                                                            <h5>arrivée</h5>
                                                              <select name="ascenseur_arrivee" required> 
                                                                 <option value="">ascenseur arrivee</option>
                                                                 <option value="non">non</option>
@@ -237,6 +243,7 @@
                                                     </div> 
                                                     <div class="row my-3">
                                                         <div class="col-4"> 
+                                                            <h5>départ</h5>
                                                             <select name="access_depart" required> 
                                                                 <option value="">accès depart</option>
                                                                 <option value="on peut se garer devant">on peut se garer devant</option>
@@ -244,6 +251,7 @@
                                                             </select> 
                                                         </div>
                                                         <div class="col-4"> 
+                                                            <h5>arrivée</h5>
                                                             <select name="access_arrivee" required> 
                                                                 <option value="">accès arrivee</option>
                                                                 <option value="on peut se garer devant">on peut se garer devant</option>
@@ -253,89 +261,102 @@
 
                                                     </div> 
                                                     <br>
-                                                    <h5 class="mt-3">Je choisis ma formule en focntion de mes bsoins</h5>
+                                                    <h5 class="mt-3">Je choisis ma formule en focntion de mes besoins</h5>
                                                     <div class="row mt-4">
                                                         <div class="col-2 mt-1">
                                                             <div class="form-group" style="position: relative">
                                                                 
-                                                                <span style="font-size: 20px">Économique</span> <input style="position: absolute; top: 10px; right: 0" type="radio">
+                                                                <span style="font-size: 20px">Économique</span> <input id="économique" name="économique" value="économique" style="position: absolute; top: 10px; right: 0" type="checkbox">
                                                             </div>
+
                                                         </div>
                                                         <div class="col-6 customSelectFix">
-                                                            <select name="économique" required >
-                                                                <option value="">Nombre de déménageur nécessaire (au minimum 2) </option>
-                                                                <option value="protection du mobilier"> protection du mobilier</option>
-                                                                <option value="manutention au chargement"> manutention au chargement </option>
-                                                                <option value="transport"> transport</option>
-                                                                <option value="manutention au déchargement "> manutention au déchargement </option>
-                                                                <option value="Assurance"> Assurance</option>
-                                                                <option value="frais de route (péage, carburant, ferry,…)">frais de route (péage, carburant, ferry,…)</option>
+                                                            <select  required >
+                                                                <option >Nombre de déménageur nécessaire (au minimum 2) </option>
+                                                                fdasfdfdfadfd
+                                                                <option disabled> protection du mobilier</option>
+                                                                <option disabled> manutention au chargement </option>
+                                                                <option disabled> transport</option>
+                                                                <option disabled> manutention au déchargement </option>
+                                                                <option disabled> Assurance</option>
+                                                                <option disabled">frais de route (péage, carburant, ferry,…)</option>
                                                                 
                                                             </select> 
+                                                            @error('économique')
+                                                                <span class="text-danger alert">{{ $message }}</span>
+                                                            @enderror
                                                         </div>
                                                     </div>
                                                     <div class="row mt-4">
                                                         <div class="col-2 mt-1">
                                                             <div class="form-group" style="position: relative">
-                                                                <span style="font-size: 20px">Standard</span> <input style="position: absolute; top: 10px; right: 0" type="radio">
+                                                                <span style="font-size: 20px">Standard</span> <input id="standard" name="standard" value="standard" style="position: absolute; top: 10px; right: 0" type="checkbox">
                                                             </div>
+                                                           
                                                         </div>
                                                         <div class="col-6 customSelectFix">
-                                                            <select name="standard" required>
-                                                                <option value="">Nombre de déménageur nécessaire (au minimum 2)</option>
-                                                                <option value="démontage du mobilier">démontage du mobilier </option>
-                                                                <option value="Emballage du fragile"> Emballage du fragile </option>
-                                                                <option value="protection du mobilier">protection du mobilier</option>
-                                                                <option value="manutention au chargement"> manutention au chargement</option>
-                                                                <option value="transport">transport</option>
-                                                                <option value="manutention au déchargement">manutention au déchargement</option>
-                                                                <option value="remontage du mobilier">remontage du mobilier</option>
-                                                                <option value="Assurance">Assurance</option>
-                                                                <option value="frais de route (péage, carburant, ferry,…)"> frais de route (péage, carburant, ferry,…)</option> 
+                                                            <select  required>
+                                                                <option >Nombre de déménageur nécessaire (au minimum 2)</option>
+                                                                <option disabled>démontage du mobilier </option>
+                                                                <option disabled> Emballage du fragile </option>
+                                                                <option disabled>protection du mobilier</option>
+                                                                <option disabled> manutention au chargement</option>
+                                                                <option disabled>transport</option>
+                                                                <option disabled>manutention au déchargement</option>
+                                                                <option disabled>remontage du mobilier</option>
+                                                                <option disabled>Assurance</option>
+                                                                <option disabled> frais de route (péage, carburant, ferry,…)</option> 
                                                             </select>
+                                                            @error('standard')
+                                                            <span class="text-danger alert">{{ $message }}</span>
+                                                            @enderror
                                                         </div>
                                                     </div>
                                                     <div class="row mt-4">
                                                         <div class="col-2 mt-1">
                                                             <div class="form-group" style="position: relative">
-                                                                <span style="font-size: 20px">Compléte</span> <input style="position: absolute; top: 10px; right: 0" type="radio">
+                                                                <span style="font-size: 20px">Compléte</span> <input id="compléte" name="compléte" value="compléte"  style="position: absolute; top: 10px; right: 0" type="checkbox">
                                                             </div>
                                                         </div>
                                                         <div class="col-6 customSelectFix">
-                                                            <select name="compléte" required>
-                                                                <option value=""> Nombre de déménageur nécessaire  </option>
-                                                                <option value="mise en carton complète (fournitures de matériels et main d’œuvre)">(Vêtement et linge de lit Livres et documents Vaisselles et fragile Divers)</option>
-                                                                <option value="démontage du mobilier ">démontage du mobilier </option>
-                                                                <option value="protection du mobilier">protection du mobilier</option>
-                                                                <option value="manutention au chargement">manutention au chargement</option>
-                                                                <option value="transport">transport</option>
-                                                                <option value="manutention au déchargement ">manutention au déchargement </option>
-                                                                <option value="Déballage et mise en place des cartons">Déballage et mise en place des cartons</option>
-                                                                <option value="remontage du mobilier ">remontage du mobilier </option>
-                                                                <option value="Assurance ">Assurance </option>
-                                                                <option value="frais de route (péage, carburant, ferry,…)">frais de route (péage, carburant, ferry,…)</option>
+                                                            <select required>
+                                                                <option > Nombre de déménageur nécessaire  </option>
+                                                                <option disabled>(Vêtement et linge de lit Livres et documents Vaisselles et fragile Divers)</option>
+                                                                <option disabled>démontage du mobilier </option>
+                                                                <option disabled>protection du mobilier</option>
+                                                                <option disabled>manutention au chargement</option>
+                                                                <option disabled>transport</option>
+                                                                <option disabled>manutention au déchargement </option>
+                                                                <option disabled>Déballage et mise en place des cartons</option>
+                                                                <option disabled>remontage du mobilier </option>
+                                                                <option disabled>Assurance </option>
+                                                                <option disabled>frais de route (péage, carburant, ferry,…)</option>
                                                             </select>
+                                                            @error('compléte')
+                                                            <span class="text-danger alert">{{ $message }}</span>
+                                                            @enderror
                                                         </div>
                                                     </div>
                                                     <div class="row mt-4">
                                                         <div class="col-2 mt-1">
                                                             <div class="form-group" style="position: relative">
-                                                                <span style="font-size: 20px">Ma formule Clicmove</span> <input style="position: absolute; top: 10px; right: 0" type="radio">
+                                                                <span style="font-size: 20px">Ma formule Clicmove</span> <input id="clicmove"  name="clicmove" value="clicmove" style="position: absolute; top: 10px; right: 0" type="checkbox">
                                                             </div>
                                                         </div>
                                                         <div class="col-6 customSelectFix">
-                                                            <select name="clicmove" required>
-                                                                <option value=""> Cette formule permet de composer mon déménagement à la carte en adaptant les formules existantes en fonction de mon besoin réel. </option>
-                                                                <option value="vous pouvez décrire vos besoins dans les informations complémentaires">vous pouvez décrire vos besoins dans les informations complémentaires</option>
-                                                                <option value="exemple 1 : je choisis la formule économique, et demande la livraison de 2 cartons penderie et le démontage de mon lit">exemple 1 : je choisis la formule économique, et demande la livraison de 2 cartons penderie et le démontage de mon lit</option>
-                                                                <option value="exemple 2 : j’ai besoin d’une formule standard avec 1 mois de stockage">exemple 2 : j’ai besoin d’une formule standard avec 1 mois de stockage</option>
+                                                            <select required>
+                                                                <option > Cette formule permet de composer mon déménagement à la carte en adaptant les formules existantes en fonction de mon besoin réel. </option>
+                                                                <option disabled>vous pouvez décrire vos besoins dans les informations complémentaires</option>
+                                                                <option disabled>exemple 1 : je choisis la formule économique, et demande la livraison de 2 cartons penderie et le démontage de mon lit</option>
+                                                                <option disabled>exemple 2 : j’ai besoin d’une formule standard avec 1 mois de stockage</option>
                                                             </select>
+                                                            @error('clicmove')
+                                                            <span class="text-danger alert">{{ $message }}</span>
+                                                            @enderror
                                                         </div>
                                                     </div>
                                                     <h5 class="mt-4 font-weight-bold text-navy-blue">
-                                                        <i class="icofont-warning-alt mr-2"></i>Additional
-                                                        information
-                                                        <em class="font-weight-normal">(recommended)</em>
+                                                        <i class="icofont-warning-alt mr-2"></i>informations complémentaires
                                                       </h5>
                                                     <div class="row">
                                                         <div class="col-8">
@@ -345,7 +366,7 @@
                                                     </div>
                                                     <div class="row mt-4">
                                                         <div class="col-8 mb-3">
-                                                            <h5>voes pouvez compléter votre demande avac des photos</h5> 
+                                                            <h5>Vous pouvez compléter votre demande avec des photos</h5> 
                                                             {{-- <img src="{{ asset('uploads/callouts/1.jpg') }}" alt=""> --}}
                                                             <a class="d-inline-block my-3 btn website-bg-color" target="_blank"
                                                                 href="{{ asset('uploads/callouts/1.jpg') }}"><i class="icofont-arrow-up bg-light website-color rounded-circle"></i> Télécharger</a>
@@ -355,11 +376,8 @@
 
                                                     {{-- IF User Is not Login Then Show This  --}}
                                                    @guest 
-                                                    <h3 class="mt-4">données </h3>
-                                                    @if (session('errors'))
-                                                    <script>alert("{{ session('errors') }}")</script>
-                                                    {{-- <div class="alert alert-danger">{{ session('errors') }}</div> --}}
-                                                    @endif
+                                                    {{-- <h3 class="mt-4">données </h3> --}}
+                                                    
                                                     <div class="row">
                                                         <div class="col-8">
                                                             <div class="form-group input-group">
@@ -460,7 +478,7 @@
                                     {{-- <a href="{{ URL::previous() }}" class="back btn btn-outline-danger">
                                         <i class="icofont-simple-left mr-2"></i>Back
                                     </a> --}}
-                                    <button type="submit" class="continue btn text-white bg-navy-blue ml-3">
+                                    <button type="submit" id="demenagementForm" class="continue btn text-white bg-navy-blue ml-3">
                                         Publiez mon annonce
                                     </button>
                                     </form>
@@ -512,13 +530,13 @@
                                                         <div class="col-4">
                                                             <div class="form-group">
                                                                 <input id="depart" style="position: relative" type="text" placeholder="Adresse de départ" class="form-control" name="depart" required/> 
-                                                                <label for="depart"><i class="icofont-google-map website-color" style="position: absolute; top: 12px; right: 25px;"></i></label>
+                                                                <label for="depart"><i class="icofont-google-map" style="position: absolute; top: 12px; right: 25px;"></i></label>
                                                            </div>
                                                         </div>
                                                         <div class="col-4">
                                                             <div class="form-group">
                                                                 <input id="arrivee" style="position: relative" type="text" placeholder="Adresse d'arrivée" class="form-control" name="arrivee" required/>
-                                                                <label for="arrivee"><i class="icofont-google-map website-color" style="position: absolute; top: 12px; right: 25px;"></i></label>
+                                                                <label for="arrivee"><i class="icofont-google-map" style="position: absolute; top: 12px; right: 25px;"></i></label>
                                                             </div>
                                                         </div>
                                                     </div> 
@@ -547,41 +565,8 @@
                                                         <div class="col-8">
                                                             <div class="form-group">
                                                                 <textarea name="list"   class="form-control" rows="7"
-                                                                    placeholder=" j'ai une liste (*pensez à faire un iventaire pièce par pièce )" required></textarea>
+                                                                    placeholder="je ne connais pas mon volume mais j'ai une liste" required></textarea>
                                                             </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="row my-3">
-                                                        <div class="col-4">
-                                                            <div class="form-group">
-                                                                {{-- <input type="text" placeholder="type de lieu"
-                                                                    class="form-control" name="place_type" /> --}}
-                                                                <select name="place_type_depart"   required>
-                                                                    <option value="">type de lieu depart</option>
-                                                                    <option value="maison">maison</option>
-                                                                    <option value="appartement">appartement</option>
-                                                                    <option value="garde-meuble">garde meuble</option>
-                                                                    <option value="commercial">local commercial </option>
-                                                                    <option value="bureau">bureau </option>
-
-                                                                </select>
-                                                            </div> 
-                                                        </div> 
-                                                        <div class="col-4">
-                                                            <div class="form-group">
-                                                                {{-- <input type="text" placeholder="type de lieu"
-                                                                    class="form-control" name="place_type" /> --}}
-                                                                <select name="place_type_arrivee"   required>
-                                                                    <option value="">type de lieu arrivee</option>
-                                                                    <option value="maison">maison</option>
-                                                                    <option value="appartement">appartement</option>
-                                                                    <option value="garde-meuble">garde meuble</option>
-                                                                    <option value="commercial">local commercial </option>
-                                                                    <option value="bureau">bureau </option>
-        
-                                                                </select>
-                                                            </div>
-
                                                         </div>
                                                     </div>
                                                     <div class="row my-3">
@@ -623,6 +608,43 @@
                                                     <div class="row my-3">
                                                         <div class="col-4">
                                                             <div class="form-group">
+                                                                <h5>départ</h5>
+                                                                {{-- <input type="text" placeholder="type de lieu"
+                                                                    class="form-control" name="place_type" /> --}}
+                                                                <select name="place_type_depart"   required>
+                                                                    <option value="">type de lieu depart</option>
+                                                                    <option value="maison">maison</option>
+                                                                    <option value="appartement">appartement</option>
+                                                                    <option value="garde-meuble">garde meuble</option>
+                                                                    <option value="commercial">local commercial </option>
+                                                                    <option value="bureau">bureau </option>
+
+                                                                </select>
+                                                            </div> 
+                                                        </div> 
+                                                        <div class="col-4">
+                                                            <div class="form-group">
+                                                                <h5>arrivée</h5>
+                                                                {{-- <input type="text" placeholder="type de lieu"
+                                                                    class="form-control" name="place_type" /> --}}
+                                                                <select name="place_type_arrivee"   required>
+                                                                    <option value="">type de lieu arrivee</option>
+                                                                    <option value="maison">maison</option>
+                                                                    <option value="appartement">appartement</option>
+                                                                    <option value="garde-meuble">garde meuble</option>
+                                                                    <option value="commercial">local commercial </option>
+                                                                    <option value="bureau">bureau </option>
+        
+                                                                </select>
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                    
+                                                    <div class="row my-3">
+                                                        <div class="col-4">
+                                                            <div class="form-group">
+                                                                <h5>départ</h5>
                                                                 <select name="floor_depart"   required>
                                                                     <option value="">étages depart</option>
                                                                     <option value="RDC">RDC</option>
@@ -640,6 +662,7 @@
                                                         </div>
                                                         <div class="col-4"> 
                                                              <div class="form-group">
+                                                                <h5>arrivée</h5>
                                                                 <select name="floor_arrivee"   required>
                                                                     <option value="">étages arrivee</option>
                                                                     <option value="RDC">RDC</option>
@@ -662,6 +685,7 @@
                                                     </div>
                                                     <div class="row my-3">
                                                         <div class="col-4">
+                                                            <h5>départ</h5>
                                                              <select name="ascenseur_depart" required> 
                                                                 <option value="">ascenseur depart</option>
                                                                 <option value="non">non</option>
@@ -669,6 +693,7 @@
                                                             </select>
                                                         </div>  
                                                         <div class="col-4">
+                                                            <h5>arrivée</h5>
                                                              <select name="ascenseur_arrivee" required> 
                                                                 <option value="">ascenseur arrivee</option>
                                                                 <option value="non">non</option>
@@ -678,6 +703,7 @@
                                                     </div> 
                                                     <div class="row my-3">
                                                         <div class="col-4"> 
+                                                            <h5>départ</h5>
                                                             <select name="access_depart" required> 
                                                                 <option value="">accès depart</option>
                                                                 <option value="on peut se garer devant">on peut se garer devant</option>
@@ -685,6 +711,7 @@
                                                             </select> 
                                                         </div>
                                                         <div class="col-4"> 
+                                                            <h5>arrivée</h5>
                                                             <select name="access_arrivee" required> 
                                                                 <option value="">accès arrivee</option>
                                                                 <option value="on peut se garer devant">on peut se garer devant</option>
@@ -692,7 +719,7 @@
                                                             </select> 
                                                         </div> 
                                                     </div>  
-
+                                                    <br>
                                                     <div class="row my-3">
                                                         <div class="col-4">
                                                             <div class="form-group">
@@ -705,9 +732,7 @@
                                                         </div> 
                                                     </div> 
                                                     <h5 class="mt-4 font-weight-bold text-navy-blue">
-                                                        <i class="icofont-warning-alt mr-2"></i>Additional
-                                                        information
-                                                        <em class="font-weight-normal">(recommended)</em>
+                                                        <i class="icofont-warning-alt mr-2"></i>informations complémentaires
                                                       </h5>
                                                     <div class="row">
                                                         <div class="col-8">
@@ -718,7 +743,7 @@
                                                     
                                                     <div class="row mt-4">
                                                         <div class="col-8 mb-3">
-                                                            <h5>voes pouvez compléter votre demande avac des photos</h5> 
+                                                            <h5>Vous pouvez compléter votre demande avec des photos</h5> 
                                                             {{-- <img src="{{ asset('uploads/callouts/1.jpg') }}" alt=""> --}}
                                                             <a class="d-inline-block my-3 btn website-bg-color" target="_blank"
                                                                 href="{{ asset('uploads/callouts/1.jpg') }}"><i class="icofont-arrow-up bg-light website-color rounded-circle"></i> Télécharger</a>
@@ -727,7 +752,7 @@
 
                                                     {{-- IF User Is not Login Then Show This  --}}
                                                     @guest
-                                                    <h3 class="mt-4">données </h3>
+                                                    {{-- <h3 class="mt-4">données </h3> --}}
                                                     @if (session('errors'))
                                                     <script>alert("{{ session('errors') }}")</script> 
                                                     @endif
@@ -879,13 +904,13 @@
                                                 <div class="col-4">
                                                     <div class="form-group">
                                                         <input id="depart" style="position: relative" type="text" placeholder="Adresse de départ" class="form-control" name="depart" required/> 
-                                                        <label for="depart"><i class="icofont-google-map website-color" style="position: absolute; top: 12px; right: 25px;"></i></label>
+                                                        <label for="depart"><i class="icofont-google-map" style="position: absolute; top: 12px; right: 25px;"></i></label>
                                                    </div>
                                                 </div>
                                                 <div class="col-4">
                                                     <div class="form-group">
                                                         <input id="arrivee" style="position: relative" type="text" placeholder="Adresse d'arrivée" class="form-control" name="arrivee" required/>
-                                                        <label for="arrivee"><i class="icofont-google-map website-color" style="position: absolute; top: 12px; right: 25px;"></i></label>
+                                                        <label for="arrivee"><i class="icofont-google-map" style="position: absolute; top: 12px; right: 25px;"></i></label>
                                                     </div>
                                                 </div>
                                             </div> 
@@ -967,6 +992,7 @@
                                             <div class="row my-3">
                                                 <div class="col-4">
                                                     <div class="form-group">
+                                                        <h5>départ</h5>
                                                         {{-- <input type="text" placeholder="type de lieu"
                                                             class="form-control" name="place_type" /> --}}
                                                         <select name="place_type_depart"   required>
@@ -982,6 +1008,7 @@
                                                 </div> 
                                                 <div class="col-4">
                                                     <div class="form-group">
+                                                        <h5>arrivée</h5>
                                                         {{-- <input type="text" placeholder="type de lieu"
                                                             class="form-control" name="place_type" /> --}}
                                                         <select name="place_type_arrivee"   required>
@@ -1000,6 +1027,7 @@
                                             <div class="row my-3">
                                                 <div class="col-4">
                                                     <div class="form-group">
+                                                        <h5>départ</h5>
                                                         <select name="floor_depart"   required>
                                                             <option value="">étages depart</option>
                                                             <option value="RDC">RDC</option>
@@ -1017,6 +1045,7 @@
                                                 </div>
                                                 <div class="col-4"> 
                                                      <div class="form-group">
+                                                        <h5>arrivée</h5>
                                                         <select name="floor_arrivee"   required>
                                                             <option value="">étages arrivee</option>
                                                             <option value="RDC">RDC</option>
@@ -1039,6 +1068,7 @@
                                             </div>
                                             <div class="row my-3">
                                                 <div class="col-4">
+                                                    <h5>départ</h5>
                                                      <select name="ascenseur_depart" required> 
                                                         <option value="">ascenseur depart</option>
                                                         <option value="non">non</option>
@@ -1046,6 +1076,7 @@
                                                     </select>
                                                 </div>  
                                                 <div class="col-4">
+                                                    <h5>arrivée</h5>
                                                      <select name="ascenseur_arrivee" required> 
                                                         <option value="">ascenseur arrivee</option>
                                                         <option value="non">non</option>
@@ -1055,6 +1086,7 @@
                                             </div> 
                                             <div class="row my-3">
                                                 <div class="col-4"> 
+                                                    <h5>départ</h5>
                                                     <select name="access_depart" required> 
                                                         <option value="">accès depart</option>
                                                         <option value="on peut se garer devant">on peut se garer devant</option>
@@ -1062,6 +1094,7 @@
                                                     </select> 
                                                 </div>
                                                 <div class="col-4"> 
+                                                    <h5>arrivée</h5>
                                                     <select name="access_arrivee" required> 
                                                         <option value="">accès arrivee</option>
                                                         <option value="on peut se garer devant">on peut se garer devant</option>
@@ -1069,7 +1102,7 @@
                                                     </select> 
                                                 </div> 
                                             </div>  
-
+                                            <br>
                                             <div class="row my-3">
                                                 <div class="col-4">
                                                     <div class="form-group">
@@ -1092,9 +1125,7 @@
                                                 </div>
                                             </div> --}}
                                             <h5 class="mt-4 font-weight-bold text-navy-blue">
-                                                <i class="icofont-warning-alt mr-2"></i>Additional
-                                                information
-                                                <em class="font-weight-normal">(recommended)</em>
+                                                <i class="icofont-warning-alt mr-2"></i>informations complémentaires
                                               </h5>
                                             <div class="row">
                                                 <div class="col-8">
@@ -1105,7 +1136,7 @@
                                             
                                             <div class="row mt-4">
                                                 <div class="col-8 mb-3">
-                                                    <h5>voes pouvez compléter votre demande avac des photos</h5> 
+                                                    <h5>Vous pouvez compléter votre demande avec des photos</h5> 
                                                     {{-- <img src="{{ asset('uploads/callouts/1.jpg') }}" alt=""> --}}
                                                     <a class="d-inline-block my-3 btn website-bg-color" target="_blank"
                                                         href="{{ asset('uploads/callouts/1.jpg') }}"><i class="icofont-arrow-up bg-light website-color rounded-circle"></i> Télécharger</a>
@@ -1114,7 +1145,7 @@
 
                                             {{-- IF User Is not Login Then Show This  --}}
                                             @guest
-                                            <h3 class="mt-4">données </h3>
+                                            {{-- <h3 class="mt-4">données </h3> --}}
                                             @if (session('errors'))
                                             <script>alert("{{ session('errors') }}")</script> 
                                             @endif
@@ -1253,13 +1284,13 @@
                                                 <div class="col-4">
                                                     <div class="form-group">
                                                         <input id="depart" style="position: relative" type="text" placeholder="Adresse de départ" class="form-control" name="depart" required/> 
-                                                        <label for="depart"><i class="icofont-google-map website-color" style="position: absolute; top: 12px; right: 25px;"></i></label>
+                                                        <label for="depart"><i class="icofont-google-map" style="position: absolute; top: 12px; right: 25px;"></i></label>
                                                     </div>
                                                 </div>
                                                 <div class="col-4">
                                                     <div class="form-group">
                                                         <input id="arrivee" style="position: relative" type="text" placeholder="Adresse d'arrivée" class="form-control" name="arrivee" required/>
-                                                        <label for="arrivee"><i class="icofont-google-map website-color" style="position: absolute; top: 12px; right: 25px;"></i></label>
+                                                        <label for="arrivee"><i class="icofont-google-map" style="position: absolute; top: 12px; right: 25px;"></i></label>
                                                     </div>
                                                 </div>
                                             </div> 
@@ -1337,6 +1368,7 @@
                                             <div class="row my-3">
                                                 <div class="col-4">
                                                     <div class="form-group">
+                                                        <h5>départ</h5>
                                                         {{-- <input type="text" placeholder="type de lieu"
                                                             class="form-control" name="place_type" /> --}}
                                                         <select name="place_type_depart"   required>
@@ -1352,6 +1384,7 @@
                                                 </div> 
                                                 <div class="col-4">
                                                     <div class="form-group">
+                                                        <h5>arrivée</h5>
                                                         {{-- <input type="text" placeholder="type de lieu"
                                                             class="form-control" name="place_type" /> --}}
                                                         <select name="place_type_arrivee"   required>
@@ -1370,6 +1403,7 @@
                                             <div class="row my-3">
                                                 <div class="col-4">
                                                     <div class="form-group">
+                                                        <h5>départ</h5>
                                                         <select name="floor_depart"   required>
                                                             <option value="">étages depart</option>
                                                             <option value="RDC">RDC</option>
@@ -1387,6 +1421,7 @@
                                                 </div>
                                                 <div class="col-4"> 
                                                      <div class="form-group">
+                                                        <h5>arrivée</h5>
                                                         <select name="floor_arrivee"   required>
                                                             <option value="">étages arrivee</option>
                                                             <option value="RDC">RDC</option>
@@ -1409,6 +1444,7 @@
                                             </div>
                                             <div class="row my-3">
                                                 <div class="col-4">
+                                                    <h5>départ</h5>
                                                      <select name="ascenseur_depart" required> 
                                                         <option value="">ascenseur depart</option>
                                                         <option value="non">non</option>
@@ -1416,6 +1452,7 @@
                                                     </select>
                                                 </div>  
                                                 <div class="col-4">
+                                                    <h5>arrivée</h5>
                                                      <select name="ascenseur_arrivee" required> 
                                                         <option value="">ascenseur arrivee</option>
                                                         <option value="non">non</option>
@@ -1425,6 +1462,7 @@
                                             </div> 
                                             <div class="row my-3">
                                                 <div class="col-4"> 
+                                                    <h5>départ</h5>
                                                     <select name="access_depart" required> 
                                                         <option value="">accès depart</option>
                                                         <option value="on peut se garer devant">on peut se garer devant</option>
@@ -1432,6 +1470,7 @@
                                                     </select> 
                                                 </div>
                                                 <div class="col-4"> 
+                                                    <h5>arrivée</h5>
                                                     <select name="access_arrivee" required> 
                                                         <option value="">accès arrivee</option>
                                                         <option value="on peut se garer devant">on peut se garer devant</option>
@@ -1439,10 +1478,10 @@
                                                     </select> 
                                                 </div> 
                                             </div>  
-
+                                            <br>
                                             <div class="row my-3">
                                                 <div class="col-4">
-                                                    <div class="form-group">
+                                                    <div class="form-group"> 
                                                         <select name="help">
                                                             <option value="">j'ai besoin d'aide</option>
                                                             <option value="oui"> oui</option>
@@ -1461,9 +1500,7 @@
                                                 </div>
                                             </div>  --}}
                                             <h5 class="mt-4 font-weight-bold text-navy-blue">
-                                                <i class="icofont-warning-alt mr-2"></i>Additional
-                                                information
-                                                <em class="font-weight-normal">(recommended)</em>
+                                                <i class="icofont-warning-alt mr-2"></i>informations complémentaires
                                               </h5>
                                             <div class="row">
                                                 <div class="col-8">
@@ -1474,7 +1511,7 @@
                                             
                                             <div class="row mt-4">
                                                 <div class="col-8 mb-3">
-                                                    <h5>voes pouvez compléter votre demande avac des photos</h5> 
+                                                    <h5>Vous pouvez compléter votre demande avec des photos</h5> 
                                                     {{-- <img src="{{ asset('uploads/callouts/1.jpg') }}" alt=""> --}}
                                                     <a class="d-inline-block my-3 btn website-bg-color" target="_blank"
                                                         href="{{ asset('uploads/callouts/1.jpg') }}"><i class="icofont-arrow-up bg-light website-color rounded-circle"></i> Télécharger</a>
@@ -1483,7 +1520,7 @@
 
                                             {{-- IF User Is not Login Then Show This  --}}
                                             @guest
-                                            <h3 class="mt-4">données </h3>
+                                            {{-- <h3 class="mt-4">données </h3> --}}
                                             @if (session('errors'))
                                             <script>alert("{{ session('errors') }}")</script> 
                                             @endif
@@ -1621,13 +1658,13 @@
                                                 <div class="col-4">
                                                     <div class="form-group">
                                                         <input id="depart" style="position: relative" type="text" placeholder="Adresse de départ" class="form-control" name="depart" required/> 
-                                                        <label for="depart"><i class="icofont-google-map website-color" style="position: absolute; top: 12px; right: 25px;"></i></label>
+                                                        <label for="depart"><i class="icofont-google-map" style="position: absolute; top: 12px; right: 25px;"></i></label>
                                                    </div>
                                                 </div>
                                                 <div class="col-4">
                                                     <div class="form-group">
                                                         <input id="arrivee" style="position: relative" type="text" placeholder="Adresse d'arrivée" class="form-control" name="arrivee" required/>
-                                                        <label for="arrivee"><i class="icofont-google-map website-color" style="position: absolute; top: 12px; right: 25px;"></i></label>
+                                                        <label for="arrivee"><i class="icofont-google-map" style="position: absolute; top: 12px; right: 25px;"></i></label>
                                                     </div>
                                                 </div>
                                             </div> 
@@ -1708,6 +1745,7 @@
                                             <div class="row my-3">
                                                 <div class="col-4">
                                                     <div class="form-group">
+                                                        <h5>départ</h5>
                                                         {{-- <input type="text" placeholder="type de lieu"
                                                             class="form-control" name="place_type" /> --}}
                                                         <select name="place_type_depart"   required>
@@ -1723,6 +1761,7 @@
                                                 </div> 
                                                 <div class="col-4">
                                                     <div class="form-group">
+                                                        <h5>arrivée</h5>
                                                         {{-- <input type="text" placeholder="type de lieu"
                                                             class="form-control" name="place_type" /> --}}
                                                         <select name="place_type_arrivee"   required>
@@ -1741,6 +1780,7 @@
                                             <div class="row my-3">
                                                 <div class="col-4">
                                                     <div class="form-group">
+                                                        <h5>départ</h5>
                                                         <select name="floor_depart"   required>
                                                             <option value="">étages depart</option>
                                                             <option value="RDC">RDC</option>
@@ -1758,6 +1798,7 @@
                                                 </div>
                                                 <div class="col-4"> 
                                                      <div class="form-group">
+                                                        <h5>arrivée</h5>
                                                         <select name="floor_arrivee"   required>
                                                             <option value="">étages arrivee</option>
                                                             <option value="RDC">RDC</option>
@@ -1780,6 +1821,7 @@
                                             </div>
                                             <div class="row my-3">
                                                 <div class="col-4">
+                                                    <h5>départ</h5>
                                                      <select name="ascenseur_depart" required> 
                                                         <option value="">ascenseur depart</option>
                                                         <option value="non">non</option>
@@ -1787,6 +1829,7 @@
                                                     </select>
                                                 </div>  
                                                 <div class="col-4">
+                                                    <h5>arrivée</h5>
                                                      <select name="ascenseur_arrivee" required> 
                                                         <option value="">ascenseur arrivee</option>
                                                         <option value="non">non</option>
@@ -1796,6 +1839,7 @@
                                             </div> 
                                             <div class="row my-3">
                                                 <div class="col-4"> 
+                                                    <h5>départ</h5>
                                                     <select name="access_depart" required> 
                                                         <option value="">accès depart</option>
                                                         <option value="on peut se garer devant">on peut se garer devant</option>
@@ -1803,14 +1847,15 @@
                                                     </select> 
                                                 </div>
                                                 <div class="col-4"> 
+                                                    <h5>arrivée</h5>
                                                     <select name="access_arrivee" required> 
                                                         <option value="">accès arrivee</option>
                                                         <option value="on peut se garer devant">on peut se garer devant</option>
                                                         <option value="on doit se garer plus loin">on doit se garer plus loin</option>
                                                     </select> 
                                                 </div> 
-                                            </div>  
-
+                                            </div>      
+                                            <br>
                                             <div class="row my-3">
                                                 <div class="col-4">
                                                     <div class="form-group">
@@ -1824,9 +1869,7 @@
                                             </div> 
                                              
                                             <h5 class="mt-4 font-weight-bold text-navy-blue">
-                                                <i class="icofont-warning-alt mr-2"></i>Additional
-                                                information
-                                                <em class="font-weight-normal">(recommended)</em>
+                                                <i class="icofont-warning-alt mr-2"></i>informations complémentaires
                                               </h5>
                                             <div class="row">
                                                 <div class="col-8">
@@ -1837,7 +1880,7 @@
                                             
                                             <div class="row mt-4">
                                                 <div class="col-8 mb-3">
-                                                    <h5>voes pouvez compléter votre demande avac des photos</h5> 
+                                                    <h5>Vous pouvez compléter votre demande avec des photos</h5> 
                                                     {{-- <img src="{{ asset('uploads/callouts/1.jpg') }}" alt=""> --}}
                                                     <a class="d-inline-block my-3 btn website-bg-color" target="_blank"
                                                         href="{{ asset('uploads/callouts/1.jpg') }}"><i class="icofont-arrow-up bg-light website-color rounded-circle"></i> Télécharger</a>
@@ -1846,7 +1889,7 @@
 
                                             {{-- IF User Is not Login Then Show This  --}}
                                             @guest
-                                            <h3 class="mt-4">données </h3>
+                                            {{-- <h3 class="mt-4">données </h3> --}}
                                             @if (session('errors'))
                                             <script>alert("{{ session('errors') }}")</script> 
                                             @endif
@@ -1975,13 +2018,13 @@
                                                 <div class="col-4">
                                                     <div class="form-group">
                                                         <input id="depart" style="position: relative" type="text" placeholder="Adresse de départ" class="form-control" name="depart" required/> 
-                                                        <label for="depart"><i class="icofont-google-map website-color" style="position: absolute; top: 12px; right: 25px;"></i></label>
+                                                        <label for="depart"><i class="icofont-google-map" style="position: absolute; top: 12px; right: 25px;"></i></label>
                                                     </div>
                                                 </div>
                                                 <div class="col-4">
                                                     <div class="form-group">
                                                         <input id="arrivee" style="position: relative" type="text" placeholder="Adresse d'arrivée" class="form-control" name="arrivee" required/>
-                                                        <label for="arrivee"><i class="icofont-google-map website-color" style="position: absolute; top: 12px; right: 25px;"></i></label>
+                                                        <label for="arrivee"><i class="icofont-google-map" style="position: absolute; top: 12px; right: 25px;"></i></label>
                                                     </div>
                                                 </div>
                                             </div> 
@@ -2077,6 +2120,7 @@
                                             </div>
                                             <div class="row my-3">
                                                 <div class="col-4"> 
+                                                    <h5>départ</h5>
                                                     <select name="access_depart" required> 
                                                         <option value="">accès depart</option>
                                                         <option value="on peut se garer devant">on peut se garer devant</option>
@@ -2084,6 +2128,7 @@
                                                     </select> 
                                                 </div>
                                                 <div class="col-4"> 
+                                                    <h5>arrivée</h5>
                                                     <select name="access_arrivee" required> 
                                                         <option value="">accès arrivee</option>
                                                         <option value="on peut se garer devant">on peut se garer devant</option>
@@ -2091,9 +2136,10 @@
                                                     </select> 
                                                 </div> 
                                             </div>
+                                            <br>
                                             <div class="row my-3">
                                                 <div class="col-8">
-                                                    <div class="form-group">
+                                                    <div class="form-group"> 
                                                         <select name="load_unload">
                                                             <option value=""> chargement et déchargement par vos soins </option>
                                                             <option value="oui">oui</option>
@@ -2125,9 +2171,7 @@
                                                 </div> 
                                             </div> 
                                             <h5 class="mt-4 font-weight-bold text-navy-blue">
-                                                <i class="icofont-warning-alt mr-2"></i>Additional
-                                                information
-                                                <em class="font-weight-normal">(recommended)</em>
+                                                <i class="icofont-warning-alt mr-2"></i>informations complémentaires
                                               </h5>
                                             <div class="row">
                                                 <div class="col-8">
@@ -2138,7 +2182,7 @@
                                             
                                             <div class="row mt-4">
                                                 <div class="col-8 mb-3">
-                                                    <h5>voes pouvez compléter votre demande avac des photos</h5> 
+                                                    <h5>Vous pouvez compléter votre demande avec des photos</h5> 
                                                     {{-- <img src="{{ asset('uploads/callouts/1.jpg') }}" alt=""> --}}
                                                     <a class="d-inline-block my-3 btn website-bg-color" target="_blank"
                                                         href="{{ asset('uploads/callouts/1.jpg') }}"><i class="icofont-arrow-up bg-light website-color rounded-circle"></i> Télécharger</a>
@@ -2147,7 +2191,7 @@
 
                                             {{-- IF User Is not Login Then Show This  --}}
                                             @guest
-                                            <h3 class="mt-4">données </h3>
+                                            {{-- <h3 class="mt-4">données </h3> --}}
                                             @if (session('errors'))
                                             <script>alert("{{ session('errors') }}")</script> 
                                             @endif
@@ -2283,13 +2327,13 @@
                                                 <div class="col-4">
                                                     <div class="form-group">
                                                         <input id="depart" style="position: relative" type="text" placeholder="Adresse de départ" class="form-control" name="depart" required/> 
-                                                        <label for="depart"><i class="icofont-google-map website-color" style="position: absolute; top: 12px; right: 25px;"></i></label>
+                                                        <label for="depart"><i class="icofont-google-map" style="position: absolute; top: 12px; right: 25px;"></i></label>
                                                     </div>
                                                 </div>
                                                 <div class="col-4">
                                                     <div class="form-group">
                                                         <input id="arrivee" style="position: relative" type="text" placeholder="Adresse d'arrivée" class="form-control" name="arrivee" required/>
-                                                        <label for="arrivee"><i class="icofont-google-map website-color" style="position: absolute; top: 12px; right: 25px;"></i></label>
+                                                        <label for="arrivee"><i class="icofont-google-map" style="position: absolute; top: 12px; right: 25px;"></i></label>
                                                     </div>
                                                 </div>
                                             </div> 
@@ -2354,9 +2398,7 @@
                                                 </div> 
                                             </div>
                                             <h5 class="mt-4 font-weight-bold text-navy-blue">
-                                                <i class="icofont-warning-alt mr-2"></i>Additional
-                                                information
-                                                <em class="font-weight-normal">(recommended)</em>
+                                                <i class="icofont-warning-alt mr-2"></i>informations complémentaires
                                               </h5>
                                             <div class="row">
                                                 <div class="col-8">
@@ -2367,7 +2409,7 @@
                                             
                                             <div class="row mt-4">
                                                 <div class="col-8 mb-3">
-                                                    <h5>voes pouvez compléter votre demande avac des photos</h5> 
+                                                    <h5>Vous pouvez compléter votre demande avec des photos</h5> 
                                                     {{-- <img src="{{ asset('uploads/callouts/1.jpg') }}" alt=""> --}}
                                                     <a class="d-inline-block my-3 btn website-bg-color" target="_blank"
                                                         href="{{ asset('uploads/callouts/1.jpg') }}"><i class="icofont-arrow-up bg-light website-color rounded-circle"></i> Télécharger</a>
@@ -2376,7 +2418,7 @@
 
                                             {{-- IF User Is not Login Then Show This  --}}
                                             @guest
-                                            <h3 class="mt-4">données </h3>
+                                            {{-- <h3 class="mt-4">données </h3> --}}
                                             @if (session('errors'))
                                             <script>alert("{{ session('errors') }}")</script> 
                                             @endif
@@ -2511,13 +2553,13 @@
                                                 <div class="col-4">
                                                     <div class="form-group">
                                                         <input id="depart" style="position: relative" type="text" placeholder="Adresse de départ" class="form-control" name="depart" required/> 
-                                                        <label for="depart"><i class="icofont-google-map website-color" style="position: absolute; top: 12px; right: 25px;"></i></label>
+                                                        <label for="depart"><i class="icofont-google-map" style="position: absolute; top: 12px; right: 25px;"></i></label>
                                                    </div>
                                                 </div>
                                                 <div class="col-4">
                                                     <div class="form-group">
                                                         <input id="arrivee" style="position: relative" type="text" placeholder="Adresse d'arrivée" class="form-control" name="arrivee" required/>
-                                                        <label for="arrivee"><i class="icofont-google-map website-color" style="position: absolute; top: 12px; right: 25px;"></i></label>
+                                                        <label for="arrivee"><i class="icofont-google-map" style="position: absolute; top: 12px; right: 25px;"></i></label>
                                                     </div>
                                                 </div>
                                             </div> 
@@ -2561,10 +2603,7 @@
                                                 
                                             </div> 
                                             <h5 class="mt-4 font-weight-bold text-navy-blue">
-                                                <i class="icofont-warning-alt mr-2"></i>Additional
-                                                information
-                                                <em class="font-weight-normal">(recommended)</em>
-                                              </h5>
+                                                <i class="icofont-warning-alt mr-2"></i>informations complémentaires
                                             <div class="row">
                                                 <div class="col-8">
                                                     <textarea name="informations"   class="form-control"
@@ -2573,7 +2612,7 @@
                                             </div>
                                             <div class="row mt-4">
                                                 <div class="col-8 mb-3">
-                                                    <h5>voes pouvez compléter votre demande avac des photos</h5> 
+                                                    <h5>Vous pouvez compléter votre demande avec des photos</h5> 
                                                     {{-- <img src="{{ asset('uploads/callouts/1.jpg') }}" alt=""> --}}
                                                     <a class="d-inline-block my-3 btn website-bg-color" target="_blank"
                                                         href="{{ asset('uploads/callouts/1.jpg') }}"><i class="icofont-arrow-up bg-light website-color rounded-circle"></i> Télécharger</a>
@@ -2583,7 +2622,7 @@
 
                                             {{-- IF User Is not Login Then Show This  --}}
                                             @guest
-                                            <h3 class="mt-4">données </h3>
+                                            {{-- <h3 class="mt-4">données </h3> --}}
                                             @if (session('errors'))
                                             <script>alert("{{ session('errors') }}")</script> 
                                             @endif
@@ -2720,13 +2759,13 @@
                                                 <div class="col-4">
                                                     <div class="form-group">
                                                         <input id="depart" style="position: relative" type="text" placeholder="Adresse de départ" class="form-control" name="depart" required/> 
-                                                        <label for="depart"><i class="icofont-google-map website-color" style="position: absolute; top: 12px; right: 25px;"></i></label>
+                                                        <label for="depart"><i class="icofont-google-map" style="position: absolute; top: 12px; right: 25px;"></i></label>
                                                     </div>
                                                 </div>
                                                 <div class="col-4">
                                                     <div class="form-group">
                                                         <input id="arrivee" style="position: relative" type="text" placeholder="Adresse d'arrivée" class="form-control" name="arrivee" required/>
-                                                        <label for="arrivee"><i class="icofont-google-map website-color" style="position: absolute; top: 12px; right: 25px;"></i></label>
+                                                        <label for="arrivee"><i class="icofont-google-map" style="position: absolute; top: 12px; right: 25px;"></i></label>
                                                     </div>
                                                 </div>
                                             </div>  
@@ -2803,9 +2842,7 @@
                                                 </div> 
                                             </div>  
                                             <h5 class="mt-4 font-weight-bold text-navy-blue">
-                                                <i class="icofont-warning-alt mr-2"></i>Additional
-                                                information
-                                                <em class="font-weight-normal">(recommended)</em>
+                                                <i class="icofont-warning-alt mr-2"></i>informations complémentaires
                                               </h5>
                                             <div class="row">
                                                 <div class="col-8">
@@ -2816,7 +2853,7 @@
                                             
                                             <div class="row mt-4">
                                                 <div class="col-8 mb-3">
-                                                    <h5>voes pouvez compléter votre demande avac des photos</h5> 
+                                                    <h5>Vous pouvez compléter votre demande avec des photos</h5> 
                                                     {{-- <img src="{{ asset('uploads/callouts/1.jpg') }}" alt=""> --}}
                                                     <a class="d-inline-block my-3 btn website-bg-color" target="_blank"
                                                         href="{{ asset('uploads/callouts/1.jpg') }}"><i class="icofont-arrow-up bg-light website-color rounded-circle"></i> Télécharger</a>
@@ -2825,7 +2862,7 @@
 
                                             {{-- IF User Is not Login Then Show This  --}}
                                             @guest
-                                            <h3 class="mt-4">données </h3>
+                                            {{-- <h3 class="mt-4">données </h3> --}}
                                             @if (session('errors'))
                                             <script>alert("{{ session('errors') }}")</script> 
                                             @endif
@@ -3024,8 +3061,10 @@
                     $('#password_error').addClass('d-none');
                 }
               
-            }); 
+            });  
 
+
+//   
             var autocomplete;
             var depart = 'depart';
             var arrivee = 'arrivee';
