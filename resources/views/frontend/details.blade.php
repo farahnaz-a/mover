@@ -243,7 +243,7 @@ $count = $comments->count();
                                             Économique
                                         </h6>
                                         <ul class="custom-list">
-                                            <li >protection du mobilier </li>
+                                            <li>protection du mobilier </li>
                                             <li>manutention au chargement</li>
                                             <li>transport</li>
                                             <li>manutention au déchargement</li>
@@ -575,7 +575,7 @@ $count = $comments->count();
     @push('css')
     <style>
         .custom-list{
-            list-style-image: url({{ asset('uploads/check.png') }});
+            list-style-image: url({{ asset('uploads/check.png') }}); 
         }
     </style>
         

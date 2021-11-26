@@ -274,12 +274,12 @@
                                                             <select  required >
                                                                 <option >Nombre de déménageur nécessaire (au minimum 2) </option>
                                                                 fdasfdfdfadfd
-                                                                <option disabled> protection du mobilier</option>
-                                                                <option disabled> manutention au chargement </option>
-                                                                <option disabled> transport</option>
-                                                                <option disabled> manutention au déchargement </option>
-                                                                <option disabled> Assurance</option>
-                                                                <option disabled">frais de route (péage, carburant, ferry,…)</option>
+                                                                <option disabled>&checkmark; protection du mobilier</option>
+                                                                <option disabled>&checkmark; manutention au chargement </option>
+                                                                <option disabled>&checkmark; transport</option>
+                                                                <option disabled>&checkmark; manutention au déchargement </option>
+                                                                <option disabled>&checkmark; Assurance</option>
+                                                                <option disabled">&checkmark; frais de route (péage, carburant, ferry,…)</option>
                                                                 
                                                             </select> 
                                                             @error('économique')
@@ -297,15 +297,15 @@
                                                         <div class="col-6 customSelectFix">
                                                             <select  required>
                                                                 <option >Nombre de déménageur nécessaire (au minimum 2)</option>
-                                                                <option disabled>démontage du mobilier </option>
-                                                                <option disabled> Emballage du fragile </option>
-                                                                <option disabled>protection du mobilier</option>
-                                                                <option disabled> manutention au chargement</option>
-                                                                <option disabled>transport</option>
-                                                                <option disabled>manutention au déchargement</option>
-                                                                <option disabled>remontage du mobilier</option>
-                                                                <option disabled>Assurance</option>
-                                                                <option disabled> frais de route (péage, carburant, ferry,…)</option> 
+                                                                <option disabled>&checkmark;  démontage du mobilier </option>
+                                                                <option disabled>&checkmark;  Emballage du fragile </option>
+                                                                <option disabled>&checkmark; protection du mobilier</option>
+                                                                <option disabled>&checkmark;  manutention au chargement</option>
+                                                                <option disabled>&checkmark; transport</option>
+                                                                <option disabled>&checkmark; manutention au déchargement</option>
+                                                                <option disabled>&checkmark; remontage du mobilier</option>
+                                                                <option disabled>&checkmark; Assurance</option>
+                                                                <option disabled>&checkmark;  frais de route (péage, carburant, ferry,…)</option> 
                                                             </select>
                                                             @error('standard')
                                                             <span class="text-danger alert">{{ $message }}</span>
@@ -321,16 +321,16 @@
                                                         <div class="col-6 customSelectFix">
                                                             <select required>
                                                                 <option > Nombre de déménageur nécessaire  </option>
-                                                                <option disabled>(Vêtement et linge de lit Livres et documents Vaisselles et fragile Divers)</option>
-                                                                <option disabled>démontage du mobilier </option>
-                                                                <option disabled>protection du mobilier</option>
-                                                                <option disabled>manutention au chargement</option>
-                                                                <option disabled>transport</option>
-                                                                <option disabled>manutention au déchargement </option>
-                                                                <option disabled>Déballage et mise en place des cartons</option>
-                                                                <option disabled>remontage du mobilier </option>
-                                                                <option disabled>Assurance </option>
-                                                                <option disabled>frais de route (péage, carburant, ferry,…)</option>
+                                                                <option disabled>&checkmark; (Vêtement et linge de lit Livres et documents Vaisselles et fragile Divers)</option>
+                                                                <option disabled>&checkmark; démontage du mobilier </option>
+                                                                <option disabled>&checkmark; protection du mobilier</option>
+                                                                <option disabled>&checkmark; manutention au chargement</option>
+                                                                <option disabled>&checkmark; transport</option>
+                                                                <option disabled>&checkmark; manutention au déchargement </option>
+                                                                <option disabled>&checkmark; Déballage et mise en place des cartons</option>
+                                                                <option disabled>&checkmark; remontage du mobilier </option>
+                                                                <option disabled>&checkmark; Assurance </option>
+                                                                <option disabled>&checkmark; frais de route (péage, carburant, ferry,…)</option>
                                                             </select>
                                                             @error('compléte')
                                                             <span class="text-danger alert">{{ $message }}</span>
@@ -346,9 +346,9 @@
                                                         <div class="col-6 customSelectFix">
                                                             <select required>
                                                                 <option > Cette formule permet de composer mon déménagement à la carte en adaptant les formules existantes en fonction de mon besoin réel. </option>
-                                                                <option disabled>vous pouvez décrire vos besoins dans les informations complémentaires</option>
-                                                                <option disabled>exemple 1 : je choisis la formule économique, et demande la livraison de 2 cartons penderie et le démontage de mon lit</option>
-                                                                <option disabled>exemple 2 : j’ai besoin d’une formule standard avec 1 mois de stockage</option>
+                                                                <option disabled>&checkmark; vous pouvez décrire vos besoins dans les informations complémentaires</option>
+                                                                <option disabled>&checkmark; exemple 1 : je choisis la formule économique, et demande la livraison de 2 cartons penderie et le démontage de mon lit</option>
+                                                                <option disabled>&checkmark; exemple 2 : j’ai besoin d’une formule standard avec 1 mois de stockage</option>
                                                             </select>
                                                             @error('clicmove')
                                                             <span class="text-danger alert">{{ $message }}</span>
