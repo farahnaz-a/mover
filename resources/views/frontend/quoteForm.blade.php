@@ -387,7 +387,7 @@
                                                                 <input name="name" type="text" placeholder="Nom et premon"
                                                                     class="form-control" />
                                                             </div>
-                                                            <span class="text-success d-none" id="existing">You have Already An Account Please Login</span>
+                                                            <span class="text-success d-none" id="existing">You Already have An Account Please Login</span>
                                                             <div class="form-group input-group">
                                                                 <div class="input-group-append">
                                                                     <span class="input-group-text" id="email"><i
@@ -764,7 +764,7 @@
                                                                 <input name="name" type="text" placeholder="Nom et premon"
                                                                     class="form-control" />
                                                             </div>
-                                                            <span class="text-success d-none" id="existing">You have Already An Account Please Login</span>
+                                                            <span class="text-success d-none" id="existing">You Already have An Account Please Login</span>
                                                             <div class="form-group input-group">
                                                                 <div class="input-group-append">
                                                                     <span class="input-group-text" id="email"><i
@@ -1156,7 +1156,7 @@
                                                         <input name="name" type="text" placeholder="Nom et premon"
                                                             class="form-control" />
                                                     </div>
-                                                    <span class="text-success d-none" id="existing">You have Already An Account Please Login</span>
+                                                    <span class="text-success d-none" id="existing">You Already have An Account Please Login</span>
                                                     <div class="form-group input-group">
                                                         <div class="input-group-append">
                                                             <span class="input-group-text" id="email"><i
@@ -1530,7 +1530,7 @@
                                                         <input name="name" type="text" placeholder="Nom et premon"
                                                             class="form-control" />
                                                     </div>
-                                                    <span class="text-success d-none" id="existing">You have Already An Account Please Login</span>
+                                                    <span class="text-success d-none" id="existing">You Already have An Account Please Login</span>
                                                     <div class="form-group input-group">
                                                         <div class="input-group-append">
                                                             <span class="input-group-text" id="email"><i
@@ -1898,7 +1898,7 @@
                                                         <input name="name" type="text" placeholder="Nom et premon"
                                                             class="form-control" />
                                                     </div>
-                                                    <span class="text-success d-none" id="existing">You have Already An Account Please Login</span>
+                                                    <span class="text-success d-none" id="existing">You Already have An Account Please Login</span>
                                                     <div class="form-group input-group">
                                                         <div class="input-group-append">
                                                             <span class="input-group-text" id="email"><i
@@ -2199,7 +2199,7 @@
                                                         <input name="name" type="text" placeholder="Nom et premon"
                                                             class="form-control" />
                                                     </div>
-                                                    <span class="text-success d-none" id="existing">You have Already An Account Please Login</span>
+                                                    <span class="text-success d-none" id="existing">You Already have An Account Please Login</span>
                                                     <div class="form-group input-group">
                                                         <div class="input-group-append">
                                                             <span class="input-group-text" id="email"><i
@@ -2425,7 +2425,7 @@
                                                         <input name="name" type="text" placeholder="Nom et premon"
                                                             class="form-control" />
                                                     </div>
-                                                    <span class="text-success d-none" id="existing">You have Already An Account Please Login</span>
+                                                    <span class="text-success d-none" id="existing">You Already have An Account Please Login</span>
                                                     <div class="form-group input-group">
                                                         <div class="input-group-append">
                                                             <span class="input-group-text" id="email"><i
@@ -2628,7 +2628,7 @@
                                                         <input name="name" type="text" placeholder="Nom et premon"
                                                             class="form-control" />
                                                     </div>
-                                                    <span class="text-success d-none" id="existing">You have Already An Account Please Login</span>
+                                                    <span class="text-success d-none" id="existing">You Already have An Account Please Login</span>
                                                     <div class="form-group input-group">
                                                         <div class="input-group-append">
                                                             <span class="input-group-text" id="email"><i
@@ -2867,7 +2867,7 @@
                                                         <input name="name" type="text" placeholder="Nom et premon"
                                                             class="form-control" />
                                                     </div>
-                                                    <span class="text-success d-none" id="existing">You have Already An Account Please Login</span>
+                                                    <span class="text-success d-none" id="existing">You Already have An Account Please Login</span>
                                                     <div class="form-group input-group">
                                                         <div class="input-group-append">
                                                             <span class="input-group-text" id="email"><i
