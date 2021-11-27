@@ -60,8 +60,7 @@
                                     <div class="row">
                                         <div class="col-12">
                                             <div class="bg-light-gray p-3 rounded mt-3">
-                                                <form action="{{ route('announcement.store') }}" class="needs-validation"
-                                                    id="household-form" method="POST">
+                                                <form action="{{ route('announcement.store') }}" class="needs-validation" id="household-form" method="POST" enctype="multipart/form-data">
                                                     @csrf
                                                     <input type="hidden" name="category" value="{{ $category }}" /> 
 
@@ -367,9 +366,9 @@
                                                     <div class="row mt-4">
                                                         <div class="col-8 mb-3">
                                                             <h5>Vous pouvez compléter votre demande avec des photos</h5> 
-                                                            {{-- <img src="{{ asset('uploads/callouts/1.jpg') }}" alt=""> --}}
-                                                            <a class="d-inline-block my-3 btn website-bg-color" target="_blank"
-                                                                href="{{ asset('uploads/callouts/1.jpg') }}"><i class="icofont-arrow-up bg-light website-color rounded-circle"></i> Télécharger</a>
+                                                            {{-- <img src="{{ asset('uploads/callouts/1.jpg') }}" alt=""> --}} 
+                                                            <input class="d-none" type="file" name="image" id="image" required>
+                                                            <label for="image" class="my-3 btn website-bg-color"><i class="icofont-arrow-up bg-light website-color rounded-circle"></i>Télécharger</label>
                                                         </div>
                                                     </div>
                                                     
@@ -520,8 +519,7 @@
                                     <div class="row">
                                         <div class="col-12">
                                             <div class="bg-light-gray p-3 rounded mt-3">
-                                                <form action="{{ route('announcement.store') }}" class="needs-validation"
-                                                    id="vehicle-form" method="POST">
+                                                <form action="{{ route('announcement.store') }}" class="needs-validation" id="vehicle-form" method="POST" enctype="multipart/form-data">
                                                     @csrf
                                                     <input type="hidden" id="vehicle-type" />
                                                     <input type="hidden" name="category" value="{{ $category }}" />
@@ -745,8 +743,8 @@
                                                         <div class="col-8 mb-3">
                                                             <h5>Vous pouvez compléter votre demande avec des photos</h5> 
                                                             {{-- <img src="{{ asset('uploads/callouts/1.jpg') }}" alt=""> --}}
-                                                            <a class="d-inline-block my-3 btn website-bg-color" target="_blank"
-                                                                href="{{ asset('uploads/callouts/1.jpg') }}"><i class="icofont-arrow-up bg-light website-color rounded-circle"></i> Télécharger</a>
+                                                            <input class="d-none" type="file" name="image" id="image" required>
+                                                            <label for="image" class="my-3 btn website-bg-color"><i class="icofont-arrow-up bg-light website-color rounded-circle"></i>Télécharger</label>
                                                         </div>
                                                     </div>
 
@@ -885,8 +883,7 @@
                             <div class="row">
                                 <div class="col-12">
                                     <div class="bg-light-gray p-3 rounded mt-3">
-                                        <form method="POST" action="{{ route('announcement.store') }}"
-                                            class="needs-validation article-form" id="motorcycleSport-form">
+                                        <form method="POST" action="{{ route('announcement.store') }}" class="needs-validation article-form" id="motorcycleSport-form" enctype="multipart/form-data">
                                             @csrf
                                             <input type="hidden" name="category" value="{{ $category }}" />
                                             <div class="row">
@@ -1138,8 +1135,8 @@
                                                 <div class="col-8 mb-3">
                                                     <h5>Vous pouvez compléter votre demande avec des photos</h5> 
                                                     {{-- <img src="{{ asset('uploads/callouts/1.jpg') }}" alt=""> --}}
-                                                    <a class="d-inline-block my-3 btn website-bg-color" target="_blank"
-                                                        href="{{ asset('uploads/callouts/1.jpg') }}"><i class="icofont-arrow-up bg-light website-color rounded-circle"></i> Télécharger</a>
+                                                    <input class="d-none" type="file" name="image" id="image" required>
+                                                    <label for="image" class="my-3 btn website-bg-color"><i class="icofont-arrow-up bg-light website-color rounded-circle"></i>Télécharger</label>
                                                 </div>
                                             </div>
 
@@ -1266,8 +1263,7 @@
                             <div class="row">
                                 <div class="col-12">
                                     <div class="bg-light-gray p-3 rounded mt-3">
-                                        <form action="{{ route('announcement.store') }}" method="POST"
-                                            class="needs-validation article-form" id="boat-voluminous-form">
+                                        <form action="{{ route('announcement.store') }}" method="POST" class="needs-validation article-form" id="boat-voluminous-form" enctype="multipart/form-data">
                                             @csrf
                                             <input type="hidden" name="category" value="{{ $category }}" />
                                             <div class="row">
@@ -1513,8 +1509,8 @@
                                                 <div class="col-8 mb-3">
                                                     <h5>Vous pouvez compléter votre demande avec des photos</h5> 
                                                     {{-- <img src="{{ asset('uploads/callouts/1.jpg') }}" alt=""> --}}
-                                                    <a class="d-inline-block my-3 btn website-bg-color" target="_blank"
-                                                        href="{{ asset('uploads/callouts/1.jpg') }}"><i class="icofont-arrow-up bg-light website-color rounded-circle"></i> Télécharger</a>
+                                                    <input class="d-none" type="file" name="image" id="image" required>
+                                                    <label for="image" class="my-3 btn website-bg-color"><i class="icofont-arrow-up bg-light website-color rounded-circle"></i>Télécharger</label>
                                                 </div>
                                             </div>
 
@@ -1639,8 +1635,7 @@
                             <div class="row">
                                 <div class="col-12">
                                     <div class="bg-light-gray p-3 rounded mt-3">
-                                        <form action="{{ route('announcement.store') }}" method="POST"
-                                            class="needs-validation article-form" id="fragileGoods-form">
+                                        <form action="{{ route('announcement.store') }}" method="POST" class="needs-validation article-form" id="fragileGoods-form" enctype="multipart/form-data">
                                             @csrf
                                             <input type="hidden" name="category" value="{{ $category }}" />
                                             <div class="row">
@@ -1882,8 +1877,8 @@
                                                 <div class="col-8 mb-3">
                                                     <h5>Vous pouvez compléter votre demande avec des photos</h5> 
                                                     {{-- <img src="{{ asset('uploads/callouts/1.jpg') }}" alt=""> --}}
-                                                    <a class="d-inline-block my-3 btn website-bg-color" target="_blank"
-                                                        href="{{ asset('uploads/callouts/1.jpg') }}"><i class="icofont-arrow-up bg-light website-color rounded-circle"></i> Télécharger</a>
+                                                    <input class="d-none" type="file" name="image" id="image" required>
+                                                    <label for="image" class="my-3 btn website-bg-color"><i class="icofont-arrow-up bg-light website-color rounded-circle"></i>Télécharger</label>
                                                 </div>
                                             </div>
 
@@ -2009,8 +2004,7 @@
                             <div class="row">
                                 <div class="col-12">
                                     <div class="bg-light-gray p-3 rounded mt-3">
-                                        <form method="POST" action="{{ route('announcement.store') }}"
-                                            class="needs-validation article-form" id="package-form">
+                                        <form method="POST" action="{{ route('announcement.store') }}" class="needs-validation article-form" id="package-form" enctype="multipart/form-data">
                                             @csrf
                                             <input type="hidden" name="category" value="{{ $category }}" />
                                            
@@ -2184,8 +2178,8 @@
                                                 <div class="col-8 mb-3">
                                                     <h5>Vous pouvez compléter votre demande avec des photos</h5> 
                                                     {{-- <img src="{{ asset('uploads/callouts/1.jpg') }}" alt=""> --}}
-                                                    <a class="d-inline-block my-3 btn website-bg-color" target="_blank"
-                                                        href="{{ asset('uploads/callouts/1.jpg') }}"><i class="icofont-arrow-up bg-light website-color rounded-circle"></i> Télécharger</a>
+                                                    <input class="d-none" type="file" name="image" id="image" required>
+                                                    <label for="image" class="my-3 btn website-bg-color"><i class="icofont-arrow-up bg-light website-color rounded-circle"></i>Télécharger</label>
                                                 </div>
                                             </div>
 
@@ -2311,8 +2305,7 @@
                             <div class="row">
                                 <div class="col-12">
                                     <div class="bg-light-gray p-3 rounded mt-3">
-                                        <form method="POST" action="{{ route('announcement.store') }}"
-                                            class="needs-validation article-form" id="pallet-form">
+                                        <form method="POST" action="{{ route('announcement.store') }}" class="needs-validation article-form" id="pallet-form" enctype="multipart/form-data">
                                             @csrf
                                             <input type="hidden" name="category" value="{{ $category }}"/>
                                             <div class="row">
@@ -2411,8 +2404,8 @@
                                                 <div class="col-8 mb-3">
                                                     <h5>Vous pouvez compléter votre demande avec des photos</h5> 
                                                     {{-- <img src="{{ asset('uploads/callouts/1.jpg') }}" alt=""> --}}
-                                                    <a class="d-inline-block my-3 btn website-bg-color" target="_blank"
-                                                        href="{{ asset('uploads/callouts/1.jpg') }}"><i class="icofont-arrow-up bg-light website-color rounded-circle"></i> Télécharger</a>
+                                                    <input class="d-none" type="file" name="image" id="image" required>
+                                                    <label for="image" class="my-3 btn website-bg-color"><i class="icofont-arrow-up bg-light website-color rounded-circle"></i>Télécharger</label>
                                                 </div>
                                             </div>
 
@@ -2537,8 +2530,7 @@
                             <div class="row">
                                 <div class="col-12">
                                     <div class="bg-light-gray p-3 rounded mt-3">
-                                        <form method="POST" action="{{ route('announcement.store') }}"
-                                            class="needs-validation article-form" id="animal-form">
+                                        <form method="POST" action="{{ route('announcement.store') }}" class="needs-validation article-form" id="animal-form" enctype="multipart/form-data">
                                             @csrf
                                             <input type="hidden" name="category" value="{{ $category }}" />
                                             <div class="row">
@@ -2614,8 +2606,8 @@
                                                 <div class="col-8 mb-3">
                                                     <h5>Vous pouvez compléter votre demande avec des photos</h5> 
                                                     {{-- <img src="{{ asset('uploads/callouts/1.jpg') }}" alt=""> --}}
-                                                    <a class="d-inline-block my-3 btn website-bg-color" target="_blank"
-                                                        href="{{ asset('uploads/callouts/1.jpg') }}"><i class="icofont-arrow-up bg-light website-color rounded-circle"></i> Télécharger</a>
+                                                    <input class="d-none" type="file" name="image" id="image" required>
+                                                    <label for="image" class="my-3 btn website-bg-color"><i class="icofont-arrow-up bg-light website-color rounded-circle"></i>Télécharger</label>
                                                 </div>
                                             </div>
                                             
@@ -2741,8 +2733,7 @@
                             <div class="row">
                                 <div class="col-12">
                                     <div class="bg-light-gray p-3 rounded mt-3">
-                                        <form method="POST" action="{{ route('announcement.store') }}"
-                                            class="needs-validation article-form" id="agri-food-form">
+                                        <form method="POST" action="{{ route('announcement.store') }}" class="needs-validation article-form" id="agri-food-form" enctype="multipart/form-data">
                                             @csrf
                                             <input type="hidden" name="category" value="{{ $category }}" />
                                             <div class="row">
@@ -2855,8 +2846,8 @@
                                                 <div class="col-8 mb-3">
                                                     <h5>Vous pouvez compléter votre demande avec des photos</h5> 
                                                     {{-- <img src="{{ asset('uploads/callouts/1.jpg') }}" alt=""> --}}
-                                                    <a class="d-inline-block my-3 btn website-bg-color" target="_blank"
-                                                        href="{{ asset('uploads/callouts/1.jpg') }}"><i class="icofont-arrow-up bg-light website-color rounded-circle"></i> Télécharger</a>
+                                                    <input class="d-none" type="file" name="image" id="image" required>
+                                                    <label for="image" class="my-3 btn website-bg-color"><i class="icofont-arrow-up bg-light website-color rounded-circle"></i>Télécharger</label>
                                                 </div>
                                             </div>
 

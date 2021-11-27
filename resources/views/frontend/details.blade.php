@@ -301,7 +301,7 @@ $count = $comments->count();
                             <div class="row mt-3">
                                 <div class="col-4">
                                     <h5>Photo:</h5>  
-                                    <img src="{{ asset('uploads/callouts/1.jpg') }}" alt="">
+                                    <img src="{{ asset('uploads/announcement') }}/{{ $data->image }}" alt="">
                                 </div>
                             </div>
                         </div>

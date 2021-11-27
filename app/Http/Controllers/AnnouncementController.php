@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 use App\Models\SecondAnnouncement;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth as FacadesAuth;
+use Str;
 
 class AnnouncementController extends Controller
 {
@@ -83,7 +84,7 @@ class AnnouncementController extends Controller
     public function store(Request $request)
 
     {
-
+ 
         if($request->category == 'déménagement'){
             $request->validate([ 
                'économique'    => 'required_without_all:standard,compléte',
@@ -94,58 +95,69 @@ class AnnouncementController extends Controller
 
         }
 
-        if (Auth::id()) {
- 
-            session()->put('post', $request->all());
+        if (Auth::id()) { 
+
             $announcement = SecondAnnouncement::create([
                 // $announcement = Announcement::create([
+             
+                'category'                  => $request->category ?? 'Not Available',
+                'volume'                    => $request->volume ?? 'Not Available',
+                'list'                      => $request->list ?? 'Not Available',
+                'individual_goods_status'   => $request->individual_goods_status ?? 'Not Available',
+                'individual_goods'          => $request->individual_goods ?? 'Not Available',
+                'place_type_depart'         => $request->place_type_depart ?? 'Not Available',
+                'place_type_arrivee'        => $request->place_type_arrivee ?? 'Not Available',
+                'floor_depart'              => $request->floor_depart ?? 'Not Available',
+                'floor_arrivee'             => $request->floor_arrivee ?? 'Not Available',
+                'ascenseur_depart'          => $request->ascenseur_depart ?? 'Not Available',
+                'ascenseur_arrivee'         => $request->ascenseur_arrivee ?? 'Not Available',
+                'access_depart'             => $request->access_depart ?? 'Not Available',
+                'access_arrivee'            => $request->access_arrivee ?? 'Not Available',
+                'services'                  => $request->services ?? 'Not Available',
+                'économique'                => $request->économique ?? 'Not Available',
+                'standard'                  => $request->standard ?? 'Not Available',
+                'compléte'                  => $request->compléte ?? 'Not Available',
+                'clicmove'                  => $request->clicmove ?? 'Not Available',
 
-                'category'                  => session('post')['category'] ?? 'Not Available',
-                'volume'                    => session('post')['volume'] ?? 'Not Available',
-                'list'                      => session('post')['list'] ?? 'Not Available',
-                'individual_goods_status'   => session('post')['individual_goods_status'] ?? 'Not Available',
-                'individual_goods'          => session('post')['individual_goods'] ?? 'Not Available',
-                'place_type_depart'         => session('post')['place_type_depart'] ?? 'Not Available',
-                'place_type_arrivee'        => session('post')['place_type_arrivee'] ?? 'Not Available',
-                'floor_depart'              => session('post')['floor_depart'] ?? 'Not Available',
-                'floor_arrivee'             => session('post')['floor_arrivee'] ?? 'Not Available',
-                'ascenseur_depart'          => session('post')['ascenseur_depart'] ?? 'Not Available',
-                'ascenseur_arrivee'         => session('post')['ascenseur_arrivee'] ?? 'Not Available',
-                'access_depart'             => session('post')['access_depart'] ?? 'Not Available',
-                'access_arrivee'            => session('post')['access_arrivee'] ?? 'Not Available',
-                'services'                  => session('post')['services'] ?? 'Not Available',
-                'économique'                => session('post')['économique'] ?? 'Not Available',
-                'standard'                  => session('post')['standard'] ?? 'Not Available',
-                'compléte'                  => session('post')['compléte'] ?? 'Not Available',
-                'clicmove'                  => session('post')['clicmove'] ?? 'Not Available',
-
-                'help'                      => session('post')['help'] ?? 'Not Available',
-                'article_name'              => session('post')['article_name'] ?? 'Not Available',
-                'height'                    => session('post')['height'] ?? 'Not Available',
-                'width'                     => session('post')['width'] ?? 'Not Available',
-                'length'                    => session('post')['length'] ?? 'Not Available',
-                'weight'                    => session('post')['weight'] ?? 'Not Available',
-                'quantity'                  => session('post')['quantity'] ?? 'Not Available',
-                'size'                      => session('post')['size'] ?? 'Not Available',
-                'load_unload'               => session('post')['load_unload'] ?? 'Not Available',
-                'need_tailgate'             => session('post')['need_tailgate'] ?? 'Not Available',
-                'need_truck'                => session('post')['need_truck'] ?? 'Not Available',
-                'brand_model'               => session('post')['brand_model'] ?? 'Not Available',
-                'rolling'                   => session('post')['rolling'] ?? 'Not Available',
-
+                'help'                      => $request->help ?? 'Not Available',
+                'article_name'              => $request->article_name ?? 'Not Available',
+                'height'                    => $request->height ?? 'Not Available',
+                'width'                     => $request->width ?? 'Not Available',
+                'length'                    => $request->length ?? 'Not Available',
+                'weight'                    => $request->weight ?? 'Not Available',
+                'quantity'                  => $request->quantity ?? 'Not Available',
+                'size'                      => $request->size ?? 'Not Available',
+                'load_unload'               => $request->load_unload ?? 'Not Available',
+                'need_tailgate'             => $request->need_tailgate ?? 'Not Available',
+                'need_truck'                => $request->need_truck ?? 'Not Available',
+                'brand_model'               => $request->brand_model ?? 'Not Available',
+                'rolling'                   => $request->rolling ?? 'Not Available',
                 // common
-                'depart'                    => session('post')['depart'] ?? 'Not Available',
-                'arrivee'                   => session('post')['arrivee'] ?? 'Not Available',
-                'loading_date'              => session('post')['loading_date'] ?? 'Not Available',
-                'delevary_date'             => session('post')['delevary_date'] ?? 'Not Available',
-                'informations'              => session('post')['informations'] ?? 'Not Available',
+                'depart'                    => $request->depart ?? 'Not Available',
+                'arrivee'                   => $request->arrivee ?? 'Not Available',
+                'loading_date'              => $request->loading_date ?? 'Not Available',
+                'delevary_date'             => $request->delevary_date ?? 'Not Available',
+                'informations'              => $request->informations ?? 'Not Available',
                 'pseudo'                    => Auth::user()->username,
-                'terms'                     => session('post')['terms'] ?? 'Not Available',
+                // 'image'                     => $filename,
+                'terms'                     => $request->terms ?? 'Not Available',
                 'offers'                    => 'yes',
                 'user_id'                   => Auth::id(),
                 'created_at'                => Carbon::now(),
 
             ]);
+       
+                if($request->file('image'))
+                {
+                    $image = $request->file('image');
+                    $filename = $announcement->id.'.'.$image->extension('image');
+                    $path = public_path('uploads/announcement');
+                    $image->move($path, $filename);
+                    $announcement->image = $filename;
+                    $announcement->save();
+                    
+                }
+
             return redirect()->route('announcement.details', $announcement->id);
         } else {
 
@@ -162,112 +174,135 @@ class AnnouncementController extends Controller
                 ]);
 
                 Auth::login($newuser);
-                session()->put('post', $request->all());
+                
                 $announcement = SecondAnnouncement::create([
                     // $announcement = Announcement::create([
 
-                    'category'                  => session('post')['category'] ?? 'Not Available',
-                    'volume'                    => session('post')['volume'] ?? 'Not Available',
-                    'list'                      => session('post')['list'] ?? 'Not Available',
-                    'individual_goods_status'   => session('post')['individual_goods_status'] ?? 'Not Available',
-                    'individual_goods'          => session('post')['individual_goods'] ?? 'Not Available',
+                    'category'                  => $request->category ?? 'Not Available',
+                    'volume'                    => $request->volume ?? 'Not Available',
+                    'list'                      => $request->list ?? 'Not Available',
+                    'individual_goods_status'   => $request->individual_goods_status ?? 'Not Available',
+                    'individual_goods'          => $request->individual_goods ?? 'Not Available',
                     
-                    'place_type_depart'         => session('post')['place_type_depart'] ?? 'Not Available',
-                    'place_type_arrivee'        => session('post')['place_type_arrivee'] ?? 'Not Available',
-                    'floor_depart'              => session('post')['floor_depart'] ?? 'Not Available',
-                    'floor_arrivee'             => session('post')['floor_arrivee'] ?? 'Not Available',
-                    'ascenseur_depart'          => session('post')['ascenseur_depart'] ?? 'Not Available',
-                    'ascenseur_arrivee'         => session('post')['ascenseur_arrivee'] ?? 'Not Available',
-                    'access_depart'             => session('post')['access_depart'] ?? 'Not Available',
-                    'access_arrivee'            => session('post')['access_arrivee'] ?? 'Not Available',
+                    'place_type_depart'         => $request->place_type_depart ?? 'Not Available',
+                    'place_type_arrivee'        => $request->place_type_arrivee ?? 'Not Available',
+                    'floor_depart'              => $request->floor_depart ?? 'Not Available',
+                    'floor_arrivee'             => $request->floor_arrivee ?? 'Not Available',
+                    'ascenseur_depart'          => $request->ascenseur_depart ?? 'Not Available',
+                    'ascenseur_arrivee'         => $request->ascenseur_arrivee ?? 'Not Available',
+                    'access_depart'             => $request->access_depart ?? 'Not Available',
+                    'access_arrivee'            => $request->access_arrivee ?? 'Not Available',
     
-                    'services'                  => session('post')['services'] ?? 'Not Available',
-                    'économique'                => session('post')['économique'] ?? 'Not Available',
-                    'standard'                  => session('post')['standard'] ?? 'Not Available',
-                    'compléte'                  => session('post')['compléte'] ?? 'Not Available',
-                    'clicmove'                  => session('post')['clicmove'] ?? 'Not Available',
-                    'help'                      => session('post')['help'] ?? 'Not Available',
-                    'article_name'              => session('post')['article_name'] ?? 'Not Available',
-                    'height'                    => session('post')['height'] ?? 'Not Available',
-                    'width'                     => session('post')['width'] ?? 'Not Available',
-                    'length'                    => session('post')['length'] ?? 'Not Available',
-                    'weight'                    => session('post')['weight'] ?? 'Not Available',
-                    'quantity'                  => session('post')['quantity'] ?? 'Not Available',
-                    'size'                      => session('post')['size'] ?? 'Not Available',
-                    'load_unload'               => session('post')['load_unload'] ?? 'Not Available',
-                    'need_tailgate'             => session('post')['need_tailgate'] ?? 'Not Available',
-                    'need_truck'                => session('post')['need_truck'] ?? 'Not Available',
-                    'brand_model'               => session('post')['brand_model'] ?? 'Not Available',
-                    'rolling'                   => session('post')['rolling'] ?? 'Not Available',
+                    'services'                  => $request->services ?? 'Not Available',
+                    'économique'                => $request->économique ?? 'Not Available',
+                    'standard'                  => $request->standard ?? 'Not Available',
+                    'compléte'                  => $request->compléte ?? 'Not Available',
+                    'clicmove'                  => $request->clicmove ?? 'Not Available',
+                    'help'                      => $request->help ?? 'Not Available',
+                    'article_name'              => $request->article_name ?? 'Not Available',
+                    'height'                    => $request->height ?? 'Not Available',
+                    'width'                     => $request->width ?? 'Not Available',
+                    'length'                    => $request->length ?? 'Not Available',
+                    'weight'                    => $request->weight ?? 'Not Available',
+                    'quantity'                  => $request->quantity ?? 'Not Available',
+                    'size'                      => $request->size ?? 'Not Available',
+                    'load_unload'               => $request->load_unload ?? 'Not Available',
+                    'need_tailgate'             => $request->need_tailgate ?? 'Not Available',
+                    'need_truck'                => $request->need_truck ?? 'Not Available',
+                    'brand_model'               => $request->brand_model ?? 'Not Available',
+                    'rolling'                   => $request->rolling ?? 'Not Available', 
 
                     // common
-                    'depart'                    => session('post')['depart'] ?? 'Not Available',
-                    'arrivee'                   => session('post')['arrivee'] ?? 'Not Available',
-                    'loading_date'              => session('post')['loading_date'] ?? 'Not Available',
-                    'delevary_date'             => session('post')['delevary_date'] ?? 'Not Available',
-                    'informations'              => session('post')['informations'] ?? 'Not Available',
+                    'depart'                    => $request->depart ?? 'Not Available',
+                    'arrivee'                   => $request->arrivee ?? 'Not Available',
+                    'loading_date'              => $request->loading_date ?? 'Not Available',
+                    'delevary_date'             => $request->delevary_date ?? 'Not Available',
+                    'informations'              => $request->informations ?? 'Not Available',
                     'pseudo'                    => Auth::user()->username,
-                    'terms'                     => session('post')['terms'] ?? 'Not Available',
+                    'terms'                     => $request->terms ?? 'Not Available',
                     'offers'                    => 'yes',
                     'user_id'                   => Auth::id(),
                     'created_at'                => Carbon::now(),
 
                 ]);
+             
+
+                if($request->file('image'))
+                {
+                    $image = $request->file('image');
+                    $filename = $announcement->id.'.'.$image->extension('image');
+                    $path = public_path('uploads/announcement');
+                    $image->move($path, $filename);
+                    $announcement->image = $filename;
+                    $announcement->save();
+                    
+                }
                 return redirect()->route('announcement.details', $announcement->id);
             } else {
                 if (Hash::check($request->password, $user->password)) {
-                    Auth::login($user);
-                    session()->put('post', $request->all());
+                    Auth::login($user); 
+                    
                     // dd(session('post')); 
                     $announcement = SecondAnnouncement::create([
                         // $announcement = Announcement::create([
 
-                        'category'                  => session('post')['category'] ?? 'Not Available',
-                        'volume'                    => session('post')['volume'] ?? 'Not Available',
-                        'list'                      => session('post')['list'] ?? 'Not Available',
-                        'individual_goods_status'   => session('post')['individual_goods_status'] ?? 'Not Available',
-                        'individual_goods'          => session('post')['individual_goods'] ?? 'Not Available',
-                        'place_type_depart'         => session('post')['place_type_depart'] ?? 'Not Available',
-                        'place_type_arrivee'        => session('post')['place_type_arrivee'] ?? 'Not Available',
-                        'floor_depart'              => session('post')['floor_depart'] ?? 'Not Available',
-                        'floor_arrivee'             => session('post')['floor_arrivee'] ?? 'Not Available',
-                        'ascenseur_depart'          => session('post')['ascenseur_depart'] ?? 'Not Available',
-                        'ascenseur_arrivee'         => session('post')['ascenseur_arrivee'] ?? 'Not Available',
-                        'access_depart'             => session('post')['access_depart'] ?? 'Not Available',
-                        'access_arrivee'            => session('post')['access_arrivee'] ?? 'Not Available',
+                        'category'                  => $request->category ?? 'Not Available',
+                        'volume'                    => $request->volume ?? 'Not Available',
+                        'list'                      => $request->list ?? 'Not Available',
+                        'individual_goods_status'   => $request->individual_goods_status ?? 'Not Available',
+                        'individual_goods'          => $request->individual_goods ?? 'Not Available',
+                        'place_type_depart'         => $request->place_type_depart ?? 'Not Available',
+                        'place_type_arrivee'        => $request->place_type_arrivee ?? 'Not Available',
+                        'floor_depart'              => $request->floor_depart ?? 'Not Available',
+                        'floor_arrivee'             => $request->floor_arrivee ?? 'Not Available',
+                        'ascenseur_depart'          => $request->ascenseur_depart ?? 'Not Available',
+                        'ascenseur_arrivee'         => $request->ascenseur_arrivee ?? 'Not Available',
+                        'access_depart'             => $request->access_depart ?? 'Not Available',
+                        'access_arrivee'            => $request->access_arrivee ?? 'Not Available',
 
-                        'services'                  => session('post')['services'] ?? 'Not Available',
-                        'économique'                => session('post')['économique'] ?? 'Not Available',
-                        'standard'                  => session('post')['standard'] ?? 'Not Available',
-                        'compléte'                  => session('post')['compléte'] ?? 'Not Available',
-                        'clicmove'                  => session('post')['clicmove'] ?? 'Not Available',
-                        'help'                      => session('post')['help'] ?? 'Not Available',
-                        'article_name'              => session('post')['article_name'] ?? 'Not Available',
-                        'height'                    => session('post')['height'] ?? 'Not Available',
-                        'width'                     => session('post')['width'] ?? 'Not Available',
-                        'length'                    => session('post')['length'] ?? 'Not Available',
-                        'weight'                    => session('post')['weight'] ?? 'Not Available',
-                        'quantity'                  => session('post')['quantity'] ?? 'Not Available',
-                        'size'                      => session('post')['size'] ?? 'Not Available',
-                        'load_unload'               => session('post')['load_unload'] ?? 'Not Available',
-                        'need_tailgate'             => session('post')['need_tailgate'] ?? 'Not Available',
-                        'need_truck'                => session('post')['need_truck'] ?? 'Not Available',
-                        'brand_model'               => session('post')['brand_model'] ?? 'Not Available',
-                        'rolling'                   => session('post')['rolling'] ?? 'Not Available',
+                        'services'                  => $request->services ?? 'Not Available',
+                        'économique'                => $request->économique ?? 'Not Available',
+                        'standard'                  => $request->standard ?? 'Not Available',
+                        'compléte'                  => $request->compléte ?? 'Not Available',
+                        'clicmove'                  => $request->clicmove ?? 'Not Available',
+                        'help'                      => $request->help ?? 'Not Available',
+                        'article_name'              => $request->article_name ?? 'Not Available',
+                        'height'                    => $request->height ?? 'Not Available',
+                        'width'                     => $request->width ?? 'Not Available',
+                        'length'                    => $request->length ?? 'Not Available',
+                        'weight'                    => $request->weight ?? 'Not Available',
+                        'quantity'                  => $request->quantity ?? 'Not Available',
+                        'size'                      => $request->size ?? 'Not Available',
+                        'load_unload'               => $request->load_unload ?? 'Not Available',
+                        'need_tailgate'             => $request->need_tailgate ?? 'Not Available',
+                        'need_truck'                => $request->need_truck ?? 'Not Available',
+                        'brand_model'               => $request->brand_model ?? 'Not Available',
+                        'rolling'                   => $request->rolling ?? 'Not Available',
 
                         // common
-                        'depart'                    => session('post')['depart'] ?? 'Not Available',
-                        'arrivee'                   => session('post')['arrivee'] ?? 'Not Available',
-                        'loading_date'              => session('post')['loading_date'] ?? 'Not Available',
-                        'delevary_date'             => session('post')['delevary_date'] ?? 'Not Available',
-                        'informations'              => session('post')['informations'] ?? 'Not Available',
+                        'depart'                    => $request->depart ?? 'Not Available',
+                        'arrivee'                   => $request->arrivee ?? 'Not Available',
+                        'loading_date'              => $request->loading_date ?? 'Not Available',
+                        'delevary_date'             => $request->delevary_date ?? 'Not Available',
+                        'informations'              => $request->informations ?? 'Not Available',
                         'pseudo'                    => Auth::user()->username,
-                        'terms'                     => session('post')['terms'] ?? 'Not Available',
+                        'terms'                     => $request->terms ?? 'Not Available',
                         'offers'                    => 'yes',
                         'user_id'                   => Auth::id(),
                         'created_at'                => Carbon::now(),
 
                     ]);
+
+                    if($request->file('image'))
+                    {
+                        $image = $request->file('image');
+                        $filename = $announcement->id.'.'.$image->extension('image');
+                        $path = public_path('uploads/announcement');
+                        $image->move($path, $filename);
+                        $announcement->image = $filename;
+                        $announcement->save();
+                        
+                    } 
                     return redirect()->route('announcement.details', $announcement->id);
                 } else {
                     return back()->with('errors', 'Wrong Password');
@@ -279,119 +314,119 @@ class AnnouncementController extends Controller
         // return redirect()->route( 'post-store' );
     }
 
-    public function save()
-    {
-        // dd(session('post')); 
-        $announcement = SecondAnnouncement::create([
-            // $announcement = Announcement::create([
+    // public function save()
+    // {
+    //     // dd(session('post')); 
+    //     $announcement = SecondAnnouncement::create([
+    //         // $announcement = Announcement::create([
 
-            'category'                  => session('post')['category'] ?? '',
-            'volume'                    => session('post')['volume'] ?? '',
-            'list'                      => session('post')['list'] ?? '',
-            'individual_goods_status'   => session('post')['individual_goods_status'] ?? 'Not Available',
-            'individual_goods'          => session('post')['individual_goods'] ?? '',
-            'place_type'                => session('post')['place_type'] ?? '',
-            'floor'                     => session('post')['floor'] ?? '',
-            'ascenseur'                     => session('post')['ascenseur'] ?? '',
-            'access'                    => session('post')['access'] ?? '',
-            'services'                  => session('post')['services'] ?? '',
-            'help'                      => session('post')['help'] ?? '',
-            'article_name'              => session('post')['article_name'] ?? '',
-            'height'                    => session('post')['height'] ?? '',
-            'width'                     => session('post')['width'] ?? '',
-            'length'                    => session('post')['length'] ?? '',
-            'weight'                    => session('post')['weight'] ?? '',
-            'quantity'                  => session('post')['quantity'] ?? '',
-            'size'                      => session('post')['size'] ?? '',
-            'load_unload'                   => session('post')['load_unload'] ?? '',
-            'need_tailgate'             => session('post')['need_tailgate'] ?? '',
-            'need_truck'                => session('post')['need_truck'] ?? '',
-            'brand_model'               => session('post')['brand_model'] ?? '',
-            'rolling'                   => session('post')['rolling'] ?? '',
+    //         'category'                  => $request->category ?? '',
+    //         'volume'                    => $request->volume ?? '',
+    //         'list'                      => $request->list ?? '',
+    //         'individual_goods_status'   => $request->individual_goods_status ?? 'Not Available',
+    //         'individual_goods'          => $request->individual_goods ?? '',
+    //         'place_type'                => $request->place_type ?? '',
+    //         'floor'                     => $request->floor ?? '',
+    //         'ascenseur'                     => $request->ascenseur ?? '',
+    //         'access'                    => $request->access ?? '',
+    //         'services'                  => $request->services ?? '',
+    //         'help'                      => $request->help ?? '',
+    //         'article_name'              => $request->article_name ?? '',
+    //         'height'                    => $request->height ?? '',
+    //         'width'                     => $request->width ?? '',
+    //         'length'                    => $request->length ?? '',
+    //         'weight'                    => $request->weight ?? '',
+    //         'quantity'                  => $request->quantity ?? '',
+    //         'size'                      => $request->size ?? '',
+    //         'load_unload'                   => $request->load_unload ?? '',
+    //         'need_tailgate'             => $request->need_tailgate ?? '',
+    //         'need_truck'                => $request->need_truck ?? '',
+    //         'brand_model'               => $request->brand_model ?? '',
+    //         'rolling'                   => $request->rolling ?? '',
 
-            // common
-            'depart'                    => session('post')['depart'] ?? '',
-            'arrivee'                   => session('post')['arrivee'] ?? '',
-            'loading_date'              => session('post')['loading_date'] ?? '',
-            'delevary_date'             => session('post')['delevary_date'] ?? '',
-            'informations'              => session('post')['informations'] ?? '',
-            'name'                      => session('post')['name'] ?? '',
-            'email'                     => session('post')['email'] ?? '',
-            'country_code'              => session('post')['country_code'] ?? '',
-            'phone'                     => session('post')['phone'] ?? '',
-            'pseudo'                    => session('post')['pseudo'] ?? '',
-            'password'                  => session('post')['password'] ?? '',
-            'terms'                     => session('post')['terms'] ?? '',
-            'offers'                    => 'yes',
-            'user_id'                   => Auth::id(),
-            'created_at'                => Carbon::now(),
+    //         // common
+    //         'depart'                    => $request->depart ?? '',
+    //         'arrivee'                   => $request->arrivee ?? '',
+    //         'loading_date'              => $request->loading_date ?? '',
+    //         'delevary_date'             => $request->delevary_date ?? '',
+    //         'informations'              => $request->informations ?? '',
+    //         'name'                      => $request->name ?? '',
+    //         'email'                     => $request->email ?? '',
+    //         'country_code'              => $request->country_code ?? '',
+    //         'phone'                     => $request->phone ?? '',
+    //         'pseudo'                    => $request->pseudo ?? '',
+    //         'password'                  => $request->password ?? '',
+    //         'terms'                     => $request->terms ?? '',
+    //         'offers'                    => 'yes',
+    //         'user_id'                   => Auth::id(),
+    //         'created_at'                => Carbon::now(),
 
 
-            // 'category'             => session('post')['category'] ?? '',
-            // 'equipment'            => session('post')['equipment'] ?? '',
-            // 'articleName'          => session('post')['articleName'] ?? '',
-            // 'length'               => session('post')['length'] ?? '',
-            // 'width'                => session('post')['width'] ?? '',
-            // 'height'               => session('post')['height'] ?? '',
-            // 'weight'               => session('post')['weight'] ?? '',
-            // 'quantity'             => session('post')['quantity'] ?? '',
-            // 'model_name'           => session('post')['model_name'] ?? '',
-            // 'vehicleName'          => session('post')['vehicleName'] ?? '',
-            // 'make'                 => session('post')['make'] ?? '',
-            // 'model'                => session('post')['model'] ?? '',
-            // 'estimationValue'      => session('post')['estimationValue'] ?? '',
-            // 'movingVehicle'        => session('post')['movingVehicle'] ?? '',
-            // 'conveyors'            => session('post')['conveyors'] ?? '',
-            // 'boatName'             => session('post')['boatName'] ?? '',
-            // 'food_name'            => session('post')['food_name'] ?? '',
-            // 'dim'                  => session('post')['dim'] ?? '',
-            // 'animalName'           => session('post')['animalName'] ?? '',
-            // 'animalBreed'          => session('post')['animalBreed'] ?? '',
-            // 'specialNeeds'         => session('post')['specialNeeds'] ?? '',
-            // 'vaccinations'         => session('post')['vaccinations'] ?? '',
-            // 'others'               => session('post')['others'] ?? '',
-            // //common
-            // 'loading_address'         => session('post')['loading_address'] ?? '',
-            // 'loading_start'           => session('post')['loading_start'] ?? '',
-            // 'loading_end'             => session('post')['loading_end'] ?? '',
-            // 'loading_time_slot'       => session('post')['loading_time_slot'] ?? '',
-            // 'loading_house'           => session('post')['loading_house'] ?? '',
-            // 'loading_floor'           => session('post')['loading_floor'] ?? '',
-            // 'loading_elevator'        => session('post')['loading_elevator'] ?? '',
-            // 'loading_lift'            => session('post')['loading_lift'] ?? '',
-            // 'information'             => session('post')['information'] ?? '',
-            // 'delivery_address'        => session('post')['delivery_address'] ?? '',
-            // 'delivery_start'          => session('post')['delivery_start'] ?? '',
-            // 'delivery_end'            => session('post')['delivery_end'] ?? '',
-            // 'delivery_time_slot'      => session('post')['delivery_time_slot'] ?? '',
-            // 'delivery_house'          => session('post')['delivery_house'] ?? '',
-            // 'delivery_floor'          => session('post')['delivery_floor'] ?? '',
-            // 'delivery_elevator'       => session('post')['delivery_elevator'] ?? '',
-            // 'delivery_lift'           => session('post')['delivery_lift'] ?? '',
-            // 'image'                   => 'foo.jpg', 
-            // 'user_id'                 => Auth::id(), 
-            // 'created_at'              => Carbon::now(), 
-            // 'offers'                  => 'yes', 
+    //         // 'category'             => $request->category ?? '',
+    //         // 'equipment'            => $request->equipment ?? '',
+    //         // 'articleName'          => $request->articleName ?? '',
+    //         // 'length'               => $request->length ?? '',
+    //         // 'width'                => $request->width ?? '',
+    //         // 'height'               => $request->height ?? '',
+    //         // 'weight'               => $request->weight ?? '',
+    //         // 'quantity'             => $request->quantity ?? '',
+    //         // 'model_name'           => $request->model_name ?? '',
+    //         // 'vehicleName'          => $request->vehicleName ?? '',
+    //         // 'make'                 => $request->make ?? '',
+    //         // 'model'                => $request->model ?? '',
+    //         // 'estimationValue'      => $request->estimationValue ?? '',
+    //         // 'movingVehicle'        => $request->movingVehicle ?? '',
+    //         // 'conveyors'            => $request->conveyors ?? '',
+    //         // 'boatName'             => $request->boatName ?? '',
+    //         // 'food_name'            => $request->food_name ?? '',
+    //         // 'dim'                  => $request->dim ?? '',
+    //         // 'animalName'           => $request->animalName ?? '',
+    //         // 'animalBreed'          => $request->animalBreed ?? '',
+    //         // 'specialNeeds'         => $request->specialNeeds ?? '',
+    //         // 'vaccinations'         => $request->vaccinations ?? '',
+    //         // 'others'               => $request->others ?? '',
+    //         // //common
+    //         // 'loading_address'         => $request->loading_address ?? '',
+    //         // 'loading_start'           => $request->loading_start ?? '',
+    //         // 'loading_end'             => $request->loading_end ?? '',
+    //         // 'loading_time_slot'       => $request->loading_time_slot ?? '',
+    //         // 'loading_house'           => $request->loading_house ?? '',
+    //         // 'loading_floor'           => $request->loading_floor ?? '',
+    //         // 'loading_elevator'        => $request->loading_elevator ?? '',
+    //         // 'loading_lift'            => $request->loading_lift ?? '',
+    //         // 'information'             => $request->information ?? '',
+    //         // 'delivery_address'        => $request->delivery_address ?? '',
+    //         // 'delivery_start'          => $request->delivery_start ?? '',
+    //         // 'delivery_end'            => $request->delivery_end ?? '',
+    //         // 'delivery_time_slot'      => $request->delivery_time_slot ?? '',
+    //         // 'delivery_house'          => $request->delivery_house ?? '',
+    //         // 'delivery_floor'          => $request->delivery_floor ?? '',
+    //         // 'delivery_elevator'       => $request->delivery_elevator ?? '',
+    //         // 'delivery_lift'           => $request->delivery_lift ?? '',
+    //         // 'image'                   => 'foo.jpg', 
+    //         // 'user_id'                 => Auth::id(), 
+    //         // 'created_at'              => Carbon::now(), 
+    //         // 'offers'                  => 'yes', 
 
-        ]);
+    //     ]);
 
-        // if (session('post')['image']->exists()) {
+    //     // if ($request->image->exists()) {
 
-        //     // Upload Image
-        //     $image     = session('post')['image'] ?? '';
-        //     $filename  = $announcement->id. '.' .$image->extension();
-        //     $location  = public_path('uploads/households/');
-        //     $image->move($location , $filename);
+    //     //     // Upload Image
+    //     //     $image     = $request->image ?? '';
+    //     //     $filename  = $announcement->id. '.' .$image->extension();
+    //     //     $location  = public_path('uploads/households/');
+    //     //     $image->move($location , $filename);
 
-        //     // Save Image name in the database
-        //     $announcement->image = $filename;
-        // }
+    //     //     // Save Image name in the database
+    //     //     $announcement->image = $filename;
+    //     // }
 
-        // Save Everything in database 
-        // $announcement->save();
+    //     // Save Everything in database 
+    //     // $announcement->save();
 
-        return redirect()->route('announcement.details', $announcement->id);
-    }
+    //     return redirect()->route('announcement.details', $announcement->id);
+    // }
 
     public function details($id)
     {
