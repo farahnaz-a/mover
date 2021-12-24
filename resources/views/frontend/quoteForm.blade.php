@@ -28,6 +28,16 @@
         padding-left: 45px;
     }
 
+    .form-group .nice-select .list{
+        width: 100%;
+        max-height: 300px;
+        overflow-y: auto;
+        scrollbar-width: thin;
+    }
+    .form-group .nice-select .list::-webkit-scrollbar{
+        width: 8px;
+    }
+
     .form-group__wrapper--counrty-select .form-group__wrapper__input .nice-select{
         border: 0;
         background: transparent;
@@ -38,19 +48,69 @@
     }
 
     .service-card{
-        background-color: #f2f2f2;
+        background-color: #ffffff;
+        padding: 0 30px 50px;
+        border: 1px solid #eaeaea;
+        border-radius: 0.25rem;
     }
     .service-card__icon{
         font-size: 40px;
-        width: 80px;
-        height: 80px;
+        width: 95px;
+        height: 95px;
         color: #5fc2ba;
         background-color: #232135;
-        border: 8px solid #fafafa;
+        border: 12px solid #fafafa;
         margin-top: -50%;
     }
     .service-card__title{
-        font-size: 22px;
+        font-size: 28px;
+    }
+
+    .service-card__list{
+        list-style: none;
+    }
+
+    .service-card__list__items{
+        margin-bottom: 10px;
+        display: flex;
+    }
+
+    .service-card__list__items__text{
+        color: #5fc2ba;
+        font-weight: 500;
+    }
+
+    .service-card__list__items__icon{
+        width: 30px;
+        height: 30px;
+        color: #666666;
+        background-color: #eaeaea;
+        margin-right: 10px;
+        flex-shrink: 0;
+    }
+
+    @media screen and (max-width: 575px){
+        .logo-footer{
+            max-width: 100%;
+            width: auto !important;
+        }
+        .logo-footer img{
+            object-fit: cover;
+        }
+        .service-card__list__items__icon{
+            width: 20px;
+            height: 20px;
+            font-size: 8px;
+        }
+        .service-card{
+            padding: 0 8px 20px;
+        }
+        .service-card__list__items__text{
+            font-size: 14px;
+        }
+        .service-card__title{
+            font-size: 20px;
+        }
     }
 
 </style>
@@ -99,13 +159,13 @@
                                                     <input type="hidden" name="category" value="{{ $category }}" /> 
 
                                                     <div class="row">
-                                                        <div class="col-4">
+                                                        <div class="col-md-6">
                                                             <div class="form-group">
                                                                 <input id="depart" style="position: relative" type="text" placeholder="Adresse de départ" class="form-control" name="depart" required/> 
                                                                 <label for="depart"><i class="icofont-google-map" style="position: absolute; top: 12px; right: 25px;"></i></label>
                                                            </div>
                                                         </div>
-                                                        <div class="col-4">
+                                                        <div class="col-md-6">
                                                             <div class="form-group">
                                                                 <input id="arrivee" style="position: relative" type="text" placeholder="Adresse d'arrivée" class="form-control" name="arrivee" required/>
                                                                 <label for="arrivee"><i class="icofont-google-map" style="position: absolute; top: 12px; right: 25px;"></i></label>
@@ -113,13 +173,13 @@
                                                         </div>
                                                     </div> 
                                                     <div class="row">
-                                                        <div class="col-4">
+                                                        <div class="col-md-6">
                                                             <div class="form-group">
                                                                 <label for=""> Date de chargement </label>
                                                                 <input type="date" placeholder="Date de chargement " class="form-control" name="loading_date" required/>
                                                             </div>
                                                         </div>
-                                                        <div class="col-4">
+                                                        <div class="col-md-6">
                                                             <div class="form-group">
                                                                 <label for=""> Date de livraison </label>
                                                                 <input type="date" placeholder="Date de livraison " class="form-control" name="delevary_date" required/>
@@ -128,7 +188,7 @@
                                                     </div>  
                                                     <br>
                                                     <div class="row">
-                                                        <div class="col-8">
+                                                        <div class="col-12">
                                                             <div class="form-group">
                                                                 <input style="position: relative" type="text" id="volume" placeholder="je connais mon volume"  class="form-control" name="volume" required/>
                                                                 <label for="volume"> <span style="position: absolute; top: 10px; right: 25px;"><small>m</small>3</span> </label>
@@ -136,7 +196,7 @@
                                                         </div> 
                                                     </div>
                                                     <div class="row">
-                                                        <div class="col-8">
+                                                        <div class="col-12">
                                                             <div class="form-group">
                                                                 <textarea name="list"   class="form-control" rows="7"
                                                                     placeholder="(*pensez à faire un inventaire pièce par pièce)" required></textarea>
@@ -144,7 +204,7 @@
                                                         </div>
                                                     </div>
                                                     <div class="row my-3">
-                                                        <div class="col-4">
+                                                        <div class="col-md-6">
                                                             <div class="form-group d-flex align-items-center">
                                                                 <h5 class="d-inline-block">Biens particuliers</h5>
                                                                 {{-- <input type="text" placeholder="Biens particuliers"
@@ -160,7 +220,7 @@
                                                                 </div> 
                                                             </div>
                                                         </div>
-                                                        <div class="col-4">
+                                                        <div class="col-md-6">
                                                             <textarea name="individual_goods" class="form-control" style="height: 45px"></textarea>
                                                             <span>*piano droit, frigo américain, coffre fort </span>
                                                             {{-- <label for="vehicle1">non</label>
@@ -171,7 +231,7 @@
                                                         </div>
                                                     </div>
                                                     <div class="row my-3">
-                                                        <div class="col-4">
+                                                        <div class="col-md-6">
                                                             <div class="form-group">
                                                                 {{-- <h5>départ</h5> --}}
                                                                 {{-- <input type="text" placeholder="type de lieu"
@@ -187,7 +247,7 @@
                                                                 </select>
                                                             </div> 
                                                         </div> 
-                                                        <div class="col-4">
+                                                        <div class="col-md-6">
                                                             <div class="form-group">
                                                                 {{-- <h5>arrivée</h5> --}}
                                                                 {{-- <input type="text" placeholder="type de lieu"
@@ -207,7 +267,7 @@
                                                     </div>
                                                     
                                                     <div class="row my-3">
-                                                        <div class="col-4">
+                                                        <div class="col-md-6">
                                                             <div class="form-group">
                                                                 {{-- <h5>départ</h5> --}}
                                                                 <select name="floor_depart"   required>
@@ -225,7 +285,7 @@
                                                                 </select> 
                                                             </div>
                                                         </div>
-                                                        <div class="col-4"> 
+                                                        <div class="col-md-6">
                                                              <div class="form-group">
                                                                 {{-- <h5>arrivée</h5> --}}
                                                                 <select name="floor_arrivee"   required>
@@ -250,68 +310,316 @@
 
                                                     </div>
                                                     <div class="row my-3">
-                                                        <div class="col-4">
+                                                        <div class="col-md-6">
                                                             {{-- <h5>départ</h5> --}}
-                                                             <select name="ascenseur_depart" required> 
-                                                                <option value="">ascenseur départ</option>
-                                                                <option value="non">non</option>
-                                                                <option value="oui">oui</option>
-                                                            </select>
+                                                            <div class="form-group">
+                                                                <select name="ascenseur_depart" required> 
+                                                                   <option value="">ascenseur départ</option>
+                                                                   <option value="non">non</option>
+                                                                   <option value="oui">oui</option>
+                                                               </select>
+                                                            </div>
                                                         </div>  
-                                                        <div class="col-4">
+                                                        <div class="col-md-6">
                                                             {{-- <h5>arrivée</h5> --}}
-                                                             <select name="ascenseur_arrivee" required> 
-                                                                <option value="">ascenseur arrivée</option>
-                                                                <option value="non">non</option>
-                                                                <option value="oui">oui</option>
-                                                            </select>
+                                                            <div class="form-group">
+                                                                <select name="ascenseur_arrivee" required> 
+                                                                   <option value="">ascenseur arrivée</option>
+                                                                   <option value="non">non</option>
+                                                                   <option value="oui">oui</option>
+                                                               </select>
+                                                            </div>
                                                         </div>  
                                                     </div> 
                                                     <div class="row my-3">
-                                                        <div class="col-4"> 
+                                                        <div class="col-md-6">
                                                             {{-- <h5>départ</h5> --}}
-                                                            <select name="access_depart" required> 
-                                                                <option value="">accès départ</option>
-                                                                <option value="on peut se garer devant">on peut se garer devant</option>
-                                                                <option value="on doit se garer plus loin">on doit se garer plus loin</option>
-                                                            </select> 
+                                                            <div class="form-group">
+                                                                <select name="access_depart" required> 
+                                                                    <option value="">accès départ</option>
+                                                                    <option value="on peut se garer devant">on peut se garer devant</option>
+                                                                    <option value="on doit se garer plus loin">on doit se garer plus loin</option>
+                                                                </select> 
+                                                            </div>
                                                         </div>
-                                                        <div class="col-4"> 
+                                                        <div class="col-md-6"> 
                                                             {{-- <h5>arrivée</h5> --}}
-                                                            <select name="access_arrivee" required> 
-                                                                <option value="">accès arrivée</option>
-                                                                <option value="on peut se garer devant">on peut se garer devant</option>
-                                                                <option value="on doit se garer plus loin">on doit se garer plus loin</option>
-                                                            </select> 
+                                                            <div class="form-group">
+                                                                <select name="access_arrivee" required> 
+                                                                    <option value="">accès arrivée</option>
+                                                                    <option value="on peut se garer devant">on peut se garer devant</option>
+                                                                    <option value="on doit se garer plus loin">on doit se garer plus loin</option>
+                                                                </select> 
+                                                            </div>
                                                         </div>
-
                                                     </div> 
                                                     <br>
                                                     <h5 class="mt-3">Je choisis ma formule de déménagement</h5>
+                                                    {{-- Service Card Section Start --}}
                                                     <div class="row mt-4">
-
-                                                        <div class="col-lg-6">
-                                                            <div class="service-card">
+                                                        <div class="col-md-6 d-flex">
+                                                            <div class="service-card d-flex flex-column my-4">
                                                                 <div class="service-card__header text-center">
                                                                     <div class="service-card__icon d-inline-flex align-items-center justify-content-center rounded-circle">
-                                                                        <i class="icofont-fast-delivery"></i>
+                                                                        <i class="icofont-worker"></i>
                                                                     </div>
-                                                                    <h3 class="service-card__title mt-3">Économique</h3>
+                                                                    <h3 class="service-card__title mt-3">Camion avec chauffeur</h3>
                                                                     <p class="service-card__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, inventore?</p>
                                                                 </div>
-                                                                <ul class="service-card__list">
+                                                                <ul class="service-card__list pl-0 mb-0">
                                                                     <li class="service-card__list__items">
-                                                                        <span class="service-card__list__items__icon d-inline-flex align-items-center jusify-content-center rounded-circle">
+                                                                        <span class="service-card__list__items__icon d-inline-flex align-items-center justify-content-center rounded-circle">
+                                                                            <i class="icofont-check"></i>
+                                                                        </span>
+                                                                        <span class="service-card__list__items__text">démontage du mobilier</span>
+                                                                    </li>
+                                                                    <li class="service-card__list__items">
+                                                                        <span class="service-card__list__items__icon d-inline-flex align-items-center justify-content-center rounded-circle">
+                                                                            <i class="icofont-check"></i>
+                                                                        </span>
+                                                                        <span class="service-card__list__items__text">Emballage du fragile</span>
+                                                                    </li>
+                                                                    <li class="service-card__list__items">
+                                                                        <span class="service-card__list__items__icon d-inline-flex align-items-center justify-content-center rounded-circle">
                                                                             <i class="icofont-check"></i>
                                                                         </span>
                                                                         <span class="service-card__list__items__text">protection du mobilier</span>
                                                                     </li>
+                                                                    <li class="service-card__list__items">
+                                                                        <span class="service-card__list__items__icon d-inline-flex align-items-center justify-content-center rounded-circle">
+                                                                            <i class="icofont-check"></i>
+                                                                        </span>
+                                                                        <span class="service-card__list__items__text">manutention au chargement</span>
+                                                                    </li>
+                                                                    <li class="service-card__list__items">
+                                                                        <span class="service-card__list__items__icon d-inline-flex align-items-center justify-content-center rounded-circle">
+                                                                            <i class="icofont-check"></i>
+                                                                        </span>
+                                                                        <span class="service-card__list__items__text">transport</span>
+                                                                    </li>
+                                                                    <li class="service-card__list__items">
+                                                                        <span class="service-card__list__items__icon d-inline-flex align-items-center justify-content-center rounded-circle">
+                                                                            <i class="icofont-check"></i>
+                                                                        </span>
+                                                                        <span class="service-card__list__items__text">manutention au déchargement</span>
+                                                                    </li>
+                                                                    <li class="service-card__list__items">
+                                                                        <span class="service-card__list__items__icon d-inline-flex align-items-center justify-content-center rounded-circle">
+                                                                            <i class="icofont-check"></i>
+                                                                        </span>
+                                                                        <span class="service-card__list__items__text">remontage du mobilier</span>
+                                                                    </li>
+                                                                    <li class="service-card__list__items">
+                                                                        <span class="service-card__list__items__icon d-inline-flex align-items-center justify-content-center rounded-circle">
+                                                                            <i class="icofont-check"></i>
+                                                                        </span>
+                                                                        <span class="service-card__list__items__text">Assurance</span>
+                                                                    </li>
+                                                                    <li class="service-card__list__items">
+                                                                        <span class="service-card__list__items__icon d-inline-flex align-items-center justify-content-center rounded-circle">
+                                                                            <i class="icofont-check"></i>
+                                                                        </span>
+                                                                        <span class="service-card__list__items__text">frais de route (péage, carburant, ferry,…)</span>
+                                                                    </li>
                                                                 </ul>
+                                                                <div class="text-center mt-auto">
+                                                                    <button type="button" class="service-card__btn btn-theme bg-navy-blue no-shadow mt-3">Choisir</button>
+                                                                </div>
                                                             </div>
                                                         </div>
-
-
-                                                        <div class="col-2 mt-1">
+                                                        <div class="col-md-6 d-flex">
+                                                            <div class="service-card d-flex flex-column my-4">
+                                                                <div class="service-card__header text-center">
+                                                                    <div class="service-card__icon d-inline-flex align-items-center justify-content-center rounded-circle">
+                                                                        <i class="icofont-dollar"></i>
+                                                                    </div>
+                                                                    <h3 class="service-card__title mt-3">Économique</h3>
+                                                                    <p class="service-card__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, inventore?</p>
+                                                                </div>
+                                                                <ul class="service-card__list pl-0 mb-0">
+                                                                    <li class="service-card__list__items">
+                                                                        <span class="service-card__list__items__icon d-inline-flex align-items-center justify-content-center rounded-circle">
+                                                                            <i class="icofont-check"></i>
+                                                                        </span>
+                                                                        <span class="service-card__list__items__text">protection du mobilier</span>
+                                                                    </li>
+                                                                    <li class="service-card__list__items">
+                                                                        <span class="service-card__list__items__icon d-inline-flex align-items-center justify-content-center rounded-circle">
+                                                                            <i class="icofont-check"></i>
+                                                                        </span>
+                                                                        <span class="service-card__list__items__text">manutention au chargement</span>
+                                                                    </li>
+                                                                    <li class="service-card__list__items">
+                                                                        <span class="service-card__list__items__icon d-inline-flex align-items-center justify-content-center rounded-circle">
+                                                                            <i class="icofont-check"></i>
+                                                                        </span>
+                                                                        <span class="service-card__list__items__text">transport</span>
+                                                                    </li>
+                                                                    <li class="service-card__list__items">
+                                                                        <span class="service-card__list__items__icon d-inline-flex align-items-center justify-content-center rounded-circle">
+                                                                            <i class="icofont-check"></i>
+                                                                        </span>
+                                                                        <span class="service-card__list__items__text">manutention au déchargement</span>
+                                                                    </li>
+                                                                    <li class="service-card__list__items">
+                                                                        <span class="service-card__list__items__icon d-inline-flex align-items-center justify-content-center rounded-circle">
+                                                                            <i class="icofont-check"></i>
+                                                                        </span>
+                                                                        <span class="service-card__list__items__text">Assurance</span>
+                                                                    </li>
+                                                                    <li class="service-card__list__items">
+                                                                        <span class="service-card__list__items__icon d-inline-flex align-items-center justify-content-center rounded-circle">
+                                                                            <i class="icofont-check"></i>
+                                                                        </span>
+                                                                        <span class="service-card__list__items__text">frais de route (péage, carburant, ferry,…)</span>
+                                                                    </li>
+                                                                </ul>
+                                                                <div class="text-center mt-auto">
+                                                                    <button type="button" class="service-card__btn btn-theme bg-navy-blue no-shadow mt-3">Choisir</button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6 d-flex">
+                                                            <div class="service-card d-flex flex-column my-4">
+                                                                <div class="service-card__header text-center">
+                                                                    <div class="service-card__icon d-inline-flex align-items-center justify-content-center rounded-circle">
+                                                                        <i class="icofont-truck-alt"></i>
+                                                                    </div>
+                                                                    <h3 class="service-card__title mt-3">Standard</h3>
+                                                                    <p class="service-card__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, inventore?</p>
+                                                                </div>
+                                                                <ul class="service-card__list pl-0 mb-0">
+                                                                    <li class="service-card__list__items">
+                                                                        <span class="service-card__list__items__icon d-inline-flex align-items-center justify-content-center rounded-circle">
+                                                                            <i class="icofont-check"></i>
+                                                                        </span>
+                                                                        <span class="service-card__list__items__text">démontage du mobilier</span>
+                                                                    </li>
+                                                                    <li class="service-card__list__items">
+                                                                        <span class="service-card__list__items__icon d-inline-flex align-items-center justify-content-center rounded-circle">
+                                                                            <i class="icofont-check"></i>
+                                                                        </span>
+                                                                        <span class="service-card__list__items__text">Emballage du fragile</span>
+                                                                    </li>
+                                                                    <li class="service-card__list__items">
+                                                                        <span class="service-card__list__items__icon d-inline-flex align-items-center justify-content-center rounded-circle">
+                                                                            <i class="icofont-check"></i>
+                                                                        </span>
+                                                                        <span class="service-card__list__items__text">protection du mobilier</span>
+                                                                    </li>
+                                                                    <li class="service-card__list__items">
+                                                                        <span class="service-card__list__items__icon d-inline-flex align-items-center justify-content-center rounded-circle">
+                                                                            <i class="icofont-check"></i>
+                                                                        </span>
+                                                                        <span class="service-card__list__items__text">manutention au chargement</span>
+                                                                    </li>
+                                                                    <li class="service-card__list__items">
+                                                                        <span class="service-card__list__items__icon d-inline-flex align-items-center justify-content-center rounded-circle">
+                                                                            <i class="icofont-check"></i>
+                                                                        </span>
+                                                                        <span class="service-card__list__items__text">transport</span>
+                                                                    </li>
+                                                                    <li class="service-card__list__items">
+                                                                        <span class="service-card__list__items__icon d-inline-flex align-items-center justify-content-center rounded-circle">
+                                                                            <i class="icofont-check"></i>
+                                                                        </span>
+                                                                        <span class="service-card__list__items__text">manutention au déchargement</span>
+                                                                    </li>
+                                                                    <li class="service-card__list__items">
+                                                                        <span class="service-card__list__items__icon d-inline-flex align-items-center justify-content-center rounded-circle">
+                                                                            <i class="icofont-check"></i>
+                                                                        </span>
+                                                                        <span class="service-card__list__items__text">remontage du mobilier</span>
+                                                                    </li>
+                                                                    <li class="service-card__list__items">
+                                                                        <span class="service-card__list__items__icon d-inline-flex align-items-center justify-content-center rounded-circle">
+                                                                            <i class="icofont-check"></i>
+                                                                        </span>
+                                                                        <span class="service-card__list__items__text">Assurance</span>
+                                                                    </li>
+                                                                    <li class="service-card__list__items">
+                                                                        <span class="service-card__list__items__icon d-inline-flex align-items-center justify-content-center rounded-circle">
+                                                                            <i class="icofont-check"></i>
+                                                                        </span>
+                                                                        <span class="service-card__list__items__text">frais de route (péage, carburant, ferry,…)</span>
+                                                                    </li>
+                                                                </ul>
+                                                                <div class="text-center mt-auto">
+                                                                    <button type="button" class="service-card__btn btn-theme bg-navy-blue no-shadow mt-3">Choisir</button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6 d-flex">
+                                                            <div class="service-card d-flex flex-column my-4">
+                                                                <div class="service-card__header text-center">
+                                                                    <div class="service-card__icon d-inline-flex align-items-center justify-content-center rounded-circle">
+                                                                        <i class="icofont-check"></i>
+                                                                    </div>
+                                                                    <h3 class="service-card__title mt-3">Compléte</h3>
+                                                                    <p class="service-card__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, inventore?</p>
+                                                                </div>
+                                                                <ul class="service-card__list pl-0 mb-0">
+                                                                    <li class="service-card__list__items">
+                                                                        <span class="service-card__list__items__icon d-inline-flex align-items-center justify-content-center rounded-circle">
+                                                                            <i class="icofont-check"></i>
+                                                                        </span>
+                                                                        <span class="service-card__list__items__text">(Vêtement et linge de lit Livres et documents Vaisselles et fragile Divers)</span>
+                                                                    </li>
+                                                                    <li class="service-card__list__items">
+                                                                        <span class="service-card__list__items__icon d-inline-flex align-items-center justify-content-center rounded-circle">
+                                                                            <i class="icofont-check"></i>
+                                                                        </span>
+                                                                        <span class="service-card__list__items__text">démontage du mobilier</span>
+                                                                    </li>
+                                                                    <li class="service-card__list__items">
+                                                                        <span class="service-card__list__items__icon d-inline-flex align-items-center justify-content-center rounded-circle">
+                                                                            <i class="icofont-check"></i>
+                                                                        </span>
+                                                                        <span class="service-card__list__items__text">protection du mobilier</span>
+                                                                    </li>
+                                                                    <li class="service-card__list__items">
+                                                                        <span class="service-card__list__items__icon d-inline-flex align-items-center justify-content-center rounded-circle">
+                                                                            <i class="icofont-check"></i>
+                                                                        </span>
+                                                                        <span class="service-card__list__items__text">manutention au chargement</span>
+                                                                    </li>
+                                                                    <li class="service-card__list__items">
+                                                                        <span class="service-card__list__items__icon d-inline-flex align-items-center justify-content-center rounded-circle">
+                                                                            <i class="icofont-check"></i>
+                                                                        </span>
+                                                                        <span class="service-card__list__items__text">transport</span>
+                                                                    </li>
+                                                                    <li class="service-card__list__items">
+                                                                        <span class="service-card__list__items__icon d-inline-flex align-items-center justify-content-center rounded-circle">
+                                                                            <i class="icofont-check"></i>
+                                                                        </span>
+                                                                        <span class="service-card__list__items__text">manutention au déchargement</span>
+                                                                    </li>
+                                                                    <li class="service-card__list__items">
+                                                                        <span class="service-card__list__items__icon d-inline-flex align-items-center justify-content-center rounded-circle">
+                                                                            <i class="icofont-check"></i>
+                                                                        </span>
+                                                                        <span class="service-card__list__items__text">remontage du mobilier</span>
+                                                                    </li>
+                                                                    <li class="service-card__list__items">
+                                                                        <span class="service-card__list__items__icon d-inline-flex align-items-center justify-content-center rounded-circle">
+                                                                            <i class="icofont-check"></i>
+                                                                        </span>
+                                                                        <span class="service-card__list__items__text">Assurance</span>
+                                                                    </li>
+                                                                    <li class="service-card__list__items">
+                                                                        <span class="service-card__list__items__icon d-inline-flex align-items-center justify-content-center rounded-circle">
+                                                                            <i class="icofont-check"></i>
+                                                                        </span>
+                                                                        <span class="service-card__list__items__text">frais de route (péage, carburant, ferry,…)</span>
+                                                                    </li>
+                                                                </ul>
+                                                                <div class="text-center mt-auto">
+                                                                    <button type="button" class="service-card__btn btn-theme bg-navy-blue no-shadow mt-3">Choisir</button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        {{-- <div class="col-2 mt-1">
                                                             <div class="form-group" style="position: relative">
                                                                 
                                                                 <span style="font-size: 20px">Économique</span> <input id="économique" name="économique" value="économique" style="position: absolute; top: 10px; right: 0" type="checkbox">
@@ -332,9 +640,9 @@
                                                             @error('économique')
                                                                 <span class="text-danger alert">{{ $message }}</span>
                                                             @enderror
-                                                        </div>
+                                                        </div> --}}
                                                     </div>
-                                                    <div class="row mt-4">
+                                                    {{-- <div class="row mt-4">
                                                         <div class="col-2 mt-1">
                                                             <div class="form-group" style="position: relative">
                                                                 <span style="font-size: 20px">Standard</span> <input id="standard" name="standard" value="standard" style="position: absolute; top: 10px; right: 0" type="checkbox">
@@ -358,8 +666,8 @@
                                                             <span class="text-danger alert">{{ $message }}</span>
                                                             @enderror
                                                         </div>
-                                                    </div>
-                                                    <div class="row mt-4">
+                                                    </div> --}}
+                                                    {{-- <div class="row mt-4">
                                                         <div class="col-2 mt-1">
                                                             <div class="form-group" style="position: relative">
                                                                 <span style="font-size: 20px">Compléte</span> <input id="compléte" name="compléte" value="compléte"  style="position: absolute; top: 10px; right: 0" type="checkbox">
@@ -383,14 +691,14 @@
                                                             <span class="text-danger alert">{{ $message }}</span>
                                                             @enderror
                                                         </div>
-                                                    </div>
+                                                    </div> --}}
                                                     <div class="row mt-4">
-                                                        <div class="col-2 mt-1">
+                                                        <div class="col-md-3 mt-1">
                                                             <div class="form-group" style="position: relative">
                                                                 <span style="font-size: 20px">Ma formule Clicmove</span> <input id="clicmove"  name="clicmove" value="clicmove" style="position: absolute; top: 10px; right: 0" type="checkbox">
                                                             </div>
                                                         </div>
-                                                        <div class="col-6 customSelectFix">
+                                                        <div class="col-md-9 customSelectFix">
                                                             <select required>
                                                                 <option > Cette formule permet de composer mon déménagement à la carte en adaptant les formules existantes en fonction de mon besoin réel. </option>
                                                                 <option disabled>&checkmark; vous pouvez décrire vos besoins dans les informations complémentaires</option>
@@ -406,13 +714,13 @@
                                                         <i class="icofont-warning-alt mr-2"></i>informations complémentaires
                                                       </h5>
                                                     <div class="row">
-                                                        <div class="col-8">
+                                                        <div class="col-12">
                                                             <textarea name="informations"   class="form-control"
                                                                 rows="7" placeholder="informations complémentaires "></textarea>
                                                         </div>
                                                     </div>
                                                     <div class="row mt-4">
-                                                        <div class="col-8 mb-3">
+                                                        <div class="col-12 mb-3">
                                                             <h5>Vous pouvez compléter votre demande avec des photos</h5> 
                                                             <img src="{{ asset('uploads/announcement/blank.jpg') }}" alt=""  height="200" class="d-block setting-form_cleint_feature_image"> 
                                                             <input class="d-none" type="file" name="image" id="cleint_feature_image" required>
@@ -426,7 +734,7 @@
                                                     {{-- <h3 class="mt-4">données </h3> --}}
                                                     
                                                     <div class="row">
-                                                        <div class="col-8">
+                                                        <div class="col-12">
                                                             <div class="form-group input-group">
                                                                 <div class="form-group__wrapper w-100 position-relative">
                                                                     <label class="form-group__wrapper__icon d-inline-flex align-items-center justify-content-center position-absolute mb-0 p-2" for="fname">
@@ -464,7 +772,7 @@
                                                                 </div> 
 
                                                                 <div class="row">
-                                                                    <div class="col-5">
+                                                                    <div class="col-md-6">
                                                                         <div class="form-group ">
                                                                             <div class="input-group" id="country_code_wrapper">
                                                                                 <div class="form-group__wrapper form-group__wrapper--counrty-select w-100 position-relative">
@@ -483,7 +791,7 @@
                                                                             </div> 
                                                                         </div>
                                                                     </div>
-                                                                    <div class="col-7">
+                                                                    <div class="col-md-6">
                                                                         <div class="form-group input-group">
                                                                             <div class="form-group__wrapper w-100 position-relative">
                                                                                 <label class="form-group__wrapper__icon d-inline-flex align-items-center justify-content-center position-absolute mb-0 p-2" for="phone">
