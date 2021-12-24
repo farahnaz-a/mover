@@ -19,6 +19,40 @@
         height: auto;
         padding-right: 30px;
     }
+    .form-group__wrapper__icon{
+        width: 45px;
+        height: 100%;
+        cursor: pointer;
+    }
+    .form-group__wrapper__input{
+        padding-left: 45px;
+    }
+
+    .form-group__wrapper--counrty-select .form-group__wrapper__input .nice-select{
+        border: 0;
+        background: transparent;
+    }
+
+    .form-group__wrapper--counrty-select .form-group__wrapper__input .nice-select::after{
+       margin-top: -7px;
+    }
+
+    .service-card{
+        background-color: #f2f2f2;
+    }
+    .service-card__icon{
+        font-size: 40px;
+        width: 80px;
+        height: 80px;
+        color: #5fc2ba;
+        background-color: #232135;
+        border: 8px solid #fafafa;
+        margin-top: -50%;
+    }
+    .service-card__title{
+        font-size: 22px;
+    }
+
 </style>
 @endsection
 
@@ -105,52 +139,45 @@
                                                         <div class="col-8">
                                                             <div class="form-group">
                                                                 <textarea name="list"   class="form-control" rows="7"
-                                                                    placeholder="je ne connais pas mon volume mais j'ai une liste" required></textarea>
+                                                                    placeholder="(*pensez à faire un inventaire pièce par pièce)" required></textarea>
                                                             </div>
                                                         </div>
                                                     </div>
                                                     <div class="row my-3">
-                                                        <div class="col-3">
-                                                            <div class="form-group">
-                                                                <h5> Biens particuliers </h5>
+                                                        <div class="col-4">
+                                                            <div class="form-group d-flex align-items-center">
+                                                                <h5 class="d-inline-block">Biens particuliers</h5>
                                                                 {{-- <input type="text" placeholder="Biens particuliers"
                                                                     class="form-control" name="individual_goods"/> --}}
+                                                                <div class="d-flex ml-auto">
+                                                                    <label for="no" class="d-flex align-items-center mr-3">
+                                                                        non <input type="radio" id="no" name="individual_goods_status" style="margin-left: 5px" value="no" required>
+                                                                    </label>
+    
+                                                                    <label for="yes" class="d-flex align-items-center">
+                                                                        oui <input type="radio" id="yes" name="individual_goods_status" value="yes" style="margin-left: 5px" required>
+                                                                    </label> 
+                                                                </div> 
                                                             </div>
                                                         </div>
-                                                        <div class="col-5">
-                                                            <div class="row">
-                                                                <div class="col-3">
-                                                                    <div class="d-flex">
-                                                                        <label for="no" class="d-flex align-items-center mr-3">
-                                                                            non <input type="radio" id="no" name="individual_goods_status" style="margin-left: 5px" value="no" required>
-                                                                        </label>
-        
-                                                                        <label for="yes" class="d-flex align-items-center">
-                                                                            oui <input type="radio" id="yes" name="individual_goods_status" value="yes" style="margin-left: 5px" required>
-                                                                        </label> 
-                                                                    </div> 
-                                                                </div>
-                                                                <div class="col-9">
-                                                                    <textarea name="individual_goods" class="form-control" style="height: 45px"></textarea>
-                                                                </div>
-                                                            </div> 
+                                                        <div class="col-4">
+                                                            <textarea name="individual_goods" class="form-control" style="height: 45px"></textarea>
+                                                            <span>*piano droit, frigo américain, coffre fort </span>
                                                             {{-- <label for="vehicle1">non</label>
                                                             <input type="checkbox" id="vehicle1" name="vehicle1">
                                                             <label for="vehicle2"> oui</label> 
                                                             <input type="checkbox" id="vehicle2" name="vehicle2"><br> --}}
-                                                            <span>*piano droit, frigo américain, coffre fort, table en
-                                                                marbre….</span>
 
                                                         </div>
                                                     </div>
                                                     <div class="row my-3">
                                                         <div class="col-4">
                                                             <div class="form-group">
-                                                                <h5>départ</h5>
+                                                                {{-- <h5>départ</h5> --}}
                                                                 {{-- <input type="text" placeholder="type de lieu"
                                                                     class="form-control" name="place_type" /> --}}
                                                                 <select name="place_type_depart"   required>
-                                                                    <option value="">type de lieu depart</option>
+                                                                    <option value="">type de lieu départ</option>
                                                                     <option value="maison">maison</option>
                                                                     <option value="appartement">appartement</option>
                                                                     <option value="garde-meuble">garde meuble</option>
@@ -162,11 +189,11 @@
                                                         </div> 
                                                         <div class="col-4">
                                                             <div class="form-group">
-                                                                <h5>arrivée</h5>
+                                                                {{-- <h5>arrivée</h5> --}}
                                                                 {{-- <input type="text" placeholder="type de lieu"
                                                                     class="form-control" name="place_type" /> --}}
                                                                 <select name="place_type_arrivee"   required>
-                                                                    <option value="">type de lieu arrivee</option>
+                                                                    <option value="">type de lieu arrivée</option>
                                                                     <option value="maison">maison</option>
                                                                     <option value="appartement">appartement</option>
                                                                     <option value="garde-meuble">garde meuble</option>
@@ -182,9 +209,9 @@
                                                     <div class="row my-3">
                                                         <div class="col-4">
                                                             <div class="form-group">
-                                                                <h5>départ</h5>
+                                                                {{-- <h5>départ</h5> --}}
                                                                 <select name="floor_depart"   required>
-                                                                    <option value="">étages depart</option>
+                                                                    <option value="">étages départ</option>
                                                                     <option value="RDC">RDC</option>
                                                                     <option value="1">1</option>
                                                                     <option value="2">2</option>
@@ -200,9 +227,9 @@
                                                         </div>
                                                         <div class="col-4"> 
                                                              <div class="form-group">
-                                                                <h5>arrivée</h5>
+                                                                {{-- <h5>arrivée</h5> --}}
                                                                 <select name="floor_arrivee"   required>
-                                                                    <option value="">étages arrivee</option>
+                                                                    <option value="">étages arrivée</option>
                                                                     <option value="RDC">RDC</option>
                                                                     <option value="1">1</option>
                                                                     <option value="2">2</option>
@@ -224,17 +251,17 @@
                                                     </div>
                                                     <div class="row my-3">
                                                         <div class="col-4">
-                                                            <h5>départ</h5>
+                                                            {{-- <h5>départ</h5> --}}
                                                              <select name="ascenseur_depart" required> 
-                                                                <option value="">ascenseur depart</option>
+                                                                <option value="">ascenseur départ</option>
                                                                 <option value="non">non</option>
                                                                 <option value="oui">oui</option>
                                                             </select>
                                                         </div>  
                                                         <div class="col-4">
-                                                            <h5>arrivée</h5>
+                                                            {{-- <h5>arrivée</h5> --}}
                                                              <select name="ascenseur_arrivee" required> 
-                                                                <option value="">ascenseur arrivee</option>
+                                                                <option value="">ascenseur arrivée</option>
                                                                 <option value="non">non</option>
                                                                 <option value="oui">oui</option>
                                                             </select>
@@ -242,17 +269,17 @@
                                                     </div> 
                                                     <div class="row my-3">
                                                         <div class="col-4"> 
-                                                            <h5>départ</h5>
+                                                            {{-- <h5>départ</h5> --}}
                                                             <select name="access_depart" required> 
-                                                                <option value="">accès depart</option>
+                                                                <option value="">accès départ</option>
                                                                 <option value="on peut se garer devant">on peut se garer devant</option>
                                                                 <option value="on doit se garer plus loin">on doit se garer plus loin</option>
                                                             </select> 
                                                         </div>
                                                         <div class="col-4"> 
-                                                            <h5>arrivée</h5>
+                                                            {{-- <h5>arrivée</h5> --}}
                                                             <select name="access_arrivee" required> 
-                                                                <option value="">accès arrivee</option>
+                                                                <option value="">accès arrivée</option>
                                                                 <option value="on peut se garer devant">on peut se garer devant</option>
                                                                 <option value="on doit se garer plus loin">on doit se garer plus loin</option>
                                                             </select> 
@@ -260,8 +287,30 @@
 
                                                     </div> 
                                                     <br>
-                                                    <h5 class="mt-3">Je choisis ma formule en focntion de mes besoins</h5>
+                                                    <h5 class="mt-3">Je choisis ma formule de déménagement</h5>
                                                     <div class="row mt-4">
+
+                                                        <div class="col-lg-6">
+                                                            <div class="service-card">
+                                                                <div class="service-card__header text-center">
+                                                                    <div class="service-card__icon d-inline-flex align-items-center justify-content-center rounded-circle">
+                                                                        <i class="icofont-fast-delivery"></i>
+                                                                    </div>
+                                                                    <h3 class="service-card__title mt-3">Économique</h3>
+                                                                    <p class="service-card__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, inventore?</p>
+                                                                </div>
+                                                                <ul class="service-card__list">
+                                                                    <li class="service-card__list__items">
+                                                                        <span class="service-card__list__items__icon d-inline-flex align-items-center jusify-content-center rounded-circle">
+                                                                            <i class="icofont-check"></i>
+                                                                        </span>
+                                                                        <span class="service-card__list__items__text">protection du mobilier</span>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+
+
                                                         <div class="col-2 mt-1">
                                                             <div class="form-group" style="position: relative">
                                                                 
@@ -272,7 +321,6 @@
                                                         <div class="col-6 customSelectFix">
                                                             <select  required >
                                                                 <option >Nombre de déménageur nécessaire (au minimum 2) </option>
-                                                                fdasfdfdfadfd
                                                                 <option disabled>&checkmark; protection du mobilier</option>
                                                                 <option disabled>&checkmark; manutention au chargement </option>
                                                                 <option disabled>&checkmark; transport</option>
@@ -366,9 +414,9 @@
                                                     <div class="row mt-4">
                                                         <div class="col-8 mb-3">
                                                             <h5>Vous pouvez compléter votre demande avec des photos</h5> 
-                                                            {{-- <img src="{{ asset('uploads/callouts/1.jpg') }}" alt=""> --}} 
-                                                            <input class="d-none" type="file" name="image" id="image" required>
-                                                            <label for="image" class="my-3 btn website-bg-color"><i class="icofont-arrow-up bg-light website-color rounded-circle"></i>Télécharger</label>
+                                                            <img src="{{ asset('uploads/announcement/blank.jpg') }}" alt=""  height="200" class="d-block setting-form_cleint_feature_image"> 
+                                                            <input class="d-none" type="file" name="image" id="cleint_feature_image" required>
+                                                            <label for="cleint_feature_image" class="my-3 btn website-bg-color"><i class="icofont-arrow-up bg-light website-color rounded-circle"></i>Télécharger</label>
                                                         </div>
                                                     </div>
                                                     
@@ -380,78 +428,79 @@
                                                     <div class="row">
                                                         <div class="col-8">
                                                             <div class="form-group input-group">
-                                                                <div class="input-group-append">
-                                                                    <span class="input-group-text" id="name"><i
-                                                                            class="icofont-user-alt-3 website-color"></i></span>
+                                                                <div class="form-group__wrapper w-100 position-relative">
+                                                                    <label class="form-group__wrapper__icon d-inline-flex align-items-center justify-content-center position-absolute mb-0 p-2" for="fname">
+                                                                        <i class="icofont-user-alt-3 website-color"></i>
+                                                                    </label>
+                                                                    <input id="fname" name="name" type="text" placeholder="Nom et premon" class="form-control form-group__wrapper__input" />
                                                                 </div>
-                                                                <input name="name" type="text" placeholder="Nom et premon"
-                                                                    class="form-control" />
                                                             </div>
                                                             <span class="text-success d-none" id="existing">You Already have An Account Please Login</span>
                                                             <div class="form-group input-group">
-                                                                <div class="input-group-append">
-                                                                    <span class="input-group-text" id="email"><i
-                                                                            class="icofont-email  website-color" ></i></span>
+                                                                <div class="form-group__wrapper w-100 position-relative">
+                                                                    <label class="form-group__wrapper__icon d-inline-flex align-items-center justify-content-center position-absolute mb-0 p-2" for="user_email">
+                                                                        <i class="icofont-email website-color"></i>
+                                                                    </label>
+                                                                    <input name="email" type="text" id="user_email" placeholder="Email" class="form-control form-group__wrapper__input" />
                                                                 </div>
-                                                                <input name="email" type="text" id="user_email" placeholder="Email"
-                                                                    class="form-control" />
                                                             </div>
                                                             <div class="form-group input-group">
-                                                                <div class="input-group-append">
-                                                                    <span class="input-group-text" id="password"><i
-                                                                            class="icofont-lock  website-color"></i></span>
+                                                                <div class="form-group__wrapper w-100 position-relative">
+                                                                    <label class="form-group__wrapper__icon d-inline-flex align-items-center justify-content-center position-absolute mb-0 p-2" for="pwd">
+                                                                        <i class="icofont-lock website-color"></i>
+                                                                    </label>
+                                                                    <input name="password" type="password" placeholder="Mot de passe" class="form-control form-group__wrapper__input"  id="pwd"/>
                                                                 </div>
-                                                                <input name="password" type="password"
-                                                                    placeholder="Mot de passe" class="form-control"  id="pwd"/>
                                                             </div>
                                                             <div id="optional" class="">
                                                                 <span class="text-danger" id="password_error"> </span>
                                                                 <div class="form-group input-group">
-                                                                    <div class="input-group-append">
-                                                                        <span class="input-group-text" id="confirm_password"><i
-                                                                                class="icofont-lock  website-color"></i></span>
+                                                                    <div class="form-group__wrapper w-100 position-relative">
+                                                                        <label class="form-group__wrapper__icon d-inline-flex align-items-center justify-content-center position-absolute mb-0 p-2" for="c_pwd">
+                                                                            <i class="icofont-lock website-color"></i>
+                                                                        </label>
+                                                                        <input name="confirm_password" type="password" placeholder="Confirmer votre mot de passe" class="form-control form-group__wrapper__input" id="c_pwd"/>
                                                                     </div>
-                                                                    <input name="confirm_password" type="password"
-                                                                        placeholder="Confirmer votre mot de passe"
-                                                                        class="form-control" id="c_pwd"/>
                                                                 </div> 
 
                                                                 <div class="row">
                                                                     <div class="col-5">
                                                                         <div class="form-group ">
                                                                             <div class="input-group" id="country_code_wrapper">
-                                                                                <div class="input-group-prepend">
-                                                                                    <label class="input-group-text"
-                                                                                        for="contry_code">
-                                                                                         <i class="icofont-world  website-color"></i></label>
-                                                                                </div> 
-                                                                                <select class="flex-grow-1 w-auto"
-                                                                                    name="country_code" id="contry_code">
-                                                                                    @foreach ( countryCode() as $item)
-                                                                                    <option value="{{ $item->phonecode }}"> {{ $item->iso }} ({{ $item->phonecode }})</option> 
-                                                                                    @endforeach 
-                                                                                </select>
+                                                                                <div class="form-group__wrapper form-group__wrapper--counrty-select w-100 position-relative">
+                                                                                    <label class="form-group__wrapper__icon d-inline-flex align-items-center justify-content-center position-absolute mb-0 p-2" for="contry_code">
+                                                                                        <i class="icofont-world website-color"></i>
+                                                                                    </label>
+                                                                                    <div class="form-control form-group__wrapper__input pt-0 pb-0 pr-0">
+                                                                                        <select class="w-100"
+                                                                                            name="country_code" id="contry_code">
+                                                                                            @foreach ( countryCode() as $item)
+                                                                                            <option value="{{ $item->phonecode }}"> {{ $item->iso }} ({{ $item->phonecode }})</option> 
+                                                                                            @endforeach 
+                                                                                        </select>
+                                                                                    </div>
+                                                                                </div>
                                                                             </div> 
                                                                         </div>
                                                                     </div>
                                                                     <div class="col-7">
                                                                         <div class="form-group input-group">
-                                                                            <div class="input-group-append">
-                                                                                <span class="input-group-text" id="phone"><i
-                                                                                        class="icofont-ui-call  website-color"></i></span>
+                                                                            <div class="form-group__wrapper w-100 position-relative">
+                                                                                <label class="form-group__wrapper__icon d-inline-flex align-items-center justify-content-center position-absolute mb-0 p-2" for="phone">
+                                                                                    <i class="icofont-ui-call website-color"></i>
+                                                                                </label>
+                                                                                <input id="phone" name="phone" type="text" placeholder="Phone" class="form-control form-group__wrapper__input" />
                                                                             </div>
-                                                                            <input name="phone" type="text" placeholder="Phone"
-                                                                                class="form-control" />
                                                                         </div>
                                                                     </div>
                                                                 </div>
                                                                 <div class="form-group input-group">
-                                                                    <div class="input-group-append">
-                                                                        <span class="input-group-text" id="pseudo"><i
-                                                                                class="icofont-ui-user  website-color"></i></span>
+                                                                    <div class="form-group__wrapper w-100 position-relative">
+                                                                        <label class="form-group__wrapper__icon d-inline-flex align-items-center justify-content-center position-absolute mb-0 p-2" for="pseudo">
+                                                                            <i class="icofont-ui-user website-color"></i>
+                                                                        </label>
+                                                                        <input id="pseudo" name="pseudo" type="text" placeholder="pseudo" class="form-control form-group__wrapper__input" />
                                                                     </div>
-                                                                    <input name="pseudo" type="text" placeholder="pseudo"
-                                                                        class="form-control" />
                                                                 </div>
                                                             </div>
                                                        
@@ -563,7 +612,7 @@
                                                         <div class="col-8">
                                                             <div class="form-group">
                                                                 <textarea name="list"   class="form-control" rows="7"
-                                                                    placeholder="je ne connais pas mon volume mais j'ai une liste" required></textarea>
+                                                                    placeholder="(*pensez à faire un inventaire pièce par pièce)" required></textarea>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -592,25 +641,24 @@
                                                                 </div>
                                                                 <div class="col-9">
                                                                     <textarea name="individual_goods" class="form-control" style="height: 45px"></textarea>
+                                                                    <span>*piano droit, frigo américain, coffre fort </span>
                                                                 </div>
                                                             </div> 
                                                             {{-- <label for="vehicle1">non</label>
                                                             <input type="checkbox" id="vehicle1" name="vehicle1">
                                                             <label for="vehicle2"> oui</label> 
                                                             <input type="checkbox" id="vehicle2" name="vehicle2"><br> --}}
-                                                            <span>*piano droit, frigo américain, coffre fort, table en
-                                                                marbre….</span>
 
                                                         </div> 
                                                     </div>
                                                     <div class="row my-3">
                                                         <div class="col-4">
                                                             <div class="form-group">
-                                                                <h5>départ</h5>
+                                                                {{-- <h5>départ</h5> --}}
                                                                 {{-- <input type="text" placeholder="type de lieu"
                                                                     class="form-control" name="place_type" /> --}}
                                                                 <select name="place_type_depart"   required>
-                                                                    <option value="">type de lieu depart</option>
+                                                                    <option value="">type de lieu départ</option>
                                                                     <option value="maison">maison</option>
                                                                     <option value="appartement">appartement</option>
                                                                     <option value="garde-meuble">garde meuble</option>
@@ -622,11 +670,11 @@
                                                         </div> 
                                                         <div class="col-4">
                                                             <div class="form-group">
-                                                                <h5>arrivée</h5>
+                                                                {{-- <h5>arrivée</h5> --}}
                                                                 {{-- <input type="text" placeholder="type de lieu"
                                                                     class="form-control" name="place_type" /> --}}
                                                                 <select name="place_type_arrivee"   required>
-                                                                    <option value="">type de lieu arrivee</option>
+                                                                    <option value="">type de lieu arrivée</option>
                                                                     <option value="maison">maison</option>
                                                                     <option value="appartement">appartement</option>
                                                                     <option value="garde-meuble">garde meuble</option>
@@ -642,9 +690,9 @@
                                                     <div class="row my-3">
                                                         <div class="col-4">
                                                             <div class="form-group">
-                                                                <h5>départ</h5>
+                                                                {{-- <h5>départ</h5> --}}
                                                                 <select name="floor_depart"   required>
-                                                                    <option value="">étages depart</option>
+                                                                    <option value="">étages départ</option>
                                                                     <option value="RDC">RDC</option>
                                                                     <option value="1">1</option>
                                                                     <option value="2">2</option>
@@ -660,9 +708,9 @@
                                                         </div>
                                                         <div class="col-4"> 
                                                              <div class="form-group">
-                                                                <h5>arrivée</h5>
+                                                                {{-- <h5>arrivée</h5> --}}
                                                                 <select name="floor_arrivee"   required>
-                                                                    <option value="">étages arrivee</option>
+                                                                    <option value="">étages arrivée</option>
                                                                     <option value="RDC">RDC</option>
                                                                     <option value="1">1</option>
                                                                     <option value="2">2</option>
@@ -683,17 +731,17 @@
                                                     </div>
                                                     <div class="row my-3">
                                                         <div class="col-4">
-                                                            <h5>départ</h5>
+                                                            {{-- <h5>départ</h5> --}}
                                                              <select name="ascenseur_depart" required> 
-                                                                <option value="">ascenseur depart</option>
+                                                                <option value="">ascenseur départ</option>
                                                                 <option value="non">non</option>
                                                                 <option value="oui">oui</option>
                                                             </select>
                                                         </div>  
                                                         <div class="col-4">
-                                                            <h5>arrivée</h5>
+                                                            {{-- <h5>arrivée</h5> --}}
                                                              <select name="ascenseur_arrivee" required> 
-                                                                <option value="">ascenseur arrivee</option>
+                                                                <option value="">ascenseur arrivée</option>
                                                                 <option value="non">non</option>
                                                                 <option value="oui">oui</option>
                                                             </select>
@@ -701,17 +749,17 @@
                                                     </div> 
                                                     <div class="row my-3">
                                                         <div class="col-4"> 
-                                                            <h5>départ</h5>
+                                                            {{-- <h5>départ</h5> --}}
                                                             <select name="access_depart" required> 
-                                                                <option value="">accès depart</option>
+                                                                <option value="">accès départ</option>
                                                                 <option value="on peut se garer devant">on peut se garer devant</option>
                                                                 <option value="on doit se garer plus loin">on doit se garer plus loin</option>
                                                             </select> 
                                                         </div>
                                                         <div class="col-4"> 
-                                                            <h5>arrivée</h5>
+                                                            {{-- <h5>arrivée</h5> --}}
                                                             <select name="access_arrivee" required> 
-                                                                <option value="">accès arrivee</option>
+                                                                <option value="">accès arrivée</option>
                                                                 <option value="on peut se garer devant">on peut se garer devant</option>
                                                                 <option value="on doit se garer plus loin">on doit se garer plus loin</option>
                                                             </select> 
@@ -742,9 +790,9 @@
                                                     <div class="row mt-4">
                                                         <div class="col-8 mb-3">
                                                             <h5>Vous pouvez compléter votre demande avec des photos</h5> 
-                                                            {{-- <img src="{{ asset('uploads/callouts/1.jpg') }}" alt=""> --}}
-                                                            <input class="d-none" type="file" name="image" id="image" required>
-                                                            <label for="image" class="my-3 btn website-bg-color"><i class="icofont-arrow-up bg-light website-color rounded-circle"></i>Télécharger</label>
+                                                            <img src="{{ asset('uploads/announcement/blank.jpg') }}" alt=""  height="200" class="d-block setting-form_cleint_feature_image"> 
+                                                            <input class="d-none" type="file" name="image" id="cleint_feature_image" required>
+                                                            <label for="cleint_feature_image" class="my-3 btn website-bg-color"><i class="icofont-arrow-up bg-light website-color rounded-circle"></i>Télécharger</label>
                                                         </div>
                                                     </div>
 
@@ -752,7 +800,7 @@
                                                     @guest
                                                     {{-- <h3 class="mt-4">données </h3> --}}
                                                     @if (session('errors'))
-                                                    <script>alert("{{ session('errors') }}")</script> 
+                                                    <script>alert("{{ session('errors') }}")</script>
                                                     @endif
                                                     <div class="row">
                                                         <div class="col-8">
@@ -989,11 +1037,11 @@
                                             <div class="row my-3">
                                                 <div class="col-4">
                                                     <div class="form-group">
-                                                        <h5>départ</h5>
+                                                        {{-- <h5>départ</h5> --}}
                                                         {{-- <input type="text" placeholder="type de lieu"
                                                             class="form-control" name="place_type" /> --}}
                                                         <select name="place_type_depart"   required>
-                                                            <option value="">type de lieu depart</option>
+                                                            <option value="">type de lieu départ</option>
                                                             <option value="maison">maison</option>
                                                             <option value="appartement">appartement</option>
                                                             <option value="garde-meuble">garde meuble</option>
@@ -1005,11 +1053,11 @@
                                                 </div> 
                                                 <div class="col-4">
                                                     <div class="form-group">
-                                                        <h5>arrivée</h5>
+                                                        {{-- <h5>arrivée</h5> --}}
                                                         {{-- <input type="text" placeholder="type de lieu"
                                                             class="form-control" name="place_type" /> --}}
                                                         <select name="place_type_arrivee"   required>
-                                                            <option value="">type de lieu arrivee</option>
+                                                            <option value="">type de lieu arrivée</option>
                                                             <option value="maison">maison</option>
                                                             <option value="appartement">appartement</option>
                                                             <option value="garde-meuble">garde meuble</option>
@@ -1024,9 +1072,9 @@
                                             <div class="row my-3">
                                                 <div class="col-4">
                                                     <div class="form-group">
-                                                        <h5>départ</h5>
+                                                        {{-- <h5>départ</h5> --}}
                                                         <select name="floor_depart"   required>
-                                                            <option value="">étages depart</option>
+                                                            <option value="">étages départ</option>
                                                             <option value="RDC">RDC</option>
                                                             <option value="1">1</option>
                                                             <option value="2">2</option>
@@ -1042,9 +1090,9 @@
                                                 </div>
                                                 <div class="col-4"> 
                                                      <div class="form-group">
-                                                        <h5>arrivée</h5>
+                                                        {{-- <h5>arrivée</h5> --}}
                                                         <select name="floor_arrivee"   required>
-                                                            <option value="">étages arrivee</option>
+                                                            <option value="">étages arrivée</option>
                                                             <option value="RDC">RDC</option>
                                                             <option value="1">1</option>
                                                             <option value="2">2</option>
@@ -1065,17 +1113,17 @@
                                             </div>
                                             <div class="row my-3">
                                                 <div class="col-4">
-                                                    <h5>départ</h5>
+                                                    {{-- <h5>départ</h5> --}}
                                                      <select name="ascenseur_depart" required> 
-                                                        <option value="">ascenseur depart</option>
+                                                        <option value="">ascenseur départ</option>
                                                         <option value="non">non</option>
                                                         <option value="oui">oui</option>
                                                     </select>
                                                 </div>  
                                                 <div class="col-4">
-                                                    <h5>arrivée</h5>
+                                                    {{-- <h5>arrivée</h5> --}}
                                                      <select name="ascenseur_arrivee" required> 
-                                                        <option value="">ascenseur arrivee</option>
+                                                        <option value="">ascenseur arrivée</option>
                                                         <option value="non">non</option>
                                                         <option value="oui">oui</option>
                                                     </select>
@@ -1083,17 +1131,17 @@
                                             </div> 
                                             <div class="row my-3">
                                                 <div class="col-4"> 
-                                                    <h5>départ</h5>
+                                                    {{-- <h5>départ</h5> --}}
                                                     <select name="access_depart" required> 
-                                                        <option value="">accès depart</option>
+                                                        <option value="">accès départ</option>
                                                         <option value="on peut se garer devant">on peut se garer devant</option>
                                                         <option value="on doit se garer plus loin">on doit se garer plus loin</option>
                                                     </select> 
                                                 </div>
                                                 <div class="col-4"> 
-                                                    <h5>arrivée</h5>
+                                                    {{-- <h5>arrivée</h5> --}}
                                                     <select name="access_arrivee" required> 
-                                                        <option value="">accès arrivee</option>
+                                                        <option value="">accès arrivée</option>
                                                         <option value="on peut se garer devant">on peut se garer devant</option>
                                                         <option value="on doit se garer plus loin">on doit se garer plus loin</option>
                                                     </select> 
@@ -1134,9 +1182,9 @@
                                             <div class="row mt-4">
                                                 <div class="col-8 mb-3">
                                                     <h5>Vous pouvez compléter votre demande avec des photos</h5> 
-                                                    {{-- <img src="{{ asset('uploads/callouts/1.jpg') }}" alt=""> --}}
-                                                    <input class="d-none" type="file" name="image" id="image" required>
-                                                    <label for="image" class="my-3 btn website-bg-color"><i class="icofont-arrow-up bg-light website-color rounded-circle"></i>Télécharger</label>
+                                                    <img src="{{ asset('uploads/announcement/blank.jpg') }}" alt=""  height="200" class="d-block setting-form_cleint_feature_image"> 
+                                                    <input class="d-none" type="file" name="image" id="cleint_feature_image" required>
+                                                    <label for="cleint_feature_image" class="my-3 btn website-bg-color"><i class="icofont-arrow-up bg-light website-color rounded-circle"></i>Télécharger</label>
                                                 </div>
                                             </div>
 
@@ -1364,11 +1412,11 @@
                                             <div class="row my-3">
                                                 <div class="col-4">
                                                     <div class="form-group">
-                                                        <h5>départ</h5>
+                                                        {{-- <h5>départ</h5> --}}
                                                         {{-- <input type="text" placeholder="type de lieu"
                                                             class="form-control" name="place_type" /> --}}
                                                         <select name="place_type_depart"   required>
-                                                            <option value="">type de lieu depart</option>
+                                                            <option value="">type de lieu départ</option>
                                                             <option value="maison">maison</option>
                                                             <option value="appartement">appartement</option>
                                                             <option value="garde-meuble">garde meuble</option>
@@ -1380,11 +1428,11 @@
                                                 </div> 
                                                 <div class="col-4">
                                                     <div class="form-group">
-                                                        <h5>arrivée</h5>
+                                                        {{-- <h5>arrivée</h5> --}}
                                                         {{-- <input type="text" placeholder="type de lieu"
                                                             class="form-control" name="place_type" /> --}}
                                                         <select name="place_type_arrivee"   required>
-                                                            <option value="">type de lieu arrivee</option>
+                                                            <option value="">type de lieu arrivée</option>
                                                             <option value="maison">maison</option>
                                                             <option value="appartement">appartement</option>
                                                             <option value="garde-meuble">garde meuble</option>
@@ -1399,9 +1447,9 @@
                                             <div class="row my-3">
                                                 <div class="col-4">
                                                     <div class="form-group">
-                                                        <h5>départ</h5>
+                                                        {{-- <h5>départ</h5> --}}
                                                         <select name="floor_depart"   required>
-                                                            <option value="">étages depart</option>
+                                                            <option value="">étages départ</option>
                                                             <option value="RDC">RDC</option>
                                                             <option value="1">1</option>
                                                             <option value="2">2</option>
@@ -1417,9 +1465,9 @@
                                                 </div>
                                                 <div class="col-4"> 
                                                      <div class="form-group">
-                                                        <h5>arrivée</h5>
-                                                        <select name="floor_arrivee"   required>
-                                                            <option value="">étages arrivee</option>
+                                                        {{-- <h5>arrivée</h5> --}}
+                                                        <select name="floor_arrivée"   required>
+                                                            <option value="">étages arrivée</option>
                                                             <option value="RDC">RDC</option>
                                                             <option value="1">1</option>
                                                             <option value="2">2</option>
@@ -1440,17 +1488,17 @@
                                             </div>
                                             <div class="row my-3">
                                                 <div class="col-4">
-                                                    <h5>départ</h5>
+                                                    {{-- <h5>départ</h5> --}}
                                                      <select name="ascenseur_depart" required> 
-                                                        <option value="">ascenseur depart</option>
+                                                        <option value="">ascenseur départ</option>
                                                         <option value="non">non</option>
                                                         <option value="oui">oui</option>
                                                     </select>
                                                 </div>  
                                                 <div class="col-4">
-                                                    <h5>arrivée</h5>
+                                                    {{-- <h5>arrivée</h5> --}}
                                                      <select name="ascenseur_arrivee" required> 
-                                                        <option value="">ascenseur arrivee</option>
+                                                        <option value="">ascenseur arrivée</option>
                                                         <option value="non">non</option>
                                                         <option value="oui">oui</option>
                                                     </select>
@@ -1458,17 +1506,17 @@
                                             </div> 
                                             <div class="row my-3">
                                                 <div class="col-4"> 
-                                                    <h5>départ</h5>
+                                                    {{-- <h5>départ</h5> --}}
                                                     <select name="access_depart" required> 
-                                                        <option value="">accès depart</option>
+                                                        <option value="">accès départ</option>
                                                         <option value="on peut se garer devant">on peut se garer devant</option>
                                                         <option value="on doit se garer plus loin">on doit se garer plus loin</option>
                                                     </select> 
                                                 </div>
                                                 <div class="col-4"> 
-                                                    <h5>arrivée</h5>
+                                                    {{-- <h5>arrivée</h5> --}}
                                                     <select name="access_arrivee" required> 
-                                                        <option value="">accès arrivee</option>
+                                                        <option value="">accès arrivée</option>
                                                         <option value="on peut se garer devant">on peut se garer devant</option>
                                                         <option value="on doit se garer plus loin">on doit se garer plus loin</option>
                                                     </select> 
@@ -1508,9 +1556,9 @@
                                             <div class="row mt-4">
                                                 <div class="col-8 mb-3">
                                                     <h5>Vous pouvez compléter votre demande avec des photos</h5> 
-                                                    {{-- <img src="{{ asset('uploads/callouts/1.jpg') }}" alt=""> --}}
-                                                    <input class="d-none" type="file" name="image" id="image" required>
-                                                    <label for="image" class="my-3 btn website-bg-color"><i class="icofont-arrow-up bg-light website-color rounded-circle"></i>Télécharger</label>
+                                                    <img src="{{ asset('uploads/announcement/blank.jpg') }}" alt=""  height="200" class="d-block setting-form_cleint_feature_image"> 
+                                                    <input class="d-none" type="file" name="image" id="cleint_feature_image" required>
+                                                    <label for="cleint_feature_image" class="my-3 btn website-bg-color"><i class="icofont-arrow-up bg-light website-color rounded-circle"></i>Télécharger</label>
                                                 </div>
                                             </div>
 
@@ -1740,11 +1788,11 @@
                                             <div class="row my-3">
                                                 <div class="col-4">
                                                     <div class="form-group">
-                                                        <h5>départ</h5>
+                                                        {{-- <h5>départ</h5> --}}
                                                         {{-- <input type="text" placeholder="type de lieu"
                                                             class="form-control" name="place_type" /> --}}
                                                         <select name="place_type_depart"   required>
-                                                            <option value="">type de lieu depart</option>
+                                                            <option value="">type de lieu départ</option>
                                                             <option value="maison">maison</option>
                                                             <option value="appartement">appartement</option>
                                                             <option value="garde-meuble">garde meuble</option>
@@ -1756,11 +1804,11 @@
                                                 </div> 
                                                 <div class="col-4">
                                                     <div class="form-group">
-                                                        <h5>arrivée</h5>
+                                                        {{-- <h5>arrivée</h5> --}}
                                                         {{-- <input type="text" placeholder="type de lieu"
                                                             class="form-control" name="place_type" /> --}}
                                                         <select name="place_type_arrivee"   required>
-                                                            <option value="">type de lieu arrivee</option>
+                                                            <option value="">type de lieu arrivée</option>
                                                             <option value="maison">maison</option>
                                                             <option value="appartement">appartement</option>
                                                             <option value="garde-meuble">garde meuble</option>
@@ -1775,9 +1823,9 @@
                                             <div class="row my-3">
                                                 <div class="col-4">
                                                     <div class="form-group">
-                                                        <h5>départ</h5>
+                                                        {{-- <h5>départ</h5> --}}
                                                         <select name="floor_depart"   required>
-                                                            <option value="">étages depart</option>
+                                                            <option value="">étages départ</option>
                                                             <option value="RDC">RDC</option>
                                                             <option value="1">1</option>
                                                             <option value="2">2</option>
@@ -1793,9 +1841,9 @@
                                                 </div>
                                                 <div class="col-4"> 
                                                      <div class="form-group">
-                                                        <h5>arrivée</h5>
+                                                        {{-- <h5>arrivée</h5> --}}
                                                         <select name="floor_arrivee"   required>
-                                                            <option value="">étages arrivee</option>
+                                                            <option value="">étages arrivée</option>
                                                             <option value="RDC">RDC</option>
                                                             <option value="1">1</option>
                                                             <option value="2">2</option>
@@ -1816,17 +1864,17 @@
                                             </div>
                                             <div class="row my-3">
                                                 <div class="col-4">
-                                                    <h5>départ</h5>
+                                                    {{-- <h5>départ</h5> --}}
                                                      <select name="ascenseur_depart" required> 
-                                                        <option value="">ascenseur depart</option>
+                                                        <option value="">ascenseur départ</option>
                                                         <option value="non">non</option>
                                                         <option value="oui">oui</option>
                                                     </select>
                                                 </div>  
                                                 <div class="col-4">
-                                                    <h5>arrivée</h5>
+                                                    {{-- <h5>arrivée</h5> --}}
                                                      <select name="ascenseur_arrivee" required> 
-                                                        <option value="">ascenseur arrivee</option>
+                                                        <option value="">ascenseur arrivée</option>
                                                         <option value="non">non</option>
                                                         <option value="oui">oui</option>
                                                     </select>
@@ -1834,17 +1882,17 @@
                                             </div> 
                                             <div class="row my-3">
                                                 <div class="col-4"> 
-                                                    <h5>départ</h5>
+                                                    {{-- <h5>départ</h5> --}}
                                                     <select name="access_depart" required> 
-                                                        <option value="">accès depart</option>
+                                                        <option value="">accès départ</option>
                                                         <option value="on peut se garer devant">on peut se garer devant</option>
                                                         <option value="on doit se garer plus loin">on doit se garer plus loin</option>
                                                     </select> 
                                                 </div>
                                                 <div class="col-4"> 
-                                                    <h5>arrivée</h5>
+                                                    {{-- <h5>arrivée</h5> --}}
                                                     <select name="access_arrivee" required> 
-                                                        <option value="">accès arrivee</option>
+                                                        <option value="">accès arrivée</option>
                                                         <option value="on peut se garer devant">on peut se garer devant</option>
                                                         <option value="on doit se garer plus loin">on doit se garer plus loin</option>
                                                     </select> 
@@ -1876,9 +1924,9 @@
                                             <div class="row mt-4">
                                                 <div class="col-8 mb-3">
                                                     <h5>Vous pouvez compléter votre demande avec des photos</h5> 
-                                                    {{-- <img src="{{ asset('uploads/callouts/1.jpg') }}" alt=""> --}}
-                                                    <input class="d-none" type="file" name="image" id="image" required>
-                                                    <label for="image" class="my-3 btn website-bg-color"><i class="icofont-arrow-up bg-light website-color rounded-circle"></i>Télécharger</label>
+                                                    <img src="{{ asset('uploads/announcement/blank.jpg') }}" alt=""  height="200" class="d-block setting-form_cleint_feature_image"> 
+                                                    <input class="d-none" type="file" name="image" id="cleint_feature_image" required>
+                                                    <label for="cleint_feature_image" class="my-3 btn website-bg-color"><i class="icofont-arrow-up bg-light website-color rounded-circle"></i>Télécharger</label>
                                                 </div>
                                             </div>
 
@@ -2114,17 +2162,17 @@
                                             </div>
                                             <div class="row my-3">
                                                 <div class="col-4"> 
-                                                    <h5>départ</h5>
+                                                    {{-- <h5>départ</h5> --}}
                                                     <select name="access_depart" required> 
-                                                        <option value="">accès depart</option>
+                                                        <option value="">accès départ</option>
                                                         <option value="on peut se garer devant">on peut se garer devant</option>
                                                         <option value="on doit se garer plus loin">on doit se garer plus loin</option>
                                                     </select> 
                                                 </div>
                                                 <div class="col-4"> 
-                                                    <h5>arrivée</h5>
+                                                    {{-- <h5>arrivée</h5> --}}
                                                     <select name="access_arrivee" required> 
-                                                        <option value="">accès arrivee</option>
+                                                        <option value="">accès arrivée</option>
                                                         <option value="on peut se garer devant">on peut se garer devant</option>
                                                         <option value="on doit se garer plus loin">on doit se garer plus loin</option>
                                                     </select> 
@@ -2177,9 +2225,9 @@
                                             <div class="row mt-4">
                                                 <div class="col-8 mb-3">
                                                     <h5>Vous pouvez compléter votre demande avec des photos</h5> 
-                                                    {{-- <img src="{{ asset('uploads/callouts/1.jpg') }}" alt=""> --}}
-                                                    <input class="d-none" type="file" name="image" id="image" required>
-                                                    <label for="image" class="my-3 btn website-bg-color"><i class="icofont-arrow-up bg-light website-color rounded-circle"></i>Télécharger</label>
+                                                    <img src="{{ asset('uploads/announcement/blank.jpg') }}" alt=""  height="200" class="d-block setting-form_cleint_feature_image"> 
+                                                    <input class="d-none" type="file" name="image" id="cleint_feature_image" required>
+                                                    <label for="cleint_feature_image" class="my-3 btn website-bg-color"><i class="icofont-arrow-up bg-light website-color rounded-circle"></i>Télécharger</label>
                                                 </div>
                                             </div>
 
@@ -2403,9 +2451,9 @@
                                             <div class="row mt-4">
                                                 <div class="col-8 mb-3">
                                                     <h5>Vous pouvez compléter votre demande avec des photos</h5> 
-                                                    {{-- <img src="{{ asset('uploads/callouts/1.jpg') }}" alt=""> --}}
-                                                    <input class="d-none" type="file" name="image" id="image" required>
-                                                    <label for="image" class="my-3 btn website-bg-color"><i class="icofont-arrow-up bg-light website-color rounded-circle"></i>Télécharger</label>
+                                                    <img src="{{ asset('uploads/announcement/blank.jpg') }}" alt=""  height="200" class="d-block setting-form_cleint_feature_image"> 
+                                                    <input class="d-none" type="file" name="image" id="cleint_feature_image" required>
+                                                    <label for="cleint_feature_image" class="my-3 btn website-bg-color"><i class="icofont-arrow-up bg-light website-color rounded-circle"></i>Télécharger</label>
                                                 </div>
                                             </div>
 
@@ -2605,9 +2653,9 @@
                                             <div class="row mt-4">
                                                 <div class="col-8 mb-3">
                                                     <h5>Vous pouvez compléter votre demande avec des photos</h5> 
-                                                    {{-- <img src="{{ asset('uploads/callouts/1.jpg') }}" alt=""> --}}
-                                                    <input class="d-none" type="file" name="image" id="image" required>
-                                                    <label for="image" class="my-3 btn website-bg-color"><i class="icofont-arrow-up bg-light website-color rounded-circle"></i>Télécharger</label>
+                                                    <img src="{{ asset('uploads/announcement/blank.jpg') }}" alt=""  height="200" class="d-block setting-form_cleint_feature_image"> 
+                                                    <input class="d-none" type="file" name="image" id="cleint_feature_image" required>
+                                                    <label for="cleint_feature_image" class="my-3 btn website-bg-color"><i class="icofont-arrow-up bg-light website-color rounded-circle"></i>Télécharger</label>
                                                 </div>
                                             </div>
                                             
@@ -2845,9 +2893,9 @@
                                             <div class="row mt-4">
                                                 <div class="col-8 mb-3">
                                                     <h5>Vous pouvez compléter votre demande avec des photos</h5> 
-                                                    {{-- <img src="{{ asset('uploads/callouts/1.jpg') }}" alt=""> --}}
-                                                    <input class="d-none" type="file" name="image" id="image" required>
-                                                    <label for="image" class="my-3 btn website-bg-color"><i class="icofont-arrow-up bg-light website-color rounded-circle"></i>Télécharger</label>
+                                                    <img src="{{ asset('uploads/announcement/blank.jpg') }}" alt=""  height="200" class="d-block setting-form_cleint_feature_image"> 
+                                                    <input class="d-none" type="file" name="image" id="cleint_feature_image" required>
+                                                    <label for="cleint_feature_image" class="my-3 btn website-bg-color"><i class="icofont-arrow-up bg-light website-color rounded-circle"></i>Télécharger</label>
                                                 </div>
                                             </div>
 
@@ -3050,12 +3098,11 @@
                 }
                 else{
                     $('#password_error').addClass('d-none');
-                }
-              
+                } 
             });  
 
 
-//   
+
             var autocomplete;
             var depart = 'depart';
             var arrivee = 'arrivee';
@@ -3072,8 +3119,18 @@
                 var near_place = autocomplete.getPlace();
             });
             
-                
+            /* Uploade and change image functions */
+            let imgInp = document.querySelector("#cleint_feature_image");
+            let imgage = document.querySelector(".setting-form_cleint_feature_image");
+            imgInp.onchange = evt => {
+                const [file] = imgInp.files
+                if (file) {
+                    imgage.src = URL.createObjectURL(file)
+                }
+            }    
         });
+
+        
     </script>
  
         <!-- transport scripts -->
