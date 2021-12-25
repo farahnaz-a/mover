@@ -88,6 +88,12 @@
         margin-right: 10px;
         flex-shrink: 0;
     }
+    .service-card__label{
+        transition: background .3s linear;
+    }
+    .service-card__checkbox:checked ~ .service-card__label{
+        background-color: #5fc2ba;
+    }
 
     @media screen and (max-width: 575px){
         .logo-footer{
@@ -357,8 +363,8 @@
                                                     <h5 class="mt-3">Je choisis ma formule de déménagement</h5>
                                                     {{-- Service Card Section Start --}}
                                                     <div class="row mt-4">
-                                                        <div class="col-md-6 d-flex">
-                                                            <div class="service-card d-flex flex-column my-4">
+                                                        <div class="col-md-6 d-flex flex-column">
+                                                            <div class="service-card d-flex flex-column h-100 my-4">
                                                                 <div class="service-card__header text-center">
                                                                     <div class="service-card__icon d-inline-flex align-items-center justify-content-center rounded-circle">
                                                                         <i class="icofont-worker"></i>
@@ -423,12 +429,16 @@
                                                                     </li>
                                                                 </ul>
                                                                 <div class="text-center mt-auto">
-                                                                    <button type="button" class="service-card__btn btn-theme bg-navy-blue no-shadow mt-3">Choisir</button>
+                                                                    <input type="checkbox" id="clicmove" name="clicmove" value="clicmove" class="service-card__checkbox d-none">
+                                                                    <label for="clicmove" role="button" class="btn-theme bg-navy-blue no-shadow mt-3 service-card__label">Choisir</label>
                                                                 </div>
                                                             </div>
+                                                            @error('clicmove')
+                                                            <span class="text-danger alert">{{ $message }}</span>
+                                                            @enderror
                                                         </div>
-                                                        <div class="col-md-6 d-flex">
-                                                            <div class="service-card d-flex flex-column my-4">
+                                                        <div class="col-md-6 d-flex flex-column">
+                                                            <div class="service-card d-flex flex-column h-100 my-4">
                                                                 <div class="service-card__header text-center">
                                                                     <div class="service-card__icon d-inline-flex align-items-center justify-content-center rounded-circle">
                                                                         <i class="icofont-dollar"></i>
@@ -475,12 +485,16 @@
                                                                     </li>
                                                                 </ul>
                                                                 <div class="text-center mt-auto">
-                                                                    <button type="button" class="service-card__btn btn-theme bg-navy-blue no-shadow mt-3">Choisir</button>
+                                                                    <input type="checkbox" id="économique" name="économique" value="économique" class="service-card__checkbox d-none">
+                                                                    <label for="économique" role="button" class="btn-theme bg-navy-blue no-shadow mt-3 service-card__label">Choisir</label>
                                                                 </div>
                                                             </div>
+                                                            @error('économique')
+                                                                <span class="text-danger alert">{{ $message }}</span>
+                                                            @enderror
                                                         </div>
-                                                        <div class="col-md-6 d-flex">
-                                                            <div class="service-card d-flex flex-column my-4">
+                                                        <div class="col-md-6 d-flex flex-column">
+                                                            <div class="service-card d-flex flex-column h-100 my-4">
                                                                 <div class="service-card__header text-center">
                                                                     <div class="service-card__icon d-inline-flex align-items-center justify-content-center rounded-circle">
                                                                         <i class="icofont-truck-alt"></i>
@@ -545,12 +559,16 @@
                                                                     </li>
                                                                 </ul>
                                                                 <div class="text-center mt-auto">
-                                                                    <button type="button" class="service-card__btn btn-theme bg-navy-blue no-shadow mt-3">Choisir</button>
+                                                                    <input type="checkbox" id="standard" name="standard" value="standard" class="service-card__checkbox d-none">
+                                                                    <label for="standard" role="button" class="btn-theme bg-navy-blue no-shadow mt-3 service-card__label">Choisir</label>
                                                                 </div>
                                                             </div>
+                                                            @error('standard')
+                                                            <span class="text-danger alert">{{ $message }}</span>
+                                                            @enderror
                                                         </div>
-                                                        <div class="col-md-6 d-flex">
-                                                            <div class="service-card d-flex flex-column my-4">
+                                                        <div class="col-md-6 d-flex flex-column">
+                                                            <div class="service-card d-flex flex-column h-100 my-4">
                                                                 <div class="service-card__header text-center">
                                                                     <div class="service-card__icon d-inline-flex align-items-center justify-content-center rounded-circle">
                                                                         <i class="icofont-check"></i>
@@ -615,16 +633,22 @@
                                                                     </li>
                                                                 </ul>
                                                                 <div class="text-center mt-auto">
-                                                                    <button type="button" class="service-card__btn btn-theme bg-navy-blue no-shadow mt-3">Choisir</button>
+                                                                    <input type="checkbox" id="compléte" name="compléte" value="compléte" class="service-card__checkbox d-none">
+                                                                    <label for="compléte" role="button" class="btn-theme bg-navy-blue no-shadow mt-3 service-card__label">Choisir</label>
                                                                 </div>
                                                             </div>
+                                                            @error('compléte')
+                                                            <span class="text-danger alert">{{ $message }}</span>
+                                                            @enderror
                                                         </div>
-                                                        {{-- <div class="col-2 mt-1">
+                                                    </div>
+                                                    {{-- <div class="row mt-4">
+                                                        <div class="col-2 mt-1">
                                                             <div class="form-group" style="position: relative">
                                                                 
                                                                 <span style="font-size: 20px">Économique</span> <input id="économique" name="économique" value="économique" style="position: absolute; top: 10px; right: 0" type="checkbox">
                                                             </div>
-
+    
                                                         </div>
                                                         <div class="col-6 customSelectFix">
                                                             <select  required >
@@ -640,9 +664,9 @@
                                                             @error('économique')
                                                                 <span class="text-danger alert">{{ $message }}</span>
                                                             @enderror
-                                                        </div> --}}
+                                                        </div>
                                                     </div>
-                                                    {{-- <div class="row mt-4">
+                                                    <div class="row mt-4">
                                                         <div class="col-2 mt-1">
                                                             <div class="form-group" style="position: relative">
                                                                 <span style="font-size: 20px">Standard</span> <input id="standard" name="standard" value="standard" style="position: absolute; top: 10px; right: 0" type="checkbox">
@@ -666,8 +690,8 @@
                                                             <span class="text-danger alert">{{ $message }}</span>
                                                             @enderror
                                                         </div>
-                                                    </div> --}}
-                                                    {{-- <div class="row mt-4">
+                                                    </div>
+                                                    <div class="row mt-4">
                                                         <div class="col-2 mt-1">
                                                             <div class="form-group" style="position: relative">
                                                                 <span style="font-size: 20px">Compléte</span> <input id="compléte" name="compléte" value="compléte"  style="position: absolute; top: 10px; right: 0" type="checkbox">
@@ -691,7 +715,7 @@
                                                             <span class="text-danger alert">{{ $message }}</span>
                                                             @enderror
                                                         </div>
-                                                    </div> --}}
+                                                    </div>
                                                     <div class="row mt-4">
                                                         <div class="col-md-3 mt-1">
                                                             <div class="form-group" style="position: relative">
@@ -709,7 +733,7 @@
                                                             <span class="text-danger alert">{{ $message }}</span>
                                                             @enderror
                                                         </div>
-                                                    </div>
+                                                    </div> --}}
                                                     <h5 class="mt-4 font-weight-bold text-navy-blue">
                                                         <i class="icofont-warning-alt mr-2"></i>informations complémentaires
                                                       </h5>
