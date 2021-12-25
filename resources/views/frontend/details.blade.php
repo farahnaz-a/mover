@@ -237,7 +237,23 @@ $count = $comments->count();
 
                             <div class="row mt-4"> 
                                 <div class="col">
-                                    <h5>Services:</h5>  
+                                    <h5>Services:</h5> 
+                                    @if ($data->clicmove == 'clicmove')
+                                    <tr>
+                                        <h6>Camion avec chauffeur</h6>
+                                        <ul class="custom-list">
+                                            <li>démontage du mobilier</li>
+                                            <li>Emballage du fragile</li>
+                                            <li>protection du mobilier</li>
+                                            <li>manutention au chargement</li>
+                                            <li>transport</li>
+                                            <li>manutention au déchargement</li>
+                                            <li>remontage du mobilier</li>
+                                            <li>Assurance</li>
+                                            <li>frais de route (péage, carburant, ferry,…)</li>
+                                        </ul>   
+                                    </tr>
+                                @endif  
                                     @if ($data->économique == 'économique')
                                         <h6>
                                             Économique
@@ -283,18 +299,7 @@ $count = $comments->count();
                                                 <li>frais de route (péage, carburant, ferry,…)</li>  
                                             </ul> 
                                     @endif
-                                    @if ($data->clicmove == 'clicmove')
-                                        <tr>
-                                            <h6>Ma formule Clicmove</h6>
-                                            <ul class="custom-list">
-                                                <li>Cette formule permet de composer mon déménagement à la carte en adaptant les formules existantes en fonction de mon besoin réel.</li>
-                                                <li>vous pouvez décrire vos besoins dans les informations complémentaires</li>
-                                                <li>exemple 1 : je choisis la formule économique, et demande la livraison de 2 cartons penderie et le démontage de mon lit</li>
-                                                <li>exemple 2 : j’ai besoin d’une formule standard avec 1 mois de stockage</li>
-                                            </ul> 
-                                                
-                                        </tr>
-                                    @endif 
+                                   
                                 </div>
                             </div>  
                             @endif
