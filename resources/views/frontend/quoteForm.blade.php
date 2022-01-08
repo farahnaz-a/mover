@@ -64,6 +64,7 @@
     }
     .service-card__title{
         font-size: 28px;
+        color: #232135;
     }
 
     .service-card__list{
@@ -76,14 +77,14 @@
     }
 
     .service-card__list__items__text{
-        color: #5fc2ba;
+        color: #232135;
         font-weight: 500;
     }
 
     .service-card__list__items__icon{
         width: 30px;
         height: 30px;
-        color: #666666;
+        color: #232135;
         background-color: #eaeaea;
         margin-right: 10px;
         flex-shrink: 0;
@@ -204,8 +205,7 @@
                                                     <div class="row">
                                                         <div class="col-12">
                                                             <div class="form-group">
-                                                                <textarea name="list"   class="form-control" rows="7"
-                                                                    placeholder="(*pensez à faire un inventaire pièce par pièce)" required></textarea>
+                                                                <textarea name="list" class="form-control" rows="7" placeholder="Je ne connais pas mon volume mais j'ai une liste&#10;(*pensez à faire un inventaire pièce par pièce)" required></textarea>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -363,69 +363,50 @@
                                                             <div class="service-card d-flex flex-column h-100 my-4">
                                                                 <div class="service-card__header text-center">
                                                                     <div class="service-card__icon d-inline-flex align-items-center justify-content-center rounded-circle">
-                                                                        <i class="icofont-worker"></i>
+                                                                        <i class="icofont-truck-alt"></i>
                                                                     </div>
                                                                     <h3 class="service-card__title mt-3">Camion avec chauffeur</h3>
-                                                                    <p class="service-card__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, inventore?</p>
                                                                 </div>
                                                                 <ul class="service-card__list pl-0 mb-0">
                                                                     <li class="service-card__list__items">
                                                                         <span class="service-card__list__items__icon d-inline-flex align-items-center justify-content-center rounded-circle">
-                                                                            <i class="icofont-check"></i>
-                                                                        </span>
-                                                                        <span class="service-card__list__items__text">démontage du mobilier</span>
-                                                                    </li>
-                                                                    <li class="service-card__list__items">
-                                                                        <span class="service-card__list__items__icon d-inline-flex align-items-center justify-content-center rounded-circle">
-                                                                            <i class="icofont-check"></i>
-                                                                        </span>
-                                                                        <span class="service-card__list__items__text">Emballage du fragile</span>
-                                                                    </li>
-                                                                    <li class="service-card__list__items">
-                                                                        <span class="service-card__list__items__icon d-inline-flex align-items-center justify-content-center rounded-circle">
-                                                                            <i class="icofont-check"></i>
+                                                                            <i class="icofont-tick-mark"></i>
                                                                         </span>
                                                                         <span class="service-card__list__items__text">protection du mobilier</span>
                                                                     </li>
                                                                     <li class="service-card__list__items">
                                                                         <span class="service-card__list__items__icon d-inline-flex align-items-center justify-content-center rounded-circle">
-                                                                            <i class="icofont-check"></i>
+                                                                            <i class="icofont-tick-mark"></i>
                                                                         </span>
                                                                         <span class="service-card__list__items__text">manutention au chargement</span>
                                                                     </li>
                                                                     <li class="service-card__list__items">
                                                                         <span class="service-card__list__items__icon d-inline-flex align-items-center justify-content-center rounded-circle">
-                                                                            <i class="icofont-check"></i>
+                                                                            <i class="icofont-tick-mark"></i>
                                                                         </span>
                                                                         <span class="service-card__list__items__text">transport</span>
                                                                     </li>
                                                                     <li class="service-card__list__items">
                                                                         <span class="service-card__list__items__icon d-inline-flex align-items-center justify-content-center rounded-circle">
-                                                                            <i class="icofont-check"></i>
+                                                                            <i class="icofont-tick-mark"></i>
                                                                         </span>
                                                                         <span class="service-card__list__items__text">manutention au déchargement</span>
                                                                     </li>
                                                                     <li class="service-card__list__items">
                                                                         <span class="service-card__list__items__icon d-inline-flex align-items-center justify-content-center rounded-circle">
-                                                                            <i class="icofont-check"></i>
-                                                                        </span>
-                                                                        <span class="service-card__list__items__text">remontage du mobilier</span>
-                                                                    </li>
-                                                                    <li class="service-card__list__items">
-                                                                        <span class="service-card__list__items__icon d-inline-flex align-items-center justify-content-center rounded-circle">
-                                                                            <i class="icofont-check"></i>
+                                                                            <i class="icofont-tick-mark"></i>
                                                                         </span>
                                                                         <span class="service-card__list__items__text">Assurance</span>
                                                                     </li>
                                                                     <li class="service-card__list__items">
                                                                         <span class="service-card__list__items__icon d-inline-flex align-items-center justify-content-center rounded-circle">
-                                                                            <i class="icofont-check"></i>
+                                                                            <i class="icofont-tick-mark"></i>
                                                                         </span>
                                                                         <span class="service-card__list__items__text">frais de route (péage, carburant, ferry,…)</span>
                                                                     </li>
                                                                 </ul>
                                                                 <div class="text-center mt-auto">
-                                                                    <input type="checkbox" id="clicmove" name="clicmove" value="clicmove" class="service-card__checkbox d-none">
+                                                                    <input type="radio" id="clicmove" name="movingPackage" value="clicmove" class="service-card__checkbox d-none">
                                                                     <label for="clicmove" role="button" class="btn-theme bg-navy-blue no-shadow mt-3 service-card__label">Choisir</label>
                                                                 </div>
                                                             </div>
@@ -437,51 +418,74 @@
                                                             <div class="service-card d-flex flex-column h-100 my-4">
                                                                 <div class="service-card__header text-center">
                                                                     <div class="service-card__icon d-inline-flex align-items-center justify-content-center rounded-circle">
-                                                                        <i class="icofont-dollar"></i>
+                                                                        <i class="icofont-users-alt-4"></i>
                                                                     </div>
                                                                     <h3 class="service-card__title mt-3">Économique</h3>
-                                                                    <p class="service-card__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, inventore?</p>
                                                                 </div>
                                                                 <ul class="service-card__list pl-0 mb-0">
                                                                     <li class="service-card__list__items">
                                                                         <span class="service-card__list__items__icon d-inline-flex align-items-center justify-content-center rounded-circle">
-                                                                            <i class="icofont-check"></i>
+                                                                            <i class="icofont-tick-mark"></i>
+                                                                        </span>
+                                                                        <span class="service-card__list__items__text">Nombre de déménageur nécessaire</span>
+                                                                    </li>
+                                                                    <li class="service-card__list__items">
+                                                                        <span class="service-card__list__items__icon d-inline-flex align-items-center justify-content-center rounded-circle">
+                                                                            <i class="icofont-tick-mark"></i>
+                                                                        </span>
+                                                                        <span class="service-card__list__items__text">démontage du mobilier</span>
+                                                                    </li>
+                                                                    <li class="service-card__list__items">
+                                                                        <span class="service-card__list__items__icon d-inline-flex align-items-center justify-content-center rounded-circle">
+                                                                            <i class="icofont-tick-mark"></i>
+                                                                        </span>
+                                                                        <span class="service-card__list__items__text">Emballage du fragile</span>
+                                                                    </li>
+                                                                    <li class="service-card__list__items">
+                                                                        <span class="service-card__list__items__icon d-inline-flex align-items-center justify-content-center rounded-circle">
+                                                                            <i class="icofont-tick-mark"></i>
                                                                         </span>
                                                                         <span class="service-card__list__items__text">protection du mobilier</span>
                                                                     </li>
                                                                     <li class="service-card__list__items">
                                                                         <span class="service-card__list__items__icon d-inline-flex align-items-center justify-content-center rounded-circle">
-                                                                            <i class="icofont-check"></i>
+                                                                            <i class="icofont-tick-mark"></i>
                                                                         </span>
                                                                         <span class="service-card__list__items__text">manutention au chargement</span>
                                                                     </li>
                                                                     <li class="service-card__list__items">
                                                                         <span class="service-card__list__items__icon d-inline-flex align-items-center justify-content-center rounded-circle">
-                                                                            <i class="icofont-check"></i>
+                                                                            <i class="icofont-tick-mark"></i>
                                                                         </span>
                                                                         <span class="service-card__list__items__text">transport</span>
                                                                     </li>
                                                                     <li class="service-card__list__items">
                                                                         <span class="service-card__list__items__icon d-inline-flex align-items-center justify-content-center rounded-circle">
-                                                                            <i class="icofont-check"></i>
+                                                                            <i class="icofont-tick-mark"></i>
                                                                         </span>
                                                                         <span class="service-card__list__items__text">manutention au déchargement</span>
                                                                     </li>
                                                                     <li class="service-card__list__items">
                                                                         <span class="service-card__list__items__icon d-inline-flex align-items-center justify-content-center rounded-circle">
-                                                                            <i class="icofont-check"></i>
+                                                                            <i class="icofont-tick-mark"></i>
+                                                                        </span>
+                                                                        <span class="service-card__list__items__text">remontage du mobilier</span>
+                                                                    </li>
+                                                                    <li class="service-card__list__items">
+                                                                        <span class="service-card__list__items__icon d-inline-flex align-items-center justify-content-center rounded-circle">
+                                                                            <i class="icofont-tick-mark"></i>
                                                                         </span>
                                                                         <span class="service-card__list__items__text">Assurance</span>
                                                                     </li>
                                                                     <li class="service-card__list__items">
                                                                         <span class="service-card__list__items__icon d-inline-flex align-items-center justify-content-center rounded-circle">
-                                                                            <i class="icofont-check"></i>
+                                                                            <i class="icofont-tick-mark"></i>
                                                                         </span>
                                                                         <span class="service-card__list__items__text">frais de route (péage, carburant, ferry,…)</span>
                                                                     </li>
                                                                 </ul>
                                                                 <div class="text-center mt-auto">
-                                                                    <input type="checkbox" id="économique" name="économique" value="économique" class="service-card__checkbox d-none">
+                                                                    <input type="radio" id="économique" name="movingPackage" value="économique" class="service-card__checkbox d-none">
                                                                     <label for="économique" role="button" class="btn-theme bg-navy-blue no-shadow mt-3 service-card__label">Choisir</label>
                                                                 </div>
                                                             </div>
@@ -493,69 +497,68 @@
                                                             <div class="service-card d-flex flex-column h-100 my-4">
                                                                 <div class="service-card__header text-center">
                                                                     <div class="service-card__icon d-inline-flex align-items-center justify-content-center rounded-circle">
-                                                                        <i class="icofont-truck-alt"></i>
+                                                                        <i class="icofont-spoon-and-fork"></i>
                                                                     </div>
                                                                     <h3 class="service-card__title mt-3">Standard</h3>
-                                                                    <p class="service-card__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, inventore?</p>
                                                                 </div>
                                                                 <ul class="service-card__list pl-0 mb-0">
                                                                     <li class="service-card__list__items">
                                                                         <span class="service-card__list__items__icon d-inline-flex align-items-center justify-content-center rounded-circle">
-                                                                            <i class="icofont-check"></i>
+                                                                            <i class="icofont-tick-mark"></i>
                                                                         </span>
-                                                                        <span class="service-card__list__items__text">démontage du mobilier</span>
+                                                                        <span class="service-card__list__items__text">Nombre de déménageur nécessaire</span>
                                                                     </li>
                                                                     <li class="service-card__list__items">
                                                                         <span class="service-card__list__items__icon d-inline-flex align-items-center justify-content-center rounded-circle">
-                                                                            <i class="icofont-check"></i>
+                                                                            <i class="icofont-tick-mark"></i>
                                                                         </span>
                                                                         <span class="service-card__list__items__text">Emballage du fragile</span>
                                                                     </li>
                                                                     <li class="service-card__list__items">
                                                                         <span class="service-card__list__items__icon d-inline-flex align-items-center justify-content-center rounded-circle">
-                                                                            <i class="icofont-check"></i>
+                                                                            <i class="icofont-tick-mark"></i>
                                                                         </span>
                                                                         <span class="service-card__list__items__text">protection du mobilier</span>
                                                                     </li>
                                                                     <li class="service-card__list__items">
                                                                         <span class="service-card__list__items__icon d-inline-flex align-items-center justify-content-center rounded-circle">
-                                                                            <i class="icofont-check"></i>
+                                                                            <i class="icofont-tick-mark"></i>
                                                                         </span>
                                                                         <span class="service-card__list__items__text">manutention au chargement</span>
                                                                     </li>
                                                                     <li class="service-card__list__items">
                                                                         <span class="service-card__list__items__icon d-inline-flex align-items-center justify-content-center rounded-circle">
-                                                                            <i class="icofont-check"></i>
+                                                                            <i class="icofont-tick-mark"></i>
                                                                         </span>
                                                                         <span class="service-card__list__items__text">transport</span>
                                                                     </li>
                                                                     <li class="service-card__list__items">
                                                                         <span class="service-card__list__items__icon d-inline-flex align-items-center justify-content-center rounded-circle">
-                                                                            <i class="icofont-check"></i>
+                                                                            <i class="icofont-tick-mark"></i>
                                                                         </span>
                                                                         <span class="service-card__list__items__text">manutention au déchargement</span>
                                                                     </li>
                                                                     <li class="service-card__list__items">
                                                                         <span class="service-card__list__items__icon d-inline-flex align-items-center justify-content-center rounded-circle">
-                                                                            <i class="icofont-check"></i>
+                                                                            <i class="icofont-tick-mark"></i>
                                                                         </span>
                                                                         <span class="service-card__list__items__text">remontage du mobilier</span>
                                                                     </li>
                                                                     <li class="service-card__list__items">
                                                                         <span class="service-card__list__items__icon d-inline-flex align-items-center justify-content-center rounded-circle">
-                                                                            <i class="icofont-check"></i>
+                                                                            <i class="icofont-tick-mark"></i>
                                                                         </span>
                                                                         <span class="service-card__list__items__text">Assurance</span>
                                                                     </li>
                                                                     <li class="service-card__list__items">
                                                                         <span class="service-card__list__items__icon d-inline-flex align-items-center justify-content-center rounded-circle">
-                                                                            <i class="icofont-check"></i>
+                                                                            <i class="icofont-tick-mark"></i>
                                                                         </span>
                                                                         <span class="service-card__list__items__text">frais de route (péage, carburant, ferry,…)</span>
                                                                     </li>
                                                                 </ul>
                                                                 <div class="text-center mt-auto">
-                                                                    <input type="checkbox" id="standard" name="standard" value="standard" class="service-card__checkbox d-none">
+                                                                    <input type="radio" id="standard" name="movingPackage" value="standard" class="service-card__checkbox d-none">
                                                                     <label for="standard" role="button" class="btn-theme bg-navy-blue no-shadow mt-3 service-card__label">Choisir</label>
                                                                 </div>
                                                             </div>
@@ -567,69 +570,68 @@
                                                             <div class="service-card d-flex flex-column h-100 my-4">
                                                                 <div class="service-card__header text-center">
                                                                     <div class="service-card__icon d-inline-flex align-items-center justify-content-center rounded-circle">
-                                                                        <i class="icofont-check"></i>
+                                                                        <i class="icofont-box"></i>
                                                                     </div>
-                                                                    <h3 class="service-card__title mt-3">Compléte</h3>
-                                                                    <p class="service-card__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, inventore?</p>
+                                                                    <h3 class="service-card__title mt-3">Complète</h3>
                                                                 </div>
                                                                 <ul class="service-card__list pl-0 mb-0">
                                                                     <li class="service-card__list__items">
                                                                         <span class="service-card__list__items__icon d-inline-flex align-items-center justify-content-center rounded-circle">
-                                                                            <i class="icofont-check"></i>
+                                                                            <i class="icofont-tick-mark"></i>
                                                                         </span>
                                                                         <span class="service-card__list__items__text">(Vêtement et linge de lit Livres et documents Vaisselles et fragile Divers)</span>
                                                                     </li>
                                                                     <li class="service-card__list__items">
                                                                         <span class="service-card__list__items__icon d-inline-flex align-items-center justify-content-center rounded-circle">
-                                                                            <i class="icofont-check"></i>
+                                                                            <i class="icofont-tick-mark"></i>
                                                                         </span>
                                                                         <span class="service-card__list__items__text">démontage du mobilier</span>
                                                                     </li>
                                                                     <li class="service-card__list__items">
                                                                         <span class="service-card__list__items__icon d-inline-flex align-items-center justify-content-center rounded-circle">
-                                                                            <i class="icofont-check"></i>
+                                                                            <i class="icofont-tick-mark"></i>
                                                                         </span>
                                                                         <span class="service-card__list__items__text">protection du mobilier</span>
                                                                     </li>
                                                                     <li class="service-card__list__items">
                                                                         <span class="service-card__list__items__icon d-inline-flex align-items-center justify-content-center rounded-circle">
-                                                                            <i class="icofont-check"></i>
+                                                                            <i class="icofont-tick-mark"></i>
                                                                         </span>
                                                                         <span class="service-card__list__items__text">manutention au chargement</span>
                                                                     </li>
                                                                     <li class="service-card__list__items">
                                                                         <span class="service-card__list__items__icon d-inline-flex align-items-center justify-content-center rounded-circle">
-                                                                            <i class="icofont-check"></i>
+                                                                            <i class="icofont-tick-mark"></i>
                                                                         </span>
                                                                         <span class="service-card__list__items__text">transport</span>
                                                                     </li>
                                                                     <li class="service-card__list__items">
                                                                         <span class="service-card__list__items__icon d-inline-flex align-items-center justify-content-center rounded-circle">
-                                                                            <i class="icofont-check"></i>
+                                                                            <i class="icofont-tick-mark"></i>
                                                                         </span>
                                                                         <span class="service-card__list__items__text">manutention au déchargement</span>
                                                                     </li>
                                                                     <li class="service-card__list__items">
                                                                         <span class="service-card__list__items__icon d-inline-flex align-items-center justify-content-center rounded-circle">
-                                                                            <i class="icofont-check"></i>
+                                                                            <i class="icofont-tick-mark"></i>
                                                                         </span>
                                                                         <span class="service-card__list__items__text">remontage du mobilier</span>
                                                                     </li>
                                                                     <li class="service-card__list__items">
                                                                         <span class="service-card__list__items__icon d-inline-flex align-items-center justify-content-center rounded-circle">
-                                                                            <i class="icofont-check"></i>
+                                                                            <i class="icofont-tick-mark"></i>
                                                                         </span>
                                                                         <span class="service-card__list__items__text">Assurance</span>
                                                                     </li>
                                                                     <li class="service-card__list__items">
                                                                         <span class="service-card__list__items__icon d-inline-flex align-items-center justify-content-center rounded-circle">
-                                                                            <i class="icofont-check"></i>
+                                                                            <i class="icofont-tick-mark"></i>
                                                                         </span>
                                                                         <span class="service-card__list__items__text">frais de route (péage, carburant, ferry,…)</span>
                                                                     </li>
                                                                 </ul>
                                                                 <div class="text-center mt-auto">
-                                                                    <input type="checkbox" id="compléte" name="compléte" value="compléte" class="service-card__checkbox d-none">
+                                                                    <input type="radio" id="compléte" name="movingPackage" value="compléte" class="service-card__checkbox d-none">
                                                                     <label for="compléte" role="button" class="btn-theme bg-navy-blue no-shadow mt-3 service-card__label">Choisir</label>
                                                                 </div>
                                                             </div>
