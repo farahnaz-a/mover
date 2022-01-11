@@ -96,6 +96,26 @@
         background-color: #5fc2ba;
     }
 
+    .cleint_feature_image__gallery{
+        padding: 15px;
+        background: #fff;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        border: 1px solid #ced4da;
+        min-height: 45px;
+        border-radius: 5px;
+        gap: 5px;
+    }
+    .cleint_feature_image__gallery img{
+        width: 100%;
+        max-width: 200px;
+        height: 100%;
+        max-height: 200px;
+        object-fit: cover;
+        margin: 5px;
+    }
+
     @media screen and (max-width: 575px){
         .logo-footer{
             max-width: 100%;
@@ -743,9 +763,10 @@
                                                     </div>
                                                     <div class="row mt-4">
                                                         <div class="col-12 mb-3">
-                                                            <h5>Vous pouvez compléter votre demande avec des photos</h5> 
-                                                            <img src="{{ asset('uploads/announcement/blank.jpg') }}" alt=""  height="200" class="d-block setting-form_cleint_feature_image"> 
-                                                            <input class="d-none" type="file" name="image" id="cleint_feature_image" required>
+                                                            <h5>Vous pouvez compléter votre demande avec des photos</h5>
+                                                            <div class="cleint_feature_image__gallery">
+                                                            </div>
+                                                            <input class="d-none" name="image" type="file" multiple id="cleint_feature_image" accept="image/x-png,image/gif,image/jpeg,image/jpg" required>
                                                             <label for="cleint_feature_image" class="my-3 btn website-bg-color"><i class="icofont-arrow-up bg-light website-color rounded-circle"></i>Télécharger</label>
                                                         </div>
                                                     </div>
@@ -1027,9 +1048,10 @@
                                                     
                                                     <div class="row mt-4">
                                                         <div class="col-12 mb-3">
-                                                            <h5>Vous pouvez compléter votre demande avec des photos</h5> 
-                                                            <img src="{{ asset('uploads/announcement/blank.jpg') }}" alt=""  height="200" class="d-block setting-form_cleint_feature_image"> 
-                                                            <input class="d-none" type="file" name="image" id="cleint_feature_image" required>
+                                                            <h5>Vous pouvez compléter votre demande avec des photos</h5>
+                                                            <div class="cleint_feature_image__gallery">
+                                                            </div>
+                                                            <input class="d-none" name="image" type="file" multiple id="cleint_feature_image" accept="image/x-png,image/gif,image/jpeg,image/jpg" required>
                                                             <label for="cleint_feature_image" class="my-3 btn website-bg-color"><i class="icofont-arrow-up bg-light website-color rounded-circle"></i>Télécharger</label>
                                                         </div>
                                                     </div>
@@ -1342,9 +1364,10 @@
                                             
                                             <div class="row mt-4">
                                                 <div class="col-12 mb-3">
-                                                    <h5>Vous pouvez compléter votre demande avec des photos</h5> 
-                                                    <img src="{{ asset('uploads/announcement/blank.jpg') }}" alt=""  height="200" class="d-block setting-form_cleint_feature_image"> 
-                                                    <input class="d-none" type="file" name="image" id="cleint_feature_image" required>
+                                                    <h5>Vous pouvez compléter votre demande avec des photos</h5>
+                                                    <div class="cleint_feature_image__gallery">
+                                                    </div>
+                                                    <input class="d-none" name="image" type="file" multiple id="cleint_feature_image" accept="image/x-png,image/gif,image/jpeg,image/jpg" required>
                                                     <label for="cleint_feature_image" class="my-3 btn website-bg-color"><i class="icofont-arrow-up bg-light website-color rounded-circle"></i>Télécharger</label>
                                                 </div>
                                             </div>
@@ -1639,9 +1662,10 @@
                                             
                                             <div class="row mt-4">
                                                 <div class="col-12 mb-3">
-                                                    <h5>Vous pouvez compléter votre demande avec des photos</h5> 
-                                                    <img src="{{ asset('uploads/announcement/blank.jpg') }}" alt=""  height="200" class="d-block setting-form_cleint_feature_image"> 
-                                                    <input class="d-none" type="file" name="image" id="cleint_feature_image" required>
+                                                    <h5>Vous pouvez compléter votre demande avec des photos</h5>
+                                                    <div class="cleint_feature_image__gallery">
+                                                    </div>
+                                                    <input class="d-none" name="image" type="file" multiple id="cleint_feature_image" accept="image/x-png,image/gif,image/jpeg,image/jpg" required>
                                                     <label for="cleint_feature_image" class="my-3 btn website-bg-color"><i class="icofont-arrow-up bg-light website-color rounded-circle"></i>Télécharger</label>
                                                 </div>
                                             </div>
@@ -1930,9 +1954,10 @@
                                             
                                             <div class="row mt-4">
                                                 <div class="col-12 mb-3">
-                                                    <h5>Vous pouvez compléter votre demande avec des photos</h5> 
-                                                    <img src="{{ asset('uploads/announcement/blank.jpg') }}" alt=""  height="200" class="d-block setting-form_cleint_feature_image"> 
-                                                    <input class="d-none" type="file" name="image" id="cleint_feature_image" required>
+                                                    <h5>Vous pouvez compléter votre demande avec des photos</h5>
+                                                    <div class="cleint_feature_image__gallery">
+                                                    </div>
+                                                    <input class="d-none" name="image" type="file" multiple id="cleint_feature_image" accept="image/x-png,image/gif,image/jpeg,image/jpg" required>
                                                     <label for="cleint_feature_image" class="my-3 btn website-bg-color"><i class="icofont-arrow-up bg-light website-color rounded-circle"></i>Télécharger</label>
                                                 </div>
                                             </div>
@@ -2154,9 +2179,10 @@
                                             
                                             <div class="row mt-4">
                                                 <div class="col-12 mb-3">
-                                                    <h5>Vous pouvez compléter votre demande avec des photos</h5> 
-                                                    <img src="{{ asset('uploads/announcement/blank.jpg') }}" alt=""  height="200" class="d-block setting-form_cleint_feature_image"> 
-                                                    <input class="d-none" type="file" name="image" id="cleint_feature_image" required>
+                                                    <h5>Vous pouvez compléter votre demande avec des photos</h5>
+                                                    <div class="cleint_feature_image__gallery">
+                                                    </div>
+                                                    <input class="d-none" name="image" type="file" multiple id="cleint_feature_image" accept="image/x-png,image/gif,image/jpeg,image/jpg" required>
                                                     <label for="cleint_feature_image" class="my-3 btn website-bg-color"><i class="icofont-arrow-up bg-light website-color rounded-circle"></i>Télécharger</label>
                                                 </div>
                                             </div>
@@ -2303,9 +2329,10 @@
                                             
                                             <div class="row mt-4">
                                                 <div class="col-12 mb-3">
-                                                    <h5>Vous pouvez compléter votre demande avec des photos</h5> 
-                                                    <img src="{{ asset('uploads/announcement/blank.jpg') }}" alt=""  height="200" class="d-block setting-form_cleint_feature_image"> 
-                                                    <input class="d-none" type="file" name="image" id="cleint_feature_image" required>
+                                                    <h5>Vous pouvez compléter votre demande avec des photos</h5>
+                                                    <div class="cleint_feature_image__gallery">
+                                                    </div>
+                                                    <input class="d-none" name="image" type="file" multiple id="cleint_feature_image" accept="image/x-png,image/gif,image/jpeg,image/jpg" required>
                                                     <label for="cleint_feature_image" class="my-3 btn website-bg-color"><i class="icofont-arrow-up bg-light website-color rounded-circle"></i>Télécharger</label>
                                                 </div>
                                             </div>
@@ -2426,11 +2453,12 @@
                                                         rows="7" placeholder="informations complémentaires "></textarea>
                                                 </div>
                                             </div>
-                                            <div class="row mt-12">
-                                                <div class="col-8 mb-3">
-                                                    <h5>Vous pouvez compléter votre demande avec des photos</h5> 
-                                                    <img src="{{ asset('uploads/announcement/blank.jpg') }}" alt=""  height="200" class="d-block setting-form_cleint_feature_image"> 
-                                                    <input class="d-none" type="file" name="image" id="cleint_feature_image" required>
+                                            <div class="row mt-4">
+                                                <div class="col-12 mb-3">
+                                                    <h5>Vous pouvez compléter votre demande avec des photos</h5>
+                                                    <div class="cleint_feature_image__gallery">
+                                                    </div>
+                                                    <input class="d-none" name="image" type="file" multiple id="cleint_feature_image" accept="image/x-png,image/gif,image/jpeg,image/jpg" required>
                                                     <label for="cleint_feature_image" class="my-3 btn website-bg-color"><i class="icofont-arrow-up bg-light website-color rounded-circle"></i>Télécharger</label>
                                                 </div>
                                             </div>
@@ -2591,9 +2619,10 @@
                                             
                                             <div class="row mt-4">
                                                 <div class="col-12 mb-3">
-                                                    <h5>Vous pouvez compléter votre demande avec des photos</h5> 
-                                                    <img src="{{ asset('uploads/announcement/blank.jpg') }}" alt=""  height="200" class="d-block setting-form_cleint_feature_image"> 
-                                                    <input class="d-none" type="file" name="image" id="cleint_feature_image" required>
+                                                    <h5>Vous pouvez compléter votre demande avec des photos</h5>
+                                                    <div class="cleint_feature_image__gallery">
+                                                    </div>
+                                                    <input class="d-none" name="image" type="file" multiple id="cleint_feature_image" accept="image/x-png,image/gif,image/jpeg,image/jpg" required>
                                                     <label for="cleint_feature_image" class="my-3 btn website-bg-color"><i class="icofont-arrow-up bg-light website-color rounded-circle"></i>Télécharger</label>
                                                 </div>
                                             </div>
@@ -2740,16 +2769,33 @@
             google.maps.event.addListener(autocomplete, 'place_changed', function(){
                 var near_place = autocomplete.getPlace();
             });
-            
-            /* Uploade and change image functions */
-            let imgInp = document.querySelector("#cleint_feature_image");
-            let imgage = document.querySelector(".setting-form_cleint_feature_image");
-            imgInp.onchange = evt => {
-                const [file] = imgInp.files
-                if (file) {
-                    imgage.src = URL.createObjectURL(file)
+
+
+            // Multiple images preview in browser
+            (function(){
+                var imagesPreview = function(input, placeToInsertImagePreview) {
+
+                if (input.files) {
+                    var filesAmount = input.files.length;
+
+                    for (i = 0; i < filesAmount; i++) {
+                        var reader = new FileReader();
+
+                        reader.onload = function(event) {
+                            $($.parseHTML('<img>')).attr('src', event.target.result).appendTo(placeToInsertImagePreview);
+                        }
+
+                        reader.readAsDataURL(input.files[i]);
+                    }
                 }
-            }    
+
+                };
+
+                $('#cleint_feature_image').on('change', function() {
+                    imagesPreview(this, '.cleint_feature_image__gallery');
+                });
+            })()
+
         });
 
         
