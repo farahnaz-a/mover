@@ -307,7 +307,7 @@ $count = $comments->count();
                                 <div class="col-4">
                                     <h5>Photo:</h5> 
                                     @foreach ($data->getImage as $image)
-                                    <img class="img-fluid w-25" src="{{ asset('uploads/announcement/image') }}/{{ $image->image }}" alt=""> 
+                                    <img class="img-fluid w-25 m-1" src="{{ asset('uploads/announcement/image') }}/{{ $image->image }}" alt=""> 
                                     @endforeach
                                 </div>
                             </div>

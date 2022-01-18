@@ -808,7 +808,7 @@
 
                     @if ($category == 'chauffeur')
                             <!-- vehicle form start -->
-                            <div class="bg-white shadow-sm my-3 p-3 rounded d-block" id="vehicle">
+                            <div class="bg-white shadow-sm my-3 p-3 rounded d-block">
                                 {{-- <div id="vehicle1">
                                     <h4 class="font-weight-bold text-navy-blue">
                                         Type of transport
