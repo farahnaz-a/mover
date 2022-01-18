@@ -6,6 +6,7 @@ use Auth;
 use Carbon\Carbon;
 use App\Models\User;
 use App\Models\Announcement;
+use App\Models\Image;
 use Illuminate\Http\Request;
 use App\Models\SecondAnnouncement;
 use Illuminate\Support\Facades\Hash;
@@ -83,17 +84,16 @@ class AnnouncementController extends Controller
      */
     public function store(Request $request)
 
-    {
- 
-        if($request->category == 'déménagement'){
-            $request->validate([ 
-               'économique'    => 'required_without_all:standard,compléte',
-               'standard'      => 'required_without_all:compléte,clicmove',
-               'compléte'      =>  'required_without_all:économique,clicmove',
-               'clicmove'      =>  'required_without_all:économique,standard' 
-            ]);
+    {   
+        // if($request->category == 'déménagement'){
+            // $request->validate([ 
+            //    'économique'    => 'required_without_all:standard,compléte',
+            //    'standard'      => 'required_without_all:compléte,clicmove',
+            //    'compléte'      =>  'required_without_all:économique,clicmove',
+            //    'clicmove'      =>  'required_without_all:économique,standard' 
+            // ]);
 
-        }
+        // }
 
         if (Auth::id()) { 
 
@@ -149,12 +149,15 @@ class AnnouncementController extends Controller
        
                 if($request->file('image'))
                 {
-                    $image = $request->file('image');
-                    $filename = $announcement->id.'.'.$image->extension('image');
-                    $path = public_path('uploads/announcement');
-                    $image->move($path, $filename);
-                    $announcement->image = $filename;
-                    $announcement->save();
+                    foreach ($request->file('image') as $imageFile){
+                        $image = new Image(); 
+                        $filename = rand(1,9999999).time().'.'.$imageFile->extension();
+                        $path = public_path('uploads/announcement/image');
+                        $imageFile->move($path, $filename);
+                        $image->image = $filename;
+                        $image->announcement_id = $announcement->id;
+                        $image->save(); 
+                    }
                     
                 }
 
@@ -229,12 +232,15 @@ class AnnouncementController extends Controller
 
                 if($request->file('image'))
                 {
-                    $image = $request->file('image');
-                    $filename = $announcement->id.'.'.$image->extension('image');
-                    $path = public_path('uploads/announcement');
-                    $image->move($path, $filename);
-                    $announcement->image = $filename;
-                    $announcement->save();
+                    foreach ($request->file('image') as $imageFile){
+                        $image = new Image(); 
+                        $filename = rand(1,9999999).time().'.'.$imageFile->extension();
+                        $path = public_path('uploads/announcement/image');
+                        $imageFile->move($path, $filename);
+                        $image->image = $filename;
+                        $image->announcement_id = $announcement->id;
+                        $image->save(); 
+                    }
                     
                 }
                 return redirect()->route('announcement.details', $announcement->id);
@@ -295,12 +301,15 @@ class AnnouncementController extends Controller
 
                     if($request->file('image'))
                     {
-                        $image = $request->file('image');
-                        $filename = $announcement->id.'.'.$image->extension('image');
-                        $path = public_path('uploads/announcement');
-                        $image->move($path, $filename);
-                        $announcement->image = $filename;
-                        $announcement->save();
+                        foreach ($request->file('image') as $imageFile){
+                            $image = new Image(); 
+                            $filename = rand(1,9999999).time().'.'.$imageFile->extension();
+                            $path = public_path('uploads/announcement/image');
+                            $imageFile->move($path, $filename);
+                            $image->image = $filename;
+                            $image->announcement_id = $announcement->id;
+                            $image->save(); 
+                        }
                         
                     } 
                     return redirect()->route('announcement.details', $announcement->id);

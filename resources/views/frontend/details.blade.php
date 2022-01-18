@@ -238,10 +238,25 @@ $count = $comments->count();
                             <div class="row mt-4"> 
                                 <div class="col">
                                     <h5>Services:</h5> 
-                                    @if ($data->clicmove == 'clicmove')
+                                    @if ($data->services == 'clicmove')
                                     <tr>
                                         <h6>Camion avec chauffeur</h6>
                                         <ul class="custom-list">
+                                            <li>protection du mobilier</li>
+                                            <li>manutention au chargement</li>
+                                            <li>transport</li>
+                                            <li>manutention au déchargement</li>
+                                            <li>Assurance</li>
+                                            <li>frais de route (péage, carburant, ferry,…)</li> 
+                                        </ul>   
+                                    </tr>
+                                @endif  
+                                    @if ($data->services == 'économique')
+                                        <h6>
+                                            Économique
+                                        </h6>
+                                        <ul class="custom-list">
+                                            <li>Nombre de déménageur nécessaire</li>
                                             <li>démontage du mobilier</li>
                                             <li>Emballage du fragile</li>
                                             <li>protection du mobilier</li>
@@ -251,50 +266,35 @@ $count = $comments->count();
                                             <li>remontage du mobilier</li>
                                             <li>Assurance</li>
                                             <li>frais de route (péage, carburant, ferry,…)</li>
-                                        </ul>   
-                                    </tr>
-                                @endif  
-                                    @if ($data->économique == 'économique')
-                                        <h6>
-                                            Économique
-                                        </h6>
-                                        <ul class="custom-list">
-                                            <li>protection du mobilier </li>
-                                            <li>manutention au chargement</li>
-                                            <li>transport</li>
-                                            <li>manutention au déchargement</li>
-                                            <li>Assurance</li>
-                                            <li>frais de route (péage, carburant, ferry,…)</li>
                                         </ul>
                                     @endif
-                                    @if ($data->standard == 'standard')
+                                    @if ($data->services == 'standard')
                                         
                                             <h6>Standard</h6>
                                             <ul class="custom-list">
-                                                <li>démontage du mobilier</li>
-                                                <li>Emballage du fragile </li>
-                                                <li>protection du mobilier </li>
+                                                <li>Nombre de déménageur nécessaire</li>
+                                                <li>Emballage du fragile</li>
+                                                <li>protection du mobilier</li>
                                                 <li>manutention au chargement</li>
                                                 <li>transport</li>
                                                 <li>manutention au déchargement</li>
-                                                <li>remontage du mobilier </li>
+                                                <li>remontage du mobilier</li>
                                                 <li>Assurance</li>
                                                 <li>frais de route (péage, carburant, ferry,…)</li>  
                                             </ul>
                                             
                                     @endif
-                                    @if ($data->compléte == 'compléte')
+                                    @if ($data->services == 'compléte')
                                         
-                                            <h6>Compléte</h6>
+                                            <h6>Complète</h6>
                                             <ul class="custom-list">
-                                                <li>démontage du mobilier </li>
                                                 <li>(Vêtement et linge de lit Livres et documents Vaisselles et fragile Divers)</li>
-                                                <li>protection du mobilier </li>
+                                                <li>démontage du mobilier</li>
+                                                <li>protection du mobilier</li>
                                                 <li>manutention au chargement</li>
                                                 <li>transport</li>
                                                 <li>manutention au déchargement</li>
-                                                <li>Déballage et mise en place des cartons</li>
-                                                <li>remontage du mobilier </li>
+                                                <li>remontage du mobilier</li> 
                                                 <li>Assurance</li>
                                                 <li>frais de route (péage, carburant, ferry,…)</li>  
                                             </ul> 
@@ -305,8 +305,10 @@ $count = $comments->count();
                             @endif
                             <div class="row mt-3">
                                 <div class="col-4">
-                                    <h5>Photo:</h5>  
-                                    <img src="{{ asset('uploads/announcement') }}/{{ $data->image }}" alt="">
+                                    <h5>Photo:</h5> 
+                                    @foreach ($data->getImage as $image)
+                                    <img class="img-fluid w-25" src="{{ asset('uploads/announcement/image') }}/{{ $image->image }}" alt=""> 
+                                    @endforeach
                                 </div>
                             </div>
                         </div>

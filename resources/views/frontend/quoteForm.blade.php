@@ -426,7 +426,7 @@
                                                                     </li>
                                                                 </ul>
                                                                 <div class="text-center mt-auto">
-                                                                    <input type="radio" id="clicmove" name="movingPackage" value="clicmove" class="service-card__checkbox d-none">
+                                                                    <input type="radio" id="clicmove" name="services" value="clicmove" class="service-card__checkbox d-none" required>
                                                                     <label for="clicmove" role="button" class="btn-theme bg-navy-blue no-shadow mt-3 service-card__label">Choisir</label>
                                                                 </div>
                                                             </div>
@@ -505,7 +505,7 @@
                                                                     </li>
                                                                 </ul>
                                                                 <div class="text-center mt-auto">
-                                                                    <input type="radio" id="économique" name="movingPackage" value="économique" class="service-card__checkbox d-none">
+                                                                    <input type="radio" id="économique" name="services" value="économique" class="service-card__checkbox d-none" required>
                                                                     <label for="économique" role="button" class="btn-theme bg-navy-blue no-shadow mt-3 service-card__label">Choisir</label>
                                                                 </div>
                                                             </div>
@@ -578,7 +578,7 @@
                                                                     </li>
                                                                 </ul>
                                                                 <div class="text-center mt-auto">
-                                                                    <input type="radio" id="standard" name="movingPackage" value="standard" class="service-card__checkbox d-none">
+                                                                    <input type="radio" id="standard" name="services" value="standard" class="service-card__checkbox d-none" required>
                                                                     <label for="standard" role="button" class="btn-theme bg-navy-blue no-shadow mt-3 service-card__label">Choisir</label>
                                                                 </div>
                                                             </div>
@@ -651,7 +651,7 @@
                                                                     </li>
                                                                 </ul>
                                                                 <div class="text-center mt-auto">
-                                                                    <input type="radio" id="compléte" name="movingPackage" value="compléte" class="service-card__checkbox d-none">
+                                                                    <input type="radio" id="compléte" name="services" value="compléte" class="service-card__checkbox d-none" required>
                                                                     <label for="compléte" role="button" class="btn-theme bg-navy-blue no-shadow mt-3 service-card__label">Choisir</label>
                                                                 </div>
                                                             </div>
@@ -766,7 +766,7 @@
                                                             <h5>Vous pouvez compléter votre demande avec des photos</h5>
                                                             <div class="cleint_feature_image__gallery">
                                                             </div>
-                                                            <input class="d-none" name="image" type="file" multiple id="cleint_feature_image" accept="image/x-png,image/gif,image/jpeg,image/jpg" required>
+                                                            <input class="d-none" name="image[]" type="file" multiple id="cleint_feature_image" accept="image/x-png,image/gif,image/jpeg,image/jpg" required>
                                                             <label for="cleint_feature_image" class="my-3 btn website-bg-color"><i class="icofont-arrow-up bg-light website-color rounded-circle"></i>Télécharger</label>
                                                         </div>
                                                     </div>
@@ -1051,7 +1051,7 @@
                                                             <h5>Vous pouvez compléter votre demande avec des photos</h5>
                                                             <div class="cleint_feature_image__gallery">
                                                             </div>
-                                                            <input class="d-none" name="image" type="file" multiple id="cleint_feature_image" accept="image/x-png,image/gif,image/jpeg,image/jpg" required>
+                                                            <input class="d-none" name="image[]" type="file" multiple id="cleint_feature_image" accept="image/x-png,image/gif,image/jpeg,image/jpg" required>
                                                             <label for="cleint_feature_image" class="my-3 btn website-bg-color"><i class="icofont-arrow-up bg-light website-color rounded-circle"></i>Télécharger</label>
                                                         </div>
                                                     </div>
@@ -1367,7 +1367,7 @@
                                                     <h5>Vous pouvez compléter votre demande avec des photos</h5>
                                                     <div class="cleint_feature_image__gallery">
                                                     </div>
-                                                    <input class="d-none" name="image" type="file" multiple id="cleint_feature_image" accept="image/x-png,image/gif,image/jpeg,image/jpg" required>
+                                                    <input class="d-none" name="image[]" type="file" multiple id="cleint_feature_image" accept="image/x-png,image/gif,image/jpeg,image/jpg" required>
                                                     <label for="cleint_feature_image" class="my-3 btn website-bg-color"><i class="icofont-arrow-up bg-light website-color rounded-circle"></i>Télécharger</label>
                                                 </div>
                                             </div>
@@ -1665,7 +1665,7 @@
                                                     <h5>Vous pouvez compléter votre demande avec des photos</h5>
                                                     <div class="cleint_feature_image__gallery">
                                                     </div>
-                                                    <input class="d-none" name="image" type="file" multiple id="cleint_feature_image" accept="image/x-png,image/gif,image/jpeg,image/jpg" required>
+                                                    <input class="d-none" name="image[]" type="file" multiple id="cleint_feature_image" accept="image/x-png,image/gif,image/jpeg,image/jpg" required>
                                                     <label for="cleint_feature_image" class="my-3 btn website-bg-color"><i class="icofont-arrow-up bg-light website-color rounded-circle"></i>Télécharger</label>
                                                 </div>
                                             </div>
@@ -1957,7 +1957,7 @@
                                                     <h5>Vous pouvez compléter votre demande avec des photos</h5>
                                                     <div class="cleint_feature_image__gallery">
                                                     </div>
-                                                    <input class="d-none" name="image" type="file" multiple id="cleint_feature_image" accept="image/x-png,image/gif,image/jpeg,image/jpg" required>
+                                                    <input class="d-none" name="image[]" type="file" multiple id="cleint_feature_image" accept="image/x-png,image/gif,image/jpeg,image/jpg" required>
                                                     <label for="cleint_feature_image" class="my-3 btn website-bg-color"><i class="icofont-arrow-up bg-light website-color rounded-circle"></i>Télécharger</label>
                                                 </div>
                                             </div>
@@ -2182,7 +2182,7 @@
                                                     <h5>Vous pouvez compléter votre demande avec des photos</h5>
                                                     <div class="cleint_feature_image__gallery">
                                                     </div>
-                                                    <input class="d-none" name="image" type="file" multiple id="cleint_feature_image" accept="image/x-png,image/gif,image/jpeg,image/jpg" required>
+                                                    <input class="d-none" name="image[]" type="file" multiple id="cleint_feature_image" accept="image/x-png,image/gif,image/jpeg,image/jpg" required>
                                                     <label for="cleint_feature_image" class="my-3 btn website-bg-color"><i class="icofont-arrow-up bg-light website-color rounded-circle"></i>Télécharger</label>
                                                 </div>
                                             </div>
@@ -2332,7 +2332,7 @@
                                                     <h5>Vous pouvez compléter votre demande avec des photos</h5>
                                                     <div class="cleint_feature_image__gallery">
                                                     </div>
-                                                    <input class="d-none" name="image" type="file" multiple id="cleint_feature_image" accept="image/x-png,image/gif,image/jpeg,image/jpg" required>
+                                                    <input class="d-none" name="image[]" type="file" multiple id="cleint_feature_image" accept="image/x-png,image/gif,image/jpeg,image/jpg" required>
                                                     <label for="cleint_feature_image" class="my-3 btn website-bg-color"><i class="icofont-arrow-up bg-light website-color rounded-circle"></i>Télécharger</label>
                                                 </div>
                                             </div>
@@ -2458,7 +2458,7 @@
                                                     <h5>Vous pouvez compléter votre demande avec des photos</h5>
                                                     <div class="cleint_feature_image__gallery">
                                                     </div>
-                                                    <input class="d-none" name="image" type="file" multiple id="cleint_feature_image" accept="image/x-png,image/gif,image/jpeg,image/jpg" required>
+                                                    <input class="d-none" name="image[]" type="file" multiple id="cleint_feature_image" accept="image/x-png,image/gif,image/jpeg,image/jpg" required>
                                                     <label for="cleint_feature_image" class="my-3 btn website-bg-color"><i class="icofont-arrow-up bg-light website-color rounded-circle"></i>Télécharger</label>
                                                 </div>
                                             </div>
@@ -2622,7 +2622,7 @@
                                                     <h5>Vous pouvez compléter votre demande avec des photos</h5>
                                                     <div class="cleint_feature_image__gallery">
                                                     </div>
-                                                    <input class="d-none" name="image" type="file" multiple id="cleint_feature_image" accept="image/x-png,image/gif,image/jpeg,image/jpg" required>
+                                                    <input class="d-none" name="image[]" type="file" multiple id="cleint_feature_image" accept="image/x-png,image/gif,image/jpeg,image/jpg" required>
                                                     <label for="cleint_feature_image" class="my-3 btn website-bg-color"><i class="icofont-arrow-up bg-light website-color rounded-circle"></i>Télécharger</label>
                                                 </div>
                                             </div>
