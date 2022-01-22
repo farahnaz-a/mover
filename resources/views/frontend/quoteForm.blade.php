@@ -383,35 +383,35 @@
                                                             <div class="service-card d-flex flex-column h-100 my-4">
                                                                 <div class="service-card__header text-center">
                                                                     <div class="service-card__icon d-inline-flex align-items-center justify-content-center rounded-circle">
-                                                                        <i class="icofont-truck-alt"></i>
+                                                                        <i class="icofont-fast-delivery"></i>
                                                                     </div>
                                                                     <h3 class="service-card__title mt-3">Camion avec chauffeur</h3>
                                                                 </div>
                                                                 <ul class="service-card__list pl-0 mb-0">
-                                                                    <li class="service-card__list__items">
+                                                                    {{-- <li class="service-card__list__items">
                                                                         <span class="service-card__list__items__icon d-inline-flex align-items-center justify-content-center rounded-circle">
                                                                             <i class="icofont-tick-mark"></i>
                                                                         </span>
                                                                         <span class="service-card__list__items__text">protection du mobilier</span>
-                                                                    </li>
-                                                                    <li class="service-card__list__items">
+                                                                    </li> --}}
+                                                                    {{-- <li class="service-card__list__items">
                                                                         <span class="service-card__list__items__icon d-inline-flex align-items-center justify-content-center rounded-circle">
                                                                             <i class="icofont-tick-mark"></i>
                                                                         </span>
                                                                         <span class="service-card__list__items__text">manutention au chargement</span>
-                                                                    </li>
+                                                                    </li> --}}
                                                                     <li class="service-card__list__items">
                                                                         <span class="service-card__list__items__icon d-inline-flex align-items-center justify-content-center rounded-circle">
                                                                             <i class="icofont-tick-mark"></i>
                                                                         </span>
                                                                         <span class="service-card__list__items__text">transport</span>
                                                                     </li>
-                                                                    <li class="service-card__list__items">
+                                                                    {{-- <li class="service-card__list__items">
                                                                         <span class="service-card__list__items__icon d-inline-flex align-items-center justify-content-center rounded-circle">
                                                                             <i class="icofont-tick-mark"></i>
                                                                         </span>
                                                                         <span class="service-card__list__items__text">manutention au déchargement</span>
-                                                                    </li>
+                                                                    </li> --}}
                                                                     <li class="service-card__list__items">
                                                                         <span class="service-card__list__items__icon d-inline-flex align-items-center justify-content-center rounded-circle">
                                                                             <i class="icofont-tick-mark"></i>
@@ -438,7 +438,7 @@
                                                             <div class="service-card d-flex flex-column h-100 my-4">
                                                                 <div class="service-card__header text-center">
                                                                     <div class="service-card__icon d-inline-flex align-items-center justify-content-center rounded-circle">
-                                                                        <i class="icofont-users-alt-4"></i>
+                                                                        <i class="icofont-live-messenger"></i>
                                                                     </div>
                                                                     <h3 class="service-card__title mt-3">Économique</h3>
                                                                 </div>
@@ -449,18 +449,18 @@
                                                                         </span>
                                                                         <span class="service-card__list__items__text">Nombre de déménageur nécessaire</span>
                                                                     </li>
-                                                                    <li class="service-card__list__items">
+                                                                    {{-- <li class="service-card__list__items">
                                                                         <span class="service-card__list__items__icon d-inline-flex align-items-center justify-content-center rounded-circle">
                                                                             <i class="icofont-tick-mark"></i>
                                                                         </span>
                                                                         <span class="service-card__list__items__text">démontage du mobilier</span>
-                                                                    </li>
-                                                                    <li class="service-card__list__items">
+                                                                    </li> --}}
+                                                                    {{-- <li class="service-card__list__items">
                                                                         <span class="service-card__list__items__icon d-inline-flex align-items-center justify-content-center rounded-circle">
                                                                             <i class="icofont-tick-mark"></i>
                                                                         </span>
                                                                         <span class="service-card__list__items__text">Emballage du fragile</span>
-                                                                    </li>
+                                                                    </li> --}}
                                                                     <li class="service-card__list__items">
                                                                         <span class="service-card__list__items__icon d-inline-flex align-items-center justify-content-center rounded-circle">
                                                                             <i class="icofont-tick-mark"></i>
@@ -485,12 +485,12 @@
                                                                         </span>
                                                                         <span class="service-card__list__items__text">manutention au déchargement</span>
                                                                     </li>
-                                                                    <li class="service-card__list__items">
+                                                                    {{-- <li class="service-card__list__items">
                                                                         <span class="service-card__list__items__icon d-inline-flex align-items-center justify-content-center rounded-circle">
                                                                             <i class="icofont-tick-mark"></i>
                                                                         </span>
                                                                         <span class="service-card__list__items__text">remontage du mobilier</span>
-                                                                    </li>
+                                                                    </li> --}}
                                                                     <li class="service-card__list__items">
                                                                         <span class="service-card__list__items__icon d-inline-flex align-items-center justify-content-center rounded-circle">
                                                                             <i class="icofont-tick-mark"></i>
@@ -517,7 +517,7 @@
                                                             <div class="service-card d-flex flex-column h-100 my-4">
                                                                 <div class="service-card__header text-center">
                                                                     <div class="service-card__icon d-inline-flex align-items-center justify-content-center rounded-circle">
-                                                                        <i class="icofont-spoon-and-fork"></i>
+                                                                        <i class="icofont-fix-tools"></i>
                                                                     </div>
                                                                     <h3 class="service-card__title mt-3">Standard</h3>
                                                                 </div>
@@ -527,6 +527,12 @@
                                                                             <i class="icofont-tick-mark"></i>
                                                                         </span>
                                                                         <span class="service-card__list__items__text">Nombre de déménageur nécessaire</span>
+                                                                    </li>
+                                                                    <li class="service-card__list__items">
+                                                                        <span class="service-card__list__items__icon d-inline-flex align-items-center justify-content-center rounded-circle">
+                                                                            <i class="icofont-tick-mark"></i>
+                                                                        </span>
+                                                                        <span class="service-card__list__items__text">démontage du mobilier</span>
                                                                     </li>
                                                                     <li class="service-card__list__items">
                                                                         <span class="service-card__list__items__icon d-inline-flex align-items-center justify-content-center rounded-circle">
@@ -599,7 +605,13 @@
                                                                         <span class="service-card__list__items__icon d-inline-flex align-items-center justify-content-center rounded-circle">
                                                                             <i class="icofont-tick-mark"></i>
                                                                         </span>
-                                                                        <span class="service-card__list__items__text">(Vêtement et linge de lit Livres et documents Vaisselles et fragile Divers)</span>
+                                                                        <span class="service-card__list__items__text">Nombre de déménageur nécessaire</span>
+                                                                    </li>
+                                                                    <li class="service-card__list__items">
+                                                                        <span class="service-card__list__items__icon d-inline-flex align-items-center justify-content-center rounded-circle">
+                                                                            <i class="icofont-tick-mark"></i>
+                                                                        </span>
+                                                                        <span class="service-card__list__items__text">mise en carton complète (fournitures de matèriels et main d'oeuvre) (Vêtement et linge de lit Livres et documents Vaisselles et fragile Divers)</span>
                                                                     </li>
                                                                     <li class="service-card__list__items">
                                                                         <span class="service-card__list__items__icon d-inline-flex align-items-center justify-content-center rounded-circle">

@@ -32,9 +32,7 @@ class MoverController extends Controller
      */
     public function register(Request $request)
     {
-        $request->validate([
-            'company'  => 'required',
-            'address'  => 'required',
+        $request->validate([ 
             'phone'    => 'required',
             'email'    => 'required|email|unique:users', 
             'name'     => 'required', 
@@ -42,10 +40,7 @@ class MoverController extends Controller
             'password' => 'required|confirmed|min:8', 
         ]);
 
-        $user = User::create([
-            
-            'company'   => $request->company,
-            'address'   => $request->address,
+        $user = User::create([ 
             'phone'     => $request->phone,
             'email'     => $request->email,
             'name'      => $request->name,

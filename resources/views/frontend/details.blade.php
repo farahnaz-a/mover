@@ -242,10 +242,10 @@ $count = $comments->count();
                                     <tr>
                                         <h6>Camion avec chauffeur</h6>
                                         <ul class="custom-list">
-                                            <li>protection du mobilier</li>
-                                            <li>manutention au chargement</li>
+                                            {{-- <li>protection du mobilier</li> --}}
+                                            {{-- <li>manutention au chargement</li> --}}
                                             <li>transport</li>
-                                            <li>manutention au déchargement</li>
+                                            {{-- <li>manutention au déchargement</li> --}}
                                             <li>Assurance</li>
                                             <li>frais de route (péage, carburant, ferry,…)</li> 
                                         </ul>   
@@ -257,13 +257,13 @@ $count = $comments->count();
                                         </h6>
                                         <ul class="custom-list">
                                             <li>Nombre de déménageur nécessaire</li>
-                                            <li>démontage du mobilier</li>
-                                            <li>Emballage du fragile</li>
+                                            {{-- <li>démontage du mobilier</li> --}}
+                                            {{-- <li>Emballage du fragile</li> --}}
                                             <li>protection du mobilier</li>
                                             <li>manutention au chargement</li>
                                             <li>transport</li>
                                             <li>manutention au déchargement</li>
-                                            <li>remontage du mobilier</li>
+                                            {{-- <li>remontage du mobilier</li> --}}
                                             <li>Assurance</li>
                                             <li>frais de route (péage, carburant, ferry,…)</li>
                                         </ul>
@@ -273,6 +273,7 @@ $count = $comments->count();
                                             <h6>Standard</h6>
                                             <ul class="custom-list">
                                                 <li>Nombre de déménageur nécessaire</li>
+                                                <li>démontage du mobilier</li>
                                                 <li>Emballage du fragile</li>
                                                 <li>protection du mobilier</li>
                                                 <li>manutention au chargement</li>
@@ -288,7 +289,8 @@ $count = $comments->count();
                                         
                                             <h6>Complète</h6>
                                             <ul class="custom-list">
-                                                <li>(Vêtement et linge de lit Livres et documents Vaisselles et fragile Divers)</li>
+                                                <li>Nombre de déménageur nécessaire</li>
+                                                <li>mise en carton complète (fournitures de matèriels et main d'oeuvre) (Vêtement et linge de lit Livres et documents Vaisselles et fragile Divers)</li>
                                                 <li>démontage du mobilier</li>
                                                 <li>protection du mobilier</li>
                                                 <li>manutention au chargement</li>
