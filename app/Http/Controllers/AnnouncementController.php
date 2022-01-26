@@ -86,12 +86,12 @@ class AnnouncementController extends Controller
 
     {   
         // if($request->category == 'déménagement'){
-            // $request->validate([ 
-            //    'économique'    => 'required_without_all:standard,compléte',
-            //    'standard'      => 'required_without_all:compléte,clicmove',
-            //    'compléte'      =>  'required_without_all:économique,clicmove',
-            //    'clicmove'      =>  'required_without_all:économique,standard' 
-            // ]);
+        //     $request->validate([ 
+        //        'économique'    => 'required_without_all:standard,compléte',
+        //        'standard'      => 'required_without_all:compléte,clicmove',
+        //        'compléte'      =>  'required_without_all:économique,clicmove',
+        //        'clicmove'      =>  'required_without_all:économique,standard' 
+        //     ]);
 
         // }
 
@@ -163,6 +163,17 @@ class AnnouncementController extends Controller
 
             return redirect()->route('announcement.details', $announcement->id);
         } else {
+
+         $request->validate([
+                'name'              => 'required',
+                'email'             => 'required|unique:users',
+                'country_code'      => 'required',
+                'phone'             => 'required',
+                'pseudo'            => 'required',
+                'password'          => 'required',
+                'confirm_password'  => 'required|same:password',
+            ]);
+    
 
             $user = User::where('email', $request->email)->first();
 

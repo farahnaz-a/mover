@@ -203,13 +203,13 @@
                                                         <div class="col-md-6">
                                                             <div class="form-group">
                                                                 <label for=""> Date de chargement </label>
-                                                                <input type="date" placeholder="Date de chargement " class="form-control" name="loading_date" required/>
+                                                                <input type="date" placeholder="Date de chargement" min="{{ \Carbon\Carbon::now()->format('Y-m-d') }}" class="form-control" name="loading_date" required/>
                                                             </div>
                                                         </div>
                                                         <div class="col-md-6">
                                                             <div class="form-group">
                                                                 <label for=""> Date de livraison </label>
-                                                                <input type="date" placeholder="Date de livraison " class="form-control" name="delevary_date" required/>
+                                                                <input type="date" placeholder="Date de livraison"  min="{{ \Carbon\Carbon::now()->format('Y-m-d') }}" class="form-control" name="delevary_date" required/>
                                                             </div>
                                                         </div>
                                                     </div>  
@@ -874,13 +874,13 @@
                                                         <div class="col-md-6">
                                                             <div class="form-group">
                                                                 <label for=""> Date de chargement </label>
-                                                                <input type="date" placeholder="Date de chargement " class="form-control" name="loading_date" required/>
+                                                                <input type="date" placeholder="Date de chargement " min="{{ \Carbon\Carbon::now()->format('Y-m-d') }}" class="form-control" name="loading_date" required/>
                                                             </div>
                                                         </div>
                                                         <div class="col-md-6">
                                                             <div class="form-group">
                                                                 <label for=""> Date de livraison </label>
-                                                                <input type="date" placeholder="Date de livraison " class="form-control" name="delevary_date" required/>
+                                                                <input type="date" placeholder="Date de livraison " min="{{ \Carbon\Carbon::now()->format('Y-m-d') }}" class="form-control" name="delevary_date" required/>
                                                             </div>
                                                         </div>
                                                     </div>  
@@ -1071,9 +1071,9 @@
                                                     {{-- IF User Is not Login Then Show This  --}}
                                                     @guest
                                                     {{-- <h3 class="mt-4">données </h3> --}}
-                                                    @if (session('errors'))
+                                                    {{-- @if (session('errors'))
                                                     <script>alert("{{ session('errors') }}")</script>
-                                                    @endif
+                                                    @endif --}}
                                                     @include('frontend.info')
                                                     @endguest
                                                     <div class="row">
@@ -1159,13 +1159,13 @@
                                                 <div class="col-md-6">
                                                     <div class="form-group">
                                                         <label for=""> Date de chargement </label>
-                                                        <input type="date" placeholder="Date de chargement " class="form-control" name="loading_date" required/>
+                                                        <input type="date" placeholder="Date de chargement " min="{{ \Carbon\Carbon::now()->format('Y-m-d') }}" class="form-control" name="loading_date" required/>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6">
                                                     <div class="form-group">
                                                         <label for=""> Date de livraison </label>
-                                                        <input type="date" placeholder="Date de livraison " class="form-control" name="delevary_date" required/>
+                                                        <input type="date" placeholder="Date de livraison " min="{{ \Carbon\Carbon::now()->format('Y-m-d') }}" class="form-control" name="delevary_date" required/>
                                                     </div>
                                                 </div>
                                             </div>  
@@ -1387,9 +1387,9 @@
                                             {{-- IF User Is not Login Then Show This  --}}
                                             @guest
                                             {{-- <h3 class="mt-4">données </h3> --}}
-                                            @if (session('errors'))
+                                            {{-- @if (session('errors'))
                                             <script>alert("{{ session('errors') }}")</script> 
-                                            @endif
+                                            @endif --}}
                                             @include('frontend.info')  
                                             @endguest
                                             <div class="row">
@@ -1461,13 +1461,13 @@
                                                 <div class="col-md-6">
                                                     <div class="form-group">
                                                         <label for=""> Date de chargement </label>
-                                                        <input type="date" placeholder="Date de chargement " class="form-control" name="loading_date" required/>
+                                                        <input type="date" placeholder="Date de chargement " min="{{ \Carbon\Carbon::now()->format('Y-m-d') }}" class="form-control" name="loading_date" required/>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6">
                                                     <div class="form-group">
                                                         <label for=""> Date de livraison </label>
-                                                        <input type="date" placeholder="Date de livraison " class="form-control" name="delevary_date" required/>
+                                                        <input type="date" placeholder="Date de livraison " min="{{ \Carbon\Carbon::now()->format('Y-m-d') }}" class="form-control" name="delevary_date" required/>
                                                     </div>
                                                 </div>
                                             </div>  
@@ -1685,9 +1685,9 @@
                                             {{-- IF User Is not Login Then Show This  --}}
                                             @guest
                                             {{-- <h3 class="mt-4">données </h3> --}}
-                                            @if (session('errors'))
+                                            {{-- @if (session('errors'))
                                             <script>alert("{{ session('errors') }}")</script> 
-                                            @endif
+                                            @endif --}}
                                             @include('frontend.info') 
                                             @endguest
                                             <div class="row">
@@ -1759,13 +1759,13 @@
                                                 <div class="col-md-6">
                                                     <div class="form-group">
                                                         <label for=""> Date de chargement </label>
-                                                        <input type="date" placeholder="Date de chargement " class="form-control" name="loading_date" required/>
+                                                        <input type="date" placeholder="Date de chargement " min="{{ \Carbon\Carbon::now()->format('Y-m-d') }}" class="form-control" name="loading_date" required/>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6">
                                                     <div class="form-group">
                                                         <label for=""> Date de livraison </label>
-                                                        <input type="date" placeholder="Date de livraison " class="form-control" name="delevary_date" required/>
+                                                        <input type="date" placeholder="Date de livraison " min="{{ \Carbon\Carbon::now()->format('Y-m-d') }}" class="form-control" name="delevary_date" required/>
                                                     </div>
                                                 </div>
                                             </div>  
@@ -1977,9 +1977,9 @@
                                             {{-- IF User Is not Login Then Show This  --}}
                                             @guest
                                             {{-- <h3 class="mt-4">données </h3> --}}
-                                            @if (session('errors'))
+                                            {{-- @if (session('errors'))
                                             <script>alert("{{ session('errors') }}")</script> 
-                                            @endif
+                                            @endif --}}
                                             @include('frontend.info')  
                                             @endguest
                                             <div class="row">
@@ -2041,13 +2041,13 @@
                                                 <div class="col-md-6">
                                                     <div class="form-group">
                                                         <label for=""> Date de chargement </label>
-                                                        <input type="date" placeholder="Date de chargement " class="form-control" name="loading_date" required/>
+                                                        <input type="date" placeholder="Date de chargement " min="{{ \Carbon\Carbon::now()->format('Y-m-d') }}" class="form-control" name="loading_date" required/>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6">
                                                     <div class="form-group">
                                                         <label for=""> Date de livraison </label>
-                                                        <input type="date" placeholder="Date de livraison " class="form-control" name="delevary_date" required/>
+                                                        <input type="date" placeholder="Date de livraison " min="{{ \Carbon\Carbon::now()->format('Y-m-d') }}" class="form-control" name="delevary_date" required/>
                                                     </div>
                                                 </div>
                                             </div>  
@@ -2202,9 +2202,9 @@
                                             {{-- IF User Is not Login Then Show This  --}}
                                             @guest
                                             {{-- <h3 class="mt-4">données </h3> --}}
-                                            @if (session('errors'))
+                                            {{-- @if (session('errors'))
                                             <script>alert("{{ session('errors') }}")</script> 
-                                            @endif
+                                            @endif --}}
                                             @include('frontend.info')  
                                             @endguest
                                             <div class="row">
@@ -2273,13 +2273,13 @@
                                                 <div class="col-md-6">
                                                     <div class="form-group">
                                                         <label for=""> Date de chargement </label>
-                                                        <input type="date" placeholder="Date de chargement " class="form-control" name="loading_date" required/>
+                                                        <input type="date" placeholder="Date de chargement " min="{{ \Carbon\Carbon::now()->format('Y-m-d') }}" class="form-control" name="loading_date" required/>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6">
                                                     <div class="form-group">
                                                         <label for=""> Date de livraison </label>
-                                                        <input type="date" placeholder="Date de livraison " class="form-control" name="delevary_date" required/>
+                                                        <input type="date" placeholder="Date de livraison " min="{{ \Carbon\Carbon::now()->format('Y-m-d') }}" class="form-control" name="delevary_date" required/>
                                                     </div>
                                                 </div>
                                             </div>  
@@ -2352,9 +2352,9 @@
                                             {{-- IF User Is not Login Then Show This  --}}
                                             @guest
                                             {{-- <h3 class="mt-4">données </h3> --}}
-                                            @if (session('errors'))
+                                            {{-- @if (session('errors'))
                                             <script>alert("{{ session('errors') }}")</script> 
-                                            @endif
+                                            @endif --}}
                                             @include('frontend.info') 
                                             @endguest
                                             <div class="row">
@@ -2423,13 +2423,13 @@
                                                 <div class="col-md-6">
                                                     <div class="form-group">
                                                         <label for=""> Date de chargement </label>
-                                                        <input type="date" placeholder="Date de chargement " class="form-control" name="loading_date" required/>
+                                                        <input type="date" placeholder="Date de chargement " min="{{ \Carbon\Carbon::now()->format('Y-m-d') }}" class="form-control" name="loading_date" required/>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6">
                                                     <div class="form-group">
                                                         <label for=""> Date de livraison </label>
-                                                        <input type="date" placeholder="Date de livraison " class="form-control" name="delevary_date" required/>
+                                                        <input type="date" placeholder="Date de livraison " min="{{ \Carbon\Carbon::now()->format('Y-m-d') }}" class="form-control" name="delevary_date" required/>
                                                     </div>
                                                 </div>
                                             </div>  
@@ -2479,9 +2479,9 @@
                                             {{-- IF User Is not Login Then Show This  --}}
                                             @guest
                                             {{-- <h3 class="mt-4">données </h3> --}}
-                                            @if (session('errors'))
+                                            {{-- @if (session('errors'))
                                             <script>alert("{{ session('errors') }}")</script> 
-                                            @endif
+                                            @endif --}}
                                             @include('frontend.info') 
                                             @endguest
                                             <div class="row">
@@ -2551,13 +2551,13 @@
                                                 <div class="col-md-6">
                                                     <div class="form-group">
                                                         <label for=""> Date de chargement </label>
-                                                        <input type="date" placeholder="Date de chargement " class="form-control" name="loading_date" required/>
+                                                        <input type="date" placeholder="Date de chargement " min="{{ \Carbon\Carbon::now()->format('Y-m-d') }}" class="form-control" name="loading_date" required/>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6">
                                                     <div class="form-group">
                                                         <label for=""> Date de livraison </label>
-                                                        <input type="date" placeholder="Date de livraison " class="form-control" name="delevary_date" required/>
+                                                        <input type="date" placeholder="Date de livraison " min="{{ \Carbon\Carbon::now()->format('Y-m-d') }}" class="form-control" name="delevary_date" required/>
                                                     </div>
                                                 </div>
                                             </div>  
@@ -2642,9 +2642,9 @@
                                             {{-- IF User Is not Login Then Show This  --}}
                                             @guest
                                             {{-- <h3 class="mt-4">données </h3> --}}
-                                            @if (session('errors'))
+                                            {{-- @if (session('errors'))
                                             <script>alert("{{ session('errors') }}")</script> 
-                                            @endif
+                                            @endif --}}
                                             @include('frontend.info') 
                                             @endguest
                                             <div class="row">
@@ -2723,46 +2723,46 @@
 
     <script>
         $(document).ready(function(){
-            $('#user_email').blur(function(){
-                var email = $(this).val(); 
-                $.ajaxSetup({
-                    headers: {
-                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                    }
-                });
+            // $('#user_email').blur(function(){
+            //     var email = $(this).val(); 
+            //     $.ajaxSetup({
+            //         headers: {
+            //             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            //         }
+            //     });
                 
-                $.ajax({
-                    type: 'POST', 
-                    url: "{{ route('email.check') }}",
-                    data: {
-                        email:email,
-                    },
-                    success: function(data){
-                        if(data == 'true'){
-                            $('#existing').addClass('d-block');
-                            $('#optional').addClass('d-none');
+            //     $.ajax({
+            //         type: 'POST', 
+            //         url: "{{ route('email.check') }}",
+            //         data: {
+            //             email:email,
+            //         },
+            //         success: function(data){
+            //             if(data == 'true'){
+            //                 $('#existing').addClass('d-block');
+            //                 $('#optional').addClass('d-none');
 
-                        }
-                        else{
-                            $('#existing').removeClass('d-block');
-                            $('#optional').removeClass('d-none'); 
-                        }
-                    }
-                });
-            }); 
+            //             }
+            //             else{
+            //                 $('#existing').removeClass('d-block');
+            //                 $('#optional').removeClass('d-none'); 
+            //             }
+            //         }
+            //     });
+            // }); 
 
 
-            $('#c_pwd').blur(function(){
-                var pwd = $('#pwd').val();
-                var c_pwd = $(this).val();
-                if(c_pwd != pwd){
-                    $('#password_error').text('Password Does not Match');  
-                    $('#pwd').focus();
-                }
-                else{
-                    $('#password_error').addClass('d-none');
-                } 
-            });  
+            // $('#c_pwd').blur(function(){
+            //     var pwd = $('#pwd').val();
+            //     var c_pwd = $(this).val();
+            //     if(c_pwd != pwd){
+            //         $('#password_error').text('Password Does not Match');  
+            //         $('#pwd').focus();
+            //     }
+            //     else{
+            //         $('#password_error').addClass('d-none');
+            //     } 
+            // });  
 
 
 

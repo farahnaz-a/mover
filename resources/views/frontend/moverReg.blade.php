@@ -23,7 +23,6 @@
         <section class="subscription">
           <div class="container">
             <div class="subscription-wrapper">
-
               <div class="bg-road text-white p-3" style="background-image: url('{{ asset('uploads/registrations') }}/{{ $registration->bg_image }}');">
                 <div class="row">
                   <div class="col-md-5 col-lg-4">
@@ -52,8 +51,10 @@
               </div>
               <form action="{{ route('mover.register') }}" method="POST">
                 @csrf
-                {{-- <div class="form-group row">
-                  
+                <div class="form-group row">
+                  <label class="col-sm-2 col-form-label"
+                    >Nom de l'entreprise</label
+                  >
                   <div class="col-sm-10">
                     <div class="input-group">
                       <div class="input-group-prepend">
@@ -64,7 +65,8 @@
                         type="text"
                         class="form-control form-control-lg"
                         placeholder="Nom complet de I'enterprise"
-                        name="company"  
+                        name="company" 
+                        required
                       />
                     </div>
                     <div>
@@ -73,12 +75,14 @@
                         @enderror
                     </div>
                   </div>
-                </div> --}}
-                {{-- <div class="form-group row">
-                 
+                </div>
+                <div class="form-group row">
+                  <label class="col-sm-2 col-form-label"
+                    >Adresse de l'entreprise</label
+                  >
                   <div class="col-sm-10">
                     <div class="input-group">
-                      <div class="input-group-prepend">
+                      <div class="input-group-prepend">  
                         <span class="input-group-text"
                           ><i class="icofont-location-pin"></i></span>
                       </div>
@@ -86,21 +90,24 @@
                         type="text"
                         class="form-control form-control-lg"
                         placeholder="Adresse de I'enterprise"
-                        name="address" 
+                        name="address"
+                        required 
                       />
                     </div>
                     <div>
-                        @error('address')
+                                              @error('address')
                          <small class="text-danger">{{ $message }}</small>
                         @enderror
                     </div>
                   </div>
-                </div> --}}
+                </div>
                 <div class="form-group row">
-                  
+                  <label class="col-sm-2 col-form-label"
+                    >Nom prenom du gérant</label
+                  >
                   <div class="col-sm-10">
                     <div class="input-group">
-                      <div class="input-group-prepend">
+                      <div class="input-group-prepend">  
                         <span class="input-group-text"
                           ><i class="icofont-user-alt-3"></i
                         ></span>
@@ -121,10 +128,10 @@
                   </div>
                 </div>
                 <div class="form-group row">
-                  
+                  <label class="col-sm-2 col-form-label">E-mail</label>
                   <div class="col-sm-10">
                     <div class="input-group">
-                      <div class="input-group-prepend">
+                      <div class="input-group-prepend">  
                         <span class="input-group-text"
                           ><i class="icofont-ui-message"></i
                         ></span>
@@ -145,10 +152,12 @@
                   </div>
                 </div>
                 <div class="form-group row">
-                
+                  <label class="col-sm-2 col-form-label"
+                    >Numéro de téléphone</label
+                  >
                   <div class="col-md-4">
                     <div class="input-group flex-nowrap mb-3 mb-md-0">
-                      <div class="input-group-prepend">
+                      <div class="input-group-prepend">  
                         <span class="input-group-text"
                           ><i class="icofont-world"></i
                         ></span>
@@ -183,10 +192,12 @@
                   </div>
                 </div>
                 <div class="form-group row">
-                 
+                  <label class="col-sm-2 col-form-label"
+                    ><strong>Choisir un pseudo</strong></label
+                  >
                   <div class="col-sm-10">
                     <div class="input-group">
-                      <div class="input-group-prepend">
+                      <div class="input-group-prepend"> 
                         <span class="input-group-text"
                           ><i class="icofont-ui-user"></i
                         ></span>
@@ -207,10 +218,10 @@
                   </div>
                 </div>
                 <div class="form-group row">
-                  
+                  <label class="col-sm-2 col-form-label">Mot de passe</label>
                   <div class="col-sm-10">
                     <div class="input-group">
-                      <div class="input-group-prepend">
+                      <div class="input-group-prepend">  
                         <span class="input-group-text"
                           ><i class="icofont-lock"></i
                         ></span>
@@ -231,10 +242,12 @@
                   </div>
                 </div>
                 <div class="form-group row">
-               
+                  <label class="col-sm-2 col-form-label"
+                    >Confirmer votre mot de passe</label
+                  >
                   <div class="col-sm-10">
                     <div class="input-group">
-                      <div class="input-group-prepend">
+                      <div class="input-group-prepend">  
                         <span class="input-group-text"
                           ><i class="icofont-lock"></i
                         ></span>
@@ -260,10 +273,11 @@
                     <i class="icofont-info-circle"></i> j'accepte les dispositions des conditions générales et de la politique de confidentialité
                   </div>  --}}
                 </div>
-                <div class="form-group row"> 
+                <div class="form-group row">
+                  <label class="col-sm-2 col-form-label"></label>
                   <div class="col-sm-10">
                     <div class="custom-control custom-checkbox">
-                      <input
+                      <input  
                         type="checkbox"
                         class="custom-control-input"
                         id="customCheck1"
@@ -275,22 +289,28 @@
                     </div>
                   </div>
                 </div>
-                <div class="form-group row"> 
-                  <div class="col-sm-10">
-                    <div class="text-center mt-5">
-                      <button
-                        class="btn btn-lg text-white"
-                        style="background-color: #5fc2ba"
-                        type="submit"
-                      >
-                        S'inscrire
-                      </button>
-                    </div>
-                  </div>
-                </div> 
+                <div class="text-center mt-5">
+                  <button
+                    class="btn btn-lg text-white"
+                    style="background-color: #5fc2ba"
+                    type="submit"
+                  >
+                    S'inscrire
+                  </button>
+                </div>
               </form>
             </div>
           </div>
+
+    
+          
+            
+    
+
+          
+    
+    
+  
         </section>
         <!-- map view end -->
   
