@@ -62,6 +62,16 @@
         border: 12px solid #fafafa;
         margin-top: -50%;
     }
+    .service-card_icon{
+        font-size: 40px;
+        width: 95px;
+        height: 95px;
+        color: #232135;
+        background-color: #fff;
+        border: 12px solid #fafafa;
+        margin-top: -50%;
+    }
+
     .service-card__title{
         font-size: 28px;
         color: #232135;
@@ -115,6 +125,15 @@
         object-fit: cover;
         margin: 5px;
     }
+    
+    .image-btn-color{
+            background: #232135 !important;
+            color: white;
+        }
+    .image-btn-color:hover{
+            background: #232135 !important;
+            color: white;
+        }
 
     @media screen and (max-width: 575px){
         .logo-footer{
@@ -382,7 +401,7 @@
                                                         <div class="col-md-6 d-flex flex-column">
                                                             <div class="service-card d-flex flex-column h-100 my-4">
                                                                 <div class="service-card__header text-center">
-                                                                    <div class="service-card__icon d-inline-flex align-items-center justify-content-center rounded-circle">
+                                                                    <div class="service-card_icon d-inline-flex align-items-center justify-content-center rounded-circle">
                                                                         <i class="icofont-fast-delivery"></i>
                                                                     </div>
                                                                     <h3 class="service-card__title mt-3">Camion avec chauffeur</h3>
@@ -437,7 +456,7 @@
                                                         <div class="col-md-6 d-flex flex-column">
                                                             <div class="service-card d-flex flex-column h-100 my-4">
                                                                 <div class="service-card__header text-center">
-                                                                    <div class="service-card__icon d-inline-flex align-items-center justify-content-center rounded-circle">
+                                                                    <div class="service-card_icon d-inline-flex align-items-center justify-content-center rounded-circle">
                                                                         <i class="icofont-live-messenger"></i>
                                                                     </div>
                                                                     <h3 class="service-card__title mt-3">Économique</h3>
@@ -516,7 +535,7 @@
                                                         <div class="col-md-6 d-flex flex-column">
                                                             <div class="service-card d-flex flex-column h-100 my-4">
                                                                 <div class="service-card__header text-center">
-                                                                    <div class="service-card__icon d-inline-flex align-items-center justify-content-center rounded-circle">
+                                                                    <div class="service-card_icon d-inline-flex align-items-center justify-content-center rounded-circle">
                                                                         <i class="icofont-fix-tools"></i>
                                                                     </div>
                                                                     <h3 class="service-card__title mt-3">Standard</h3>
@@ -595,7 +614,7 @@
                                                         <div class="col-md-6 d-flex flex-column">
                                                             <div class="service-card d-flex flex-column h-100 my-4">
                                                                 <div class="service-card__header text-center">
-                                                                    <div class="service-card__icon d-inline-flex align-items-center justify-content-center rounded-circle">
+                                                                    <div class="service-card_icon d-inline-flex align-items-center justify-content-center rounded-circle">
                                                                         <i class="icofont-box"></i>
                                                                     </div>
                                                                     <h3 class="service-card__title mt-3">Complète</h3>
@@ -779,7 +798,7 @@
                                                             <div class="cleint_feature_image__gallery">
                                                             </div>
                                                             <input class="d-none" name="image[]" type="file" multiple id="cleint_feature_image" accept="image/x-png,image/gif,image/jpeg,image/jpg" required>
-                                                            <label for="cleint_feature_image" class="my-3 btn website-bg-color"><i class="icofont-arrow-up bg-light website-color rounded-circle"></i>Télécharger</label>
+                                                            <label for="cleint_feature_image" class="my-3 btn image-btn-color"><i class="icofont-arrow-up bg-light website-color rounded-circle"></i>Télécharger</label>
                                                         </div>
                                                     </div>
                                                     
@@ -1064,7 +1083,7 @@
                                                             <div class="cleint_feature_image__gallery">
                                                             </div>
                                                             <input class="d-none" name="image[]" type="file" multiple id="cleint_feature_image" accept="image/x-png,image/gif,image/jpeg,image/jpg" required>
-                                                            <label for="cleint_feature_image" class="my-3 btn website-bg-color"><i class="icofont-arrow-up bg-light website-color rounded-circle"></i>Télécharger</label>
+                                                            <label for="cleint_feature_image" class="my-3 btn image-btn-color"><i class="icofont-arrow-up bg-light website-color rounded-circle"></i>Télécharger</label>
                                                         </div>
                                                     </div>
 
@@ -1380,7 +1399,7 @@
                                                     <div class="cleint_feature_image__gallery">
                                                     </div>
                                                     <input class="d-none" name="image[]" type="file" multiple id="cleint_feature_image" accept="image/x-png,image/gif,image/jpeg,image/jpg" required>
-                                                    <label for="cleint_feature_image" class="my-3 btn website-bg-color"><i class="icofont-arrow-up bg-light website-color rounded-circle"></i>Télécharger</label>
+                                                    <label for="cleint_feature_image" class="my-3 btn image-btn-color"><i class="icofont-arrow-up bg-light website-color rounded-circle"></i>Télécharger</label>
                                                 </div>
                                             </div>
 
@@ -1678,7 +1697,7 @@
                                                     <div class="cleint_feature_image__gallery">
                                                     </div>
                                                     <input class="d-none" name="image[]" type="file" multiple id="cleint_feature_image" accept="image/x-png,image/gif,image/jpeg,image/jpg" required>
-                                                    <label for="cleint_feature_image" class="my-3 btn website-bg-color"><i class="icofont-arrow-up bg-light website-color rounded-circle"></i>Télécharger</label>
+                                                    <label for="cleint_feature_image" class="my-3 btn image-btn-color"><i class="icofont-arrow-up bg-light website-color rounded-circle"></i>Télécharger</label>
                                                 </div>
                                             </div>
 
@@ -1970,7 +1989,7 @@
                                                     <div class="cleint_feature_image__gallery">
                                                     </div>
                                                     <input class="d-none" name="image[]" type="file" multiple id="cleint_feature_image" accept="image/x-png,image/gif,image/jpeg,image/jpg" required>
-                                                    <label for="cleint_feature_image" class="my-3 btn website-bg-color"><i class="icofont-arrow-up bg-light website-color rounded-circle"></i>Télécharger</label>
+                                                    <label for="cleint_feature_image" class="my-3 btn image-btn-color"><i class="icofont-arrow-up bg-light website-color rounded-circle"></i>Télécharger</label>
                                                 </div>
                                             </div>
 
@@ -2195,7 +2214,7 @@
                                                     <div class="cleint_feature_image__gallery">
                                                     </div>
                                                     <input class="d-none" name="image[]" type="file" multiple id="cleint_feature_image" accept="image/x-png,image/gif,image/jpeg,image/jpg" required>
-                                                    <label for="cleint_feature_image" class="my-3 btn website-bg-color"><i class="icofont-arrow-up bg-light website-color rounded-circle"></i>Télécharger</label>
+                                                    <label for="cleint_feature_image" class="my-3 btn image-btn-color"><i class="icofont-arrow-up bg-light website-color rounded-circle"></i>Télécharger</label>
                                                 </div>
                                             </div>
 
@@ -2345,7 +2364,7 @@
                                                     <div class="cleint_feature_image__gallery">
                                                     </div>
                                                     <input class="d-none" name="image[]" type="file" multiple id="cleint_feature_image" accept="image/x-png,image/gif,image/jpeg,image/jpg" required>
-                                                    <label for="cleint_feature_image" class="my-3 btn website-bg-color"><i class="icofont-arrow-up bg-light website-color rounded-circle"></i>Télécharger</label>
+                                                    <label for="cleint_feature_image" class="my-3 btn image-btn-color"><i class="icofont-arrow-up bg-light website-color rounded-circle"></i>Télécharger</label>
                                                 </div>
                                             </div>
 
@@ -2471,7 +2490,7 @@
                                                     <div class="cleint_feature_image__gallery">
                                                     </div>
                                                     <input class="d-none" name="image[]" type="file" multiple id="cleint_feature_image" accept="image/x-png,image/gif,image/jpeg,image/jpg" required>
-                                                    <label for="cleint_feature_image" class="my-3 btn website-bg-color"><i class="icofont-arrow-up bg-light website-color rounded-circle"></i>Télécharger</label>
+                                                    <label for="cleint_feature_image" class="my-3 btn image-btn-color"><i class="icofont-arrow-up bg-light website-color rounded-circle"></i>Télécharger</label>
                                                 </div>
                                             </div>
                                             
@@ -2635,7 +2654,7 @@
                                                     <div class="cleint_feature_image__gallery">
                                                     </div>
                                                     <input class="d-none" name="image[]" type="file" multiple id="cleint_feature_image" accept="image/x-png,image/gif,image/jpeg,image/jpg" required>
-                                                    <label for="cleint_feature_image" class="my-3 btn website-bg-color"><i class="icofont-arrow-up bg-light website-color rounded-circle"></i>Télécharger</label>
+                                                    <label for="cleint_feature_image" class="my-3 btn image-btn-color"><i class="icofont-arrow-up bg-light website-color rounded-circle"></i>Télécharger</label>
                                                 </div>
                                             </div>
 

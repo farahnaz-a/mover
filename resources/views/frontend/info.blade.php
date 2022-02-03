@@ -3,7 +3,7 @@
         <div class="form-group input-group">
             <div class="form-group__wrapper w-100 position-relative">
                 <label class="form-group__wrapper__icon d-inline-flex align-items-center justify-content-center position-absolute mb-0 p-2" for="fname">
-                    <i class="icofont-user-alt-3"></i>
+                    <i class="icofont-ui-user"></i>
                 </label>
                 <input id="fname" name="name" type="text" placeholder="Nom et premon" class="form-control form-group__wrapper__input" required/>
             </div>
@@ -15,7 +15,7 @@
         <div class="form-group input-group">
             <div class="form-group__wrapper w-100 position-relative">
                 <label class="form-group__wrapper__icon d-inline-flex align-items-center justify-content-center position-absolute mb-0 p-2" for="user_email">
-                    <i class="icofont-email"></i>
+                    <i class="icofont-ui-message"></i>
                 </label>
                 <input name="email" type="text" id="user_email" placeholder="Email" class="form-control form-group__wrapper__input" required/>
             </div>
