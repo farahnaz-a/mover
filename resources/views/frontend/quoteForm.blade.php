@@ -158,6 +158,9 @@
             font-size: 20px;
         }
     }
+    .capitalize_text{
+        text-transform: uppercase !important;
+    }
 
 </style>
 @endsection
@@ -195,7 +198,7 @@
                     @if ($category == 'déménagement')
                                 <!-- household equipment form start -->
                                 <div class="bg-white shadow-sm my-3 p-3 rounded" id="household">
-                                    <h4 class="font-weight-bold text-navy-blue">Décrivez votre demande</h4>
+                                    <h4 class="font-weight-bold text-navy-blue capitalize_text">Décrivez votre demande</h4>
                                     {{-- <span>Give a name to your listing:</span> --}}
                                     <div class="row">
                                         <div class="col-12">
@@ -251,7 +254,7 @@
                                                     <div class="row my-3">
                                                         <div class="col-md-6">
                                                             <div class="form-group d-flex align-items-center">
-                                                                <h5 class="d-inline-block">Biens particuliers</h5>
+                                                                <h5 class="d-inline-block capitalize_text">Biens particuliers</h5>
                                                                 {{-- <input type="text" placeholder="Biens particuliers"
                                                                     class="form-control" name="individual_goods"/> --}}
                                                                 <div class="d-flex ml-auto">
@@ -395,7 +398,7 @@
                                                         </div>
                                                     </div> 
                                                     <br>
-                                                    <h5 class="mt-3">Je choisis ma formule de déménagement</h5>
+                                                    <h5 class="mt-3 capitalize_text">Je choisis ma formule de déménagement</h5>
                                                     {{-- Service Card Section Start --}}
                                                     <div class="row mt-4">
                                                         <div class="col-md-6 d-flex flex-column">
@@ -446,7 +449,7 @@
                                                                 </ul>
                                                                 <div class="text-center mt-auto">
                                                                     <input type="radio" id="clicmove" name="services" value="clicmove" class="service-card__checkbox d-none" required>
-                                                                    <label for="clicmove" role="button" class="btn-theme bg-navy-blue no-shadow mt-3 service-card__label">Choisir</label>
+                                                                    <label for="clicmove" role="button" class="btn-theme bg-navy-blue no-shadow mt-3 service-card__label website-bg-color">Choisir</label>
                                                                 </div>
                                                             </div>
                                                             @error('clicmove')
@@ -525,7 +528,7 @@
                                                                 </ul>
                                                                 <div class="text-center mt-auto">
                                                                     <input type="radio" id="économique" name="services" value="économique" class="service-card__checkbox d-none" required>
-                                                                    <label for="économique" role="button" class="btn-theme bg-navy-blue no-shadow mt-3 service-card__label">Choisir</label>
+                                                                    <label for="économique" role="button" class="btn-theme bg-navy-blue no-shadow mt-3 service-card__label website-bg-color">Choisir</label>
                                                                 </div>
                                                             </div>
                                                             @error('économique')
@@ -604,7 +607,7 @@
                                                                 </ul>
                                                                 <div class="text-center mt-auto">
                                                                     <input type="radio" id="standard" name="services" value="standard" class="service-card__checkbox d-none" required>
-                                                                    <label for="standard" role="button" class="btn-theme bg-navy-blue no-shadow mt-3 service-card__label">Choisir</label>
+                                                                    <label for="standard" role="button" class="btn-theme bg-navy-blue no-shadow mt-3 service-card__label website-bg-color">Choisir</label>
                                                                 </div>
                                                             </div>
                                                             @error('standard')
@@ -683,7 +686,7 @@
                                                                 </ul>
                                                                 <div class="text-center mt-auto">
                                                                     <input type="radio" id="compléte" name="services" value="compléte" class="service-card__checkbox d-none" required>
-                                                                    <label for="compléte" role="button" class="btn-theme bg-navy-blue no-shadow mt-3 service-card__label">Choisir</label>
+                                                                    <label for="compléte" role="button" class="btn-theme bg-navy-blue no-shadow mt-3 service-card__label website-bg-color">Choisir</label>
                                                                 </div>
                                                             </div>
                                                             @error('compléte')
@@ -783,22 +786,22 @@
                                                             @enderror
                                                         </div>
                                                     </div> --}}
-                                                    <h5 class="mt-4 font-weight-bold text-navy-blue">
-                                                        <i class="icofont-warning-alt mr-2"></i>informations complémentaires
+                                                    <h5 class="mt-4 font-weight-bold text-navy-blue capitalize_text">
+                                                        <i class="icofont-warning-alt mr-2 "></i>informations complémentaires
                                                       </h5>
                                                     <div class="row">
                                                         <div class="col-12">
                                                             <textarea name="informations"   class="form-control"
-                                                                rows="7" placeholder="informations complémentaires "></textarea>
+                                                                rows="7" placeholder="INFORMATIONS COMPLÉMENTAIRES"></textarea>
                                                         </div>
                                                     </div>
                                                     <div class="row mt-4">
                                                         <div class="col-12 mb-3">
-                                                            <h5>Vous pouvez compléter votre demande avec des photos</h5>
+                                                            <h5 class="capitalize_text">Vous pouvez compléter votre demande avec des photos</h5>
                                                             <div class="cleint_feature_image__gallery">
                                                             </div>
                                                             <input class="d-none" name="image[]" type="file" multiple id="cleint_feature_image" accept="image/x-png,image/gif,image/jpeg,image/jpg" required>
-                                                            <label for="cleint_feature_image" class="my-3 btn image-btn-color"><i class="icofont-arrow-up bg-light website-color rounded-circle"></i>Télécharger</label>
+                                                            <label for="cleint_feature_image" class="my-3 btn  website-bg-color capitalize_text"><i class="icofont-arrow-up bg-light website-color rounded-circle "></i>Télécharger</label>
                                                         </div>
                                                     </div>
                                                     
@@ -828,7 +831,7 @@
                                     {{-- <a href="{{ URL::previous() }}" class="back btn btn-outline-danger">
                                         <i class="icofont-simple-left mr-2"></i>Back
                                     </a> --}}
-                                    <button type="submit" id="demenagementForm" class="continue btn text-white bg-navy-blue ml-3">
+                                    <button type="submit" id="demenagementForm" class="continue btn text-white bg-navy-blue ml-3 capitalize_text website-bg-color">
                                         Publiez mon annonce
                                     </button>
                                     </form>
@@ -863,7 +866,7 @@
                                     </div>
                                 </div> --}}
                                 <div id="vehicle2" class="d-block">
-                                    <h4 class="font-weight-bold text-navy-blue">
+                                    <h4 class="font-weight-bold text-navy-blue capitalize_text">
                                         Décrivez votre demande
                                     </h4>
                                     {{-- <span>Give a name to your listing:</span> --}}
@@ -921,7 +924,7 @@
                                                     <div class="row my-3">
                                                         <div class="col-md-6">
                                                             <div class="form-group d-flex align-items-center">
-                                                                <h5 class="d-inline-block">Biens particuliers</h5>
+                                                                <h5 class="d-inline-block capitalize_text capitalize_text">Biens particuliers</h5>
                                                                 {{-- <input type="text" placeholder="Biens particuliers"
                                                                     class="form-control" name="individual_goods"/> --}}
                                                                 <div class="d-flex ml-auto">
@@ -1067,23 +1070,23 @@
                                                             </div>
                                                         </div> 
                                                     </div> 
-                                                    <h5 class="mt-4 font-weight-bold text-navy-blue">
+                                                    <h5 class="mt-4 font-weight-bold text-navy-blue capitalize_text">
                                                         <i class="icofont-warning-alt mr-2"></i>informations complémentaires
                                                       </h5>
                                                     <div class="row">
                                                         <div class="col-12">
                                                             <textarea name="informations"   class="form-control"
-                                                                rows="7" placeholder="informations complémentaires "></textarea>
+                                                                rows="7" placeholder="INFORMATIONS COMPLÉMENTAIRES"></textarea>
                                                         </div>
                                                     </div>
                                                     
                                                     <div class="row mt-4">
                                                         <div class="col-12 mb-3">
-                                                            <h5>Vous pouvez compléter votre demande avec des photos</h5>
+                                                            <h5 class="capitalize_text">Vous pouvez compléter votre demande avec des photos</h5>
                                                             <div class="cleint_feature_image__gallery">
                                                             </div>
                                                             <input class="d-none" name="image[]" type="file" multiple id="cleint_feature_image" accept="image/x-png,image/gif,image/jpeg,image/jpg" required>
-                                                            <label for="cleint_feature_image" class="my-3 btn image-btn-color"><i class="icofont-arrow-up bg-light website-color rounded-circle"></i>Télécharger</label>
+                                                            <label for="cleint_feature_image" class="my-3 btn  website-bg-color capitalize_text"><i class="icofont-arrow-up bg-light website-color rounded-circle"></i>Télécharger</label>
                                                         </div>
                                                     </div>
 
@@ -1127,7 +1130,7 @@
                                 {{-- <a href="{{ URL::previous() }}" class="back btn btn-outline-danger">
                                     <i class="icofont-simple-left mr-2"></i>Back
                                 </a> --}}
-                                <button type="submit" class="continue btn text-white bg-navy-blue ml-3">
+                                <button type="submit" class="continue btn text-white bg-navy-blue ml-3 capitalize_text  website-bg-color">
                                     Publiez mon annonce
 
                                 </button>
@@ -1140,7 +1143,7 @@
                     @if ($category == 'meubles')
                         <!-- motorcycle and sport form start -->
                         <div class="bg-white shadow-sm my-3 p-3 rounded d-block" id="motorcycleSport">
-                            <h4 class="font-weight-bold text-navy-blue">Décrivez votre demande</h4>
+                            <h4 class="font-weight-bold text-navy-blue capitalize_text">Décrivez votre demande</h4>
                             {{-- <span>Give a name to your listing:</span> --}}
                             <div class="row">
                                 <div class="col-12">
@@ -1383,23 +1386,23 @@
                                                     </div>
                                                 </div>
                                             </div> --}}
-                                            <h5 class="mt-4 font-weight-bold text-navy-blue">
+                                            <h5 class="mt-4 font-weight-bold text-navy-blue capitalize_text">
                                                 <i class="icofont-warning-alt mr-2"></i>informations complémentaires
                                               </h5>
                                             <div class="row">
                                                 <div class="col-12">
                                                     <textarea name="informations"   class="form-control"
-                                                        rows="7" placeholder="informations complémentaires "></textarea>
+                                                        rows="7" placeholder="INFORMATIONS COMPLÉMENTAIRES"></textarea>
                                                 </div>
                                             </div>
                                             
                                             <div class="row mt-4">
                                                 <div class="col-12 mb-3">
-                                                    <h5>Vous pouvez compléter votre demande avec des photos</h5>
+                                                    <h5 class="capitalize_text">Vous pouvez compléter votre demande avec des photos</h5>
                                                     <div class="cleint_feature_image__gallery">
                                                     </div>
                                                     <input class="d-none" name="image[]" type="file" multiple id="cleint_feature_image" accept="image/x-png,image/gif,image/jpeg,image/jpg" required>
-                                                    <label for="cleint_feature_image" class="my-3 btn image-btn-color"><i class="icofont-arrow-up bg-light website-color rounded-circle"></i>Télécharger</label>
+                                                    <label for="cleint_feature_image" class="my-3 btn  website-bg-color capitalize_text"><i class="icofont-arrow-up bg-light website-color rounded-circle"></i>Télécharger</label>
                                                 </div>
                                             </div>
 
@@ -1432,7 +1435,7 @@
                                 {{-- <a href="{{ URL::previous() }}" class="back btn btn-outline-danger">
                                     <i class="icofont-simple-left mr-2"></i>Back
                                 </a> --}}
-                                <button class="continue btn text-white bg-navy-blue ml-3" type="submit">
+                                <button class="continue btn text-white bg-navy-blue ml-3 capitalize_text  website-bg-color" type="submit">
                                     Publiez mon annonce
                                 </button>
                                 </form>
@@ -1444,7 +1447,7 @@
                     @if ($category == 'électroménager')
                         <!-- boats and voluminous sport form start -->
                         <div class="bg-white shadow-sm my-3 p-3 rounded d-block" id="boat-voluminous">
-                            <h4 class="font-weight-bold text-navy-blue">Décrivez votre demande</h4>
+                            <h4 class="font-weight-bold text-navy-blue capitalize_text">Décrivez votre demande</h4>
                             {{-- <span>Give a name to your listing:</span> --}}
                             <div class="row">
                                 <div class="col-12">
@@ -1681,23 +1684,23 @@
                                                     </div>
                                                 </div>
                                             </div>  --}}
-                                            <h5 class="mt-4 font-weight-bold text-navy-blue">
+                                            <h5 class="mt-4 font-weight-bold text-navy-blue capitalize_text">
                                                 <i class="icofont-warning-alt mr-2"></i>informations complémentaires
                                               </h5>
                                             <div class="row">
                                                 <div class="col-12">
                                                     <textarea name="informations"   class="form-control"
-                                                        rows="7" placeholder="informations complémentaires "></textarea>
+                                                        rows="7" placeholder="INFORMATIONS COMPLÉMENTAIRES"></textarea>
                                                 </div>
                                             </div>
                                             
                                             <div class="row mt-4">
                                                 <div class="col-12 mb-3">
-                                                    <h5>Vous pouvez compléter votre demande avec des photos</h5>
+                                                    <h5 class="capitalize_text">Vous pouvez compléter votre demande avec des photos</h5>
                                                     <div class="cleint_feature_image__gallery">
                                                     </div>
                                                     <input class="d-none" name="image[]" type="file" multiple id="cleint_feature_image" accept="image/x-png,image/gif,image/jpeg,image/jpg" required>
-                                                    <label for="cleint_feature_image" class="my-3 btn image-btn-color"><i class="icofont-arrow-up bg-light website-color rounded-circle"></i>Télécharger</label>
+                                                    <label for="cleint_feature_image" class="my-3 btn  website-bg-color capitalize_text"><i class="icofont-arrow-up bg-light website-color rounded-circle"></i>Télécharger</label>
                                                 </div>
                                             </div>
 
@@ -1728,7 +1731,7 @@
                                 {{-- <a href="{{ URL::previous() }}" class="back btn btn-outline-danger">
                                     <i class="icofont-simple-left mr-2"></i>Back
                                 </a> --}}
-                                <button type="submit" class="continue btn text-white bg-navy-blue ml-3">
+                                <button type="submit" class="continue btn text-white bg-navy-blue ml-3 capitalize_text  website-bg-color">
                                     Publiez mon annonce 
                                 </button>
                                 </form>
@@ -1740,7 +1743,7 @@
                     @if ($category == 'colis')
                         <!--  Fragile goods form start -->
                         <div class="bg-white shadow-sm my-3 p-3 rounded d-block" id="fragileGoods">
-                            <h4 class="font-weight-bold text-navy-blue">Décrivez votre demande</h4>
+                            <h4 class="font-weight-bold text-navy-blue capitalize_text">Décrivez votre demande</h4>
                             {{-- <span>Give a name to your listing:</span> --}}
                             <div class="row">
                                 <div class="col-12">
@@ -1973,23 +1976,23 @@
                                                 </div> 
                                             </div> 
                                              
-                                            <h5 class="mt-4 font-weight-bold text-navy-blue">
+                                            <h5 class="mt-4 font-weight-bold text-navy-blue capitalize_text">
                                                 <i class="icofont-warning-alt mr-2"></i>informations complémentaires
                                               </h5>
                                             <div class="row">
                                                 <div class="col-12">
                                                     <textarea name="informations"   class="form-control"
-                                                        rows="7" placeholder="informations complémentaires "></textarea>
+                                                        rows="7" placeholder="INFORMATIONS COMPLÉMENTAIRES"></textarea>
                                                 </div>
                                             </div>
                                             
                                             <div class="row mt-4">
                                                 <div class="col-12 mb-3">
-                                                    <h5>Vous pouvez compléter votre demande avec des photos</h5>
+                                                    <h5 class="capitalize_text">Vous pouvez compléter votre demande avec des photos</h5>
                                                     <div class="cleint_feature_image__gallery">
                                                     </div>
                                                     <input class="d-none" name="image[]" type="file" multiple id="cleint_feature_image" accept="image/x-png,image/gif,image/jpeg,image/jpg" required>
-                                                    <label for="cleint_feature_image" class="my-3 btn image-btn-color"><i class="icofont-arrow-up bg-light website-color rounded-circle"></i>Télécharger</label>
+                                                    <label for="cleint_feature_image" class="my-3 btn  website-bg-color capitalize_text"><i class="icofont-arrow-up bg-light website-color rounded-circle"></i>Télécharger</label>
                                                 </div>
                                             </div>
 
@@ -2020,7 +2023,7 @@
                                 {{-- <a href="{{ URL::previous() }}" class="back btn btn-outline-danger">
                                     <i class="icofont-simple-left mr-2"></i>Back
                                 </a> --}}
-                                <button class="continue btn text-white bg-navy-blue ml-3" type="submit">
+                                <button class="continue btn text-white bg-navy-blue ml-3 capitalize_text  website-bg-color" type="submit">
                                     Publiez mon annonce 
                                 </button>
 
@@ -2033,7 +2036,7 @@
                     @if ($category == 'palette')
                         <!--  Package/Flod form start -->
                         <div class="bg-white shadow-sm my-3 p-3 rounded d-block" id="package">
-                            <h4 class="font-weight-bold text-navy-blue">Décrivez votre demande</h4>
+                            <h4 class="font-weight-bold text-navy-blue capitalize_text">Décrivez votre demande</h4>
                             {{-- <span>Give a name to your listing:</span> --}}
                             <div class="row">
                                 <div class="col-12">
@@ -2198,23 +2201,23 @@
                                                     </div>
                                                 </div> 
                                             </div> 
-                                            <h5 class="mt-4 font-weight-bold text-navy-blue">
+                                            <h5 class="mt-4 font-weight-bold text-navy-blue capitalize_text">
                                                 <i class="icofont-warning-alt mr-2"></i>informations complémentaires
                                               </h5>
                                             <div class="row">
                                                 <div class="col-12">
                                                     <textarea name="informations"   class="form-control"
-                                                        rows="7" placeholder="informations complémentaires "></textarea>
+                                                        rows="7" placeholder="INFORMATIONS COMPLÉMENTAIRES"></textarea>
                                                 </div>
                                             </div>
                                             
                                             <div class="row mt-4">
                                                 <div class="col-12 mb-3">
-                                                    <h5>Vous pouvez compléter votre demande avec des photos</h5>
+                                                    <h5 class="capitalize_text">Vous pouvez compléter votre demande avec des photos</h5>
                                                     <div class="cleint_feature_image__gallery">
                                                     </div>
                                                     <input class="d-none" name="image[]" type="file" multiple id="cleint_feature_image" accept="image/x-png,image/gif,image/jpeg,image/jpg" required>
-                                                    <label for="cleint_feature_image" class="my-3 btn image-btn-color"><i class="icofont-arrow-up bg-light website-color rounded-circle"></i>Télécharger</label>
+                                                    <label for="cleint_feature_image" class="my-3 btn  website-bg-color capitalize_text"><i class="icofont-arrow-up bg-light website-color rounded-circle"></i>Télécharger</label>
                                                 </div>
                                             </div>
 
@@ -2245,7 +2248,7 @@
                                 {{-- <button data-section="0" class="back btn btn-outline-danger">
                                     <i class="icofont-simple-left mr-2"></i>Back
                                 </button> --}}
-                                <button type="submit" class="continue btn text-white bg-navy-blue ml-3">
+                                <button type="submit" class="continue btn text-white bg-navy-blue ml-3 capitalize_text  website-bg-color">
                                     Publiez mon annonce 
                                 </button>
                                 </form>
@@ -2258,7 +2261,7 @@
                         <!--  Pallet form start -->
                         <div class="bg-white shadow-sm my-3 p-3 rounded d-block" id="pallet">
 
-                            <h4 class="font-weight-bold text-navy-blue">Décrivez votre demande</h4>
+                            <h4 class="font-weight-bold text-navy-blue capitalize_text">Décrivez votre demande</h4>
                             {{-- <span>Give a name to your listing:</span> --}}
                             <div class="row">
                                 <div class="col-12">
@@ -2348,23 +2351,23 @@
                                                     </div> 
                                                 </div> 
                                             </div>
-                                            <h5 class="mt-4 font-weight-bold text-navy-blue">
+                                            <h5 class="mt-4 font-weight-bold text-navy-blue capitalize_text">
                                                 <i class="icofont-warning-alt mr-2"></i>informations complémentaires
                                               </h5>
                                             <div class="row">
                                                 <div class="col-12">
                                                     <textarea name="informations"   class="form-control"
-                                                        rows="7" placeholder="informations complémentaires "></textarea>
+                                                        rows="7" placeholder="INFORMATIONS COMPLÉMENTAIRES"></textarea>
                                                 </div>
                                             </div>
                                             
                                             <div class="row mt-4">
                                                 <div class="col-12 mb-3">
-                                                    <h5>Vous pouvez compléter votre demande avec des photos</h5>
+                                                    <h5 class="capitalize_text">Vous pouvez compléter votre demande avec des photos</h5>
                                                     <div class="cleint_feature_image__gallery">
                                                     </div>
                                                     <input class="d-none" name="image[]" type="file" multiple id="cleint_feature_image" accept="image/x-png,image/gif,image/jpeg,image/jpg" required>
-                                                    <label for="cleint_feature_image" class="my-3 btn image-btn-color"><i class="icofont-arrow-up bg-light website-color rounded-circle"></i>Télécharger</label>
+                                                    <label for="cleint_feature_image" class="my-3 btn  website-bg-color capitalize_text"><i class="icofont-arrow-up bg-light website-color rounded-circle"></i>Télécharger</label>
                                                 </div>
                                             </div>
 
@@ -2395,7 +2398,7 @@
                                 {{-- <a href="{{ URL::previous() }}" class="back btn btn-outline-danger">
                                     <i class="icofont-simple-left mr-2"></i>Back
                                 </a> --}}
-                                <button class="continue btn text-white bg-navy-blue ml-3" type="submit">
+                                <button class="continue btn text-white bg-navy-blue ml-3 capitalize_text  website-bg-color" type="submit">
                                     Publiez mon annonce 
                                 </button>
                                 </form>
@@ -2407,7 +2410,7 @@
                     @if ($category == 'voitures')
                         <!--  Animal form start -->
                         <div class="bg-white shadow-sm my-3 p-3 rounded d-block" id="animal">
-                            <h4 class="font-weight-bold text-navy-blue">Décrivez votre demande</h4>
+                            <h4 class="font-weight-bold text-navy-blue capitalize_text">Décrivez votre demande</h4>
                             {{-- <span>Give a name to your listing:</span> --}}
                             <div class="row">
                                 <div class="col-12">
@@ -2476,21 +2479,21 @@
                                                 </div>
                                                 
                                             </div> 
-                                            <h5 class="mt-4 font-weight-bold text-navy-blue">
+                                            <h5 class="mt-4 font-weight-bold text-navy-blue capitalize_text">
                                                 <i class="icofont-warning-alt mr-2"></i>informations complémentaires
                                             <div class="row">
                                                 <div class="col-12">
                                                     <textarea name="informations"   class="form-control"
-                                                        rows="7" placeholder="informations complémentaires "></textarea>
+                                                        rows="7" placeholder="INFORMATIONS COMPLÉMENTAIRES"></textarea>
                                                 </div>
                                             </div>
                                             <div class="row mt-4">
                                                 <div class="col-12 mb-3">
-                                                    <h5>Vous pouvez compléter votre demande avec des photos</h5>
+                                                    <h5 class="capitalize_text">Vous pouvez compléter votre demande avec des photos</h5>
                                                     <div class="cleint_feature_image__gallery">
                                                     </div>
                                                     <input class="d-none" name="image[]" type="file" multiple id="cleint_feature_image" accept="image/x-png,image/gif,image/jpeg,image/jpg" required>
-                                                    <label for="cleint_feature_image" class="my-3 btn image-btn-color"><i class="icofont-arrow-up bg-light website-color rounded-circle"></i>Télécharger</label>
+                                                    <label for="cleint_feature_image" class="my-3 btn  website-bg-color capitalize_text"><i class="icofont-arrow-up bg-light website-color rounded-circle"></i>Télécharger</label>
                                                 </div>
                                             </div>
                                             
@@ -2522,7 +2525,7 @@
                                 {{-- <button data-section="0" class="back btn btn-outline-danger">
                                     <i class="icofont-simple-left mr-2"></i>Back
                                 </button> --}}
-                                <button class="continue btn text-white bg-navy-blue ml-3" type="submit">
+                                <button class="continue btn text-white bg-navy-blue ml-3 capitalize_text  website-bg-color" type="submit">
                                     Publiez mon annonce 
                                 </button>
                                 </form>
@@ -2534,7 +2537,7 @@
                     @if ($category == 'divers')
                         <!--  Agri-food form start -->
                         <div class="bg-white shadow-sm my-3 p-3 rounded d-block" id="agri-food">
-                            <h4 class="font-weight-bold text-navy-blue">Décrivez votre demande</h4>
+                            <h4 class="font-weight-bold text-navy-blue capitalize_text">Décrivez votre demande</h4>
                             {{-- <span>Give a name to your listing:</span> --}}
                             <div class="row">
                                 <div class="col-12">
@@ -2638,23 +2641,23 @@
                                                     </div>
                                                 </div> 
                                             </div>  
-                                            <h5 class="mt-4 font-weight-bold text-navy-blue">
+                                            <h5 class="mt-4 font-weight-bold text-navy-blue capitalize_text">
                                                 <i class="icofont-warning-alt mr-2"></i>informations complémentaires
                                               </h5>
                                             <div class="row">
                                                 <div class="col-12">
                                                     <textarea name="informations"   class="form-control"
-                                                        rows="7" placeholder="informations complémentaires "></textarea>
+                                                        rows="7" placeholder="INFORMATIONS COMPLÉMENTAIRES"></textarea>
                                                 </div>
                                             </div>
                                             
                                             <div class="row mt-4">
                                                 <div class="col-12 mb-3">
-                                                    <h5>Vous pouvez compléter votre demande avec des photos</h5>
+                                                    <h5 class="capitalize_text">Vous pouvez compléter votre demande avec des photos</h5>
                                                     <div class="cleint_feature_image__gallery">
                                                     </div>
                                                     <input class="d-none" name="image[]" type="file" multiple id="cleint_feature_image" accept="image/x-png,image/gif,image/jpeg,image/jpg" required>
-                                                    <label for="cleint_feature_image" class="my-3 btn image-btn-color"><i class="icofont-arrow-up bg-light website-color rounded-circle"></i>Télécharger</label>
+                                                    <label for="cleint_feature_image" class="my-3 btn  website-bg-color capitalize_text"><i class="icofont-arrow-up bg-light website-color rounded-circle"></i>Télécharger</label>
                                                 </div>
                                             </div>
 
@@ -2685,7 +2688,7 @@
                                 {{-- <a href="{{ URL::previous() }}" class="back btn btn-outline-danger">
                                     <i class="icofont-simple-left mr-2"></i>Back
                                 </a> --}}
-                                <button class="continue btn text-white bg-navy-blue ml-3" type="submit">
+                                <button class="continue btn text-white bg-navy-blue ml-3 capitalize_text  website-bg-color" type="submit">
                                     Publiez mon annonce 
                                 </button>
                                 </form>
