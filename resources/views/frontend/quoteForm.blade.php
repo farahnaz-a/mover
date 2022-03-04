@@ -99,11 +99,18 @@
         margin-right: 10px;
         flex-shrink: 0;
     }
-    .service-card__label{
-        transition: background .3s linear;
+    .service-card .service-card__label{
+        color: #5fc2ba !important;
+        background-color: transparent !important;
+        transition: background .3s linear, color .3s linear;
     }
-    .service-card__checkbox:checked ~ .service-card__label{
-        background-color: #5fc2ba;
+    .service-card .service-card__label:hover{
+        color: #fff !important;
+        background-color: #5fc2ba !important;
+    }
+    .service-card .service-card__checkbox:checked ~ .service-card__label{
+        color: #fff !important;
+        background-color: #5fc2ba !important;
     }
 
     .cleint_feature_image__gallery{
@@ -160,6 +167,47 @@
     }
     .capitalize_text{
         text-transform: uppercase !important;
+    }
+
+    .date-wrapper{
+        position: relative;
+    }
+    .date-wrapper input[type="date"]{
+        cursor: pointer;
+        padding-right: 30px;
+    }
+    .date-wrapper input[type="date"]::-webkit-calendar-picker-indicator{
+        background: transparent;
+        color: transparent;
+        cursor: pointer;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    .date-wrapper .date-wrapper__icon{
+        display: flex;
+        align-items: center;
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 100%;
+        font-size: 20px;
+        padding: 0 10px;
+        pointer-events: none;
+        user-select: none;
+    }
+    .hover-btn{
+        background-color: transparent !important;
+        color: #5fc2ba !important;
+    }
+    .hover-btn:hover{
+        background-color: #5fc2ba !important;
+        color: #fff !important;
     }
 
 </style>
@@ -225,13 +273,23 @@
                                                         <div class="col-md-6">
                                                             <div class="form-group">
                                                                 <label for=""> Date de chargement </label>
-                                                                <input type="date" placeholder="Date de chargement" min="{{ \Carbon\Carbon::now()->format('Y-m-d') }}" class="form-control" name="loading_date" required/>
+                                                                <div class="date-wrapper">
+                                                                    <input type="date" placeholder="Date de chargement" min="{{ \Carbon\Carbon::now()->format('Y-m-d') }}" class="form-control" name="loading_date" required/>
+                                                                    <span class="date-wrapper__icon">
+                                                                        <i class="icofont-ui-calendar"></i>
+                                                                    </span>
+                                                                </div>
                                                             </div>
                                                         </div>
                                                         <div class="col-md-6">
                                                             <div class="form-group">
                                                                 <label for=""> Date de livraison </label>
-                                                                <input type="date" placeholder="Date de livraison"  min="{{ \Carbon\Carbon::now()->format('Y-m-d') }}" class="form-control" name="delevary_date" required/>
+                                                                <div class="date-wrapper">
+                                                                    <input type="date" placeholder="Date de livraison" min="{{ \Carbon\Carbon::now()->format('Y-m-d') }}" class="form-control" name="loading_date" required/>
+                                                                    <span class="date-wrapper__icon">
+                                                                        <i class="icofont-ui-calendar"></i>
+                                                                    </span>
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>  
@@ -239,7 +297,7 @@
                                                     <div class="row">
                                                         <div class="col-12">
                                                             <div class="form-group">
-                                                                <input style="position: relative" type="text" id="volume" placeholder="je connais mon volume"  class="form-control" name="volume" required/>
+                                                                <input style="position: relative" type="text" id="volume" placeholder="Je connais mon volume"  class="form-control" name="volume" required/>
                                                                 <label for="volume"> <span style="position: absolute; top: 10px; right: 25px;"><small>m</small>3</span> </label>
                                                             </div>
                                                         </div> 
@@ -259,11 +317,11 @@
                                                                     class="form-control" name="individual_goods"/> --}}
                                                                 <div class="d-flex ml-auto">
                                                                     <label for="no" class="d-flex align-items-center mr-3">
-                                                                        non <input type="radio" id="no" name="individual_goods_status" style="margin-left: 5px" value="no" required>
+                                                                        Non <input type="radio" id="no" name="individual_goods_status" style="margin-left: 5px" value="no" required>
                                                                     </label>
     
                                                                     <label for="yes" class="d-flex align-items-center">
-                                                                        oui <input type="radio" id="yes" name="individual_goods_status" value="yes" style="margin-left: 5px" required>
+                                                                        Oui <input type="radio" id="yes" name="individual_goods_status" value="yes" style="margin-left: 5px" required>
                                                                     </label> 
                                                                 </div> 
                                                             </div>
@@ -281,12 +339,12 @@
                                                                 {{-- <input type="text" placeholder="type de lieu"
                                                                     class="form-control" name="place_type" /> --}}
                                                                 <select name="place_type_depart"   required>
-                                                                    <option value="">type de lieu départ</option>
-                                                                    <option value="maison">maison</option>
-                                                                    <option value="appartement">appartement</option>
-                                                                    <option value="garde-meuble">garde meuble</option>
-                                                                    <option value="commercial">local commercial </option>
-                                                                    <option value="bureau">bureau </option>
+                                                                    <option value="">Type de lieu départ</option>
+                                                                    <option value="maison">Maison</option>
+                                                                    <option value="appartement">Appartement</option>
+                                                                    <option value="garde-meuble">Garde meuble</option>
+                                                                    <option value="commercial">Local commercial </option>
+                                                                    <option value="bureau">Bureau </option>
 
                                                                 </select>
                                                             </div> 
@@ -297,12 +355,12 @@
                                                                 {{-- <input type="text" placeholder="type de lieu"
                                                                     class="form-control" name="place_type" /> --}}
                                                                 <select name="place_type_arrivee"   required>
-                                                                    <option value="">type de lieu arrivée</option>
-                                                                    <option value="maison">maison</option>
-                                                                    <option value="appartement">appartement</option>
-                                                                    <option value="garde-meuble">garde meuble</option>
-                                                                    <option value="commercial">local commercial </option>
-                                                                    <option value="bureau">bureau </option>
+                                                                    <option value="">Type de lieu arrivée</option>
+                                                                    <option value="maison">Maison</option>
+                                                                    <option value="appartement">Appartement</option>
+                                                                    <option value="garde-meuble">Garde meuble</option>
+                                                                    <option value="commercial">Local commercial </option>
+                                                                    <option value="bureau">Bureau </option>
         
                                                                 </select>
                                                             </div>
@@ -315,7 +373,7 @@
                                                             <div class="form-group">
                                                                 {{-- <h5>départ</h5> --}}
                                                                 <select name="floor_depart"   required>
-                                                                    <option value="">étages départ</option>
+                                                                    <option value="">Étages départ</option>
                                                                     <option value="RDC">RDC</option>
                                                                     <option value="1">1</option>
                                                                     <option value="2">2</option>
@@ -333,7 +391,7 @@
                                                              <div class="form-group">
                                                                 {{-- <h5>arrivée</h5> --}}
                                                                 <select name="floor_arrivee"   required>
-                                                                    <option value="">étages arrivée</option>
+                                                                    <option value="">Étages arrivée</option>
                                                                     <option value="RDC">RDC</option>
                                                                     <option value="1">1</option>
                                                                     <option value="2">2</option>
@@ -358,9 +416,9 @@
                                                             {{-- <h5>départ</h5> --}}
                                                             <div class="form-group">
                                                                 <select name="ascenseur_depart" required> 
-                                                                   <option value="">ascenseur départ</option>
-                                                                   <option value="non">non</option>
-                                                                   <option value="oui">oui</option>
+                                                                   <option value="">Ascenseur départ</option>
+                                                                   <option value="non">Non</option>
+                                                                   <option value="oui">Oui</option>
                                                                </select>
                                                             </div>
                                                         </div>  
@@ -368,9 +426,9 @@
                                                             {{-- <h5>arrivée</h5> --}}
                                                             <div class="form-group">
                                                                 <select name="ascenseur_arrivee" required> 
-                                                                   <option value="">ascenseur arrivée</option>
-                                                                   <option value="non">non</option>
-                                                                   <option value="oui">oui</option>
+                                                                   <option value="">Ascenseur arrivée</option>
+                                                                   <option value="non">Non</option>
+                                                                   <option value="oui">Oui</option>
                                                                </select>
                                                             </div>
                                                         </div>  
@@ -380,9 +438,9 @@
                                                             {{-- <h5>départ</h5> --}}
                                                             <div class="form-group">
                                                                 <select name="access_depart" required> 
-                                                                    <option value="">accès départ</option>
-                                                                    <option value="on peut se garer devant">on peut se garer devant</option>
-                                                                    <option value="on doit se garer plus loin">on doit se garer plus loin</option>
+                                                                    <option value="">Accès départ</option>
+                                                                    <option value="on peut se garer devant">On peut se garer devant</option>
+                                                                    <option value="on doit se garer plus loin">On doit se garer plus loin</option>
                                                                 </select> 
                                                             </div>
                                                         </div>
@@ -390,9 +448,9 @@
                                                             {{-- <h5>arrivée</h5> --}}
                                                             <div class="form-group">
                                                                 <select name="access_arrivee" required> 
-                                                                    <option value="">accès arrivée</option>
-                                                                    <option value="on peut se garer devant">on peut se garer devant</option>
-                                                                    <option value="on doit se garer plus loin">on doit se garer plus loin</option>
+                                                                    <option value="">Accès arrivée</option>
+                                                                    <option value="On peut se garer devant">On peut se garer devant</option>
+                                                                    <option value="On doit se garer plus loin">On doit se garer plus loin</option>
                                                                 </select> 
                                                             </div>
                                                         </div>
@@ -426,7 +484,7 @@
                                                                         <span class="service-card__list__items__icon d-inline-flex align-items-center justify-content-center rounded-circle">
                                                                             <i class="icofont-tick-mark"></i>
                                                                         </span>
-                                                                        <span class="service-card__list__items__text">transport</span>
+                                                                        <span class="service-card__list__items__text">Transport</span>
                                                                     </li>
                                                                     {{-- <li class="service-card__list__items">
                                                                         <span class="service-card__list__items__icon d-inline-flex align-items-center justify-content-center rounded-circle">
@@ -444,7 +502,7 @@
                                                                         <span class="service-card__list__items__icon d-inline-flex align-items-center justify-content-center rounded-circle">
                                                                             <i class="icofont-tick-mark"></i>
                                                                         </span>
-                                                                        <span class="service-card__list__items__text">frais de route (péage, carburant, ferry,…)</span>
+                                                                        <span class="service-card__list__items__text">Frais de route (péage, carburant, ferry,…)</span>
                                                                     </li>
                                                                 </ul>
                                                                 <div class="text-center mt-auto">
@@ -487,25 +545,25 @@
                                                                         <span class="service-card__list__items__icon d-inline-flex align-items-center justify-content-center rounded-circle">
                                                                             <i class="icofont-tick-mark"></i>
                                                                         </span>
-                                                                        <span class="service-card__list__items__text">protection du mobilier</span>
+                                                                        <span class="service-card__list__items__text">Protection du mobilier</span>
                                                                     </li>
                                                                     <li class="service-card__list__items">
                                                                         <span class="service-card__list__items__icon d-inline-flex align-items-center justify-content-center rounded-circle">
                                                                             <i class="icofont-tick-mark"></i>
                                                                         </span>
-                                                                        <span class="service-card__list__items__text">manutention au chargement</span>
+                                                                        <span class="service-card__list__items__text">Manutention au chargement</span>
                                                                     </li>
                                                                     <li class="service-card__list__items">
                                                                         <span class="service-card__list__items__icon d-inline-flex align-items-center justify-content-center rounded-circle">
                                                                             <i class="icofont-tick-mark"></i>
                                                                         </span>
-                                                                        <span class="service-card__list__items__text">transport</span>
+                                                                        <span class="service-card__list__items__text">Transport</span>
                                                                     </li>
                                                                     <li class="service-card__list__items">
                                                                         <span class="service-card__list__items__icon d-inline-flex align-items-center justify-content-center rounded-circle">
                                                                             <i class="icofont-tick-mark"></i>
                                                                         </span>
-                                                                        <span class="service-card__list__items__text">manutention au déchargement</span>
+                                                                        <span class="service-card__list__items__text">Manutention au déchargement</span>
                                                                     </li>
                                                                     {{-- <li class="service-card__list__items">
                                                                         <span class="service-card__list__items__icon d-inline-flex align-items-center justify-content-center rounded-circle">
@@ -523,7 +581,7 @@
                                                                         <span class="service-card__list__items__icon d-inline-flex align-items-center justify-content-center rounded-circle">
                                                                             <i class="icofont-tick-mark"></i>
                                                                         </span>
-                                                                        <span class="service-card__list__items__text">frais de route (péage, carburant, ferry,…)</span>
+                                                                        <span class="service-card__list__items__text">Frais de route (péage, carburant, ferry,…)</span>
                                                                     </li>
                                                                 </ul>
                                                                 <div class="text-center mt-auto">
@@ -554,7 +612,7 @@
                                                                         <span class="service-card__list__items__icon d-inline-flex align-items-center justify-content-center rounded-circle">
                                                                             <i class="icofont-tick-mark"></i>
                                                                         </span>
-                                                                        <span class="service-card__list__items__text">démontage du mobilier</span>
+                                                                        <span class="service-card__list__items__text">Démontage du mobilier</span>
                                                                     </li>
                                                                     <li class="service-card__list__items">
                                                                         <span class="service-card__list__items__icon d-inline-flex align-items-center justify-content-center rounded-circle">
@@ -566,31 +624,31 @@
                                                                         <span class="service-card__list__items__icon d-inline-flex align-items-center justify-content-center rounded-circle">
                                                                             <i class="icofont-tick-mark"></i>
                                                                         </span>
-                                                                        <span class="service-card__list__items__text">protection du mobilier</span>
+                                                                        <span class="service-card__list__items__text">Protection du mobilier</span>
                                                                     </li>
                                                                     <li class="service-card__list__items">
                                                                         <span class="service-card__list__items__icon d-inline-flex align-items-center justify-content-center rounded-circle">
                                                                             <i class="icofont-tick-mark"></i>
                                                                         </span>
-                                                                        <span class="service-card__list__items__text">manutention au chargement</span>
+                                                                        <span class="service-card__list__items__text">Manutention au chargement</span>
                                                                     </li>
                                                                     <li class="service-card__list__items">
                                                                         <span class="service-card__list__items__icon d-inline-flex align-items-center justify-content-center rounded-circle">
                                                                             <i class="icofont-tick-mark"></i>
                                                                         </span>
-                                                                        <span class="service-card__list__items__text">transport</span>
+                                                                        <span class="service-card__list__items__text">Transport</span>
                                                                     </li>
                                                                     <li class="service-card__list__items">
                                                                         <span class="service-card__list__items__icon d-inline-flex align-items-center justify-content-center rounded-circle">
                                                                             <i class="icofont-tick-mark"></i>
                                                                         </span>
-                                                                        <span class="service-card__list__items__text">manutention au déchargement</span>
+                                                                        <span class="service-card__list__items__text">Manutention au déchargement</span>
                                                                     </li>
                                                                     <li class="service-card__list__items">
                                                                         <span class="service-card__list__items__icon d-inline-flex align-items-center justify-content-center rounded-circle">
                                                                             <i class="icofont-tick-mark"></i>
                                                                         </span>
-                                                                        <span class="service-card__list__items__text">remontage du mobilier</span>
+                                                                        <span class="service-card__list__items__text">Remontage du mobilier</span>
                                                                     </li>
                                                                     <li class="service-card__list__items">
                                                                         <span class="service-card__list__items__icon d-inline-flex align-items-center justify-content-center rounded-circle">
@@ -602,7 +660,7 @@
                                                                         <span class="service-card__list__items__icon d-inline-flex align-items-center justify-content-center rounded-circle">
                                                                             <i class="icofont-tick-mark"></i>
                                                                         </span>
-                                                                        <span class="service-card__list__items__text">frais de route (péage, carburant, ferry,…)</span>
+                                                                        <span class="service-card__list__items__text">Frais de route (péage, carburant, ferry,…)</span>
                                                                     </li>
                                                                 </ul>
                                                                 <div class="text-center mt-auto">
@@ -633,43 +691,43 @@
                                                                         <span class="service-card__list__items__icon d-inline-flex align-items-center justify-content-center rounded-circle">
                                                                             <i class="icofont-tick-mark"></i>
                                                                         </span>
-                                                                        <span class="service-card__list__items__text">mise en carton complète (fournitures de matèriels et main d'oeuvre) (Vêtement et linge de lit Livres et documents Vaisselles et fragile Divers)</span>
+                                                                        <span class="service-card__list__items__text">Mise en carton complète (fournitures de matèriels et main d'oeuvre) (Vêtement et linge de lit Livres et documents Vaisselles et fragile Divers)</span>
                                                                     </li>
                                                                     <li class="service-card__list__items">
                                                                         <span class="service-card__list__items__icon d-inline-flex align-items-center justify-content-center rounded-circle">
                                                                             <i class="icofont-tick-mark"></i>
                                                                         </span>
-                                                                        <span class="service-card__list__items__text">démontage du mobilier</span>
+                                                                        <span class="service-card__list__items__text">Démontage du mobilier</span>
                                                                     </li>
                                                                     <li class="service-card__list__items">
                                                                         <span class="service-card__list__items__icon d-inline-flex align-items-center justify-content-center rounded-circle">
                                                                             <i class="icofont-tick-mark"></i>
                                                                         </span>
-                                                                        <span class="service-card__list__items__text">protection du mobilier</span>
+                                                                        <span class="service-card__list__items__text">Protection du mobilier</span>
                                                                     </li>
                                                                     <li class="service-card__list__items">
                                                                         <span class="service-card__list__items__icon d-inline-flex align-items-center justify-content-center rounded-circle">
                                                                             <i class="icofont-tick-mark"></i>
                                                                         </span>
-                                                                        <span class="service-card__list__items__text">manutention au chargement</span>
+                                                                        <span class="service-card__list__items__text">Manutention au chargement</span>
                                                                     </li>
                                                                     <li class="service-card__list__items">
                                                                         <span class="service-card__list__items__icon d-inline-flex align-items-center justify-content-center rounded-circle">
                                                                             <i class="icofont-tick-mark"></i>
                                                                         </span>
-                                                                        <span class="service-card__list__items__text">transport</span>
+                                                                        <span class="service-card__list__items__text">Transport</span>
                                                                     </li>
                                                                     <li class="service-card__list__items">
                                                                         <span class="service-card__list__items__icon d-inline-flex align-items-center justify-content-center rounded-circle">
                                                                             <i class="icofont-tick-mark"></i>
                                                                         </span>
-                                                                        <span class="service-card__list__items__text">manutention au déchargement</span>
+                                                                        <span class="service-card__list__items__text">Manutention au déchargement</span>
                                                                     </li>
                                                                     <li class="service-card__list__items">
                                                                         <span class="service-card__list__items__icon d-inline-flex align-items-center justify-content-center rounded-circle">
                                                                             <i class="icofont-tick-mark"></i>
                                                                         </span>
-                                                                        <span class="service-card__list__items__text">remontage du mobilier</span>
+                                                                        <span class="service-card__list__items__text">Remontage du mobilier</span>
                                                                     </li>
                                                                     <li class="service-card__list__items">
                                                                         <span class="service-card__list__items__icon d-inline-flex align-items-center justify-content-center rounded-circle">
@@ -681,7 +739,7 @@
                                                                         <span class="service-card__list__items__icon d-inline-flex align-items-center justify-content-center rounded-circle">
                                                                             <i class="icofont-tick-mark"></i>
                                                                         </span>
-                                                                        <span class="service-card__list__items__text">frais de route (péage, carburant, ferry,…)</span>
+                                                                        <span class="service-card__list__items__text">Frais de route (péage, carburant, ferry,…)</span>
                                                                     </li>
                                                                 </ul>
                                                                 <div class="text-center mt-auto">
@@ -787,11 +845,11 @@
                                                         </div>
                                                     </div> --}}
                                                     <h5 class="mt-4 font-weight-bold text-navy-blue capitalize_text">
-                                                        <i class="icofont-warning-alt mr-2 "></i>informations complémentaires
+                                                        <i class="icofont-warning-alt mr-2 "></i>Informations complémentaires
                                                       </h5>
                                                     <div class="row">
                                                         <div class="col-12">
-                                                            <textarea name="informations"   class="form-control"
+                                                            <textarea name="informations" class="form-control"
                                                                 rows="7" placeholder="INFORMATIONS COMPLÉMENTAIRES"></textarea>
                                                         </div>
                                                     </div>
@@ -801,7 +859,7 @@
                                                             <div class="cleint_feature_image__gallery">
                                                             </div>
                                                             <input class="d-none" name="image[]" type="file" multiple id="cleint_feature_image" accept="image/x-png,image/gif,image/jpeg,image/jpg" required>
-                                                            <label for="cleint_feature_image" class="my-3 btn  website-bg-color capitalize_text"><i class="icofont-arrow-up bg-light website-color rounded-circle "></i>Télécharger</label>
+                                                            <label for="cleint_feature_image" class="my-3 btn hover-btn  website-bg-color hover-btn capitalize_text"><i class="icofont-arrow-up bg-light website-color rounded-circle "></i>Télécharger</label>
                                                         </div>
                                                     </div>
                                                     
@@ -816,7 +874,7 @@
                                                         <div class="col">
                                                             <input type="checkbox" id="condition" name="terms"
                                                             value="yes" required>
-                                                        <label for="condition"> j'accepte les dispositions des
+                                                        <label for="condition"> J'accepte les dispositions des
                                                             conditions
                                                             générales et de la politique de confidentialité
                                                         </label><br> 
@@ -1086,7 +1144,7 @@
                                                             <div class="cleint_feature_image__gallery">
                                                             </div>
                                                             <input class="d-none" name="image[]" type="file" multiple id="cleint_feature_image" accept="image/x-png,image/gif,image/jpeg,image/jpg" required>
-                                                            <label for="cleint_feature_image" class="my-3 btn  website-bg-color capitalize_text"><i class="icofont-arrow-up bg-light website-color rounded-circle"></i>Télécharger</label>
+                                                            <label for="cleint_feature_image" class="my-3 btn  website-bg-color hover-btn capitalize_text"><i class="icofont-arrow-up bg-light website-color rounded-circle"></i>Télécharger</label>
                                                         </div>
                                                     </div>
 
@@ -1402,7 +1460,7 @@
                                                     <div class="cleint_feature_image__gallery">
                                                     </div>
                                                     <input class="d-none" name="image[]" type="file" multiple id="cleint_feature_image" accept="image/x-png,image/gif,image/jpeg,image/jpg" required>
-                                                    <label for="cleint_feature_image" class="my-3 btn  website-bg-color capitalize_text"><i class="icofont-arrow-up bg-light website-color rounded-circle"></i>Télécharger</label>
+                                                    <label for="cleint_feature_image" class="my-3 btn  website-bg-color hover-btn capitalize_text"><i class="icofont-arrow-up bg-light website-color rounded-circle"></i>Télécharger</label>
                                                 </div>
                                             </div>
 
@@ -1700,7 +1758,7 @@
                                                     <div class="cleint_feature_image__gallery">
                                                     </div>
                                                     <input class="d-none" name="image[]" type="file" multiple id="cleint_feature_image" accept="image/x-png,image/gif,image/jpeg,image/jpg" required>
-                                                    <label for="cleint_feature_image" class="my-3 btn  website-bg-color capitalize_text"><i class="icofont-arrow-up bg-light website-color rounded-circle"></i>Télécharger</label>
+                                                    <label for="cleint_feature_image" class="my-3 btn  website-bg-color hover-btn capitalize_text"><i class="icofont-arrow-up bg-light website-color rounded-circle"></i>Télécharger</label>
                                                 </div>
                                             </div>
 
@@ -1992,7 +2050,7 @@
                                                     <div class="cleint_feature_image__gallery">
                                                     </div>
                                                     <input class="d-none" name="image[]" type="file" multiple id="cleint_feature_image" accept="image/x-png,image/gif,image/jpeg,image/jpg" required>
-                                                    <label for="cleint_feature_image" class="my-3 btn  website-bg-color capitalize_text"><i class="icofont-arrow-up bg-light website-color rounded-circle"></i>Télécharger</label>
+                                                    <label for="cleint_feature_image" class="my-3 btn  website-bg-color hover-btn capitalize_text"><i class="icofont-arrow-up bg-light website-color rounded-circle"></i>Télécharger</label>
                                                 </div>
                                             </div>
 
@@ -2217,7 +2275,7 @@
                                                     <div class="cleint_feature_image__gallery">
                                                     </div>
                                                     <input class="d-none" name="image[]" type="file" multiple id="cleint_feature_image" accept="image/x-png,image/gif,image/jpeg,image/jpg" required>
-                                                    <label for="cleint_feature_image" class="my-3 btn  website-bg-color capitalize_text"><i class="icofont-arrow-up bg-light website-color rounded-circle"></i>Télécharger</label>
+                                                    <label for="cleint_feature_image" class="my-3 btn  website-bg-color hover-btn capitalize_text"><i class="icofont-arrow-up bg-light website-color rounded-circle"></i>Télécharger</label>
                                                 </div>
                                             </div>
 
@@ -2367,7 +2425,7 @@
                                                     <div class="cleint_feature_image__gallery">
                                                     </div>
                                                     <input class="d-none" name="image[]" type="file" multiple id="cleint_feature_image" accept="image/x-png,image/gif,image/jpeg,image/jpg" required>
-                                                    <label for="cleint_feature_image" class="my-3 btn  website-bg-color capitalize_text"><i class="icofont-arrow-up bg-light website-color rounded-circle"></i>Télécharger</label>
+                                                    <label for="cleint_feature_image" class="my-3 btn  website-bg-color capitalize_text hover-btn"><i class="icofont-arrow-up bg-light website-color rounded-circle"></i>Télécharger</label>
                                                 </div>
                                             </div>
 
@@ -2493,7 +2551,7 @@
                                                     <div class="cleint_feature_image__gallery">
                                                     </div>
                                                     <input class="d-none" name="image[]" type="file" multiple id="cleint_feature_image" accept="image/x-png,image/gif,image/jpeg,image/jpg" required>
-                                                    <label for="cleint_feature_image" class="my-3 btn  website-bg-color capitalize_text"><i class="icofont-arrow-up bg-light website-color rounded-circle"></i>Télécharger</label>
+                                                    <label for="cleint_feature_image" class="my-3 btn  website-bg-color hover-btn capitalize_text"><i class="icofont-arrow-up bg-light website-color rounded-circle"></i>Télécharger</label>
                                                 </div>
                                             </div>
                                             
@@ -2657,7 +2715,7 @@
                                                     <div class="cleint_feature_image__gallery">
                                                     </div>
                                                     <input class="d-none" name="image[]" type="file" multiple id="cleint_feature_image" accept="image/x-png,image/gif,image/jpeg,image/jpg" required>
-                                                    <label for="cleint_feature_image" class="my-3 btn  website-bg-color capitalize_text"><i class="icofont-arrow-up bg-light website-color rounded-circle"></i>Télécharger</label>
+                                                    <label for="cleint_feature_image" class="my-3 btn  website-bg-color capitalize_text hover-btn"><i class="icofont-arrow-up bg-light website-color rounded-circle"></i>Télécharger</label>
                                                 </div>
                                             </div>
 
