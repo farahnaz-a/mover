@@ -65,7 +65,7 @@
                 <label class="form-group__wrapper__icon d-inline-flex align-items-center justify-content-center position-absolute mb-0 p-2" for="pseudo">
                     <i class="icofont-ui-user"></i>
                 </label>
-                <input id="pseudo" name="pseudo" type="text" placeholder="pseudo" class="form-control form-group__wrapper__input" required/>
+                <input id="pseudo" name="pseudo" type="text" placeholder="Pseudo" class="form-control form-group__wrapper__input" required/>
             </div>
             @error('pseudo')
             <span class="text-danger alert">{{ $message }}</span>
