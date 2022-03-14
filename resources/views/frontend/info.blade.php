@@ -23,7 +23,7 @@
             <span class="text-danger alert">{{ $message }}</span>
             @enderror
         </div> 
-        <div class="row">
+        <div class="row optional">
             <div class="col-md-6">
                 <div class="form-group ">
                     <div class="input-group" id="country_code_wrapper">
@@ -33,7 +33,7 @@
                             </label>
                             <div class="form-control form-group__wrapper__input pt-0 pb-0 pr-0">
                                 <select class="w-100"
-                                    name="country_code" id="contry_code" required>
+                                    name="country_code" id="contry_code">
                                     @foreach ( countryCode() as $item)
                                     <option value="{{ $item->phonecode }}"> {{ $item->iso }} ({{ $item->phonecode }})</option> 
                                     @endforeach 
@@ -52,7 +52,7 @@
                         <label class="form-group__wrapper__icon d-inline-flex align-items-center justify-content-center position-absolute mb-0 p-2" for="phone">
                             <i class="icofont-ui-call"></i>
                         </label>
-                        <input id="phone" name="phone" type="text" placeholder="Phone" class="form-control form-group__wrapper__input" required/>
+                        <input id="phone" name="phone" type="text" placeholder="Phone" class="form-control form-group__wrapper__input"/>
                     </div>
                     @error('phone')
                     <span class="text-danger alert">{{ $message }}</span>
@@ -60,12 +60,12 @@
                 </div>
             </div>
         </div>
-        <div class="form-group input-group">
+        <div class="form-group input-group optional">
             <div class="form-group__wrapper w-100 position-relative">
                 <label class="form-group__wrapper__icon d-inline-flex align-items-center justify-content-center position-absolute mb-0 p-2" for="pseudo">
                     <i class="icofont-ui-user"></i>
                 </label>
-                <input id="pseudo" name="pseudo" type="text" placeholder="Pseudo" class="form-control form-group__wrapper__input" required/>
+                <input id="pseudo" name="pseudo" type="text" placeholder="Pseudo" class="form-control form-group__wrapper__input"/>
             </div>
             @error('pseudo')
             <span class="text-danger alert">{{ $message }}</span>
@@ -82,12 +82,13 @@
             <span class="text-danger alert">{{ $message }}</span>
             @enderror
         </div>
-        <div class="form-group input-group">
+        <span class="text-danger" id="password_error"> </span>
+        <div class="form-group input-group optional">
             <div class="form-group__wrapper w-100 position-relative">
                 <label class="form-group__wrapper__icon d-inline-flex align-items-center justify-content-center position-absolute mb-0 p-2" for="c_pwd">
                     <i class="icofont-lock"></i>
                 </label>
-                <input name="confirm_password" type="password" placeholder="Confirmer votre mot de passe" class="form-control form-group__wrapper__input" id="c_pwd" required/>
+                <input name="confirm_password" type="password" placeholder="Confirmer votre mot de passe" class="form-control form-group__wrapper__input" id="c_pwd"/>
                 @error('confirm_password')
                 <span class="text-danger alert">{{ $message }}</span>
                 @enderror

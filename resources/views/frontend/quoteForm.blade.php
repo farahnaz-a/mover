@@ -307,9 +307,12 @@
                                             <div class="row">
                                                 <div class="col-12">
                                                     <div class="form-group">
-                                                        <input style="position: relative" type="text" id="volume" placeholder="Je connais mon volume"  class="form-control" name="volume" required/>
+                                                        <input style="position: relative" type="text" id="volume" placeholder="Je connais mon volume"  class="form-control" name="volume"/>
                                                         <label for="volume"> <span style="position: absolute; top: 10px; right: 25px;"><small>m</small>3</span> </label>
                                                     </div>
+                                                    @error('volume')
+                                                    <span class="text-danger alert">{{ $message }}</span>
+                                                    @enderror
                                                 </div> 
                                             </div>
                                             <div class="row">
@@ -982,14 +985,16 @@
                                                 <div class="row">
                                                     <div class="col-12">
                                                         <div class="form-group">
-                                                            <input type="text" placeholder="Je connais mon volume"
-                                                                class="form-control" name="volume" required/>
+                                                            <input type="text" placeholder="Je connais mon volume" class="form-control" name="volume"/>
                                                         </div>
+                                                        @error('volume')
+                                                        <span class="text-danger alert">{{ $message }}</span>
+                                                        @enderror
                                                     </div>
                                                     <div class="col-12">
                                                         <div class="form-group">
                                                             <textarea name="list" class="form-control" rows="7"
-                                                                placeholder="(*Pensez à faire un inventaire pièce par pièce)" required></textarea>
+                                                                placeholder="Je ne connais pas mon volume mais j'ai une liste&#10;(*pensez à faire un inventaire pièce par pièce)"></textarea>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -2884,46 +2889,47 @@
 
     <script>
         $(document).ready(function(){
-            // $('#user_email').blur(function(){
-            //     var email = $(this).val(); 
-            //     $.ajaxSetup({
-            //         headers: {
-            //             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-            //         }
-            //     });
+            $('#user_email').blur(function(){
+                var email = $(this).val(); 
+                $.ajaxSetup({
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    }
+                });
                 
-            //     $.ajax({
-            //         type: 'POST', 
-            //         url: "{{ route('email.check') }}",
-            //         data: {
-            //             email:email,
-            //         },
-            //         success: function(data){
-            //             if(data == 'true'){
-            //                 $('#existing').addClass('d-block');
-            //                 $('#optional').addClass('d-none');
+                $.ajax({
+                    type: 'POST', 
+                    url: "{{ route('email.check') }}",
+                    data: {
+                        email:email,
+                    },
+                    success: function(data){
+                        if(data == 'true'){
+                            $('#existing').addClass('d-block');
+                            $('.optional').addClass('d-none'); 
 
-            //             }
-            //             else{
-            //                 $('#existing').removeClass('d-block');
-            //                 $('#optional').removeClass('d-none'); 
-            //             }
-            //         }
-            //     });
-            // }); 
+                        }
+                        else{
+                            $('#existing').removeClass('d-block');
+                            $('.optional').removeClass('d-none');  
+                        }
+                    }
+                });
+            }); 
 
 
-            // $('#c_pwd').blur(function(){
-            //     var pwd = $('#pwd').val();
-            //     var c_pwd = $(this).val();
-            //     if(c_pwd != pwd){
-            //         $('#password_error').text('Password Does not Match');  
-            //         $('#pwd').focus();
-            //     }
-            //     else{
-            //         $('#password_error').addClass('d-none');
-            //     } 
-            // });  
+            $('#c_pwd').blur(function(){
+                var pwd = $('#pwd').val();
+                var c_pwd = $(this).val();
+                if(c_pwd != pwd){
+                    $('#password_error').removeClass('d-none');
+                    $('#password_error').text('Password Does not Match');  
+                    $('#pwd').focus();
+                }
+                else{
+                    $('#password_error').addClass('d-none');
+                } 
+            });  
 
 
 
