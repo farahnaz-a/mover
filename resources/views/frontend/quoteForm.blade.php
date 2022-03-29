@@ -100,17 +100,33 @@
         flex-shrink: 0;
     }
     .service-card .service-card__label{
-        color: #5fc2ba !important;
-        background-color: transparent !important;
-        transition: background .3s linear, color .3s linear;
+        position: relative;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        color: #ffffff;
+        background-color: #5fc2ba;
+        transition: all .3s linear;
     }
-    .service-card .service-card__label:hover{
-        color: #fff !important;
-        background-color: #5fc2ba !important;
+    .service-card .service-card__label .service-card__label__icon{
+        position: absolute;
+        opacity: 0;
+        /* color: #232135; */
+    }
+    .service-card .service-card__label .service-card__label__icon *{
+        padding-left: 0;
     }
     .service-card .service-card__checkbox:checked ~ .service-card__label{
-        color: #fff !important;
-        background-color: #5fc2ba !important;
+        width: 41px;
+        height: 41px;
+        border-radius: 50%;
+        padding: 0;
+    }
+    .service-card .service-card__checkbox:checked ~ .service-card__label .service-card__label__text{
+        opacity: 0;
+    }
+    .service-card .service-card__checkbox:checked ~ .service-card__label .service-card__label__icon{
+        opacity: 1;
     }
 
     .continue{
@@ -520,7 +536,12 @@
                                                         </ul>
                                                         <div class="text-center mt-auto">
                                                             <input type="radio" id="clicmove" name="services" value="clicmove" class="service-card__checkbox d-none" required>
-                                                            <label for="clicmove" role="button" class="btn-theme bg-navy-blue no-shadow mt-3 service-card__label website-bg-color">Choisir</label>
+                                                            <label for="clicmove" role="button" class="btn-theme bg-navy-blue no-shadow mt-3 service-card__label website-bg-color">
+                                                                <span class="service-card__label__text">Choisir</span>
+                                                                <span class="service-card__label__icon">
+                                                                    <i class="icofont-tick-mark"></i>
+                                                                </span>
+                                                            </label>
                                                         </div>
                                                     </div>
                                                     @error('clicmove')
@@ -599,7 +620,12 @@
                                                         </ul>
                                                         <div class="text-center mt-auto">
                                                             <input type="radio" id="économique" name="services" value="économique" class="service-card__checkbox d-none" required>
-                                                            <label for="économique" role="button" class="btn-theme bg-navy-blue no-shadow mt-3 service-card__label website-bg-color">Choisir</label>
+                                                            <label for="économique" role="button" class="btn-theme bg-navy-blue no-shadow mt-3 service-card__label website-bg-color">
+                                                                <span class="service-card__label__text">Choisir</span>
+                                                                <span class="service-card__label__icon">
+                                                                    <i class="icofont-tick-mark"></i>
+                                                                </span>
+                                                            </label>
                                                         </div>
                                                     </div>
                                                     @error('économique')
@@ -678,7 +704,12 @@
                                                         </ul>
                                                         <div class="text-center mt-auto">
                                                             <input type="radio" id="standard" name="services" value="standard" class="service-card__checkbox d-none" required>
-                                                            <label for="standard" role="button" class="btn-theme bg-navy-blue no-shadow mt-3 service-card__label website-bg-color">Choisir</label>
+                                                            <label for="standard" role="button" class="btn-theme bg-navy-blue no-shadow mt-3 service-card__label website-bg-color">
+                                                                <span class="service-card__label__text">Choisir</span>
+                                                                <span class="service-card__label__icon">
+                                                                    <i class="icofont-tick-mark"></i>
+                                                                </span>
+                                                            </label>
                                                         </div>
                                                     </div>
                                                     @error('standard')
@@ -757,7 +788,12 @@
                                                         </ul>
                                                         <div class="text-center mt-auto">
                                                             <input type="radio" id="compléte" name="services" value="compléte" class="service-card__checkbox d-none" required>
-                                                            <label for="compléte" role="button" class="btn-theme bg-navy-blue no-shadow mt-3 service-card__label website-bg-color">Choisir</label>
+                                                            <label for="compléte" role="button" class="btn-theme bg-navy-blue no-shadow mt-3 service-card__label website-bg-color">
+                                                                <span class="service-card__label__text">Choisir</span>
+                                                                <span class="service-card__label__icon">
+                                                                    <i class="icofont-tick-mark"></i>
+                                                                </span>
+                                                            </label>
                                                         </div>
                                                     </div>
                                                     @error('compléte')
@@ -871,7 +907,7 @@
                                                     <h5 class="capitalize_text">Vous pouvez compléter votre demande avec des photos</h5>
                                                     <div class="cleint_feature_image__gallery"></div>
                                                     <input class="d-none" name="image[]" type="file" multiple id="cleint_feature_image" accept="image/x-png,image/gif,image/jpeg,image/jpg" required>
-                                                    <label for="cleint_feature_image" class="my-3 btn hover-btn  website-bg-color hover-btn capitalize_text"><i class="icofont-arrow-up bg-light website-color rounded-circle "></i>Télécharger</label>
+                                                    <label for="cleint_feature_image" class="my-3 btn hover-btn  website-bg-color capitalize_text"><i class="icofont-arrow-up bg-light website-color rounded-circle "></i>Télécharger</label>
                                                 </div>
                                             </div>
                                             
