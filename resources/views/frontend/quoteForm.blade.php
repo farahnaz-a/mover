@@ -130,14 +130,11 @@
     }
 
     .continue{
-        color: #5fc2ba !important;
+        font-size: 18px;
         border-radius: .25rem !important;
-    }
-
-    .continue:hover{
-        color: #ffffff !important;
         background-color: #5fc2ba;
     }
+
 
     .cleint_feature_image__gallery{
         padding: 15px;
@@ -227,14 +224,15 @@
         pointer-events: none;
         user-select: none;
     }
-    .hover-btn{
+    /* .hover-btn{
         background-color: transparent !important;
         color: #5fc2ba !important;
+        font-weight: 800;
     }
     .hover-btn:hover{
         background-color: #5fc2ba !important;
         color: #fff !important;
-    }
+    } */
 
 </style>
 @endsection
