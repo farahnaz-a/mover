@@ -130,7 +130,7 @@
     }
 
     .continue{
-        font-size: 18px;
+        font-size: 20px;
         border-radius: .25rem !important;
         background-color: #5fc2ba;
     }
