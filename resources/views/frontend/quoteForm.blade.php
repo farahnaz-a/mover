@@ -224,6 +224,10 @@
         pointer-events: none;
         user-select: none;
     }
+    .hover-btn{
+        font-size: 19px;
+        font-weight: 800;
+    }
     /* .hover-btn{
         background-color: transparent !important;
         color: #5fc2ba !important;
