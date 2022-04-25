@@ -30,16 +30,11 @@ $count = $comments->count();
                     <div class="row">
                         <div class="col-lg-12 col-xl-12">
                             <div class="left">
-                                <div
-                                    class=" d-flex flex-wrap justify-content-between align-items-center ">
+                                <div class=" d-flex flex-wrap justify-content-between align-items-center ">
                                     <a href="{{ route('frontend.announcements') }}"
                                         class="btn text-white bg-navy-blue mb-3">
                                         <i class="icofont-arrow-left mr-2"></i>Retour
                                     </a>
-                                    <div class="mb-3">
-                                        <span class="ml-3"><i class="icofont-eye-alt mr-2" style="color:#5fc2ba;"></i> Vues:
-                                            {{ $data->views }}</span>
-                                    </div>
                                 </div>
                                 <div class="map-content shadow-sm">
                                     <div class="map-header">
@@ -148,93 +143,112 @@ $count = $comments->count();
                                     </div>
                                     <div id="map-canvas"></div>
                                     <div class="row mt-4">
-                                        <div class="col-md-5">
+                                        <div class="col-lg-4">
                                             <div class="chargement">
-                                                <h5><span><i class="icofont-location-pin" style="color:#5fc2ba;"></i></span>{{ $data->depart }}
+                                                <h5>
+                                                    <span>
+                                                        <i class="icofont-ui-user"></i>
+                                                    </span>
+                                                    Pseudo: <small>{{ $data->pseudo ?? 'Not Available' }}</small>
+                                                </h5>
+                                                <h5>
+                                                    <span>
+                                                        <i class="icofont-location-pin" style="color:#5fc2ba;"></i>
+                                                    </span>
+                                                    {{ $data->depart }}
                                                 </h5>
                                                 {{-- <small>entre le {{ $data->loading_start }} et le {{ $data->loading_end }}</small> --}}
                                             </div>
                                         </div>
-                                        <div class="col-md-4">
+                                        <div class="col-lg-4">
                                             <div class="livraison">
-                                                <h5><span><i class="icofont-location-pin" style="color:#5fc2ba;"></i></span>{{ $data->arrivee }}
+                                                <h5>
+                                                    <span>
+                                                        <i class="icofont-clock-time"></i>
+                                                    </span>
+                                                    Mise en ligne: <small>{{ $data->created_at->format('Y-m-d') ?? 'Not Available' }}</small></h5>
+                                                <h5>
+                                                    <span>
+                                                        <i class="icofont-location-pin" style="color:#5fc2ba;"></i>
+                                                    </span>
+                                                    {{ $data->arrivee }}
                                                 </h5>
                                                 {{-- <small> entre le {{ $data->delivery_start }} et le {{ $data->delivery_end }}</small> --}}
                                             </div>
                                         </div>
-                                        <div class="col-md-3">
+                                        <div class="col-lg-4">
                                             <div class="livraison">
-                                                
-                                                <h5><span><i class="icofont-map-pins" style="color:#5fc2ba;"></i></span> 
-                                                   <span  id="distance" style="width: 100px">{{ $data->distance }}</span> 
-                                                </h5> 
+                                                <span>
+                                                    <i class="icofont-eye-alt mr-2" style="color:#5fc2ba;"></i>
+                                                    Vues: {{ $data->views }}
+                                                </span>
+                                                <h5>
+                                                    <span>
+                                                        <i class="icofont-map-pins" style="color:#5fc2ba;"></i>
+                                                    </span>
+                                                   <span id="distance">{{ $data->distance }}</span>
+                                                </h5>
                                             </div>
                                         </div> 
                                     </div>
                                 </div> 
                             </div>
                         </div>
-                        <div class="col-12 my-5">
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <h5>Pseudo: <small>{{ $data->pseudo ?? 'Not Available' }}</small> </h5>
-                                    <h5>Date de départ:<small> {{ $data->loading_date ?? 'Not Available' }}</small> </h5>
-                                </div>
-                                <div class="col-md-4">
-                                    <h5>Mise en ligne: <small>{{ $data->created_at->format('Y-m-d') ?? 'Not Available' }}</small> </h5>
-                                    <h5>Date d'arrivée: <small>{{ $data->delevary_date ?? 'Not Available'}}</small> </h5>
-                                </div>
-                                
-                                <div class="col-md-4">
-                                    <h5>Volume: <small>{{ $data->volume ?? 'Not Available' }}</small> </h5>
-                                </div>
-
-                            </div>
-                            <div class="row mt-4">
-                                <div class="col-md-4">
-                                    <h5>Liste: <small>{{ $data->list ?? 'Not Available' }}</small> </h5>
-                                </div>
-                                <div class="col-md-4"> 
-                                    <h5>Biens particuliers: <small>{{ $data->individual_goods ?? 'Not Available' }}</small> </h5>
+                        <div class="col-12">
+                            <div class="card shadow-sm border-0 my-4">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <h5 class="mb-3">Date de départ: <small class="font-weight-bold"> {{ $data->loading_date ?? 'Not Available' }}</small></h5>
+                                            <h5 class="mb-2">Type de lieu départ: <small class="d-block font-weight-bold">{{ $data->place_type_depart ?? 'Not Available' }}</small></h5>
+                                            <h5 class="mb-2">étages: <small class="font-weight-bold">{{ $data->floor_depart ?? 'Not Available' }}</small></h5>
+                                            <h5 class="mb-2">ascenseur: <small class="font-weight-bold">{{ $data->ascenseur_depart ?? 'Not Available' }}</small></h5>
+                                            <h5 class="mb-4 mb-lg-0">accéss:<small class="font-weight-bold"> {{ $data->access_depart ?? 'Not Available' }}</small></h5>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <h5 class="mb-3">Date d'arrivée: <small class="font-weight-bold">{{ $data->delevary_date ?? 'Not Available'}}</small></h5>
+                                            <h5 class="mb-2">Type de lieu arrivée: <small class="d-block font-weight-bold">{{ $data->place_type_arrivee ?? 'Not Available' }}</small></h5>
+                                            <h5 class="mb-2">étages: <small class="font-weight-bold">{{ $data->floor_arrivee ?? 'Not Available' }}</small></h5>
+                                            <h5 class="mb-2">ascenseur: <small class="font-weight-bold">{{ $data->ascenseur_arrivee ?? 'Not Available' }}</small></h5>
+                                            <h5>accéss: <small class="font-weight-bold">{{ $data->access_arrivee ?? 'Not Available' }}</small></h5>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="row mt-4">
-                                <div class="col-6 col-md-3">
-                                    <h5>Type de lieu départ: <small>{{ $data->place_type_depart ?? 'Not Available' }}</small> </h5>
-                                </div>
-                                <div class="col-6 col-md-3">
-                                    <h5> étages: <small>{{ $data->floor_depart ?? 'Not Available' }}</small> </h5>
-                                </div>
-                                <div class="col-6 col-md-3">
-                                    <h5>ascenseur: <small>{{ $data->ascenseur_depart ?? 'Not Available' }}</small> </h5>
-                                </div>
-                                <div class="col-6 col-md-3">
-                                    <h5>accéss:<small> {{ $data->access_depart ?? 'Not Available' }}</small> </h5>
-                                </div>
-                            </div>
-                            <div class="row mt-4">
-                                <div class="col-6 col-md-3">
-                                    <h5>Type de lieu arrivée: <small>{{ $data->place_type_arrivee ?? 'Not Available' }}</small> </h5>
-                                </div>
-                                <div class="col-6 col-md-3">
-                                    <h5> étages: <small>{{ $data->floor_arrivee ?? 'Not Available' }}</small> </h5>
-                                </div>
-                                <div class="col-6 col-md-3">
-                                    <h5>ascenseur: <small>{{ $data->ascenseur_arrivee ?? 'Not Available' }}</small> </h5>
-                                </div>
-                                <div class="col-6 col-md-3">
-                                    <h5>accéss: <small>{{ $data->access_arrivee ?? 'Not Available' }}</small> </h5>
+                            <div class="card shadow-sm border-0 my-4">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-lg-5">
+                                            <h5>Formule:</h5>
+                                        </div>
+                                        <div class="col-lg-7">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <h5>Biens particuliers: <small class="font-weight-bold">{{ $data->individual_goods ?? 'Not Available' }}</small></h5>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <h5>Volume: <small class="font-weight-bold">{{ $data->volume ?? 'Not Available' }}</small> </h5>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="row mt-4"> 
-                                <div class="col">
-                                    <h5>informations complémentaires: <small>{{ $data->informations ?? 'Not Available' }}</small> </h5>  
-                                    <p></p>
+                            <div class="card shadow-sm border-0 my-4">
+                                <div class="card-body">
+                                    <h5>Liste: <small class="font-weight-bold">{{ $data->list ?? 'Not Available' }}</small></h5>
                                 </div>
                             </div>
-
+                            <div class="card shadow-sm border-0 my-4">
+                                <div class="card-body">
+                                    <h5>informations complémentaires: <small>{{ $data->informations ?? 'Not Available' }}</small></h5>  
+                                    <h5>Photo:</h5> 
+                                    @foreach ($data->getImage as $image)
+                                    <img class="img-fluid w-25 m-1" src="{{ asset('uploads/announcement/image') }}/{{ $image->image }}" alt=""> 
+                                    @endforeach
+                                </div>
+                            </div>
                             @if ($data->category == 'déménagement')
-
                             <div class="row mt-4"> 
                                 <div class="col">
                                     <h5>Services:</h5> 
@@ -305,14 +319,6 @@ $count = $comments->count();
                                 </div>
                             </div>  
                             @endif
-                            <div class="row mt-3">
-                                <div class="col-4">
-                                    <h5>Photo:</h5> 
-                                    @foreach ($data->getImage as $image)
-                                    <img class="img-fluid w-25 m-1" src="{{ asset('uploads/announcement/image') }}/{{ $image->image }}" alt=""> 
-                                    @endforeach
-                                </div>
-                            </div>
                         </div>
                        @guest
                         <div class="col-12">

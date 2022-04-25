@@ -569,8 +569,6 @@
     text-transform: uppercase;
     color: #000;
     /* background: #5fc2ba; */
-    width: 1.5rem;
-    height: 1.5rem;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
