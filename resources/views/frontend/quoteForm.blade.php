@@ -264,8 +264,7 @@
                 </div>
             </div>
         </section> --}}
-        <!-- steps end -->
-
+        <!-- steps end --> 
         <!-- transport start -->
         <section class="transport-type">
             <div class="container">
@@ -2945,6 +2944,7 @@
                         if(data == 'true'){
                             $('#existing').addClass('d-block');
                             $('.optional').addClass('d-none'); 
+                            $('#pwd').focus();
 
                         }
                         else{

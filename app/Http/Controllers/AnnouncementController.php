@@ -93,8 +93,6 @@ class AnnouncementController extends Controller
 
         }
 
-        return back();
-
         if (Auth::id()) { 
 
             $announcement = SecondAnnouncement::create([
@@ -164,20 +162,24 @@ class AnnouncementController extends Controller
             return redirect()->route('announcement.details', $announcement->id);
         } else {
 
-         $request->validate([
-                'name'              => 'required',
-                'email'             => 'required|unique:users',
-                'country_code'      => 'required',
-                'phone'             => 'required',
-                'pseudo'            => 'required',
-                'password'          => 'required',
-                'confirm_password'  => 'required|same:password',
+         $request->validate([ 
+                'email'             => 'required', 
+                'password'          => 'required', 
             ]);
     
 
             $user = User::where('email', $request->email)->first();
 
             if (!$user) {
+                $request->validate([
+                    'name'              => 'required',
+                    'email'             => 'required|unique:users',
+                    'country_code'      => 'required',
+                    'phone'             => 'required',
+                    'pseudo'            => 'required',
+                    'password'          => 'required',
+                    'confirm_password'  => 'required|same:password',
+                ]);
                 $phone = $request->country_code . $request->phone;
                 $newuser = User::create([ 
                     'name'      => $request->name,
