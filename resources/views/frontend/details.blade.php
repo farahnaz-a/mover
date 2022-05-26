@@ -60,7 +60,11 @@ $count = $comments->count();
                                             <i style="color: #5fc2ba !important" class="icofont-search-2"></i> 
                                         @endif 
                                             {{-- {{ strtoupper($data->category) }} {{ $data->equipment ?? $data->model_name ?? $data->food_name ?? $data->animalName ?? $data->boatName }} --}}
-                                             {{ strtoupper($data->category) }}
+                                            @if ($data->category == 'déménagement') 
+                                                DÉMÉNAGEMENT
+                                            @else
+                                                {{ strtoupper($data->category) }}
+                                            @endif 
                                             <br />
                                             <small>Référence : <strong>{{ $data->id.rand(1000,9999) }}</strong>
                                             </small>
