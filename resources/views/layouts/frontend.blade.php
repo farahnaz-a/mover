@@ -104,7 +104,7 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/revolution/fonts/font-awesome/css/font-awesome.css') }}">
        <!-- map styles -->
        
-    <link rel="stylesheet" href="{{ asset('assets/assets/css/main.min.css') }}" />
+    <link rel="stylesheet" href="{{ asset('assets/assets/css/main.min.css') }}?{{ time() }}" />
     
 
      

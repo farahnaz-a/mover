@@ -568,7 +568,6 @@
 .map-view .map-view-wrapper .left .map-content .livraison h5 span {
     text-transform: uppercase;
     color: #000;
-    /* background: #5fc2ba; */
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
