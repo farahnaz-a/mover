@@ -151,7 +151,7 @@ $count = $comments->count();
                                             <div class="chargement">
                                                 <h5>
                                                     <span>
-                                                        <i class="icofont-ui-user"></i>
+                                                        <i class="icofont-ui-user" style="color:#5fc2ba;"></i>
                                                     </span>
                                                     Pseudo: <small>{{ $data->pseudo ?? 'Not Available' }}</small>
                                                 </h5>
@@ -168,7 +168,7 @@ $count = $comments->count();
                                             <div class="livraison">
                                                 <h5>
                                                     <span>
-                                                        <i class="icofont-clock-time"></i>
+                                                        <i class="icofont-clock-time" style="color:#5fc2ba;"></i>
                                                     </span>
                                                     Mise en ligne: <small>{{ $data->created_at->format('Y-m-d') ?? 'Not Available' }}</small></h5>
                                                 <h5>
@@ -182,10 +182,12 @@ $count = $comments->count();
                                         </div>
                                         <div class="col-lg-4">
                                             <div class="livraison">
-                                                <span>
-                                                    <i class="icofont-eye-alt mr-2" style="color:#5fc2ba;"></i>
+                                                <h5>
+                                                    <span>
+                                                        <i class="icofont-eye-alt" style="color:#5fc2ba;"></i>
+                                                    </span>
                                                     Vues: {{ $data->views }}
-                                                </span>
+                                                </h5>
                                                 <h5>
                                                     <span>
                                                         <i class="icofont-map-pins" style="color:#5fc2ba;"></i>
@@ -207,14 +209,14 @@ $count = $comments->count();
                                             <h5 class="mb-3">Type de lieu départ: <small class="font-weight-bold">{{ $data->place_type_depart ?? 'Not Available' }}</small></h5>
                                             <h5 class="mb-3">Étages: <small class="font-weight-bold">{{ $data->floor_depart ?? 'Not Available' }}</small></h5>
                                             <h5 class="mb-3">Ascenseur: <small class="font-weight-bold">{{ $data->ascenseur_depart ?? 'Not Available' }}</small></h5>
-                                            <h5 class="mb-4 mb-lg-0">Accéss:<small class="font-weight-bold"> {{ $data->access_depart ?? 'Not Available' }}</small></h5>
+                                            <h5 class="mb-4 mb-lg-0">Accès:<small class="font-weight-bold"> {{ $data->access_depart ?? 'Not Available' }}</small></h5>
                                         </div>
                                         <div class="col-lg-6">
                                             <h5 class="mb-3">Date d'arrivée: <small class="font-weight-bold">{{ $data->delevary_date ?? 'Not Available'}}</small></h5>
                                             <h5 class="mb-3">Type de lieu arrivée: <small class="font-weight-bold">{{ $data->place_type_arrivee ?? 'Not Available' }}</small></h5>
                                             <h5 class="mb-3">Étages: <small class="font-weight-bold">{{ $data->floor_arrivee ?? 'Not Available' }}</small></h5>
                                             <h5 class="mb-3">Ascenseur: <small class="font-weight-bold">{{ $data->ascenseur_arrivee ?? 'Not Available' }}</small></h5>
-                                            <h5>Accéss: <small class="font-weight-bold">{{ $data->access_arrivee ?? 'Not Available' }}</small></h5>
+                                            <h5>Accès: <small class="font-weight-bold">{{ $data->access_arrivee ?? 'Not Available' }}</small></h5>
                                         </div>
                                     </div>
                                 </div>

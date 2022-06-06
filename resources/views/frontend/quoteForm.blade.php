@@ -907,7 +907,7 @@
                                                 <div class="col-12 mb-3">
                                                     <h5 class="capitalize_text">Vous pouvez compléter votre demande avec des photos</h5>
                                                     <div class="cleint_feature_image__gallery"></div>
-                                                    <input class="d-none" name="image[]" type="file" multiple id="cleint_feature_image" accept="image/x-png,image/gif,image/jpeg,image/jpg" required>
+                                                    <input class="d-none" name="image[]" type="file" multiple id="cleint_feature_image" accept="image/*,image/x-png,image/gif,image/jpeg,image/jpg" required>
                                                     <label for="cleint_feature_image" class="my-3 btn hover-btn  website-bg-color capitalize_text"><i class="icofont-arrow-up bg-light website-color rounded-circle "></i>Télécharger</label>
                                                 </div>
                                             </div>
@@ -1199,7 +1199,7 @@
                                                         <h5 class="capitalize_text">Vous pouvez compléter votre demande avec des photos</h5>
                                                         <div class="cleint_feature_image__gallery">
                                                         </div>
-                                                        <input class="d-none" name="image[]" type="file" multiple id="cleint_feature_image" accept="image/x-png,image/gif,image/jpeg,image/jpg" required>
+                                                        <input class="d-none" name="image[]" type="file" multiple id="cleint_feature_image" accept="image/*,image/x-png,image/gif,image/jpeg,image/jpg" required>
                                                         <label for="cleint_feature_image" class="my-3 btn  website-bg-color hover-btn capitalize_text"><i class="icofont-arrow-up bg-light website-color rounded-circle"></i>Télécharger</label>
                                                     </div>
                                                 </div>
@@ -1519,7 +1519,7 @@
                                                     <h5 class="capitalize_text">Vous pouvez compléter votre demande avec des photos</h5>
                                                     <div class="cleint_feature_image__gallery">
                                                     </div>
-                                                    <input class="d-none" name="image[]" type="file" multiple id="cleint_feature_image" accept="image/x-png,image/gif,image/jpeg,image/jpg" required>
+                                                    <input class="d-none" name="image[]" type="file" multiple id="cleint_feature_image" accept="image/*,image/x-png,image/gif,image/jpeg,image/jpg" required>
                                                     <label for="cleint_feature_image" class="my-3 btn  website-bg-color hover-btn capitalize_text"><i class="icofont-arrow-up bg-light website-color rounded-circle"></i>Télécharger</label>
                                                 </div>
                                             </div>
@@ -1829,7 +1829,7 @@
                                                     <h5 class="capitalize_text">Vous pouvez compléter votre demande avec des photos</h5>
                                                     <div class="cleint_feature_image__gallery">
                                                     </div>
-                                                    <input class="d-none" name="image[]" type="file" multiple id="cleint_feature_image" accept="image/x-png,image/gif,image/jpeg,image/jpg" required>
+                                                    <input class="d-none" name="image[]" type="file" multiple id="cleint_feature_image" accept="image/*,image/x-png,image/gif,image/jpeg,image/jpg" required>
                                                     <label for="cleint_feature_image" class="my-3 btn  website-bg-color hover-btn capitalize_text"><i class="icofont-arrow-up bg-light website-color rounded-circle"></i>Télécharger</label>
                                                 </div>
                                             </div>
@@ -2131,7 +2131,7 @@
                                                     <h5 class="capitalize_text">Vous pouvez compléter votre demande avec des photos</h5>
                                                     <div class="cleint_feature_image__gallery">
                                                     </div>
-                                                    <input class="d-none" name="image[]" type="file" multiple id="cleint_feature_image" accept="image/x-png,image/gif,image/jpeg,image/jpg" required>
+                                                    <input class="d-none" name="image[]" type="file" multiple id="cleint_feature_image" accept="image/*,image/x-png,image/gif,image/jpeg,image/jpg" required>
                                                     <label for="cleint_feature_image" class="my-3 btn  website-bg-color hover-btn capitalize_text"><i class="icofont-arrow-up bg-light website-color rounded-circle"></i>Télécharger</label>
                                                 </div>
                                             </div>
@@ -2366,7 +2366,7 @@
                                                     <h5 class="capitalize_text">Vous pouvez compléter votre demande avec des photos</h5>
                                                     <div class="cleint_feature_image__gallery">
                                                     </div>
-                                                    <input class="d-none" name="image[]" type="file" multiple id="cleint_feature_image" accept="image/x-png,image/gif,image/jpeg,image/jpg" required>
+                                                    <input class="d-none" name="image[]" type="file" multiple id="cleint_feature_image" accept="image/*,image/x-png,image/gif,image/jpeg,image/jpg" required>
                                                     <label for="cleint_feature_image" class="my-3 btn  website-bg-color hover-btn capitalize_text"><i class="icofont-arrow-up bg-light website-color rounded-circle"></i>Télécharger</label>
                                                 </div>
                                             </div>
@@ -2526,7 +2526,7 @@
                                                     <h5 class="capitalize_text">Vous pouvez compléter votre demande avec des photos</h5>
                                                     <div class="cleint_feature_image__gallery">
                                                     </div>
-                                                    <input class="d-none" name="image[]" type="file" multiple id="cleint_feature_image" accept="image/x-png,image/gif,image/jpeg,image/jpg" required>
+                                                    <input class="d-none" name="image[]" type="file" multiple id="cleint_feature_image" accept="image/*,image/x-png,image/gif,image/jpeg,image/jpg" required>
                                                     <label for="cleint_feature_image" class="my-3 btn  website-bg-color capitalize_text hover-btn"><i class="icofont-arrow-up bg-light website-color rounded-circle"></i>Télécharger</label>
                                                 </div>
                                             </div>
@@ -2663,7 +2663,7 @@
                                                     <h5 class="capitalize_text">Vous pouvez compléter votre demande avec des photos</h5>
                                                     <div class="cleint_feature_image__gallery">
                                                     </div>
-                                                    <input class="d-none" name="image[]" type="file" multiple id="cleint_feature_image" accept="image/x-png,image/gif,image/jpeg,image/jpg" required>
+                                                    <input class="d-none" name="image[]" type="file" multiple id="cleint_feature_image" accept="image/*,image/x-png,image/gif,image/jpeg,image/jpg" required>
                                                     <label for="cleint_feature_image" class="my-3 btn  website-bg-color hover-btn capitalize_text"><i class="icofont-arrow-up bg-light website-color rounded-circle"></i>Télécharger</label>
                                                 </div>
                                             </div>
@@ -2837,7 +2837,7 @@
                                                     <h5 class="capitalize_text">Vous pouvez compléter votre demande avec des photos</h5>
                                                     <div class="cleint_feature_image__gallery">
                                                     </div>
-                                                    <input class="d-none" name="image[]" type="file" multiple id="cleint_feature_image" accept="image/x-png,image/gif,image/jpeg,image/jpg" required>
+                                                    <input class="d-none" name="image[]" type="file" multiple id="cleint_feature_image" accept="image/*,image/x-png,image/gif,image/jpeg,image/jpg" required>
                                                     <label for="cleint_feature_image" class="my-3 btn  website-bg-color capitalize_text hover-btn"><i class="icofont-arrow-up bg-light website-color rounded-circle"></i>Télécharger</label>
                                                 </div>
                                             </div>
