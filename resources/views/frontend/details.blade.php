@@ -204,17 +204,17 @@ $count = $comments->count();
                                     <div class="row">
                                         <div class="col-lg-6">
                                             <h5 class="mb-3">Date de départ: <small class="font-weight-bold"> {{ $data->loading_date ?? 'Not Available' }}</small></h5>
-                                            <h5 class="mb-2">Type de lieu départ: <small class="d-block font-weight-bold">{{ $data->place_type_depart ?? 'Not Available' }}</small></h5>
-                                            <h5 class="mb-2">étages: <small class="font-weight-bold">{{ $data->floor_depart ?? 'Not Available' }}</small></h5>
-                                            <h5 class="mb-2">ascenseur: <small class="font-weight-bold">{{ $data->ascenseur_depart ?? 'Not Available' }}</small></h5>
-                                            <h5 class="mb-4 mb-lg-0">accéss:<small class="font-weight-bold"> {{ $data->access_depart ?? 'Not Available' }}</small></h5>
+                                            <h5 class="mb-3">Type de lieu départ: <small class="font-weight-bold">{{ $data->place_type_depart ?? 'Not Available' }}</small></h5>
+                                            <h5 class="mb-3">Étages: <small class="font-weight-bold">{{ $data->floor_depart ?? 'Not Available' }}</small></h5>
+                                            <h5 class="mb-3">Ascenseur: <small class="font-weight-bold">{{ $data->ascenseur_depart ?? 'Not Available' }}</small></h5>
+                                            <h5 class="mb-4 mb-lg-0">Accéss:<small class="font-weight-bold"> {{ $data->access_depart ?? 'Not Available' }}</small></h5>
                                         </div>
                                         <div class="col-lg-6">
                                             <h5 class="mb-3">Date d'arrivée: <small class="font-weight-bold">{{ $data->delevary_date ?? 'Not Available'}}</small></h5>
-                                            <h5 class="mb-2">Type de lieu arrivée: <small class="d-block font-weight-bold">{{ $data->place_type_arrivee ?? 'Not Available' }}</small></h5>
-                                            <h5 class="mb-2">étages: <small class="font-weight-bold">{{ $data->floor_arrivee ?? 'Not Available' }}</small></h5>
-                                            <h5 class="mb-2">ascenseur: <small class="font-weight-bold">{{ $data->ascenseur_arrivee ?? 'Not Available' }}</small></h5>
-                                            <h5>accéss: <small class="font-weight-bold">{{ $data->access_arrivee ?? 'Not Available' }}</small></h5>
+                                            <h5 class="mb-3">Type de lieu arrivée: <small class="font-weight-bold">{{ $data->place_type_arrivee ?? 'Not Available' }}</small></h5>
+                                            <h5 class="mb-3">Étages: <small class="font-weight-bold">{{ $data->floor_arrivee ?? 'Not Available' }}</small></h5>
+                                            <h5 class="mb-3">Ascenseur: <small class="font-weight-bold">{{ $data->ascenseur_arrivee ?? 'Not Available' }}</small></h5>
+                                            <h5>Accéss: <small class="font-weight-bold">{{ $data->access_arrivee ?? 'Not Available' }}</small></h5>
                                         </div>
                                     </div>
                                 </div>
@@ -222,18 +222,11 @@ $count = $comments->count();
                             <div class="card shadow-sm border-0 my-4">
                                 <div class="card-body">
                                     <div class="row">
-                                        <div class="col-lg-5">
-                                            <h5>Formule:</h5>
+                                        <div class="col-md-6">
+                                            <h5>Biens particuliers: <small class="font-weight-bold">{{ $data->individual_goods ?? 'Not Available' }}</small></h5>
                                         </div>
-                                        <div class="col-lg-7">
-                                            <div class="row">
-                                                <div class="col-md-6">
-                                                    <h5>Biens particuliers: <small class="font-weight-bold">{{ $data->individual_goods ?? 'Not Available' }}</small></h5>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <h5>Volume: <small class="font-weight-bold">{{ $data->volume ?? 'Not Available' }}</small> </h5>
-                                                </div>
-                                            </div>
+                                        <div class="col-md-6">
+                                            <h5>Volume: <small class="font-weight-bold">{{ $data->volume ?? 'Not Available' }}</small> </h5>
                                         </div>
                                     </div>
                                 </div>
@@ -245,7 +238,7 @@ $count = $comments->count();
                             </div>
                             <div class="card shadow-sm border-0 my-4">
                                 <div class="card-body">
-                                    <h5>informations complémentaires: <small>{{ $data->informations ?? 'Not Available' }}</small></h5>  
+                                    <h5>Informations complémentaires: <small>{{ $data->informations ?? 'Not Available' }}</small></h5>  
                                     <h5>Photo:</h5> 
                                     @foreach ($data->getImage as $image)
                                     <img class="img-fluid w-25 m-1" src="{{ asset('uploads/announcement/image') }}/{{ $image->image }}" alt=""> 
@@ -253,11 +246,10 @@ $count = $comments->count();
                                 </div>
                             </div>
                             @if ($data->category == 'déménagement')
-                            <div class="row mt-4"> 
-                                <div class="col">
-                                    <h5>Services:</h5> 
+                            <div class="card shadow-sm border-0 my-4">
+                                <div class="card-body">
+                                    <h5>Formule:</h5> 
                                     @if ($data->services == 'clicmove')
-                                    <tr>
                                         <h6>Camion avec chauffeur</h6>
                                         <ul class="custom-list">
                                             {{-- <li>protection du mobilier</li> --}}
@@ -266,13 +258,10 @@ $count = $comments->count();
                                             {{-- <li>manutention au déchargement</li> --}}
                                             <li>Assurance</li>
                                             <li>frais de route (péage, carburant, ferry,…)</li> 
-                                        </ul>   
-                                    </tr>
-                                @endif  
+                                        </ul>
+                                    @endif  
                                     @if ($data->services == 'économique')
-                                        <h6>
-                                            Économique
-                                        </h6>
+                                        <h6>Économique</h6>
                                         <ul class="custom-list">
                                             <li>Nombre de déménageur nécessaire</li>
                                             {{-- <li>démontage du mobilier</li> --}}
@@ -287,41 +276,37 @@ $count = $comments->count();
                                         </ul>
                                     @endif
                                     @if ($data->services == 'standard')
-                                        
-                                            <h6>Standard</h6>
-                                            <ul class="custom-list">
-                                                <li>Nombre de déménageur nécessaire</li>
-                                                <li>démontage du mobilier</li>
-                                                <li>Emballage du fragile</li>
-                                                <li>protection du mobilier</li>
-                                                <li>manutention au chargement</li>
-                                                <li>transport</li>
-                                                <li>manutention au déchargement</li>
-                                                <li>remontage du mobilier</li>
-                                                <li>Assurance</li>
-                                                <li>frais de route (péage, carburant, ferry,…)</li>  
-                                            </ul>
-                                            
+                                        <h6>Standard</h6>
+                                        <ul class="custom-list">
+                                            <li>Nombre de déménageur nécessaire</li>
+                                            <li>démontage du mobilier</li>
+                                            <li>Emballage du fragile</li>
+                                            <li>protection du mobilier</li>
+                                            <li>manutention au chargement</li>
+                                            <li>transport</li>
+                                            <li>manutention au déchargement</li>
+                                            <li>remontage du mobilier</li>
+                                            <li>Assurance</li>
+                                            <li>frais de route (péage, carburant, ferry,…)</li>  
+                                        </ul>
                                     @endif
                                     @if ($data->services == 'compléte')
-                                        
-                                            <h6>Complète</h6>
-                                            <ul class="custom-list">
-                                                <li>Nombre de déménageur nécessaire</li>
-                                                <li>mise en carton complète (fournitures de matèriels et main d'oeuvre) (Vêtement et linge de lit Livres et documents Vaisselles et fragile Divers)</li>
-                                                <li>démontage du mobilier</li>
-                                                <li>protection du mobilier</li>
-                                                <li>manutention au chargement</li>
-                                                <li>transport</li>
-                                                <li>manutention au déchargement</li>
-                                                <li>remontage du mobilier</li> 
-                                                <li>Assurance</li>
-                                                <li>frais de route (péage, carburant, ferry,…)</li>  
-                                            </ul> 
+                                        <h6>Complète</h6>
+                                        <ul class="custom-list">
+                                            <li>Nombre de déménageur nécessaire</li>
+                                            <li>mise en carton complète (fournitures de matèriels et main d'oeuvre) (Vêtement et linge de lit Livres et documents Vaisselles et fragile Divers)</li>
+                                            <li>démontage du mobilier</li>
+                                            <li>protection du mobilier</li>
+                                            <li>manutention au chargement</li>
+                                            <li>transport</li>
+                                            <li>manutention au déchargement</li>
+                                            <li>remontage du mobilier</li> 
+                                            <li>Assurance</li>
+                                            <li>frais de route (péage, carburant, ferry,…)</li>  
+                                        </ul>
                                     @endif
-                                   
                                 </div>
-                            </div>  
+                            </div>
                             @endif
                         </div>
                        @guest
