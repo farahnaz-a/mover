@@ -579,7 +579,8 @@
     align-items: center;
     border-radius: 50%;
     float: left;
-    margin-right: 0.5rem
+    margin-right: 0.5rem;
+    
 }
 
 .map-view .map-view-wrapper .left .map-information {
